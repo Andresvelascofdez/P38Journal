@@ -1,52 +1,39 @@
-# Encargo completo — P38 Journal para Android
+# Corrección de la app Android existente — versión 3
 
-Construye una aplicación **Android nativa e instalable mediante APK** para el mantenimiento de mi Range Rover P38 4.6 V8 Autobiography del año 2000, gasolina y automático, comprado con 175.000 km. He detenido el desarrollo anterior y empiezo con un workspace nuevo. Esta documentación sustituye íntegramente la anterior. Quiero que Codex y sus agentes preparen el entorno, diseñen, programen, revisen los manuales, prueben, corrijan e integren todo. Mi trabajo será instalar/probar el APK y después registrar el uso y mantenimiento del coche.
+La app construida no refleja lo que quiero: muestra muchas comprobaciones iniciales y detalles técnicos difíciles de leer. Corrígela sobre el proyecto actual. Esta especificación sustituye la anterior, especialmente la obligación de crear mantenimiento inicial por falta de historial. No borres código/datos, no cambies la firma y no me pidas rehacer el proyecto.
 
-Lee todos los archivos de este paquete. No necesitas recuperar la conversación para ejecutarlo. No entregues solo un plan, una maqueta o código sin compilar. Las decisiones aquí especificadas no requieren volver a preguntarlas.
+## Objetivo exacto
 
-## Plataforma fijada
+Mi Range Rover P38 4.6 V8 Autobiography es del año 2000, gasolina y automático. La referencia inicial para planificar es **175.000 km**. Quiero que la app me diga qué debo hacer al coche cada cierto número de kilómetros o plazo según el fabricante, que yo actualice los km manualmente y registre lo realizado, y que reciba avisos cuando se acerque o alcance un límite. También quiero gastos manuales y ver cuánto llevo gastado.
 
-Kotlin + Jetpack Compose/Material 3, Room/SQLite, DataStore y WorkManager, con Coroutines/Flow. Aplicación local de un propietario, sin cuenta, backend ni alojamiento obligatorio. El catálogo viene incluido y las funciones principales trabajan sin Internet. No convertir el encargo en una web, PWA o WebView. No incluir una API de IA, Firebase ni servicios externos salvo que una necesidad real y autorizada lo justifique; el alcance actual se resuelve localmente.
+Los intervalos y operaciones provienen del fabricante; los 175.000 km son mi decisión de referencia operativa, no prueba de que todo se hizo entonces. No crees servicios ficticios ni me obligues a confirmar/revisar el pasado para que funcione el plan. No redondees al siguiente múltiplo absoluto del odómetro si la operación es recurrente desde una referencia.
 
-Prepara el proyecto completo con Gradle Wrapper, versiones estables compatibles verificadas, scripts reproducibles y dependencias fijadas. Sigue ANDROID.md. Compila y entrega APK debug y APK release firmado, con identidad y clave de firma persistentes para que las actualizaciones conserven datos. No publicar en Google Play ni contratar nada.
+## Cambios de comportamiento
 
-## Mantenimiento precargado
+1. Elimina la generación de «Mantenimiento inicial» y sus tarjetas/avisos por falta de historial. Deja de convertir datos desconocidos en acciones urgentes. Limpia de forma idempotente los pendientes automáticos antiguos, conservando eventos, gastos y tareas realmente creados/registrados por mí. Sigue MIGRATION.md.
+2. Para una regla recurrente por componente sin trabajo posterior válido, próximo km = 175.000 + intervalo verificado. Tras registrar un trabajo que satisfaga esa regla, próximo km = km reales de ese trabajo + intervalo, si ese es el modelo de recurrencia del fabricante. Editar/anular recalcula correctamente. Los hitos únicos y fases deben conservar su semántica; no sumar sin revisar todas las reglas.
+3. Conserva los plazos por tiempo prescritos. La fecha del plan es una referencia operativa editable en Ajustes, por defecto la fecha de creación del plan recuperable, o la de esta migración si no existe; no es fecha de compra ni de servicio. No pedir un cuestionario al inicio. Mostrar fecha y km cuando procedan, con «lo que ocurra antes». Una regla dependiente de antigüedad original conserva su base documental propia.
+4. Los controles de una revisión de taller aparecen agrupados dentro de la revisión a su vencimiento. No mostrar en Inicio decenas de comprobaciones diarias/semanales, requisitos de aplicabilidad, pasos de desmontaje ni tareas de investigar. Mantener esas recomendaciones en el manual si sirven, sin alertas por defecto. No eliminar un mantenimiento real del fabricante por ser una inspección: situarlo dentro de su revisión correspondiente.
+5. La app viene con catálogo completo aplicable. Reutiliza y audita el catálogo actual; corrige reglas erróneas desde SOURCES.md, matriz visual y notas. No reemplazarlo por solo el starter ni inventar intervalos. Documenta condiciones por versión/VIN sin exponer códigos internos como texto de interfaz.
 
-La app debe saber qué comprobar, ajustar, lubricar, sustituir o revisar profesionalmente y avisar por fecha, kilómetros o condición documentada. Yo no tengo que crear las tareas ni introducir intervalos. Cada regla tendrá fuente, edición, páginas, aplicabilidad y revisión. No usar intervalos genéricos como si fueran del P38.
+## Interfaz requerida
 
-Completa el catálogo desde SOURCES.md. Lee visualmente matriz, glosario y notas de la hoja de servicio; extraer texto no conserva todas las columnas. Filtra gasolina/caja automática/año y condiciones por VIN/equipamiento, sin inventar VIN. Documenta filas incluidas, excluidas y condicionales, con revisión independiente. `maintenance-starter.json` es solo un inicio. Una limitación documental debe quedar identificada dentro de la operación y en la cobertura, sin inventar reglas ni abandonar las demás funciones.
+Inicio / Mantenimiento / Historial / Gastos. Ajustes y Manuales por acceso secundario. Inicio corto: km actual, actualizar km, siguiente revisión y próximas/vencidas. Si nada toca, «Todo al día» y próximo límite, no llenar con tareas iniciales. Lista compacta con título comprensible, próximo km/fecha y cuánto falta; agrupar servicios con mismo límite sin ocultar sus operaciones.
 
-Inicio muestra «Hacer ahora», «Próximamente» y «Programado». No incluir «Por aclarar», «Punto de partida», tarjetas de incertidumbre ni un asistente para investigar el pasado. Crear mantenimiento inicial accionable para establecer referencias desde ahora. Respetar lo conocido: no cambiar de nuevo neumáticos o balonas solo por tener historial parcial. Conservar evidencia y precisión en el detalle/historial. Comprar el coche o abrir la app no equivale a realizar un servicio.
+Detalle: título concreto («Cambio de aceite y filtro»), intervalo, próximo límite, kilómetros restantes/fecha, última ejecución si existe, botón «Registrar realizado». Sección «Qué incluye» para revisar componentes y «Ver fuente del fabricante» desplegable. No mostrar known_pre_purchase_replaced, recurrence_basis, ids, glosarios largos ni frases «por hito documentado»/«establecer referencia operativa explícita». Ver SPEC.md.
 
-## Funciones completas
+Registrar desde una tarea precarga operación, fecha actual y km actuales editables. Taller, notas, coste y adjunto opcionales. Confirmar lo realmente hecho; un gasto o cita no completa trabajos. Una revisión agrupada permite seleccionar operaciones realizadas: no cerrar tareas que no se hicieron.
 
-- Español, km, EUR, zona horaria Asia/Nicosia editable. Diseño sencillo verde oscuro, tonos cálidos y modo oscuro. Nombre provisional P38 Journal.
-- Navegación inferior Inicio/Plan/Historial/Más. Más: averías, manuales/documentos, gastos, piezas, bandeja de avisos y ajustes.
-- Kilometraje con fecha y acción rápida. 175.000 km son los de compra; no son lectura actual. Sin lectura actual siguen funcionando los avisos por tiempo.
-- Plan por sistema/estado, detalle con acción, motivo de vencimiento, próximos límites, última operación válida y fuente. Programar fecha de taller no equivale a completar trabajo.
-- Visitas con múltiples trabajos, fecha/km, taller opcional, operaciones satisfechas, piezas, costes, notas y fotos/PDF. Guardado atómico, edición/anulación auditadas, doble toque sin duplicados. Una factura cuenta una vez.
-- Recalcular solo operaciones realmente satisfechas. Comprobar un nivel no equivale a cambiar el líquido. Trabajos históricos no desplazan otros posteriores.
-- Averías: síntomas, diagnóstico separado, prioridad, seguimiento y relación con reparación. Piezas: referencias, proveedor/enlace, coste, estado y compatibilidad con evidencia. Sin compras automáticas.
-- Gastos manuales Taller/Extras/Gasolina/Otros. Fecha, importe y concepto; categoría simple, notas/recibo opcionales. Sin exigir factura, km o mantenimiento asociado. Lista cronológica, edición/eliminación y total «Lo que llevo gastado». Evitar duplicar gastos de taller. Sin informes, gráficos, comparativas, litros ni consumo. Añadir gasto no cambia odómetro ni completa mantenimiento.
-- Biblioteca privada con PDF/fotos, visor, búsqueda cuando el PDF contenga texto, índice/favoritos y referencias de página. No fingir OCR ni resultados. Enlaces de manuales e importación legítima, sin redistribución pública de PDFs.
-- Copias completas con registros, gastos y adjuntos, exportación/restauración validada, migraciones sin borrado de datos. Uso del selector de archivos Android y permisos mínimos.
+Gastos Taller/Extras/Gasolina/Otros: fecha, importe EUR, concepto, categoría; nota/recibo opcionales. Lista, editar/eliminar y total «Lo que llevo gastado». Sin informes, gráficos ni consumo, y sin exigir asociación a mantenimiento. Un pago de taller cuenta una sola vez.
 
-## Avisos esenciales
+## Notificaciones que quiero recibir
 
-Implementa notificaciones locales de Android y bandeja persistente. WorkManager evalúa tareas aunque la interfaz esté cerrada; no depender de un temporizador en pantalla ni de que yo abra la app. No exige Internet para evaluar/enviar un aviso local. Permiso de notificaciones cuando corresponda tras «Activar avisos», estado de canales, acceso a Ajustes y «Probar aviso». Tocar la notificación abre la tarea correcta.
+Avisos del sistema Android, visibles con la interfaz cerrada, permiso/canales y botón de prueba. Al guardar kilómetros, evaluar inmediatamente: si una regla pasa de futura a vencida, crear aviso del sistema y entrada en bandeja. No limitarse a pintar un badge ni esperar al próximo worker. Con lectura saltando varios límites, resumen con todas las operaciones pendientes, sin perder tareas ni repetir avisos por abrir la app.
 
-Aviso previo, vencimiento y recordatorio moderado de pendientes. Defaults de producto: 30 días/1.000 km cuando sea proporcionado; adaptar controles frecuentes y agruparlos en resumen. Hora preferida inicial 09:00 local como ventana, sin prometer precisión que Android no garantice. Evitar duplicados, recomputar al registrar/corregir un trabajo, invalidar avisos antiguos y recuperarse de reinicios. No solicitar alarmas exactas ni usar un servicio permanente.
+Para fechas, WorkManager persiste la evaluación sin Internet y sin depender de abrir la pantalla. Preaviso por defecto 1.000 km/30 días cuando resulte proporcionado, configurable. Vencimiento y recordatorio moderado de pendientes, sin avisos iniciales inventados. Registrar realizado cancela aviso antiguo y programa siguiente ciclo. ENGINE.md define deduplicación y causas. No implantar un servidor solo porque llamo «push» a estas notificaciones.
 
-No inventar kilómetros conducidos. Los avisos por km usan lecturas reales introducidas; no hay OBD/GPS en esta versión. Documentar límites de cierre forzado/ahorro de batería y pruebas reales, sin afirmar que una prueba simulada demuestra recepción visible.
+## Ejecución y entrega
 
-## Datos y agentes
+Usa agentes disponibles para dominio/migración, UI, catálogo/avisos y revisión independiente. Inspecciona antes de editar, define contratos/archivos y corrige todos los hallazgos. Si no hay subagentes, informa y ejecuta secuencialmente. Conserva stack Android, identidad y clave de firma actuales; no conviertas a web ni añadas infraestructura.
 
-Usa data/vehicle.json sin inventar fechas, matrícula, VIN, importes ni kilometraje actual. Las intervenciones previas proceden de resúmenes de conversaciones, no de facturas vistas en este encargo. No resetear intervalos a los kilómetros de compra. Incidencias históricas no prueban una avería activa hoy. Datos de prueba aislados de mi app real.
-
-Usa agentes explícitamente: coordinador, documentación/catálogo, dominio/persistencia, interfaz Android, avisos/compilación y revisión/pruebas independiente. Define contratos y propiedad de archivos antes de repartir trabajo. Integra y resuelve los hallazgos. Ajusta concurrencia a disponibilidad; si este entorno no permite subagentes, indícalo y ejecuta secuencialmente sin simular delegación.
-
-## Autonomía y entrega
-
-Haz las decisiones técnicas reversibles y prepara SDK/JDK/dependencias cuando el entorno lo permita. No me pidas escribir código, depurar, preparar datos ni compilar. Si hay limitaciones de red, permisos, emulador o hardware, identifica el bloqueo exacto, completa lo independiente y deja una continuación reproducible. No declarar terminado algo sin verificarlo.
-
-Sigue QA.md y HANDOFF.md. Entrega los APK reales, informe de pruebas, catálogo revisado, instrucciones breves de instalación/actualización/copias y 5–8 pasos para probar. Conserva identidad y material de firma privado; no subir claves al repositorio ni incluir secretos en APK/logs. Mantén progreso y decisiones en docs/PROGRESS.md para reanudar sin repetir el trabajo. No acceder al coche, publicar datos, enviar mensajes ni contratar servicios.
+Haz copia antes de migrar. Prueba especialmente arranque sin pendientes iniciales, cálculo desde 175.000, actualizar km → aviso real, registrar trabajo → próximo límite, edición/anulación, gastos y actualización del APK conservando registros. Entrega APK release firmado actualizado, debug separado, informe honesto y guía breve. No me pidas escribir código, compilar ni configurar los intervalos uno a uno. No afirmar pruebas físicas si no se hicieron. Documenta bloqueos concretos y completa el trabajo independiente.

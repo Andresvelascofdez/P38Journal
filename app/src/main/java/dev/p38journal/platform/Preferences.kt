@@ -18,8 +18,8 @@ data class Settings(
     val hour: Int = 9,
     val enabled: Boolean = false,
     val weekly: Boolean = true,
-    val checks: Boolean = true,
-    val odometerReminder: Boolean = true,
+    val checks: Boolean = false,
+    val odometerReminder: Boolean = false,
     val externalFolderUri: String = ""
 )
 class Preferences(context: Context) {

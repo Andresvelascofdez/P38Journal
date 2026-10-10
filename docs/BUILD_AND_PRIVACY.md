@@ -12,11 +12,13 @@ Tests instrumentados: ./gradlew connectedDebugAndroidTest con emulador o teléfo
 
 ## Firma estable
 
-Identidad release dev.p38journal, debug dev.p38journal.debug, versión 2.0.0/versionCode 2. Clave RSA 3072 estable en C:/Users/Admin/.p38journal/release.jks; configuración privada signing.properties en la misma carpeta. Directorio fuera del repositorio con ACL restringida a Admin y SYSTEM. Gradle puede leer otra ruta mediante P38_SIGNING_PROPERTIES. No se incluyen contraseñas ni claves en código, APK, respaldos, logs o git.
+Identidad release dev.p38journal, debug dev.p38journal.debug, versión 3.0.0/versionCode 3. Clave RSA 3072 estable en C:/Users/Admin/.p38journal/release.jks; configuración privada signing.properties en la misma carpeta. Directorio fuera del repositorio con ACL restringida a Admin y SYSTEM. Gradle puede leer otra ruta mediante P38_SIGNING_PROPERTIES. No se incluyen contraseñas ni claves en código, APK, respaldos, logs o git.
 
 El propietario debe conservar una copia cifrada y privada de esa carpeta completa en un medio seguro. No enviar la clave por chat/correo ni publicarla. La misma firma y applicationId permiten actualizar sin desinstalar; perder la clave impide garantizar esa actualización. Los APKs incluyen el certificado público necesario para Android, nunca la clave privada. APK debug usa la clave de depuración de Android y una identidad diferente.
 
 ## Datos y archivos
+
+Room 3 añade la referencia operativa de planificación y la procedencia de los avisos. Antes de abrir una base anterior, conserva una copia privada de DB y WAL con SHA-256 e integrity_check; los adjuntos y las preferencias permanecen en su ubicación. La copia interna previa no sustituye el ZIP externo y tampoco sobrevive a desinstalar.
 
 Room guarda catálogo/revisiones, vehículo, visitas/líneas/eventos, gastos, lecturas, notas estructuradas, documentos, bandeja/ledger y auditoría. Snapshot lógico versionado exporta todas esas tablas salvo ledger de emisión, que se reconstruye. Preferencias de producto van en DataStore. Copia ZIP añade ajustes, marcadores de páginas y adjuntos privados con SHA-256; rechaza rutas arbitrarias, entradas duplicadas, formatos/versiones o hashes incorrectos. Límites: documento 32 MB, copia descomprimida 256 MB, 2.000 archivos, índice 8 MB. No hay cuentas, backend, telemetría, GPS ni acceso general al almacenamiento. Android Auto Backup desactivado; se usa respaldo explícito completo.
 
@@ -32,4 +34,4 @@ AndroidX/Compose/Room/WorkManager/DataStore son Apache 2.0; Kotlin Apache 2.0; G
 
 ## Límites del sistema
 
-WorkManager evalúa sin requisito de red cada hora de forma flexible y después de cambios; la ventana elegida (09:00 inicialmente) no garantiza el minuto de entrega. Permiso y canales controlados por Android. Bandeja independiente; emitted significa llamada al sistema, no recibido/leído. Resúmenes agrupados y ledger persistente; fecha y km no crean dos avisos de una tarea. Forzar detención desde Ajustes impide prometer trabajo hasta abrir de nuevo; quitar de recientes es distinto. Avisos por km usan sólo lecturas introducidas, nunca estimaciones de conducción.
+WorkManager evalúa sin requisito de red cada hora de forma flexible y después de cambios; la ventana elegida (09:00 inicialmente) no garantiza el minuto de entrega. Permiso y canales controlados por Android. Bandeja independiente; emitted significa llamada al sistema, no recibido/leído. Resúmenes agrupados y ledger persistente; fecha y km no crean dos avisos de una tarea. Forzar detención desde Ajustes impide prometer trabajo hasta abrir de nuevo; quitar de recientes es distinto. Avisos por km usan sólo lecturas introducidas, nunca estimaciones de conducción. Al guardar una lectura, la evaluación inmediata puede avisar fuera del horario preferido; un marker persistente permite recuperar la evaluación tras una interrupción. El mismo límite/ciclo/estado no se repite; SOON a DUE y un ciclo real nuevo pueden emitir otra vez. No se generan avisos iniciales ni de controles diarios/semanales por defecto. La revisión parcial actualiza silenciosamente un resumen que siga visible, sin resucitar uno descartado.

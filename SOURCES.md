@@ -1,6 +1,6 @@
 # Fuentes para implementación y verificación
 
-Consultadas el 10/10/2026. Los manuales son publicaciones del fabricante alojadas en una web de terceros. No son una reproducción del manual completa ni un catálogo final: los agentes deben verificar y completar la extracción antes de la entrega.
+Fuentes recuperadas en v2; M01 y WorkManager comprobados de nuevo el 11/10/2026. Los manuales son publicaciones del fabricante alojadas en una web de terceros. No son una reproducción del manual completa ni un catálogo final: los agentes deben verificar y completar la extracción antes de la entrega.
 
 ## Fabricante
 
@@ -56,3 +56,7 @@ Verificadas para preparar el encargo; el implementador debe revisar nuevamente c
 - Firma y actualización: https://developer.android.com/studio/publish/app-signing
 
 WorkManager permite trabajo persistente diferible; no garantiza hora exacta. La implementación debe cumplir límites del sistema y no confundir cierre normal con detención forzada. Room almacena datos estructurados localmente. Android 13+ introduce permiso de notificaciones en runtime. SAF usa selección de documentos del usuario; la arquitectura evita acceso general al almacenamiento. La entrega requiere compilar un APK real y mantener su firma para futuras actualizaciones.
+
+## Política de producto v3
+
+El fabricante define operaciones/intervalos; la base de 175.000 km es elección del propietario para su calendario operativo. No atribuir esa base al fabricante ni afirmar ejecución pasada. Auditar catálogo existente: preservar condiciones, fases/hitos y distinguir comprobación de sustitución. Comprobaciones de taller dentro del servicio; controles de uso como referencia del manual sin alertas por defecto. No traducir instrucciones de taller en tareas aisladas urgentes desde el arranque.

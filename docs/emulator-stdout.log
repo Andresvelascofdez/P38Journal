@@ -189,3 +189,6 @@ INFO         | IPv4 server found: 10.124.21.22
 INFO         | Ignore IPv6 address: 504d:34cc:9802:0:20f0:33cc:9802:0
 INFO         | Ignore IPv6 address: 504d:34cc:9802:0:20f0:33cc:9802:0
 INFO         | Ignore IPv6 address: 504d:34cc:9802:0:20f0:33cc:9802:0
+INFO         | Wait for emulator (pid 9076) 20 seconds to shutdown gracefully before kill;you can set environment variable ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL(in seconds) to change the default value (20 seconds)
+
+WARNING      | Not saving state: RAM not mapped as shared

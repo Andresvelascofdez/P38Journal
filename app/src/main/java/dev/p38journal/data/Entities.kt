@@ -1,6 +1,7 @@
 package dev.p38journal.data
 
 import androidx.room.Entity
+import androidx.room.ColumnInfo
 import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
@@ -40,7 +41,8 @@ data class Document(@PrimaryKey val id: String = newId(), val name: String, val 
 
 @Entity(tableName = "inbox", indices = [Index(value = ["ruleId", "generation", "id"], unique = true)])
 data class Inbox(@PrimaryKey val id: String, val ruleId: String, val title: String, val body: String,
-    val generation: String, val state: String = "pending", val createdAt: String = java.time.Instant.now().toString())
+    val generation: String, val state: String = "pending", val createdAt: String = java.time.Instant.now().toString(),
+    @ColumnInfo(defaultValue = "'automatic'") val origin: String = "automatic", @ColumnInfo(defaultValue = "3") val policyVersion: Int = 3)
 
 @Entity(tableName = "rules")
 data class RuleRecord(@PrimaryKey val id: String, val json: String, val revision: Int, val ownerOverride: Boolean = false)
@@ -59,7 +61,14 @@ data class Audit(@PrimaryKey val id: String = newId(), val at: String, val actio
 
 @Entity(tableName = "ledger")
 data class Ledger(@PrimaryKey val id: String, val ruleId: String, val generation: String, val kind: String,
-    val window: String, val state: String = "pending", val updatedAt: String)
+    val window: String, val state: String = "pending", val updatedAt: String,
+    @ColumnInfo(defaultValue = "'automatic'") val origin: String = "automatic", @ColumnInfo(defaultValue = "3") val policyVersion: Int = 3)
+
+@Entity(tableName = "planning_reference")
+data class PlanningRecord(@PrimaryKey val id: String = "main", val baselineKm: Int = 175000,
+    val baselineDate: String, val provenance: String = "user_selected_planning_baseline", val policyVersion: Int = 3) {
+    fun toDomain() = dev.p38journal.domain.PlanningReference(id, baselineKm, baselineDate, provenance, policyVersion)
+}
 
 @Entity(tableName = "vehicle")
 data class VehicleRecord(@PrimaryKey val id: String, val json: String)

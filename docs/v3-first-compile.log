@@ -1,0 +1,74 @@
+
+C:\Users\Admin\SapAssistant\Range rover>if "Windows_NT" == "Windows_NT" setlocal
+
+C:\Users\Admin\SapAssistant\Range rover>set DIRNAME=C:\Users\Admin\SapAssistant\Range rover\ 
+
+C:\Users\Admin\SapAssistant\Range rover>if "C:\Users\Admin\SapAssistant\Range rover\" == "" set DIRNAME=. 
+
+C:\Users\Admin\SapAssistant\Range rover>set APP_BASE_NAME=gradlew 
+
+C:\Users\Admin\SapAssistant\Range rover>set APP_HOME=C:\Users\Admin\SapAssistant\Range rover\ 
+
+C:\Users\Admin\SapAssistant\Range rover>for %i in ("C:\Users\Admin\SapAssistant\Range rover\") do set APP_HOME=%~fi 
+
+C:\Users\Admin\SapAssistant\Range rover>set APP_HOME=C:\Users\Admin\SapAssistant\Range rover\ 
+
+C:\Users\Admin\SapAssistant\Range rover>set DEFAULT_JVM_OPTS="-Xmx64m" "-Xms64m" 
+
+C:\Users\Admin\SapAssistant\Range rover>if defined JAVA_HOME goto findJavaFromJavaHome 
+
+C:\Users\Admin\SapAssistant\Range rover>set JAVA_HOME=C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\ 
+
+C:\Users\Admin\SapAssistant\Range rover>set JAVA_EXE=C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\/bin/java.exe 
+
+C:\Users\Admin\SapAssistant\Range rover>if exist "C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\/bin/java.exe" goto execute 
+
+C:\Users\Admin\SapAssistant\Range rover>set CLASSPATH=C:\Users\Admin\SapAssistant\Range rover\\gradle\wrapper\gradle-wrapper.jar 
+
+C:\Users\Admin\SapAssistant\Range rover>"C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\/bin/java.exe" "-Xmx64m" "-Xms64m"   "-Dorg.gradle.appname=gradlew" -classpath "C:\Users\Admin\SapAssistant\Range rover\\gradle\wrapper\gradle-wrapper.jar" org.gradle.wrapper.GradleWrapperMain compileDebugKotlin --console=plain 
+Starting a Gradle Daemon (subsequent builds will be faster)
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:syncCatalogue
+> Task :app:preBuild
+> Task :app:preDebugBuild
+> Task :app:generateDebugBuildConfig
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+
+> Task :app:processDebugMainManifest
+C:\Users\Admin\SapAssistant\Range rover\app\src\main\AndroidManifest.xml:3:5-87 Warning:
+	uses-permission#android.permission.INTERNET was tagged at AndroidManifest.xml:3 to remove other declarations but no other declaration present
+
+> Task :app:processDebugManifest
+> Task :app:processDebugManifestForPackage
+> Task :app:processDebugResources
+
+> Task :app:kaptGenerateStubsDebugKotlin
+w: Kapt currently doesn't support language version 2.0+. Falling back to 1.9.
+
+> Task :app:kaptDebugKotlin
+
+> Task :app:compileDebugKotlin
+w: file:///C:/Users/Admin/SapAssistant/Range%20rover/app/src/main/java/dev/p38journal/platform/Notifications.kt:173:85 'constructor(p0: String!, p1: String!): Locale' is deprecated. Deprecated in Java.
+
+[Incubating] Problems report is available at: file:///C:/Users/Admin/SapAssistant/Range%20rover/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 31s
+18 actionable tasks: 10 executed, 8 up-to-date
+
+C:\Users\Admin\SapAssistant\Range rover>if 0 EQU 0 goto mainEnd 
+
+C:\Users\Admin\SapAssistant\Range rover>if "Windows_NT" == "Windows_NT" endlocal

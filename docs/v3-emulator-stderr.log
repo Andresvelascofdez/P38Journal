@@ -1,0 +1,34 @@
+I1011 00:33:51.752953   47424 opengles.cpp:285] android_startOpenglesRenderer: gpu info
+I1011 00:33:51.753925   47424 opengles.cpp:286] GPU #1
+  Make: 10de
+  Model: NVIDIA GeForce RTX 4070
+  Device ID: 2786
+
+I1011 00:33:51.849421   47424 userspace-boot-properties.cpp:741] Userspace boot properties:
+I1011 00:33:51.849937   47424 userspace-boot-properties.cpp:745]   androidboot.boot_devices=pci0000:00/0000:00:03.0 pci0000:00/0000:00:06.0
+I1011 00:33:51.850415   47424 userspace-boot-properties.cpp:745]   androidboot.dalvik.vm.heapsize=512m
+I1011 00:33:51.850888   47424 userspace-boot-properties.cpp:745]   androidboot.debug.hwui.renderer=skiagl
+I1011 00:33:51.850974   47424 userspace-boot-properties.cpp:745]   androidboot.hardware=ranchu
+I1011 00:33:51.851013   47424 userspace-boot-properties.cpp:745]   androidboot.hardware.gltransport=pipe
+I1011 00:33:51.851050   47424 userspace-boot-properties.cpp:745]   androidboot.hardware.vulkan=ranchu
+I1011 00:33:51.851085   47424 userspace-boot-properties.cpp:745]   androidboot.logcat=*:V
+I1011 00:33:51.851121   47424 userspace-boot-properties.cpp:745]   androidboot.opengles.version=196608
+I1011 00:33:51.851156   47424 userspace-boot-properties.cpp:745]   androidboot.qemu=1
+I1011 00:33:51.851193   47424 userspace-boot-properties.cpp:745]   androidboot.qemu.adb.pubkey=QAAAANMndvKlN07X0PDAVBT7xIy9tfWXqBnwYFLDFBCzZqksWsfZeg1gcRQfLgu8TnShfj/mrD+OMS8eKppR7pLkJszsDBsTTEdH+RS/tkxAR4ukuBGyVGFoFedQZb6H3OwXiTZacu3uU15nCMElwVIR5tg+Uf6eDsfd5Yoi4mfaKkUtMEelONEGdkXJpq/n7I4al7TD/dLf20abS5FXt7irEe5h+wkgzMNSVRvNAmphUdFEkM1jtvXEZOnLGSQC2QOGI1Jul4837QmrrY24YFc4NYrtHJH3tLaGpH2r/3RPJGC/u8hYJQ+ev25f0/k7Wm5FxwNW6FppzK1wyobp8wBRLYUJ7YnZ7Pqz4qwW+iU2YI8q4KHQ5TCHIIyfL2ptlpbaDYvRxVs9XtDPjiWSePkN8vhTQ8sqFcjqkenekWf1cKv3rJCNul5rVcmYdiQHMdUtmTJYlpDY2D/BFd+dljP+91UtNKW3XNXVp5Hc9vJR7qJF16M9106IE+7paw+oFgk3cghjT6FTEIzk2waSIe4cEFS3cL/TxPwdcddtll/97AS2CaMV7mFI7B+QkCNiTvUplIsebnN+aNCmA7s31C56LBct7RgfEZq+UdgLUv0jwh+/yzGL/tyqhvj6jLDsZJXX4iHb0CvRDhBbyyPoXGJuZzMbCVl6G8+rSYZsv+lU44SNM4F+WgEAAQA= @unknown
+I1011 00:33:51.851228   47424 userspace-boot-properties.cpp:745]   androidboot.qemu.avd_name=Medium_Phone_API_36.0
+I1011 00:33:51.851264   47424 userspace-boot-properties.cpp:745]   androidboot.qemu.camera_hq_edge_processing=0
+I1011 00:33:51.851299   47424 userspace-boot-properties.cpp:745]   androidboot.qemu.camera_protocol_ver=1
+I1011 00:33:51.851352   47424 userspace-boot-properties.cpp:745]   androidboot.qemu.cpuvulkan.version=4202496
+I1011 00:33:51.851422   47424 userspace-boot-properties.cpp:745]   androidboot.qemu.gltransport.drawFlushInterval=800
+I1011 00:33:51.851460   47424 userspace-boot-properties.cpp:745]   androidboot.qemu.gltransport.name=pipe
+I1011 00:33:51.851496   47424 userspace-boot-properties.cpp:745]   androidboot.qemu.hwcodec.avcdec=2
+I1011 00:33:51.851535   47424 userspace-boot-properties.cpp:745]   androidboot.qemu.hwcodec.hevcdec=2
+I1011 00:33:51.851570   47424 userspace-boot-properties.cpp:745]   androidboot.qemu.hwcodec.vpxdec=2
+I1011 00:33:51.851606   47424 userspace-boot-properties.cpp:745]   androidboot.qemu.settings.system.screen_off_timeout=2147483647
+I1011 00:33:51.851642   47424 userspace-boot-properties.cpp:745]   androidboot.qemu.virtiowifi=1
+I1011 00:33:51.851676   47424 userspace-boot-properties.cpp:745]   androidboot.qemu.vsync=60
+I1011 00:33:51.851714   47424 userspace-boot-properties.cpp:745]   androidboot.serialno=EMULATOR35X5X10X0
+I1011 00:33:51.851751   47424 userspace-boot-properties.cpp:745]   androidboot.vbmeta.digest=c3fec574c004d42a1ba9007bad5d0e4e9018afeb9ec9c0424f1a6b4f033003fb
+I1011 00:33:51.851786   47424 userspace-boot-properties.cpp:745]   androidboot.vbmeta.hash_alg=sha256
+I1011 00:33:51.851822   47424 userspace-boot-properties.cpp:745]   androidboot.vbmeta.size=6720
+I1011 00:33:51.851856   47424 userspace-boot-properties.cpp:745]   androidboot.veritymode=enforcing

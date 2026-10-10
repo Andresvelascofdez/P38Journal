@@ -1,0 +1,13 @@
+python : Traceback (most recent call last):
+At line:2 char:169
++ ... ournal.debug; python scripts\verify-runtime.py *> docs\v3-runtime.log
++                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-runtime.py", line 89, in <module>
+    edit_number("194999")
+    ~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-runtime.py", line 55, in edit_number
+    raise AssertionError("Reading input missing")
+AssertionError: Reading input missing

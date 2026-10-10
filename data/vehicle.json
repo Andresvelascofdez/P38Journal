@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "vehicle": {
     "id": "p38-2000-46-autobiography",
     "make": "Land Rover",
@@ -14,8 +14,9 @@
     "registration": null,
     "purchase_date": null,
     "purchase_odometer_km": 175000,
-    "current_odometer_km": null,
-    "current_odometer_read_at": null
+    "current_odometer_km": 175000,
+    "current_odometer_read_at": null,
+    "current_odometer_provenance": "user_selected_initial_value_not_dated_reading"
   },
   "preferences": {
     "locale": "es-ES",
@@ -174,7 +175,10 @@
     "never_overwrite_owner_events": true,
     "create_completed_work_at_purchase": false,
     "reset_maintenance_at_purchase": false,
-    "create_demo_events_in_owner_account": false
+    "create_demo_events_in_owner_account": false,
+    "planning_policy": "Use owner-selected 175000 km planning baseline, without fabricating completed work; actual subsequent operations reset only qualifying recurrent rules.",
+    "create_initial_maintenance_tasks": false,
+    "never_overwrite_existing_actual_odometer": true
   },
   "platform": {
     "type": "native_android",
@@ -183,5 +187,14 @@
     "notifications": "local_android_notifications",
     "backend_required": false,
     "internet_required_for_core": false
+  },
+  "planning_reference": {
+    "baseline_km": 175000,
+    "baseline_date": null,
+    "date_default_policy": "recover_plan_creation_date_else_first_v3_activation_date",
+    "provenance": "explicit_owner_instruction_2026-10-11",
+    "is_completed_service": false,
+    "preserve_existing_actual_odometer_on_migration": true,
+    "create_initial_maintenance_tasks": false
   }
 }

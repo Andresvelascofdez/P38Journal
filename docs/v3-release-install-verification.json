@@ -1,0 +1,36 @@
+{
+  "scope": "emulator-5554 existing release, no uninstall and no data clear",
+  "before": {
+    "versionCode": 2,
+    "versionName": "2.0.0"
+  },
+  "install": "adb install -r dist/p38-journal-3.0.0-release.apk: Success",
+  "after": [
+    "versionCode=3 minSdk=26 targetSdk=36",
+    "versionName=3.0.0"
+  ],
+  "launch": "Starting: Intent { cmp=dev.p38journal/.MainActivity }\r\n",
+  "visibleTexts": [
+    "Range Rover P38",
+    "Autobiography · 4.6 V8 · Automático · 2000",
+    "175.000 km",
+    "Valor inicial",
+    "Actualizar kilómetros",
+    "Registrar trabajo",
+    "Todo al día",
+    "Próximo mantenimiento",
+    "Revisión de taller",
+    "Programado",
+    "Próximo: 195.000 km",
+    "11/10/2027",
+    "Te faltan 20.000 km · Faltan 365 días",
+    "29 operaciones incluidas",
+    "Ver mantenimiento",
+    "P38 Journal",
+    "Inicio",
+    "Mantenimiento",
+    "Historial",
+    "Gastos"
+  ],
+  "result": "PASS"
+}

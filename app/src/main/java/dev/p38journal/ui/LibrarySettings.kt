@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import dev.p38journal.data.Document
 import dev.p38journal.platform.Notifications
 import dev.p38journal.platform.Settings
@@ -97,7 +98,7 @@ fun DocumentsPage(model: JournalViewModel, documents: List<Document>, link: Stri
 }
 
 @Composable
-fun SettingsPage(model: JournalViewModel, settings: Settings, busy: Boolean) {
+fun SettingsPage(model: JournalViewModel, settings: Settings, busy: Boolean, section: String = "all") {
     val context = LocalContext.current
     val owner = LocalLifecycleOwner.current
     var permission by remember { mutableStateOf(Notifications.permissionState(context)) }
@@ -116,6 +117,13 @@ fun SettingsPage(model: JournalViewModel, settings: Settings, busy: Boolean) {
     var previewError by rememberSaveable { mutableStateOf<String?>(null) }
     var internal by remember { mutableStateOf<List<File>>(emptyList()) }
     var externalState by remember { mutableStateOf("Comprobando carpeta externa…") }
+    val planning by model.planning.collectAsStateWithLifecycle()
+    var baselineDate by rememberSaveable { mutableStateOf("") }
+    var baselineKm by rememberSaveable { mutableStateOf("175000") }
+    var planningDirty by rememberSaveable { mutableStateOf(false) }
+    var planningConfirm by rememberSaveable { mutableStateOf(false) }
+    var planningError by rememberSaveable { mutableStateOf<String?>(null) }
+    LaunchedEffect(planning) { if (!planningDirty) planning?.let { baselineDate = it.baselineDate; baselineKm = it.baselineKm.toString() } }
     LaunchedEffect(settings) {
         if (!dirty) {
             zone = settings.zone; days = settings.leadDays.toString(); kilometres = settings.leadKm.toString(); hour = settings.hour.toString()
@@ -133,7 +141,7 @@ fun SettingsPage(model: JournalViewModel, settings: Settings, busy: Boolean) {
     }
     val requestPermission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) {
         permission = Notifications.permissionState(context)
-        Notifications.refresh(context)
+        model.action(evaluateTrigger = "permission") {}
         model.announce(if (it) "Permiso concedido. Consulta los canales de Android." else "Permiso denegado. La bandeja sigue disponible.")
     }
     val export = rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument("application/zip")) { uri -> if (uri != null) model.exportBackup(uri) }
@@ -158,6 +166,17 @@ fun SettingsPage(model: JournalViewModel, settings: Settings, busy: Boolean) {
         return settings.copy(zone = zone.trim(), leadDays = leadDays, leadKm = leadKm, hour = preferredHour, enabled = turnOn, weekly = weekly, checks = checks, odometerReminder = odometer)
     }
     Page {
+        if (section != "copies") {
+        Heading("Referencia del plan")
+        Hint("El plan empieza en esta fecha y estos kilómetros cuando no hay un trabajo posterior. Es una referencia elegida: no registra una lectura ni un mantenimiento realizado.")
+        Field(baselineDate, { baselineDate = it; planningDirty = true }, "Fecha inicial del plan (AAAA-MM-DD)", "planning_date")
+        Field(baselineKm, { baselineKm = it; planningDirty = true }, "Kilómetros iniciales del plan", "planning_km", numeric = true)
+        planningError?.let { Text(it, color = MaterialTheme.colorScheme.error) }
+        OutlinedButton(onClick = {
+            runCatching { validateDate(baselineDate); requireNotNull(parseKm(baselineKm)) { "Introduce los kilómetros de referencia." } }
+                .onSuccess { planningError = null; planningConfirm = true }
+                .onFailure { planningError = it.message ?: "Revisa la referencia." }
+        }, enabled = !busy && planning != null, modifier = Modifier.fillMaxWidth()) { Text("Guardar referencia del plan") }
         Heading("Avisos locales")
         Text(permission)
         Text(if (settings.enabled) "Evaluación de avisos activada" else "Avisos desactivados")
@@ -181,12 +200,12 @@ fun SettingsPage(model: JournalViewModel, settings: Settings, busy: Boolean) {
         Hint("Ventana aproximada de envío. Android puede diferir las comprobaciones. Forzar detención desde Ajustes requiere abrir de nuevo la app.")
         Field(days, { days = it; dirty = true }, "Avisar días antes", numeric = true)
         Field(kilometres, { kilometres = it; dirty = true }, "Avisar kilómetros antes", numeric = true)
-        Hint("Son preferencias de aviso, no intervalos del fabricante. Se adaptan a las comprobaciones frecuentes.")
+        Hint("Son preferencias de aviso, no intervalos del fabricante. Las lecturas nuevas evalúan los pendientes en cuanto se guardan.")
         Check("Recordar pendientes semanalmente", weekly) { weekly = it; dirty = true }
-        Check("Resumen de comprobaciones frecuentes", checks) { checks = it; dirty = true }
-        Check("Recordar actualizar kilómetros", odometer) { odometer = it; dirty = true }
         error?.let { Text(it, color = MaterialTheme.colorScheme.error) }
         Button(onClick = { runCatching { values() }.onSuccess { model.updateSettings(it) { dirty = false } }.onFailure { error = it.message ?: "Revisa los ajustes." } }, enabled = !busy, modifier = Modifier.fillMaxWidth()) { Text("Guardar ajustes") }
+        }
+        if (section != "preferences") {
         Heading("Copias externas")
         Hint("Incluyen registros, gastos, documentos y ajustes. Guarda el archivo fuera del teléfono para protegerte ante pérdida o desinstalación.")
         Button(onClick = { export.launch("P38-Journal-${model.today()}.zip") }, enabled = !busy, modifier = Modifier.fillMaxWidth()) { Text("Exportar copia completa") }
@@ -202,8 +221,14 @@ fun SettingsPage(model: JournalViewModel, settings: Settings, busy: Boolean) {
         Hint("Hasta tres copias internas, una por día. No sobreviven a desinstalar ni a perder este teléfono. La copia externa es la protección completa.")
         if (internal.isEmpty()) Hint("Aún no hay copias internas disponibles.")
         internal.forEach { file -> OutlinedButton(onClick = { preview = null; previewError = null; restoreUri = Uri.fromFile(file).toString() }, enabled = !busy, modifier = Modifier.fillMaxWidth()) { Text("Revisar ${file.name}") } }
+        }
         Heading("Privacidad")
         Hint("Español · EUR · km. Sin cuenta ni servidor. Los documentos y los datos quedan en almacenamiento privado de esta instalación.")
+    }
+    if (planningConfirm) Confirm("Cambiar referencia del plan", "Se recalcularán los mantenimientos que dependen de esta referencia. Los trabajos y las lecturas reales se conservarán.", "Guardar referencia", { planningConfirm = false }) {
+        planningConfirm = false
+        model.updatePlanning(validateDate(baselineDate), requireNotNull(parseKm(baselineKm)))
+        planningDirty = false
     }
     preview?.let { info -> Confirm("Restaurar copia validada", "$info\n\nSe integrarán los registros nuevos de la copia y se conservarán los identificadores ya existentes. No revierte ediciones ni anulaciones actuales. Para recuperar todos los datos originales, restaura en una instalación vacía. Después tendrás que activar los avisos en este teléfono.", "Restaurar", { preview = null; restoreUri = null }) {
         val selected = restoreUri

@@ -1,51 +1,35 @@
-# Pruebas y definición de terminado — Android
+# Pruebas de aceptación v3
 
-## Motor y catálogo
+## Calendario
 
-1. Fixture: regla 12 meses/20.000 km, trabajo el 15/10/2026 a 176.000 km. Vence el 15/10/2027 o al alcanzar 196.000 km. No insertar ese trabajo ficticio en la app real.
-2. Tiempo o km pueden vencer solos; ambas causas no duplican tarea/aviso. Sin lectura actual no inventar kilómetros; tiempo sigue evaluándose.
-3. Meses 28/29/30/31, año bisiesto, fin de mes, cambios de horario Asia/Nicosia y cambio de zona. Reloj controlable.
-4. Sin referencia crear acción inicial; compra/seed no son ejecución. Fechas/km aproximados no producen vencimientos falsamente exactos. Históricos previos conservados.
-5. Comprobar aceite no satisface cambio; reparación de una pieza no cierra revisión completa. Programar cita no completa nada.
-6. Evento antiguo introducido después no desplaza el posterior. Editar/anular recupera referencia anterior válida y cancela avisos obsoletos.
-7. Corrección de odómetro explícita, lecturas retroactivas y precisión parcial. Overrides preservados tras actualización de catálogo.
-8. Gasolina/automático, VIN/equipamiento condicionales y fases/hitos según fuentes. No aplicar reglas diésel/manual.
-9. Umbrales proporcionales para controles frecuentes, sin preaviso permanente.
+- Base operativa 175.000, cero trabajos: el plan funciona y no hay mantenimiento inicial por falta de historial. No se crea servicio realizado ni una fecha ficticia de compra.
+- Fixture regla 20.000 km: próximo 195.000, no 180.000/200.000 por redondeo. A 184.500 faltan 10.500; a 194.999 aún no vence; a 195.000 vence; a 197.000 permanece pendiente.
+- Trabajo válido a 195.200 → siguiente 215.200 para esa recurrencia. Otra operación y simple comprobación no reinician el cambio. Registrar gasto no altera reglas.
+- Editar/anular trabajo recomputa referencia correcta. Históricos previos a la base no la desplazan; lectura actual no mueve baseline.
+- Plazo de 12 meses con fecha operativa fixture 15/10/2026 → 15/10/2027, salvo ejecución posterior válida. Tiempo o km pueden vencer por separado; ambas causas una tarea/aviso. Fin de mes/bisiesto/zona horaria correctos.
+- Hitos únicos, fases B/C y reglas de antigüedad/condición revisados; no aplicar suma genérica a todos. Catálogo completo, fabricante gasolina/automático y condiciones por versión.
+- Controles de taller agrupados en su servicio; diarios/semanales sin tarjetas ni alertas por defecto.
 
-Revisor independiente comprueba matriz visual, glosario y todas las filas aplicables de M01, más controles de los manuales. Informe incluidos/excluidos/condicionales con motivo, edición y páginas. Verificar primera revisión, alternancia, hitos y notas. No cerrar con solo el starter. Fuentes bloqueadas no se califican como verificadas ni se reemplazan por intervalos inventados.
+## Interfaz
 
-## Datos, gastos y copias
+Inicio corto con lectura, próximo límite y faltante. Cuando nada toca muestra «Todo al día». No tarjetas «Mantenimiento inicial»/«no consta una referencia precisa». Detalle: título, intervalo, próximo límite, faltante, último registro y botón. Fuentes en despliegue secundario; ningún id/código inglés/razonamiento largo en bloques principales. Navegación Inicio/Mantenimiento/Historial/Gastos y fuentes accesibles. 320–430 dp, fuentes ampliadas, TalkBack, tema oscuro, teclado/Back y rotación correctos.
 
-- Instalación limpia: migración, seed una vez y datos reales sin fixtures. Reiniciar/reabrir conserva registros y adjuntos. Migraciones desde esquema previo sin borrado.
-- Visita con varias líneas atómica; fallo intermedio/doble toque no duplica ni deja estado parcial.
-- Gastos fixture Taller 100 €, Extras 25 €, Gasolina 60 € = 185 €. Editar gasolina a 55 € = 180 €; anular extras = 155 €. No requieren factura, km ni mantenimiento; total persiste tras reinicio/restauración.
-- Una factura pagada de 300 € con dos líneas 100/200 suma 300 €, no 600 €. Vincular un gasto existente evita contar el mismo pago dos veces; pagos diferentes con igual fecha/importe no se fusionan solos.
-- Añadir gasolina no completa tareas, cambia odómetro ni reinicia intervalos. Sin litros/consumo; lista y total, sin informes/gráficos. Importe exacto 12,50/12.50, cero explícito, validación y doble toque.
-- Exportar todo a archivo externo, restaurar en app vacía y comparar registros/adjuntos por checksum. Reimportación no duplica. Vista previa, validación de versiones/espacio, protección contra rutas maliciosas y rollback coherente DB/archivos.
-- Desinstalar/instalar/restaurar en entorno de prueba demuestra respaldo externo; nunca realizar esa prueba destructiva en la instalación personal. Copias internas no se anuncian como protección ante desinstalar/perder móvil.
-- Revocar permiso de origen no rompe documentos ya importados. Permiso externo revocado se refleja y no anuncia copia automática exitosa. CSV opcional seguro frente a fórmulas inyectadas.
+Registrar realizado desde tarea en pocos toques con operación/km precargados. Revisión parcial solo cierra operaciones seleccionadas. Fecha pasada no reduce lectura actual. Formularios secundarios opcionales.
 
-## Avisos Android
+## Notificaciones
 
-- Pruebas WorkManager/Room reales con reloj/transportes controlados y pruebas separadas de emisión visible con NotificationManager.
-- Evaluaciones concurrentes/reintentos generan una entrada por ventana; reinicio recupera estado sin multiplicar notificaciones.
-- Completar tarea durante evaluación invalida generación anterior; ids estables y cancelación correcta. Restaurar/reinstalar reconstruye planificación.
-- Activación concedida/denegada, API antes y después de 33, canal deshabilitado y ajuste de permiso desde sistema. Bandeja disponible siempre.
-- Notificación de prueba visible abre destino correcto, sin alterar trabajos. Deep links y Back correctos.
-- Cierre normal, quitar de recientes/muerte de proceso, reinicio y modo sin Internet. Android puede diferir: comprobar ejecución real dentro de condiciones de prueba, sin exigir minuto exacto.
-- Forzar detención desde Ajustes tiene límite documentado; reabrir recupera trabajo. No afirmar entrega garantizada con detención forzada ni confundir emitted con leído.
-- Primer uso limitado y resúmenes agrupados; no ráfagas por 20 tareas ni por tiempo+km.
+- Guardar lectura 194.999 → 195.000 produce aviso Android real y bandeja, no solo cambio de estado en pantalla. Verificar en emulador/dispositivo, separado de test de transporte simulado.
+- Guardar otra vez mismo km, reabrir y reevaluar worker no repiten vencimiento. Lectura saltando varios límites no pierde tareas; resumen coherente.
+- Completar trabajo cancela aviso anterior; nuevo ciclo genera aviso. Reintento/muerte de proceso recupera sin multiplicar ids.
+- Tiempo se evalúa con interfaz cerrada mediante WorkManager; sin Internet y tras reinicio. Permiso denegado/canal deshabilitado muestran estado fiel y bandeja disponible.
+- Botón «Probar aviso» visible sin alterar mantenimiento; tocar notificación abre detalle/grupo correcto. Documentar límites del SO/forzar detención, sin prometer minuto exacto.
 
-## Interfaz y recorrido
+## Gastos y datos
 
-Compose tests/instrumentación y revisión visual: 360/390/430 dp, mínimo 320 dp, fuentes ampliadas, tema claro/oscuro. Insets, teclado, Back, rotación y muerte de proceso sin pérdida de datos confirmados ni controles solapados. Accesibilidad TalkBack/semantics y objetivos táctiles adecuados.
+Fixtures: Taller 100 + Extras 25 + Gasolina 60 = 185 €. Editar gasolina a 55 → 180; anular extras → 155. Sin factura/km/relación obligatoria. Un pago de taller 300 con dos líneas no suma 600; pagos distintos no se fusionan por coincidencia. Dinero exacto y doble toque sin duplicación. Reinicio/restauración conserva total; sin gráficos/informes/consumo.
 
-Inicio, filtros, registro/edición de visitas, odómetro, averías, piezas, gastos, manual PDF/búsqueda, adjuntos, bandeja, ajustes y exportación/restauración funcionan de principio a fin. PDF escaneado muestra búsqueda no disponible. No aparecen «Por aclarar» ni «Punto de partida» como bloques de producto. Sin VIN/matrícula/costes ficticios.
+Migración desde app actual con lectura 182.000 conserva 182.000, base175.000, historial/gastos/adjuntos y tareas reales, pero retira pendientes iniciales derivados. Seed/migración reejecutados no duplican ni recrean iniciales. Actualizar APK sin desinstalar con firma/identidad actuales; DB sin borrado. Exportación/restauración completa comprobada por checksums. Datos debug separados.
 
-## Build, actualización y entrega
+## Entrega
 
-Ejecutar Gradle unit tests, lint, compilación debug y release firmado. Pruebas instrumentadas en emulador/dispositivo cuando estén disponibles, indicando API y entorno. Verificar firma, applicationId, versionCode y checksum. Actualizar APK previo con misma firma sin desinstalar, conserva historial/gastos/adjuntos y aplica migración. APK debug tiene datos separados.
-
-Entregar APKs reales en dist/, código completo, catálogo revisado, scripts reproducibles y docs/TEST_REPORT.md con comandos, resultados reales y límites. docs/USER_TEST.md con 5–8 pasos para el propietario. Un build exitoso no demuestra recepción física de avisos. Si no hay dispositivo/emulador/SDK disponible, registrar qué pruebas faltan y su motivo; no llamar completa la parte sin comprobar.
-
-No terminado si hay botones principales vacíos, datos solo en memoria, migraciones destructivas, reglas inventadas, solo 11 reglas starter o APK sin generar. El paquete de especificación no debe confundirse con el producto construido.
+Build unit tests/lint/debug/release firmado y pruebas Android donde el entorno permita. Reportar comandos/resultados reales, entorno/API y bloqueos específicos. Entregar APK actualizado y 5–8 pasos de prueba. No afirmar app corregida si solo cambiaron etiquetas y el motor todavía genera revisión inicial o no emite aviso al guardar km.

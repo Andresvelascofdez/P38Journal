@@ -4,6 +4,19 @@ import androidx.room.*
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.flow.Flow
+import java.time.Clock
+import java.time.LocalDate
+import java.time.ZoneId
+
+internal fun legacyNotificationKind(id: String?, ruleId: String?, generation: String?): String? {
+    if (id == null || ruleId.isNullOrBlank() || generation.isNullOrBlank()) return null
+    val prefix = "$ruleId:$generation:"
+    if (!id.startsWith(prefix)) return null
+    val parts = id.removePrefix(prefix).split(':')
+    if (parts.size != 2 || parts[0] !in setOf("INITIAL", "DUE", "SOON")) return null
+    if (parts[1] != "cycle" && !parts[1].matches(Regex("[0-9]+"))) return null
+    return parts[0]
+}
 
 @Dao
 interface JournalDao {
@@ -29,6 +42,8 @@ interface JournalDao {
     @Query("SELECT * FROM audit") suspend fun allAudit(): List<Audit>
     @Query("SELECT * FROM ledger") suspend fun allLedger(): List<Ledger>
     @Query("SELECT * FROM vehicle") suspend fun allVehicles(): List<VehicleRecord>
+    @Query("SELECT * FROM planning_reference") suspend fun allPlanningReferences(): List<PlanningRecord>
+    @Query("SELECT * FROM planning_reference WHERE id='main'") fun observePlanningReference(): Flow<PlanningRecord?>
     @Query("SELECT COALESCE(SUM(cents),0) FROM expenses WHERE active = 1") suspend fun totalExpenses(): Long
     @Upsert suspend fun putVisit(value: Visit)
     @Upsert suspend fun putLine(value: WorkLine)
@@ -43,18 +58,19 @@ interface JournalDao {
     @Upsert suspend fun putAudit(value: Audit)
     @Upsert suspend fun putLedger(value: Ledger)
     @Upsert suspend fun putVehicle(value: VehicleRecord)
+    @Upsert suspend fun putPlanningReference(value: PlanningRecord)
     @Query("DELETE FROM work_lines WHERE visitId = :visitId") suspend fun deleteVisitLines(visitId: String)
     @Query("DELETE FROM notes WHERE id = :id") suspend fun deleteNote(id: String)
     @Query("DELETE FROM documents WHERE id = :id") suspend fun deleteDocument(id: String)
     @Query("DELETE FROM ledger WHERE id = :id") suspend fun deleteLedger(id: String)
     @Query("DELETE FROM ledger") suspend fun clearLedger()
-    @Query("UPDATE inbox SET state = 'cancelled' WHERE ruleId = :ruleId AND state != 'read'") suspend fun cancelInbox(ruleId: String)
-    @Query("UPDATE ledger SET state = 'cancelled' WHERE ruleId = :ruleId") suspend fun cancelLedger(ruleId: String)
+    @Query("UPDATE inbox SET state = 'cancelled' WHERE ruleId = :ruleId AND origin = 'automatic' AND state != 'read'") suspend fun cancelInbox(ruleId: String)
+    @Query("UPDATE ledger SET state = 'cancelled' WHERE ruleId = :ruleId AND origin = 'automatic'") suspend fun cancelLedger(ruleId: String)
 }
 
 @Database(entities = [Visit::class, WorkLine::class, Expense::class, Reading::class, Note::class,
     Document::class, Inbox::class, RuleRecord::class, RuleRevisionRecord::class, EventRecord::class,
-    Audit::class, Ledger::class, VehicleRecord::class], version = 2, exportSchema = true)
+    Audit::class, Ledger::class, VehicleRecord::class, PlanningRecord::class], version = 3, exportSchema = true)
 abstract class JournalDatabase : RoomDatabase() {
     abstract fun dao(): JournalDao
 
@@ -63,6 +79,44 @@ abstract class JournalDatabase : RoomDatabase() {
             override fun migrate(db: SupportSQLiteDatabase) {
                 db.execSQL("CREATE TABLE IF NOT EXISTS audit (id TEXT NOT NULL PRIMARY KEY, at TEXT NOT NULL, action TEXT NOT NULL, recordId TEXT NOT NULL, detail TEXT NOT NULL)")
             }
+        }
+        val MIGRATION_2_3 = migration2To3()
+        fun migration2To3(clock: Clock = Clock.system(ZoneId.of("Asia/Nicosia"))) = object : Migration(2, 3) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("CREATE TABLE IF NOT EXISTS planning_reference (id TEXT NOT NULL PRIMARY KEY, baselineKm INTEGER NOT NULL, baselineDate TEXT NOT NULL, provenance TEXT NOT NULL, policyVersion INTEGER NOT NULL)")
+                val recovered = db.query("SELECT at FROM audit WHERE action IN ('plan_created','planning_reference_created') ORDER BY at LIMIT 1").use {
+                    if (it.moveToFirst()) runCatching { java.time.Instant.parse(it.getString(0)).atZone(clock.zone).toLocalDate().toString() }.getOrNull() else null
+                }
+                db.execSQL("INSERT OR IGNORE INTO planning_reference(id,baselineKm,baselineDate,provenance,policyVersion) VALUES('main',175000,?,'user_selected_planning_baseline',3)", arrayOf(recovered ?: LocalDate.now(clock).toString()))
+                val newInboxOrigin = addColumn(db, "inbox", "origin", "TEXT NOT NULL DEFAULT 'automatic'")
+                if (addColumn(db, "inbox", "policyVersion", "INTEGER NOT NULL DEFAULT 3")) db.execSQL("UPDATE inbox SET policyVersion=2")
+                val newLedgerOrigin = addColumn(db, "ledger", "origin", "TEXT NOT NULL DEFAULT 'automatic'")
+                if (addColumn(db, "ledger", "policyVersion", "INTEGER NOT NULL DEFAULT 3")) db.execSQL("UPDATE ledger SET policyVersion=2")
+                if (newLedgerOrigin) db.execSQL("UPDATE ledger SET origin='legacy_unknown' WHERE kind NOT IN ('INITIAL','DUE','SOON','odometer')")
+                if (newInboxOrigin) {
+                    db.execSQL("UPDATE inbox SET origin='legacy_unknown' WHERE id NOT IN (SELECT id FROM ledger WHERE origin='automatic')")
+                    val generatedIds = db.query("SELECT id,ruleId,generation FROM inbox WHERE origin='legacy_unknown' AND id NOT IN (SELECT id FROM ledger)").use { cursor ->
+                        buildList { while (cursor.moveToNext()) if (legacyNotificationKind(cursor.getString(0), cursor.getString(1), cursor.getString(2)) != null) add(cursor.getString(0)) }
+                    }
+                    generatedIds.forEach { db.execSQL("UPDATE inbox SET origin='automatic' WHERE id=?", arrayOf(it)) }
+                }
+                db.execSQL("UPDATE inbox SET state='cancelled' WHERE origin='automatic' AND id IN (SELECT id FROM ledger WHERE kind='INITIAL' AND origin='automatic')")
+                val orphanInitialIds = db.query("SELECT id,ruleId,generation FROM inbox WHERE origin='automatic'").use { cursor ->
+                    buildList { while (cursor.moveToNext()) if (legacyNotificationKind(cursor.getString(0), cursor.getString(1), cursor.getString(2)) == "INITIAL") add(cursor.getString(0)) }
+                }
+                orphanInitialIds.forEach { db.execSQL("UPDATE inbox SET state='cancelled' WHERE id=?", arrayOf(it)) }
+                db.execSQL("UPDATE ledger SET state='cancelled' WHERE kind='INITIAL' AND origin='automatic'")
+                db.execSQL("INSERT OR IGNORE INTO audit(id,at,action,recordId,detail) VALUES('planning-policy-v3',?,'planning_policy_migrated','main','Base operativa separada; avisos iniciales automáticos retirados; historial conservado')", arrayOf(clock.instant().toString()))
+            }
+        }
+        private fun addColumn(db: SupportSQLiteDatabase, table: String, column: String, definition: String): Boolean {
+            val present = db.query("PRAGMA table_info($table)").use { cursor ->
+                var found = false
+                while (cursor.moveToNext()) if (cursor.getString(cursor.getColumnIndexOrThrow("name")) == column) found = true
+                found
+            }
+            if (!present) db.execSQL("ALTER TABLE $table ADD COLUMN $column $definition")
+            return !present
         }
     }
 }

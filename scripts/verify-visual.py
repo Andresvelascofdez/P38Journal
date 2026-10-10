@@ -40,8 +40,8 @@ def tap(text):
 
 
 def screenshot(name):
-    (DEST / (name + ".png")).write_bytes(adb("exec-out", "screencap", "-p"))
-    (DEST / (name + ".xml")).write_bytes(adb("shell", "cat", "/sdcard/p38-layout.xml"))
+    (DEST / ("v3-" + name + ".png")).write_bytes(adb("exec-out", "screencap", "-p"))
+    (DEST / ("v3-" + name + ".xml")).write_bytes(adb("shell", "cat", "/sdcard/p38-layout.xml"))
 
 
 try:
@@ -52,12 +52,12 @@ try:
         adb("shell", "wm", "size", str(width * 3) + "x2400")
         start()
         tap("Inicio"); nodes(); screenshot(f"home-{width}dp-light")
-        tap("Plan"); nodes(); screenshot(f"plan-{width}dp-light")
+        tap("Mantenimiento"); nodes(); screenshot(f"plan-{width}dp-light")
     adb("shell", "wm", "size", "960x2400")
     adb("shell", "settings", "put", "system", "font_scale", "1.3")
     adb("shell", "cmd", "uimode", "night", "yes")
     start(); tap("Inicio"); nodes(); screenshot("home-320dp-dark-font130")
-    tap("M\u00e1s"); tap("Ajustes y copias"); nodes(); screenshot("settings-320dp-dark-font130")
+    tap("M\u00e1s opciones"); tap("Ajustes"); nodes(); screenshot("settings-320dp-dark-font130")
 finally:
     adb("shell", "wm", "size", "reset")
     adb("shell", "wm", "density", "reset")

@@ -1,79 +1,174 @@
 {
-  "package": "P38 Journal — Android nativo",
-  "version": "2.0.0",
-  "prepared_on": "2026-10-10",
-  "artifact_type": "development_specification_not_built_app",
+  "package": "P38 Journal — Android, corrección calendario desde 175000 km",
+  "version": "3.0.0",
+  "prepared_on": "2026-10-11",
+  "artifact_type": "built_native_android_application",
   "platform": "native_android",
-  "delivery_required": [
-    "signed_release_apk",
-    "debug_apk"
-  ],
-  "supersedes": "P38-Codex-Paquete 1.x (PWA)",
+  "target": "existing_android_project_updated_preserving_identity_and_signing",
+  "supersedes": "versions 1 and 2 conflicting requirements",
   "files": [
     {
       "path": "AGENTS.md",
-      "bytes": 2693,
-      "sha256": "f96e420ac3cec6f7a395db94841fc55297c8dbcfb2bce322c78b9cb0b360fb54"
+      "bytes": 1774,
+      "sha256": "0179acf15b398a6eaa226cb6c904faee8e83effdde3ad33a0eaa5f59264cf679"
     },
     {
       "path": "ANDROID.md",
-      "bytes": 6085,
-      "sha256": "d8c9735e54ce4bb57f8a6c3854857e1072c19896c478e525a399d1af80bf0eb0"
+      "bytes": 2085,
+      "sha256": "3919eaff1d7e2487a480256b30959182fdd034976f663ccc4dc536d2c9be391d"
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 605,
-      "sha256": "a690c86b9c724ee3207ed6357fd1e86896a70ab0abf279b2f45d12a6435a1d96"
+      "bytes": 1627,
+      "sha256": "38410a12296c46067c3751218c09b6d9fb5ae723b01952f2f8f5d546f4d26c5c"
     },
     {
       "path": "ENGINE.md",
-      "bytes": 7879,
-      "sha256": "51b2586188d6493583b2532701daf8b7d0bfe20d78ffab31ca68e6b839a6d7c1"
+      "bytes": 6834,
+      "sha256": "5d95ccc14bd42c96a1049dc1ca108617193b537f761d52f8931d9bc852086222"
     },
     {
       "path": "HANDOFF.md",
-      "bytes": 2237,
-      "sha256": "8279603069bd865881f43e74121dc144f1f21fdb895b99e6273c415d93af0acd"
+      "bytes": 2576,
+      "sha256": "8636fd20bfdae676453092b85177d8848877a988ecde8d813842a522e636d27d"
     },
     {
       "path": "INICIO_CODEX.txt",
-      "bytes": 689,
-      "sha256": "ea116b3ac0c24d4d6a8d769bc00985e8f27fed1a27bcd27feeff7aa066441319"
+      "bytes": 910,
+      "sha256": "ad5e612db88af8e822a16c2bc86910a4a91bcfb171640549af63ea0f8d63a125"
+    },
+    {
+      "path": "MIGRATION.md",
+      "bytes": 2626,
+      "sha256": "ace85e320196e8345fdea939d26d4709d408009fab9b709411900a8b5c560e9c"
     },
     {
       "path": "PROMPT_CODEX.md",
-      "bytes": 7915,
-      "sha256": "16d999734c312c401c62a35a9ec20d1206a9ae72d9a53815eb4a528f4f29a91c"
+      "bytes": 6480,
+      "sha256": "449ab1b697aea6c85917e9b991e0fe804fe1906d874d7ace0749584ddf70899d"
     },
     {
       "path": "QA.md",
-      "bytes": 6167,
-      "sha256": "47e54f1ed03e9057faf7c4b1489fc0ae60d9ea0ca00bca1d1e22e2a719f1ce79"
+      "bytes": 3947,
+      "sha256": "f439fab7e0f45ac9c19cf1a96a2bd34fe7c40915582f561b035c59652f10c939"
     },
     {
       "path": "README.md",
-      "bytes": 3274,
-      "sha256": "3d63cef587c98a3af12db87997cca0b5c8d2507e7fa06139dd2f9d0fdee72b4e"
+      "bytes": 3220,
+      "sha256": "42a692c41573374bf90ff0d06412e3ece894b0a5570f974e47f57560679f3bc8"
     },
     {
       "path": "SOURCES.md",
-      "bytes": 4479,
-      "sha256": "031c5274344877b5e68d2e3992ef0d70a91df8678cd105f0c2a7e34c908e8cd7"
+      "bytes": 5060,
+      "sha256": "3533ac165aa98e588ef6fd55b10229e490157374df9ee450411510dba6c395e4"
     },
     {
       "path": "SPEC.md",
-      "bytes": 11275,
-      "sha256": "85614cdc16939a5618f0a7160eac62024296d7f4d47b79da6155340ee44e7202"
+      "bytes": 5065,
+      "sha256": "892ffda5b276db0342e8b324d8e943ac595cd22d19dd7ca107c78f6dce54cff2"
     },
     {
       "path": "data/maintenance-starter.json",
-      "bytes": 10397,
-      "sha256": "f54320a0e6223750006b440eda80120bc346a39d69386e8a8294cd5c12bb2a14"
+      "bytes": 11736,
+      "sha256": "aad889426c1ab66429666c33721fe0161e8a0c61f662b33fca24da19c7e35abe"
     },
     {
       "path": "data/vehicle.json",
-      "bytes": 5878,
-      "sha256": "227db45dc48a13a15cb3c88bef7f9561b76a14058774d48b0866831f9658da34"
+      "bytes": 6615,
+      "sha256": "ba8d114e6098744f4752bbc905ee2ba83846863657076b15b2a79a47a3b84de9"
+    },
+    {
+      "path": "data/maintenance-catalogue.json",
+      "bytes": 71423,
+      "sha256": "3319e47625b379a22ca0f48bb8adc35ef8a7d24734dfeaa2c2beb722d1d72a6c"
+    },
+    {
+      "path": "dist/LEEME.md",
+      "bytes": 1073,
+      "sha256": "884dde278778bc075b5a4fb0491ae6d536d6c8f7598c70aee23e51df4d4fc955"
+    },
+    {
+      "path": "dist/SHA256SUMS.txt",
+      "bytes": 384,
+      "sha256": "0bfe0d522c06cc549a538ffc6d6b2c58d074d9df08363324b578118204926b4c"
+    },
+    {
+      "path": "docs/USER_TEST.md",
+      "bytes": 2802,
+      "sha256": "d797d5f0997a7363ef54a2a786636c41156e245620476efa8fa6fcc85ed47bce"
+    },
+    {
+      "path": "docs/TEST_REPORT.md",
+      "bytes": 11218,
+      "sha256": "0d9e1766826fa05702728d58d5f8695e50fdfe128dd78a7df4c42d2d6bd79152"
+    },
+    {
+      "path": "docs/INDEPENDENT_REVIEW.md",
+      "bytes": 30802,
+      "sha256": "c9f0c0922a0069904dec29f0a19c32f98a3e91ae64f576f05397f6a0ade2ef0d"
+    },
+    {
+      "path": "docs/PROGRESS.md",
+      "bytes": 4265,
+      "sha256": "15c7c72432d4915b7222820a5239a202b6fba24e75182e1f5231bf8f32a190d7"
+    },
+    {
+      "path": "docs/CATALOGUE.md",
+      "bytes": 14802,
+      "sha256": "8653bdcf98432c936ff59045ff28ff8bf018a90a67dbed690feaa2ba9b10e996"
+    },
+    {
+      "path": "docs/BUILD_AND_PRIVACY.md",
+      "bytes": 7662,
+      "sha256": "280cb809ca03b79adda8a847392c86e64ea9b6ff0bba2886ebb27dba744707a3"
+    },
+    {
+      "path": "docs/CONTRACTS.md",
+      "bytes": 12044,
+      "sha256": "5a58ce966e7b5cd1165c65b7f7159735eb3e7b0123929a814fcdc4e0e310411c"
+    },
+    {
+      "path": "docs/v3-lifecycle-verification.json",
+      "bytes": 1079,
+      "sha256": "e8cb4dcef09477305a8ee8b09b47ef22939da16a9ca9c5eed0401c854b4a6cf4"
+    },
+    {
+      "path": "docs/v3-runtime-verification.json",
+      "bytes": 662,
+      "sha256": "64fb185b5192ecaf8d33373b0508e9bfeb18fe98e77033cd924b3b02a57883ae"
+    },
+    {
+      "path": "docs/v3-release-install-verification.json",
+      "bytes": 963,
+      "sha256": "2efea1275785c211b0cd82ccf74fd975993d3f921177711702adc4e901fa5a48"
     }
-  ]
+  ],
+  "delivery": {
+    "versionCode": 3,
+    "minSdk": 26,
+    "targetSdk": 36,
+    "releaseCertificateSha256": "ce157b9b800d3e21c544ca21cbb398ffdfb3fab46ba5318adcc63d8cd14adf2b",
+    "releaseUpdatedInPlaceOnEmulator": true,
+    "physicalDeviceTested": false,
+    "guide": "docs/USER_TEST.md",
+    "testReport": "docs/TEST_REPORT.md",
+    "independentReview": "docs/INDEPENDENT_REVIEW.md",
+    "progress": "docs/PROGRESS.md",
+    "artifacts": [
+      {
+        "path": "dist/p38-journal-3.0.0-release.apk",
+        "applicationId": "dev.p38journal",
+        "bytes": 20402600,
+        "sha256": "fa81561c32199b983e64026ae1a64c90105482f56c3fdaacd6f1db396afa9729",
+        "catalogueMatchesSource": true
+      },
+      {
+        "path": "dist/p38-journal-3.0.0-debug.apk",
+        "applicationId": "dev.p38journal.debug",
+        "bytes": 27469750,
+        "sha256": "1a9d69678f04d56f7757fa52d13763540d0811942c5ea4901443b789bffb4f1c",
+        "catalogueMatchesSource": true
+      }
+    ]
+  }
 }

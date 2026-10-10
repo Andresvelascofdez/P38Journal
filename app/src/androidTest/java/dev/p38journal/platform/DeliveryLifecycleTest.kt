@@ -22,18 +22,7 @@ class DeliveryLifecycleTest {
         require(context.packageName.endsWith(".debug"))
         val repo = Repository(context); repo.initialize()
         val files = Files(context, repo)
-        if (stage == "seed") {
-            repo.saveExpense(Expense("DELIVERY_FIXTURE_PAYMENT", "2026-10-10", 1250, "ISOLATED DELIVERY FIXTURE", "extras"))
-            repo.saveReading(Reading("DELIVERY_FIXTURE_READING", "2026-10-10", 176001), true)
-            repo.saveNote(Note("DELIVERY_FIXTURE_NOTE", "fault", "ISOLATED DELIVERY FIXTURE", "Test fixture only", "resolved", "2026-10-10"))
-            val source = File(context.cacheDir, "fixture-source.pdf")
-            source.writeBytes(InstrumentationRegistry.getInstrumentation().context.assets.open("fixture-text.pdf").use { it.readBytes() })
-            val document = files.importDocument(Uri.fromFile(source))
-            repo.saveDocument(document.copy(tags = "DELIVERY_FIXTURE_NOTE"))
-            context.getSharedPreferences("document-favourites", 0).edit().putString(document.id, "0").commit()
-            files.exportBackup(Uri.fromFile(File(context.cacheDir, "lifecycle-export.zip")))
-            source.delete()
-        }
+        require(stage in setOf("verify-update", "restore"))
         if (stage == "restore") {
             assertFalse(repo.dao.allExpenses().any { it.id == "DELIVERY_FIXTURE_PAYMENT" })
             val input = Uri.fromFile(File(context.cacheDir, "lifecycle-import.zip"))
@@ -41,13 +30,34 @@ class DeliveryLifecycleTest {
             files.restoreBackup(input); files.restoreBackup(input)
         }
         assertEquals(1250L, repo.dao.allExpenses().single { it.id == "DELIVERY_FIXTURE_PAYMENT" }.cents)
-        assertEquals(176001, repo.currentKm())
+        assertEquals(182000, repo.currentKm())
         assertEquals("resolved", repo.dao.allNotes().single { it.id == "DELIVERY_FIXTURE_NOTE" }.status)
         val document = repo.dao.allDocuments().single { "DELIVERY_FIXTURE_NOTE" in it.tags }
         assertEquals(document.sha256, Files.checksum(File(context.filesDir, document.path)))
         assertEquals("0", context.getSharedPreferences("document-favourites", 0).getString(document.id, ""))
-        assertTrue(repo.allEvents().isEmpty())
-        assertEquals(1250L, repo.totalExpenses())
-        assertEquals(60, repo.allRules().size)
+        assertEquals(2, repo.allEvents().count { it.visitId == "DELIVERY_FIXTURE_VISIT" && it.active })
+        assertEquals(30000L, repo.dao.allExpenses().single { it.visitId == "DELIVERY_FIXTURE_VISIT" }.cents)
+        assertEquals(31250L, repo.totalExpenses())
+        assertEquals(62, repo.allRules().size)
+        assertEquals(175000, repo.planningReference().baselineKm)
+        assertEquals("2026-10-10", repo.planningReference().baselineDate)
+        assertEquals("pending", repo.dao.allInbox().single { it.id == "DELIVERY_OWNER_MANUAL" }.state)
+        assertEquals("cancelled", repo.dao.allInbox().single { it.id == "engine-oil-filter:fixture:INITIAL:0" }.state)
+        assertEquals(198000, repo.tasks().single { it.rule.id == "engine-oil-filter" }.dueKm)
+        assertFalse(repo.tasks().any { it.status == "INITIAL" })
+        repo.initialize()
+        assertEquals(2, repo.allEvents().count { it.visitId == "DELIVERY_FIXTURE_VISIT" && it.active })
+        if (stage == "verify-update") {
+            val backups = File(context.filesDir, "migration-backups").listFiles().orEmpty()
+            assertTrue(backups.isNotEmpty())
+            val manifest = com.google.gson.JsonParser.parseString(File(backups.single(), "manifest.json").readText()).asJsonObject
+            assertEquals(2, manifest.get("sourceSchema").asInt)
+            assertTrue(manifest.get("verifiedIntegrity").asBoolean)
+            val source = android.database.sqlite.SQLiteDatabase.openDatabase(File(backups.single(), "p38-journal.db").path, null, android.database.sqlite.SQLiteDatabase.OPEN_READONLY)
+            try {
+                assertEquals(2, source.version)
+                source.rawQuery("SELECT km FROM readings WHERE id='DELIVERY_FIXTURE_READING'", null).use { assertTrue(it.moveToFirst()); assertEquals(182000, it.getInt(0)) }
+            } finally { source.close() }
+        }
     }
 }

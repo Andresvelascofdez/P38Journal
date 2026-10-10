@@ -37,6 +37,7 @@ class JournalViewModel(application: Application) : AndroidViewModel(application)
     val notes = repository.observeNotes.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
     val documents = repository.observeDocuments.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
     val inbox = repository.observeInbox.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
+    val planning = repository.observePlanningReference().stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
 
     init {
         viewModelScope.launch {
@@ -46,6 +47,7 @@ class JournalViewModel(application: Application) : AndroidViewModel(application)
                 Notifications.schedule(application)
                 Notifications.refresh(application)
                 launch { repository.observeInbox.drop(1).collect { reloadTasks() } }
+                launch { repository.observePlanningReference().drop(1).collect { reloadTasks() } }
                 combine(repository.observeVisits, repository.observeReadings, preferences.flow, repository.observeEvents(), repository.observeRules()) { _, _, _, _, _ -> Unit }
                     .collect { reloadTasks() }
             } catch (e: Exception) {
@@ -69,13 +71,17 @@ class JournalViewModel(application: Application) : AndroidViewModel(application)
         }
     }
 
-    fun action(success: String = "Guardado", after: () -> Unit = {}, work: suspend () -> Unit) {
+    fun action(success: String = "Guardado", after: () -> Unit = {}, evaluateTrigger: String? = null, work: suspend () -> Unit) {
         if (_busy.value) return
         _busy.value = true
         viewModelScope.launch {
             try {
                 withContext(Dispatchers.IO) { work() }
                 reloadTasks()
+                if (evaluateTrigger != null) {
+                    try { withContext(Dispatchers.IO) { Notifications.evaluateNow(getApplication(), evaluateTrigger) } }
+                    catch (_: Exception) { Notifications.refresh(getApplication()) }
+                }
                 Notifications.refresh(getApplication())
                 _message.value = success
                 after()
@@ -85,15 +91,16 @@ class JournalViewModel(application: Application) : AndroidViewModel(application)
         }
     }
 
-    fun saveVisit(visit: Visit, lines: List<WorkLine>, selected: List<String>, linkedExpense: String?, after: () -> Unit) =
-        action(after = after) { repository.saveVisit(visit, lines, selected, linkedExpense) }
-    fun voidVisit(id: String, after: () -> Unit) = action("Trabajo anulado", after) { repository.voidVisit(id) }
+    fun saveVisit(visit: Visit, lines: List<WorkLine>, selected: List<String>, linkedExpense: String?, currentReading: Reading?, after: () -> Unit) =
+        action(after = after, evaluateTrigger = "work") { repository.saveVisit(visit, lines, selected, linkedExpense, currentReading) }
+    fun voidVisit(id: String, after: () -> Unit) = action("Trabajo anulado", after, "work") { repository.voidVisit(id) }
     fun saveExpense(expense: Expense, after: () -> Unit) = action(after = after) { repository.saveExpense(expense) }
     fun voidExpense(id: String, after: () -> Unit) = action("Gasto anulado", after) { repository.voidExpense(id) }
-    fun saveReading(reading: Reading, correction: Boolean, after: () -> Unit) = action(after = after) { repository.saveReading(reading, correction) }
+    fun saveReading(reading: Reading, correction: Boolean, after: () -> Unit) = action(after = after, evaluateTrigger = "reading") { repository.saveReading(reading, correction) }
+    fun updatePlanning(date: String, km: Int) = action("Referencia del plan guardada", evaluateTrigger = "change") { repository.updatePlanningReference(date, km) }
     fun saveNote(note: Note, after: () -> Unit) = action(after = after) { repository.saveNote(note) }
     fun deleteNote(id: String, after: () -> Unit) = action("Registro eliminado", after) { repository.deleteNote(id) }
-    fun updateSettings(value: Settings, after: () -> Unit = {}) = action("Ajustes guardados", after) {
+    fun updateSettings(value: Settings, after: () -> Unit = {}) = action("Ajustes guardados", after, "permission") {
         ZoneId.of(value.zone)
         preferences.update(value)
         Notifications.schedule(getApplication())

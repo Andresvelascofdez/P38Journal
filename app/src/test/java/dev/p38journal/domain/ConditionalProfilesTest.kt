@@ -7,7 +7,7 @@ import java.time.LocalDate
 class ConditionalProfilesTest {
     private fun rule(id: String) = Rule(id, "Comprobar aplicabilidad", "fixture-system", "professional_inspection",
         source = "M01 edición y páginas de fixture", sourceUrl = "https://example.invalid/manual.pdf",
-        condition = "Condición original", recurrence = "condition")
+        condition = "Condición original", recurrence = "condition", scheduleVisibility = "conditional")
 
     @Test fun allThreeProfilesKeepSourceAndDefineOnlyTheirVerifiedIntervals() {
         val fuel = ConditionalProfiles.proposed(rule("fuel-filter-applicability"))!!
@@ -21,6 +21,7 @@ class ConditionalProfilesTest {
             assertEquals("M01 edición y páginas de fixture", profile.source)
             assertEquals("https://example.invalid/manual.pdf", profile.sourceUrl)
             assertEquals("component", profile.recurrence)
+            assertEquals("maintenance", profile.scheduleVisibility)
             assertTrue(profile.condition.contains("Condición original")); assertEquals(profile.title, profile.initialAction)
         }
         assertNull(ConditionalProfiles.proposed(rule("ordinary-rule")))
@@ -31,7 +32,7 @@ class ConditionalProfilesTest {
         val active = ConditionalProfiles.proposed(sourceRule)!!
         val inspection = Event("inspection", "visit", sourceRule.id, "2026-10-10", 176000)
         val task = Engine.evaluate(listOf(active), listOf(inspection), LocalDate.parse("2026-10-10"), 176000).single()
-        assertEquals("INITIAL", task.status); assertNull(task.lastEvent); assertNull(task.dueDate); assertNull(task.dueKm)
+        assertEquals("PLANNED", task.status); assertNull(task.lastEvent); assertEquals("2030-10-10", task.dueDate); assertEquals(255000, task.dueKm)
         val replacement = inspection.copy(id = "replacement", ruleId = active.id)
         val performed = Engine.evaluate(listOf(active), listOf(inspection, replacement), LocalDate.parse("2026-10-10"), 176000).single()
         assertEquals("2030-10-10", performed.dueDate); assertEquals(256000, performed.dueKm)

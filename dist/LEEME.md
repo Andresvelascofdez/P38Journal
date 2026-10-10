@@ -1,11 +1,12 @@
-# P38 Journal 2.0.0
+# P38 Journal 3.0 — instalación
 
-**Para usar con el coche:** instala `p38-journal-2.0.0-release.apk` en Android 8.0 o posterior. Es el release firmado. Abre el archivo en el teléfono y permite la instalación desde ese origen cuando Android lo solicite.
+- **Uso real:** [p38-journal-3.0.0-release.apk](p38-journal-3.0.0-release.apk). Instálalo encima del anterior, **sin desinstalar**, para conservar tus datos. Mantiene la firma y `dev.p38journal`.
+- **Pruebas separadas:** [p38-journal-3.0.0-debug.apk](p38-journal-3.0.0-debug.apk). Aparece como «P38 Journal · Prueba» y no comparte datos con release.
 
-**Para pruebas:** instala también `p38-journal-2.0.0-debug.apk`. Se llama **P38 Journal · Prueba** y guarda datos separados. Usa esta app para introducir ejemplos ficticios.
+Android 8.0 o posterior. Abre el APK y acepta la instalación/actualización; permite instalar desde la aplicación que lo abre si Android lo pide. No hay cuenta, servidor ni configuración técnica.
 
-Guía de 8 pasos: [USER_TEST.md](../docs/USER_TEST.md). Verificaciones y límites reales: [TEST_REPORT.md](../docs/TEST_REPORT.md). Huellas de los archivos: `SHA256SUMS.txt`.
+El plan empieza en 175.000 km sin inventar trabajos. Conserva la lectura real que ya tengas. Activa los avisos desde **Más opciones → Ajustes** y concede el permiso Android.
 
-Activa los avisos desde **Más → Ajustes y copias** y prueba el aviso. Exporta allí una copia completa a un destino externo antes de cambiar de teléfono o desinstalar. Para actualizar, instala el nuevo release encima, sin desinstalar.
+[Guía breve de ocho pasos](../docs/USER_TEST.md) · [Pruebas reales y límites](../docs/TEST_REPORT.md) · [Hashes de APK](SHA256SUMS.txt)
 
-Material de firma privado conservado fuera del proyecto en `C:/Users/Admin/.p38journal/`; no hace falta para instalar. Debe mantenerse una copia privada segura para poder firmar futuras actualizaciones.
+Para probar el cruce 194.999 → 195.000 y los gastos ficticios, usa únicamente debug. Los APK v2 que puedan permanecer en esta carpeta son entregas anteriores.

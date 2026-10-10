@@ -8,7 +8,6 @@ import androidx.test.platform.app.InstrumentationRegistry
 import androidx.lifecycle.ViewModelProvider
 import dev.p38journal.MainActivity
 import dev.p38journal.data.Repository
-import dev.p38journal.domain.ConditionalProfiles
 import dev.p38journal.platform.Files
 import com.google.gson.JsonParser
 import kotlinx.coroutines.runBlocking
@@ -44,7 +43,6 @@ class JournalUiTest {
         val beforeEvents = repository.allEvents()
         val beforeKm = repository.currentKm()
         val concept = "FIXTURE UI ${UUID.randomUUID()}"
-        compose.onNodeWithText("Más").performClick()
         compose.onNodeWithText("Gastos").performClick()
         compose.onNodeWithText("Añadir gasto").performClick()
         compose.onNodeWithTag("expense_amount").performTextInput("12,50")
@@ -81,40 +79,97 @@ class JournalUiTest {
         repository.voidVisit(visit.id)
     }
 
-    @Test fun conditionalProfileRequiresEvidenceAndCanBeDisabledWithoutCompletingWork(): Unit = runBlocking {
+    @Test fun groupedReviewRecordsOnlySelectedOperationWithPrefilledDateAndKilometres(): Unit = runBlocking {
         waitForApp()
         val repository = Repository(compose.activity)
-        val original = repository.tasks().first { it.rule.id == "fuel-filter-applicability" }
-        val expected = requireNotNull(ConditionalProfiles.proposed(original.rule))
-        val beforeEvents = repository.allEvents()
+        val group = maintenanceGroups(repository.tasks()).first { it.tasks.size > 1 }
+        val selected = group.tasks.first()
+        val baseline = repository.planningReference()
         val beforeKm = repository.currentKm()
-        compose.onNodeWithText("Plan").performClick()
-        compose.onNodeWithText(if (original.status == "INITIAL") original.rule.initialAction else original.rule.title).performScrollTo().performClick()
+        val expectedKm = beforeKm ?: baseline.baselineKm
+        val title = "FIXTURE revisión parcial ${UUID.randomUUID()}"
+        compose.onNodeWithText("Mantenimiento").performClick()
+        compose.onAllNodesWithText(group.title).onFirst().performScrollTo().performClick()
+        compose.onNodeWithText("Registrar realizado").assertExists()
+        compose.onNodeWithText("Ver fuente del fabricante").assertExists()
+        compose.onNodeWithText("Qué incluye").performScrollTo().performClick()
+        compose.onNodeWithText("Desmarcar todas").performScrollTo().performClick()
+        compose.onNodeWithText(friendlyTitle(selected)).performScrollTo().performClick()
+        compose.onNodeWithText("Registrar realizado").performScrollTo().performClick()
+        compose.onNodeWithTag("visit_km").assertTextContains(expectedKm.toString())
+        compose.onNodeWithTag("visit_date").assertTextContains(ViewModelProvider(compose.activity)[JournalViewModel::class.java].today())
+        compose.onNodeWithTag("visit_title").performTextReplacement(title)
+        compose.onNodeWithText("Guardar trabajo").performScrollTo().performClick()
+        compose.onNodeWithText("Confirmar trabajo realizado").assertExists()
+        assertFalse(repository.dao.allVisits().any { it.title == title })
+        compose.onNodeWithText("Sí, se ha realizado").performClick()
+        compose.waitUntil(15_000) { runBlocking { repository.dao.allVisits().any { it.title == title && it.active } } }
+        val saved = repository.dao.allVisits().single { it.title == title }
+        assertEquals(listOf(selected.rule.id), repository.allEvents().filter { it.visitId == saved.id && it.active }.map { it.ruleId })
+        assertEquals(1, repository.visitLines(saved.id).size)
+        assertEquals(beforeKm, repository.currentKm())
+        assertEquals(baseline, repository.planningReference())
+        repository.voidVisit(saved.id)
+    }
+
+    @Test fun planningReferenceIsEditableWithoutInventingReadingOrWork(): Unit = runBlocking {
+        waitForApp()
+        val repository = Repository(compose.activity)
+        val original = repository.planningReference()
+        val beforeEvents = repository.allEvents()
+        val beforeReadings = repository.dao.allReadings()
+        val changedDate = java.time.LocalDate.parse(original.baselineDate).minusDays(1).toString()
+        compose.onNodeWithContentDescription("Más opciones").performClick()
+        compose.onNodeWithText("Ajustes").performClick()
+        compose.onNodeWithTag("planning_date").performTextReplacement(changedDate)
+        compose.onNodeWithTag("planning_km").assertTextContains(original.baselineKm.toString())
+        compose.onNodeWithText("Guardar referencia del plan").performScrollTo().performClick()
+        compose.onNodeWithText("Cambiar referencia del plan").assertExists()
+        assertEquals(original, repository.planningReference())
+        compose.onNodeWithText("Guardar referencia").performClick()
+        compose.waitUntil(15_000) { runBlocking { repository.planningReference().baselineDate == changedDate } }
+        assertEquals(beforeEvents, repository.allEvents())
+        assertEquals(beforeReadings, repository.dao.allReadings())
+        repository.updatePlanningReference(original.baselineDate, original.baselineKm)
+    }
+
+    @Test fun secondaryReferencesActivateAndDisableConditionalProfileWithoutInventedWork(): Unit = runBlocking {
+        waitForApp()
+        val repository = Repository(compose.activity)
+        val original = repository.tasks().single { it.rule.id == "fuel-filter-applicability" }
+        val beforeEvents = repository.allEvents()
+        val beforeReadings = repository.dao.allReadings()
+        val beforePlanIds = maintenanceGroups(repository.tasks()).flatMap { it.tasks }.map { it.rule.id }.toSet()
+        compose.onNodeWithContentDescription("Más opciones").performClick()
+        compose.onNodeWithText("Referencias del mantenimiento").performClick()
+        compose.onNodeWithText(friendlyTitle(original)).performScrollTo().performClick()
+        compose.onNodeWithText("Según condición").assertExists()
+        compose.onAllNodesWithText("Plan calculado desde", substring = true).assertCountEquals(0)
+        compose.onNodeWithText("Registrar realizado").assertDoesNotExist()
+        compose.onNodeWithText("Confirmar aplicabilidad y activar intervalo").assertDoesNotExist()
+        compose.onNodeWithText("Ver fuente del fabricante").performScrollTo().performClick()
         compose.onNodeWithText("Confirmar aplicabilidad y activar intervalo").performScrollTo().performClick()
         compose.onNodeWithText("Confirmar y activar perfil").performScrollTo().performClick()
         compose.onNodeWithText("Escribe la evidencia que confirma que la condición se aplica.").assertExists()
-        val evidence = "FIXTURE UI: condición simulada exclusivamente para esta prueba debug"
-        compose.onNodeWithTag("profile_evidence").performScrollTo().performTextInput(evidence)
+        compose.onNodeWithTag("profile_evidence").performScrollTo().performTextInput("FIXTURE UI: condición simulada para prueba debug, sin VIN real")
         compose.onNodeWithText("Confirmar y activar perfil").performScrollTo().performClick()
         compose.onNodeWithText("Activar perfil").performClick()
-        compose.waitUntil(15_000) { runBlocking { repository.allRules().any { it.id == expected.id && it.recurrence == "component" } } }
-        val active = repository.allRules().single { it.id == expected.id }
-        assertEquals(48, active.months)
-        assertEquals(80000, active.km)
-        assertTrue(active.condition.contains(evidence))
+        val activeId = "${original.rule.id}-active"
+        compose.waitUntil(15_000) { runBlocking { repository.allRules().any { it.id == activeId && it.recurrence == "component" } } }
         assertEquals(beforeEvents, repository.allEvents())
-        assertEquals(beforeKm, repository.currentKm())
+        assertEquals(beforeReadings, repository.dao.allReadings())
+        assertEquals(beforePlanIds + activeId, maintenanceGroups(repository.tasks()).flatMap { it.tasks }.map { it.rule.id }.toSet())
         waitForSaveFeedback()
-        compose.waitUntil(15_000) { compose.onAllNodesWithText("Gestionar perfil condicionado").fetchSemanticsNodes().isNotEmpty() }
+        compose.onNodeWithText("Ver fuente del fabricante").performScrollTo().performClick()
         compose.onNodeWithText("Gestionar perfil condicionado").performScrollTo().performClick()
         waitForText("Desactivar perfil condicionado")
         compose.onNodeWithText("Desactivar perfil condicionado").performScrollTo().performClick()
         compose.onNodeWithText("Desactivar").performClick()
-        compose.waitUntil(15_000) { runBlocking { repository.allRules().single { it.id == expected.id }.recurrence == "inactive" } }
+        compose.waitUntil(15_000) { runBlocking { repository.allRules().single { it.id == activeId }.recurrence == "inactive" } }
         assertEquals(beforeEvents, repository.allEvents())
-        val disabled = repository.tasks().single { it.rule.id == expected.id }
-        assertNull(disabled.dueDate)
-        assertNull(disabled.dueKm)
+        assertEquals(beforeReadings, repository.dao.allReadings())
+        assertEquals(beforePlanIds, maintenanceGroups(repository.tasks()).flatMap { it.tasks }.map { it.rule.id }.toSet())
+        assertFalse(repository.tasks().any { it.status == "INITIAL" })
     }
 
     @Test fun readingFaultPartAndLinkedPdfWorkThroughNativeScreens(): Unit = runBlocking {
@@ -128,7 +183,7 @@ class JournalUiTest {
         compose.onNodeWithTag("reading_km").performTextInput(reading.toString())
         compose.onNodeWithText("Guardar lectura").performScrollTo().performClick()
         compose.waitUntil(15_000) { runBlocking { repository.currentKm() == reading } }
-        compose.onNodeWithText("Más").performClick()
+        compose.onNodeWithContentDescription("Más opciones").performClick()
         compose.onNodeWithText("Averías").performClick()
         compose.onNodeWithText("Registrar avería").performClick()
         val faultTitle = "FIXTURE avería UI $token"
@@ -160,7 +215,7 @@ class JournalUiTest {
         compose.onNodeWithText("Volver a documentos").performClick()
         compose.onNodeWithContentDescription("Volver").performClick()
         compose.onNodeWithTag("Síntomas observados").assertTextContains("FIXTURE: síntoma simulado")
-        compose.onNodeWithText("Más").performClick()
+        compose.onNodeWithContentDescription("Más opciones").performClick()
         compose.onNodeWithText("Piezas").performClick()
         compose.onNodeWithText("Añadir pieza").performClick()
         val partTitle = "FIXTURE pieza UI $token"

@@ -1,0 +1,32 @@
+[
+  {
+    "stage": "seed",
+    "result": "PASS",
+    "instrumentation": "\r\ndev.p38journal.platform.DeliveryLifecycleTest:.\r\n\r\nTime: 0.556\r\n\r\nOK (1 test)\r\n\r\n\r\n"
+  },
+  {
+    "stage": "legacy-schema2-fixture",
+    "result": "PASS",
+    "current_km": 182000,
+    "real_work_events": 2,
+    "total_cents": 31250,
+    "pdf_and_bookmark": true,
+    "automatic_initial_and_manual_same_title": true,
+    "database_sha256": "d856d965a2dc8aa75978913e482d4581122d7f154417f08e852ccc6e57e17994"
+  },
+  {
+    "stage": "verify-update",
+    "result": "PASS",
+    "instrumentation": "\r\ndev.p38journal.platform.DeliveryLifecycleTest:.\r\n\r\nTime: 0.358\r\n\r\nOK (1 test)\r\n\r\n\r\n"
+  },
+  {
+    "stage": "restore",
+    "result": "PASS",
+    "instrumentation": "\r\ndev.p38journal.platform.DeliveryLifecycleTest:.\r\n\r\nTime: 0.939\r\n\r\nOK (1 test)\r\n\r\n\r\n"
+  },
+  {
+    "backup_sha256": "eb97383922d6b7ae999ec191ae94742152f4e4121291a8df90837087ada92009",
+    "bytes": 20640,
+    "scope": "Disposable Android 16 emulator debug only"
+  }
+]

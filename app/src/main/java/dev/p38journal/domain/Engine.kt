@@ -11,8 +11,13 @@ data class Rule(
     val days: Int? = null, val months: Int? = null, val km: Int? = null,
     val source: String, val sourceUrl: String, val condition: String = "",
     val initialAction: String = title, val priority: Int = 2,
-    val recurrence: String = "component", val revision: Int = 1
+    val recurrence: String = "component", val revision: Int = 1,
+    val scheduleVisibility: String = "maintenance", val serviceGroup: String = "",
+    val firstKm: Int? = null, val firstMonths: Int? = null
 )
+
+data class PlanningReference(val id: String = "main", val baselineKm: Int = 175000,
+    val baselineDate: String, val provenance: String = "user_selected_planning_baseline", val policyVersion: Int = 3)
 
 data class Event(
     val id: String, val visitId: String, val ruleId: String, val date: String?, val km: Int?,
@@ -29,62 +34,62 @@ data class Task(
 object Engine {
     fun evaluate(
         rules: List<Rule>, events: List<Event>, today: LocalDate, currentKm: Int?,
-        leadDays: Int = 30, leadKm: Int = 1000
+        leadDays: Int = 30, leadKm: Int = 1000, plan: PlanningReference? = null
     ): List<Task> = rules.map { rule ->
-        if (rule.recurrence == "inactive") {
-            val generation = MessageDigest.getInstance("SHA-256").digest(rule.toString().toByteArray()).take(12).joinToString("") { "%02x".format(it) }
-            return@map Task(rule, "PLANNED", null, null, listOf("Perfil desactivado"), generation, null)
-        }
+        val reference = plan ?: PlanningReference(baselineDate = today.toString())
+        val baseDate = LocalDate.parse(reference.baselineDate)
+        val hidden = rule.scheduleVisibility in listOf("manual", "conditional", "inactive") || rule.recurrence in listOf("inactive", "condition", "age")
+        if (hidden) return@map Task(rule, "PLANNED", null, null,
+            if (rule.recurrence == "inactive" || rule.scheduleVisibility == "inactive") listOf("Perfil desactivado") else emptyList(), hash(rule.toString() + reference), null)
         require(rule.days == null || rule.days > 0)
         require(rule.months == null || rule.months > 0)
         require(rule.km == null || rule.km > 0)
-        val matching = events.filter { it.ruleId == rule.id && it.active }
+        val matching = events.filter { event -> event.ruleId == rule.id && event.active &&
+            !event.provenance.contains("prepurchase", true) && !event.provenance.contains("recovered", true) &&
+            if (event.kmExact && event.km != null) event.km >= reference.baselineKm
+            else event.dateExact && event.date != null && LocalDate.parse(event.date) >= baseDate }
         val ordered = matching.sortedWith(compareBy<Event> { it.date ?: "" }.thenBy { it.km ?: -1 }.thenBy { it.id })
         val anchor = ordered.lastOrNull()
-        val exactDate = anchor?.takeIf { it.dateExact && it.date != null }
-        val exactKm = anchor?.takeIf { it.kmExact && it.km != null }
+        val exactDate = ordered.lastOrNull { it.dateExact && it.date != null }
+        val exactKm = ordered.lastOrNull { it.kmExact && it.km != null }
         val phase = rule.recurrence in listOf("phase", "phase_b")
-        val milestone = rule.recurrence == "milestone"
-        val hasOperationalPhase = !(phase || milestone) || anchor?.operationalAnchor == true
-        val dueDate = if (hasOperationalPhase) exactDate?.date?.let { LocalDate.parse(it) }?.let { date ->
-            when { rule.months != null -> date.plusMonths(rule.months.toLong()); rule.days != null -> date.plusDays(rule.days.toLong()); else -> null }
-        } else null
-        val dueKm = if (hasOperationalPhase) exactKm?.km?.let { reading -> rule.km?.let { interval ->
-            Math.addExact(reading, interval)
-        } } else null
+        val oneOff = rule.recurrence in listOf("initial", "once")
+        if (oneOff && (matching.isNotEmpty() || rule.firstKm == null || rule.firstKm <= reference.baselineKm)) {
+            return@map Task(rule, "PLANNED", null, null, emptyList(), hash(rule.toString() + reference), anchor)
+        }
+        val initialMonths = if (phase && exactDate == null) rule.firstMonths ?: if(rule.recurrence == "phase_b") 12 else 24 else rule.months
+        val initialKm = if (phase && exactKm == null) rule.firstKm ?: if(rule.recurrence == "phase_b") 20000 else 40000 else rule.km
+        val dateAnchor = exactDate?.date?.let(LocalDate::parse) ?: baseDate
+        val dueDate = if (oneOff) null else when {
+            initialMonths != null -> dateAnchor.plusMonths(initialMonths.toLong())
+            rule.days != null -> dateAnchor.plusDays(rule.days.toLong())
+            else -> null
+        }
+        val dueKm = if (oneOff) rule.firstKm else initialKm?.let { Math.addExact(exactKm?.km ?: reference.baselineKm, it) }
         val reasons = mutableListOf<String>()
         if (dueDate != null && !today.isBefore(dueDate)) reasons += "Vence por fecha"
         if (dueKm != null && currentKm != null && currentKm >= dueKm) reasons += "Vence por kilómetros"
         val frequent = (rule.days ?: Int.MAX_VALUE) <= 7 || (rule.months ?: Int.MAX_VALUE) <= 1
-        val timeInterval = exactDate?.date?.let { base -> dueDate?.let { ChronoUnit.DAYS.between(LocalDate.parse(base), it).toInt() } }
+        val timeInterval = dueDate?.let { ChronoUnit.DAYS.between(dateAnchor, it).toInt() }
         val proportionalDays = minOf(leadDays.coerceAtLeast(0), ((timeInterval ?: 120) / 4).coerceAtLeast(0))
         val proportionalKm = minOf(leadKm.coerceAtLeast(0), (rule.km ?: 4000) / 4)
         val soonDate = dueDate != null && today.isBefore(dueDate) && !today.plusDays(proportionalDays.toLong()).isBefore(dueDate)
         val soonKm = dueKm != null && currentKm != null && currentKm < dueKm && dueKm.toLong() - currentKm <= proportionalKm
-        val finishedOneOff = rule.recurrence in listOf("initial", "once") && matching.isNotEmpty()
-        val missingReference = !finishedOneOff && (anchor == null || !hasOperationalPhase || (dueDate == null && dueKm == null))
         val status = when {
-            finishedOneOff -> "PLANNED"
-            rule.recurrence == "condition" -> if (matching.isEmpty()) "INITIAL" else "PLANNED"
-            phase && anchor != null && ((anchor.dateExact && anchor.date != null) || (anchor.kmExact && anchor.km != null)) && !hasOperationalPhase -> "PLANNED"
-            missingReference && rule.condition.contains("known_pre_purchase_replaced") -> "PLANNED"
-            missingReference -> "INITIAL"
             reasons.isNotEmpty() -> "DUE"
             (soonDate || soonKm) && !frequent -> "SOON"
             else -> "PLANNED"
         }
-        if (status == "INITIAL") reasons += if (phase || milestone) "Revisar contenido de fase o hito y establecer referencia operativa explícita" else "Realizar la acción inicial; no consta una referencia precisa"
-        if (phase && status == "PLANNED" && anchor != null && !hasOperationalPhase) reasons += "Operación registrada; adoptar referencia operativa para programar la siguiente fase"
         if (status == "SOON") {
             if (soonDate) reasons += "Próxima por fecha"
             if (soonKm) reasons += "Próxima por kilómetros"
         }
-        val generationContent = listOf(rule, dueDate, dueKm,
-            ordered.joinToString { "${it.id}:${it.date}:${it.km}:${it.dateExact}:${it.kmExact}:${it.operationalAnchor}:${it.revision}" }).joinToString("|")
-        val generation = MessageDigest.getInstance("SHA-256").digest(generationContent.toByteArray()).take(12).joinToString("") { "%02x".format(it) }
+        val generationContent = listOf(rule, reference, dueDate, dueKm, exactDate?.date, exactKm?.km).joinToString("|")
+        val generation = hash(generationContent)
         Task(rule, status, dueDate?.toString(), dueKm, reasons, generation, anchor)
-    }.sortedWith(compareBy<Task> { when(it.status) { "DUE" -> 0; "INITIAL" -> 1; "SOON" -> 2; else -> 3 } }
+    }.sortedWith(compareBy<Task> { when(it.status) { "DUE" -> 0; "SOON" -> 1; else -> 2 } }
         .thenBy { it.rule.priority }.thenBy { it.dueDate ?: "9999" }.thenBy { it.rule.title })
+    private fun hash(value: String) = MessageDigest.getInstance("SHA-256").digest(value.toByteArray()).take(12).joinToString("") { "%02x".format(it) }
 }
 
 object Money {

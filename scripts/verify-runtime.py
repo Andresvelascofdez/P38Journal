@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "docs"
 PKG = "dev.p38journal.debug"
 resume = "--resume-lifecycle" in sys.argv
-report = json.loads((OUT / "runtime-verification.json").read_text(encoding="utf-8")) [:2] if resume else []
+report = json.loads((OUT / "v3-runtime-verification.json").read_text(encoding="utf-8")) [:2] if resume else []
 
 
 def adb(*args):
@@ -42,9 +42,22 @@ def tap(text, scroll=False, pause=1):
     raise AssertionError("Control missing: " + text)
 
 
+def edit_number(value):
+    for node in nodes().iter("node"):
+        if node.get("class") == "android.widget.EditText" and (not node.get("text") or node.get("text", "").isdigit()):
+            x1, y1, x2, y2 = map(int, re.findall(r"\d+", node.get("bounds")))
+            adb("shell", "input", "tap", str((x1+x2)//2), str((y1+y2)//2))
+            adb("shell", "input", "keycombination", "113", "29")
+            adb("shell", "input", "text", value)
+            adb("shell", "input", "keyevent", "4")
+            time.sleep(1)
+            return
+    raise AssertionError("Reading input missing")
+
+
 def capture(name):
-    (OUT / "screenshots" / (name + ".png")).write_bytes(adb("exec-out", "screencap", "-p"))
-    (OUT / "screenshots" / (name + ".xml")).write_bytes(adb("shell", "cat", "/sdcard/p38-runtime.xml"))
+    (OUT / "screenshots" / ("v3-" + name + ".png")).write_bytes(adb("exec-out", "screencap", "-p"))
+    (OUT / "screenshots" / ("v3-" + name + ".xml")).write_bytes(adb("shell", "cat", "/sdcard/p38-runtime.xml"))
 
 
 def start():
@@ -54,7 +67,7 @@ def start():
 
 def job_dump(name):
     data = adb("shell", "dumpsys", "jobscheduler")
-    (OUT / (name + ".txt")).write_bytes(data)
+    (OUT / ("v3-" + name + ".txt")).write_bytes(data)
     return re.findall(r"^\s*JOB [^\n]*?/(\d+):[^\n]*" + re.escape(PKG) + r"/androidx.work", data.decode(), re.MULTILINE)
 
 
@@ -62,7 +75,7 @@ try:
     adb("shell", "cmd", "connectivity", "airplane-mode", "enable")
     if not resume:
         adb("shell", "pm", "grant", PKG, "android.permission.POST_NOTIFICATIONS")
-        start(); tap("M\u00e1s"); tap("Ajustes y copias"); tap("Activar avisos")
+        start(); tap("M\u00e1s opciones"); tap("Ajustes"); tap("Activar avisos")
         tap("Probar aviso")
         adb("shell", "cmd", "statusbar", "expand-notifications"); time.sleep(1)
         assert any(n.get("text") == "P38 Journal \u00b7 prueba" for n in nodes().iter("node"))
@@ -71,25 +84,26 @@ try:
         assert any(n.get("text") == "Bandeja de avisos" for n in nodes().iter("node"))
         capture("notification-test-destination")
         report.append({"check": "Visible test notification offline and actual PendingIntent destination", "result": "PASS"})
-        tap("M\u00e1s"); tap("Ajustes y copias")
-        tap("9", scroll=True)
-        adb("shell", "input", "keycombination", "113", "29")
-        adb("shell", "input", "text", str(datetime.now(ZoneInfo("Asia/Nicosia")).hour))
-        adb("shell", "input", "keyevent", "4")
+        tap("Inicio")
+        tap("Actualizar kil\u00f3metros")
+        edit_number("194999")
+        tap("Guardar lectura", pause=3)
+        tap("Inicio")
+        assert any(n.get("text") == "194.999 km" for n in nodes().iter("node"))
+        tap("Actualizar kil\u00f3metros")
+        edit_number("195000")
         adb("logcat", "-c")
-        tap("Guardar ajustes", scroll=True, pause=0)
+        tap("Guardar lectura", pause=3)
         adb("shell", "input", "keyevent", "3")
-        (OUT / "background-activity.txt").write_bytes(adb("shell", "dumpsys", "activity", "activities"))
-        time.sleep(4)
-        log = adb("logcat", "-d", "-s", "WM-WorkerWrapper", "WM-SystemJobService")
-        (OUT / "background-work.log").write_bytes(log)
+        (OUT / "v3-background-activity.txt").write_bytes(adb("shell", "dumpsys", "activity", "activities"))
+        (OUT / "v3-background-work.log").write_bytes(adb("logcat", "-d", "-s", "WM-WorkerWrapper", "WM-SystemJobService"))
         adb("shell", "cmd", "statusbar", "expand-notifications"); time.sleep(1)
-        assert any(n.get("text") == "P38 \u00b7 mantenimiento pendiente o pr\u00f3ximo" for n in nodes().iter("node"))
-        capture("notification-maintenance-background-offline")
-        tap("P38 \u00b7 mantenimiento pendiente o pr\u00f3ximo")
+        assert any(n.get("text") == "P38 \u00b7 mantenimiento pendiente" for n in nodes().iter("node"))
+        capture("notification-km-crossing-offline")
+        tap("P38 \u00b7 mantenimiento pendiente")
         assert any(n.get("text") == "Detalle de mantenimiento" for n in nodes().iter("node"))
         capture("notification-maintenance-destination")
-        report.append({"check": "Real maintenance notification offline after Home, task PendingIntent", "result": "PASS", "work_log": log.decode()})
+        report.append({"check": "Manual reading 194999 to195000 produces real DUE notification offline and group PendingIntent", "result": "PASS", "current_km": 195000})
     adb("shell", "input", "keyevent", "3")
     adb("shell", "am", "kill", PKG)
     assert job_dump("jobs-after-process-kill")
@@ -113,6 +127,6 @@ try:
     report.append({"check": "Force-stop then explicit reopen reschedules jobs", "result": "PASS", "limit": "No delivery guarantee while force-stopped"})
 finally:
     adb("shell", "cmd", "connectivity", "airplane-mode", "disable")
-    (OUT / "runtime-verification.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+    (OUT / "v3-runtime-verification.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
 
 print("PASS: visible native offline notifications, destinations, background, process kill, reboot, force-stop recovery")

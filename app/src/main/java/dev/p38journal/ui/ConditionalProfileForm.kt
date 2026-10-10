@@ -26,10 +26,10 @@ fun ConditionalProfileForm(model: JournalViewModel, task: Task?, busy: Boolean, 
         proposal.months?.let { Text("Cada $it meses") }
         proposal.days?.let { Text("Cada $it días") }
         proposal.km?.let { Text("Cada ${kmLabel(it)}") }
-        Text(proposal.source)
+        Text(manufacturerReference(proposal.source))
         Hint("Solo activa este intervalo si has comprobado que la condición se aplica a tu coche o al uso real. Conserva la evidencia de VIN, taller o uso; no se presupone por el año del vehículo.")
         Field(evidence, { evidence = it }, "Evidencia de aplicabilidad comprobada", "profile_evidence", multiline = true)
-        Hint("Activar el perfil no registra ningún trabajo ni completa la revisión de aplicabilidad. El intervalo usa solamente operaciones reales registradas para este perfil.")
+        Hint("Activar el perfil no registra ningún trabajo. La referencia inicial del plan permite calcular el primer vencimiento; las operaciones reales posteriores actualizan el siguiente.")
         error?.let { Text(it, color = MaterialTheme.colorScheme.error) }
         Button(onClick = {
             if (evidence.isBlank()) error = "Escribe la evidencia que confirma que la condición se aplica."

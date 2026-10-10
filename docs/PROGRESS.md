@@ -1,28 +1,28 @@
-﻿# Plan y progreso — 10/10/2026
+# Corrección v3 completada — 11/10/2026
 
-Documentación original leída. Encargo vigente Android v2 en esta raíz, distinto del proyecto SAP. JDK 21 y SDK presentes; sin teléfono conectado. Se delegan catálogo, dominio/persistencia e interfaz con escrituras separadas y contratos en CONTRACTS.md. Coordinador: entorno/WorkManager/archivos/firma/integración. Revisión independiente tras primeras implementaciones.
+Leídos AGENTS, PROMPT_CODEX, SPEC, ENGINE, MIGRATION, QA y documentación del paquete v3. Cambios del propietario preservados; antes de implementar se conservaron fuente, APKs v2 y paquete recibido en `.tools/pre-v3` con hashes. [Progreso v2](PROGRESS_V2.md) queda como antecedente histórico.
 
-## Implementación y revisión completadas
+## Implementación completada
 
-- Proyecto Kotlin/Compose/Material 3 con Room, DataStore, WorkManager, archivos privados/SAF y visor PDF nativo. Inicio/Plan/Historial/Más con visitas, lecturas, gastos, averías, piezas, documentos, avisos, ajustes y copias completas.
-- Contratos y escrituras separados entre agentes reales: catálogo, dominio/persistencia, interfaz y revisión independiente; coordinación integra plataforma, SDK, firma, builds y verificaciones.
-- Catálogo de 60 reglas, revisión 2, cobertura de las 59 filas de M01, siete exclusiones documentadas y condiciones explícitas. Lectura visual de matriz/notas/glosario y contraste propio del revisor. PDFs de investigación privados excluidos de git/APK.
-- Nueve hallazgos de revisión corregidos. Ciclos desde operación real, actualización de revisiones sin perder overrides, perfiles condicionados separados con evidencia, restauración de overrides sobre seed y conservación de personalizaciones locales.
-- SDK 36 oficial instalado, JDK 21 disponible, emulador API 36 funcionando. APK release firmado con RSA 3072, clave privada persistente fuera del workspace; APK debug con applicationId independiente. APKs en `dist/`, versionCode 2.
+- Agentes de dominio/migración, interfaz, catálogo y revisión independiente trabajaron con contratos compartidos; el coordinador integró plataforma, builds, firma y pruebas reales.
+- Referencia operativa persistida de 175.000 km separada de lecturas/trabajos; fecha explícita editable. Intervalos verificados y ciclos posteriores por operación real y precisión de cada dimensión. Sin generador INITIAL ni revisiones por falta de historial.
+- Room esquema 3, copia SQLite/WAL previa verificada, migración no destructiva y retiro exclusivo de derivados automáticos conocidos. Datos, documentos, gastos, referencias manuales y personalizaciones preservados. ZIP v2/v3 e importación repetida sin duplicados.
+- Inicio/Mantenimiento/Historial/Gastos, seis grupos iniciales, registros parciales, detalle legible, fuentes y controles secundarios. Catálogo 62 reglas/revisión 3, cobertura de 59 filas del fabricante, condiciones y exclusiones documentadas.
+- Guardar lectura evalúa límites y emite aviso Android inmediatamente cuando corresponde; fechas con WorkManager, deduplicación persistida, PendingIntent correcto y resumen parcial silencioso. Gastos exactos en céntimos.
+- Kotlin/Compose/Room/WorkManager existentes conservados; release `dev.p38journal`, firma original y datos privados. Debug separado. Sin servidor ni permiso INTERNET.
 
-## Evidencia real obtenida
+## Verificaciones reales cerradas
 
-- `scripts/build.ps1`: unit tests, lint, debug y release **BUILD SUCCESSFUL**. 26 pruebas unitarias aprobadas, lint 0 errores/33 advertencias.
-- `connectedDebugAndroidTest`: 33 registradas, 32 aprobadas/0 fallos/1 omisión intencional de prueba por etapas. XML conservado en `docs/evidence/`. Cuatro recorridos Compose, 16 Room/migración, 8 archivos/avisos, 2 PDF y 2 Android real.
-- Firma de ambos APK verificada con apksigner; metadatos minSdk 26/targetSdk 36/identidades separadas; APKs instalados realmente en el emulador. Hashes en `dist/SHA256SUMS.txt`.
-- `verify-lifecycle.py`: tres etapas PASS, actualización candidato real versionCode 1 → APK 2 sin desinstalar, seguida de desinstalación debug aislada/reinstalación/restore completo dos veces. Comparación de gasto/lectura/avería/PDF/hash/marcador sin duplicados. Fixtures retirados después.
-- Revisión visual de Inicio/Plan a 320/360/390/430 dp y 320 dp oscuro con letra 130%; colores predeterminados de contenedores Material 3 corregidos. Capturas finales en `docs/screenshots/`.
-- Guía breve de ocho pasos en `docs/USER_TEST.md`, instrucciones `dist/LEEME.md`, detalle `docs/TEST_REPORT.md`, firma/privacidad `docs/BUILD_AND_PRIVACY.md`, revisión `docs/INDEPENDENT_REVIEW.md`.
+- Build serializado final y build de entrega: SUCCESS; **32 unitarias y 48 Android aprobadas**, 0 fallos, 1 test por etapas omitido en la suite y ejecutado aparte. Lint 0 errores/33 advertencias. XML y logs en `docs/evidence/v3` y `docs/v3-*.log`.
+- Ciclo real debug v2→v3 sin desinstalar, con fixture controlada 182.000 km, trabajos reales de prueba a 178.000, gasto/pago, nota, PDF y marcador; preservación comprobada. Copia previa esquema 2 íntegra. Reinstalación y dos restauraciones exclusivamente en debug del emulador: PASS.
+- Cinco comprobaciones runtime PASS: avisos visibles offline y destinos, cruce manual 194.999→195.000, continuidad tras muerte normal del proceso, reinicio real con reprogramación y force-stop seguido de reapertura. Worker por fecha ejecutado realmente sin actividad abierta; no se garantiza ejecución durante force-stop.
+- Capturas Inicio/Mantenimiento a 320/360/390/430 dp y oscuro a 320 dp con fuente 130%; avisos/destinos, proceso/reinicio y release revisados. Diez hallazgos independientes corregidos; revisión cerrada sin defectos funcionales pendientes conocidos.
+- Release 3.0.0 firmado, certificado igual al v2; apksigner y hashes comprobados. Actualizado realmente sobre release 2.0.0 del emulador mediante install-r: Success y arranque nativo, sin desinstalar ni borrar datos.
 
-## Continuidad
+## Entrega y continuidad
 
-Entrega completada: APKs definitivos firmados/instalados/verificados y documentación disponible. Prueba nativa adicional `runtime-verification.json`: cinco comprobaciones PASS (avisos visibles offline y PendingIntent; WorkManager real después de Home; proceso; reinicio sin abrir antes de recuperar trabajos; detención forzada seguida de reapertura). Revisión independiente cerrada. No volver a sembrar ni borrar datos personales para repetir pruebas; los scripts destructivos sólo operan en debug de `emulator-5554`. Ningún teléfono físico probado. Restricciones Android/OEM/SAF/TalkBack y estética menor de etiqueta de zona horaria al 130% se documentan, sin inventar verificaciones.
+APKs definitivos en `dist/p38-journal-3.0.0-release.apk` y `dist/p38-journal-3.0.0-debug.apk`, con checksums e instrucciones. [Guía de ocho pasos](USER_TEST.md), [informe real](TEST_REPORT.md), [revisión independiente](INDEPENDENT_REVIEW.md), [catálogo](CATALOGUE.md) y [compilación/firma/privacidad](BUILD_AND_PRIVACY.md).
 
-Para reproducir como desarrollador: `scripts/bootstrap.ps1`, `scripts/build.ps1` y `gradlew.bat connectedDebugAndroidTest`. Release necesita la configuración privada externa. Para instalar, sólo APK e instrucciones de `dist/`.
+Solo se probó Android 16/API 36 en emulador; Android 8/API 26 es el mínimo declarado. No se probó un teléfono físico, otros OEM ni TalkBack con audio; SAF/revocación real no tienen recorrido automatizado completo. Se conservan restricciones Android y detalles estéticos menores documentados. No hay bloqueo de compilación ni APK pendiente. Los datos fixture están aislados en debug del emulador y no se incluyen en APK; no volver a sembrar ni borrar datos personales.
 
-Commit local de implementación/entrega creado realmente: `7e0d843` (Build native P38 Journal with reviewed catalogue and verified Android delivery). Fuente, informes, capturas y checksums versionados; APKs siguen en dist y se excluyen de git; claves privadas y PDFs de investigación excluidos. Release definitivo abierto y renderizado nativamente en emulador, sin lectura actual inventada: `docs/screenshots/release-home.png`.
+Para reproducir como desarrollador: `scripts/bootstrap.ps1`, `scripts/build.ps1` y `gradlew.bat connectedDebugAndroidTest`. Release usa configuración privada externa existente. El propietario solo instala el APK y sigue la guía. Fuente, informes, capturas y sumas se guardan en git; APKs, claves y PDFs de investigación quedan excluidos.

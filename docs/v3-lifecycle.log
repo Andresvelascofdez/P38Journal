@@ -1,0 +1,1 @@
+PASS: update without uninstall, then uninstall/reinstall and complete restore; debug fixtures only

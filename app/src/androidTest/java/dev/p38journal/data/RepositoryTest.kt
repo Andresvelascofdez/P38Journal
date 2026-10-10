@@ -27,6 +27,162 @@ class RepositoryTest {
         repo.initialize(); val count = repo.allRules().size; val notes = db.dao().allNotes().size
         assertTrue(count > 11); repo.initialize(); assertEquals(count, repo.allRules().size); assertEquals(notes, db.dao().allNotes().size)
         assertTrue(repo.allEvents().isEmpty()); assertNull(repo.currentKm()); assertEquals(0L, repo.totalExpenses())
+        assertEquals(175000, repo.planningReference().baselineKm)
+        assertTrue(repo.tasks().none { it.status == "INITIAL" })
+        assertEquals(195000, repo.tasks().first { it.rule.id == "engine-oil-filter" }.dueKm)
+    }
+    @Test fun planningReferenceRemainsSeparateFromActualReadingAndSurvivesSnapshotRestore() = runBlocking {
+        repo.initialize(); repo.updatePlanningReference("2026-10-15")
+        repo.saveReading(Reading("real", "2026-10-16", 182000))
+        assertEquals(175000, repo.planningReference().baselineKm); assertEquals(182000, repo.currentKm())
+        assertEquals("2027-10-15", repo.tasks().first { it.rule.id == "engine-oil-filter" }.dueDate)
+        val snapshot = repo.exportSnapshot()
+        val restoredDb = Room.inMemoryDatabaseBuilder(context, JournalDatabase::class.java).build()
+        try {
+            val restored = Repository(context, restoredDb); restored.initialize(); restored.restoreSnapshot(snapshot)
+            assertEquals(repo.planningReference(), restored.planningReference()); assertEquals(182000, restored.currentKm())
+            assertTrue(restored.allEvents().isEmpty()); assertTrue(restoredDb.dao().allVisits().isEmpty())
+            assertEquals(3, JsonParser.parseString(snapshot).asJsonObject.get("schemaVersion").asInt)
+        } finally { restoredDb.close() }
+    }
+    @Test fun oldOwnerOverrideUsesCurrentCatalogueVisibilityWithoutLosingItsInterval() = runBlocking {
+        repo.initialize(); val manual = repo.allRules().first { it.id == "oil-level" }
+        val oldJson = JsonParser.parseString(Gson().toJson(manual.copy(days = 3, revision = 2))).asJsonObject
+        listOf("scheduleVisibility", "serviceGroup", "firstKm", "firstMonths").forEach { oldJson.remove(it) }
+        db.dao().putRule(RuleRecord(manual.id, oldJson.toString(), 2, true)); repo.initialize()
+        val owner = repo.allRules().first { it.id == manual.id }
+        assertEquals(3, owner.days); assertEquals("manual", owner.scheduleVisibility)
+        val task = repo.tasks().first { it.rule.id == manual.id }
+        assertNull(task.dueDate); assertNull(task.dueKm); assertEquals("PLANNED", task.status)
+    }
+    @Test fun versionTwoSnapshotImportsWithoutInventingAPlanningDateOrCompletedWork() = runBlocking {
+        repo.saveExpense(Expense("old", "2026-10-10", 1250, "Factura", "other"))
+        val old = JsonParser.parseString(repo.exportSnapshot()).asJsonObject
+        old.addProperty("schemaVersion", 2); old.remove("planning")
+        val targetDb = Room.inMemoryDatabaseBuilder(context, JournalDatabase::class.java).build()
+        try {
+            val target = Repository(context, targetDb); target.initialize(); val plan = target.planningReference()
+            target.restoreSnapshot(old.toString()); target.restoreSnapshot(old.toString())
+            assertEquals(plan, target.planningReference()); assertEquals(1250L, target.totalExpenses())
+            assertTrue(target.allEvents().isEmpty()); assertEquals(1, targetDb.dao().allExpenses().size)
+        } finally { targetDb.close() }
+    }
+    @Test fun versionTwoSnapshotInfersOnlyFormalAutomaticIdsAndPreservesCustomOrExplicitManualRecords() = runBlocking {
+        rule()
+        val entries = listOf(
+            Inbox("oil:old:INITIAL:1", "oil", "Mismo título", "Fixture", "old"),
+            Inbox("oil:old:CUSTOM:1", "oil", "Mismo título", "Fixture", "old"),
+            Inbox("oil:old:INITIAL:2", "oil", "Mismo título", "Fixture", "old", origin = "manual"),
+            Inbox("oil:old:INITIAL:invalid", "oil", "Mismo título", "Fixture", "old"),
+            Inbox("oil:old:DUE:3", "oil", "Mismo título", "Fixture", "old"))
+        entries.forEach { db.dao().putInbox(it) }
+        val old = JsonParser.parseString(repo.exportSnapshot()).asJsonObject
+        old.addProperty("schemaVersion", 2); old.remove("planning")
+        old.getAsJsonArray("inbox").forEach { row -> row.asJsonObject.apply {
+            if (get("id").asString != "oil:old:INITIAL:2") remove("origin")
+            remove("policyVersion")
+        } }
+        val targetDb = Room.inMemoryDatabaseBuilder(context, JournalDatabase::class.java).build()
+        try {
+            val target = Repository(context, targetDb); target.restoreSnapshot(old.toString())
+            val imported = targetDb.dao().allInbox().associateBy { it.id }
+            assertEquals("automatic", imported.getValue("oil:old:INITIAL:1").origin)
+            assertEquals("cancelled", imported.getValue("oil:old:INITIAL:1").state)
+            assertEquals("legacy_unknown", imported.getValue("oil:old:CUSTOM:1").origin)
+            assertEquals("legacy_unknown", imported.getValue("oil:old:INITIAL:invalid").origin)
+            assertEquals("manual", imported.getValue("oil:old:INITIAL:2").origin)
+            assertEquals("automatic", imported.getValue("oil:old:DUE:3").origin)
+            target.updatePlanningReference("2026-10-17", 176000)
+            val after = targetDb.dao().allInbox().associateBy { it.id }
+            assertEquals("cancelled", after.getValue("oil:old:DUE:3").state)
+            listOf("oil:old:CUSTOM:1", "oil:old:INITIAL:2", "oil:old:INITIAL:invalid").forEach {
+                assertEquals("pending", after.getValue(it).state)
+            }
+            assertTrue(targetDb.dao().allLedger().isEmpty())
+            assertTrue(target.allEvents().isEmpty())
+        } finally { targetDb.close() }
+    }
+    @Test fun versionTwoSnapshotRecoversOnlyExplicitPlanCreationAndKeepsEditedLocalReference() = runBlocking {
+        db.dao().putAudit(Audit("actual-plan", "2026-09-15T09:00:00Z", "plan_created", "main", "Fixture recoverable creation"))
+        val old = JsonParser.parseString(repo.exportSnapshot()).asJsonObject
+        old.addProperty("schemaVersion", 2); old.remove("planning")
+        val targetDb = Room.inMemoryDatabaseBuilder(context, JournalDatabase::class.java).build()
+        try {
+            val target = Repository(context, targetDb); target.initialize(); target.restoreSnapshot(old.toString())
+            assertEquals("2026-09-15", target.planningReference().baselineDate)
+            target.updatePlanningReference("2026-10-15"); target.restoreSnapshot(old.toString())
+            assertEquals("2026-10-15", target.planningReference().baselineDate)
+            assertTrue(target.allEvents().isEmpty())
+        } finally { targetDb.close() }
+    }
+    @Test fun atomicVisitAndReadingUpdatesCalendarAndPersistsPendingNotificationReconciliation() = runBlocking {
+        rule(); repo.updatePlanningReference("2026-10-15")
+        repo.saveVisit(Visit("performed", "2026-10-16", 195200, title = "Aceite"),
+            listOf(WorkLine("line", "performed", "Aceite", "oil")), listOf("oil"),
+            updateCurrentReading = Reading("current", "2026-10-16", 195200))
+        assertEquals(195200, repo.currentKm()); assertEquals(215200, repo.tasks().single().dueKm)
+        val marker = db.dao().allLedger().single { it.id == "v3-reconcile" }
+        assertEquals("pending", marker.state); assertEquals("system", marker.ruleId)
+        val visits = db.dao().allVisits().size
+        try {
+            repo.saveVisit(Visit("rollback", "2026-10-16", 195201, title = "Aceite"),
+                listOf(WorkLine("rollback-line", "rollback", "Aceite", "oil")), listOf("oil"),
+                updateCurrentReading = Reading("invalid", "2026-10-17", 180000))
+            fail("Accepted decreasing current reading")
+        } catch (_: IllegalArgumentException) { }
+        assertEquals(visits, db.dao().allVisits().size); assertEquals(195200, repo.currentKm())
+    }
+    @Test fun editingVisitMetadataOrAddingOlderWorkDoesNotInvalidateExistingNotificationCycle() = runBlocking {
+        rule(); repo.updatePlanningReference("2026-10-15")
+        val latest = Visit("latest", "2026-11-01", 190000, title = "Aceite")
+        val line = WorkLine("line", latest.id, "Aceite", "oil")
+        repo.saveVisit(latest, listOf(line), listOf("oil"))
+        val generation = repo.tasks().single().generation
+        db.dao().putLedger(Ledger("alert", "oil", generation, "DUE", "window", "emitted", "2026-11-01T09:00:00Z"))
+        repo.saveVisit(latest.copy(notes = "Nota corregida"), listOf(line), listOf("oil"))
+        assertEquals(generation, repo.tasks().single().generation)
+        assertEquals("emitted", db.dao().allLedger().first { it.id == "alert" }.state)
+        repo.saveVisit(Visit("old", "2026-10-16", 180000, title = "Aceite antiguo"),
+            listOf(WorkLine("old-line", "old", "Aceite", "oil")), listOf("oil"))
+        assertEquals(generation, repo.tasks().single().generation)
+        assertEquals("emitted", db.dao().allLedger().first { it.id == "alert" }.state)
+        repo.voidVisit("old")
+        assertEquals("emitted", db.dao().allLedger().first { it.id == "alert" }.state)
+        repo.voidVisit("latest")
+        assertEquals("cancelled", db.dao().allLedger().first { it.id == "alert" }.state)
+    }
+    @Test fun workAndPlanningChangesCancelOnlyAutomaticRecordsWithTheSameRuleId() = runBlocking {
+        rule(); repo.updatePlanningReference("2026-10-15")
+        val origins = listOf("automatic", "manual", "legacy_unknown")
+        suspend fun seedNotifications() {
+            val generation = repo.tasks().single().generation
+            origins.forEach { origin ->
+                db.dao().putInbox(Inbox("inbox-$origin", "oil", "Aviso", "Mismo texto", generation,
+                    state = "pending", createdAt = "2026-10-16T09:00:00Z", origin = origin))
+                db.dao().putLedger(Ledger("ledger-$origin", "oil", generation,
+                    if (origin == "automatic") "DUE" else "CUSTOM", "window", "emitted",
+                    "2026-10-16T09:00:00Z", origin = origin))
+            }
+        }
+        suspend fun assertOnlyAutomaticCancelled() {
+            origins.forEach { origin ->
+                assertEquals("Inbox origin=$origin", if (origin == "automatic") "cancelled" else "pending",
+                    db.dao().allInbox().single { it.id == "inbox-$origin" }.state)
+                assertEquals("Ledger origin=$origin", if (origin == "automatic") "cancelled" else "emitted",
+                    db.dao().allLedger().single { it.id == "ledger-$origin" }.state)
+            }
+        }
+        seedNotifications()
+        val beforeWork = repo.tasks().single().generation
+        repo.saveVisit(Visit("performed", "2026-10-16", 195200, title = "Aceite"),
+            listOf(WorkLine("line", "performed", "Aceite", "oil")), listOf("oil"))
+        assertNotEquals(beforeWork, repo.tasks().single().generation)
+        assertOnlyAutomaticCancelled()
+        seedNotifications()
+        val beforePlanningEdit = repo.tasks().single().generation
+        repo.updatePlanningReference("2026-10-17", 176000)
+        assertNotEquals(beforePlanningEdit, repo.tasks().single().generation)
+        assertOnlyAutomaticCancelled()
     }
     @Test fun catalogueUpdateKeepsOverridesAndResetKeepsRevisionHistory() = runBlocking {
         repo.initialize(); val original = repo.allRules().first { it.id == "engine-oil-filter" }
@@ -56,12 +212,12 @@ class RepositoryTest {
         db.dao().putRevision(RuleRevisionRecord("${ownerOverride.id}:1:owner", ownerOverride.id, 1, gson.toJson(ownerOverride)))
         repo.initialize()
         val upgraded = repo.allRules().first { it.id == old.id }
-        assertEquals(2, upgraded.revision); assertEquals("component", upgraded.recurrence)
+        assertEquals(3, upgraded.revision); assertEquals("component", upgraded.recurrence)
         assertEquals(before, repo.allEvents().single()); assertEquals(1, repo.allEvents().single().revision)
         assertEquals(ownerOverride, repo.allRules().first { it.id == ownerOverride.id })
         assertTrue(db.dao().allRules().first { it.id == ownerOverride.id }.ownerOverride)
         assertTrue(db.dao().allRevisions().any { it.ruleId == old.id && it.revision == 1 })
-        assertTrue(db.dao().allRevisions().any { it.ruleId == old.id && it.revision == 2 })
+        assertTrue(db.dao().allRevisions().any { it.ruleId == old.id && it.revision == 3 })
     }
     @Test fun deletedSeedHistoryIsNotRecreatedOnNextLaunch() = runBlocking {
         repo.initialize(); val history = db.dao().allNotes().first { it.id.startsWith("seed-history:") }
@@ -91,7 +247,7 @@ class RepositoryTest {
         repo.saveVisit(visit, listOf(WorkLine("l", "v", "Aceite", "oil")), listOf("oil"))
         repo.saveVisit(visit.copy(date = "2026-11-15"), listOf(WorkLine("l", "v", "Aceite", "oil")), listOf("oil"))
         assertEquals("2027-11-15", repo.tasks().single().dueDate); assertEquals(1, repo.allEvents().count { it.active })
-        assertEquals(2, repo.allEvents().size); repo.voidVisit("v"); assertEquals("INITIAL", repo.tasks().single().status)
+        assertEquals(2, repo.allEvents().size); repo.voidVisit("v"); assertEquals(195000, repo.tasks().single().dueKm)
     }
     @Test fun existingPaymentLinkDoesNotDuplicateAndDifferentPaymentsAreKept() = runBlocking {
         rule(); repo.saveExpense(Expense("paid", "2026-10-15", 30000, "Factura", "workshop"))
@@ -117,10 +273,10 @@ class RepositoryTest {
     @Test fun operationalAdoptionIsAuditedAndCreatesNoNewCompletedWork() = runBlocking {
         repo.saveRule(Rule("phase", "Filtro", "engine", "replace", months = 24, km = 40000, source = "fixture", sourceUrl = "https://example.invalid", recurrence = "phase"))
         repo.saveVisit(Visit("v", "2026-10-15", 176000, title = "Filtro"), listOf(WorkLine("l", "v", "Filtro", "phase")), listOf("phase"))
-        val before = repo.tasks().single(); assertEquals("PLANNED", before.status); assertNull(before.dueKm)
+        val before = repo.tasks().single(); assertEquals("PLANNED", before.status); assertEquals(216000, before.dueKm)
         val eventId = repo.allEvents().single().id; repo.adoptOperationalAnchor(eventId); repo.adoptOperationalAnchor(eventId)
         val after = repo.tasks().single(); assertEquals(216000, after.dueKm); assertEquals("2028-10-15", after.dueDate)
-        assertNotEquals(before.generation, after.generation); assertEquals(1, repo.allEvents().size)
+        assertEquals(before.generation, after.generation); assertEquals(1, repo.allEvents().size)
         assertEquals(1, db.dao().allAudit().count { it.action == "operational_anchor_adopted" })
     }
     @Test fun explicitOdometerCorrectionAndRetroactiveReadingPreserveHistory() = runBlocking {
@@ -168,7 +324,7 @@ class RepositoryTest {
             assertEquals(6, target.allRules().first { it.id == oil.id }.months)
             assertTrue(targetDb.dao().allRules().first { it.id == oil.id }.ownerOverride)
             val coolant = target.allRules().first { it.id == oldCoolant.id }
-            assertEquals(2, coolant.revision); assertEquals("component", coolant.recurrence)
+            assertEquals(3, coolant.revision); assertEquals("component", coolant.recurrence)
             assertEquals(beforeLocalEvap, target.allRules().first { it.id == evap.id })
             assertTrue(targetDb.dao().allRevisions().any { it.ruleId == oil.id && it.json.contains("Personalización copiada de aceite") })
             assertTrue(target.allEvents().isEmpty())

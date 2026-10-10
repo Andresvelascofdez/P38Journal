@@ -1,4 +1,56 @@
-﻿# Contratos de integración
+# Contratos de integración v3
+
+Contrato vigente para la app Android existente: release `dev.p38journal`, debug `dev.p38journal.debug`, versión 3.0.0 y versionCode 3. La firma externa se conserva. La documentación v3 prevalece sobre el antecedente v2 del final.
+
+Responsabilidades: domain modifica dominio, Room, esquemas y sus pruebas; ui modifica Compose y sus recorridos; catalogue mantiene JSON y documentación de fuentes; root integra plataforma, avisos, build, firma y entrega; review revisa de forma independiente y aporta pruebas propias. Gradle y los recorridos del emulador se ejecutan de forma exclusiva.
+
+## Dominio y migración
+
+La referencia operativa es independiente de lecturas y trabajos. El valor inicial es 175.000 km y se identifica como tal cuando todavía no existe una lectura real. Establecer la referencia no crea Reading, Event ni Visit.
+
+Rule incorpora `scheduleVisibility`, `serviceGroup`, `firstKm` y `firstMonths`. Las visibilidades son maintenance/service/manual/conditional/inactive. `Engine.evaluate` recibe `plan: PlanningReference?=null` al final de la firma; la app siempre proporciona el plan persistido. El motor no genera INITIAL. Calcula cada dimensión desde la ejecución exacta válida más reciente o desde su referencia anterior/base. B empieza a 12 meses/20.000 km y C a 24 meses/40.000 km; ambas repiten cada 24 meses/40.000 km. Los hitos únicos ya pasados, condiciones sin confirmar y antigüedades sin fecha original no alertan.
+
+La interfaz agrupa por `serviceGroup+dueDate+dueKm`, conserva cada operación y permite registrar solo las seleccionadas. El catálogo contiene 62 reglas y cubre las 59 filas, con dos inspecciones de servicio separadas de sus controles rutinarios.
+
+La migración 2→3 conserva datos y comprueba un respaldo privado antes de abrir la base anterior. Añade planning y los campos origin/policyVersion de Inbox/Ledger. Retira derivados reconocidos mediante metadata y relaciones; no utiliza títulos. Los intervalos personalizados anteriores se conservan.
+
+`saveReading` guarda en la misma transacción el marker `v3-reconcile`, de tipo reading y estado pending. El evaluador lo reconcilia al terminar, para recuperar una evaluación interrumpida. `saveVisit` admite `updateCurrentReading: Reading?` en la misma transacción; la UI exige confirmación y no reduce la lectura por registrar un trabajo pasado.
+
+### Referencia persistente y esquema 3
+
+`domain.PlanningReference` es un valor puro; `data.PlanningRecord` lo persiste en `planning_reference`. Sus campos son `id="main"`, `baselineKm=175000`, `baselineDate` ISO local, `provenance="user_selected_planning_baseline"` y `policyVersion=3`. La fecha inicial se recupera de una auditoría explícita de creación cuando existe; en caso contrario se utiliza la fecha local de migración/creación. Establecer o editar este plan no crea lecturas, visitas ni trabajos completados.
+
+El repositorio expone `suspend planningReference(): PlanningReference`, `observePlanningReference(): Flow<PlanningReference?>` y `suspend updatePlanningReference(date: String, km: Int = 175000)`. `tasks()` pasa al motor el plan persistido y la lectura real válida, o el kilometraje base si todavía no existe lectura. Las reglas antiguas sin campos de visibilidad reciben la política del catálogo actual; los intervalos personalizados se conservan.
+
+El snapshot JSON exportado usa `schemaVersion=3` e incluye un array `planning` con la referencia principal, además de los registros existentes. Las APIs siguen siendo `suspend exportSnapshot(): String`, `validateSnapshot(json: String)` y `suspend restoreSnapshot(json: String)`. La importación admite esquema 2 y no fabrica trabajos ni lecturas. Si falta el plan, puede recuperar la fecha de creación de la auditoría importada; un plan local editado explícitamente se conserva. La restauración combina ids sin duplicar registros, conserva las personalizaciones locales y permite aplicar una personalización de la copia sobre una regla predeterminada recién sembrada; una regla estándar antigua no rebaja la revisión actual. El ledger de emisiones se reconstruye en lugar de importar emisiones como si ya se hubieran realizado en esta instalación.
+
+### Respaldo anterior a abrir la base
+
+Antes de abrir una base existente de esquema 1/2 con Room, `PreMigrationBackup.ensure()` copia el archivo SQLite y su WAL, si existe, a `filesDir/migration-backups/`. Se incluye WAL porque puede contener datos y la versión de esquema todavía no incorporados al archivo principal. La copia verifica los SHA-256 y ejecuta `PRAGMA integrity_check` sobre la base copiada; su manifiesto guarda versión de origen/destino, fecha, checksums y resultado de integridad. Un fallo detiene la apertura y migración. Un reintento reutiliza una copia ya verificada del mismo contenido.
+
+Este respaldo privado previo no sustituye al ZIP completo exportable mediante SAF: los adjuntos permanecen en su ubicación privada original y la migración no los modifica. Las migraciones 1→2→3 preservan los datos de negocio; 2→3 crea el plan y añade `origin`/`policyVersion` a bandeja y ledger, con operaciones de esquema idempotentes.
+
+### Procedencia de avisos y ledger efectivo
+
+Los avisos nuevos llevan `origin="automatic"` y `policyVersion=3`. Al migrar datos anteriores, se identifica procedencia automática mediante tipos conocidos del ledger y su relación con la bandeja. Un registro cuya procedencia no puede demostrarse recibe `origin="legacy_unknown"`; los registros manuales o desconocidos se preservan. La cancelación de avisos iniciales antiguos se limita a registros automáticos identificados por esos metadatos y relaciones. No se clasifica ni borra por el texto del título, y no se elimina ningún evento de mantenimiento.
+
+La generación utiliza los límites y referencias efectivas seleccionados por el motor, no la lista completa de históricos ni sus ids. `saveVisit` y `voidVisit` comparan las generaciones antes/después y cancelan los avisos afectados solo cuando cambia el ciclo efectivo. Editar notas/taller o añadir/anular un trabajo antiguo sin efecto en el calendario mantiene el estado emitido y evita un aviso repetido.
+
+`saveReading` guarda la lectura y el marcador único `id="v3-reconcile"`, `ruleId="system"`, `kind="reading"`, `state="pending"` en la misma transacción. El evaluador protege este marcador y lo marca `reconciled` al terminar, permitiendo recuperar la evaluación inmediata tras una interrupción. La emisión Android y el commit del ledger no son atómicos: la recuperación actualiza el mismo id de notificación, sin prometer recepción exactamente una vez.
+
+## Plataforma y UI
+
+`Notifications.evaluateNow(context, trigger="change")` se ejecuta tras confirmar lecturas, trabajos o permisos. La evaluación manual no espera a las 09:00; WorkManager evalúa fechas y recupera evaluaciones sin Internet. Respeta activación, permiso y canal. Un resumen de varios grupos abre Mantenimiento con `maintenance-summary`; uno solo abre su detalle. Cancela los IDs anteriores 1003/1004 y deduplica por regla, generación, estado y ventana.
+
+La navegación principal es Inicio/Mantenimiento/Historial/Gastos. Ajustes, manuales, referencias, copias, bandeja, averías y piezas quedan en opciones secundarias. El detalle muestra intervalo, límite, restante, último registro y registro realizado; las operaciones incluidas y las fuentes se despliegan. El formulario precarga operación, fecha y km; taller, notas, costes y adjuntos son opcionales.
+
+Se conservan ZIP completos, visor nativo y acceso SAF. No cambia la clave de firma ni se añaden permisos generales de almacenamiento.
+
+---
+
+## Contrato historico v2 sustituido donde contradiga v3
+
+# Contratos de integración
 
 Workspace: C:/Users/Admin/SapAssistant/Range rover. Paquete dev.p38journal. Android nativo; no servidor. Los agentes leen los documentos originales UTF-8. Propiedad: catálogo data/maintenance-catalogue.json y docs/CATALOGUE*; dominio domain/ y data/ y sus tests; interfaz ui/ y MainActivity.kt; coordinador Gradle, platform/, manifest, recursos, copias, integración y entrega.
 

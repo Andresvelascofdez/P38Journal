@@ -18,7 +18,7 @@ object ConditionalProfiles {
             else -> return null
         }
         return profile.copy(
-            id = "${rule.id}-active", recurrence = "component", initialAction = profile.title,
+            id = "${rule.id}-active", recurrence = "component", scheduleVisibility = "maintenance", initialAction = profile.title,
             condition = "Perfil condicionado: requiere confirmación expresa de aplicabilidad y evidencia del propietario. ${rule.condition}"
         )
     }

@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "catalogue_status": "verified_starter_not_complete",
   "require_full_independent_review_before_delivery": true,
   "seed_is_not_service_completion": true,
@@ -30,11 +30,13 @@
         "operation_number": 37,
         "glossary_pdf_page": 2
       },
-      "initial_handling": "include_in_initial_service",
       "evidence_status": "source_checked_in_brief",
       "implementation_review_required": true,
       "last_performed_at": null,
-      "last_odometer_km": null
+      "last_odometer_km": null,
+      "schedule_visibility": "maintenance_calendar",
+      "notifications_enabled_by_default": true,
+      "unperformed_reference_policy": "owner_operating_baseline"
     },
     {
       "id": "oil-level",
@@ -61,11 +63,13 @@
         "printed_page": 135,
         "pdf_page": 138
       },
-      "initial_handling": "start_owner_check_schedule_without_marking_done",
       "evidence_status": "source_checked_in_brief",
       "implementation_review_required": true,
       "last_performed_at": null,
-      "last_odometer_km": null
+      "last_odometer_km": null,
+      "schedule_visibility": "manual_reference_only",
+      "notifications_enabled_by_default": false,
+      "unperformed_reference_policy": "owner_operating_baseline"
     },
     {
       "id": "coolant-level",
@@ -92,11 +96,13 @@
         "printed_page": 135,
         "pdf_page": 138
       },
-      "initial_handling": "start_owner_check_schedule_without_marking_done",
       "evidence_status": "source_checked_in_brief",
       "implementation_review_required": true,
       "last_performed_at": null,
-      "last_odometer_km": null
+      "last_odometer_km": null,
+      "schedule_visibility": "manual_reference_only",
+      "notifications_enabled_by_default": false,
+      "unperformed_reference_policy": "owner_operating_baseline"
     },
     {
       "id": "washer-level",
@@ -123,11 +129,13 @@
         "printed_page": 135,
         "pdf_page": 138
       },
-      "initial_handling": "start_owner_check_schedule_without_marking_done",
       "evidence_status": "source_checked_in_brief",
       "implementation_review_required": true,
       "last_performed_at": null,
-      "last_odometer_km": null
+      "last_odometer_km": null,
+      "schedule_visibility": "manual_reference_only",
+      "notifications_enabled_by_default": false,
+      "unperformed_reference_policy": "owner_operating_baseline"
     },
     {
       "id": "tyre-check",
@@ -154,11 +162,13 @@
         "printed_page": 135,
         "pdf_page": 138
       },
-      "initial_handling": "start_owner_check_schedule_without_marking_done",
       "evidence_status": "source_checked_in_brief",
       "implementation_review_required": true,
       "last_performed_at": null,
-      "last_odometer_km": null
+      "last_odometer_km": null,
+      "schedule_visibility": "manual_reference_only",
+      "notifications_enabled_by_default": false,
+      "unperformed_reference_policy": "owner_operating_baseline"
     },
     {
       "id": "brake-level",
@@ -185,11 +195,13 @@
         "printed_page": 135,
         "pdf_page": 138
       },
-      "initial_handling": "start_owner_check_schedule_without_marking_done",
       "evidence_status": "source_checked_in_brief",
       "implementation_review_required": true,
       "last_performed_at": null,
-      "last_odometer_km": null
+      "last_odometer_km": null,
+      "schedule_visibility": "manual_reference_only",
+      "notifications_enabled_by_default": false,
+      "unperformed_reference_policy": "owner_operating_baseline"
     },
     {
       "id": "steering-level",
@@ -216,11 +228,13 @@
         "printed_page": 135,
         "pdf_page": 138
       },
-      "initial_handling": "start_owner_check_schedule_without_marking_done",
       "evidence_status": "source_checked_in_brief",
       "implementation_review_required": true,
       "last_performed_at": null,
-      "last_odometer_km": null
+      "last_odometer_km": null,
+      "schedule_visibility": "manual_reference_only",
+      "notifications_enabled_by_default": false,
+      "unperformed_reference_policy": "owner_operating_baseline"
     },
     {
       "id": "daily-checks",
@@ -247,11 +261,13 @@
         "printed_page": 135,
         "pdf_page": 138
       },
-      "initial_handling": "daily_checklist_grouped_notifications",
       "evidence_status": "source_checked_in_brief",
       "implementation_review_required": true,
       "last_performed_at": null,
-      "last_odometer_km": null
+      "last_odometer_km": null,
+      "schedule_visibility": "manual_reference_only",
+      "notifications_enabled_by_default": false,
+      "unperformed_reference_policy": "owner_operating_baseline"
     },
     {
       "id": "steering-shaft",
@@ -278,11 +294,13 @@
         "printed_page": 136,
         "pdf_page": 139
       },
-      "initial_handling": "include_in_initial_service",
       "evidence_status": "source_checked_in_brief",
       "implementation_review_required": true,
       "last_performed_at": null,
-      "last_odometer_km": null
+      "last_odometer_km": null,
+      "schedule_visibility": "maintenance_calendar",
+      "notifications_enabled_by_default": true,
+      "unperformed_reference_policy": "owner_operating_baseline"
     },
     {
       "id": "brake-fluid",
@@ -309,11 +327,13 @@
         "printed_page": 146,
         "pdf_page": 149
       },
-      "initial_handling": "include_in_initial_service",
       "evidence_status": "source_checked_in_brief",
       "implementation_review_required": true,
       "last_performed_at": null,
-      "last_odometer_km": null
+      "last_odometer_km": null,
+      "schedule_visibility": "maintenance_calendar",
+      "notifications_enabled_by_default": true,
+      "unperformed_reference_policy": "owner_operating_baseline"
     },
     {
       "id": "brake-hydraulics",
@@ -340,12 +360,15 @@
         "printed_page": 146,
         "pdf_page": 149
       },
-      "initial_handling": "include_in_initial_service",
       "evidence_status": "source_checked_in_brief",
       "implementation_review_required": true,
       "last_performed_at": null,
-      "last_odometer_km": null
+      "last_odometer_km": null,
+      "schedule_visibility": "maintenance_calendar",
+      "notifications_enabled_by_default": true,
+      "unperformed_reference_policy": "owner_operating_baseline"
     }
   ],
-  "catalogue_expansion_instruction": "Leer matriz, glosario y notas de M01; completar todas las operaciones aplicables y revisar de manera independiente. No limitar la app a este starter. Para cualquier conflicto preservar evidencias y documentar decisión."
+  "catalogue_expansion_instruction": "Reutilizar y auditar catálogo completo existente desde matriz/glosario/notas. No limitarse al starter. Agrupar comprobaciones de servicio por revisión; controles diarios/semanales solo referencia manual sin avisos por defecto. Ninguna regla genera mantenimiento inicial por falta de historial.",
+  "planning_policy": "Use operating baseline 175000 km; no initial-maintenance generation. Reuse/audit existing complete catalogue; starter is not full catalogue."
 }

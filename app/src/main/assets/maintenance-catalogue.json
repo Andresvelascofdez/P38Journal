@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "revision": 2,
-  "catalogue_status": "complete_matrix_source_checked_independent_review_pending",
+  "revision": 3,
+  "catalogue_status": "complete_matrix_v3_source_checked_independently_reviewed",
   "vehicle_scope": "P38 4.6 V8 petrol automatic model year2000; VIN/equipment unknown",
   "seed_is_not_service_completion": true,
   "sources": [
@@ -49,7 +49,11 @@
       "initialAction": "Inspeccionar asientos, anclajes y cinturones",
       "priority": 1,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "lights-horn",
@@ -65,7 +69,11 @@
       "initialAction": "Probar alumbrado, intermitentes y bocina",
       "priority": 2,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "wipers-washers",
@@ -81,7 +89,11 @@
       "initialAction": "Revisar limpia y lavaparabrisas y escobillas",
       "priority": 2,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "handbrake",
@@ -97,7 +109,11 @@
       "initialAction": "Comprobar freno de estacionamiento",
       "priority": 1,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "headlight-alignment",
@@ -113,7 +129,11 @@
       "initialAction": "Verificar y ajustar orientación de faros",
       "priority": 2,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "brake-mechanisms",
@@ -129,7 +149,11 @@
       "initialAction": "Inspeccionar pastillas, discos, pinzas y fugas",
       "priority": 1,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "abs-sensor-wiring",
@@ -145,7 +169,11 @@
       "initialAction": "Inspeccionar cables de sensores ABS",
       "priority": 1,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "radiator-fan",
@@ -161,7 +189,11 @@
       "initialAction": "Inspeccionar obstrucciones del radiador y ventilador",
       "priority": 1,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "locks-hinges",
@@ -177,7 +209,11 @@
       "initialAction": "Comprobar y lubricar cierres y bisagras",
       "priority": 3,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "cooling-hoses",
@@ -193,11 +229,15 @@
       "initialAction": "Inspeccionar fugas y conexiones de refrigeración y calefacción",
       "priority": 1,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "pollen-filters",
-      "title": "Sustituir filtros de habitáculo",
+      "title": "Cambio de filtros de habitáculo",
       "system": "body",
       "operation": "replace",
       "days": null,
@@ -206,10 +246,14 @@
       "source": "M01 LRL0354SPA 04/00; PDF 1; operación 30; glosario PDF 2",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Maintenance_Sheet_2000_ES.pdf",
       "condition": "B y C: principal cada 12 meses/20.000 km; A posterior no aplicable a gasolina.",
-      "initialAction": "Sustituir filtros de habitáculo",
+      "initialAction": "Cambio de filtros de habitáculo",
       "priority": 3,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "maintenance",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "auxiliary-belt-inspection",
@@ -225,7 +269,11 @@
       "initialAction": "Inspeccionar correa de accesorios",
       "priority": 2,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "battery-condition",
@@ -237,15 +285,19 @@
       "km": 20000,
       "source": "M01 LRL0354SPA 04/00; PDF 1; operación 35; glosario PDF 2",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Maintenance_Sheet_2000_ES.pdf",
-      "condition": "B y C: principal cada 12 meses/20.000 km; A posterior no aplicable a gasolina. Batería sin reposición de agua según M02 imp 151/PDF154. Si lleva navegación, M04 imp19/PDF19: esperar al menos2 min antes de desconectar; contrastar procedimiento alarma según equipamiento. No instrucción DIY.",
+      "condition": "B y C: principal cada 12 meses/20.000 km; A posterior no aplicable a gasolina. Batería sin reposición de agua según M02 imp 151/PDF 154. Si lleva navegación, M04 imp 19/PDF 19: esperar al menos 2 min antes de desconectar; contrastar procedimiento alarma según equipamiento. No instrucción DIY.",
       "initialAction": "Comprobar estado de la batería",
       "priority": 2,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "engine-oil-filter",
-      "title": "Cambiar aceite y filtro del motor",
+      "title": "Cambio de aceite y filtro",
       "system": "engine",
       "operation": "replace",
       "days": null,
@@ -254,10 +306,14 @@
       "source": "M01 LRL0354SPA 04/00; PDF 1; operación 37; glosario PDF 2",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Maintenance_Sheet_2000_ES.pdf",
       "condition": "B y C: principal cada 12 meses/20.000 km; A posterior no aplicable a gasolina.",
-      "initialAction": "Cambiar aceite y filtro del motor",
+      "initialAction": "Cambio de aceite y filtro",
       "priority": 1,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "maintenance",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "propshaft-lubrication",
@@ -273,7 +329,11 @@
       "initialAction": "Lubricar juntas y estriados de transmisión",
       "priority": 2,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "underbody-lines",
@@ -289,7 +349,11 @@
       "initialAction": "Inspeccionar conductos, racores y cableado de bajos",
       "priority": 1,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "steering-suspension-lines",
@@ -305,7 +369,11 @@
       "initialAction": "Inspeccionar fugas y conducciones de dirección y suspensión",
       "priority": 1,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "powertrain-leaks",
@@ -321,7 +389,11 @@
       "initialAction": "Inspeccionar fugas del conjunto motor y transmisión",
       "priority": 2,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "exhaust-inspection",
@@ -337,7 +409,11 @@
       "initialAction": "Inspeccionar escape y sus soportes",
       "priority": 2,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "chassis-fasteners",
@@ -353,7 +429,11 @@
       "initialAction": "Verificar fijaciones de dirección, ejes y suspensión",
       "priority": 1,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "steering-balljoints",
@@ -369,7 +449,11 @@
       "initialAction": "Inspeccionar rótulas de dirección y guardapolvos",
       "priority": 1,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "air-springs-lines",
@@ -385,7 +469,11 @@
       "initialAction": "Inspeccionar balonas y tuberías de suspensión neumática",
       "priority": 1,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "dampers-height-sensors",
@@ -401,7 +489,11 @@
       "initialAction": "Inspeccionar amortiguadores, sensores de altura y cableado",
       "priority": 2,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "road-test",
@@ -413,15 +505,19 @@
       "km": 20000,
       "source": "M01 LRL0354SPA 04/00; PDF 1; operación 57; glosario PDF 2",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Maintenance_Sheet_2000_ES.pdf",
-      "condition": "B y C: principal cada 12 meses/20.000 km; A posterior no aplicable a gasolina. Rodillos: nunca banco de dos ruedas; cuatro ruedas limitado a 5 km/h según M01 PDF 2; solo especialista (M02 imp 136/PDF139).",
+      "condition": "B y C: principal cada 12 meses/20.000 km; A posterior no aplicable a gasolina. Rodillos: nunca banco de dos ruedas; cuatro ruedas limitado a 5 km/h según M01 PDF 2; solo especialista (M02 imp 136/PDF 139).",
       "initialAction": "Realizar prueba profesional de funcionamiento y conducción",
       "priority": 2,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "remote-batteries",
-      "title": "Cambiar pilas del mando de alarma",
+      "title": "Cambio de pilas del mando",
       "system": "electrical",
       "operation": "replace",
       "days": null,
@@ -429,11 +525,15 @@
       "km": 40000,
       "source": "M01 LRL0354SPA 04/00; PDF 1; operación 6; glosario PDF 2",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Maintenance_Sheet_2000_ES.pdf",
-      "condition": "Fase C: 24 meses/40.000 km, después 48/80, 72/120 y 96/160. No deducir fase de compra. Una referencia operativa debe adoptarse expresamente.",
-      "initialAction": "Cambiar pilas del mando de alarma",
+      "condition": "Fase C: 24 meses/40.000 km, después 48/80, 72/120 y 96/160. No deducir fase de compra. El calendario operativo aplica esta fase desde la base elegida del plan; no prueba ejecución pasada.",
+      "initialAction": "Cambio de pilas del mando",
       "priority": 3,
       "recurrence": "phase",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": 40000,
+      "firstMonths": 24
     },
     {
       "id": "corrosion-inspection",
@@ -449,11 +549,15 @@
       "initialAction": "Realizar inspección anual de carrocería y corrosión",
       "priority": 3,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "conditional",
+      "serviceGroup": "",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "eas-compressor-service",
-      "title": "Serviciar filtros de compresor y depósito EAS",
+      "title": "Servicio del compresor y depósito EAS",
       "system": "suspension",
       "operation": "professional_service",
       "days": null,
@@ -461,11 +565,15 @@
       "km": 40000,
       "source": "M01 LRL0354SPA 04/00; PDF 1; operación 8–10; glosario PDF 2",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Maintenance_Sheet_2000_ES.pdf",
-      "condition": "Fase C: 24 meses/40.000 km, después 48/80, 72/120 y 96/160. No deducir fase de compra. Una referencia operativa debe adoptarse expresamente. Despresurización y represurización por taller son partes del mismo servicio; drenar depósito y sustituir secador solo si hay agua. Uso severo exige mayor frecuencia sin valor genérico.",
-      "initialAction": "Serviciar filtros de compresor y depósito EAS",
+      "condition": "Fase C: 24 meses/40.000 km, después 48/80, 72/120 y 96/160. No deducir fase de compra. El calendario operativo aplica esta fase desde la base elegida del plan; no prueba ejecución pasada. Despresurización y represurización por taller son partes del mismo servicio; drenar depósito y sustituir secador solo si hay agua. Uso severo exige mayor frecuencia sin valor genérico.",
+      "initialAction": "Servicio del compresor y depósito EAS",
       "priority": 2,
       "recurrence": "phase",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": 40000,
+      "firstMonths": 24
     },
     {
       "id": "fuel-filter-applicability",
@@ -477,11 +585,15 @@
       "km": null,
       "source": "M01 LRL0354SPA 04/00; PDF 1; operación 16; glosario PDF 2",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Maintenance_Sheet_2000_ES.pdf",
-      "condition": "Condicional V8 hasta VIN WA410481; si aplicable, la marca 80k corresponde48 meses/80.000 km. Año2000 no sustituye comprobación de VIN/especificación. No hay cambio automático mientras no se confirme; sistema de combustible solo por especialista M02 imp 136/PDF139.",
+      "condition": "Condicional V8 hasta VIN WA410481; si aplicable, la marca 80k corresponde 48 meses/80.000 km. Año2000 no sustituye comprobación de VIN/especificación. No hay cambio automático mientras no se confirme; sistema de combustible solo por especialista M02 imp 136/PDF 139.",
       "initialAction": "Verificar en taller si existe filtro de combustible externo por VIN",
       "priority": 2,
       "recurrence": "condition",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "conditional",
+      "serviceGroup": "",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "sunroof-drains",
@@ -497,11 +609,15 @@
       "initialAction": "Comprobar desagües del techo solar, si está equipado",
       "priority": 3,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "conditional",
+      "serviceGroup": "",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "coolant-renewal",
-      "title": "Renovar refrigerante según servicio documentado",
+      "title": "Cambio de refrigerante",
       "system": "cooling",
       "operation": "replace_fluid",
       "days": null,
@@ -509,15 +625,19 @@
       "km": 60000,
       "source": "M01 LRL0354SPA 04/00; PDF 1; operación 23; glosario PDF 2",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Maintenance_Sheet_2000_ES.pdf",
-      "condition": "M01 marcas 60k (B) y120k (C); glosario identifica hitos meses/km, no reinicio desde compra. Confirmar formulación y procedimiento por especificación; M02 imp142–143/PDF145–146 prescribe OAT para esta edición. No mezclar formulaciones ni abrir circuito caliente. Glosario M01 PDF 2: las marcas especiales indican vigencia recurrente (ejemplo cada 60 meses/100.000 km). Se calcula desde la última operación válida; no se redondea al siguiente múltiplo del odómetro. La excepción del primer servicio se conserva por separado.",
-      "initialAction": "Renovar refrigerante según servicio documentado",
+      "condition": "M01 marcas 60k (B) y 120k (C); glosario define vigencia recurrente cada 36 meses/60.000 km. Confirmar formulación y procedimiento por especificación; M02 imp 142–143/PDF 145–146 prescribe OAT para esta edición. No mezclar formulaciones ni abrir circuito caliente. Glosario M01 PDF 2: las marcas especiales indican vigencia recurrente (ejemplo cada 60 meses/100.000 km). Se calcula desde la última operación válida; no se redondea al siguiente múltiplo del odómetro. ",
+      "initialAction": "Cambio de refrigerante",
       "priority": 1,
       "recurrence": "component",
-      "revision": 2
+      "revision": 3,
+      "scheduleVisibility": "maintenance",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "brake-fluid",
-      "title": "Sustituir líquido de frenos",
+      "title": "Cambio de líquido de frenos",
       "system": "brakes",
       "operation": "replace_fluid",
       "days": null,
@@ -525,15 +645,19 @@
       "km": 60000,
       "source": "M02 LRL0314ENG 3.ª edición (2000); PDF 149; impresa 146",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Owners_Handbook_2000_UK.pdf",
-      "condition": "M01 fila24 marcas 60k/120k; M02 explicita intervalo recurrente36 meses/60.000 km, primero que se cumpla. Reposición de nivel no satisface renovación; reducción de intervalos severos a definir por taller.",
-      "initialAction": "Sustituir líquido de frenos",
+      "condition": "M01 fila 24 marcas 60k/120k; M02 explicita intervalo recurrente 36 meses/60.000 km, primero que se cumpla. Reposición de nivel no satisface renovación; reducción de intervalos severos a definir por taller.",
+      "initialAction": "Cambio de líquido de frenos",
       "priority": 1,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "maintenance",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "evap-service",
-      "title": "Serviciar canister y sistema de vapores de combustible",
+      "title": "Servicio del sistema de vapores de combustible",
       "system": "engine",
       "operation": "professional_service",
       "days": null,
@@ -541,15 +665,19 @@
       "km": 160000,
       "source": "M01 LRL0354SPA 04/00; PDF 1; operación 26; glosario PDF 2",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Maintenance_Sheet_2000_ES.pdf",
-      "condition": "V8, marca 160k de M01 (96 meses/160.000 km por glosario); incluir canister, evaporación y sello de tapa. Hito original separado de referencia operativa. No manipular emisiones o combustible sin especialista. Glosario M01 PDF 2: las marcas especiales indican vigencia recurrente (ejemplo cada 60 meses/100.000 km). Se calcula desde la última operación válida; no se redondea al siguiente múltiplo del odómetro. La excepción del primer servicio se conserva por separado.",
-      "initialAction": "Serviciar canister y sistema de vapores de combustible",
+      "condition": "V8, marca 160k de M01 (96 meses/160.000 km por glosario); incluir canister, evaporación y sello de tapa. Intervalo recurrente largo independiente de la alternancia B/C. No manipular emisiones o combustible sin especialista. Glosario M01 PDF 2: las marcas especiales indican vigencia recurrente (ejemplo cada 60 meses/100.000 km). Se calcula desde la última operación válida; no se redondea al siguiente múltiplo del odómetro. La excepción del primer servicio se conserva por separado.",
+      "initialAction": "Servicio del sistema de vapores de combustible",
       "priority": 2,
       "recurrence": "component",
-      "revision": 2
+      "revision": 3,
+      "scheduleVisibility": "maintenance",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "spark-plugs",
-      "title": "Sustituir bujías",
+      "title": "Cambio de bujías",
       "system": "engine",
       "operation": "replace",
       "days": null,
@@ -557,15 +685,19 @@
       "km": 120000,
       "source": "M01 LRL0354SPA 04/00; PDF 1; operación 27; glosario PDF 2",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Maintenance_Sheet_2000_ES.pdf",
-      "condition": "Marca 120k de M01, equivalente 72 meses/120.000 km del calendario de servicio; no confundir con cualquier C. Hito, no historial inferido. Glosario M01 PDF 2: las marcas especiales indican vigencia recurrente (ejemplo cada 60 meses/100.000 km). Se calcula desde la última operación válida; no se redondea al siguiente múltiplo del odómetro. La excepción del primer servicio se conserva por separado.",
-      "initialAction": "Sustituir bujías",
+      "condition": "Marca 120k de M01, equivalente 72 meses/120.000 km del calendario de servicio; no confundir con cualquier C. Intervalo recurrente, no fase C en cada visita. Glosario M01 PDF 2: las marcas especiales indican vigencia recurrente (ejemplo cada 60 meses/100.000 km). Se calcula desde la última operación válida; no se redondea al siguiente múltiplo del odómetro. La excepción del primer servicio se conserva por separado.",
+      "initialAction": "Cambio de bujías",
       "priority": 2,
       "recurrence": "component",
-      "revision": 2
+      "revision": 3,
+      "scheduleVisibility": "maintenance",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "air-filter",
-      "title": "Sustituir filtro de aire V8 y limpiar drenaje",
+      "title": "Cambio del filtro de aire",
       "system": "engine",
       "operation": "replace",
       "days": null,
@@ -573,15 +705,19 @@
       "km": 40000,
       "source": "M01 LRL0354SPA 04/00; PDF 1; operación 28; glosario PDF 2",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Maintenance_Sheet_2000_ES.pdf",
-      "condition": "Fase C: 24 meses/40.000 km, después 48/80, 72/120 y 96/160. No deducir fase de compra. Una referencia operativa debe adoptarse expresamente. Polvo/campo/vadeo puede requerir más frecuencia, sin plazo numérico no publicado.",
-      "initialAction": "Sustituir filtro de aire V8 y limpiar drenaje",
+      "condition": "Fase C: 24 meses/40.000 km, después 48/80, 72/120 y 96/160. No deducir fase de compra. El calendario operativo aplica esta fase desde la base elegida del plan; no prueba ejecución pasada. Polvo/campo/vadeo puede requerir más frecuencia, sin plazo numérico no publicado.",
+      "initialAction": "Cambio del filtro de aire",
       "priority": 2,
       "recurrence": "phase",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "maintenance",
+      "serviceGroup": "workshop",
+      "firstKm": 40000,
+      "firstMonths": 24
     },
     {
       "id": "auxiliary-belt-renewal",
-      "title": "Sustituir correa de accesorios por hito documentado",
+      "title": "Cambio de correa de accesorios",
       "system": "engine",
       "operation": "replace",
       "days": null,
@@ -589,15 +725,19 @@
       "km": 100000,
       "source": "M01 LRL0354SPA 04/00; PDF 1; operación 32; glosario PDF 2",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Maintenance_Sheet_2000_ES.pdf",
-      "condition": "Marca 100k de M01; glosario explicita60 meses/100.000 km. No sustituye inspección de la fila31 y no se reinicia desde175.000 km. Glosario M01 PDF 2: las marcas especiales indican vigencia recurrente (ejemplo cada 60 meses/100.000 km). Se calcula desde la última operación válida; no se redondea al siguiente múltiplo del odómetro. La excepción del primer servicio se conserva por separado.",
-      "initialAction": "Sustituir correa de accesorios por hito documentado",
+      "condition": "Marca 100k de M01; glosario explicita 60 meses/100.000 km. No sustituye inspección de la fila 31 El calendario usa la referencia operativa elegida de 175.000 km, sin inventar ejecución. Glosario M01 PDF 2: las marcas especiales indican vigencia recurrente (ejemplo cada 60 meses/100.000 km). Se calcula desde la última operación válida; no se redondea al siguiente múltiplo del odómetro. La excepción del primer servicio se conserva por separado.",
+      "initialAction": "Cambio de correa de accesorios",
       "priority": 2,
       "recurrence": "component",
-      "revision": 2
+      "revision": 3,
+      "scheduleVisibility": "maintenance",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "steering-shaft",
-      "title": "Inspeccionar profesionalmente eje intermedio de dirección",
+      "title": "Inspección del eje de dirección",
       "system": "steering",
       "operation": "professional_inspection",
       "days": null,
@@ -605,11 +745,15 @@
       "km": 40000,
       "source": "M02 LRL0314ENG 3.ª edición (2000); PDF 139; impresa 136",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Owners_Handbook_2000_UK.pdf",
-      "condition": "M01 fila33 solo C; M02 confirma24 meses/40.000 km. Inspección adicional tras impacto frontal. No lubricar columna/eje; mantenimiento solo por profesional autorizado.",
-      "initialAction": "Inspeccionar profesionalmente eje intermedio de dirección",
+      "condition": "M01 fila 33 solo C; M02 confirma 24 meses/40.000 km. Inspección adicional tras impacto frontal. No lubricar columna/eje; mantenimiento solo por profesional autorizado.",
+      "initialAction": "Inspección del eje de dirección",
       "priority": 1,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "automatic-filter-history",
@@ -621,15 +765,19 @@
       "km": null,
       "source": "M01 LRL0354SPA 04/00; PDF 1; operación 40; glosario PDF 2",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Maintenance_Sheet_2000_ES.pdf",
-      "condition": "Hoja: cambio de filtro solo a los primeros 40.000 km. Con 175.000 km de compra no inventar que se ejecutó ni repetir cada 40.000 km. Taller verifica historial y necesidad técnica; esta inspección no satisface un cambio de filtro.",
+      "condition": "M01 prescribe cambio de filtro únicamente en los primeros 40.000 km. La comprobación derivada v2 queda inactiva y se conserva por compatibilidad de historial. El hito único anterior a la base no se repite ni se convierte en mantenimiento pendiente.",
       "initialAction": "Revisar historial y necesidad del filtro de caja automática",
       "priority": 2,
-      "recurrence": "initial",
-      "revision": 1
+      "recurrence": "once",
+      "revision": 3,
+      "scheduleVisibility": "inactive",
+      "serviceGroup": "",
+      "firstKm": 40000,
+      "firstMonths": null
     },
     {
       "id": "automatic-fluid",
-      "title": "Cambiar aceite de transmisión automática",
+      "title": "Cambio de aceite de caja automática",
       "system": "transmission",
       "operation": "replace_fluid",
       "days": null,
@@ -637,15 +785,19 @@
       "km": 40000,
       "source": "M01 LRL0354SPA 04/00; PDF 1; operación 41; glosario PDF 2",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Maintenance_Sheet_2000_ES.pdf",
-      "condition": "known_pre_purchase_replaced; Cambio anterior comunicado, sin fecha/km exactos; no volver a sustituir automáticamente ni usar compra como referencia. Registrar cambio real o referencia expresamente adoptada. Fase C: 24 meses/40.000 km, después 48/80, 72/120 y 96/160. No deducir fase de compra. Una referencia operativa debe adoptarse expresamente.",
-      "initialAction": "Cambiar aceite de transmisión automática",
+      "condition": "Cambio anterior comunicado, sin fecha/km exactos; no acredita una ejecución exacta ni mueve la base operativa. El historial impreciso no desplaza la referencia del plan. Fase C: 24 meses/40.000 km, después 48/80, 72/120 y 96/160. No deducir fase de compra. El calendario operativo aplica esta fase desde la base elegida del plan; no prueba ejecución pasada.",
+      "initialAction": "Cambio de aceite de caja automática",
       "priority": 2,
       "recurrence": "phase",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "maintenance",
+      "serviceGroup": "workshop",
+      "firstKm": 40000,
+      "firstMonths": 24
     },
     {
       "id": "transfer-fluid",
-      "title": "Cambiar aceite de caja de transferencia",
+      "title": "Cambio de aceite de transferencia",
       "system": "transmission",
       "operation": "replace_fluid",
       "days": null,
@@ -653,11 +805,15 @@
       "km": 40000,
       "source": "M01 LRL0354SPA 04/00; PDF 1; operación 42; glosario PDF 2",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Maintenance_Sheet_2000_ES.pdf",
-      "condition": "known_pre_purchase_replaced; Cambio anterior comunicado, sin fecha/km exactos; no volver a sustituir automáticamente ni usar compra como referencia. Registrar cambio real o referencia expresamente adoptada. Fase C: 24 meses/40.000 km, después 48/80, 72/120 y 96/160. No deducir fase de compra. Una referencia operativa debe adoptarse expresamente.",
-      "initialAction": "Cambiar aceite de caja de transferencia",
+      "condition": "Cambio anterior comunicado, sin fecha/km exactos; no acredita una ejecución exacta ni mueve la base operativa. El historial impreciso no desplaza la referencia del plan. Fase C: 24 meses/40.000 km, después 48/80, 72/120 y 96/160. No deducir fase de compra. El calendario operativo aplica esta fase desde la base elegida del plan; no prueba ejecución pasada.",
+      "initialAction": "Cambio de aceite de transferencia",
       "priority": 2,
       "recurrence": "phase",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "maintenance",
+      "serviceGroup": "workshop",
+      "firstKm": 40000,
+      "firstMonths": 24
     },
     {
       "id": "transfer-level",
@@ -673,11 +829,15 @@
       "initialAction": "Comprobar nivel de aceite de caja de transferencia",
       "priority": 2,
       "recurrence": "phase_b",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": 20000,
+      "firstMonths": 12
     },
     {
       "id": "axle-fluid",
-      "title": "Cambiar aceites de ejes por hito documentado",
+      "title": "Cambio de aceites de diferenciales",
       "system": "transmission",
       "operation": "replace_fluid",
       "days": null,
@@ -685,11 +845,15 @@
       "km": 160000,
       "source": "M01 LRL0354SPA 04/00; PDF 1; operación 44; glosario PDF 2",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Maintenance_Sheet_2000_ES.pdf",
-      "condition": "known_pre_purchase_replaced; Cambio anterior comunicado, sin fecha/km exactos; no volver a sustituir automáticamente ni usar compra como referencia. Registrar cambio real o referencia expresamente adoptada. M01 indica primeros 10.000 km solamente y después 160.000 km; el primer hito no se repite. Marca 160k equivalente 96 meses en glosario. No interpretar compra como cambio. Glosario M01 PDF 2: las marcas especiales indican vigencia recurrente (ejemplo cada 60 meses/100.000 km). Se calcula desde la última operación válida; no se redondea al siguiente múltiplo del odómetro. La excepción del primer servicio se conserva por separado.",
-      "initialAction": "Cambiar aceites de ejes por hito documentado",
+      "condition": "Cambio anterior comunicado, sin fecha/km exactos; no acredita una ejecución exacta ni mueve la base operativa. El historial impreciso no desplaza la referencia del plan. M01 indica primeros 10.000 km solamente y después 160.000 km; el primer hito no se repite. Marca 160k equivalente 96 meses en glosario. No interpretar compra como cambio. Glosario M01 PDF 2: las marcas especiales indican vigencia recurrente (ejemplo cada 60 meses/100.000 km). Se calcula desde la última operación válida; no se redondea al siguiente múltiplo del odómetro. La excepción del primer servicio se conserva por separado.",
+      "initialAction": "Cambio de aceites de diferenciales",
       "priority": 2,
       "recurrence": "component",
-      "revision": 2
+      "revision": 3,
+      "scheduleVisibility": "maintenance",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "axle-level",
@@ -705,7 +869,11 @@
       "initialAction": "Comprobar niveles de aceite de ambos ejes",
       "priority": 2,
       "recurrence": "phase_b",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": 20000,
+      "firstMonths": 12
     },
     {
       "id": "automatic-initial-inspection",
@@ -717,11 +885,15 @@
       "km": null,
       "source": "M01 LRL0354SPA 04/00; PDF 1; operación 41; glosario PDF 2",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Maintenance_Sheet_2000_ES.pdf",
-      "condition": "Decisión de producto para mantenimiento inicial: ATF declarado cambiado sin fecha/km. No registrar inspección como cambio, ni establecer referencia de reemplazo por revisión de nivel.",
+      "condition": "Inspección inicial derivada v2, retirada del calendario y avisos por decisión del propietario en v3. Los trabajos registrados se conservan; no representa un cambio de aceite.",
       "initialAction": "Inspeccionar nivel y fugas de la caja automática",
       "priority": 2,
       "recurrence": "initial",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "inactive",
+      "serviceGroup": "",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "towing-mount",
@@ -737,7 +909,11 @@
       "initialAction": "Comprobar fijación del enganche de remolque, si existe",
       "priority": 2,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "conditional",
+      "serviceGroup": "",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "warning-diagnostics",
@@ -753,7 +929,11 @@
       "initialAction": "Comprobar testigos y diagnosticar las anomalías observadas",
       "priority": 1,
       "recurrence": "condition",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "conditional",
+      "serviceGroup": "",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "service-report",
@@ -769,7 +949,11 @@
       "initialAction": "Documentar revisión y actuaciones adicionales del taller",
       "priority": 3,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "oil-level",
@@ -781,11 +965,15 @@
       "km": 400,
       "source": "M02 LRL0314ENG 3.ª edición (2000); PDF 138; impresa 135",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Owners_Handbook_2000_UK.pdf",
-      "condition": "Control semanal o al menos cada 400 km. Motor frío y suelo nivelado; detalle M02 imp141/PDF144.",
+      "condition": "Control semanal o al menos cada 400 km. Motor frío y suelo nivelado; detalle M02 imp 141/PDF 144.",
       "initialAction": "Comprobar nivel de aceite",
       "priority": 1,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "manual",
+      "serviceGroup": "",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "coolant-level",
@@ -797,11 +985,15 @@
       "km": 400,
       "source": "M02 LRL0314ENG 3.ª edición (2000); PDF 138; impresa 135",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Owners_Handbook_2000_UK.pdf",
-      "condition": "Control semanal o al menos cada 400 km. Nunca abrir depósito caliente; detalle imp142/PDF145.",
+      "condition": "Control semanal o al menos cada 400 km. Nunca abrir depósito caliente; detalle imp 142/PDF 145.",
       "initialAction": "Comprobar nivel de refrigerante en frío",
       "priority": 1,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "manual",
+      "serviceGroup": "",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "washer-level",
@@ -817,7 +1009,11 @@
       "initialAction": "Comprobar nivel de lavaparabrisas",
       "priority": 3,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "manual",
+      "serviceGroup": "",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "tyre-check",
@@ -829,11 +1025,15 @@
       "km": 400,
       "source": "M02 LRL0314ENG 3.ª edición (2000); PDF 138; impresa 135",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Owners_Handbook_2000_UK.pdf",
-      "condition": "Control semanal o al menos cada 400 km. En frío; detalle imp147/PDF150. Neumáticos conocidos cambiados, inspeccionar sin sustitución automática.",
+      "condition": "Control semanal o al menos cada 400 km. En frío; detalle imp 147/PDF 150. Neumáticos conocidos cambiados, inspeccionar sin sustitución automática.",
       "initialAction": "Comprobar estado y presión de neumáticos y rueda de repuesto",
       "priority": 1,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "manual",
+      "serviceGroup": "",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "brake-level",
@@ -845,11 +1045,15 @@
       "km": null,
       "source": "M02 LRL0314ENG 3.ª edición (2000); PDF 138; impresa 135",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Owners_Handbook_2000_UK.pdf",
-      "condition": "Mensual; comprobación no satisface cambio. Ante caída apreciable revisar inmediatamente en taller. Frenos bajoMIN: no circular, detalle imp 145/PDF148.",
+      "condition": "Mensual; comprobación no satisface cambio. Ante caída apreciable revisar inmediatamente en taller. Frenos bajo MIN: no circular, detalle imp 145/PDF 148.",
       "initialAction": "Comprobar nivel de líquido de frenos",
       "priority": 1,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "manual",
+      "serviceGroup": "",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "steering-level",
@@ -861,11 +1065,15 @@
       "km": null,
       "source": "M02 LRL0314ENG 3.ª edición (2000); PDF 138; impresa 135",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Owners_Handbook_2000_UK.pdf",
-      "condition": "Mensual; motor apagado y sistema frío, no girar volante tras apagar; detalle imp 146/PDF149. Comprobar no sustituye líquido.",
+      "condition": "Mensual; motor apagado y sistema frío, no girar volante tras apagar; detalle imp 146/PDF 149. Comprobar no sustituye líquido.",
       "initialAction": "Comprobar nivel de dirección asistida",
       "priority": 1,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "manual",
+      "serviceGroup": "",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "daily-checks",
@@ -877,15 +1085,19 @@
       "km": null,
       "source": "M02 LRL0314ENG 3.ª edición (2000); PDF 138; impresa 135",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Owners_Handbook_2000_UK.pdf",
-      "condition": "Lista diaria, avisos agrupados. Incluye luces/testigos, bocina, indicadores, limpia/lavaparabrisas, cinturones/frenos y manchas bajo vehículo. Sin diagnóstico automático.",
+      "condition": "Lista diaria, solo referencia del manual, sin avisos por defecto. Incluye luces/testigos, bocina, indicadores, limpia/lavaparabrisas, cinturones/frenos y manchas bajo vehículo. Sin diagnóstico automático.",
       "initialAction": "Comprobar mandos, cinturones, frenos y posibles fugas antes del uso",
       "priority": 1,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "manual",
+      "serviceGroup": "",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "brake-hydraulics",
-      "title": "Renovar elementos hidráulicos de frenos y revisar pinzas",
+      "title": "Servicio hidráulico de frenos",
       "system": "brakes",
       "operation": "professional_service",
       "days": null,
@@ -893,11 +1105,15 @@
       "km": 120000,
       "source": "M02 LRL0314ENG 3.ª edición (2000); PDF 149; impresa 146",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Owners_Handbook_2000_UK.pdf",
-      "condition": "M01 PDF 2 confirma6 años/120.000 km. Renovar líquido, retenes y latiguillos; examinar superficies de cilindros/pinzas y cambiar lo necesario. Solo trabajo profesional; condiciones arduas requieren plazo menor acordado.",
-      "initialAction": "Renovar elementos hidráulicos de frenos y revisar pinzas",
+      "condition": "M01 PDF 2 confirma 6 años/120.000 km. Renovar líquido, retenes y latiguillos; examinar superficies de cilindros/pinzas y cambiar lo necesario. Solo trabajo profesional; condiciones arduas requieren plazo menor acordado.",
+      "initialAction": "Servicio hidráulico de frenos",
       "priority": 1,
       "recurrence": "component",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "maintenance",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "front-airbag-service",
@@ -909,11 +1125,15 @@
       "km": null,
       "source": "M02 LRL0314ENG 3.ª edición (2000); PDF 54; impresa 51",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Owners_Handbook_2000_UK.pdf",
-      "condition": "M01 PDF 2 y M02 coinciden10 años. Fecha base: primera matriculación o instalación de módulo nuevo, no año modelo ni compra. Revisar etiqueta/cédula y renovar lo que corresponda con especialista; no certificar seguridad por inspección visual. Sin fecha exacta, acción inicial sin atraso calculado.",
+      "condition": "M01 PDF 2 y M02 coinciden 10 años. Fecha base: primera matriculación o instalación de módulo nuevo, no año modelo ni compra. Revisar etiqueta/cédula y renovar lo que corresponda con especialista; no certificar seguridad por inspección visual. Sin fecha original exacta no se genera vencimiento ni aviso por antigüedad.",
       "initialAction": "Realizar servicio profesional de airbags frontales por antigüedad",
       "priority": 1,
-      "recurrence": "component",
-      "revision": 1
+      "recurrence": "age",
+      "revision": 3,
+      "scheduleVisibility": "conditional",
+      "serviceGroup": "",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "side-airbag-service",
@@ -925,11 +1145,15 @@
       "km": null,
       "source": "M02 LRL0314ENG 3.ª edición (2000); PDF 54; impresa 51",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Owners_Handbook_2000_UK.pdf",
-      "condition": "Si equipados: M01 PDF 2/M02 imp 51 señalan15 años desde matriculación/instalación. Equipamiento y fecha no confirmados: revisión inicial profesional; no asumir instalado ni servicio previo.",
+      "condition": "Si equipados: M01 PDF 2/M02 imp 51 señalan 15 años desde matriculación/instalación. Equipamiento y fecha original no confirmados: recomendación condicionada sin alerta; no asumir instalado ni servicio previo.",
       "initialAction": "Verificar equipamiento y servicio profesional de airbags laterales",
       "priority": 1,
-      "recurrence": "component",
-      "revision": 1
+      "recurrence": "age",
+      "revision": 3,
+      "scheduleVisibility": "conditional",
+      "serviceGroup": "",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "pretensioner-applicability",
@@ -941,11 +1165,15 @@
       "km": null,
       "source": "M02 LRL0314ENG 3.ª edición (2000); PDF 47; impresa 44",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Owners_Handbook_2000_UK.pdf",
-      "condition": "Divergencia TBC: M01 PDF 2 indica10 años, M02 imp 44/PDF47 indica examen/renovación15 años. No elegir silenciosamente. Taller debe confirmar equipamiento, referencia de componentes, etiqueta e instrucción aplicable. Tras activación/impacto frontal requiere intervención; solo especialista.",
+      "condition": "Divergencia TBC: M01 PDF 2 indica 10 años, M02 imp 44/PDF 47 indica examen/renovación 15 años. No elegir silenciosamente. Taller debe confirmar equipamiento, referencia de componentes, etiqueta e instrucción aplicable. Tras activación/impacto frontal requiere intervención; solo especialista.",
       "initialAction": "Revisar pretensores y resolver pauta de servicio con especialista",
       "priority": 1,
       "recurrence": "condition",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "conditional",
+      "serviceGroup": "",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "severe-use-plan",
@@ -961,7 +1189,11 @@
       "initialAction": "Acordar revisión adicional si se usa en condiciones severas",
       "priority": 2,
       "recurrence": "condition",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "conditional",
+      "serviceGroup": "",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "offroad-brakes",
@@ -973,11 +1205,15 @@
       "km": null,
       "source": "M01 LRL0354SPA 04/00; PDF 2",
       "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Maintenance_Sheet_2000_ES.pdf",
-      "condition": "Solo uso extenso en condiciones difíciles/campo: revisar sensores ABS, pastillas y pinzas cada 1.500 km. Sin uso confirmado no activar intervalo automático1.500 km; registrar plan y lecturas reales. Recurrencia condicional pendiente de configuración de perfil de uso.",
+      "condition": "Solo uso extenso en condiciones difíciles/campo: revisar sensores ABS, pastillas y pinzas cada 1.500 km. Sin uso confirmado no activar intervalo automático de 1.500 km; registrar plan y lecturas reales. Recomendación condicionada, sin alertas por defecto mientras no se confirme su uso.",
       "initialAction": "Verificar plan de inspección de frenos y sensores para uso severo",
       "priority": 1,
       "recurrence": "condition",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "conditional",
+      "serviceGroup": "",
+      "firstKm": null,
+      "firstMonths": null
     },
     {
       "id": "offroad-tyres",
@@ -993,7 +1229,51 @@
       "initialAction": "Comprobar neumáticos diariamente durante uso fuera de carretera",
       "priority": 1,
       "recurrence": "condition",
-      "revision": 1
+      "revision": 3,
+      "scheduleVisibility": "conditional",
+      "serviceGroup": "",
+      "firstKm": null,
+      "firstMonths": null
+    },
+    {
+      "id": "tyre-service-inspection",
+      "title": "Inspección de neumáticos en la revisión",
+      "system": "tyres",
+      "operation": "professional_inspection",
+      "days": null,
+      "months": 12,
+      "km": 20000,
+      "source": "M01 LRL0354SPA 04/00; PDF 1; operación 13; glosario PDF 2",
+      "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Maintenance_Sheet_2000_ES.pdf",
+      "condition": "Principal B y C cada 12 meses/20.000 km. Comprobar presión, estado y profundidad, incluida rueda de repuesto. Neumáticos previos cambiados no implican sustituirlos; sin intervalo de desgaste inventado.",
+      "initialAction": "Inspección de neumáticos en la revisión",
+      "priority": 2,
+      "recurrence": "component",
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
+    },
+    {
+      "id": "fluid-reservoirs-service",
+      "title": "Comprobación de niveles en la revisión",
+      "system": "general",
+      "operation": "professional_inspection",
+      "days": null,
+      "months": 12,
+      "km": 20000,
+      "source": "M01 LRL0354SPA 04/00; PDF 1; operación 34; glosario PDF 2",
+      "sourceUrl": "https://www.fuddymuckers.co.uk/rtfm/RangeRover/P38/RR_P38_Maintenance_Sheet_2000_ES.pdf",
+      "condition": "Principal B y C cada 12 meses/20.000 km. Comprobar y reponer cuando proceda niveles de frenos, dirección asistida y lavaparabrisas. Se excluye embrague por caja automática. Comprobar niveles no satisface la sustitución de ningún líquido.",
+      "initialAction": "Comprobación de niveles en la revisión",
+      "priority": 2,
+      "recurrence": "component",
+      "revision": 3,
+      "scheduleVisibility": "service",
+      "serviceGroup": "workshop",
+      "firstKm": null,
+      "firstMonths": null
     }
   ],
   "coverage": [
@@ -1107,10 +1387,10 @@
       "row": 13,
       "decision": "included",
       "rule_ids": [
-        "tyre-check"
+        "tyre-service-inspection"
       ],
       "columns": "A/B/C",
-      "note": "Comprobación más frecuente M02; neumáticos conocidos nuevos no se sustituyen por seed."
+      "note": "Inspección real de revisión conservada; chequeo rutinario semanal en manual sin avisos."
     },
     {
       "row": 14,
@@ -1290,12 +1570,10 @@
       "row": 34,
       "decision": "included",
       "rule_ids": [
-        "brake-level",
-        "steering-level",
-        "washer-level"
+        "fluid-reservoirs-service"
       ],
       "columns": "A/B/C",
-      "note": "Niveles cubiertos por controles propietario más frecuentes; excluir embrague automático. Comprobar no equivale a cambiar fluidos."
+      "note": "Comprobación real del servicio, independiente de controles rutinarios y sustituciones. Excluye embrague automático."
     },
     {
       "row": 35,
@@ -1343,7 +1621,7 @@
         "automatic-filter-history"
       ],
       "columns": "C:primer 40k",
-      "note": "Hito único ya anterior a compra; verificación concreta, sin reemplazo periódico inventado."
+      "note": "Primera intervención única 40.000 km anterior a base: no alerta retroactiva ni repetición; ID v2 preservado inactivo."
     },
     {
       "row": 41,
@@ -1352,7 +1630,7 @@
         "automatic-fluid"
       ],
       "columns": "C",
-      "note": "Historial conocido conservado, cambio no forzado en revisión inicial."
+      "note": "Historial previo conservado; fase C del plan desde base operativa, sin inventar ejecución."
     },
     {
       "row": 42,
@@ -1361,7 +1639,7 @@
         "transfer-fluid"
       ],
       "columns": "C",
-      "note": "Cambio previo sin referencia exacta; inspección inicial separada."
+      "note": "Historial previo conservado; fase C del plan desde base operativa, sin inventar ejecución."
     },
     {
       "row": 43,
@@ -1379,7 +1657,7 @@
         "axle-fluid"
       ],
       "columns": "A:primer 10k/C:160k",
-      "note": "Primer hito no recurrente; respetar cambio previo sin fecha/km."
+      "note": "Primer hito 10.000 km anterior a base no se repite. Ciclo posterior 96 meses/160.000 km desde referencia válida/base operativa."
     },
     {
       "row": 45,
@@ -1388,7 +1666,7 @@
         "axle-level"
       ],
       "columns": "B",
-      "note": "Nivel no satisface sustitución; niveles/fugas concretos para mantenimiento inicial."
+      "note": "Comprobación fase B; no satisface cambio de aceite, sin tarea inicial."
     },
     {
       "row": 46,
@@ -1518,9 +1796,18 @@
     }
   ],
   "limitations": [
-    "VIN, build date, equipment and exact historical dates/km unavailable.",
-    "Pretensioner service discrepancy10/15years requires professional confirmation.",
-    "Conditional severe-use profiles are concrete initial checks; no automatic inferred activation.",
-    "Phase/milestone dates cannot be inferred from model year or purchase; require explicit operational adoption."
-  ]
+    "VIN y equipamiento condicional no confirmados: recomendaciones conservadas sin alertas por defecto.",
+    "Antigüedad SRS requiere matriculación/instalación real; fecha del plan no sustituye esa base.",
+    "Divergencia 10/15 años para pretensores M01/M02, sin intervalo elegido automáticamente.",
+    "Perfiles de uso severo no inferidos: reglas condicionadas conservadas sin activación automática."
+  ],
+  "planning_policy": {
+    "version": 3,
+    "baseline_km": 175000,
+    "baseline_provenance": "user_selected_planning_baseline",
+    "phase_origin": "B first 12months/20000km; C first24months/40000km; subsequent each24months/40000km",
+    "routine_visibility": "manual_reference_only",
+    "unknown_condition_default": "no_tasks_no_alerts",
+    "missing_history_policy": "use_operational_reference_no_initial_tasks"
+  }
 }

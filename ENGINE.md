@@ -1,53 +1,45 @@
-# Motor de mantenimiento y notificaciones
+# Motor desde referencia operativa
 
-## Contratos mínimos
+## Separar base, lectura y trabajo
 
-Entidades: Vehicle, OdometerReading, SourceDocument, MaintenanceRule, RuleRevision, TaskInstance, ServiceVisit, WorkItem, MaintenanceEvent, Fault, Part, Attachment, Expense, CostAllocation, NotificationLedger, NotificationInbox, AuditEvent y BackupManifest. Codex puede reducir tablas si mantiene las garantías; no copiar este listado sin justificar relaciones.
+`baseline_km=175000` es la referencia de planificación elegida por el propietario. `current_km` es última lectura manual válida o valor inicial identificado. `baseline_date` es fecha operativa editable. No crear MaintenanceEvent ni visita «realizada» por establecer una base. Históricos precompra no cambian esa base silenciosamente. Mantener seed idempotente y auditoría interna, sin códigos expuestos en UI.
 
-MaintenanceRule: id estable, nombre, sistema, acción, applicability (motor/transmisión/año/VIN/equipamiento), intervalo por unidad (días/semanas/meses/años y/o km), base de recurrencia, condición, fuente/edición/página impresa/página PDF, regla original preservada en paráfrasis breve, revisión, prioridad y tratamiento inicial. Aceptar reglas recurrentes, por hitos, únicas iniciales y basadas en condición. Campos desconocidos son null y tienen precisión, no valores inventados.
+## Reglas recurrentes de componente
 
-MaintenanceEvent: operation, performed_at, odometer_km, precision, provenance, work_item_id y rule_revision. Una fecha aproximada o ausente no sirve como fecha exacta silenciosamente; un kilometraje aproximado no produce un vencimiento presentado como exacto. El usuario puede adoptar expresamente una referencia operativa y debe quedar auditada.
+Para cada dimensión, seleccionar referencia válida de la operación que realmente satisface la regla, después del inicio operativo; si no hay referencia posterior, usar base operativa. Con precisión parcial no inventar la dimensión ausente: conservar su referencia previa/base explícita y distinguirla internamente de una ejecución.
 
-## Cálculo
+`due_km = anchor_km + interval_km`
+`due_date = add_calendar_interval(anchor_date, interval_calendar)`
+`due = (current_km >= due_km) OR (local_today >= due_date)` para dimensiones disponibles.
 
-Para recurrencia por componente con referencia exacta:
+No elegir el mínimo numérico de fecha/km. Mostrar ambas causas sin duplicar. Los meses son naturales con fin de mes documentado y reloj/zona horaria inyectables. No redondear al múltiplo absoluto más cercano del odómetro.
 
-due_date = sumar el intervalo de calendario a performed_at.
-due_km = odometer_km + interval_km.
-is_due = (hoy local >= due_date si existe) OR (lectura actual >= due_km si existe).
+Ejemplo de prueba, no dato del coche: intervalo 20.000 km desde base 175.000 → próximo 195.000. Lectura 184.500 → faltan 10.500. Trabajo real de esa operación a 195.200 → siguiente 215.200. Registrar solamente comprobar nivel no reinicia el cambio. Un evento anterior a la base queda en historial, salvo cambio de referencia explícito del propietario. Correcciones/anulaciones recomputan desde eventos activos y base; trabajo antiguo añadido después no desplaza al último válido.
 
-No tomar el mínimo numérico entre fecha y km. Devolver ambos y los motivos que se cumplen. Sumar meses naturales, con política de fin de mes documentada: 31 de enero + 1 mes termina el último día de febrero. Evaluar fechas locales y guardar timestamps UTC donde corresponda. Inyectar reloj para pruebas y manejar horario de verano de Asia/Nicosia.
+## Decisión de integración v3: inicio operativo y precisión
 
-Usar la operación posterior válida que satisface la regla. El control del nivel no resetea el cambio; una reparación no satisface tareas no relacionadas. Se pueden cumplir varias reglas en una visita, conservando enlaces explícitos. Edición/anulación obliga a recalcular desde los eventos activos y a invalidar avisos antiguos.
+«Después del inicio operativo» distingue el historial del propietario del historial precompra; no exige que un trabajo existente se haya realizado después de activar v3. Un evento real del propietario con kilometraje exacto igual o superior a `baseline_km` es elegible aunque su fecha sea anterior a `baseline_date`. Así se conservan las referencias de trabajos reales registrados antes de esta actualización. La procedencia identificada como precompra o recuperada queda excluida de las anclas automáticas. Si el evento no tiene kilometraje exacto, necesita una fecha exacta igual o posterior a `baseline_date` para ser elegible.
 
-Los hitos de fabricante y alternancia de revisiones no se transforman ciegamente en intervalos «desde el último trabajo». Codex debe representar y revisar sus fases/hitos por fuente. Un servicio inicial a kilometraje arbitrario no demuestra cuál fue la revisión anterior ni habilita saltarse operaciones más extensas. Mantener fase de servicio separada de referencias de componentes; una revisión inicial suficientemente completa podrá establecer una nueva referencia operativa explícita sin falsear los hitos originales. No asignar fase por el nombre comercial B/C sin comprobar su contenido.
+Entre los eventos elegibles que satisfacen la operación se selecciona por separado la última fecha exacta y el último kilometraje exacto. La dimensión imprecisa de un trabajo posterior conserva la referencia exacta anterior o, si falta, la base operativa; no se presenta ese respaldo como una ejecución. Esta política puede conservar una fecha de vencimiento anterior a la activación v3 cuando procede de un trabajo real válido: cambiar de versión no reinicia sus intervalos.
 
-Sin referencia fiable: crear tarea de mantenimiento inicial accionable, no calcular una fecha falsa ni un atraso preciso. La fecha de activación de la app puede programar esa tarea inicial, pero no contar como ejecución. Una intervención previa conocida sin fecha/km queda en Historial y no cancela una tarea periódica automáticamente. Inspección inicial y reemplazo son operaciones distintas; no forzar cambiar cualquier elemento cuya antigüedad sea desconocida.
+La generación de aviso depende de la regla, el plan, los límites y los valores de las referencias efectivas. Los ids nuevos de eventos equivalentes, editar notas/taller o añadir un histórico que no cambia esas referencias no abren otro ciclo ni cancelan su ledger emitido.
 
-## Avisos previos
+## Hitos, fases y condiciones
 
-30 días y 1.000 km son defaults de producto, editables, no intervalos del fabricante. Aplicarlos proporcionalmente: tareas semanales/mensuales necesitan otros horizontes o resumen; no lanzar «próximamente» permanentemente. Una sola instancia por tarea/generación puede tener ambas causas. Preservar próxima fecha y próximos km aunque uno ya venza. No convertir una estimación de conducción en lectura.
+El algoritmo anterior no convierte todas las filas en recurrencia simple. El catálogo distingue recurrencia, ciclo de servicio, primera intervención única, antigüedad y condición. Hitos únicos ya superados antes de 175.000 no crean una tarea inicial retroactiva. No repetir primera intervención ni traducir «por condición» a cambio periódico. Intervalos B/C y sus operaciones se revisan desde la matriz: la fase operativa de un calendario nuevo es planificación desde la base elegida, no reconstrucción del historial. Conservar semántica/periodicidad y documentar fase inicial adoptada sin exigir investigación al propietario.
 
-## WorkManager y registro persistente de avisos
+Las operaciones de una misma revisión se agrupan en interfaz/avisos, pero conservan ids y registro individual. Comprobaciones rutinarias de uso se sitúan solo en manuales y no generan tareas ni avisos por defecto. Una comprobación prescrita dentro de servicio mantiene su periodicidad dentro del grupo. Ausencia de historial nunca dispara generador de mantenimiento inicial. Fuente/regla condicional no confirmada no produce falsos vencimientos.
 
-Evaluar periódicamente con WorkManager aunque la interfaz esté cerrada, y después de cambios en lecturas, eventos, reglas o ajustes. Trabajo único persistente sin restricción de Internet, dependiente de Room y del mismo motor puro de cálculo. No usar temporizadores en UI como sustituto. Comprobación flexible que considera zona/hora local y ventanas de preferencia; no garantizar ejecución a un minuto concreto. Reintentos acotados ante I/O temporal y recuperación tras reinicio.
+## Avisos
 
-Ledger con clave única vehicle + task/rule + generation + notification_kind + reminder_window. Guardar decisiones y bandeja en transacción, con estado pending/emitted/cancelled y auditoría. Claims o exclusión equivalente evitan evaluación concurrente; recuperar claims antiguos. Una tarea con varios motivos se presenta una vez. Reevaluar vigencia justo antes de emitir: completar/editar/anular invalida generación anterior. Cancelar avisos visibles antiguos y recuperar operaciones incompletas al siguiente ciclo.
+Al guardar lectura actual, commit Room y reevaluación inmediata con el mismo motor; emitir NotificationManager si se cruza un límite y hay permiso. No aplazar esa evaluación a WorkManager. Mantener reconciliación pendiente si se interrumpe el proceso entre guardar y emitir. Una lectura que salta varios límites conserva todas las operaciones y puede emitir un resumen.
 
-La API del SO y la transacción Room no son atómicas entre sí. Usar identificador de notificación estable y recuperación que actualiza la misma notificación, minimizando repeticiones; no afirmar entrega exactamente una vez. No marcar como recibido/ leído porque NotificationManager aceptó una llamada: emitted no demuestra visibilidad ni lectura. Bandeja creada aunque falte permiso, con estado correcto. Al conceder permiso, enviar resumen relevante limitado, sin reproducir una avalancha de avisos antiguos.
+Preaviso 1.000 km/30 días cuando proporcionado, configurable; alerta al vencer; recordatorio moderado de pendientes. Deduplicar por regla/grupo, generación y ventana/tipo en ledger persistente. App abierta, reintento, doble toque, edición de lectura igual y varias causas no repiten alerta de vencimiento. Nuevo ciclo sí puede avisar. Completar trabajo cancela avisos visibles/pendientes del ciclo anterior. Al anular un trabajo, reaparece pendiente si corresponde y se notifica según estado/ventana, sin ráfaga.
 
-Tipos: próximo, vence, pendiente, resumen de controles y actualizar kilómetros. Pendientes semanal por defecto; resumen preferido 09:00 local, editable como ventana. Controles frecuentes agrupados, límites de ruido inicial. Notificación de prueba separada que no crea eventos de mantenimiento. Carga concisa, sin factura ni importes personales en pantalla bloqueada por defecto; deep link al detalle. Configuración de canales/permisos se consulta al operar. Reinstalación/restauración reconstruye planificación, cancela ids antiguos y no confunde estado de un teléfono anterior.
+WorkManager único evalúa vencimientos por fecha con interfaz cerrada, sin restricción de red, recuperando reinicios. Android controla ejecución diferible. No garantizar minuto exacto ni funcionamiento mientras el usuario fuerza detención desde Ajustes. No implementar servicio permanente ni alarmas exactas para mantenimiento. Permiso/channels reales, estado claro y botón de prueba sin modificar mantenimiento. Notificaciones locales son los avisos que el propietario llama «push»; no necesitan FCM/servidor.
 
-## Datos y seed
+Ledger/bandeja en Room y ids estables: emisión del SO y DB no son atómicas; recuperar con actualización del mismo id, sin afirmar recepción exactamente una vez. Bandeja aunque permiso denegado. Tocar aviso abre tarea/grupo correcto. Al conceder permiso mostrar resumen actual, no historial acumulado. Ninguna estimación cuenta como odómetro: los límites por km solo se detectan cuando se registra lectura/trabajo actual.
 
-Seed idempotente por id, nunca sobrescribir eventos del propietario. No crear trabajos ficticios completados. fixture_started_at y reloj de pruebas separados de datos reales. Catálogo versionado y migración no destructiva: conservar overrides del propietario y revisión utilizada por cada evento. Las modificaciones personalizadas se etiquetan como tales y se diferencian de intervalos del fabricante.
+## Persistencia y gastos
 
-## Arranque y operación Android
-
-Migrar Room y sembrar idempotentemente antes de habilitar evaluador. El catálogo llega dentro del APK; funciones principales sin red. Flujos observables actualizan la UI después de commit. Muerte de proceso conserva datos confirmados y restaura formularios sin duplicar visitas. Fallos de importación no dejan registros parciales. Logs sin secretos ni contenido de adjuntos. ANDROID.md define permisos, compilación y firma; no crear servicio servidor.
-
-## Gastos manuales
-
-Expense: id, vehicle_id, paid_on, amount_cents EUR, concept, category (workshop, extras, fuel, other), notes opcionales, attachment_ids opcionales, service_visit_id opcional, voided_at y audit. Una visita pagada puede tener un gasto canónico ligado; importe de visita/factura y Expense no son dos gastos distintos. No contar líneas asignadas una segunda vez. Clave/idempotencia para doble toque y reintentos; vínculos únicos para pagos ya registrados en una visita, sin deduplicación destructiva por coincidencia aproximada.
-
-Total acumulado suma gastos reales vigentes una sola vez, sin presupuestos ni importes desconocidos. Dinero exacto en céntimos y formato EUR; admitir entrada decimal con coma o punto según controles, evitar errores de conversión. Crear gasto de gasolina o extra independiente sin disparar eventos de mantenimiento, recalcular reglas ni cambiar lecturas. Editar/anular actualiza total y auditoría. Exportar y restaurar Expense con el resto de datos. No crear motor de informes financieros ni estadísticas de combustible.
+Room transaccional, archivos privados, migraciones no destructivas y catálogo versionado con procedencia. Gastos en céntimos EUR, vínculos opcionales únicos al pago de visita; total suma pagos reales activos una vez. Crear gasto de gasolina no modifica odómetro, trabajos ni referencias. Idempotencia, edición/anulación y respaldo incluyen gastos/adjuntos. Precio de compra y costes desconocidos no se inventan. Copias completas validables con schema/checksum y restauración coherente; permisos SAF mínimos. Regenerar planificación después de restaurar sin duplicar.
