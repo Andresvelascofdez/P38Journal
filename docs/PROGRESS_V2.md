@@ -26,5 +26,3 @@ Entrega completada: APKs definitivos firmados/instalados/verificados y documenta
 Para reproducir como desarrollador: `scripts/bootstrap.ps1`, `scripts/build.ps1` y `gradlew.bat connectedDebugAndroidTest`. Release necesita la configuración privada externa. Para instalar, sólo APK e instrucciones de `dist/`.
 
 Commit local de implementación/entrega creado realmente: `7e0d843` (Build native P38 Journal with reviewed catalogue and verified Android delivery). Fuente, informes, capturas y checksums versionados; APKs siguen en dist y se excluyen de git; claves privadas y PDFs de investigación excluidos. Release definitivo abierto y renderizado nativamente en emulador, sin lectura actual inventada: `docs/screenshots/release-home.png`.
-
-
