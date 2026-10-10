@@ -13,7 +13,7 @@ Comando real: `scripts/build.ps1` (invoca `gradlew.bat testDebugUnitTest lintDeb
 | APK debug | `dev.p38journal.debug`, versión 2.0.0-debug, versionCode 2, minSdk 26, targetSdk 36 |
 | APK release | `dev.p38journal`, versión 2.0.0, versionCode 2, minSdk 26, targetSdk 36 |
 | Firma | Ambos APK verificados con apksigner; release firma v2, RSA 3072 y certificado persistente |
-| Instalación | Ambos APK definitivos instalados realmente en el emulador; release instalado encima del candidato anterior |
+| Instalación | Ambos APK definitivos instalados realmente en el emulador; release instalado encima del candidato anterior y abierto nativamente (captura release-home.png), sin lectura actual inventada |
 
 Certificado release SHA-256: `ce157b9b800d3e21c544ca21cbb398ffdfb3fab46ba5318adcc63d8cd14adf2b`. Huellas de los APK en `../dist/SHA256SUMS.txt`. Evidencia: `signature-release.log`, `signature-debug.log`, `apk-release-metadata.txt`, `apk-debug-metadata.txt`. La clave privada está fuera del repositorio y no se distribuye.
 
