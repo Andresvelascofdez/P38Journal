@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="dev.p38journal.data.MigrationTest" tests="33" failures="0" errors="0" skipped="1" time="28.725" timestamp="2026-10-10T17:41:46" hostname="localhost">
+  <properties>
+    <property name="device" value="Medium_Phone_API_36.0(AVD) - 16" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="versionOneFixtureRetainsExpenseReadingAndNoteWhileAddingAudit" classname="dev.p38journal.data.MigrationTest" time="0.163" />
+  <testcase name="explicitOdometerCorrectionAndRetroactiveReadingPreserveHistory" classname="dev.p38journal.data.RepositoryTest" time="0.054" />
+  <testcase name="restoreIntoFreshSeedKeepsCopiedOverridesNewerStandardAndExistingLocalOverrides" classname="dev.p38journal.data.RepositoryTest" time="0.233" />
+  <testcase name="operationalAdoptionIsAuditedAndCreatesNoNewCompletedWork" classname="dev.p38journal.data.RepositoryTest" time="0.029" />
+  <testcase name="paymentAndDoubleSaveCountOnceAndFuelDoesNotAlterMaintenance" classname="dev.p38journal.data.RepositoryTest" time="0.029" />
+  <testcase name="workshopExtrasFuelEditAndVoidTotals" classname="dev.p38journal.data.RepositoryTest" time="0.003" />
+  <testcase name="deletedSeedHistoryIsNotRecreatedOnNextLaunch" classname="dev.p38journal.data.RepositoryTest" time="0.08" />
+  <testcase name="restoreKeepsLaterOwnerEditsAndVoids" classname="dev.p38journal.data.RepositoryTest" time="0.03" />
+  <testcase name="catalogueUpdateKeepsOverridesAndResetKeepsRevisionHistory" classname="dev.p38journal.data.RepositoryTest" time="0.128" />
+  <testcase name="existingPaymentLinkDoesNotDuplicateAndDifferentPaymentsAreKept" classname="dev.p38journal.data.RepositoryTest" time="0.002" />
+  <testcase name="maliciousDocumentPathIsRejected" classname="dev.p38journal.data.RepositoryTest" time="0.003" />
+  <testcase name="snapshotRoundTripIsCompleteIdempotentAndInvalidSnapshotIsAtomic" classname="dev.p38journal.data.RepositoryTest" time="0.054" />
+  <testcase name="seedUpdatesOldUnmodifiedRuleButPreservesOwnerOverrideAndEventRevision" classname="dev.p38journal.data.RepositoryTest" time="0.133" />
+  <testcase name="movingPaymentClearsPreviousVisitAndLaterEditDoesNotDuplicateExpense" classname="dev.p38journal.data.RepositoryTest" time="0.002" />
+  <testcase name="seedIsIdempotentAndHasNoInventedCompletionsOrCurrentReading" classname="dev.p38journal.data.RepositoryTest" time="0.106" />
+  <testcase name="invalidVisitRollsBackAndEditingVoidingRecalculates" classname="dev.p38journal.data.RepositoryTest" time="0.029" />
+  <testcase name="stagedUpdateUninstallAndCompleteRestore" classname="dev.p38journal.platform.DeliveryLifecycleTest" time="0.009">
+    <skipped />
+  </testcase>
+  <testcase name="scanWithoutTextDeclaresSearchUnavailable" classname="dev.p38journal.platform.DocumentViewerTest" time="3.171" />
+  <testcase name="textPdfSearchAndBookmarksAreReal" classname="dev.p38journal.platform.DocumentViewerTest" time="2.05" />
+  <testcase name="fullBackupKeepsAttachmentsExactTotalsAndReimportIsIdempotent" classname="dev.p38journal.platform.PlatformTest" time="0.389" />
+  <testcase name="maliciousBackupAndWrongChecksumFailBeforeAnyWrite" classname="dev.p38journal.platform.PlatformTest" time="0.056" />
+  <testcase name="partialCompletionInvalidatesGroupDestinationAndDisablingChannelsCancels" classname="dev.p38journal.platform.PlatformTest" time="0.208" />
+  <testcase name="deniedPermissionKeepsInboxAndGrantEmitsRelevantSummary" classname="dev.p38journal.platform.PlatformTest" time="0.053" />
+  <testcase name="soonToDueHasNewNotificationKindInSameWeek" classname="dev.p38journal.platform.PlatformTest" time="0.081" />
+  <testcase name="concurrentNotificationsDeduplicateAndCompletionCancels" classname="dev.p38journal.platform.PlatformTest" time="0.052" />
+  <testcase name="notificationWindowAndDisabledPreferencesRemainHonest" classname="dev.p38journal.platform.PlatformTest" time="0.029" />
+  <testcase name="invalidDocumentImportDoesNotPersist" classname="dev.p38journal.platform.PlatformTest" time="0.002" />
+  <testcase name="realWorkManagerRunsPersistentLocalEvaluationAndInternalBackup" classname="dev.p38journal.platform.SystemWorkTest" time="0.361" />
+  <testcase name="realNotificationManagerEmitsTestWithoutMaintenanceEvents" classname="dev.p38journal.platform.SystemWorkTest" time="0.386" />
+  <testcase name="visitRequiresExplicitCompletionAndKeepsUnselectedOperationsOpen" classname="dev.p38journal.ui.JournalUiTest" time="3.835" />
+  <testcase name="conditionalProfileRequiresEvidenceAndCanBeDisabledWithoutCompletingWork" classname="dev.p38journal.ui.JournalUiTest" time="6.928" />
+  <testcase name="readingFaultPartAndLinkedPdfWorkThroughNativeScreens" classname="dev.p38journal.ui.JournalUiTest" time="6.687" />
+  <testcase name="expenseFormSurvivesRecreationAndSavesExactCentsWithoutChangingMaintenance" classname="dev.p38journal.ui.JournalUiTest" time="2.351" />
+</testsuite>

@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "vehicle": {
+    "id": "p38-2000-46-autobiography",
+    "make": "Land Rover",
+    "model": "Range Rover P38",
+    "trim": "Autobiography",
+    "model_year": 2000,
+    "engine_litres": 4.6,
+    "engine_configuration": "V8",
+    "fuel": "petrol",
+    "transmission": "automatic",
+    "vin": null,
+    "registration": null,
+    "purchase_date": null,
+    "purchase_odometer_km": 175000,
+    "current_odometer_km": null,
+    "current_odometer_read_at": null
+  },
+  "preferences": {
+    "locale": "es-ES",
+    "timezone": "Asia/Nicosia",
+    "currency": "EUR",
+    "distance_unit": "km"
+  },
+  "provenance_note": "Datos del año y kilometraje de compra confirmados por el propietario el 10/10/2026. Trabajos previos recuperados en resúmenes de conversaciones del 20 y 28/09/2026; no se revisó el mensaje o informe original del vendedor. Fechas de conversación no son fechas de ejecución.",
+  "prepurchase_history": [
+    {
+      "id": "air-springs",
+      "title": "Cuatro balonas sustituidas",
+      "system": "suspension",
+      "operation": "replace",
+      "performed_before_purchase": true,
+      "performed_at": null,
+      "odometer_km": 173500,
+      "odometer_precision": "approximate",
+      "cost_eur": null,
+      "workshop": null,
+      "part_reference": null,
+      "attachment_ids": [],
+      "provenance": "recovered_conversation_summary",
+      "source_conversation_dates": [
+        "2026-09-20",
+        "2026-09-28"
+      ],
+      "original_evidence_reviewed": false,
+      "usable_as_exact_recurrence_anchor": false
+    },
+    {
+      "id": "tyres",
+      "title": "Neumáticos cambiados",
+      "system": "tyres",
+      "operation": "replace",
+      "performed_before_purchase": true,
+      "performed_at": null,
+      "odometer_km": null,
+      "odometer_precision": "unknown",
+      "cost_eur": null,
+      "workshop": null,
+      "part_reference": null,
+      "attachment_ids": [],
+      "provenance": "recovered_conversation_summary",
+      "source_conversation_dates": [
+        "2026-09-20",
+        "2026-09-28"
+      ],
+      "original_evidence_reviewed": false,
+      "usable_as_exact_recurrence_anchor": false
+    },
+    {
+      "id": "automatic-oil",
+      "title": "Aceite de caja automática cambiado",
+      "system": "transmission",
+      "operation": "replace_fluid",
+      "performed_before_purchase": true,
+      "performed_at": null,
+      "odometer_km": null,
+      "odometer_precision": "unknown",
+      "cost_eur": null,
+      "workshop": null,
+      "part_reference": null,
+      "attachment_ids": [],
+      "provenance": "recovered_conversation_summary",
+      "source_conversation_dates": [
+        "2026-09-20",
+        "2026-09-28"
+      ],
+      "original_evidence_reviewed": false,
+      "usable_as_exact_recurrence_anchor": false
+    },
+    {
+      "id": "differential-oil",
+      "title": "Aceites de diferenciales cambiados",
+      "system": "transmission",
+      "operation": "replace_fluid",
+      "performed_before_purchase": true,
+      "performed_at": null,
+      "odometer_km": null,
+      "odometer_precision": "unknown",
+      "cost_eur": null,
+      "workshop": null,
+      "part_reference": null,
+      "attachment_ids": [],
+      "provenance": "recovered_conversation_summary",
+      "source_conversation_dates": [
+        "2026-09-20",
+        "2026-09-28"
+      ],
+      "original_evidence_reviewed": false,
+      "usable_as_exact_recurrence_anchor": false
+    },
+    {
+      "id": "transfer-oil",
+      "title": "Aceite de transferencia cambiado",
+      "system": "transmission",
+      "operation": "replace_fluid",
+      "performed_before_purchase": true,
+      "performed_at": null,
+      "odometer_km": null,
+      "odometer_precision": "unknown",
+      "cost_eur": null,
+      "workshop": null,
+      "part_reference": null,
+      "attachment_ids": [],
+      "provenance": "recovered_conversation_summary",
+      "source_conversation_dates": [
+        "2026-09-20",
+        "2026-09-28"
+      ],
+      "original_evidence_reviewed": false,
+      "usable_as_exact_recurrence_anchor": false
+    }
+  ],
+  "historical_notes": [
+    {
+      "id": "display-repair",
+      "description": "Se mencionó reparación de pantalla principal, sin identificar intervención exacta.",
+      "kind": "incomplete_historical_note",
+      "active_fault": false
+    },
+    {
+      "id": "audio-work",
+      "description": "Se mencionaron trabajos en Harman Kardon sin detalle de intervención.",
+      "kind": "incomplete_historical_note",
+      "active_fault": false
+    },
+    {
+      "id": "sunroof",
+      "description": "Avería de techo solar y reparación prometida; no recuperada confirmación posterior.",
+      "kind": "historical_issue",
+      "active_fault": false
+    },
+    {
+      "id": "srs",
+      "description": "Luz SRS mencionada en conversaciones anteriores; sin diagnóstico confirmado en este paquete.",
+      "kind": "historical_issue",
+      "active_fault": false
+    },
+    {
+      "id": "eas-rear-left",
+      "description": "Componente trasero izquierdo EAS mencionado como pendiente.",
+      "kind": "historical_issue",
+      "active_fault": false
+    }
+  ],
+  "evidence_limits": {
+    "motor_oil_changed_confirmed": false,
+    "coolant_changed_confirmed": false,
+    "inspection_odometer_km": 174830,
+    "inspection_odometer_provenance": "Resumen de conversación del 20/09/2026; no lectura actual."
+  },
+  "seed_policy": {
+    "idempotent": true,
+    "never_overwrite_owner_events": true,
+    "create_completed_work_at_purchase": false,
+    "reset_maintenance_at_purchase": false,
+    "create_demo_events_in_owner_account": false
+  },
+  "platform": {
+    "type": "native_android",
+    "ui": "Jetpack Compose",
+    "storage": "Room/SQLite",
+    "notifications": "local_android_notifications",
+    "backend_required": false,
+    "internet_required_for_core": false
+  }
+}

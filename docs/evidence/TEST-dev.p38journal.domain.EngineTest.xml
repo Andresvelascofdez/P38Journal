@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.p38journal.domain.EngineTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2026-10-10T17:40:46.141Z" hostname="DESKTOP-DVUH6AS" time="0.02">
+  <properties/>
+  <testcase name="dateOrMileageEachTriggersAndBothStayOneTask" classname="dev.p38journal.domain.EngineTest" time="0.001"/>
+  <testcase name="olderEntryDoesNotDisplaceNewerAndVoidRecoversOld" classname="dev.p38journal.domain.EngineTest" time="0.002"/>
+  <testcase name="preciseDimensionIsStillAvailable" classname="dev.p38journal.domain.EngineTest" time="0.001"/>
+  <testcase name="intervalHasIndependentDateAndMileage" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <testcase name="localNicosiaDateAcrossDstUsesCalendarDayRatherThanUtcDay" classname="dev.p38journal.domain.EngineTest" time="0.006"/>
+  <testcase name="monthlyChecksAreGroupedWithoutPermanentSoon" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <testcase name="noCurrentMileageDoesNotDisableTime" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <testcase name="milestoneRequiresOperationalAdoptionThenUsesVerifiedRepeatInterval" classname="dev.p38journal.domain.EngineTest" time="0.001"/>
+  <testcase name="malformedMoneyIsRejected" classname="dev.p38journal.domain.EngineTest" time="0.002"/>
+  <testcase name="monetaryValuesAreExactAndAcceptSpanishDecimal" classname="dev.p38journal.domain.EngineTest" time="0.002"/>
+  <testcase name="phasesRequireExpressOperationalReference" classname="dev.p38journal.domain.EngineTest" time="0.001"/>
+  <testcase name="seedDoesNotStartRecurrence" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <testcase name="eventCorrectionChangesGenerationAndStatusDoesNot" classname="dev.p38journal.domain.EngineTest" time="0.001"/>
+  <testcase name="laterApproximateServiceDoesNotReuseEarlierExactLimits" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <testcase name="checkingLevelCannotSatisfyOilReplacement" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <testcase name="unknownAndApproximateReferencesDoNotBecomeExact" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <testcase name="weeklyChecksDoNotHavePermanentSoonNotifications" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <testcase name="endOfMonthAndLeapYearClamp" classname="dev.p38journal.domain.EngineTest" time="0.001"/>
+  <testcase name="knownReplacementDoesNotDemandAnotherReplacementWithoutReference" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

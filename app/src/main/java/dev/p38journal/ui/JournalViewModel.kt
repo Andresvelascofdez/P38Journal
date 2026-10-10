@@ -1,0 +1,118 @@
+package dev.p38journal.ui
+
+import android.app.Application
+import android.net.Uri
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.viewModelScope
+import dev.p38journal.data.*
+import dev.p38journal.domain.Task
+import dev.p38journal.platform.Files
+import dev.p38journal.platform.Notifications
+import dev.p38journal.platform.Preferences
+import dev.p38journal.platform.Settings
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.time.LocalDate
+import java.time.ZoneId
+import java.util.UUID
+
+class JournalViewModel(application: Application) : AndroidViewModel(application) {
+    val repository = Repository(application)
+    val preferences = Preferences(application)
+    val files = Files(application, repository)
+    private val _ready = MutableStateFlow(false)
+    val ready = _ready.asStateFlow()
+    private val _busy = MutableStateFlow(false)
+    val busy = _busy.asStateFlow()
+    private val _message = MutableStateFlow<String?>(null)
+    val message = _message.asStateFlow()
+    private val _tasks = MutableStateFlow<List<Task>>(emptyList())
+    val tasks = _tasks.asStateFlow()
+    val settings = preferences.flow.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), Settings())
+    val visits = repository.observeVisits.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
+    val expenses = repository.observeExpenses.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
+    val readings = repository.observeReadings.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
+    val notes = repository.observeNotes.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
+    val documents = repository.observeDocuments.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
+    val inbox = repository.observeInbox.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
+
+    init {
+        viewModelScope.launch {
+            try {
+                withContext(Dispatchers.IO) { repository.initialize() }
+                _ready.value = true
+                Notifications.schedule(application)
+                Notifications.refresh(application)
+                launch { repository.observeInbox.drop(1).collect { reloadTasks() } }
+                combine(repository.observeVisits, repository.observeReadings, preferences.flow, repository.observeEvents(), repository.observeRules()) { _, _, _, _, _ -> Unit }
+                    .collect { reloadTasks() }
+            } catch (e: Exception) {
+                _message.value = readable(e)
+            }
+        }
+    }
+
+    fun today(): String = LocalDate.now(ZoneId.of(settings.value.zone)).toString()
+    fun clearMessage() { _message.value = null }
+    fun announce(value: String) { _message.value = value }
+    fun resume() {
+        if (!_ready.value) return
+        viewModelScope.launch { runCatching { reloadTasks() }.onFailure { _message.value = readable(it as? Exception ?: Exception(it)) } }
+        Notifications.refresh(getApplication())
+    }
+    suspend fun reloadTasks() {
+        val config = preferences.flow.first()
+        _tasks.value = withContext(Dispatchers.IO) {
+            repository.tasks(LocalDate.now(ZoneId.of(config.zone)), config.leadDays, config.leadKm)
+        }
+    }
+
+    fun action(success: String = "Guardado", after: () -> Unit = {}, work: suspend () -> Unit) {
+        if (_busy.value) return
+        _busy.value = true
+        viewModelScope.launch {
+            try {
+                withContext(Dispatchers.IO) { work() }
+                reloadTasks()
+                Notifications.refresh(getApplication())
+                _message.value = success
+                after()
+            } catch (e: Exception) {
+                _message.value = readable(e)
+            } finally { _busy.value = false }
+        }
+    }
+
+    fun saveVisit(visit: Visit, lines: List<WorkLine>, selected: List<String>, linkedExpense: String?, after: () -> Unit) =
+        action(after = after) { repository.saveVisit(visit, lines, selected, linkedExpense) }
+    fun voidVisit(id: String, after: () -> Unit) = action("Trabajo anulado", after) { repository.voidVisit(id) }
+    fun saveExpense(expense: Expense, after: () -> Unit) = action(after = after) { repository.saveExpense(expense) }
+    fun voidExpense(id: String, after: () -> Unit) = action("Gasto anulado", after) { repository.voidExpense(id) }
+    fun saveReading(reading: Reading, correction: Boolean, after: () -> Unit) = action(after = after) { repository.saveReading(reading, correction) }
+    fun saveNote(note: Note, after: () -> Unit) = action(after = after) { repository.saveNote(note) }
+    fun deleteNote(id: String, after: () -> Unit) = action("Registro eliminado", after) { repository.deleteNote(id) }
+    fun updateSettings(value: Settings, after: () -> Unit = {}) = action("Ajustes guardados", after) {
+        ZoneId.of(value.zone)
+        preferences.update(value)
+        Notifications.schedule(getApplication())
+    }
+    fun importDocument(uri: Uri, link: String) = action("Documento importado") {
+        val document = files.importDocument(uri)
+        repository.saveDocument(document.copy(tags = listOf(document.tags, link).filter { it.isNotBlank() }.joinToString(" ")))
+    }
+    fun saveDocument(document: Document) = action { repository.saveDocument(document) }
+    fun deleteDocument(id: String) = action("Documento eliminado") { repository.deleteDocument(id) }
+    fun exportBackup(uri: Uri) = action("Copia externa guardada") { files.exportBackup(uri) }
+    fun restoreBackup(uri: Uri, after: () -> Unit) = action("Copia restaurada", after) { files.restoreBackup(uri) }
+    suspend fun previewBackup(uri: Uri): String = withContext(Dispatchers.IO) { files.previewBackup(uri) }
+    suspend fun visitLines(id: String): List<WorkLine> = withContext(Dispatchers.IO) { repository.visitLines(id) }
+    suspend fun eventsForVisit(id: String): List<String> = withContext(Dispatchers.IO) {
+        repository.allEvents().filter { it.visitId == id && it.active }.map { it.ruleId }
+    }
+
+    private fun readable(e: Exception): String = e.message?.takeIf { it.isNotBlank() } ?: "No se pudo completar la acción. Inténtalo de nuevo."
+}
+
+fun freshId(): String = UUID.randomUUID().toString()

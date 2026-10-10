@@ -1,0 +1,16 @@
+# Instalar y probar P38 Journal
+
+Android 8.0 o posterior. Los APK están en `dist/`. No necesitas compilar ni instalar un servidor. Abre el APK en el teléfono y, si Android lo pide, permite a esa aplicación instalar archivos de este origen.
+
+1. Instala **p38-journal-2.0.0-debug.apk** para probar. Aparece como **P38 Journal · Prueba** y tiene datos separados de **P38 Journal** (release). Al abrir por primera vez debe mostrar el catálogo, sin kilometraje actual, trabajos realizados ni gastos inventados. Los 175.000 km son de compra.
+2. En Inicio, pulsa **Actualizar kilómetros** e introduce una lectura de prueba con su fecha. Abre Plan, prueba los filtros y consulta una tarea y su fuente. El catálogo ya viene incluido.
+3. En la app de prueba, abre **Cambiar aceite y filtro del motor → Registrar operación realizada**. Puedes usar la fecha de hoy y 176.000 km como fixture, título «PRUEBA», y marcar fecha/km exactos. Guarda solo las operaciones realmente seleccionadas. Esa regla debe indicar doce meses desde la fecha guardada o 196.000 km. Comprobar nivel de aceite sigue siendo otra operación. Programa también una cita: no debe completar un trabajo.
+4. En Historial, edita y anula el trabajo de prueba y comprueba que el plan se recalcula. En Más, registra una avería de prueba separando síntomas y diagnóstico; añade una pieza y su evidencia de compatibilidad. Importa un PDF/foto propio y prueba el visor, sus marcadores y la búsqueda si contiene texto.
+5. En **Más → Ajustes y copias**, pulsa **Activar avisos**, concede permiso si lo deseas y pulsa **Probar aviso**. Abre la bandeja de notificaciones de Android y toca el aviso: debe abrir la bandeja de la app. El estado de permisos/canales aparece en ajustes. Los avisos de mantenimiento dependen del trabajo diferible de Android y no garantizan las 09:00 exactas.
+6. En Más → Gastos, añade Taller 100 €, Extras 25 € y Gasolina 60 €: total 185 €. Edita Gasolina a 55 € y anula Extras: total 155 €. No requieren kilometraje. Un pago ya asociado a una visita cuenta una sola vez.
+7. En Ajustes y copias, **Exportar copia completa** al destino elegido. Después **Validar copia y restaurar** muestra una vista previa; repetir la importación no duplica registros. Para comprobar recuperación tras desinstalar, hazlo exclusivamente en la app **Prueba**, después de guardar el ZIP fuera de sus datos. Las copias internas se pierden al desinstalar. La restauración desactiva avisos: actívalos de nuevo.
+8. Instala **p38-journal-2.0.0-release.apk** para el coche real. Registra solamente lecturas, gastos y operaciones reales. Para futuras versiones, instala el release nuevo encima del existente, con la misma firma y sin desinstalar. Exporta una copia antes de actualizar. No importes fixtures de la app de prueba al release.
+
+Los PDF del fabricante no se redistribuyen: la app incluye fuentes y permite importar tus documentos. Los perfiles por VIN/equipamiento/uso severo requieren confirmación y evidencia. No presupone un VIN ni resuelve el conflicto documental de pretensores sin una revisión profesional.
+
+Forzar detención desde Ajustes de Android puede suspender avisos hasta volver a abrir la app. El kilometraje se introduce manualmente; no hay GPS, OBD ni cálculo de km conducidos. El ahorro de batería puede retrasar el trabajo de fondo.

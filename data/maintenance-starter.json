@@ -1,0 +1,351 @@
+{
+  "schema_version": 1,
+  "catalogue_status": "verified_starter_not_complete",
+  "require_full_independent_review_before_delivery": true,
+  "seed_is_not_service_completion": true,
+  "rules": [
+    {
+      "id": "engine-oil-filter",
+      "title": "Cambiar aceite y filtro del motor",
+      "operation": "replace",
+      "system": "engine",
+      "applies_to": {
+        "vehicle_id": "p38-2000-46-autobiography",
+        "fuel": "petrol",
+        "transmission": "automatic"
+      },
+      "interval": {
+        "calendar": {
+          "unit": "months",
+          "value": 12
+        },
+        "kilometres": 20000,
+        "trigger": "whichever_first"
+      },
+      "recurrence_basis": "last_qualifying_event",
+      "source": {
+        "id": "M01",
+        "document": "LRL0354SPA, 04/00",
+        "pdf_page": 1,
+        "operation_number": 37,
+        "glossary_pdf_page": 2
+      },
+      "initial_handling": "include_in_initial_service",
+      "evidence_status": "source_checked_in_brief",
+      "implementation_review_required": true,
+      "last_performed_at": null,
+      "last_odometer_km": null
+    },
+    {
+      "id": "oil-level",
+      "title": "Comprobar nivel de aceite",
+      "operation": "check",
+      "system": "engine",
+      "applies_to": {
+        "vehicle_id": "p38-2000-46-autobiography",
+        "fuel": "petrol",
+        "transmission": "automatic"
+      },
+      "interval": {
+        "calendar": {
+          "unit": "days",
+          "value": 7
+        },
+        "kilometres": 400,
+        "trigger": "whichever_first"
+      },
+      "recurrence_basis": "last_qualifying_event",
+      "source": {
+        "id": "M02",
+        "document": "LRL0314ENG, 3rd edition",
+        "printed_page": 135,
+        "pdf_page": 138
+      },
+      "initial_handling": "start_owner_check_schedule_without_marking_done",
+      "evidence_status": "source_checked_in_brief",
+      "implementation_review_required": true,
+      "last_performed_at": null,
+      "last_odometer_km": null
+    },
+    {
+      "id": "coolant-level",
+      "title": "Comprobar nivel de refrigerante",
+      "operation": "check",
+      "system": "cooling",
+      "applies_to": {
+        "vehicle_id": "p38-2000-46-autobiography",
+        "fuel": "petrol",
+        "transmission": "automatic"
+      },
+      "interval": {
+        "calendar": {
+          "unit": "days",
+          "value": 7
+        },
+        "kilometres": 400,
+        "trigger": "whichever_first"
+      },
+      "recurrence_basis": "last_qualifying_event",
+      "source": {
+        "id": "M02",
+        "document": "LRL0314ENG, 3rd edition",
+        "printed_page": 135,
+        "pdf_page": 138
+      },
+      "initial_handling": "start_owner_check_schedule_without_marking_done",
+      "evidence_status": "source_checked_in_brief",
+      "implementation_review_required": true,
+      "last_performed_at": null,
+      "last_odometer_km": null
+    },
+    {
+      "id": "washer-level",
+      "title": "Comprobar nivel de lavaparabrisas",
+      "operation": "check",
+      "system": "body",
+      "applies_to": {
+        "vehicle_id": "p38-2000-46-autobiography",
+        "fuel": "petrol",
+        "transmission": "automatic"
+      },
+      "interval": {
+        "calendar": {
+          "unit": "days",
+          "value": 7
+        },
+        "kilometres": 400,
+        "trigger": "whichever_first"
+      },
+      "recurrence_basis": "last_qualifying_event",
+      "source": {
+        "id": "M02",
+        "document": "LRL0314ENG, 3rd edition",
+        "printed_page": 135,
+        "pdf_page": 138
+      },
+      "initial_handling": "start_owner_check_schedule_without_marking_done",
+      "evidence_status": "source_checked_in_brief",
+      "implementation_review_required": true,
+      "last_performed_at": null,
+      "last_odometer_km": null
+    },
+    {
+      "id": "tyre-check",
+      "title": "Comprobar neumáticos y presión",
+      "operation": "check",
+      "system": "tyres",
+      "applies_to": {
+        "vehicle_id": "p38-2000-46-autobiography",
+        "fuel": "petrol",
+        "transmission": "automatic"
+      },
+      "interval": {
+        "calendar": {
+          "unit": "days",
+          "value": 7
+        },
+        "kilometres": 400,
+        "trigger": "whichever_first"
+      },
+      "recurrence_basis": "last_qualifying_event",
+      "source": {
+        "id": "M02",
+        "document": "LRL0314ENG, 3rd edition",
+        "printed_page": 135,
+        "pdf_page": 138
+      },
+      "initial_handling": "start_owner_check_schedule_without_marking_done",
+      "evidence_status": "source_checked_in_brief",
+      "implementation_review_required": true,
+      "last_performed_at": null,
+      "last_odometer_km": null
+    },
+    {
+      "id": "brake-level",
+      "title": "Comprobar nivel de líquido de frenos",
+      "operation": "check",
+      "system": "brakes",
+      "applies_to": {
+        "vehicle_id": "p38-2000-46-autobiography",
+        "fuel": "petrol",
+        "transmission": "automatic"
+      },
+      "interval": {
+        "calendar": {
+          "unit": "months",
+          "value": 1
+        },
+        "kilometres": null,
+        "trigger": "calendar"
+      },
+      "recurrence_basis": "last_qualifying_event",
+      "source": {
+        "id": "M02",
+        "document": "LRL0314ENG, 3rd edition",
+        "printed_page": 135,
+        "pdf_page": 138
+      },
+      "initial_handling": "start_owner_check_schedule_without_marking_done",
+      "evidence_status": "source_checked_in_brief",
+      "implementation_review_required": true,
+      "last_performed_at": null,
+      "last_odometer_km": null
+    },
+    {
+      "id": "steering-level",
+      "title": "Comprobar nivel de dirección asistida",
+      "operation": "check",
+      "system": "steering",
+      "applies_to": {
+        "vehicle_id": "p38-2000-46-autobiography",
+        "fuel": "petrol",
+        "transmission": "automatic"
+      },
+      "interval": {
+        "calendar": {
+          "unit": "months",
+          "value": 1
+        },
+        "kilometres": null,
+        "trigger": "calendar"
+      },
+      "recurrence_basis": "last_qualifying_event",
+      "source": {
+        "id": "M02",
+        "document": "LRL0314ENG, 3rd edition",
+        "printed_page": 135,
+        "pdf_page": 138
+      },
+      "initial_handling": "start_owner_check_schedule_without_marking_done",
+      "evidence_status": "source_checked_in_brief",
+      "implementation_review_required": true,
+      "last_performed_at": null,
+      "last_odometer_km": null
+    },
+    {
+      "id": "daily-checks",
+      "title": "Comprobaciones de uso: mandos, frenos, cinturones y fugas",
+      "operation": "check",
+      "system": "general",
+      "applies_to": {
+        "vehicle_id": "p38-2000-46-autobiography",
+        "fuel": "petrol",
+        "transmission": "automatic"
+      },
+      "interval": {
+        "calendar": {
+          "unit": "days",
+          "value": 1
+        },
+        "kilometres": null,
+        "trigger": "calendar"
+      },
+      "recurrence_basis": "last_qualifying_event",
+      "source": {
+        "id": "M02",
+        "document": "LRL0314ENG, 3rd edition",
+        "printed_page": 135,
+        "pdf_page": 138
+      },
+      "initial_handling": "daily_checklist_grouped_notifications",
+      "evidence_status": "source_checked_in_brief",
+      "implementation_review_required": true,
+      "last_performed_at": null,
+      "last_odometer_km": null
+    },
+    {
+      "id": "steering-shaft",
+      "title": "Inspeccionar eje intermedio de dirección",
+      "operation": "professional_inspection",
+      "system": "steering",
+      "applies_to": {
+        "vehicle_id": "p38-2000-46-autobiography",
+        "fuel": "petrol",
+        "transmission": "automatic"
+      },
+      "interval": {
+        "calendar": {
+          "unit": "months",
+          "value": 24
+        },
+        "kilometres": 40000,
+        "trigger": "whichever_first"
+      },
+      "recurrence_basis": "last_qualifying_event",
+      "source": {
+        "id": "M02",
+        "document": "LRL0314ENG, 3rd edition",
+        "printed_page": 136,
+        "pdf_page": 139
+      },
+      "initial_handling": "include_in_initial_service",
+      "evidence_status": "source_checked_in_brief",
+      "implementation_review_required": true,
+      "last_performed_at": null,
+      "last_odometer_km": null
+    },
+    {
+      "id": "brake-fluid",
+      "title": "Sustituir líquido de frenos",
+      "operation": "replace_fluid",
+      "system": "brakes",
+      "applies_to": {
+        "vehicle_id": "p38-2000-46-autobiography",
+        "fuel": "petrol",
+        "transmission": "automatic"
+      },
+      "interval": {
+        "calendar": {
+          "unit": "months",
+          "value": 36
+        },
+        "kilometres": 60000,
+        "trigger": "whichever_first"
+      },
+      "recurrence_basis": "last_qualifying_event",
+      "source": {
+        "id": "M02",
+        "document": "LRL0314ENG, 3rd edition",
+        "printed_page": 146,
+        "pdf_page": 149
+      },
+      "initial_handling": "include_in_initial_service",
+      "evidence_status": "source_checked_in_brief",
+      "implementation_review_required": true,
+      "last_performed_at": null,
+      "last_odometer_km": null
+    },
+    {
+      "id": "brake-hydraulics",
+      "title": "Servicio de hidráulica de frenos",
+      "operation": "professional_service",
+      "system": "brakes",
+      "applies_to": {
+        "vehicle_id": "p38-2000-46-autobiography",
+        "fuel": "petrol",
+        "transmission": "automatic"
+      },
+      "interval": {
+        "calendar": {
+          "unit": "years",
+          "value": 6
+        },
+        "kilometres": 120000,
+        "trigger": "whichever_first"
+      },
+      "recurrence_basis": "last_qualifying_event",
+      "source": {
+        "id": "M02",
+        "document": "LRL0314ENG, 3rd edition",
+        "printed_page": 146,
+        "pdf_page": 149
+      },
+      "initial_handling": "include_in_initial_service",
+      "evidence_status": "source_checked_in_brief",
+      "implementation_review_required": true,
+      "last_performed_at": null,
+      "last_odometer_km": null
+    }
+  ],
+  "catalogue_expansion_instruction": "Leer matriz, glosario y notas de M01; completar todas las operaciones aplicables y revisar de manera independiente. No limitar la app a este starter. Para cualquier conflicto preservar evidencias y documentar decisión."
+}

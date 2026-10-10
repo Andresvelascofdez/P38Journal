@@ -1,0 +1,22 @@
+[
+  {
+    "stage": "seed",
+    "result": "PASS",
+    "instrumentation": "\r\ndev.p38journal.platform.DeliveryLifecycleTest:.\r\n\r\nTime: 0.682\r\n\r\nOK (1 test)\r\n\r\n\r\n"
+  },
+  {
+    "stage": "verify-update",
+    "result": "PASS",
+    "instrumentation": "\r\ndev.p38journal.platform.DeliveryLifecycleTest:.\r\n\r\nTime: 0.271\r\n\r\nOK (1 test)\r\n\r\n\r\n"
+  },
+  {
+    "stage": "restore",
+    "result": "PASS",
+    "instrumentation": "\r\ndev.p38journal.platform.DeliveryLifecycleTest:.\r\n\r\nTime: 0.822\r\n\r\nOK (1 test)\r\n\r\n\r\n"
+  },
+  {
+    "backup_sha256": "5d582e4ef826b030f1744beffc4b6513242b065e2b9ddd4e714bd65bc3a7b5b4",
+    "bytes": 20184,
+    "scope": "Disposable Android 16 emulator debug only"
+  }
+]

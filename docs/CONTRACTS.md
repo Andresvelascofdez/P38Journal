@@ -1,0 +1,21 @@
+﻿# Contratos de integración
+
+Workspace: C:/Users/Admin/SapAssistant/Range rover. Paquete dev.p38journal. Android nativo; no servidor. Los agentes leen los documentos originales UTF-8. Propiedad: catálogo data/maintenance-catalogue.json y docs/CATALOGUE*; dominio domain/ y data/ y sus tests; interfaz ui/ y MainActivity.kt; coordinador Gradle, platform/, manifest, recursos, copias, integración y entrega.
+
+## Dominio y persistencia (API fijada)
+Rule(id:String,title:String,system:String,operation:String,days:Int?=null,months:Int?=null,km:Int?=null,source:String,sourceUrl:String,condition:String="",initialAction:String=title,priority:Int=2,recurrence:String="component",revision:Int=1).
+Event(id:String,visitId:String,ruleId:String,date:String?,km:Int?,dateExact:Boolean=true,kmExact:Boolean=true,active:Boolean=true,revision:Int=1).
+Task(rule:Rule,status:String,dueDate:String?,dueKm:Int?,reasons:List<String>,generation:String,lastEvent:Event?). Status INITIAL/DUE/SOON/PLANNED. Pure Engine.evaluate(rules:List<Rule>,events:List<Event>,today:LocalDate,currentKm:Int?,leadDays:Int=30,leadKm:Int=1000):List<Task>. Calendar clamp via java.time.
+
+Room entities Visit(id,date,km,kmExact,title,workshop,notes,paidCents:Long?,active), WorkLine(id,visitId,title,ruleId:String?,costCents:Long?), Expense(id,date,cents:Long,concept,category,notes,visitId:String?,active), Reading(id,date,km), Note(id,kind,title,body,status,date,relatedId:String?), Document(id,name,mime,path,sha256,size:Long,tags:String=""), Inbox(id,ruleId,title,body,generation,state,createdAt). Defaults suitable for UI, entity types in data package. Notes kind fault/part/history; body stores JSON for structured fault/part fields where needed.
+
+Repository(context:Context) exposes db:JournalDatabase, dao:JournalDao, suspend initialize(), Flow observeVisits/observeExpenses/observeReadings/observeNotes/observeDocuments/observeInbox, suspend tasks():List<Task>, suspend currentKm():Int?, suspend saveVisit(visit:Visit,lines:List<WorkLine>,ruleIds:List<String>,existingExpenseId:String?=null), voidVisit(id), saveExpense(expense), voidExpense(id), saveReading(reading,allowCorrection:Boolean=false), saveNote(note), deleteNote(id), saveDocument(document), deleteDocument(id), saveInbox(inbox). Editing visit replaces associated events transactionally; explicit same id avoids double save. Single expense per linked visit; visit payment counted once. Expose suspend allEvents(), allRules(), allRecords(): backup integration coordinator will adapt DAO. Migration schema v1→v2 non destructive. Repositories no main-thread IO. Settings platform/Preferences.kt coordinator.
+
+## Catalogue JSON
+{"schema_version":1,"revision":1,"rules":[{"id":"...","title":"...","system":"...","operation":"...","days":null,"months":12,"km":20000,"source":"M01 LRL0354SPA 04/00 PDF 1 row 37; glossary PDF 2","sourceUrl":"https://...","condition":"...","initialAction":"...","priority":2,"recurrence":"component","revision":1}]}. Audit complete matrix in documentation; preserve phase/milestone conditions rather than manufacture component intervals. Conditional applicability creates concrete workshop check, no false compatibility.
+
+## Coordinator platform API for UI
+Preferences(context) flow:Flow<Settings>; suspend update(settings). Settings(zone:String="Asia/Nicosia",leadDays:Int=30,leadKm:Int=1000,hour:Int=9,enabled:Boolean=false,weekly:Boolean=true,checks:Boolean=true,odometerReminder:Boolean=true).
+Notifications.schedule(context), Notifications.refresh(context), Notifications.test(context), Notifications.permissionState(context):String, Notifications.openSettings(context). WorkManager uses same Repository and Engine.
+Files(context,repo): suspend importDocument(uri:Uri):Document, exportBackup(uri:Uri), previewBackup(uri:Uri):String, restoreBackup(uri:Uri), openDocument(document). Coordinator writes PDF viewer and search screen via platform.DocumentViewer composable(document:Document,onBack:()->Unit). Attachment linkage via Document.tags with record IDs. Backup methods copy private bytes and validate full snapshot before transactional restore.
+MainActivity creates repository, initialize before UI. UI can call Notifications.refresh after domain changes.

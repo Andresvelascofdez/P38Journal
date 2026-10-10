@@ -1,0 +1,5 @@
+--------- beginning of main
+10-10 20:45:45.953 12499 12499 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=983ca435-c93a-4535-834d-a1a71d05a22c, generation=0)
+10-10 20:45:45.959 12499 12499 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-10 20:45:46.311 12499 12561 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=983ca435-c93a-4535-834d-a1a71d05a22c, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-10 20:45:46.319 12499 12499 D WM-SystemJobService: 983ca435-c93a-4535-834d-a1a71d05a22c executed on JobScheduler

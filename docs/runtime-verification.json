@@ -1,0 +1,24 @@
+[
+  {
+    "check": "Visible test notification offline and actual PendingIntent destination",
+    "result": "PASS"
+  },
+  {
+    "check": "Real maintenance notification offline after Home, task PendingIntent",
+    "result": "PASS",
+    "work_log": "--------- beginning of main\r\n10-10 20:45:45.953 12499 12499 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=983ca435-c93a-4535-834d-a1a71d05a22c, generation=0)\r\n10-10 20:45:45.959 12499 12499 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker\r\n10-10 20:45:46.311 12499 12561 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=983ca435-c93a-4535-834d-a1a71d05a22c, tags={ dev.p38journal.platform.MaintenanceWorker } ]\r\n10-10 20:45:46.319 12499 12499 D WM-SystemJobService: 983ca435-c93a-4535-834d-a1a71d05a22c executed on JobScheduler\r\n"
+  },
+  {
+    "check": "Normal process kill retains scheduled jobs and reopening",
+    "result": "PASS"
+  },
+  {
+    "check": "Actual reboot retains WorkManager jobs; app reopens",
+    "result": "PASS"
+  },
+  {
+    "check": "Force-stop then explicit reopen reschedules jobs",
+    "result": "PASS",
+    "limit": "No delivery guarantee while force-stopped"
+  }
+]

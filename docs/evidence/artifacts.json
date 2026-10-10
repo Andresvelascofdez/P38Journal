@@ -1,0 +1,12 @@
+[
+  {
+    "file": "p38-journal-2.0.0-debug.apk",
+    "bytes": 27485488,
+    "sha256": "1a90ddd75aaaf85a0a1b81d7fde9fccb99e878bd4fd22248185372a1c98b7972"
+  },
+  {
+    "file": "p38-journal-2.0.0-release.apk",
+    "bytes": 20368996,
+    "sha256": "a873553ddfdfb4d6eb8a1be3180f6c4a8f3e5fb82975965d2813dfe8e3e225cd"
+  }
+]

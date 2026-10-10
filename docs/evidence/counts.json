@@ -1,0 +1,81 @@
+{
+  "unit": [
+    {
+      "name": "dev.p38journal.domain.ConditionalProfilesTest",
+      "tests": "3",
+      "skipped": "0",
+      "failures": "0",
+      "errors": "0",
+      "timestamp": "2026-10-10T17:40:46.093Z",
+      "hostname": "DESKTOP-DVUH6AS",
+      "time": "0.046"
+    },
+    {
+      "name": "dev.p38journal.domain.EngineTest",
+      "tests": "19",
+      "skipped": "0",
+      "failures": "0",
+      "errors": "0",
+      "timestamp": "2026-10-10T17:40:46.141Z",
+      "hostname": "DESKTOP-DVUH6AS",
+      "time": "0.02"
+    },
+    {
+      "name": "dev.p38journal.review.IndependentCatalogueTest",
+      "tests": "4",
+      "skipped": "0",
+      "failures": "0",
+      "errors": "0",
+      "timestamp": "2026-10-10T17:40:46.165Z",
+      "hostname": "DESKTOP-DVUH6AS",
+      "time": "0.101"
+    }
+  ],
+  "instrumented": {
+    "name": "dev.p38journal.data.MigrationTest",
+    "tests": "33",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "1",
+    "time": "28.725",
+    "timestamp": "2026-10-10T17:41:46",
+    "hostname": "localhost"
+  },
+  "groups": {
+    "dev.p38journal.data.MigrationTest": {
+      "pass": 1,
+      "skipped": 0,
+      "failed": 0
+    },
+    "dev.p38journal.data.RepositoryTest": {
+      "pass": 15,
+      "skipped": 0,
+      "failed": 0
+    },
+    "dev.p38journal.platform.DeliveryLifecycleTest": {
+      "pass": 0,
+      "skipped": 1,
+      "failed": 0
+    },
+    "dev.p38journal.platform.DocumentViewerTest": {
+      "pass": 2,
+      "skipped": 0,
+      "failed": 0
+    },
+    "dev.p38journal.platform.PlatformTest": {
+      "pass": 8,
+      "skipped": 0,
+      "failed": 0
+    },
+    "dev.p38journal.platform.SystemWorkTest": {
+      "pass": 2,
+      "skipped": 0,
+      "failed": 0
+    },
+    "dev.p38journal.ui.JournalUiTest": {
+      "pass": 4,
+      "skipped": 0,
+      "failed": 0
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "package": "P38 Journal — Android nativo",
+  "version": "2.0.0",
+  "prepared_on": "2026-10-10",
+  "artifact_type": "development_specification_not_built_app",
+  "platform": "native_android",
+  "delivery_required": [
+    "signed_release_apk",
+    "debug_apk"
+  ],
+  "supersedes": "P38-Codex-Paquete 1.x (PWA)",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 2693,
+      "sha256": "f96e420ac3cec6f7a395db94841fc55297c8dbcfb2bce322c78b9cb0b360fb54"
+    },
+    {
+      "path": "ANDROID.md",
+      "bytes": 6085,
+      "sha256": "d8c9735e54ce4bb57f8a6c3854857e1072c19896c478e525a399d1af80bf0eb0"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 605,
+      "sha256": "a690c86b9c724ee3207ed6357fd1e86896a70ab0abf279b2f45d12a6435a1d96"
+    },
+    {
+      "path": "ENGINE.md",
+      "bytes": 7879,
+      "sha256": "51b2586188d6493583b2532701daf8b7d0bfe20d78ffab31ca68e6b839a6d7c1"
+    },
+    {
+      "path": "HANDOFF.md",
+      "bytes": 2237,
+      "sha256": "8279603069bd865881f43e74121dc144f1f21fdb895b99e6273c415d93af0acd"
+    },
+    {
+      "path": "INICIO_CODEX.txt",
+      "bytes": 689,
+      "sha256": "ea116b3ac0c24d4d6a8d769bc00985e8f27fed1a27bcd27feeff7aa066441319"
+    },
+    {
+      "path": "PROMPT_CODEX.md",
+      "bytes": 7915,
+      "sha256": "16d999734c312c401c62a35a9ec20d1206a9ae72d9a53815eb4a528f4f29a91c"
+    },
+    {
+      "path": "QA.md",
+      "bytes": 6167,
+      "sha256": "47e54f1ed03e9057faf7c4b1489fc0ae60d9ea0ca00bca1d1e22e2a719f1ce79"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3274,
+      "sha256": "3d63cef587c98a3af12db87997cca0b5c8d2507e7fa06139dd2f9d0fdee72b4e"
+    },
+    {
+      "path": "SOURCES.md",
+      "bytes": 4479,
+      "sha256": "031c5274344877b5e68d2e3992ef0d70a91df8678cd105f0c2a7e34c908e8cd7"
+    },
+    {
+      "path": "SPEC.md",
+      "bytes": 11275,
+      "sha256": "85614cdc16939a5618f0a7160eac62024296d7f4d47b79da6155340ee44e7202"
+    },
+    {
+      "path": "data/maintenance-starter.json",
+      "bytes": 10397,
+      "sha256": "f54320a0e6223750006b440eda80120bc346a39d69386e8a8294cd5c12bb2a14"
+    },
+    {
+      "path": "data/vehicle.json",
+      "bytes": 5878,
+      "sha256": "227db45dc48a13a15cb3c88bef7f9561b76a14058774d48b0866831f9658da34"
+    }
+  ]
+}
