@@ -1,5 +1,13 @@
 # Producto: calendario sencillo del P38
 
+## Ampliación vigente v4
+
+[REQUEST_V4.md](REQUEST_V4.md) prevalece sobre los criterios anteriores. La consulta ofrece vencimientos reales y una previsión hipotética de los primeros cuatro hitos; solo los reales generan avisos y permiten registrar. La previsión supone realizar los trabajos previos en sus límites, sin crear historial. La referencia y su fecha siguen separadas del odómetro.
+
+Cada operación se consulta y personaliza desde el detalle del grupo. Una visita nueva empieza sin operaciones marcadas y requiere confirmar fecha, km y selección. Se pueden crear operaciones propias recurrentes o únicas sin URL; editar una recurrente no la convierte en una tarea única: para otra cita se crea una operación nueva. Restaurar el fabricante conserva identidad e historial.
+
+Gastos permite filtros combinables de mes/año/tipo, Todos y limpiar; conserva selección al navegar y recrear. Lista, subtotal filtrado y total acumulado usan gastos activos y céntimos enteros. Son filtros de consulta; informes, gráficos y consumo quedan fuera del alcance. Historial busca también operaciones, taller y notas.
+
 ## Alcance
 
 Android nativo, español, km/EUR, vehículo único P38 4.6 gasolina automático año 2000. Funciones principales: calendario del fabricante, kilometraje manual, registro/historial, notificaciones y gastos. Manuales y copias como accesos secundarios. No ampliar con gestores de piezas, averías, diagnósticos o paneles de incertidumbre. Si ya existen datos de esos módulos, conservarlos y su exportación sin hacerlos centro de la navegación.
@@ -44,7 +52,7 @@ Historial cronológico con trabajo, fecha/km, notas/gasto/documento si existen; 
 
 ## Gastos
 
-Total «Lo que llevo gastado» y lista cronológica. Añadir gasto: fecha, euros, concepto, categoría Taller/Extras/Gasolina/Otros; nota/foto opcionales. Editar/eliminar actualiza total. Sin exigencia de km, factura, avería o tarea. Importes exactos y pago de taller contado una vez. Sin informes, gráficos, consumo/litros ni análisis por meses. Presupuestos/importes desconocidos no suman.
+Total acumulado y lista cronológica. Filtros combinables de consulta por mes, año y tipo, cada uno con Todos y acción para limpiar. El mes con Todos los años abarca ese mes en cualquier año; los años disponibles proceden de gastos activos. Se filtra por fecha de calendario del gasto. Lista y «Total de estos gastos» reaccionan a altas/ediciones/anulaciones, junto con «Total acumulado» de todos los activos, calculados en céntimos. Selección conservada al navegar/recrear pantalla. Añadir gasto: fecha, euros, concepto, categoría Taller/Extras/Gasolina/Otros; nota/foto opcionales. Sin exigencia de km, factura, avería o tarea. Pago de taller contado una vez. Los filtros de consulta están autorizados; informes, gráficos y consumo/litros permanecen excluidos. Presupuestos/importes desconocidos no suman.
 
 ## Ajustes, documentos y avisos
 

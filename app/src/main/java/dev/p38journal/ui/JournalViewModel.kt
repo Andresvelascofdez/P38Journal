@@ -30,6 +30,8 @@ class JournalViewModel(application: Application) : AndroidViewModel(application)
     val message = _message.asStateFlow()
     private val _tasks = MutableStateFlow<List<Task>>(emptyList())
     val tasks = _tasks.asStateFlow()
+    private val _workLines = MutableStateFlow<List<WorkLine>>(emptyList())
+    val workLines = _workLines.asStateFlow()
     val settings = preferences.flow.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), Settings())
     val visits = repository.observeVisits.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
     val expenses = repository.observeExpenses.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
@@ -69,6 +71,7 @@ class JournalViewModel(application: Application) : AndroidViewModel(application)
         _tasks.value = withContext(Dispatchers.IO) {
             repository.tasks(LocalDate.now(ZoneId.of(config.zone)), config.leadDays, config.leadKm)
         }
+        _workLines.value = withContext(Dispatchers.IO) { repository.dao.allLines() }
     }
 
     fun action(success: String = "Guardado", after: () -> Unit = {}, evaluateTrigger: String? = null, work: suspend () -> Unit) {
@@ -98,6 +101,9 @@ class JournalViewModel(application: Application) : AndroidViewModel(application)
     fun voidExpense(id: String, after: () -> Unit) = action("Gasto anulado", after) { repository.voidExpense(id) }
     fun saveReading(reading: Reading, correction: Boolean, after: () -> Unit) = action(after = after, evaluateTrigger = "reading") { repository.saveReading(reading, correction) }
     fun updatePlanning(date: String, km: Int) = action("Referencia del plan guardada", evaluateTrigger = "change") { repository.updatePlanningReference(date, km) }
+    fun saveMaintenance(rule: dev.p38journal.domain.Rule, custom: Boolean, after: () -> Unit) = action("Mantenimiento guardado", after, "change") {
+        if (custom) repository.saveCustomRule(rule) else repository.saveRuleOverride(rule)
+    }
     fun saveNote(note: Note, after: () -> Unit) = action(after = after) { repository.saveNote(note) }
     fun deleteNote(id: String, after: () -> Unit) = action("Registro eliminado", after) { repository.deleteNote(id) }
     fun updateSettings(value: Settings, after: () -> Unit = {}) = action("Ajustes guardados", after, "permission") {

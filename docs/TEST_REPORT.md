@@ -1,81 +1,79 @@
-# Verificaciones reales — P38 Journal 3.0
+# Verificaciones reales — P38 Journal 4.0
 
-Corrección v3 ejecutada el 11/10/2026, fecha local Asia/Nicosia. Los timestamps UTC de algunas pruebas corresponden al 10/10 por la diferencia horaria. Esta entrega reemplaza la política v2 de mantenimiento inicial. [El informe v2](TEST_REPORT_V2.md) queda como antecedente y no certifica estos APK.
+Encargo [REQUEST_V4](../REQUEST_V4.md), ejecutado el 11/10/2026, Asia/Nicosia. Se corrigió la app existente con agentes de dominio/datos, interfaz y revisión independiente. Los resultados v3 archivados en [TEST_REPORT_V3](TEST_REPORT_V3.md) son antecedentes y no certifican estos APK.
 
-Entorno real: Windows, JDK 21.0.8, Gradle 8.13, AGP 8.10.1, SDK/build-tools 36, Android 16/API 36 en `Medium_Phone_API_36.0`, `emulator-5554`, WHPX/SwiftShader. No había teléfono físico conectado. Las pruebas utilizan debug, bases temporales y fixtures identificados; los APK distribuidos no contienen trabajos, gastos ni documentos de prueba.
+Entorno: Windows, JDK 21.0.8, Gradle 8.13, AGP 8.10.1, Kotlin 2.0.21, SDK/build-tools 36. Emulador Android 16/API 36 `Medium_Phone_API_36.0`, `emulator-5554`, WHPX/SwiftShader. No había teléfono físico. Fixtures identificadas y aisladas en debug/bases de prueba; no se incluyen registros ni documentos de prueba en los APK.
 
-## Build y pruebas definitivas
+## Build y pruebas
 
-Comando ejecutado: `gradlew.bat testDebugUnitTest assembleDebug assembleRelease assembleDebugAndroidTest lintDebug connectedDebugAndroidTest --console=plain --no-parallel --max-workers=1`.
-
-**BUILD SUCCESSFUL** en [v3-final-validation-serial.log](v3-final-validation-serial.log). Después, `scripts/build.ps1` volvió a pasar y copió los APK definitivos a dist; [v3-delivery-build.log](v3-delivery-build.log). El único cambio posterior a la suite fue la metadata del estado de revisión del catálogo; ninguna regla ni código de cálculo cambió. El ciclo de instalación y los recorridos visuales usan los APK definitivos.
+Comando serial ejecutado: `gradlew.bat testDebugUnitTest assembleDebug assembleRelease assembleDebugAndroidTest lintDebug connectedDebugAndroidTest --console=plain --no-parallel --max-workers=1`. Evidencia de entrega en [v4-delivery-validation.log](v4-delivery-validation.log), XML/lint en [evidence/v4](evidence/v4). La suite limpia anterior también pasó: [v4-clean-instrumentation.log](v4-clean-instrumentation.log), [XML conservado](evidence/v4-clean-run).
 
 | Verificación | Resultado |
 |---|---|
-| Unitarias | **32 aprobadas**: 18 motor, 3 perfiles, 11 revisión independiente |
-| Android | **49 registradas, 48 aprobadas, 0 fallos/errores y 1 omisión intencional** de la prueba por etapas, ejecutada aparte |
-| Datos Android | 23 repositorio + 3 migración |
-| Plataforma Android | 10 archivos/avisos + 4 WorkManager/NotificationManager reales + 2 PDF |
-| Compose | 6 recorridos: gasto/recreación, confirmación de trabajo, revisión parcial, referencia editable, perfil secundario y lectura/avería/pieza/PDF |
-| Lint | **0 errores y 33 advertencias**, sin baseline ni supresiones nuevas |
+| Unitarias | **44 aprobadas**, sin fallos: Engine 22, perfiles 3, catálogo independiente 11, revisión v4 8 |
+| Android | **69 casos en XML, 67 aprobados, 0 fallos/errores, 2 omisiones por etapas** |
+| Datos Android | Repositorio 23, migración 3, reglas/pagos v4 11 |
+| Plataforma Android | Archivos/avisos 11, WorkManager/NotificationManager reales 6, PDF 2 |
+| Compose | 11 recorridos de pantallas reales |
+| Lint | 0 errores, 33 advertencias y 2 sugerencias; sin supresiones nuevas |
+| Ciclo v3→v4 | Tres etapas reales aprobadas: seed en APK v3, actualización con datos, reinstalación/restauración repetida solo debug |
 
-Los XML y lint definitivos están en [evidence/v3](evidence/v3). El contador de consola «Finished 50» incluye una diferencia del runner; el XML contiene 49 casos y es la fuente utilizada para este informe.
+El XML determina los conteos; el runner imprime un contador superior. `DeliveryLifecycleTest` es el recorrido v2→v3 archivado y no se repitió en v4; `UpgradeV4Test` se omite sin argumento y se ejecutó aparte. No se contabilizan sus tres etapas como 67 pruebas adicionales. El build de entrega [v4-delivery-build.log](v4-delivery-build.log) también pasó y copió los APK finales; el único cambio posterior a la suite general fue exigir permiso/canal permitido en la prueba por etapas, recompilada y ejecutada realmente después. Los APK de producción conservan exactamente los hashes verificados.
 
-Lint advierte sobre versiones/KTX/KSP, commit de SharedPreferences, espacio disponible y tres TrustManager de la dependencia criptográfica. El APK no solicita INTERNET ni implementa transporte de red. Una ejecución conjunta anterior falló dentro del analizador Kotlin/FIR de lint, con un stub kapt ausente; se conservó [el log](v3-final-validation.log) y se repitió con compilación previa y tareas serializadas. No se desactivaron comprobaciones para conseguir el resultado.
+Se conservan los intentos fallidos: [primer build](v4-first-build.log) por API inexistente de colección Compose, [primera suite](v4-validation.log) por falta de espera tras guardar lectura, [segunda suite](v4-final-validation.log) con tres fallos de recorridos UI después de poblar datos del ciclo de actualización, y [build intermedio](v4-delivery-first-attempt.log) por una referencia de test a Espresso sin dependencia. Se corrigieron los selectores/esperas y se usó clic semántico comprobando el estado del checkbox; no se añadió dependencia ni se alteró el cálculo para satisfacer fixtures. Se separaron las pruebas de plan inicial de las de actualización poblada. Las ejecuciones limpias pasan y los XML fallidos quedan en `evidence/v4-first-run` y `v4-second-run`.
 
-## Cálculo y registro
+Las advertencias lint se refieren principalmente a versiones/KTX/KSP, SharedPreferences, almacenamiento y TrustManager de una dependencia; no se agregó transporte ni permiso INTERNET. No se desactivaron comprobaciones para conseguir el resultado.
 
-El plan persistido parte de 175.000 km sin crear Reading, Visit ni Event. Las pruebas comprueban próximo aceite/filtro a 195.000; a 184.500 faltan 10.500, a 194.999 todavía no vence, a 195.000 vence y a 197.000 sigue pendiente. Una ejecución válida a 195.200 mueve esa operación a 215.200; registrar otra operación, una comprobación o un gasto no satisface el cambio.
+## Cálculo, catálogo y formularios
 
-La referencia temporal fixture 15/10/2026 genera 15/10/2027 para 12 meses. Fecha y km actúan por separado; ambas causas mantienen una tarea. Se verifican calendario/bisiesto, precisión parcial con referencia anterior/base, fases B/C, hitos únicos anteriores a la base, eventos anteriores y edición/anulación. Editar notas/taller conserva la generación efectiva y no reemite el mismo ciclo.
+Catálogo canónico de 62 reglas/revisión 3 **sin cambios de frecuencias**. Revisión independiente de las fuentes/matriz M01 y cobertura: [CATALOGUE](CATALOGUE.md), [INDEPENDENT_REVIEW_V4](INDEPENDENT_REVIEW_V4.md). Los bytes del catálogo incluidos en ambos APK coinciden con `data/maintenance-catalogue.json`.
 
-No se genera INITIAL. Los controles rutinarios no aparecen en el calendario ni alertan por defecto. Las 42 operaciones aplicables se agrupan inicialmente en seis límites; las 29 coincidentes del primer servicio conservan registro individual. Un trabajo parcial separa solo lo realizado. Las referencias manuales y perfiles condicionados siguen accesibles en opciones secundarias, con confirmación y evidencia, sin crear trabajos ficticios.
+Referencia inicial 175.000 separada de Reading/Event/Visit y fecha configurada preservada. Sin INITIAL ni tarjetas por falta de historial. Los próximos vencimientos reales iniciales tienen 29 operaciones a 195.000 y seis a 215.000; la previsión condicional tiene 33 a 215.000 (27 comunes + seis C). B comienza a +20.000/12 meses y repite cada 40.000/24 meses; C comienza a +40.000/24 y repite 40.000/24. La previsión siguiente de 235.000 contiene 31, incluidas dos operaciones adicionales coincidentes; 255.000 vuelve a 33. No se copia indiscriminadamente el primer grupo.
 
-Gastos exactos: 100+25+60 = 185 €, editar gasolina a 55 → 180 €, anular extras → 155 €. Un pago de taller de 300 € repartido entre líneas se cuenta una sola vez. Reimportaciones, edición, anulación y pagos independientes están cubiertos.
+Las ocho pruebas independientes v4 verifican conjuntos y fases, aceite a 195.200 → 215.200, B a 195.200 → 235.200, parcial sin cerrar lo pendiente, tiempo/km por lo que llegue antes y previsión sin cambiar generación. La UI muestra los primeros cuatro hitos para no presentar grupos lejanos incompletos; no permite registrar previsión ni persistirla como evento/lectura/visita/aviso.
 
-## Avisos Android reales
+Compose comprueba acceso individual desde grupo y personalización de fase a 10.000 km/6 meses (fixture, no fabricante), eliminación de primeros desfases y restauración; operación propia sin URL, edición/notas/desactivación y única completada sin repetición. Una recurrente existente no se convierte desde UI a otra cita única: crear una tarea nueva evita que su historial complete una cita futura. Dominio conserva compatibilidad con JSON único existente/importado. Visitas nuevas empiezan sin selección; confirmación de fecha/km/operaciones, edición con selección real, trabajo parcial y búsqueda por operaciones están cubiertos. Se mantienen averías, piezas y PDF; su recorrido de regresión también pasó.
 
-`SystemWorkTest` comprueba NotificationManager, además de los transportes controlados:
+## Gastos y vínculos
 
-- Guardar 194.999 → 195.000 emite 1001 fuera de la hora preferida, con PendingIntent y bandeja persistida. Repetir el valor, reabrir y reevaluar conserva el postTime/ledger. Completar aceite a 195.200 cancela el ciclo anterior; el cruce posterior de 215.200 emite un ciclo nuevo.
-- Un vencimiento por fecha, sin lectura ni eventos, se evalúa con la actividad cerrada mediante WorkManager: resultado SUCCEEDED, aviso real con fecha y PendingIntent. La prueba verifica que no hay actividades STARTED/RESUMED.
-- WorkManager real en una instalación limpia produce plan y copia interna, sin Inbox inicial ni servicios inventados. El aviso de prueba no completa mantenimiento.
+Pruebas independientes y Compose cubren combinaciones mes/año/tipo, todos los años, año disponible, vacío/0, navegación y recreación, edición de fecha/tipo/anulación y subtotal frente a total activo. Fechas de calendario locales y céntimos Long, sin Double. Gasolina no altera mantenimiento ni odómetro.
 
-Las pruebas controladas verifican permiso denegado, ventana horaria, transición SOON→DUE, salto con varias operaciones, deduplicación y resumen parcial. Si el resumen sigue visible, se actualiza silenciosamente al completar una parte; si ya se descartó, no se resucita. Los avisos manuales y de procedencia antigua desconocida se conservan al cambiar trabajo o plan.
+Once pruebas Android nuevas cubren identidad/historial de reglas y pagos: normalización de enlaces inactivos existentes y restaurados Snapshot 2/3, auditoría, reemplazo tras anular, ausencia de doble importe y metadatos de gasto personalizados preservados al editar visita. Un gasto de 300 € con líneas 150+150, corregido a 310 desde Gastos, permite editar notas/km manteniendo las líneas históricas; no se inventa reparto 155+155. Intentar cambiarlo a 160+140 se rechaza y revierte; 160+150 se acepta. También se verificó este caso en Compose.
 
-El recorrido visible del APK definitivo terminó con **cinco comprobaciones PASS**: aviso de prueba offline y destino Bandeja; lectura manual 194.999→195.000 offline con aviso DUE y destino Detalle de mantenimiento; salida a Home y muerte normal del proceso; reinicio real del emulador con trabajos recuperados antes de abrir la app; detención forzada seguida de reapertura y reprogramación. Evidencias: [runtime JSON](v3-runtime-verification.json), [log](v3-runtime.log), [aviso por km](screenshots/v3-notification-km-crossing-offline.png) y [destino](screenshots/v3-notification-maintenance-destination.png). La recuperación tras force-stop no prueba entrega mientras la aplicación permanece detenida.
+## Avisos reales
 
-El log [v3-background-work.log](v3-background-work.log) conserva la ejecución real de MaintenanceWorker en segundo plano. Los dumps `v3-jobs-after-*.txt` y las capturas tras proceso/reinicio registran la continuidad. La primera ejecución del script visible falló al localizar un campo vacío; se conservó el log y se corrigió el selector antes del recorrido completo, sin cambiar el APK.
+Seis pruebas `SystemWorkTest` consultan NotificationManager/WorkManager reales: cruce manual 194.999→195.000 fuera del horario, deduplicación/postTime, cancelación al completar y nuevo ciclo, trabajador de fecha con actividad cerrada, planificación/respaldo sin Inbox inicial, aviso de prueba sin eventos, cambio de regla que genera/cancela su límite y recordatorio opcional de odómetro de siete días. Una lectura nueva cancela ese recordatorio sin inventar kilometraje.
 
-## Actualización y respaldo
+Las once pruebas de plataforma también cubren permiso denegado, horario, SOON→DUE, resumen parcial silencioso y resumen descartado que no reaparece. El alias de generación v3 conserva estado emitido y bandeja leída al actualizar sin cambio efectivo. Nombre/notas no reinician ciclo; intervalo/trabajo/activación sí recalculan y cancelan lo obsoleto. Los hitos hipotéticos no llegan al evaluador de avisos.
 
-La fuente/APK v2 y la documentación recibida se respaldaron en `.tools/pre-v3` con hashes antes de implementar. Al abrir una DB 1/2, la app crea una copia privada SQLite+WAL con SHA-256 e integrity_check antes de migrar; un error detiene la apertura. Se probó WAL real sin alterar el origen y reutilización del respaldo verificado.
+La evidencia de los tests del sistema es independiente de transportes simulados. Emitir demuestra entrega al sistema, no lectura humana. El recorrido visible offline y de continuidad se describe en la sección siguiente.
 
-`verify-lifecycle.py` ejecutó el ciclo con el APK debug v2 real, su test APK conservado y el APK debug v3 definitivo. Tras el seed nativo se preparó una fixture controlada SQLite de esquema 2 y un ZIP coherente: lectura **182.000**, dos operaciones reales de prueba a 178.000, pago vinculado 300 € + gasto 12,50 €, nota resuelta, PDF y marcador; creación del plan explícita en audit, pendiente INITIAL derivado y tarea CUSTOM del mismo título.
+## Pantallas y recorrido visible
 
-Resultados **PASS** en [v3-lifecycle-verification.json](v3-lifecycle-verification.json) y [log](v3-lifecycle.log): instalación `adb install -r` de code 2→3 **sin desinstalar**, datos/total **312,50 €**/PDF/hash/marcador conservados, lectura 182.000 y base 175.000, siguiente aceite 198.000 desde el trabajo; INITIAL cancelado y tarea manual preservada. El respaldo previo sigue en esquema 2 con la lectura original. Initialize repetido no duplica. Después, exclusivamente en debug del emulador, se desinstaló/reinstaló y restauró el ZIP dos veces sin duplicados.
+Se capturaron y revisaron 18 vistas de matriz: Inicio, plan real, previsión superior/inferior a 320/360/390/430 dp y oscuro a 320 dp con fuente al 130%. [Log visual](v4-visual.log), archivos `screenshots/v4-*`. Otras once capturas a 360 dp muestran grupo, fase B y editor, formularios propios recurrente/única, visita nueva sin selección, historial/búsqueda y gastos con filtros/subtotales. [Log suplementario](v4-details.log); su filtro vacío combina Enero/Todos los años/Taller, subtotal 0 y total 0. Los importes con fixtures pobladas se comprueban en Compose y repositorio, no se deducen de capturas vacías.
 
-Las migraciones 1→3 y 2→3, repetición idempotente, INITIAL huérfano sin ledger y CUSTOM/manual/formatos desconocidos están cubiertos en Android. No se identifican derivados por títulos. La restauración admite copias v2 y v3, conserva referencias editadas y personalizaciones, y valida bytes/checksums antes de integrar.
+Los primeros scripts de captura fallaron al buscar un selector fuera de pantalla, un mes fuera del área visible del desplegable o al asumir que Volver desde visita abría el detalle en vez del plan. Se corrigieron los recorridos/scroll y se conservaron `v4-visual-first-attempt.log` y `v4-details-*-attempt.log`; ninguna corrección del script cambió el APK. Los recorridos finales de captura pasaron. Revisión propia del coordinador y [revisión independiente](INDEPENDENT_REVIEW_V4.md).
+
+El recorrido visible del APK final dio **cinco comprobaciones PASS**: aviso de prueba sin Internet y destino Bandeja; lectura manual 194.999→195.000 sin Internet, aviso DUE y destino Detalle; salida a Home/muerte normal del proceso y trabajos conservados; reinicio real del emulador con WorkManager recuperado; force-stop seguido de reapertura y reprogramación. [JSON](v4-runtime-verification.json), [log](v4-runtime.log), [aviso visible](screenshots/v4-notification-km-crossing-offline.png) y [destino real](screenshots/v4-notification-maintenance-destination.png). Se capturaron seis vistas y dumps de jobs tras proceso/reinicio/force-stop. Recuperación tras reabrir no significa entrega mientras la app sigue detenida. Los logs de trabajo/actividad `v4-background-*` pertenecen a este recorrido; el caso específico por fecha con actividad cerrada está verificado en SystemWorkTest.
+
+## Actualización y restauración
+
+Fuente y APK v3 respaldados antes de editar en `.tools/pre-v4`, ignorado. Room continúa en esquema 3; metadata JSON aditiva y Snapshot 2/3, sin borrado ni migración destructiva. Migraciones anteriores 1/2→3 y respaldo previo DB/WAL siguen cubiertos.
+
+[verify-v4-lifecycle.py](../scripts/verify-v4-lifecycle.py) ejecuta **APK debug v3 real → APK debug v4 mediante install-r**, sin desinstalar entre versiones. Después reinstala únicamente debug del emulador para restaurar dos veces el ZIP v4. Tres etapas PASS en [v4-lifecycle-verification.json](v4-lifecycle-verification.json) y [log](v4-lifecycle.log). Fixture: lectura 182.000, base175.000/fecha01-10-2026, aceite personalizado10.000 hecho a178.000/editado178.500 →188.500, metadatos personalizados del pago, enlace inactivo antiguo reparado, gasto total310 €, PDF/hash/marcador, preferencias777km y recordatorio odómetro, nueva regla propia desactivada y tarea única completada. Initialize/reimportación no duplican. La actualización conserva un ciclo v3 emitido/leído; el recorrido definitivo concede permiso Android antes de comprobar ausencia de reemisión real.
 
 ## APK y firma
 
-Release `dev.p38journal`, 3.0.0/code 3; debug `dev.p38journal.debug`, 3.0.0-debug/code 3. Ambos minSdk 26/targetSdk 36. Apksigner verifica ambos; el certificado release coincide con el APK v2: `ce157b9b800d3e21c544ca21cbb398ffdfb3fab46ba5318adcc63d8cd14adf2b` (RSA 3072). La clave permanece fuera del workspace y de la entrega.
+4.0.0/code4: release `dev.p38journal`, debug `dev.p38journal.debug`, min26/target36. Apksigner verifica ambos y el certificado release coincide con v3: `ce157b9b800d3e21c544ca21cbb398ffdfb3fab46ba5318adcc63d8cd14adf2b`, RSA3072. La clave privada original permanece fuera del repositorio. [Firma release](v4-signature-release.log), [firma anterior](v4-signature-previous-release.log), [debug](v4-signature-debug.log), metadata `v4-apk-*-metadata.txt`, [hashes](../dist/SHA256SUMS.txt).
 
-Evidencias [firma release](v3-signature-release.log), [firma anterior](v3-signature-previous-release.log), [firma debug](v3-signature-debug.log), metadata `v3-apk-*-metadata.txt` y [SHA256SUMS](../dist/SHA256SUMS.txt). La app conserva el ID, fichero Room y firma de actualización; debug mantiene datos separados.
-
-También se instaló el **release definitivo sobre el release v2 existente** del emulador mediante `adb install -r`, sin desinstalar ni borrar datos: Success, code 2→3, arranque nativo y pantalla Inicio renderizada. [Registro](v3-release-install-verification.json) y [captura](screenshots/v3-release-home.png). Esa instalación no tenía una lectura real registrada: muestra 175.000 como «Valor inicial», siguiente revisión a 195.000, 20.000 km restantes y ninguna tarjeta inicial ficticia. La comprobación detallada de datos poblados corresponde al ciclo debug descrito arriba.
-
-## Revisión visual e independiente
-
-Se capturaron y revisaron Inicio/Mantenimiento a 320, 360, 390 y 430 dp, y Inicio/Ajustes a 320 dp oscuro con letra al 130%, además de avisos/destinos y continuidad: [log visual](v3-visual.log), archivos `screenshots/v3-*`. Contenido y acciones operables; en anchos estrechos la etiqueta Mantenimiento se parte dentro de la palabra y una etiqueta de fecha ocupa dos líneas al 130%. Es un detalle estético documentado, sin truncar valores ni impedir acciones. El release se inspeccionó por separado tras su actualización.
-
-Los agentes de dominio, interfaz, catálogo y revisión independiente trabajaron sobre contratos compartidos. Diez hallazgos de revisión se corrigieron y la [revisión independiente](INDEPENDENT_REVIEW.md) quedó cerrada con las evidencias finales, sin defectos funcionales pendientes conocidos.
+El **release v4 definitivo se instaló realmente sobre release v3** existente con `adb install -r`, Success, code3→4, sin desinstalar ni borrar datos, y renderizó Inicio nativo: [registro de artefactos/actualización](v4-release-install-verification.json), [captura](screenshots/v4-release-home.png). Esa instalación no tenía lectura real; la preservación poblada se comprueba en el ciclo debug descrito. Los archivos de APK se entregan en `dist/` y quedan ignorados por git; no hay publicación v4.
 
 ## Límites concretos
 
-- Solo se ejecutó Android 16/API 36 en emulador; compatibilidad declarada desde Android 8/API 26. No se probó un teléfono físico, otro OEM ni TalkBack con audio.
-- El recorrido de SAF y la revocación real del permiso de una carpeta externa no constituyen pruebas automatizadas completas. Las copias internas no sobreviven a desinstalar; usar ZIP externo.
-- Android decide cuándo ejecutar trabajos diferibles por fecha. No se garantiza un minuto exacto ni ejecución durante una detención forzada; al reabrir se reprograma. Emitted demuestra llamada al sistema, no lectura humana del aviso.
-- VIN/equipamiento/fecha original SRS y conflicto de pretensores siguen sin inventarse. Esas referencias condicionadas no se convierten en alertas desde la fecha de migración.
+- Solo Android 16/API36 en emulador. Android8/API26 es el mínimo declarado; no se probaron teléfono físico, otros OEM ni TalkBack con audio.
+- A 320 dp y fuente al 130%, el rótulo abreviado de mantenimiento pierde sus últimos caracteres. Conserva icono, acción y descripción accesible completa; no se parte en dos líneas. Es un detalle cosmético documentado.
+- SAF/revocación real de carpeta externa no tienen un recorrido automatizado completo. Usar ZIP externo; las copias internas no sobreviven a desinstalar/perder el teléfono.
+- Android puede diferir WorkManager; no se garantiza minuto exacto ni ejecución durante force-stop. Reabrir reprograma. El odómetro depende de lecturas manuales.
+- VIN/equipamiento/fecha original SRS y condiciones del catálogo siguen sin inventarse. Una frecuencia personalizada se distingue del fabricante.
 
-[Guía de instalación y prueba](USER_TEST.md) · [Catálogo y fuentes](CATALOGUE.md) · [Revisión independiente](INDEPENDENT_REVIEW.md).
+[Guía de instalación y prueba](USER_TEST.md) · [Privacidad/firma](BUILD_AND_PRIVACY.md) · [Revisión independiente](INDEPENDENT_REVIEW_V4.md).

@@ -1,4 +1,8 @@
-# Corrección de la app Android existente — versión 3
+# Corrección de la app Android existente — versión 4
+
+El encargo vigente completo es [REQUEST_V4.md](REQUEST_V4.md); prevalece sobre cualquier restricción contradictoria del texto v3 conservado debajo. Ejecutar previsión separada, detalle y selección consciente, reglas propias/personalizadas, búsqueda, filtros de consulta de gastos, pagos vinculados coherentes, avisos y actualización compatible. No publicar ni contratar servicios. Informes/gráficos/consumo siguen fuera del alcance.
+
+## Encargo anterior compatible
 
 La app construida no refleja lo que quiero: muestra muchas comprobaciones iniciales y detalles técnicos difíciles de leer. Corrígela sobre el proyecto actual. Esta especificación sustituye la anterior, especialmente la obligación de crear mantenimiento inicial por falta de historial. No borres código/datos, no cambies la firma y no me pidas rehacer el proyecto.
 
@@ -24,7 +28,7 @@ Detalle: título concreto («Cambio de aceite y filtro»), intervalo, próximo l
 
 Registrar desde una tarea precarga operación, fecha actual y km actuales editables. Taller, notas, coste y adjunto opcionales. Confirmar lo realmente hecho; un gasto o cita no completa trabajos. Una revisión agrupada permite seleccionar operaciones realizadas: no cerrar tareas que no se hicieron.
 
-Gastos Taller/Extras/Gasolina/Otros: fecha, importe EUR, concepto, categoría; nota/recibo opcionales. Lista, editar/eliminar y total «Lo que llevo gastado». Sin informes, gráficos ni consumo, y sin exigir asociación a mantenimiento. Un pago de taller cuenta una sola vez.
+Gastos Taller/Extras/Gasolina/Otros: fecha, importe EUR, concepto, categoría; nota/recibo opcionales. Lista, editar/anular, filtros combinables de consulta por mes/año/tipo con Todos y limpiar, subtotal «Total de estos gastos» y «Total acumulado». Filtrar fecha de calendario del gasto y conservar selección. Los filtros están autorizados por REQUEST_V4; informes, gráficos y consumo siguen excluidos. Sin exigir asociación a mantenimiento. Un pago de taller cuenta una sola vez y una relación de gasto anulado no bloquea un nuevo gasto activo.
 
 ## Notificaciones que quiero recibir
 

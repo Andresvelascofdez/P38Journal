@@ -81,6 +81,63 @@ class SystemWorkTest {
         assertEquals("Actual maintenance notification state", present, manager.activeNotifications.any { it.id == 1001 })
     }
 
+    @Test fun realRuleChangeCancelsObsoleteLimitAndReminderToggleKeepsHistory(): Unit = runBlocking {
+        isolatedJournal { context, repo ->
+            val today = LocalDate.now(ZoneOffset.UTC).toString()
+            Preferences(context).update(Settings(zone = "UTC", hour = (ZonedDateTime.now(ZoneOffset.UTC).hour + 6) % 24,
+                leadDays = 0, leadKm = 0, weekly = false, enabled = true))
+            repo.allRules().filter { it.id != "engine-oil-filter" }.forEach { repo.setRuleEnabled(it.id, false) }
+            repo.saveReading(Reading("v4-rule-reading", today, 185000))
+            Notifications.evaluateNow(context, "reading")
+            val manager = context.getSystemService(NotificationManager::class.java)
+            awaitNotification(manager, false)
+            val oil = repo.allRules().single { it.id == "engine-oil-filter" }
+            repo.saveRuleOverride(oil.copy(months = 6, km = 10000))
+            Notifications.evaluateNow(context, "change")
+            awaitNotification(manager, true)
+            val shown = manager.activeNotifications.single { it.id == 1001 }
+            assertTrue(shown.notification.extras.getCharSequence("android.text").toString().contains("185.000"))
+            val emitted = repo.dao.allLedger().single { it.ruleId == oil.id && it.state == "emitted" && it.kind == "DUE" }
+            repo.saveRuleOverride(repo.allRules().single { it.id == oil.id }.copy(notes = "FIXTURE metadata only"))
+            Notifications.evaluateNow(context, "change")
+            assertEquals(shown.postTime, manager.activeNotifications.single { it.id == 1001 }.postTime)
+            assertEquals(emitted, repo.dao.allLedger().single { it.id == emitted.id })
+            repo.setRuleEnabled(oil.id, false)
+            Notifications.evaluateNow(context, "change")
+            awaitNotification(manager, false)
+            assertEquals(185000, repo.tasks().single { it.rule.id == oil.id }.dueKm)
+            assertEquals("cancelled", repo.dao.allLedger().single { it.id == emitted.id }.state)
+            assertTrue(repo.allEvents().isEmpty())
+            repo.setRuleEnabled(oil.id, true)
+            repo.saveRuleOverride(repo.allRules().single { it.id == oil.id }.copy(km = 40000, months = 24))
+            Notifications.evaluateNow(context, "change")
+            awaitNotification(manager, false)
+            assertEquals(215000, repo.tasks().single { it.rule.id == oil.id }.dueKm)
+        }
+    }
+
+    @Test fun realOptionalOdometerReminderDeduplicatesAndNewReadingCancels(): Unit = runBlocking {
+        isolatedJournal { context, repo ->
+            val today = LocalDate.now(ZoneOffset.UTC)
+            repo.updatePlanningReference(today.minusDays(8).toString(), 175000)
+            repo.allRules().forEach { repo.setRuleEnabled(it.id, false) }
+            Preferences(context).update(Settings(zone = "UTC", hour = ZonedDateTime.now(ZoneOffset.UTC).hour,
+                enabled = true, odometerReminder = true, weekly = false))
+            val manager = context.getSystemService(NotificationManager::class.java)
+            Notifications.evaluateNow(context, "change")
+            assertTrue(manager.activeNotifications.any { it.id == 1004 && it.notification.contentIntent != null })
+            val first = manager.activeNotifications.single { it.id == 1004 }.postTime
+            Notifications.evaluateNow(context, "change")
+            assertEquals(first, manager.activeNotifications.single { it.id == 1004 }.postTime)
+            assertNull(repo.currentKm()); assertTrue(repo.allEvents().isEmpty())
+            repo.saveReading(Reading("v4-fresh-reading", today.toString(), 175000))
+            Notifications.evaluateNow(context, "reading")
+            assertFalse(manager.activeNotifications.any { it.id == 1004 })
+            assertTrue(repo.dao.allLedger().filter { it.ruleId == "odometer" }.all { it.state == "cancelled" })
+            assertTrue(repo.dao.allInbox().filter { it.ruleId == "odometer" }.all { it.state == "cancelled" })
+        }
+    }
+
     @Test fun realNotificationManagerEmitsTestWithoutMaintenanceEvents(): Unit = runBlocking {
         isolatedJournal { context, repo ->
             val before = repo.allEvents()

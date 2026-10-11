@@ -11,7 +11,7 @@ import dev.p38journal.data.*
 import dev.p38journal.domain.Task
 import java.time.LocalDate
 
-private data class LineDraft(val id: String = freshId(), val title: String = "", val ruleId: String = "", val cost: String = "", val pieces: String = "", val category: String = "maintenance", val completed: Boolean = true)
+private data class LineDraft(val id: String = freshId(), val title: String = "", val ruleId: String = "", val cost: String = "", val pieces: String = "", val category: String = "maintenance", val completed: Boolean = false)
 private data class VisitDetail(val schema: Int = 1, val notes: String = "", val budget: String = "", val lines: List<LineDraft> = emptyList())
 private val gson = Gson()
 private fun parseKmOrNull(value: String): Int? = runCatching { parseKm(value) }.getOrNull()
@@ -36,6 +36,7 @@ fun VisitForm(model: JournalViewModel, original: Visit?, tasks: List<Task>, expe
     var updateOdometer by rememberSaveable { mutableStateOf(false) }
     val readingId = rememberSaveable { freshId() }
     var loaded by rememberSaveable { mutableStateOf(original == null) }
+    var originalAllocation by rememberSaveable { mutableStateOf<String?>(null) }
     var lineJson by rememberSaveable {
         mutableStateOf(gson.toJson(selectedTasks.map { LineDraft(title = friendlyTitle(it), ruleId = it.rule.id) }.ifEmpty { listOf(LineDraft()) }))
     }
@@ -48,13 +49,14 @@ fun VisitForm(model: JournalViewModel, original: Visit?, tasks: List<Task>, expe
     LaunchedEffect(original?.id) {
         if (original != null && !loaded) {
             val oldLines = model.visitLines(original.id)
+            originalAllocation = gson.toJson(oldLines.sortedBy { it.id }.map { "${it.id}:${it.costCents}" })
             val operationIds = model.eventsForVisit(original.id)
             val drafts = oldLines.map { line ->
                 val meta = detail?.lines?.firstOrNull { it.id == line.id }
-                LineDraft(line.id, line.title, line.ruleId ?: "", moneyInput(line.costCents), line.parts.ifBlank { meta?.pieces ?: "" }, line.category.ifBlank { meta?.category ?: "maintenance" })
+                LineDraft(line.id, line.title, line.ruleId ?: "", moneyInput(line.costCents), line.parts.ifBlank { meta?.pieces ?: "" }, line.category.ifBlank { meta?.category ?: "maintenance" }, true)
             }.toMutableList()
             operationIds.filter { rule -> drafts.none { it.ruleId == rule } }.forEach { rule ->
-                drafts.add(LineDraft(title = tasks.firstOrNull { it.rule.id == rule }?.rule?.title ?: "Operación", ruleId = rule))
+                drafts.add(LineDraft(title = tasks.firstOrNull { it.rule.id == rule }?.rule?.title ?: "Operación", ruleId = rule, completed = true))
             }
             lineJson = gson.toJson(drafts.ifEmpty { listOf(LineDraft()) })
             loaded = true
@@ -69,7 +71,10 @@ fun VisitForm(model: JournalViewModel, original: Visit?, tasks: List<Task>, expe
         val payment = parseMoney(paid, true)
         require(completedLines.isNotEmpty() && completedLines.all { it.title.isNotBlank() }) { "Selecciona al menos un trabajo realizado y escribe su descripción." }
         val costs = completedLines.map { parseMoney(it.cost, true) }
-        if (payment != null && costs.any { it != null }) {
+        val allocation = gson.toJson(completedLines.zip(costs).sortedBy { it.first.id }.map { "${it.first.id}:${it.second}" })
+        val unchangedHistoricalAllocation = original != null && payment == original.paidCents && allocation == originalAllocation &&
+            expenses.any { it.active && it.visitId == original.id && it.cents == payment }
+        if (payment != null && costs.any { it != null } && !unchangedHistoricalAllocation) {
             require(costs.all { it != null } && costs.filterNotNull().fold(0L, Math::addExact) == payment) { "El reparto entre líneas debe informar todos los importes y sumar el importe pagado." }
         }
         if (linked.isNotEmpty()) require(expenses.first { it.id == linked }.cents == payment) { "El importe pagado debe coincidir con el gasto que vas a vincular." }
@@ -83,11 +88,13 @@ fun VisitForm(model: JournalViewModel, original: Visit?, tasks: List<Task>, expe
         if (date == model.today() && exactKm && (parseKmOrNull(km) ?: -1) >= currentKm) Check("Actualizar también el odómetro con estos kilómetros", updateOdometer) { updateOdometer = it }
         Heading("Trabajos realizados")
         Hint("Marca solo lo que se ha realizado. Las operaciones sin marcar conservan su próximo mantenimiento.")
+        TextButton(onClick = { lineJson = gson.toJson(lines.map { it.copy(completed = true) }) }) { Text("Seleccionar todas") }
+        TextButton(onClick = { lineJson = gson.toJson(lines.map { it.copy(completed = false) }) }) { Text("Desmarcar todas") }
         lines.forEachIndexed { index, line ->
             Card(Modifier.fillMaxWidth()) {
                 Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Check(if (line.title.isBlank()) "Trabajo ${index + 1} realizado" else line.title, line.completed) { replace(index, line.copy(completed = it)) }
-                    Field(line.title, { replace(index, line.copy(title = it)) }, "Trabajo realizado", "line_title_$index")
+                    Check(if (line.title.isBlank()) "Trabajo ${index + 1} realizado" else line.title, line.completed, "line_completed_$index") { replace(index, line.copy(completed = it)) }
+                    if (line.ruleId.isBlank() || optional || line.completed) Field(line.title, { replace(index, line.copy(title = it)) }, "Trabajo realizado", "line_title_$index")
                     if (optional || line.ruleId.isBlank()) Choice("Operación realizada", line.ruleId, listOf("" to "Sin operación de mantenimiento") + tasks.filter { it.rule.scheduleVisibility in setOf("maintenance", "service") || it.rule.id == line.ruleId }.map { it.rule.id to friendlyTitle(it) }) { ruleId ->
                         replace(index, line.copy(ruleId = ruleId, title = line.title.ifBlank { tasks.firstOrNull { it.rule.id == ruleId }?.rule?.title ?: "" }))
                     }
@@ -122,7 +129,7 @@ fun VisitForm(model: JournalViewModel, original: Visit?, tasks: List<Task>, expe
         Button(onClick = { runCatching { validate() }.onSuccess { validation = null; confirm = true }.onFailure { validation = it.message ?: "Revisa los datos." } }, enabled = !busy, modifier = Modifier.fillMaxWidth()) { Text("Guardar trabajo") }
         if (original?.active == true) OutlinedButton(onClick = { voidConfirm = true }, enabled = !busy, modifier = Modifier.fillMaxWidth()) { Text("Anular trabajo") }
     }
-    if (confirm) Confirm("Confirmar trabajo realizado", "Confirma que estos ${completedLines.size} trabajos se han realizado. Solo se actualizarán las operaciones marcadas${if (updateOdometer && date == model.today() && exactKm && (parseKmOrNull(km) ?: -1) >= currentKm) " y el odómetro" else ""}.", "Sí, se ha realizado", { confirm = false }) {
+    if (confirm) Confirm("Confirmar trabajo realizado", "${dateLabel(date)} · ${kmLabel(parseKm(km))}\n\n${completedLines.joinToString("\n") { "• ${it.title}" }}\n\nSolo se actualizarán estas operaciones${if (updateOdometer && date == model.today() && exactKm && (parseKmOrNull(km) ?: -1) >= currentKm) " y el odómetro" else ""}.", "Sí, se ha realizado", { confirm = false }) {
         confirm = false
         model.saveVisit(
             Visit(id = id, date = date, km = parseKm(km), kmExact = exactKm, title = title.trim(), workshop = workshop.trim(),

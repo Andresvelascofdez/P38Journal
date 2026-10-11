@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.p38journal.review.IndependentCatalogueTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-10-11T06:10:51.192Z" hostname="DESKTOP-DVUH6AS" time="0.122">
+  <properties/>
+  <testcase name="coincidentWorkshopLimitsGroupAllOperationsAndPartialWorkSplitsOnlyItsOperation" classname="dev.p38journal.review.IndependentCatalogueTest" time="0.062"/>
+  <testcase name="prepurchaseEvidenceNeverBecomesACompletedServiceAtOperationalBase" classname="dev.p38journal.review.IndependentCatalogueTest" time="0.009"/>
+  <testcase name="secondaryManufacturerConditionsKeepReadableNumbers" classname="dev.p38journal.review.IndependentCatalogueTest" time="0.011"/>
+  <testcase name="routineManualControlsDoNotRemoveTheirWorkshopOperations" classname="dev.p38journal.review.IndependentCatalogueTest" time="0.009"/>
+  <testcase name="partialExecutionKeepsExplicitBaselineWithoutInventingMissingMileage" classname="dev.p38journal.review.IndependentCatalogueTest" time="0.006"/>
+  <testcase name="sourceReplacementIntervalsUseOperationalBaseAtExactBoundary" classname="dev.p38journal.review.IndependentCatalogueTest" time="0.005"/>
+  <testcase name="publishedMatrixHasCompleteCoverageAndExplicitExclusions" classname="dev.p38journal.review.IndependentCatalogueTest" time="0.005"/>
+  <testcase name="originalSrsAgeDoesNotUseMigrationDateAsManufactureDate" classname="dev.p38journal.review.IndependentCatalogueTest" time="0.003"/>
+  <testcase name="manufacturerFirstOnlyAutomaticFilterDoesNotBecomeRepeatedReplacement" classname="dev.p38journal.review.IndependentCatalogueTest" time="0.003"/>
+  <testcase name="phaseOffsetsPreserveFirstBThenCAndTheirOwnCompletedCycles" classname="dev.p38journal.review.IndependentCatalogueTest" time="0.003"/>
+  <testcase name="glossaryIntervalsRunFromActualReplacementWithoutFactoryCounterRounding" classname="dev.p38journal.review.IndependentCatalogueTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

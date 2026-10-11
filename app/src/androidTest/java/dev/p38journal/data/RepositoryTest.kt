@@ -308,8 +308,8 @@ class RepositoryTest {
         repo.initialize()
         val oil = repo.allRules().first { it.id == "engine-oil-filter" }
         val evap = repo.allRules().first { it.id == "evap-service" }
-        repo.saveRule(oil.copy(months = 6, source = "Personalización copiada de aceite"))
-        repo.saveRule(evap.copy(months = 8, source = "Personalización copiada de evaporación"))
+        repo.saveRule(oil.copy(months = 6, notes = "Personalización copiada de aceite"))
+        repo.saveRule(evap.copy(months = 8, notes = "Personalización copiada de evaporación"))
         val root = JsonParser.parseString(repo.exportSnapshot()).asJsonObject
         val copiedCoolant = root.getAsJsonArray("rules").first { it.asJsonObject.get("id").asString == "coolant-renewal" }.asJsonObject
         val oldCoolant = Gson().fromJson(copiedCoolant.get("json").asString, Rule::class.java).copy(revision = 1, recurrence = "milestone")
@@ -317,7 +317,7 @@ class RepositoryTest {
         val targetDb = Room.inMemoryDatabaseBuilder(context, JournalDatabase::class.java).build()
         try {
             val target = Repository(context, targetDb); target.initialize()
-            val localEvap = target.allRules().first { it.id == evap.id }.copy(months = 10, source = "Personalización local de evaporación")
+            val localEvap = target.allRules().first { it.id == evap.id }.copy(months = 10, notes = "Personalización local de evaporación")
             target.saveRule(localEvap)
             val beforeLocalEvap = target.allRules().first { it.id == evap.id }
             target.restoreSnapshot(root.toString()); target.initialize()

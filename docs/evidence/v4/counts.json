@@ -1,0 +1,32 @@
+{
+  "unit": {
+    "tests": 44,
+    "failures": 0,
+    "errors": 0
+  },
+  "android": {
+    "name": "dev.p38journal.data.CustomRulesAndPaymentsTest",
+    "tests": "69",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "2",
+    "time": "73.892",
+    "timestamp": "2026-10-11T06:19:24",
+    "hostname": "localhost"
+  },
+  "androidClasses": {
+    "dev.p38journal.data.CustomRulesAndPaymentsTest": 11,
+    "dev.p38journal.data.MigrationTest": 3,
+    "dev.p38journal.data.RepositoryTest": 23,
+    "dev.p38journal.platform.DeliveryLifecycleTest": 1,
+    "dev.p38journal.platform.DocumentViewerTest": 2,
+    "dev.p38journal.platform.PlatformTest": 11,
+    "dev.p38journal.platform.SystemWorkTest": 6,
+    "dev.p38journal.platform.UpgradeV4Test": 1,
+    "dev.p38journal.ui.JournalUiTest": 11
+  },
+  "lint": {
+    "Warning": 33,
+    "Hint": 2
+  }
+}

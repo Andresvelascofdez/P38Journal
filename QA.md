@@ -1,4 +1,39 @@
-# Pruebas de aceptación v3
+# Pruebas de aceptación v4
+
+`REQUEST_V4.md` prevalece sobre los requisitos anteriores. Esta lista define comprobaciones de aceptación; los resultados ejecutados, comandos, entorno y bloqueos se documentan en el informe de verificación. No interpretar un caso listado aquí como una prueba ya pasada.
+
+## Calendario real y previsión
+
+- Con catálogo y base 175.000 km, distinguir los próximos vencimientos reales de la previsión condicionada a realizar las revisiones previas en sus límites. A 215.000 km la previsión incluye operaciones comunes de 20.000 km y fase C; fase B vuelve a 235.000 km. Contrastar las operaciones con la matriz del catálogo, sin copiar indiscriminadamente la primera revisión.
+- B empieza a +20.000 km/12 meses y repite +40.000 km/24 meses; C empieza a +40.000 km/24 meses y repite +40.000 km/24 meses. Mantener las excepciones y plazos individuales. Proyectar no crea visitas, eventos, lecturas ni notificaciones futuras.
+- Registro real a 195.200 km: operación común siguiente a 215.200 km y fase B de 40.000 km a 235.200 km. Una revisión parcial deja pendientes las operaciones no seleccionadas. Edición/anulación recupera por operación el último trabajo válido.
+- Probar fecha antes que kilómetros y viceversa, ambas causas simultáneas, precisión parcial, fin de mes y zona horaria. Conservar base y fecha configuradas; no crear mantenimiento inicial ni servicios ficticios.
+
+## Operaciones y registro
+
+- Crear y editar una operación propia por km, tiempo o ambos sin URL/fuente obligatoria. Conservar el mismo id, notas, historial y copia. Desactivar recordatorios mantiene límites consultables y trabajos, y evita emisión automática.
+- Crear una tarea única con fecha y/o km absolutos; cada dimensión puede vencer. Completarla no programa una repetición; anular ese trabajo recupera sus límites originales. Comprobar también una regla del fabricante personalizada explícitamente como tarea única.
+- Personalizar una fase a 10.000 km/6 meses como fixture: eliminar el desfase inicial de 20.000 km/12 meses. Con base 175.000, próximo 185.000; este intervalo de prueba no se atribuye al fabricante. Restaurar recupera la definición original y conserva eventos/revisiones.
+- Cambiar solo nombre/notas y restaurar una personalización solo de metadatos conserva la generación y el ledger emitido. Cambiar frecuencia cancela el aviso obsoleto y recalcula; el formulario debe ofrecer edición por operación dentro de grupos.
+- Visita nueva inicia sin todas las operaciones marcadas. Probar «Seleccionar todas», selección parcial y confirmación de fecha/km/selección antes de guardar. Editar una visita carga sus operaciones existentes; una reparación libre no crea una regla periódica.
+- Buscar en Historial por título, operaciones, taller y notas. «Aceite» encuentra una revisión de título genérico que incluya esa operación. Comprobar navegación, textos españoles, euros, legibilidad móvil y detalle de fases sin presentar una frecuencia única para reglas distintas.
+
+## Filtros y pagos
+
+- Combinar mes/año/tipo, limpiar filtros y conservar la selección al navegar/recrear pantalla. «Todos los años» con un mes filtra ese mes de todos los años; usar meses españoles y años disponibles. Fechas ISO de gasto no se desplazan por zona horaria.
+- Lista y «Total de estos gastos» responden a altas, edición de fecha/tipo y anulaciones. «Total acumulado» incluye todos los gastos activos. Vacío muestra 0 €; cálculos exactos en céntimos. Los filtros son consulta, sin informes, gráficos, consumo ni contabilidad.
+- Anular pago vinculado y vincular otro id funciona; solo existe un gasto activo vinculado. Editar visita conserva los metadatos personalizados del pago. Anular visita anula/desvincula su pago y una edición posterior no lo revive.
+- Reparto histórico: líneas 150+150 €, pago corregido a 310 €. Guardar nuevas notas/km conserva líneas y pago; cambiar reparto a 160+140 se rechaza sin cambios parciales, y 160+150 se acepta. No redistribuir automáticamente la diferencia.
+- Normalizar datos existentes y copias 2/3 con gastos inactivos que aún enlazan una visita. Preservar su fila y auditoría, liberar el vínculo y permitir un pago nuevo. Restaurar repetidamente sobre datos locales no duplica importes ni borra pagos distintos. Gasolina no cambia kilómetros ni mantenimiento.
+
+## Avisos, copias y entrega
+
+- Probar aviso Android real al cruzar límite de km y al alcanzar fecha con interfaz cerrada. Editar una regla cambia inmediatamente su calendario/avisos; nombre/notas no repiten emisión. Desactivar recordatorios cancela el aviso de esa operación. La previsión futura nunca genera avisos.
+- Actualizar una instalación v3 con un vencimiento ya emitido: el alias de generación conserva el estado del ciclo/ventana y no emite otro aviso por cambiar la versión. Comprobar también estado leído, permiso denegado, canales, reintentos y el recordatorio existente de introducir kilómetros.
+- Actualizar APK con misma identidad/firma sin desinstalar; conservar referencia/fecha, lectura, historial, reglas propias/personalizadas, pagos, adjuntos y preferencias. Copias 2/3 y JSON antiguo sin campos nuevos deben cargar con defaults compatibles; Room sigue en esquema 3.
+- Ejecutar `testDebugUnitTest`, `lintDebug`, `assembleDebug`, build release firmado y pruebas instrumentadas cuando haya emulador/dispositivo. Verificar pantallas y recorridos principales, actualización real, restauración y notificaciones; distinguir pruebas con transporte simulado de emisión Android real. Entregar APK con versión incrementada, SHA-256 y guía breve. Registrar limitaciones concretas y no publicar ni subir cambios a GitHub.
+
+## Aceptación v3 que sigue siendo aplicable
 
 ## Calendario
 

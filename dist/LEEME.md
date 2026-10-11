@@ -1,12 +1,10 @@
-# P38 Journal 3.0 — instalación
+# P38 Journal 4.0 — instalación
 
-- **Uso real:** [p38-journal-3.0.0-release.apk](p38-journal-3.0.0-release.apk). Instálalo encima del anterior, **sin desinstalar**, para conservar tus datos. Mantiene la firma y `dev.p38journal`.
-- **Pruebas separadas:** [p38-journal-3.0.0-debug.apk](p38-journal-3.0.0-debug.apk). Aparece como «P38 Journal · Prueba» y no comparte datos con release.
+- **Uso real:** [p38-journal-4.0.0-release.apk](p38-journal-4.0.0-release.apk). Instala encima del anterior, **sin desinstalar**. Conserva firma, `dev.p38journal` y datos.
+- **Pruebas separadas:** [p38-journal-4.0.0-debug.apk](p38-journal-4.0.0-debug.apk). «P38 Journal · Prueba», datos independientes.
 
-Android 8.0 o posterior. Abre el APK y acepta la instalación/actualización; permite instalar desde la aplicación que lo abre si Android lo pide. No hay cuenta, servidor ni configuración técnica.
+Android 8 o posterior. Abre el APK y acepta Actualizar; permite instalar desde la aplicación que lo abre si Android lo pide. No hay cuenta ni servidor.
 
-El plan empieza en 175.000 km sin inventar trabajos. Conserva la lectura real que ya tengas. Activa los avisos desde **Más opciones → Ajustes** y concede el permiso Android.
+Conserva la referencia de 175.000 km y su fecha. Activa avisos y permiso desde Más opciones → Ajustes. Prueba cruces y gastos ficticios solo en debug.
 
-[Guía breve de ocho pasos](../docs/USER_TEST.md) · [Pruebas reales y límites](../docs/TEST_REPORT.md) · [Hashes de APK](SHA256SUMS.txt)
-
-Para probar el cruce 194.999 → 195.000 y los gastos ficticios, usa únicamente debug. Los APK v2 que puedan permanecer en esta carpeta son entregas anteriores.
+[Ocho pasos de prueba](../docs/USER_TEST.md) · [Verificaciones reales](../docs/TEST_REPORT.md) · [Hashes](SHA256SUMS.txt). Los APK 2.0/3.0 son entregas anteriores.

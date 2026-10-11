@@ -1,0 +1,13 @@
+python : Traceback (most recent call last):
+At line:2 char:59
++ ... rnal.debug; python scripts/verify-v4-visual.py *> docs/v4-visual.log; ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v4-visual.py", line 58, in <module>
+    tap("Pr\u00f3ximos vencimientos reales"); tap("Previsi\u00f3n de revisiones futuras")
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v4-visual.py", line 39, in tap
+    raise AssertionError("Missing native UI control: " + text)
+AssertionError: Missing native UI control: Pr�ximos vencimientos reales

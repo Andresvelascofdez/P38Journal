@@ -202,6 +202,7 @@ fun SettingsPage(model: JournalViewModel, settings: Settings, busy: Boolean, sec
         Field(kilometres, { kilometres = it; dirty = true }, "Avisar kilómetros antes", numeric = true)
         Hint("Son preferencias de aviso, no intervalos del fabricante. Las lecturas nuevas evalúan los pendientes en cuanto se guardan.")
         Check("Recordar pendientes semanalmente", weekly) { weekly = it; dirty = true }
+        Check("Recordarme actualizar kilómetros", odometer) { odometer = it; dirty = true }
         error?.let { Text(it, color = MaterialTheme.colorScheme.error) }
         Button(onClick = { runCatching { values() }.onSuccess { model.updateSettings(it) { dirty = false } }.onFailure { error = it.message ?: "Revisa los ajustes." } }, enabled = !busy, modifier = Modifier.fillMaxWidth()) { Text("Guardar ajustes") }
         }

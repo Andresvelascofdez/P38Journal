@@ -131,9 +131,9 @@ class NotificationEvaluator(
         val timestamp = clock.instant().toString()
         val window = if (settings.weekly) (now.toLocalDate().toEpochDay() / 7).toString() else "cycle"
         fun taskKey(task: dev.p38journal.domain.Task) = "v3:${task.rule.id}:${task.generation}:${task.status}:$window"
-        fun active(task: dev.p38journal.domain.Task) = task.status in setOf("DUE", "SOON") && task.rule.scheduleVisibility in setOf("maintenance", "service")
+        fun active(task: dev.p38journal.domain.Task) = task.rule.enabled && task.status in setOf("DUE", "SOON") && task.rule.scheduleVisibility in setOf("maintenance", "service")
         fun generated(entry: Ledger) = entry.origin == "automatic" && (entry.id.startsWith("v3:") || entry.id.startsWith("${entry.ruleId}:") && entry.kind in setOf("INITIAL", "DUE", "SOON"))
-        transport.cancel(1003); transport.cancel(1004)
+        transport.cancel(1003)
         repo.db.withTransaction {
             val tasks = repo.tasks(now.toLocalDate(), settings.leadDays, settings.leadKm)
             val current = tasks.filter(::active)
@@ -153,17 +153,19 @@ class NotificationEvaluator(
             }
             for (task in current) {
                 val key = taskKey(task)
+                val legacyKey = task.legacyGeneration?.let { "v3:${task.rule.id}:$it:${task.status}:$window" }
                 val previous = ledger.firstOrNull { it.id == key && it.origin == "automatic" }
+                    ?: ledger.firstOrNull { it.id == legacyKey && it.origin == "automatic" && it.state != "cancelled" }
                 val state = previous?.state?.takeUnless { it == "cancelled" } ?: "pending"
-                val old = inbox[key]
+                val old = inbox[key] ?: legacyKey?.let(inbox::get)
                 val row = Inbox(key, task.rule.id, task.rule.title, task.reasons.joinToString("; "), task.generation,
                     if (old?.state == "read" && state != "pending") "read" else state, old?.createdAt ?: timestamp)
                 repo.saveInbox(row)
-                if (previous == null || previous.state == "cancelled") {
-                    repo.dao.putLedger(Ledger(key, task.rule.id, task.generation, task.status, window, "pending", timestamp))
+                if (previous == null || previous.state == "cancelled" || previous.id != key) {
+                    repo.dao.putLedger(Ledger(key, task.rule.id, task.generation, task.status, window, state, previous?.updatedAt ?: timestamp))
                 }
             }
-            val fingerprint = current.sortedBy { it.rule.id }.joinToString("|") { "${it.rule.id}:${it.generation}:${it.status}" }
+            val fingerprint = current.sortedBy { it.rule.id }.joinToString("|") { "${it.rule.id}:${it.generation}:${it.status}:${it.rule.title}" }
             val summaryKey = "v3-summary-1001"
             val summary = ledger.firstOrNull { it.id == summaryKey }
             val summaryChanged = summary?.generation != fingerprint
@@ -195,6 +197,39 @@ class NotificationEvaluator(
                 } else if (summaryChanged) transport.refreshVisible(1001, Notifications.MAINTENANCE, title, body, target)
             }
             if (reconcile != null) repo.dao.putLedger(reconcile.copy(state = "reconciled", updatedAt = timestamp))
+            evaluateOdometerReminder(settings, now, timestamp, inWindow)
+        }
+    }
+
+    private suspend fun evaluateOdometerReminder(settings: Settings, now: ZonedDateTime, timestamp: String, inWindow: Boolean) {
+        val latest = repo.dao.allReadings().firstOrNull()
+        val plan = repo.planningReference()
+        val generation = latest?.id ?: "plan:${plan.baselineDate}"
+        val referenceDate = java.time.LocalDate.parse(latest?.date ?: plan.baselineDate)
+        val due = !now.toLocalDate().isBefore(referenceDate.plusDays(7))
+        val window = if (settings.weekly) (now.toLocalDate().toEpochDay() / 7).toString() else "cycle"
+        val key = "v4-odometer:$generation:$window"
+        val relevant = settings.enabled && settings.odometerReminder && due
+        val ledger = repo.dao.allLedger().filter { it.ruleId == "odometer" && it.origin == "automatic" }
+        for (old in ledger.filter { it.id != key || !relevant }) {
+            if (old.state != "cancelled") repo.dao.putLedger(old.copy(state = "cancelled", updatedAt = timestamp))
+        }
+        for (old in repo.dao.allInbox().filter { it.ruleId == "odometer" && it.origin == "automatic" && (it.id != key || !relevant) }) {
+            if (old.state != "cancelled") repo.saveInbox(old.copy(state = "cancelled"))
+        }
+        if (!relevant) { transport.cancel(1004); return }
+        val previous = ledger.firstOrNull { it.id == key && it.state != "cancelled" }
+        val old = repo.dao.allInbox().firstOrNull { it.id == key }
+        val state = previous?.state ?: "pending"
+        val title = "P38 · actualizar kilómetros"
+        val body = "Registra una lectura real para evaluar los límites por kilómetros."
+        repo.saveInbox(Inbox(key, "odometer", title, body, generation,
+            if (old?.state == "read" && state == "emitted") "read" else state, old?.createdAt ?: timestamp))
+        if (previous == null) repo.dao.putLedger(Ledger(key, "odometer", generation, "odometer", window, "pending", timestamp))
+        if (state == "pending" && inWindow && transport.allowed(Notifications.CHECKS)) {
+            transport.emit(1004, Notifications.CHECKS, title, body, "odometer")
+            repo.dao.putLedger(Ledger(key, "odometer", generation, "odometer", window, "emitted", timestamp))
+            repo.dao.allInbox().first { it.id == key }.let { repo.saveInbox(it.copy(state = "emitted")) }
         }
     }
 }

@@ -1,5 +1,7 @@
 # Catálogo P38 — revisión 3
 
+V4 conserva este catálogo y sus frecuencias sin cambios. La revisión adicional de fases B/C y previsión por operación está en [INDEPENDENT_REVIEW_V4.md](INDEPENDENT_REVIEW_V4.md); conjuntos, APK y pruebas ejecutadas en [TEST_REPORT.md](TEST_REPORT.md). La base 175.000 es referencia operativa y no una intervención realizada. Las personalizaciones del propietario no modifican esta fuente canónica.
+
 Revisado documentalmente el 11/10/2026 sobre el catálogo completo v2 y sus PDFs privados. Se conservan las 60 reglas previas y se añaden dos comprobaciones específicas de taller: 62 reglas y cobertura íntegra de las 59 filas M01. La revisión independiente v3 e integración ejecutable se documentarán en los informes de pruebas; este archivo no las da por realizadas.
 
 ## Fuentes y evidencia

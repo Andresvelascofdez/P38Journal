@@ -1,21 +1,15 @@
-# Ejecución y entrega de la corrección
+# Entrega de la corrección v4
 
-## Entrega ejecutada — 11/10/2026
+El encargo vigente está conservado íntegro en [REQUEST_V4.md](REQUEST_V4.md). Se corrigió el proyecto existente con agentes de dominio/datos, interfaz y revisión independiente. El coordinador integró previsión, filtros puros, plataforma, pruebas de actualización, firma y artefactos. No se publica ni se contratan servicios en este encargo.
 
-APKs definitivos 3.0.0/code 3 en `dist/`: release firmado con el mismo certificado v2, identidad `dev.p38journal`; debug independiente `dev.p38journal.debug`. El release se instaló sobre v2 y arrancó realmente en el emulador sin desinstalar. Los datos poblados se verificaron por actualización debug y restauración repetida con fixtures identificados, conservando lectura, trabajos, gastos, PDF y marcador.
+APKs 4.0.0/code 4 en `dist/`: release `dev.p38journal`, firmado con el certificado original; debug `dev.p38journal.debug`, separado. Instalar release encima del anterior sin desinstalar. [Guía de ocho pasos](docs/USER_TEST.md), [informe de verificaciones](docs/TEST_REPORT.md), [progreso](docs/PROGRESS.md), [revisión independiente](docs/INDEPENDENT_REVIEW_V4.md) y [hashes](dist/SHA256SUMS.txt).
 
-Dominio, catálogo, interfaz y revisión independiente completados con agentes. Referencia 175.000 separada de lecturas y trabajos; sin INITIAL automático; límites recalculados por trabajo real; seis grupos iniciales; lectura manual, avisos inmediatos, registro parcial y gastos simples. Todas las funciones secundarias existentes siguen accesibles.
+La base 175.000 y su fecha, el odómetro y los trabajos siguen separados. Vencimientos reales por operación y previsión hipotética tienen recorridos diferentes. La previsión inicial de 215.000 contiene 33 operaciones; B reaparece a 235.000. Trabajo real parcial recalcula solo lo realizado sin redondear. Catálogo canónico sin cambios, fuentes secundarias y seis grupos de próximos límites iniciales.
 
-32 unitarias y 48 Android aprobadas, lint sin errores; cinco comprobaciones visibles offline/proceso/reinicio/reapertura PASS. Fuente, guías y evidencia real en [PROGRESS](docs/PROGRESS.md), [TEST_REPORT](docs/TEST_REPORT.md), [USER_TEST](docs/USER_TEST.md) y [INDEPENDENT_REVIEW](docs/INDEPENDENT_REVIEW.md). Solo se probó Android 16 en emulador; límites Android/OEM/SAF y pruebas físicas pendientes descritos en el informe. La clave privada permanece fuera de la entrega.
+Cada operación permite consulta, personalización, notas, intervalos y recordatorios. Propias recurrentes/únicas sin URL; restauración de fabricante. Recurrentes existentes conservan su modelo al editar; otra cita única se crea como tarea nueva, evitando que trabajo anterior complete una nueva cita. Visitas sin selección automática y confirmadas, búsqueda por operaciones/taller/notas. Gastos con filtros combinables, importes exactos y pago vinculado único; enlaces inactivos auditados y metadatos personalizados preservados. Si se corrige el pago, no se fabrica otro reparto de costes históricos.
 
-## Encargo de ejecución conservado
+Room permanece en esquema 3; JSON de reglas ampliado y Snapshot 2/3 compatible, sin migración destructiva. Alias de generación anterior conserva ciclos emitidos y bandeja leída cuando el límite no cambia. Avisos reales al guardar km y por fecha con WorkManager; recordatorio de actualizar km opcional. La previsión no crea trabajo ni notificación.
 
-1. Inspeccionar app, migraciones y catálogo actuales. Respaldo, plan y contratos.
-2. Corregir dominio/base y retirar generador inicial; migrar sin borrar registros. En paralelo agentes trabajan UI, catálogo/avisos y revisión.
-3. Integrar recorrido lectura manual → cálculo → aviso → registro realizado → nuevo límite; completar gastos e interfaz simplificada.
-4. Revisar cobertura del fabricante y pruebas v3; resolver fallos. Validar actualización con identidad/firma actuales.
-5. Entregar APK actualizado real, debug, código, docs/PROGRESS.md, docs/TEST_REPORT.md y docs/USER_TEST.md, con 5–8 pasos.
+Respaldo previo v3 en `.tools/pre-v4` ignorado con fuente/APKs y hashes; fixtures solamente en debug del emulador. La clave privada permanece externa y no se incluye en código, logs, APK ni copia. Los antecedentes v3 archivados no certifican esta versión; los resultados y límites efectivamente observados figuran en el informe v4.
 
-Probar: actualizar lectura, consultar intervalo/fuente y faltante, cruzar límite en debug, recibir/tocar aviso, registrar trabajo, comprobar próximo límite, añadir gasto y total, exportar/restaurar en prueba. Separar fixture de instalación real.
-
-Informe final: artefactos/compatibilidad, comportamiento corregido, pruebas efectivas y límites concretos. No pedir al propietario compilar como entrega normal. Mantener progreso/commits para reanudar y no repetir seed. Esta documentación describe cambios solicitados; el responsable de compilar es Codex en el workspace que contiene la app.
+Continuidad: conservar commits locales y evidencia real, no resembrar ni borrar datos del propietario. Reproducir con `scripts/build.ps1` y `gradlew.bat connectedDebugAndroidTest`; los scripts de ciclo/visual/runtime actúan exclusivamente sobre debug de `emulator-5554`. El usuario solo instala y prueba.

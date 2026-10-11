@@ -1,0 +1,13 @@
+python : Traceback (most recent call last):
+At line:2 char:1
++ python scripts/verify-v4-details.py *> docs/v4-details.log; exit $LAS ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v4-details.py", line 72, in <module>
+    tap("Todos los meses", scroll=True); tap("Octubre", scroll=True)
+                                         ~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v4-details.py", line 39, in tap
+    raise AssertionError("Missing native control: " + text)
+AssertionError: Missing native control: Octubre

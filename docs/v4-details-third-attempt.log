@@ -1,0 +1,13 @@
+python : Traceback (most recent call last):
+At line:2 char:93
++ ... ttempt.log; python scripts/verify-v4-details.py *> docs/v4-details.lo ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v4-details.py", line 70, in <module>
+    tap(re.sub(r"^Comprobar\s+", "Comprobaci�n de ", phase["title"]), scroll=True)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v4-details.py", line 39, in tap
+    raise AssertionError("Missing native control: " + text)
+AssertionError: Missing native control: Comprobaci�n de nivel de aceite de caja de transferencia

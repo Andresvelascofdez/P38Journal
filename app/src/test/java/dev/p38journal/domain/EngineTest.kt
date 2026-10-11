@@ -118,4 +118,40 @@ class EngineTest {
             try { Money.parseCents(value); fail("Accepted $value") } catch (_: IllegalArgumentException) { }
         }
     }
+    @Test fun customOnceUsesAbsoluteCalendarAndMileageAndNeverRepeatsAfterExplicitCompletion() {
+        val once = Rule("oil", "Cita taller", "custom", "custom", recurrence = "once", origin = "custom",
+            dueDate = "2026-10-20", dueKm = 176000)
+        assertEquals("DUE", evaluate("2026-10-20", 175000, rule = once).status)
+        assertEquals("DUE", evaluate("2026-10-16", 176000, rule = once).status)
+        val completed = event("2026-10-10", null, dateExact = false, kmExact = false)
+        val task = evaluate("2027-10-20", 190000, listOf(completed), once)
+        assertNull(task.dueDate); assertNull(task.dueKm)
+        assertEquals("2026-10-20", evaluate("2026-10-16", 175000, listOf(completed.copy(active = false)), once).dueDate)
+        assertEquals("DUE", evaluate("2026-10-16", 175000, rule = once.copy(dueKm = 174000, dueDate = null)).status)
+    }
+    @Test fun disabledRemindersKeepActualCalendarAndMetadataDoesNotStartANewCycle() {
+        val before = evaluate("2027-10-15", 195000)
+        val metadata = oil.copy(title = "Nombre editado", notes = "Nota propia", revision = 99, source = "Otra etiqueta")
+        assertEquals(before.generation, evaluate("2027-10-15", 195000, rule = metadata).generation)
+        val disabled = evaluate("2027-10-15", 195000, rule = oil.copy(enabled = false))
+        assertEquals(before.dueKm, disabled.dueKm); assertEquals(before.dueDate, disabled.dueDate)
+        assertEquals("DUE", disabled.status); assertFalse(disabled.rule.enabled)
+        assertNotEquals(before.generation, disabled.generation)
+        assertNotEquals(before.generation, evaluate("2027-10-15", 195000, rule = oil.copy(km = 10000)).generation)
+    }
+    @Test fun partialServiceLeavesUnperformedCommonAndPhaseOperationsPending() {
+        val b = oil.copy(id = "b", recurrence = "phase_b", km = 40000, months = 24, firstKm = 20000, firstMonths = 12)
+        val pending = oil.copy(id = "other")
+        val tasks = Engine.evaluate(listOf(oil, b, pending), listOf(event()), LocalDate.parse("2026-10-16"), 195200, plan = plan).associateBy { it.rule.id }
+        assertEquals(215200, tasks.getValue("oil").dueKm)
+        assertEquals(195000, tasks.getValue("b").dueKm); assertEquals("DUE", tasks.getValue("b").status)
+        assertEquals(195000, tasks.getValue("other").dueKm); assertEquals("DUE", tasks.getValue("other").status)
+    }
+    @Test fun upgradeExposesExactV3HashAliasWithoutReplacingTheEffectiveScheduleGeneration() {
+        val task = evaluate("2026-10-16", 195200, listOf(event()))
+        assertEquals("ac238792412b9848553e8ec3", task.legacyGeneration)
+        assertNotEquals(task.legacyGeneration, task.generation)
+        assertNotEquals(task.legacyGeneration, evaluate("2026-10-16", 195200, listOf(event()), oil.copy(km = 10000)).legacyGeneration)
+        assertNull(evaluate("2026-10-16", 195200, rule = oil.copy(scheduleVisibility = "manual")).legacyGeneration)
+    }
 }

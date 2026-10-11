@@ -19,6 +19,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.contentDescription
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import dev.p38journal.data.*
 import dev.p38journal.domain.Task
@@ -34,6 +36,7 @@ fun JournalApp(model: JournalViewModel, targetRule: String? = null, clearTarget:
     val busy by model.busy.collectAsStateWithLifecycle()
     val message by model.message.collectAsStateWithLifecycle()
     val tasks by model.tasks.collectAsStateWithLifecycle()
+    val workLines by model.workLines.collectAsStateWithLifecycle()
     val visits by model.visits.collectAsStateWithLifecycle()
     val readings by model.readings.collectAsStateWithLifecycle()
     val notes by model.notes.collectAsStateWithLifecycle()
@@ -52,11 +55,15 @@ fun JournalApp(model: JournalViewModel, targetRule: String? = null, clearTarget:
     var libraryLink by rememberSaveable { mutableStateOf("") }
     var selectedOperations by rememberSaveable { mutableStateOf("") }
     var taskBack by rememberSaveable { mutableStateOf("") }
+    var ruleBack by rememberSaveable { mutableStateOf("operation") }
+    var operationParent by rememberSaveable { mutableStateOf("") }
     val snackbar = remember { SnackbarHostState() }
     val screenStates = rememberSaveableStateHolder()
     fun go(to: String, id: String = "") {
         if (to == "task" && route !in setOf("profile", "override", "appointment")) taskBack = if (route == "references") "references" else ""
-        val destinationId = if (id.isBlank() && to in setOf("visit", "expense", "fault", "part")) freshId() else id
+        if (to == "operation") operationParent = if (route == "task") recordId else ""
+        if (to == "override") ruleBack = route
+        val destinationId = if (id.isBlank() && to in setOf("visit", "expense", "fault", "part", "new-rule")) freshId() else id
         if (to in setOf("visit", "expense", "fault", "part", "appointment")) screenStates.removeState("$tab/$to/$destinationId")
         if (to == "documents") libraryLink = id
         route = to; recordId = destinationId
@@ -64,11 +71,14 @@ fun JournalApp(model: JournalViewModel, targetRule: String? = null, clearTarget:
     fun back() {
         if (route == "task" && taskBack == "references") { route = "references"; recordId = ""; return }
         if (route == "viewer") { route = "documents"; recordId = libraryLink; return }
-        if (route in setOf("appointment", "override", "profile")) { route = "task"; return }
+        if (route == "override") { route = ruleBack; return }
+        if (route == "operation" && operationParent.isNotBlank()) { route = "task"; recordId = operationParent; operationParent = ""; return }
+        if (route in setOf("appointment", "profile")) { route = "task"; return }
         if (route == "documents" && previousRoute.isNotEmpty()) {
             route = previousRoute; recordId = previousId; previousRoute = ""; previousId = ""; return
         }
-        route = when (route) { "expense" -> "expenses"; "fault", "part" -> "${route}s"; else -> "" }
+        if (route == "expense") tab = "expenses"
+        route = when (route) { "fault", "part" -> "${route}s"; else -> "" }
         recordId = ""
     }
     fun attachments(id: String) { previousRoute = route; previousId = recordId; go("documents", id) }
@@ -87,7 +97,7 @@ fun JournalApp(model: JournalViewModel, targetRule: String? = null, clearTarget:
     }
     BackHandler(route.isNotEmpty()) { back() }
     val title = when (route) {
-        "task" -> "Detalle de mantenimiento"; "visit" -> "Registrar trabajo"; "reading" -> "Kilometraje"
+        "task", "operation" -> "Detalle de mantenimiento"; "new-rule", "override" -> "Editar mantenimiento"; "visit" -> "Registrar trabajo"; "reading" -> "Kilometraje"
         "expenses" -> "Gastos"; "expense" -> "Gasto"; "faults" -> "Averías"; "fault" -> "Avería"
         "parts" -> "Piezas"; "part" -> "Pieza"; "documents" -> "Manuales y documentos"; "viewer" -> "Documento"
         "inbox" -> "Bandeja de avisos"; "settings" -> "Ajustes"; "copies" -> "Copias"; "references" -> "Referencias del mantenimiento"; "secondary" -> "Más opciones"; else -> "P38 Journal"
@@ -98,8 +108,8 @@ fun JournalApp(model: JournalViewModel, targetRule: String? = null, clearTarget:
         NavigationBar {
             listOf(Triple("home", "Inicio", Icons.Default.Home), Triple("plan", "Mantenimiento", Icons.AutoMirrored.Filled.List),
                 Triple("history", "Historial", Icons.Default.History), Triple("expenses", "Gastos", Icons.Default.Payments)).forEach { (id, label, icon) ->
-                NavigationBarItem(selected = tab == id, onClick = { tab = id; route = ""; recordId = ""; previousRoute = "" },
-                    icon = { Icon(icon, null) }, label = { Text(label, maxLines = 2) })
+                NavigationBarItem(selected = tab == id, onClick = { tab = id; route = ""; recordId = ""; previousRoute = "" }, modifier = Modifier.semantics { contentDescription = label },
+                    icon = { Icon(icon, null) }, label = { Text(if (id == "plan") "Mantenim." else label, maxLines = 1, softWrap = false) })
             }
         }
     }, snackbarHost = { SnackbarHost(snackbar) }) { padding ->
@@ -111,20 +121,21 @@ fun JournalApp(model: JournalViewModel, targetRule: String? = null, clearTarget:
                 }
             } else screenStates.SaveableStateProvider("$tab/$route/$recordId") {
                 when (route) {
-                    "task" -> {
-                        val group = groups.firstOrNull { entry -> entry.tasks.any { it.rule.id == recordId } }
+                    "task", "operation" -> {
+                        val group = if (route == "operation") tasks.firstOrNull { it.rule.id == recordId }?.let { MaintenanceGroup(listOf(it)) } else groups.firstOrNull { entry -> entry.tasks.any { it.rule.id == recordId } }
                             ?: tasks.firstOrNull { it.rule.id == recordId }?.let { MaintenanceGroup(listOf(it)) }
                         TaskDetail(group, currentKm, model.today(), planning?.baselineKm ?: 175000, { operations ->
                             selectedOperations = operations.joinToString("|"); go("visit")
-                        }, { go("override", group?.representative?.rule?.id ?: recordId) }, { go("profile", recordId) })
+                        }, { go("override", group?.representative?.rule?.id ?: recordId) }, { go("profile", recordId) }, { go("operation", it.rule.id) })
                     }
                     "profile" -> ConditionalProfileForm(model, tasks.firstOrNull { it.rule.id == recordId }, busy) { go("task", if (recordId.endsWith("-active")) recordId else "$recordId-active") }
-                    "override" -> OverrideForm(model, tasks.firstOrNull { it.rule.id == recordId }, busy) { go("task", recordId) }
+                    "override" -> OverrideForm(model, tasks.firstOrNull { it.rule.id == recordId }, busy) { go("operation", it) }
+                    "new-rule" -> OverrideForm(model, null, busy) { go("operation", it) }
                     "appointment" -> AppointmentForm(model, tasks.firstOrNull { it.rule.id == recordId }) { go("task", recordId) }
                     "visit" -> VisitForm(model, visits.firstOrNull { it.id == recordId }, tasks, expenses, selectedOperations.split("|").filter { it.isNotBlank() }, currentKm, busy, { selectedOperations = ""; go("", ""); tab = "history" }, ::attachments)
                     "reading" -> ReadingForm(model, readings, busy) { back() }
                     "expenses" -> ExpensesPage(expenses, { go("expense") }, { go("expense", it.id) })
-                    "expense" -> ExpenseForm(model, expenses.firstOrNull { it.id == recordId }, visits, expenses, busy, { go("expenses") }, ::attachments)
+                    "expense" -> ExpenseForm(model, expenses.firstOrNull { it.id == recordId }, visits, expenses, busy, { go(""); tab = "expenses" }, ::attachments)
                     "faults", "parts" -> {
                         val kind = route.removeSuffix("s")
                         NotesPage(kind, notes, { go(kind) }, { go(kind, it.id) })
@@ -142,8 +153,8 @@ fun JournalApp(model: JournalViewModel, targetRule: String? = null, clearTarget:
                     "secondary" -> SecondaryPage { go(it) }
                     else -> when (tab) {
                         "home" -> HomePage(groups, readings, currentKm, model.today(), { go("reading") }, { selectedOperations = ""; go("visit") }, { go("task", it.representative.rule.id) }, { tab = "plan"; route = "" })
-                        "plan" -> PlanPage(groups, model.today(), currentKm) { go("task", it.representative.rule.id) }
-                        "history" -> HistoryPage(visits, notes, documents, { selectedOperations = ""; go("visit") }, { selectedOperations = ""; go("visit", it.id) }, ::attachments)
+                        "plan" -> PlanPage(groups, tasks, model.today(), currentKm, { go("new-rule") }) { go("task", it.representative.rule.id) }
+                        "history" -> HistoryPage(visits, workLines, tasks, notes, documents, { selectedOperations = ""; go("visit") }, { selectedOperations = ""; go("visit", it.id) }, ::attachments)
                         else -> ExpensesPage(expenses, { go("expense") }, { go("expense", it.id) })
                     }
                 }
@@ -189,9 +200,14 @@ fun GroupCard(group: MaintenanceGroup, currentKm: Int, today: String, open: () -
 }
 
 @Composable
-fun PlanPage(groups: List<MaintenanceGroup>, today: String, currentKm: Int, open: (MaintenanceGroup) -> Unit) {
+fun PlanPage(groups: List<MaintenanceGroup>, tasks: List<Task>, today: String, currentKm: Int, add: () -> Unit, open: (MaintenanceGroup) -> Unit) {
     var status by rememberSaveable { mutableStateOf("all") }
+    var view by rememberSaveable { mutableStateOf("next") }
     Page {
+        Choice("Vista del mantenimiento", view, listOf("next" to "Próximos vencimientos reales", "forecast" to "Previsión de revisiones futuras")) { view = it }
+        Button(onClick = add, modifier = Modifier.fillMaxWidth()) { Text("Crear mantenimiento") }
+        if (view == "forecast") { ForecastPage(tasks); return@Page }
+        Hint("Cada operación aparece en su próximo límite real. Las revisiones futuras completas están en Previsión.")
         Choice("Mostrar", status, listOf("all" to "Todos", "SOON" to "Próximos", "DUE" to "Pendientes")) { status = it }
         val filtered = groups.filter { status == "all" || it.status == status }
         filtered.forEach { GroupCard(it, currentKm, today) { open(it) } }
@@ -200,17 +216,22 @@ fun PlanPage(groups: List<MaintenanceGroup>, today: String, currentKm: Int, open
 }
 
 @Composable
-fun TaskDetail(group: MaintenanceGroup?, currentKm: Int, today: String, baselineKm: Int, record: (List<String>) -> Unit, customize: () -> Unit, profile: () -> Unit) {
+fun TaskDetail(group: MaintenanceGroup?, currentKm: Int, today: String, baselineKm: Int, record: (List<String>) -> Unit, customize: () -> Unit, profile: () -> Unit, operation: (Task) -> Unit) {
     val context = LocalContext.current
     var expanded by rememberSaveable { mutableStateOf(false) }
     var sourceOpen by rememberSaveable { mutableStateOf(false) }
-    var selected by rememberSaveable { mutableStateOf(group?.tasks?.joinToString("|") { it.rule.id } ?: "") }
     Page {
         if (group == null) { Hint("Este mantenimiento ya no está disponible."); return@Page }
         val task = group.representative
         Heading(group.title)
-        val intervals = group.tasks.map(::intervalLabel).distinct()
-        intervals.forEach { Text(it) }
+        if (group.tasks.size == 1) {
+            Text(operationInterval(task))
+            if (task.rule.origin == "personalized") Hint("Personalizado")
+            if (task.rule.origin == "custom") Hint("Operación propia")
+            if (!task.rule.enabled) Hint("Recordatorios desactivados")
+            if (task.rule.notes.isNotBlank()) Text(task.rule.notes)
+            OutlinedButton(onClick = customize, modifier = Modifier.fillMaxWidth()) { Text("Editar mantenimiento") }
+        } else Hint("Próximos vencimientos coincidentes. Consulta el intervalo de cada operación.")
         group.dueKm?.let { Text("Próximo: ${kmLabel(it)}", style = MaterialTheme.typography.titleMedium) }
         group.dueDate?.let { Text("Fecha: ${dateLabel(it)}") }
         if (group.dueKm != null && group.dueDate != null) Hint("Lo que ocurra antes")
@@ -219,29 +240,32 @@ fun TaskDetail(group: MaintenanceGroup?, currentKm: Int, today: String, baseline
         if (last != null) Hint("Último registrado: ${dateLabel(last.date)} · ${kmLabel(last.km)}")
         else if (group.dueDate != null || group.dueKm != null) Hint("Plan calculado desde ${kmLabel(baselineKm)}")
         if (group.dueDate != null || group.dueKm != null) {
-            Button(onClick = { record(selected.split("|").filter { it.isNotBlank() }) }, enabled = selected.isNotBlank(), modifier = Modifier.fillMaxWidth()) { Text("Registrar realizado") }
+            Button(onClick = { record(group.tasks.map { it.rule.id }) }, modifier = Modifier.fillMaxWidth()) { Text("Registrar realizado") }
             OutlinedButton(onClick = { expanded = !expanded }, modifier = Modifier.fillMaxWidth()) { Text(if (expanded) "Ocultar qué incluye" else "Qué incluye") }
         }
         if (expanded) {
-            Hint("Selecciona únicamente las operaciones que vas a registrar como realizadas.")
-            TextButton(onClick = { selected = "" }) { Text("Desmarcar todas") }
+            Hint("Consulta o edita una operación. Las realizadas se seleccionan en el formulario de registro.")
             group.tasks.forEach { member ->
-                val chosen = selected.split("|").filter { it.isNotBlank() }
-                Check(friendlyTitle(member), member.rule.id in chosen) { checked -> selected = (if (checked) chosen + member.rule.id else chosen - member.rule.id).distinct().joinToString("|") }
-                if (intervals.size > 1) Hint(intervalLabel(member))
+                ItemCard(friendlyTitle(member), operationInterval(member), { operation(member) }) {
+                    Hint("Consultar y editar operación")
+                    if (member.rule.origin == "personalized") Hint("Personalizado")
+                    if (!member.rule.enabled) Hint("Recordatorios desactivados")
+                }
             }
         }
-        TextButton(onClick = { sourceOpen = !sourceOpen }) { Text(if (sourceOpen) "Ocultar fuente del fabricante" else "Ver fuente del fabricante") }
+        val ownWithoutSource = group.tasks.size == 1 && task.rule.origin == "custom" && task.rule.source.isBlank()
+        TextButton(onClick = { sourceOpen = !sourceOpen }) { Text(if (ownWithoutSource) if (sourceOpen) "Ocultar información" else "Información de la operación" else if (sourceOpen) "Ocultar fuente del fabricante" else "Ver fuente del fabricante") }
         if (sourceOpen) {
-            group.tasks.map { it.rule.source }.distinct().forEach { Text(manufacturerReference(it)) }
+            val sources = group.tasks.map { it.rule.source }.filter { it.isNotBlank() }.distinct()
+            sources.forEach { Text(manufacturerReference(it)) }
+            if (sources.isEmpty()) Hint("Operación creada por ti, sin atribución al fabricante.")
             group.tasks.map { it.rule.condition }.filter { it.isNotBlank() }.distinct().forEach { Hint(it) }
             Hint("Las referencias distinguen páginas impresas y páginas del PDF.")
-            OutlinedButton(onClick = {
+            if (task.rule.sourceUrl.isNotBlank()) OutlinedButton(onClick = {
                 runCatching { context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(task.rule.sourceUrl))) }.onFailure {
                     android.widget.Toast.makeText(context, "No hay una aplicación disponible para abrir el enlace.", android.widget.Toast.LENGTH_SHORT).show()
                 }
             }, enabled = task.rule.sourceUrl.isNotBlank(), modifier = Modifier.fillMaxWidth()) { Text("Abrir documento") }
-            if (group.tasks.size == 1 && task.rule.recurrence == "component" && !task.rule.id.endsWith("-active")) TextButton(onClick = customize) { Text("Personalizar intervalo") }
             if (group.tasks.size == 1 && (ConditionalProfiles.proposed(task.rule) != null || task.rule.id.endsWith("-active"))) {
                 OutlinedButton(onClick = profile, modifier = Modifier.fillMaxWidth()) { Text(if (task.rule.id.endsWith("-active")) "Gestionar perfil condicionado" else "Confirmar aplicabilidad y activar intervalo") }
             }
@@ -268,12 +292,20 @@ fun AppointmentForm(model: JournalViewModel, task: Task?, after: () -> Unit) {
 }
 
 @Composable
-fun HistoryPage(visits: List<Visit>, notes: List<Note>, documents: List<Document>, add: () -> Unit, edit: (Visit) -> Unit, attachments: (String) -> Unit) {
+fun HistoryPage(visits: List<Visit>, lines: List<WorkLine>, tasks: List<Task>, notes: List<Note>, documents: List<Document>, add: () -> Unit, edit: (Visit) -> Unit, attachments: (String) -> Unit) {
+    var search by rememberSaveable { mutableStateOf("") }
     Page {
         Button(onClick = add, modifier = Modifier.fillMaxWidth()) { Text("Registrar trabajo") }
+        Field(search, { search = it }, "Buscar título, operaciones, taller o notas", "history_search")
         Heading("Trabajos registrados")
         if (visits.isEmpty()) Hint("Aquí se conservarán los trabajos que registres.")
-        visits.sortedByDescending { it.date }.forEach { visit ->
+        val matches = visits.filter { visit ->
+            val operations = lines.filter { it.visitId == visit.id }.joinToString(" ") { line -> line.title + " " + (tasks.firstOrNull { it.rule.id == line.ruleId }?.rule?.title ?: "") }
+            val visitNotes = runCatching { JsonParser.parseString(visit.notes).asJsonObject.get("notes")?.asString ?: "" }.getOrDefault(visit.notes)
+            listOf(visit.title, operations, visit.workshop, visitNotes).joinToString(" ").contains(search.trim(), ignoreCase = true)
+        }
+        if (matches.isEmpty() && visits.isNotEmpty()) Hint("No hay trabajos que coincidan con la búsqueda.")
+        matches.sortedByDescending { it.date }.forEach { visit ->
             ItemCard(visit.title, "${dateLabel(visit.date)}${if (!visit.dateExact) " (aproximada)" else ""} · ${kmLabel(visit.km)}${if (!visit.kmExact && visit.km != null) " (aproximados)" else ""}${if (!visit.active) " · Anulado" else ""}", { edit(visit) }) {
                 if (visit.workshop.isNotBlank()) Text(visit.workshop)
                 Hint(visit.paidCents?.let(::money) ?: "Importe desconocido")
@@ -316,9 +348,12 @@ fun SecondaryPage(go: (String) -> Unit) {
 fun ReferencesPage(tasks: List<Task>, open: (Task) -> Unit) {
     Page {
         Hint("Controles orientativos, condiciones de aplicación y perfiles. Consulta la fuente y confirma una condición únicamente cuando esté comprobada.")
-        tasks.filter { it.rule.scheduleVisibility in setOf("manual", "conditional", "inactive") || it.rule.recurrence == "inactive" || it.rule.id.endsWith("-active") }
+        tasks.filter { it.rule.scheduleVisibility in setOf("manual", "conditional", "inactive") || it.rule.recurrence == "inactive" || it.rule.id.endsWith("-active") || it.rule.origin in setOf("custom", "personalized") }
             .sortedBy { friendlyTitle(it) }.forEach { task ->
                 ItemCard(friendlyTitle(task), when {
+                    task.rule.recurrence == "once" && task.dueDate == null && task.dueKm == null && task.lastEvent != null -> "Tarea única completada"
+                    task.rule.origin == "custom" -> "Operación propia"
+                    task.rule.origin == "personalized" -> "Personalizado"
                     task.rule.recurrence == "inactive" -> "Perfil desactivado"
                     task.rule.id.endsWith("-active") -> "Perfil confirmado"
                     task.rule.scheduleVisibility == "manual" -> "Control orientativo"

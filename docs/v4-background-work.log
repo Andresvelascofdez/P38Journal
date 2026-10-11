@@ -1,0 +1,10 @@
+--------- beginning of main
+10-11 09:35:40.597  7836  7836 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=858e2455-e0f3-4042-972e-e0189dd7d856, generation=0)
+10-11 09:35:40.602  7836  7836 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-11 09:35:40.783  7836  7871 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=858e2455-e0f3-4042-972e-e0189dd7d856, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-11 09:35:40.783  7836  7871 I WM-WorkerWrapper: Setting status to enqueued for ddc1895f-0278-4276-aff0-ee4505afed50
+10-11 09:35:40.784  7836  7836 D WM-SystemJobService: 858e2455-e0f3-4042-972e-e0189dd7d856 executed on JobScheduler
+10-11 09:35:40.789  7836  7836 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=ddc1895f-0278-4276-aff0-ee4505afed50, generation=0)
+10-11 09:35:40.795  7836  7836 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-11 09:35:40.882  7836  7876 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=ddc1895f-0278-4276-aff0-ee4505afed50, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-11 09:35:40.882  7836  7836 D WM-SystemJobService: ddc1895f-0278-4276-aff0-ee4505afed50 executed on JobScheduler

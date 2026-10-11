@@ -91,8 +91,8 @@ fun Choice(label: String, value: String, choices: List<Pair<String, String>>, on
 }
 
 @Composable
-fun Check(text: String, checked: Boolean, onChange: (Boolean) -> Unit) {
-    Surface(onClick = { onChange(!checked) }, modifier = Modifier.fillMaxWidth()) {
+fun Check(text: String, checked: Boolean, tag: String = text, onChange: (Boolean) -> Unit) {
+    Surface(onClick = { onChange(!checked) }, modifier = Modifier.fillMaxWidth().testTag(tag)) {
         Row(Modifier.padding(vertical = 4.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             Checkbox(checked, onCheckedChange = onChange)
             Text(text, Modifier.weight(1f).padding(top = 12.dp), style = MaterialTheme.typography.bodyMedium)

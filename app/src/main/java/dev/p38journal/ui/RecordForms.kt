@@ -8,26 +8,41 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.google.gson.Gson
 import dev.p38journal.data.*
+import dev.p38journal.domain.ExpenseFilter
+import dev.p38journal.domain.ExpenseFilters
 
 private val categories = listOf("workshop" to "Taller", "extras" to "Extras", "fuel" to "Gasolina", "other" to "Otros")
 
 @Composable
 fun ExpensesPage(expenses: List<Expense>, add: () -> Unit, edit: (Expense) -> Unit) {
-    val active = expenses.filter { it.active }
+    var month by rememberSaveable { mutableStateOf(0) }
+    var year by rememberSaveable { mutableStateOf(0) }
+    var category by rememberSaveable { mutableStateOf("") }
+    val filtered = ExpenseFilters.apply(expenses, ExpenseFilter(month.takeIf { it > 0 }, year.takeIf { it > 0 }, category.ifBlank { null }),
+        date = { it.date }, cents = { it.cents }, category = { it.category }, active = { it.active })
+    val months = listOf("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre")
     Page {
         Card(Modifier.fillMaxWidth()) {
             Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                Text("Lo que llevo gastado", style = MaterialTheme.typography.titleMedium)
-                Text(money(active.fold(0L) { sum, expense -> Math.addExact(sum, expense.cents) }), style = MaterialTheme.typography.headlineMedium)
+                Text("Total acumulado", style = MaterialTheme.typography.titleMedium)
+                Text(money(filtered.totalCents), modifier = Modifier.testTag("expenses_total"), style = MaterialTheme.typography.headlineMedium)
                 Hint("Importes reales registrados. Los pagos de visitas se cuentan una vez.")
             }
         }
         Button(onClick = add, modifier = Modifier.fillMaxWidth()) { Text("Añadir gasto") }
-        if (expenses.isEmpty()) Hint("Registra un pago de taller, extra, gasolina u otro gasto.")
-        expenses.sortedByDescending { it.date }.forEach { expense ->
+        Choice("Mes", month.toString(), listOf("0" to "Todos los meses") + months.mapIndexed { index, name -> (index + 1).toString() to name }) { month = it.toInt() }
+        Choice("Año", year.toString(), listOf("0" to "Todos los años") + (filtered.years + listOfNotNull(year.takeIf { it > 0 })).distinct().sortedDescending().map { it.toString() to it.toString() }) { year = it.toInt() }
+        Choice("Tipo", category, listOf("" to "Todos los tipos") + categories) { category = it }
+        TextButton(onClick = { month = 0; year = 0; category = "" }) { Text("Limpiar filtros") }
+        if (month > 0 && year == 0) Hint("${months[month - 1]} en todos los años")
+        Heading("Total de estos gastos")
+        Text(money(filtered.subtotalCents), modifier = Modifier.testTag("expenses_subtotal"), style = MaterialTheme.typography.headlineSmall)
+        if (filtered.rows.isEmpty()) Hint("No hay gastos para esta selección.")
+        filtered.rows.sortedByDescending { it.date }.forEach { expense ->
             ItemCard(expense.concept, "${dateLabel(expense.date)} · ${categories.firstOrNull { it.first == expense.category }?.second ?: expense.category}", { edit(expense) }) {
                 Text(money(expense.cents), style = MaterialTheme.typography.titleMedium)
                 if (!expense.active) Hint("Anulado; no incluido en el total")
@@ -54,7 +69,7 @@ fun ExpenseForm(model: JournalViewModel, original: Expense?, visits: List<Visit>
         Choice("Categoría", category, categories) { category = it }
         Field(date, { date = it }, "Fecha (AAAA-MM-DD)", "expense_date")
         Field(notes, { notes = it }, "Notas (opcional)", multiline = true)
-        val availableVisits = visits.filter { it.active && expenses.none { expense -> expense.visitId == it.id && expense.id != original?.id } }
+        val availableVisits = visits.filter { it.active && expenses.none { expense -> expense.active && expense.visitId == it.id && expense.id != original?.id } }
         Choice("Vincular a visita (opcional)", visit, listOf("" to "Gasto independiente") + availableVisits.map { it.id to "${dateLabel(it.date)} · ${it.title}" }) { visit = it }
         if (visit.isNotEmpty()) Hint("El pago se contará una vez como gasto de esta visita. No crea ni completa operaciones.")
         Hint("Si la visita ya tiene un pago, abre el trabajo en Historial para vincular allí este gasto existente.")

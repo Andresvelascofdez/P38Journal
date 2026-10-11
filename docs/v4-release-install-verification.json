@@ -1,0 +1,30 @@
+{
+  "artifacts": [
+    {
+      "path": "dist/p38-journal-4.0.0-release.apk",
+      "applicationId": "dev.p38journal",
+      "bytes": 20435368,
+      "sha256": "c0a444d332b63297fa292f22f42c0ff6080acaca3de97212aa50528a91f2a7df",
+      "certificateSha256": "ce157b9b800d3e21c544ca21cbb398ffdfb3fab46ba5318adcc63d8cd14adf2b",
+      "catalogueMatchesSource": true
+    },
+    {
+      "path": "dist/p38-journal-4.0.0-debug.apk",
+      "applicationId": "dev.p38journal.debug",
+      "bytes": 27568411,
+      "sha256": "3c07624b46b8c678403030e487d20abf8c8e57b05807778187bffc14b7b4c4d1",
+      "certificateSha256": "27e1e6329b2c436d8012067dd213c39e828e26984531070c541dc6998666c4ea",
+      "catalogueMatchesSource": true
+    }
+  ],
+  "releaseUpdate": {
+    "fromVersionCode": 3,
+    "toVersionCode": 4,
+    "install": "Performing Streamed Install\r\nSuccess",
+    "uninstalled": false,
+    "dataCleared": false,
+    "emulator": "emulator-5554",
+    "renderedNativeHome": true
+  },
+  "physicalDeviceTested": false
+}

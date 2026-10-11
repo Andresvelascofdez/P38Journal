@@ -1,3 +1,19 @@
+# Contratos vigentes v4
+
+REQUEST_V4.md es el encargo vigente. Versión 4.0.0/code 4; release `dev.p38journal` y firma externa original, debug separado. No publicar ni enviar cambios a GitHub durante este encargo. El historial del repositorio se conserva.
+
+Propiedad: domain modifica Engine/data/esquemas y pruebas de persistencia; ui modifica Compose/ViewModel y pruebas UI; root implementa Forecast/ExpenseFilters, plataforma/notificaciones/build/scripts/entrega/documentación; review revisa independientemente y añade sus pruebas/documento. Gradle y el emulador son exclusivos del coordinador.
+
+`ForecastOccurrence(rule, dueDate, dueKm, sequence)` tiene `assumesPrevious=sequence>0`. `Forecast.project(tasks, stepsPerRule=4)` proyecta a partir de Tasks reales, incluyendo sequence 0, sin eventos ni mutación. La UI agrupa separadamente y explica la condición de ejecutar revisiones previas en sus límites. No hay estado de vencimiento/registro/avisos para previsiones futuras.
+
+`ExpenseFilter(month:Int?, year:Int?, category:String?)` usa calendario ISO. `ExpenseFilters.apply(items,filter,date,cents,category,active)` retorna rows, subtotalCents, totalCents y years descendentes de activos. La UI conserva filtros con rememberSaveable. No Double.
+
+Rule se amplía por JSON con origin (manufacturer/personalized/custom), notes, enabled, dueDate/dueKm para once y manufacturerRevision. Defaults compatibles con copias anteriores. Repo expone saveCustomRule, saveRuleOverride, setRuleEnabled, resetRule y originalRule; mismas reglas/IDs e historial, sin copias al editar. Personalización simple de fase limpia first*. Notificaciones filtra enabled, mientras el motor conserva consulta de límites.
+
+Gastos inactivos quedan sin visitId, con referencia previa en auditoría. Normalización idempotente de datos existentes/restaurados antes de imponer vínculo activo. Guardar visita conserva los metadatos del gasto existente y mantiene un único importe canónico. Room/snapshot permanecen esquema 3 al no requerirse columnas nuevas; la ampliación JSON y normalización se verifican con datos previos.
+
+## Contratos v3 — antecedente compatible
+
 # Contratos de integración v3
 
 Contrato vigente para la app Android existente: release `dev.p38journal`, debug `dev.p38journal.debug`, versión 3.0.0 y versionCode 3. La firma externa se conserva. La documentación v3 prevalece sobre el antecedente v2 del final.

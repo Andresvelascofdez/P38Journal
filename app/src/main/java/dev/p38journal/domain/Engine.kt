@@ -9,11 +9,13 @@ import java.time.temporal.ChronoUnit
 data class Rule(
     val id: String, val title: String, val system: String, val operation: String,
     val days: Int? = null, val months: Int? = null, val km: Int? = null,
-    val source: String, val sourceUrl: String, val condition: String = "",
+    val source: String = "", val sourceUrl: String = "", val condition: String = "",
     val initialAction: String = title, val priority: Int = 2,
     val recurrence: String = "component", val revision: Int = 1,
     val scheduleVisibility: String = "maintenance", val serviceGroup: String = "",
-    val firstKm: Int? = null, val firstMonths: Int? = null
+    val firstKm: Int? = null, val firstMonths: Int? = null,
+    val origin: String = "manufacturer", val notes: String = "", val enabled: Boolean = true,
+    val dueDate: String? = null, val dueKm: Int? = null, val manufacturerRevision: Int? = null
 )
 
 data class PlanningReference(val id: String = "main", val baselineKm: Int = 175000,
@@ -28,7 +30,7 @@ data class Event(
 
 data class Task(
     val rule: Rule, val status: String, val dueDate: String?, val dueKm: Int?,
-    val reasons: List<String>, val generation: String, val lastEvent: Event?
+    val reasons: List<String>, val generation: String, val lastEvent: Event?, val legacyGeneration: String? = null
 )
 
 object Engine {
@@ -40,13 +42,14 @@ object Engine {
         val baseDate = LocalDate.parse(reference.baselineDate)
         val hidden = rule.scheduleVisibility in listOf("manual", "conditional", "inactive") || rule.recurrence in listOf("inactive", "condition", "age")
         if (hidden) return@map Task(rule, "PLANNED", null, null,
-            if (rule.recurrence == "inactive" || rule.scheduleVisibility == "inactive") listOf("Perfil desactivado") else emptyList(), hash(rule.toString() + reference), null)
+            if (rule.recurrence == "inactive" || rule.scheduleVisibility == "inactive") listOf("Perfil desactivado") else emptyList(), hash(schedule(rule) + reference), null)
         require(rule.days == null || rule.days > 0)
         require(rule.months == null || rule.months > 0)
         require(rule.km == null || rule.km > 0)
+        val customOnce = rule.origin in listOf("custom", "personalized") && rule.recurrence == "once" && (rule.dueDate != null || rule.dueKm != null)
         val matching = events.filter { event -> event.ruleId == rule.id && event.active &&
             !event.provenance.contains("prepurchase", true) && !event.provenance.contains("recovered", true) &&
-            if (event.kmExact && event.km != null) event.km >= reference.baselineKm
+            if (customOnce) true else if (event.kmExact && event.km != null) event.km >= reference.baselineKm
             else event.dateExact && event.date != null && LocalDate.parse(event.date) >= baseDate }
         val ordered = matching.sortedWith(compareBy<Event> { it.date ?: "" }.thenBy { it.km ?: -1 }.thenBy { it.id })
         val anchor = ordered.lastOrNull()
@@ -54,18 +57,18 @@ object Engine {
         val exactKm = ordered.lastOrNull { it.kmExact && it.km != null }
         val phase = rule.recurrence in listOf("phase", "phase_b")
         val oneOff = rule.recurrence in listOf("initial", "once")
-        if (oneOff && (matching.isNotEmpty() || rule.firstKm == null || rule.firstKm <= reference.baselineKm)) {
-            return@map Task(rule, "PLANNED", null, null, emptyList(), hash(rule.toString() + reference), anchor)
+        if (oneOff && (matching.isNotEmpty() || !customOnce && (rule.firstKm == null || rule.firstKm <= reference.baselineKm))) {
+            return@map Task(rule, "PLANNED", null, null, emptyList(), hash(schedule(rule) + reference), anchor)
         }
         val initialMonths = if (phase && exactDate == null) rule.firstMonths ?: if(rule.recurrence == "phase_b") 12 else 24 else rule.months
         val initialKm = if (phase && exactKm == null) rule.firstKm ?: if(rule.recurrence == "phase_b") 20000 else 40000 else rule.km
         val dateAnchor = exactDate?.date?.let(LocalDate::parse) ?: baseDate
-        val dueDate = if (oneOff) null else when {
+        val dueDate = if (customOnce) rule.dueDate?.let(LocalDate::parse) else if (oneOff) null else when {
             initialMonths != null -> dateAnchor.plusMonths(initialMonths.toLong())
             rule.days != null -> dateAnchor.plusDays(rule.days.toLong())
             else -> null
         }
-        val dueKm = if (oneOff) rule.firstKm else initialKm?.let { Math.addExact(exactKm?.km ?: reference.baselineKm, it) }
+        val dueKm = if (customOnce) rule.dueKm else if (oneOff) rule.firstKm else initialKm?.let { Math.addExact(exactKm?.km ?: reference.baselineKm, it) }
         val reasons = mutableListOf<String>()
         if (dueDate != null && !today.isBefore(dueDate)) reasons += "Vence por fecha"
         if (dueKm != null && currentKm != null && currentKm >= dueKm) reasons += "Vence por kilómetros"
@@ -84,11 +87,16 @@ object Engine {
             if (soonDate) reasons += "Próxima por fecha"
             if (soonKm) reasons += "Próxima por kilómetros"
         }
-        val generationContent = listOf(rule, reference, dueDate, dueKm, exactDate?.date, exactKm?.km).joinToString("|")
+        val generationContent = listOf(schedule(rule), reference, dueDate, dueKm, exactDate?.date, exactKm?.km).joinToString("|")
         val generation = hash(generationContent)
-        Task(rule, status, dueDate?.toString(), dueKm, reasons, generation, anchor)
+        val legacyGeneration = hash(listOf(legacyV3Rule(rule), reference, dueDate, dueKm, exactDate?.date, exactKm?.km).joinToString("|"))
+        Task(rule, status, dueDate?.toString(), dueKm, reasons, generation, anchor, legacyGeneration)
     }.sortedWith(compareBy<Task> { when(it.status) { "DUE" -> 0; "SOON" -> 1; else -> 2 } }
         .thenBy { it.rule.priority }.thenBy { it.dueDate ?: "9999" }.thenBy { it.rule.title })
+    private fun schedule(rule: Rule) = listOf(rule.id, rule.days, rule.months, rule.km, rule.recurrence,
+        rule.scheduleVisibility, rule.firstKm, rule.firstMonths, rule.enabled, rule.dueDate, rule.dueKm,
+        rule.origin in listOf("custom", "personalized") && rule.recurrence == "once" && (rule.dueDate != null || rule.dueKm != null)).joinToString("|")
+    private fun legacyV3Rule(rule: Rule) = "Rule(id=${rule.id}, title=${rule.title}, system=${rule.system}, operation=${rule.operation}, days=${rule.days}, months=${rule.months}, km=${rule.km}, source=${rule.source}, sourceUrl=${rule.sourceUrl}, condition=${rule.condition}, initialAction=${rule.initialAction}, priority=${rule.priority}, recurrence=${rule.recurrence}, revision=${rule.revision}, scheduleVisibility=${rule.scheduleVisibility}, serviceGroup=${rule.serviceGroup}, firstKm=${rule.firstKm}, firstMonths=${rule.firstMonths})"
     private fun hash(value: String) = MessageDigest.getInstance("SHA-256").digest(value.toByteArray()).take(12).joinToString("") { "%02x".format(it) }
 }
 

@@ -1,3 +1,15 @@
+# Ampliación v4 vigente
+
+REQUEST_V4.md prevalece sobre el antecedente v3 siguiente. `Engine.evaluate` sigue devolviendo exclusivamente el próximo vencimiento real por operación; sus tareas son las únicas que alimentan estados, avisos y registros. `Forecast.project` devuelve un tipo distinto y solo de consulta: el vencimiento actual y las apariciones siguientes suponiendo que se ejecuta cada anterior exactamente en sus límites de fecha/km. No crea Event, Visit, Reading ni recordatorios. Fecha y km permanecen separados, y la previsión no afirma cuál ocurrirá antes.
+
+La previsión suma a cada próximo vencimiento el intervalo de repetición del catálogo, no el primer desfase. Inicialmente las comunes vuelven a 215.000 junto con C; B vuelve a 235.000. Las adicionales coincidentes se agregan según su regla, sin copiar todas las primeras. Tras trabajo a 195.200, cada operación mantiene su ciclo real: común 215.200, B 235.200. Una revisión parcial deja las demás pendientes.
+
+Las operaciones propias no tienen fuente inventada. Una tarea única usa fecha/km absolutos y no se repite tras ejecución válida. Personalizar una fase a periodicidad simple limpia firstKm/firstMonths, conserva el original del fabricante y el ID/historial; restaurar vuelve al original. Desactivar recordatorios no borra trabajos ni cambia límites. Cambiar solo notas/título conserva generación si los límites efectivos no cambian.
+
+Los filtros de gastos son consulta de registros activos por fecha local ISO, mes/año/tipo; no constituyen informes. Subtotal y total acumulado suman Long céntimos exactos. Anular un vínculo libera visitId y conserva auditoría; editar la visita no sustituye fecha/concepto/tipo personalizados del gasto.
+
+## Antecedente v3 compatible
+
 # Motor desde referencia operativa
 
 ## Separar base, lectura y trabajo

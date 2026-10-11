@@ -48,16 +48,17 @@ class Repository(
     val observeDocuments = observe { dao.observeDocuments() }
     val observeInbox = observe { dao.observeInbox() }
     fun observeEvents(): Flow<List<Event>> = observe { dao.observeEvents() }.map { rows -> rows.map { it.toEvent() } }
-    fun observeRules(): Flow<List<Rule>> = observe { dao.observeRules() }.map { rows -> rows.map { decodeRule(it.json) } }
+    fun observeRules(): Flow<List<Rule>> = observe { dao.observeRules() }.map { rows -> rows.map { decodeRule(it.json, it.ownerOverride) } }
     fun observePlanningReference(): Flow<PlanningReference?> = observe { dao.observePlanningReference() }.map { it?.toDomain() }
 
     suspend fun initialize() = withContext(Dispatchers.IO) {
         val catalogue = context.assets.open("maintenance-catalogue.json").bufferedReader().use { it.readText() }
-        val rules = JsonParser.parseString(catalogue).asJsonObject.getAsJsonArray("rules").map { gson.fromJson(it, Rule::class.java) }
+        val rules = JsonParser.parseString(catalogue).asJsonObject.getAsJsonArray("rules").map { decodeRule(it.toString()) }
         cataloguePolicy = rules.associateBy { it.id }
         val vehicleJson = context.assets.open("vehicle.json").bufferedReader().use { it.readText() }
         val vehicle = JsonParser.parseString(vehicleJson).asJsonObject
         db.withTransaction {
+            normalizeExpenseLinks()
             if (dao.allPlanningReferences().isEmpty()) {
                 val recovered = dao.allAudit().filter { it.action in listOf("plan_created", "planning_reference_created") }.minByOrNull { it.at }
                 val baselineDate = recovered?.at?.let { runCatching { Instant.parse(it).atZone(clock.zone).toLocalDate().toString() }.getOrNull() } ?: LocalDate.now(clock).toString()
@@ -94,7 +95,7 @@ class Repository(
     }
     suspend fun currentKm(): Int? = dao.allReadings().firstOrNull()?.km
     suspend fun allEvents(): List<Event> = dao.allEvents().map { it.toEvent() }
-    suspend fun allRules(): List<Rule> = dao.allRules().map { decodeRule(it.json) }
+    suspend fun allRules(): List<Rule> = dao.allRules().map { decodeRule(it.json, it.ownerOverride) }
     suspend fun planningReference(): PlanningReference {
         return dao.allPlanningReferences().firstOrNull { it.id == "main" }?.toDomain()
             ?: PlanningReference(baselineDate = LocalDate.now(clock).toString()).also {
@@ -119,18 +120,22 @@ class Repository(
         require(lines.map { it.id }.distinct().size == lines.size)
         require(lines.all { it.ruleId == null || it.ruleId in ruleIds }) { "Cada operación debe vincularse explícitamente" }
         require(ruleIds.all { id -> lines.any { it.ruleId == id } }) { "Cada operación realizada necesita una línea de trabajo explícita" }
-        if (visit.paidCents != null && lines.isNotEmpty() && lines.all { it.costCents != null }) {
-            require(lines.fold(0L) { total, line -> Math.addExact(total, line.costCents!!) } == visit.paidCents) { "El reparto debe sumar el importe pagado" }
-        }
         db.withTransaction {
+            normalizeExpenseLinks()
             val rules = allRules().associateBy { it.id }
             require(ruleIds.all { it in rules }) { "Operación desconocida" }
             val previous = dao.allVisits().find { it.id == visit.id }
             val previousLines = dao.visitLines(visit.id)
+            if (visit.paidCents != null && lines.isNotEmpty() && lines.all { it.costCents != null }) {
+                val total = lines.fold(0L) { sum, line -> Math.addExact(sum, line.costCents!!) }
+                val canonical = dao.allExpenses().firstOrNull { it.active && it.visitId == visit.id }
+                val allocationUnchanged = previous != null && previousLines.associate { it.id to it.costCents } == lines.associate { it.id to it.costCents }
+                require(total == visit.paidCents || allocationUnchanged && canonical?.cents == visit.paidCents) { "El reparto debe sumar el importe pagado" }
+            }
             val oldEvents = dao.allEvents().filter { it.visitId == visit.id && it.active }
             val affectedRules = (oldEvents.map { it.ruleId } + ruleIds).distinct()
             val previousGenerations = scheduleGenerations(affectedRules)
-            val currentPaymentId = dao.allExpenses().find { it.visitId == visit.id }?.id
+            val currentPaymentId = dao.allExpenses().find { it.active && it.visitId == visit.id }?.id
             if (previous == visit && previousLines.toSet() == lines.toSet() && oldEvents.map { it.ruleId }.toSet() == ruleIds.toSet()
                 && (existingExpenseId == null || existingExpenseId == currentPaymentId)) {
                 if (updateCurrentReading != null) saveReading(updateCurrentReading)
@@ -148,16 +153,20 @@ class Repository(
                     visit.dateExact, visit.kmExact, true, rule.revision, line?.id, "owner_recorded", visit.operationalAnchor))
             }
             val expenses = dao.allExpenses()
-            val linked = expenses.find { it.visitId == visit.id }
+            val linked = expenses.find { it.active && it.visitId == visit.id }
             val selected = existingExpenseId?.let { id -> expenses.find { it.id == id } ?: error("Gasto elegido no encontrado") }
+            require(selected == null || selected.active) { "El gasto elegido está anulado" }
             require(selected == null || selected.visitId == null || selected.visitId == visit.id) { "El gasto ya pertenece a otra visita" }
             if (selected != null && linked != null && selected.id != linked.id) dao.putExpense(linked.copy(active = false, visitId = null))
             val payment = selected ?: linked
-            if (visit.paidCents != null) {
-                val expense = Expense(payment?.id ?: "${visit.id}:payment", visit.date, visit.paidCents,
-                    visit.title, "workshop", payment?.notes ?: "", visit.id, visit.active)
+            val paidCents = if (visit.active) visit.paidCents ?: selected?.cents else null
+            if (paidCents != null) {
+                val paymentId = payment?.id ?: "${visit.id}:payment".takeIf { id -> expenses.none { it.id == id } } ?: java.util.UUID.randomUUID().toString()
+                val expense = payment?.copy(cents = paidCents, visitId = visit.id, active = true)
+                    ?: Expense(paymentId, visit.date, paidCents, visit.title, "workshop", visitId = visit.id)
                 dao.putExpense(expense)
-            } else if (payment != null) dao.putExpense(payment.copy(active = false))
+            } else if (payment != null) dao.putExpense(payment.copy(active = false, visitId = null))
+            if (visit.paidCents != paidCents) dao.putVisit(visit.copy(paidCents = paidCents))
             val nextGenerations = scheduleGenerations(affectedRules)
             affectedRules.filter { previousGenerations[it] != nextGenerations[it] }.forEach { invalidate(it) }
             audit(if (previous == null) "visit_created" else "visit_edited", visit.id, gson.toJson(previous) + " -> " + gson.toJson(visit))
@@ -166,36 +175,40 @@ class Repository(
     }
 
     suspend fun voidVisit(id: String) = db.withTransaction {
+        normalizeExpenseLinks()
         val visit = dao.allVisits().find { it.id == id } ?: error("Visita no encontrada")
         if (!visit.active) return@withTransaction
         val affectedRules = dao.allEvents().filter { it.visitId == id && it.active }.map { it.ruleId }.distinct()
         val previousGenerations = scheduleGenerations(affectedRules)
-        dao.putVisit(visit.copy(active = false))
+        dao.putVisit(visit.copy(active = false, paidCents = null))
         dao.allEvents().filter { it.visitId == id && it.active }.forEach { dao.putEvent(it.copy(active = false)) }
         val nextGenerations = scheduleGenerations(affectedRules)
         affectedRules.filter { previousGenerations[it] != nextGenerations[it] }.forEach { invalidate(it) }
-        dao.allExpenses().filter { it.visitId == id }.forEach { dao.putExpense(it.copy(active = false)) }
+        dao.allExpenses().filter { it.visitId == id }.forEach { dao.putExpense(it.copy(active = false, visitId = null)) }
         audit("visit_voided", id, gson.toJson(visit))
     }
 
     suspend fun saveExpense(expense: Expense) = db.withTransaction {
         validateExpense(expense)
+        normalizeExpenseLinks()
+        val normalized = if (expense.active) expense else expense.copy(visitId = null)
         val existing = dao.allExpenses()
-        require(expense.visitId == null || existing.none { it.visitId == expense.visitId && it.id != expense.id }) { "La visita ya tiene un gasto; edita o vincula el existente" }
-        expense.visitId?.let { id -> require(dao.allVisits().any { it.id == id && it.active }) { "Visita no válida" } }
+        require(normalized.visitId == null || existing.none { it.active && it.visitId == normalized.visitId && it.id != expense.id }) { "La visita ya tiene un gasto; edita o vincula el existente" }
+        normalized.visitId?.let { id -> require(dao.allVisits().any { it.id == id && it.active }) { "Visita no válida" } }
         val previous = existing.find { it.id == expense.id }
-        if (previous == expense) return@withTransaction
-        previous?.visitId?.takeIf { it != expense.visitId }?.let { previousVisitId ->
+        if (previous == normalized) return@withTransaction
+        previous?.visitId?.takeIf { it != normalized.visitId }?.let { previousVisitId ->
             dao.allVisits().firstOrNull { it.id == previousVisitId }?.let { dao.putVisit(it.copy(paidCents = null)) }
         }
-        dao.putExpense(expense)
-        expense.visitId?.let { id -> val visit = dao.allVisits().first { it.id == id }; dao.putVisit(visit.copy(paidCents = if (expense.active) expense.cents else null)) }
-        audit(if (previous == null) "expense_created" else "expense_edited", expense.id, gson.toJson(previous) + " -> " + gson.toJson(expense))
+        dao.putExpense(normalized)
+        normalized.visitId?.let { id -> val visit = dao.allVisits().first { it.id == id }; dao.putVisit(visit.copy(paidCents = normalized.cents)) }
+        audit(if (previous == null) "expense_created" else "expense_edited", expense.id, gson.toJson(previous) + " -> " + gson.toJson(normalized))
     }
     suspend fun voidExpense(id: String) = db.withTransaction {
+        normalizeExpenseLinks()
         val expense = dao.allExpenses().find { it.id == id } ?: error("Gasto no encontrado")
         if (expense.active) {
-            dao.putExpense(expense.copy(active = false))
+            dao.putExpense(expense.copy(active = false, visitId = null))
             expense.visitId?.let { visitId -> dao.allVisits().find { it.id == visitId }?.let { dao.putVisit(it.copy(paidCents = null)) } }
             audit("expense_voided", id, gson.toJson(expense))
         }
@@ -223,23 +236,60 @@ class Repository(
     suspend fun saveDocument(document: Document) = db.withTransaction { validateDocument(document); dao.putDocument(document); audit("document_saved", document.id, gson.toJson(document)) }
     suspend fun deleteDocument(id: String) = db.withTransaction { val old = dao.allDocuments().find { it.id == id }; dao.deleteDocument(id); audit("document_deleted", id, gson.toJson(old)) }
     suspend fun saveInbox(inbox: Inbox) = dao.putInbox(inbox)
-    suspend fun saveRule(rule: Rule) = db.withTransaction {
+    suspend fun saveRule(rule: Rule) {
+        if (originalRule(rule.id) != null) saveRuleOverride(rule) else saveCustomRule(rule)
+    }
+    suspend fun originalRule(id: String): Rule? = withContext(Dispatchers.IO) {
+        if (cataloguePolicy.isEmpty()) {
+            val catalogue = context.assets.open("maintenance-catalogue.json").bufferedReader().use { it.readText() }
+            cataloguePolicy = JsonParser.parseString(catalogue).asJsonObject.getAsJsonArray("rules")
+                .map { decodeRule(it.toString()) }.associateBy { it.id }
+        }
+        cataloguePolicy[id]
+    }
+    suspend fun saveCustomRule(rule: Rule) {
+        require(originalRule(rule.id) == null) { "La operación pertenece al catálogo del fabricante" }
+        persistRule(rule.copy(origin = "custom", manufacturerRevision = null, firstKm = null, firstMonths = null))
+    }
+    suspend fun saveRuleOverride(rule: Rule) {
+        val original = originalRule(rule.id) ?: error("Regla original no disponible")
+        db.withTransaction {
+            val previous = allRules().firstOrNull { it.id == rule.id } ?: original
+            val intervalChanged = previous.days != rule.days || previous.months != rule.months || previous.km != rule.km
+            val simple = original.recurrence in listOf("phase", "phase_b") && rule.recurrence != "once" && (intervalChanged || rule.recurrence == "component")
+            val clearOffsets = simple || rule.recurrence == "once" && (rule.dueDate != null || rule.dueKm != null)
+            val personalized = rule.copy(origin = "personalized", source = original.source, sourceUrl = original.sourceUrl,
+                manufacturerRevision = original.revision, recurrence = if (simple) "component" else rule.recurrence,
+                firstKm = if (clearOffsets) null else rule.firstKm, firstMonths = if (clearOffsets) null else rule.firstMonths)
+            if (dao.allRevisions().none { it.ruleId == original.id && it.revision == original.revision }) {
+                dao.putRevision(RuleRevisionRecord("${original.id}:${original.revision}", original.id, original.revision, gson.toJson(original)))
+            }
+            persistRule(personalized)
+        }
+    }
+    suspend fun setRuleEnabled(id: String, enabled: Boolean) {
+        val rule = allRules().firstOrNull { it.id == id } ?: error("Operación no encontrada")
+        if (rule.enabled != enabled) saveRule(rule.copy(enabled = enabled))
+    }
+    private suspend fun persistRule(rule: Rule) = db.withTransaction {
         validateRule(rule)
+        val previous = dao.allRules().firstOrNull { it.id == rule.id }?.let { decodeRule(it.json, it.ownerOverride) }
+        if (previous != null && previous.copy(revision = rule.revision) == rule) return@withTransaction
+        val previousGeneration = scheduleGenerations(listOf(rule.id))[rule.id]
         val highest = dao.allRevisions().filter { it.ruleId == rule.id }.maxOfOrNull { it.revision } ?: 0
         val revised = rule.copy(revision = maxOf(rule.revision, highest + 1))
         dao.putRule(RuleRecord(revised.id, gson.toJson(revised), revised.revision, true))
         dao.putRevision(RuleRevisionRecord("${revised.id}:${revised.revision}:owner", revised.id, revised.revision, gson.toJson(revised)))
-        invalidate(rule.id); audit("rule_override", rule.id, gson.toJson(revised))
+        if (previousGeneration != scheduleGenerations(listOf(rule.id))[rule.id]) invalidate(rule.id)
+        audit("rule_override", rule.id, gson.toJson(revised))
     }
     suspend fun resetRule(id: String) {
-        val original = withContext(Dispatchers.IO) {
-            val catalogue = context.assets.open("maintenance-catalogue.json").bufferedReader().use { it.readText() }
-            JsonParser.parseString(catalogue).asJsonObject.getAsJsonArray("rules")
-                .map { gson.fromJson(it, Rule::class.java) }.firstOrNull { it.id == id } ?: error("Regla original no disponible")
-        }
+        val original = originalRule(id) ?: error("Regla original no disponible")
         db.withTransaction {
+            val previousGeneration = scheduleGenerations(listOf(id))[id]
             dao.putRule(RuleRecord(original.id, gson.toJson(original), original.revision, false))
-            invalidate(id); audit("rule_reset_to_catalogue", id, gson.toJson(original))
+            if (previousGeneration != scheduleGenerations(listOf(id))[id]) invalidate(id)
+            audit("rule_reset_to_catalogue", id, gson.toJson(original))
         }
     }
     suspend fun adoptOperationalAnchor(eventId: String) = db.withTransaction {
@@ -251,6 +301,21 @@ class Repository(
         audit("operational_anchor_adopted", eventId, gson.toJson(event) + " -> " + gson.toJson(updated))
     }
     private suspend fun invalidate(ruleId: String) { dao.cancelInbox(ruleId); dao.cancelLedger(ruleId) }
+    private suspend fun normalizeExpenseLinks() {
+        val visits = dao.allVisits().associateBy { it.id }
+        dao.allExpenses().filter { it.visitId != null && (!it.active || visits[it.visitId]?.active != true) }.forEach { old ->
+            dao.putExpense(old.copy(visitId = null, active = false))
+            audit("expense_link_normalized", old.id, gson.toJson(old))
+        }
+        val linked = dao.allExpenses().filter { it.active && it.visitId != null }.associateBy { it.visitId }
+        visits.values.forEach { visit ->
+            val cents = linked[visit.id]?.cents
+            if (visit.paidCents != cents) {
+                dao.putVisit(visit.copy(paidCents = cents))
+                audit("visit_payment_normalized", visit.id, gson.toJson(visit))
+            }
+        }
+    }
     private suspend fun scheduleGenerations(ruleIds: List<String>): Map<String, String> {
         if (ruleIds.isEmpty()) return emptyMap()
         val plan = planningReference()
@@ -260,6 +325,7 @@ class Repository(
     private suspend fun audit(action: String, id: String, detail: String) = dao.putAudit(Audit(at = Instant.now(clock).toString(), action = action, recordId = id, detail = detail))
 
     suspend fun allRecords(): Snapshot = db.withTransaction {
+        normalizeExpenseLinks()
         planningReference()
         Snapshot(vehicle = dao.allVehicles(), rules = dao.allRules(), revisions = dao.allRevisions(), visits = dao.allVisits(),
             lines = dao.allLines(), events = dao.allEvents(), expenses = dao.allExpenses(), readings = dao.allReadings(),
@@ -287,12 +353,22 @@ class Repository(
             val ids = root.getAsJsonArray(it).map { row -> row.asJsonObject.get("id").asString.also(::validId) }
             require(ids.distinct().size == ids.size) { "Identificadores duplicados en $it" }
         }
-        val snapshot = gson.fromJson(root, Snapshot::class.java)
+        val rawSnapshot = gson.fromJson(root, Snapshot::class.java)
+        val rawVisits = rawSnapshot.visits.associateBy { it.id }
+        val detached = rawSnapshot.expenses.filter { it.visitId != null && (!it.active || rawVisits[it.visitId]?.active == false) }
+        val detachedIds = detached.map { it.id }.toSet()
+        val expenses = rawSnapshot.expenses.map { if (it.id in detachedIds) it.copy(active = false, visitId = null) else it }
+        val payments = expenses.filter { it.active && it.visitId != null }.associateBy { it.visitId }
+        val normalizationAudit = detached.map { Audit("backup-normalize:${it.id}", Instant.now(clock).toString(), "expense_link_normalized", it.id, gson.toJson(it)) } +
+            rawSnapshot.visits.filter { it.paidCents != payments[it.id]?.cents }.map { Audit("backup-normalize-visit:${it.id}", Instant.now(clock).toString(), "visit_payment_normalized", it.id, gson.toJson(it)) }
+        val snapshot = rawSnapshot.copy(expenses = expenses,
+            visits = rawSnapshot.visits.map { it.copy(paidCents = payments[it.id]?.cents) },
+            audit = rawSnapshot.audit + normalizationAudit.filter { added -> rawSnapshot.audit.none { it.id == added.id } })
         if (version == 3) require(snapshot.planning.size == 1) { "La copia no incluye la referencia completa del plan" }
         val visits = snapshot.visits.associateBy { it.id }
         val rules = snapshot.rules.associateBy { it.id }
         snapshot.visits.forEach(::validateVisit)
-        snapshot.rules.forEach { record -> val rule = decodeRule(record.json); validateRule(rule); require(rule.id == record.id && rule.revision == record.revision) }
+        snapshot.rules.forEach { record -> val rule = decodeRule(record.json, record.ownerOverride); validateRule(rule); require(rule.id == record.id && rule.revision == record.revision) }
         snapshot.expenses.forEach { validateExpense(it); require(it.visitId == null || it.visitId in visits) }
         require(snapshot.expenses.mapNotNull { it.visitId }.distinct().size == snapshot.expenses.count { it.visitId != null })
         snapshot.lines.forEach { require(it.visitId in visits && it.title.isNotBlank() && (it.costCents == null || it.costCents >= 0)); require(it.ruleId == null || it.ruleId in rules) }
@@ -335,13 +411,21 @@ class Repository(
             merge(incoming.visits, current.visits, { it.id }, dao::putVisit)
             merge(incoming.lines.filter { it.visitId !in existingVisitIds }, current.lines, { it.id }, dao::putLine)
             merge(incoming.events.filter { it.visitId !in existingVisitIds }, current.events, { it.id }, dao::putEvent)
-            val existingPaymentVisits = current.expenses.mapNotNull { it.visitId }.toSet()
-            merge(incoming.expenses.filter { it.visitId == null || it.visitId !in existingPaymentVisits && it.visitId !in existingVisitIds }, current.expenses, { it.id }, dao::putExpense)
+            val existingPaymentVisits = current.expenses.filter { it.active }.mapNotNull { it.visitId }.toSet()
+            val targetVisits = dao.allVisits().associateBy { it.id }
+            val copiedExpenses = incoming.expenses.map { expense ->
+                if (expense.visitId != null && (expense.visitId in existingPaymentVisits || targetVisits[expense.visitId]?.active == false)) {
+                    if (current.expenses.none { it.id == expense.id }) audit("backup_expense_link_detached", expense.id, gson.toJson(expense))
+                    expense.copy(visitId = null, active = expense.active && targetVisits[expense.visitId]?.active != false)
+                } else expense
+            }
+            merge(copiedExpenses, current.expenses, { it.id }, dao::putExpense)
             merge(incoming.readings, current.readings, { it.id }, dao::putReading)
             merge(incoming.notes, current.notes, { it.id }, dao::putNote)
             merge(incoming.documents, current.documents, { it.id }, dao::putDocument)
             merge(incoming.inbox.map { it.copy(state = if (it.origin == "automatic" && it.policyVersion < 3 && legacyNotificationKind(it.id, it.ruleId, it.generation) == "INITIAL") "cancelled" else if (it.state == "read") "read" else "pending") }, current.inbox, { it.id }, dao::putInbox)
             merge(incoming.audit, current.audit, { it.id }, dao::putAudit)
+            normalizeExpenseLinks()
             dao.clearLedger()
             audit("backup_restored", "snapshot", "Restauración validada; se conservan registros y personalizaciones locales. Personalizaciones copiadas sustituyen reglas estándar; revisiones estándar solo se actualizan")
         }
@@ -351,19 +435,39 @@ class Repository(
     private fun validateExpense(value: Expense) { validId(value.id); date(value.date); require(value.cents >= 0 && value.concept.isNotBlank()); require(value.category in listOf("workshop", "extras", "fuel", "other")) }
     private fun validateDocument(value: Document) { validId(value.id); require(value.name.isNotBlank() && value.mime.isNotBlank() && value.size >= 0); require(value.sha256.matches(Regex("[0-9a-fA-F]{64}"))); require(value.path.isNotBlank() && !value.path.contains("..") && !value.path.startsWith("/") && !value.path.contains(":")) { "Ruta de documento no válida" } }
     private fun validateRule(value: Rule) {
-        validId(value.id); require(value.title.isNotBlank() && value.source.isNotBlank() && value.sourceUrl.isNotBlank())
+        validId(value.id); require(value.title.isNotBlank())
+        require(value.origin in listOf("manufacturer", "personalized", "custom"))
+        require(value.origin == "custom" || value.source.isNotBlank() && value.sourceUrl.isNotBlank())
         require(value.days == null || value.days > 0); require(value.months == null || value.months > 0)
         require(value.km == null || value.km > 0); require(value.revision > 0)
         require(value.firstKm == null || value.firstKm >= 0); require(value.firstMonths == null || value.firstMonths > 0)
         require(value.scheduleVisibility in listOf("maintenance", "service", "manual", "conditional", "inactive"))
+        require(value.dueKm == null || value.dueKm >= 0); value.dueDate?.let(::date)
+        require(value.manufacturerRevision == null || value.manufacturerRevision > 0)
+        if (value.origin == "custom") {
+            if (value.recurrence == "once") require(value.dueDate != null || value.dueKm != null) { "Indica fecha o kilometraje de la tarea única" }
+            else require(value.days != null || value.months != null || value.km != null) { "Indica un intervalo" }
+        }
+        if (value.origin == "personalized" && value.recurrence == "once" && value.firstKm == null) require(value.dueDate != null || value.dueKm != null)
     }
-    private fun decodeRule(json: String): Rule {
+    private fun decodeRule(json: String, ownerOverride: Boolean = false): Rule {
         val objectJson = JsonParser.parseString(json).asJsonObject
         val policy = cataloguePolicy[objectJson.get("id")?.asString]
         if (!objectJson.has("scheduleVisibility") || objectJson.get("scheduleVisibility").isJsonNull) objectJson.addProperty("scheduleVisibility", policy?.scheduleVisibility ?: "maintenance")
         if (!objectJson.has("serviceGroup") || objectJson.get("serviceGroup").isJsonNull) objectJson.addProperty("serviceGroup", policy?.serviceGroup ?: "")
-        if (!objectJson.has("firstKm") && policy?.firstKm != null) objectJson.addProperty("firstKm", policy.firstKm)
-        if (!objectJson.has("firstMonths") && policy?.firstMonths != null) objectJson.addProperty("firstMonths", policy.firstMonths)
+        if (objectJson.get("recurrence")?.asString in listOf("phase", "phase_b")) {
+            if (!objectJson.has("firstKm") && policy?.firstKm != null) objectJson.addProperty("firstKm", policy.firstKm)
+            if (!objectJson.has("firstMonths") && policy?.firstMonths != null) objectJson.addProperty("firstMonths", policy.firstMonths)
+        }
+        if (!objectJson.has("origin") || objectJson.get("origin").isJsonNull) objectJson.addProperty("origin", if (ownerOverride) if (policy != null) "personalized" else "custom" else "manufacturer")
+        if (!objectJson.has("notes") || objectJson.get("notes").isJsonNull) objectJson.addProperty("notes", "")
+        if (!objectJson.has("enabled") || objectJson.get("enabled").isJsonNull) objectJson.addProperty("enabled", true)
+        if (!objectJson.has("source") || objectJson.get("source").isJsonNull) objectJson.addProperty("source", "")
+        if (!objectJson.has("sourceUrl") || objectJson.get("sourceUrl").isJsonNull) objectJson.addProperty("sourceUrl", "")
+        if (objectJson.get("origin").asString == "custom" && objectJson.get("recurrence")?.asString == "once"
+            && (!objectJson.has("dueDate") || objectJson.get("dueDate").isJsonNull)
+            && (!objectJson.has("dueKm") || objectJson.get("dueKm").isJsonNull)
+            && objectJson.has("firstKm") && !objectJson.get("firstKm").isJsonNull) objectJson.add("dueKm", objectJson.get("firstKm"))
         return gson.fromJson(objectJson, Rule::class.java)
     }
     private fun validId(id: String) { require(id.isNotBlank() && id.length <= 200 && !id.contains('\u0000')) }

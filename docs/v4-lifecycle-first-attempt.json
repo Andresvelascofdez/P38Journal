@@ -1,0 +1,27 @@
+[
+  {
+    "stage": "seed-v3",
+    "result": "PASS",
+    "instrumentation": "\r\ndev.p38journal.platform.UpgradeV4Test:.\r\n\r\nTime: 0.616\r\n\r\nOK (1 test)\r\n\r\n\r\n"
+  },
+  {
+    "backup": "v4-before-update.zip",
+    "bytes": 19206,
+    "sha256": "19c9b39bff83b3fb6666a3af6bf2d271b638e0deedabe29e484120b9f6fef2e6"
+  },
+  {
+    "stage": "verify-update",
+    "result": "PASS",
+    "instrumentation": "\r\ndev.p38journal.platform.UpgradeV4Test:.\r\n\r\nTime: 0.59\r\n\r\nOK (1 test)\r\n\r\n\r\n"
+  },
+  {
+    "backup": "v4-after-update.zip",
+    "bytes": 20254,
+    "sha256": "faa78aeabdcd454e2db255710bcc29436cca9c8826acd1b01cb98c7b68270499"
+  },
+  {
+    "stage": "restore",
+    "result": "PASS",
+    "instrumentation": "\r\ndev.p38journal.platform.UpgradeV4Test:.\r\n\r\nTime: 0.695\r\n\r\nOK (1 test)\r\n\r\n\r\n"
+  }
+]

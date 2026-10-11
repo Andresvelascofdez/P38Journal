@@ -6,7 +6,7 @@ import java.time.temporal.ChronoUnit
 
 data class MaintenanceGroup(val tasks: List<Task>) {
     val representative get() = tasks.first()
-    val title: String get() = if (tasks.size > 1) "Revisión de taller" else friendlyTitle(representative)
+    val title: String get() = if (tasks.size == 1) friendlyTitle(representative) else dueKm?.let { "Revisión a los ${kmLabel(it)}" } ?: "Revisión del ${dateLabel(dueDate)}"
     val dueDate get() = representative.dueDate
     val dueKm get() = representative.dueKm
     val status get() = if (tasks.any { it.status == "DUE" }) "DUE" else if (tasks.any { it.status == "SOON" }) "SOON" else "PLANNED"
@@ -19,7 +19,7 @@ fun maintenanceGroups(tasks: List<Task>): List<MaintenanceGroup> = tasks
     }.values.map(::MaintenanceGroup)
     .sortedWith(compareBy<MaintenanceGroup> { when (it.status) { "DUE" -> 0; "SOON" -> 1; else -> 2 } }.thenBy { it.dueDate ?: "9999" }.thenBy { it.dueKm ?: Int.MAX_VALUE })
 
-fun friendlyTitle(task: Task): String = when (task.rule.id.removeSuffix("-active")) {
+fun friendlyTitle(task: Task): String = if (task.rule.origin != "manufacturer") task.rule.title else when (task.rule.id.removeSuffix("-active")) {
     "engine-oil-filter" -> "Cambio de aceite y filtro"
     "brake-fluid" -> "Cambio de líquido de frenos"
     "coolant-renewal" -> "Cambio de refrigerante"
@@ -39,6 +39,15 @@ fun intervalLabel(task: Task): String {
     val distance = task.rule.km?.let(::kmLabel)
     val limits = listOfNotNull(distance, time)
     return if (limits.isEmpty()) "Según condición" else "Cada " + limits.joinToString(" o ")
+}
+
+fun operationInterval(task: Task): String {
+    if (task.rule.recurrence == "once") return "Tarea única"
+    if (task.rule.recurrence in setOf("phase", "phase_b") && task.lastEvent == null) {
+        val first = listOfNotNull(task.rule.firstKm?.let(::kmLabel), task.rule.firstMonths?.let { "$it meses" }).joinToString(" o ")
+        if (first.isNotBlank()) return "Primera en este plan: $first; después ${intervalLabel(task).replaceFirst("Cada ", "cada ")}"
+    }
+    return intervalLabel(task)
 }
 
 fun remainingLabels(group: MaintenanceGroup, currentKm: Int, today: String): List<String> = buildList {

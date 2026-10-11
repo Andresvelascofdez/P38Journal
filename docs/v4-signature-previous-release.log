@@ -1,0 +1,17 @@
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): false
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: CN=P38 Journal, OU=Personal, O=P38 Journal, C=CY
+Signer #1 certificate SHA-256 digest: ce157b9b800d3e21c544ca21cbb398ffdfb3fab46ba5318adcc63d8cd14adf2b
+Signer #1 certificate SHA-1 digest: 86bbdb3ef69d4c9717c4fc8410ea61d9fbcdaa75
+Signer #1 certificate MD5 digest: dbff09fac1b5c70ecacb1e1874a0814a
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 3072
+Signer #1 public key SHA-256 digest: 1e63ab7167930f79bb04ca08ff6d8cabfb2b321ef18f868a249b918f9be33988
+Signer #1 public key SHA-1 digest: 7cb6ebaff1fe370ae4c7e1c81a42892c30fcd628
+Signer #1 public key MD5 digest: b772e412925f04c1adf1470ae3488d73

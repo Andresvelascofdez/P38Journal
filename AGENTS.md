@@ -1,4 +1,8 @@
-# Instrucciones vigentes — corrección Android v3
+# Instrucciones vigentes — ampliación Android v4
+
+El encargo vigente es [REQUEST_V4.md](REQUEST_V4.md), recibido después de la entrega v3. Prevalece sobre las restricciones contradictorias siguientes. Separar próximos vencimientos reales de previsión hipotética, permitir operaciones propias/personalizadas y filtros de consulta de gastos por mes/año/tipo. Informes, gráficos y consumo siguen fuera del alcance. Conservar fecha de referencia y base 175.000 separadas de trabajos y odómetro. No publicar cambios ni contratar servicios en este encargo.
+
+## Instrucciones v3 conservadas donde sean compatibles
 
 Leer PROMPT_CODEX.md, SPEC.md, ENGINE.md, MIGRATION.md, QA.md, ANDROID.md y SOURCES.md. La documentación anterior queda sustituida cuando contradiga v3. El encargo es corregir el proyecto Android existente y entregar APK actualizado, no crear otra app ni borrar datos.
 

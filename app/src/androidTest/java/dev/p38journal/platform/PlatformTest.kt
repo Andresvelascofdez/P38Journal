@@ -54,6 +54,22 @@ class PlatformTest {
     }
     private val clock = Clock.fixed(Instant.parse("2026-10-15T09:15:00Z"), ZoneOffset.UTC)
     private suspend fun oil() { repo.saveRule(Rule("fixture-oil", "Aceite fixture", "engine", "replace", months = 12, km = 20000, source = "isolated fixture", sourceUrl = "https://example.invalid")) }
+    @Test fun v3EmittedCycleAndReadInboxArePreservedByGenerationUpgrade(): Unit = runBlocking {
+        oil()
+        val task = repo.tasks(java.time.LocalDate.parse("2026-10-15")).single()
+        val window = (java.time.LocalDate.parse("2026-10-15").toEpochDay() / 7).toString()
+        val key = "v3:${task.rule.id}:${requireNotNull(task.legacyGeneration)}:${task.status}:$window"
+        repo.dao.putLedger(Ledger(key, task.rule.id, task.legacyGeneration!!, task.status, window, "emitted", clock.instant().toString()))
+        repo.saveInbox(Inbox(key, task.rule.id, task.rule.title, "FIXTURE already emitted", task.legacyGeneration!!, "read"))
+        val transport = Transport()
+        val evaluator = NotificationEvaluator(context, repo, clock, transport)
+        evaluator.evaluate("change"); evaluator.evaluate("change")
+        assertTrue(transport.ids.isEmpty())
+        assertEquals(1, repo.dao.allInbox().count { it.state == "read" })
+        assertEquals(task.generation, repo.dao.allInbox().single { it.state == "read" }.generation)
+        assertEquals(1, repo.dao.allLedger().count { it.kind == "DUE" && it.state == "emitted" })
+    }
+
     @Test fun concurrentNotificationsDeduplicateAndCompletionCancels(): Unit = runBlocking {
         oil(); val transport = Transport(); val evaluator = NotificationEvaluator(context, repo, clock, transport)
         coroutineScope { listOf(async { evaluator.evaluate() }, async { evaluator.evaluate() }).forEach { it.await() } }
