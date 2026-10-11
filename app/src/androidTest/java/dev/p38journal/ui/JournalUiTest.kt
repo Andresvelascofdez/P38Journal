@@ -3,6 +3,8 @@ package dev.p38journal.ui
 import android.net.Uri
 import androidx.compose.ui.test.*
 import androidx.compose.ui.semantics.SemanticsActions
+import androidx.compose.ui.semantics.SemanticsProperties
+import androidx.compose.ui.semantics.getOrNull
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -11,6 +13,7 @@ import dev.p38journal.MainActivity
 import dev.p38journal.data.Repository
 import dev.p38journal.platform.Files
 import com.google.gson.JsonParser
+import com.google.gson.Gson
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.*
 import org.junit.Rule
@@ -40,6 +43,37 @@ class JournalUiTest {
     private fun choose(current: String, option: String) {
         compose.onNodeWithText(current).performScrollTo().performClick()
         compose.onNodeWithText(option).performClick()
+    }
+    private fun catalogueIdsAt(repository: Repository, targetKm: Int): Set<String> = runBlocking {
+        val base = repository.planningReference().baselineKm
+        val json = compose.activity.assets.open("maintenance-catalogue.json").bufferedReader().use { it.readText() }
+        JsonParser.parseString(json).asJsonObject.getAsJsonArray("rules").map { Gson().fromJson(it, dev.p38journal.domain.Rule::class.java) }
+            .filter { it.scheduleVisibility in setOf("maintenance", "service") && it.serviceGroup == "workshop" && it.recurrence in setOf("component", "phase", "phase_b") }
+            .filter { rule ->
+                val interval = rule.km ?: return@filter false
+                val first = if (rule.recurrence in setOf("phase", "phase_b")) rule.firstKm ?: interval else interval
+                val distance = targetKm - base - first
+                distance >= 0 && distance % interval == 0
+            }.map { it.id }.toSet()
+    }
+    private fun assertProjectedDetailIds(expected: Set<String>) {
+        compose.onNodeWithTag("projected_detail_count").performScrollTo().assertTextEquals("${expected.size} operaciones incluidas")
+        if (compose.onAllNodesWithText("Qué incluye").fetchSemanticsNodes().isNotEmpty()) {
+            compose.onNodeWithText("Qué incluye").performScrollTo().performClick()
+        } else compose.onNodeWithText("Ocultar qué incluye").assertExists()
+        val rowMatcher = SemanticsMatcher("Fila de operación prevista") {
+            it.config.getOrNull(SemanticsProperties.TestTag)?.startsWith("occurrence_row_") == true
+        }
+        val captured = mutableSetOf<String>()
+        expected.sorted().forEach { id ->
+            val row = compose.onNodeWithTag("occurrence_row_$id", useUnmergedTree = true)
+            row.performScrollTo().assertIsDisplayed()
+            captured += row.fetchSemanticsNode().config[SemanticsProperties.TestTag].removePrefix("occurrence_row_")
+            captured += compose.onAllNodes(rowMatcher, useUnmergedTree = true).fetchSemanticsNodes()
+                .map { it.config[SemanticsProperties.TestTag].removePrefix("occurrence_row_") }
+        }
+        assertEquals("Todas las operaciones, incluso fuera de la pantalla inicial", expected, captured)
+        assertEquals(expected.size, compose.onAllNodes(rowMatcher, useUnmergedTree = true).fetchSemanticsNodes().size)
     }
 
     @Test fun expenseFormSurvivesRecreationAndSavesExactCentsWithoutChangingMaintenance(): Unit = runBlocking {
@@ -88,23 +122,25 @@ class JournalUiTest {
     @Test fun groupedReviewRecordsOnlySelectedOperationWithPrefilledDateAndKilometres(): Unit = runBlocking {
         waitForApp()
         val repository = Repository(compose.activity)
-        val group = maintenanceGroups(repository.tasks()).first { it.tasks.size > 1 }
-        val selected = group.tasks.firstOrNull { it.rule.id == "engine-oil-filter" } ?: group.tasks.first()
-        val selectedIndex = group.tasks.indexOf(selected)
+        val beforeTasks = repository.tasks()
+        val group = projectedMaintenanceGroups(beforeTasks).first { it.dueKm == 195000 }
+        val actual = group.actualTasks(beforeTasks)
+        val selected = actual.single { it.rule.id == "engine-oil-filter" }
+        val selectedIndex = actual.indexOf(selected)
         val baseline = repository.planningReference()
         val beforeKm = repository.currentKm()
         val expectedKm = beforeKm ?: baseline.baselineKm
         val title = "FIXTURE revisión parcial ${UUID.randomUUID()}"
         compose.onNodeWithContentDescription("Mantenimiento").performClick()
-        compose.onAllNodesWithText(group.title).onFirst().performScrollTo().performClick()
+        compose.onNodeWithTag("projected_revision_195000").performScrollTo().performClick()
         compose.onNodeWithText("Registrar realizado").assertExists()
-        compose.onNodeWithText("Ver fuente del fabricante").assertExists()
         compose.onNodeWithText("Qué incluye").performScrollTo().performClick()
-        compose.onNodeWithText(friendlyTitle(selected)).performScrollTo().assertExists()
+        compose.onNodeWithTag("occurrence_row_${selected.rule.id}").performScrollTo().assertExists()
         compose.onNodeWithText("Registrar realizado").performScrollTo().performClick()
         compose.onNodeWithTag("visit_km").assertTextContains(expectedKm.toString())
         compose.onNodeWithTag("visit_date").assertTextContains(ViewModelProvider(compose.activity)[JournalViewModel::class.java].today())
         compose.onNodeWithTag("visit_title").performTextReplacement(title)
+        compose.onNodeWithTag("visit_km").performTextReplacement("195200")
         compose.onNodeWithText("Guardar trabajo").performScrollTo().performClick()
         compose.onNodeWithText("Selecciona al menos un trabajo realizado y escribe su descripción.").assertExists()
         assertFalse(repository.dao.allVisits().any { it.title == title })
@@ -119,6 +155,11 @@ class JournalUiTest {
         assertEquals(1, repository.visitLines(saved.id).size)
         assertEquals(beforeKm, repository.currentKm())
         assertEquals(baseline, repository.planningReference())
+        val afterTasks = repository.tasks()
+        assertEquals(215200, afterTasks.single { it.rule.id == selected.rule.id }.dueKm)
+        val remaining = actual.filter { it.rule.id != selected.rule.id }.map { it.rule.id }.toSet()
+        assertEquals(28, remaining.size)
+        remaining.forEach { id -> assertEquals("Operación no realizada $id", 195000, afterTasks.single { it.rule.id == id }.dueKm) }
         waitForSaveFeedback()
         compose.onNodeWithTag("history_search").performTextInput("aceite")
         compose.onNodeWithText(title).performScrollTo().assertExists()
@@ -129,6 +170,25 @@ class JournalUiTest {
         compose.onNodeWithText("Sí, se ha realizado").performClick()
         waitForSaveFeedback()
         assertEquals(1, repository.allEvents().count { it.visitId == saved.id && it.active })
+        compose.onNodeWithContentDescription("Mantenimiento").performClick()
+        compose.waitUntil(15_000) {
+            compose.onAllNodesWithTag("projected_count_195000", useUnmergedTree = true).fetchSemanticsNodes().any {
+                it.config.getOrNull(SemanticsProperties.Text)?.any { text -> text.text == "28 operaciones incluidas" } == true
+            }
+        }
+        compose.onNodeWithTag("projected_count_195000", useUnmergedTree = true).performScrollTo().assertTextEquals("28 operaciones incluidas")
+        val projectedAfter = projectedMaintenanceGroups(repository.tasks())
+        val firstAfter = projectedAfter.single { it.dueKm == 195000 }
+        assertEquals(remaining, firstAfter.occurrences.map { it.rule.id }.toSet())
+        assertTrue(projectedAfter.any { it.dueKm == 215200 && it.occurrences.any { member -> member.rule.id == selected.rule.id } })
+        compose.onNodeWithTag("projected_revision_195000").performScrollTo().performClick()
+        assertProjectedDetailIds(remaining)
+        compose.onNodeWithContentDescription("Volver").performClick()
+        compose.onNodeWithTag("projected_count_215200", useUnmergedTree = true).performScrollTo().assertTextEquals("1 operaciones incluidas")
+        compose.onNodeWithTag("projected_revision_215200").performScrollTo().performClick()
+        assertProjectedDetailIds(setOf(selected.rule.id))
+        compose.onNodeWithTag("occurrence_row_${selected.rule.id}").performScrollTo().performClick()
+        compose.onNodeWithText("Próximo: 215.200 km").performScrollTo().assertExists()
         repository.voidVisit(saved.id)
     }
 
@@ -281,14 +341,14 @@ class JournalUiTest {
         waitForApp()
         val repository = Repository(compose.activity)
         val phase = repository.tasks().single { it.rule.id == "transfer-level" }
-        val group = maintenanceGroups(repository.tasks()).single { it.tasks.any { member -> member.rule.id == phase.rule.id } }
+        val group = projectedMaintenanceGroups(repository.tasks()).first { it.occurrences.any { member -> member.rule.id == phase.rule.id } }
         val beforeEvents = repository.allEvents()
         val beforeReadings = repository.dao.allReadings()
         val name = "FIXTURE fase personalizada ${UUID.randomUUID()}"
         compose.onNodeWithContentDescription("Mantenimiento").performClick()
-        compose.onNodeWithText(group.title).performScrollTo().performClick()
+        compose.onNodeWithTag("projected_revision_${group.dueKm}").performScrollTo().performClick()
         compose.onNodeWithText("Qué incluye").performScrollTo().performClick()
-        compose.onNodeWithText(friendlyTitle(phase)).performScrollTo().performClick()
+        compose.onNodeWithTag("occurrence_row_${phase.rule.id}").performScrollTo().performClick()
         compose.onNodeWithText("Editar mantenimiento").performScrollTo().performClick()
         compose.onNodeWithTag("rule_title").performTextReplacement(name)
         compose.onNodeWithTag("rule_km").performTextReplacement("10000")
@@ -318,24 +378,36 @@ class JournalUiTest {
         assertEquals(beforeReadings, repository.dao.allReadings())
     }
 
-    @Test fun forecastSeparatesConditionalFutureRevisionsFromRealRegistration(): Unit = runBlocking {
+    @Test fun maintenanceDefaultShowsFourCompleteRevisionsAndEveryCatalogueOperationWithoutInventingWork(): Unit = runBlocking {
         waitForApp()
         val repository = Repository(compose.activity)
         val beforeEvents = repository.allEvents()
         val beforeVisits = repository.dao.allVisits()
+        val beforeReadings = repository.dao.allReadings()
+        val milestones = listOf(195000 to 29, 215000 to 33, 235000 to 31, 255000 to 33)
+        val expected = milestones.associate { (km, count) ->
+            val ids = catalogueIdsAt(repository, km)
+            assertEquals("Matriz del catálogo en $km", count, ids.size)
+            km to ids
+        }
         compose.onNodeWithContentDescription("Mantenimiento").performClick()
-        choose("Próximos vencimientos reales", "Previsión de revisiones futuras")
-        compose.onNodeWithText("Primeros cuatro hitos previstos").assertExists()
-        compose.onNodeWithText("Registrar realizado").assertDoesNotExist()
-        compose.onNodeWithText("Revisión prevista a los 215.000 km").performScrollTo().assertExists()
-        compose.onAllNodesWithText("Consultar operaciones previstas")[1].performScrollTo().performClick()
-        val oil = repository.allRules().single { it.id == "engine-oil-filter" }
-        val phaseC = repository.allRules().single { it.id == "automatic-fluid" }
-        compose.onAllNodesWithText("33 operaciones previstas").onFirst().performScrollTo().assertExists()
-        compose.onNodeWithText("• ${oil.title}").performScrollTo().assertExists()
-        compose.onNodeWithText("• ${phaseC.title}").performScrollTo().assertExists()
+        compose.onNodeWithText("Vista del mantenimiento").assertDoesNotExist()
+        compose.onNodeWithText("Previsión de revisiones futuras").assertDoesNotExist()
+        milestones.forEach { (km, count) ->
+            compose.onNodeWithTag("projected_count_$km", useUnmergedTree = true).performScrollTo().assertTextEquals("$count operaciones incluidas")
+            compose.onNodeWithTag("projected_revision_$km").performScrollTo().assertTextContains("Revisión a los ${kmLabel(km)}").performClick()
+            assertProjectedDetailIds(expected.getValue(km))
+            when (km) {
+                195000 -> compose.onNodeWithText("Registrar realizado").performScrollTo().assertExists()
+                215000 -> compose.onNodeWithText("Registrar 6 operaciones pendientes").performScrollTo().assertExists()
+                235000 -> compose.onNodeWithText("Registrar 2 operaciones pendientes").performScrollTo().assertExists()
+                else -> compose.onNode(hasText("Registrar", substring = true) and hasClickAction()).assertDoesNotExist()
+            }
+            compose.onNodeWithContentDescription("Volver").performClick()
+        }
         assertEquals(beforeEvents, repository.allEvents())
         assertEquals(beforeVisits, repository.dao.allVisits())
+        assertEquals(beforeReadings, repository.dao.allReadings())
     }
 
     @Test fun ownUniqueMaintenanceCreatesEditsDisablesAndCompletesOnceWithoutUrl(): Unit = runBlocking {

@@ -1,3 +1,7 @@
+# Encargo vigente: corrección Mantenimiento 4.1 / build 5
+
+La instrucción más reciente es REQUEST_V5.md y sustituye el selector descrito para4.0. Mantenimiento debe abrir directamente la proyección completa; tarjeta y detalle comparten la misma lista de ocurrencias. Vencimientos reales separados para avisos/registro. Conservar datos, firma, edición y filtros de gastos. Usar agentes, pruebas de ESTA pantalla y evidencia de emulador real. Entrega local, sin publicación.
+
 # Instrucciones vigentes — ampliación Android v4
 
 El encargo vigente es [REQUEST_V4.md](REQUEST_V4.md), recibido después de la entrega v3. Prevalece sobre las restricciones contradictorias siguientes. Separar próximos vencimientos reales de previsión hipotética, permitir operaciones propias/personalizadas y filtros de consulta de gastos por mes/año/tipo. Informes, gráficos y consumo siguen fuera del alcance. Conservar fecha de referencia y base 175.000 separadas de trabajos y odómetro. No publicar cambios ni contratar servicios en este encargo.

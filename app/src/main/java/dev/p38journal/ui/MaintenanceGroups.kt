@@ -1,6 +1,8 @@
 package dev.p38journal.ui
 
 import dev.p38journal.domain.Task
+import dev.p38journal.domain.Forecast
+import dev.p38journal.domain.ForecastOccurrence
 import java.time.LocalDate
 import java.time.temporal.ChronoUnit
 
@@ -11,6 +13,25 @@ data class MaintenanceGroup(val tasks: List<Task>) {
     val dueKm get() = representative.dueKm
     val status get() = if (tasks.any { it.status == "DUE" }) "DUE" else if (tasks.any { it.status == "SOON" }) "SOON" else "PLANNED"
 }
+
+data class ProjectedMaintenanceGroup(val id: String, val occurrences: List<ForecastOccurrence>) {
+    val dueDate get() = occurrences.first().dueDate
+    val dueKm get() = occurrences.first().dueKm
+    val title: String get() = dueKm?.let { "Revisión a los ${kmLabel(it)}" }
+        ?: "Revisión del ${dateLabel(dueDate)}"
+
+    fun actualTasks(tasks: List<Task>): List<Task> = occurrences.filter { it.sequence == 0 }.mapNotNull { occurrence ->
+        tasks.firstOrNull { it.rule.id == occurrence.rule.id && it.dueDate == occurrence.dueDate && it.dueKm == occurrence.dueKm }
+    }
+}
+
+fun projectedMaintenanceGroups(tasks: List<Task>): List<ProjectedMaintenanceGroup> = Forecast.project(tasks)
+    .groupBy { occurrence -> "${occurrence.rule.serviceGroup.ifBlank { occurrence.rule.id }}|${occurrence.dueDate}|${occurrence.dueKm}" }
+    .map { (id, occurrences) -> ProjectedMaintenanceGroup(id, occurrences) }
+    .sortedWith(compareBy<ProjectedMaintenanceGroup> { it.dueKm ?: Int.MAX_VALUE }.thenBy { it.dueDate ?: "9999" })
+    .let { groups -> (groups.take(4) + groups.filter { group ->
+        group.occurrences.any { it.sequence == 0 && it.rule.origin != "manufacturer" && it.rule.serviceGroup.isBlank() }
+    }).distinctBy { it.id } }
 
 fun maintenanceGroups(tasks: List<Task>): List<MaintenanceGroup> = tasks
     .filter { it.rule.scheduleVisibility in setOf("maintenance", "service") && it.rule.recurrence != "inactive" && (it.dueDate != null || it.dueKm != null) }

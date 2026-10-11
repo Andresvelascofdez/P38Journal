@@ -19,6 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.contentDescription
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -28,6 +29,7 @@ import dev.p38journal.domain.ConditionalProfiles
 import dev.p38journal.platform.DocumentViewer
 import com.google.gson.JsonParser
 import java.time.LocalDate
+import dev.p38journal.BuildConfig
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -47,6 +49,7 @@ fun JournalApp(model: JournalViewModel, targetRule: String? = null, clearTarget:
     val planning by model.planning.collectAsStateWithLifecycle()
     val currentKm = readings.firstOrNull()?.km ?: planning?.baselineKm ?: 175000
     val groups = maintenanceGroups(tasks)
+    val projectedGroups = projectedMaintenanceGroups(tasks)
     var tab by rememberSaveable { mutableStateOf("home") }
     var route by rememberSaveable { mutableStateOf("") }
     var recordId by rememberSaveable { mutableStateOf("") }
@@ -57,11 +60,15 @@ fun JournalApp(model: JournalViewModel, targetRule: String? = null, clearTarget:
     var taskBack by rememberSaveable { mutableStateOf("") }
     var ruleBack by rememberSaveable { mutableStateOf("operation") }
     var operationParent by rememberSaveable { mutableStateOf("") }
+    var operationParentRoute by rememberSaveable { mutableStateOf("task") }
     val snackbar = remember { SnackbarHostState() }
     val screenStates = rememberSaveableStateHolder()
     fun go(to: String, id: String = "") {
-        if (to == "task" && route !in setOf("profile", "override", "appointment")) taskBack = if (route == "references") "references" else ""
-        if (to == "operation") operationParent = if (route == "task") recordId else ""
+        if (to == "task" && route !in setOf("profile", "override", "appointment")) taskBack = if (route in setOf("references", "real-plan")) route else ""
+        if (to == "operation" && route != "override") {
+            operationParent = if (route in setOf("task", "revision")) recordId else ""
+            operationParentRoute = if (route == "revision") "revision" else "task"
+        }
         if (to == "override") ruleBack = route
         val destinationId = if (id.isBlank() && to in setOf("visit", "expense", "fault", "part", "new-rule")) freshId() else id
         if (to in setOf("visit", "expense", "fault", "part", "appointment")) screenStates.removeState("$tab/$to/$destinationId")
@@ -69,10 +76,10 @@ fun JournalApp(model: JournalViewModel, targetRule: String? = null, clearTarget:
         route = to; recordId = destinationId
     }
     fun back() {
-        if (route == "task" && taskBack == "references") { route = "references"; recordId = ""; return }
+        if (route == "task" && taskBack in setOf("references", "real-plan")) { route = taskBack; recordId = ""; return }
         if (route == "viewer") { route = "documents"; recordId = libraryLink; return }
         if (route == "override") { route = ruleBack; return }
-        if (route == "operation" && operationParent.isNotBlank()) { route = "task"; recordId = operationParent; operationParent = ""; return }
+        if (route == "operation" && operationParent.isNotBlank()) { route = operationParentRoute; recordId = operationParent; operationParent = ""; return }
         if (route in setOf("appointment", "profile")) { route = "task"; return }
         if (route == "documents" && previousRoute.isNotEmpty()) {
             route = previousRoute; recordId = previousId; previousRoute = ""; previousId = ""; return
@@ -88,7 +95,7 @@ fun JournalApp(model: JournalViewModel, targetRule: String? = null, clearTarget:
             tab = "home"
             when (targetRule) {
                 "odometer" -> go("reading")
-                "maintenance-summary" -> { tab = "plan"; route = ""; recordId = "" }
+                "maintenance-summary" -> { tab = "plan"; route = "real-plan"; recordId = "" }
                 "" -> go("inbox")
                 else -> go("task", targetRule)
             }
@@ -97,19 +104,23 @@ fun JournalApp(model: JournalViewModel, targetRule: String? = null, clearTarget:
     }
     BackHandler(route.isNotEmpty()) { back() }
     val title = when (route) {
+        "revision" -> "Detalle de revisión"; "real-plan" -> "Vencimientos reales"
         "task", "operation" -> "Detalle de mantenimiento"; "new-rule", "override" -> "Editar mantenimiento"; "visit" -> "Registrar trabajo"; "reading" -> "Kilometraje"
         "expenses" -> "Gastos"; "expense" -> "Gasto"; "faults" -> "Averías"; "fault" -> "Avería"
         "parts" -> "Piezas"; "part" -> "Pieza"; "documents" -> "Manuales y documentos"; "viewer" -> "Documento"
-        "inbox" -> "Bandeja de avisos"; "settings" -> "Ajustes"; "copies" -> "Copias"; "references" -> "Referencias del mantenimiento"; "secondary" -> "Más opciones"; else -> "P38 Journal"
+        "inbox" -> "Bandeja de avisos"; "settings" -> "Ajustes"; "copies" -> "Copias"; "references" -> "Referencias del mantenimiento"; "secondary" -> "Más opciones"; else -> if (tab == "plan") "Mantenimiento" else "P38 Journal"
     }
-    Scaffold(topBar = { TopAppBar(title = { Text(title) }, navigationIcon = {
+    Scaffold(topBar = { TopAppBar(title = { Column {
+        Text(title, maxLines = 1, overflow = TextOverflow.Ellipsis)
+        Text("v${BuildConfig.VERSION_NAME} · ${BuildConfig.VERSION_CODE}", style = MaterialTheme.typography.labelSmall)
+    } }, navigationIcon = {
         if (route.isNotEmpty()) IconButton(onClick = { back() }) { Icon(Icons.AutoMirrored.Filled.ArrowBack, "Volver") }
     }, actions = { IconButton(onClick = { go("secondary") }) { Icon(Icons.Default.MoreHoriz, "Más opciones") } }) }, bottomBar = {
         NavigationBar {
             listOf(Triple("home", "Inicio", Icons.Default.Home), Triple("plan", "Mantenimiento", Icons.AutoMirrored.Filled.List),
                 Triple("history", "Historial", Icons.Default.History), Triple("expenses", "Gastos", Icons.Default.Payments)).forEach { (id, label, icon) ->
                 NavigationBarItem(selected = tab == id, onClick = { tab = id; route = ""; recordId = ""; previousRoute = "" }, modifier = Modifier.semantics { contentDescription = label },
-                    icon = { Icon(icon, null) }, label = { Text(if (id == "plan") "Mantenim." else label, maxLines = 1, softWrap = false) })
+                    icon = { Icon(icon, null) }, label = { Text(if (id == "plan") "Mant." else label, maxLines = 1, softWrap = false) })
             }
         }
     }, snackbarHost = { SnackbarHost(snackbar) }) { padding ->
@@ -121,6 +132,10 @@ fun JournalApp(model: JournalViewModel, targetRule: String? = null, clearTarget:
                 }
             } else screenStates.SaveableStateProvider("$tab/$route/$recordId") {
                 when (route) {
+                    "revision" -> ProjectedRevisionDetail(projectedGroups.firstOrNull { it.id == recordId }, tasks, currentKm, model.today(), { operations ->
+                        selectedOperations = operations.joinToString("|"); go("visit")
+                    }, { go("operation", it) })
+                    "real-plan" -> RealPlanPage(groups, model.today(), currentKm, { go("new-rule") }) { go("task", it.representative.rule.id) }
                     "task", "operation" -> {
                         val group = if (route == "operation") tasks.firstOrNull { it.rule.id == recordId }?.let { MaintenanceGroup(listOf(it)) } else groups.firstOrNull { entry -> entry.tasks.any { it.rule.id == recordId } }
                             ?: tasks.firstOrNull { it.rule.id == recordId }?.let { MaintenanceGroup(listOf(it)) }
@@ -146,14 +161,14 @@ fun JournalApp(model: JournalViewModel, targetRule: String? = null, clearTarget:
                     }
                     "documents" -> DocumentsPage(model, documents, recordId) { go("viewer", it.id) }
                     "viewer" -> documents.firstOrNull { it.id == recordId }?.let { DocumentViewer(it) { go("documents", libraryLink) } }
-                    "inbox" -> InboxPage(inbox) { if (it == "maintenance-summary") { tab = "plan"; route = ""; recordId = "" } else go("task", it) }
+                    "inbox" -> InboxPage(inbox) { if (it == "maintenance-summary") { tab = "plan"; route = "real-plan"; recordId = "" } else if (it == "odometer") go("reading") else go("task", it) }
                     "settings" -> SettingsPage(model, settings, busy, "preferences")
                     "copies" -> SettingsPage(model, settings, busy, "copies")
                     "references" -> ReferencesPage(tasks) { go("task", it.rule.id) }
                     "secondary" -> SecondaryPage { go(it) }
                     else -> when (tab) {
-                        "home" -> HomePage(groups, readings, currentKm, model.today(), { go("reading") }, { selectedOperations = ""; go("visit") }, { go("task", it.representative.rule.id) }, { tab = "plan"; route = "" })
-                        "plan" -> PlanPage(groups, tasks, model.today(), currentKm, { go("new-rule") }) { go("task", it.representative.rule.id) }
+                        "home" -> HomePage(groups, readings, currentKm, model.today(), { go("reading") }, { selectedOperations = ""; go("visit") }, { go("task", it.representative.rule.id) }, { tab = "plan"; route = if (groups.any { it.status == "DUE" }) "real-plan" else "" })
+                        "plan" -> ProjectedPlanPage(projectedGroups, currentKm, model.today(), { go("new-rule") }, { go("real-plan") }) { go("revision", it.id) }
                         "history" -> HistoryPage(visits, workLines, tasks, notes, documents, { selectedOperations = ""; go("visit") }, { selectedOperations = ""; go("visit", it.id) }, ::attachments)
                         else -> ExpensesPage(expenses, { go("expense") }, { go("expense", it.id) })
                     }
@@ -200,18 +215,15 @@ fun GroupCard(group: MaintenanceGroup, currentKm: Int, today: String, open: () -
 }
 
 @Composable
-fun PlanPage(groups: List<MaintenanceGroup>, tasks: List<Task>, today: String, currentKm: Int, add: () -> Unit, open: (MaintenanceGroup) -> Unit) {
+fun RealPlanPage(groups: List<MaintenanceGroup>, today: String, currentKm: Int, add: () -> Unit, open: (MaintenanceGroup) -> Unit) {
     var status by rememberSaveable { mutableStateOf("all") }
-    var view by rememberSaveable { mutableStateOf("next") }
     Page {
-        Choice("Vista del mantenimiento", view, listOf("next" to "Próximos vencimientos reales", "forecast" to "Previsión de revisiones futuras")) { view = it }
-        Button(onClick = add, modifier = Modifier.fillMaxWidth()) { Text("Crear mantenimiento") }
-        if (view == "forecast") { ForecastPage(tasks); return@Page }
-        Hint("Cada operación aparece en su próximo límite real. Las revisiones futuras completas están en Previsión.")
+        Hint("Cada operación aparece solo en su próximo vencimiento real.")
         Choice("Mostrar", status, listOf("all" to "Todos", "SOON" to "Próximos", "DUE" to "Pendientes")) { status = it }
         val filtered = groups.filter { status == "all" || it.status == status }
         filtered.forEach { GroupCard(it, currentKm, today) { open(it) } }
         if (filtered.isEmpty()) Hint(if (status == "DUE") "Todo al día. No hay mantenimientos pendientes." else "No hay mantenimientos en esta selección.")
+        Button(onClick = add, modifier = Modifier.fillMaxWidth()) { Text("Crear mantenimiento") }
     }
 }
 
