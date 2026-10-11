@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.p38journal.review.ProjectedMaintenanceGroupsTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-11T17:03:45.416Z" hostname="DESKTOP-DVUH6AS" time="0.17">
+  <properties/>
+  <testcase name="partialOilAt195200KeepsExactSeparateGroupAndLeavesOtherOperationsPending" classname="dev.p38journal.review.ProjectedMaintenanceGroupsTest" time="0.109"/>
+  <testcase name="registrationSubsetRejectsSameRuleWithDifferentCurrentDeadline" classname="dev.p38journal.review.ProjectedMaintenanceGroupsTest" time="0.017"/>
+  <testcase name="mainScreenGroupsContainExactCompleteSetsAndOnlyRealRegistrationSubsets" classname="dev.p38journal.review.ProjectedMaintenanceGroupsTest" time="0.017"/>
+  <testcase name="farPersonalizedWorkshopTaskDoesNotAppendAnIncompleteFutureRevision" classname="dev.p38journal.review.ProjectedMaintenanceGroupsTest" time="0.014"/>
+  <testcase name="ownDateOnlyAndUniqueRemainAccessibleOutsideHorizonAndCompletedUniqueDoesNotRepeat" classname="dev.p38journal.review.ProjectedMaintenanceGroupsTest" time="0.013"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

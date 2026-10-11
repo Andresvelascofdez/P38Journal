@@ -1,0 +1,92 @@
+python : Traceback (most recent call last):
+At line:2 char:1
++ python scripts/verify-v5-lifecycle.py *> docs/evidence/v5/lifecycle.l ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v5-lifecycle.py", line 44, in <module>
+    stage("seed-v4")
+    ~~~~~^^^^^^^^^^^
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v5-lifecycle.py", line 24, in stage
+    output = adb("shell", "am", "instrument", "-w", "-e", "class", "dev.p38journal.platform.UpgradeV5Test", "-e", 
+"v5stage", name, RUNNER).decode()
+             ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v5-lifecycle.py", line 19, in adb
+    raise RuntimeError(output + result.stderr.decode("utf-8", errors="replace"))
+RuntimeError: 
+
+dev.p38journal.platform.UpgradeV5Test:
+
+Error in stagedV4UpdateAndV5Restore(dev.p38journal.platform.UpgradeV5Test):
+
+java.lang.IllegalArgumentException: La operaci�n pertenece al cat�logo del fabricante
+
+	at dev.p38journal.data.Repository.saveCustomRule(Repository.kt:251)
+
+	at dev.p38journal.data.Repository$saveCustomRule$1.invokeSuspend(Unknown Source:15)
+
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+
+	at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+
+	at dev.p38journal.platform.UpgradeV5Test.stagedV4UpdateAndV5Restore(UpgradeV5Test.kt:27)
+
+
+
+
+
+Time: 0.298
+
+There was 1 failure:
+
+1) stagedV4UpdateAndV5Restore(dev.p38journal.platform.UpgradeV5Test)
+
+java.lang.IllegalArgumentException: La operaci�n pertenece al cat�logo del fabricante
+
+	at dev.p38journal.data.Repository.saveCustomRule(Repository.kt:251)
+
+	at dev.p38journal.data.Repository$saveCustomRule$1.invokeSuspend(Unknown Source:15)
+
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+
+	at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+
+	at dev.p38journal.platform.UpgradeV5Test.stagedV4UpdateAndV5Restore(UpgradeV5Test.kt:27)
+
+
+
+FAILURES!!!
+
+Tests run: 1,  Failures: 1
+
+
+
+
+
+

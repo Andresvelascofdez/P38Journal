@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="dev.p38journal.data.CustomRulesAndPaymentsTest" tests="70" failures="0" errors="0" skipped="3" time="87.527" timestamp="2026-10-11T17:02:53" hostname="localhost">
+  <properties>
+    <property name="device" value="Medium_Phone_API_36.0(AVD) - 16" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="legacySnapshotsTwoAndThreeDetachInactiveLinksAndPermitReplacementWithoutLosingAudit" classname="dev.p38journal.data.CustomRulesAndPaymentsTest" time="0.062" />
+  <testcase name="voidLinkedExpenseAllowsNewPaymentAndVisitEditsKeepPersonalizedExpenseMetadata" classname="dev.p38journal.data.CustomRulesAndPaymentsTest" time="0.004" />
+  <testcase name="manufacturerPhaseMayBeExplicitlyPersonalizedAsAnAbsoluteUniqueTask" classname="dev.p38journal.data.CustomRulesAndPaymentsTest" time="0.232" />
+  <testcase name="linkedPaymentEditAllowsVisitMetadataEditWithoutInventingANewAllocation" classname="dev.p38journal.data.CustomRulesAndPaymentsTest" time="0.026" />
+  <testcase name="restoreActivePaymentOverLegacyInactiveLinkNormalizesExistingDataAndCountsOnce" classname="dev.p38journal.data.CustomRulesAndPaymentsTest" time="0.029" />
+  <testcase name="customUniqueTaskCompletesOnceAndVoidingRestoresItsOriginalAbsoluteLimits" classname="dev.p38journal.data.CustomRulesAndPaymentsTest" time="0.055" />
+  <testcase name="customCreateEditDisableAndSnapshotKeepIdentityHistoryAndReference" classname="dev.p38journal.data.CustomRulesAndPaymentsTest" time="0.158" />
+  <testcase name="ruleNameNotesPreserveEmissionButIntervalAndReminderToggleCancelIt" classname="dev.p38journal.data.CustomRulesAndPaymentsTest" time="0.233" />
+  <testcase name="phasePersonalizationBecomesSimpleAndOriginalManufacturerCanBeRestored" classname="dev.p38journal.data.CustomRulesAndPaymentsTest" time="0.308" />
+  <testcase name="oldRuleJsonDefaultsEnabledAndRetainsOwnerIdentityAndLegacyAbsoluteOnceTarget" classname="dev.p38journal.data.CustomRulesAndPaymentsTest" time="0.13" />
+  <testcase name="inactiveExpenseSavedDirectlyDetachesAndOldPaymentIsNeverSilentlyResurrected" classname="dev.p38journal.data.CustomRulesAndPaymentsTest" time="0.028" />
+  <testcase name="versionTwoMigrationPreservesOwnerRecordsAndOnlyCancelsInitialAutomaticMetadata" classname="dev.p38journal.data.MigrationTest" time="0.131" />
+  <testcase name="rawBackupVerifiesOldDatabaseBeforeMigrationAndLeavesOriginalUntouched" classname="dev.p38journal.data.MigrationTest" time="0.054" />
+  <testcase name="versionOneFixtureRetainsExpenseReadingAndNoteWhileAddingAudit" classname="dev.p38journal.data.MigrationTest" time="0.054" />
+  <testcase name="editingVisitMetadataOrAddingOlderWorkDoesNotInvalidateExistingNotificationCycle" classname="dev.p38journal.data.RepositoryTest" time="0.053" />
+  <testcase name="workAndPlanningChangesCancelOnlyAutomaticRecordsWithTheSameRuleId" classname="dev.p38journal.data.RepositoryTest" time="0.054" />
+  <testcase name="explicitOdometerCorrectionAndRetroactiveReadingPreserveHistory" classname="dev.p38journal.data.RepositoryTest" time="0.029" />
+  <testcase name="restoreIntoFreshSeedKeepsCopiedOverridesNewerStandardAndExistingLocalOverrides" classname="dev.p38journal.data.RepositoryTest" time="0.286" />
+  <testcase name="operationalAdoptionIsAuditedAndCreatesNoNewCompletedWork" classname="dev.p38journal.data.RepositoryTest" time="0.027" />
+  <testcase name="paymentAndDoubleSaveCountOnceAndFuelDoesNotAlterMaintenance" classname="dev.p38journal.data.RepositoryTest" time="0.028" />
+  <testcase name="workshopExtrasFuelEditAndVoidTotals" classname="dev.p38journal.data.RepositoryTest" time="0.027" />
+  <testcase name="atomicVisitAndReadingUpdatesCalendarAndPersistsPendingNotificationReconciliation" classname="dev.p38journal.data.RepositoryTest" time="0.028" />
+  <testcase name="deletedSeedHistoryIsNotRecreatedOnNextLaunch" classname="dev.p38journal.data.RepositoryTest" time="0.104" />
+  <testcase name="versionTwoSnapshotRecoversOnlyExplicitPlanCreationAndKeepsEditedLocalReference" classname="dev.p38journal.data.RepositoryTest" time="0.081" />
+  <testcase name="restoreKeepsLaterOwnerEditsAndVoids" classname="dev.p38journal.data.RepositoryTest" time="0.028" />
+  <testcase name="oldOwnerOverrideUsesCurrentCatalogueVisibilityWithoutLosingItsInterval" classname="dev.p38journal.data.RepositoryTest" time="0.13" />
+  <testcase name="catalogueUpdateKeepsOverridesAndResetKeepsRevisionHistory" classname="dev.p38journal.data.RepositoryTest" time="0.156" />
+  <testcase name="existingPaymentLinkDoesNotDuplicateAndDifferentPaymentsAreKept" classname="dev.p38journal.data.RepositoryTest" time="0.028" />
+  <testcase name="maliciousDocumentPathIsRejected" classname="dev.p38journal.data.RepositoryTest" time="0.001" />
+  <testcase name="snapshotRoundTripIsCompleteIdempotentAndInvalidSnapshotIsAtomic" classname="dev.p38journal.data.RepositoryTest" time="0.054" />
+  <testcase name="seedUpdatesOldUnmodifiedRuleButPreservesOwnerOverrideAndEventRevision" classname="dev.p38journal.data.RepositoryTest" time="0.131" />
+  <testcase name="movingPaymentClearsPreviousVisitAndLaterEditDoesNotDuplicateExpense" classname="dev.p38journal.data.RepositoryTest" time="0.028" />
+  <testcase name="seedIsIdempotentAndHasNoInventedCompletionsOrCurrentReading" classname="dev.p38journal.data.RepositoryTest" time="0.129" />
+  <testcase name="versionTwoSnapshotInfersOnlyFormalAutomaticIdsAndPreservesCustomOrExplicitManualRecords" classname="dev.p38journal.data.RepositoryTest" time="0.052" />
+  <testcase name="versionTwoSnapshotImportsWithoutInventingAPlanningDateOrCompletedWork" classname="dev.p38journal.data.RepositoryTest" time="0.079" />
+  <testcase name="planningReferenceRemainsSeparateFromActualReadingAndSurvivesSnapshotRestore" classname="dev.p38journal.data.RepositoryTest" time="0.155" />
+  <testcase name="invalidVisitRollsBackAndEditingVoidingRecalculates" classname="dev.p38journal.data.RepositoryTest" time="0.028" />
+  <testcase name="stagedUpdateUninstallAndCompleteRestore" classname="dev.p38journal.platform.DeliveryLifecycleTest" time="0.007">
+    <skipped />
+  </testcase>
+  <testcase name="scanWithoutTextDeclaresSearchUnavailable" classname="dev.p38journal.platform.DocumentViewerTest" time="2.693" />
+  <testcase name="textPdfSearchAndBookmarksAreReal" classname="dev.p38journal.platform.DocumentViewerTest" time="1.385" />
+  <testcase name="fullBackupKeepsAttachmentsExactTotalsAndReimportIsIdempotent" classname="dev.p38journal.platform.PlatformTest" time="0.256" />
+  <testcase name="maliciousBackupAndWrongChecksumFailBeforeAnyWrite" classname="dev.p38journal.platform.PlatformTest" time="0.053" />
+  <testcase name="v3EmittedCycleAndReadInboxArePreservedByGenerationUpgrade" classname="dev.p38journal.platform.PlatformTest" time="0.105" />
+  <testcase name="partialCompletionInvalidatesGroupDestinationAndDisablingChannelsCancels" classname="dev.p38journal.platform.PlatformTest" time="0.08" />
+  <testcase name="dismissedSummaryIsNotResurrectedByPartialCompletion" classname="dev.p38journal.platform.PlatformTest" time="0.028" />
+  <testcase name="deniedPermissionKeepsInboxAndGrantEmitsRelevantSummary" classname="dev.p38journal.platform.PlatformTest" time="0.053" />
+  <testcase name="soonToDueHasNewNotificationKindInSameWeek" classname="dev.p38journal.platform.PlatformTest" time="0.053" />
+  <testcase name="freshBaselineComputesLimitsWithoutInitialInboxOrInventedReading" classname="dev.p38journal.platform.PlatformTest" time="0.028" />
+  <testcase name="concurrentNotificationsDeduplicateAndCompletionCancels" classname="dev.p38journal.platform.PlatformTest" time="0.055" />
+  <testcase name="notificationWindowAndDisabledPreferencesRemainHonest" classname="dev.p38journal.platform.PlatformTest" time="0.027" />
+  <testcase name="invalidDocumentImportDoesNotPersist" classname="dev.p38journal.platform.PlatformTest" time="0.028" />
+  <testcase name="realReadingCrossingOutsidePreferredHourEmitsOnceAndWorkStartsNewCycle" classname="dev.p38journal.platform.SystemWorkTest" time="2.093" />
+  <testcase name="realOptionalOdometerReminderDeduplicatesAndNewReadingCancels" classname="dev.p38journal.platform.SystemWorkTest" time="1.432" />
+  <testcase name="realWorkManagerRunsCleanPlanningAndBackupWithoutInitialInbox" classname="dev.p38journal.platform.SystemWorkTest" time="0.307" />
+  <testcase name="realDateDeadlineEmitsFromWorkManagerWhileActivityIsClosed" classname="dev.p38journal.platform.SystemWorkTest" time="1.123" />
+  <testcase name="realNotificationManagerEmitsTestWithoutMaintenanceEvents" classname="dev.p38journal.platform.SystemWorkTest" time="0.412" />
+  <testcase name="realRuleChangeCancelsObsoleteLimitAndReminderToggleKeepsHistory" classname="dev.p38journal.platform.SystemWorkTest" time="2.191" />
+  <testcase name="stagedV3UpdateAndV4Restore" classname="dev.p38journal.platform.UpgradeV4Test" time="0.012">
+    <skipped />
+  </testcase>
+  <testcase name="stagedV4UpdateAndV5Restore" classname="dev.p38journal.platform.UpgradeV5Test" time="0.011">
+    <skipped />
+  </testcase>
+  <testcase name="visitRequiresExplicitCompletionAndKeepsUnselectedOperationsOpen" classname="dev.p38journal.ui.JournalUiTest" time="3.282" />
+  <testcase name="groupedOperationCanCustomizePhaseAndRestoreManufacturerWithoutWork" classname="dev.p38journal.ui.JournalUiTest" time="6.901" />
+  <testcase name="ownUniqueMaintenanceCreatesEditsDisablesAndCompletesOnceWithoutUrl" classname="dev.p38journal.ui.JournalUiTest" time="11.11" />
+  <testcase name="readingFaultPartAndLinkedPdfWorkThroughNativeScreens" classname="dev.p38journal.ui.JournalUiTest" time="11.557" />
+  <testcase name="expenseFiltersCombinePersistAndReactToDateCategoryAndCancellation" classname="dev.p38journal.ui.JournalUiTest" time="3.012" />
+  <testcase name="expenseFormSurvivesRecreationAndSavesExactCentsWithoutChangingMaintenance" classname="dev.p38journal.ui.JournalUiTest" time="2.198" />
+  <testcase name="planningReferenceIsEditableWithoutInventingReadingOrWork" classname="dev.p38journal.ui.JournalUiTest" time="1.975" />
+  <testcase name="secondaryReferencesActivateAndDisableConditionalProfileWithoutInventedWork" classname="dev.p38journal.ui.JournalUiTest" time="5.62" />
+  <testcase name="editingVisitMetadataPreservesHistoricalAllocationAfterLinkedExpenseCorrection" classname="dev.p38journal.ui.JournalUiTest" time="6.293" />
+  <testcase name="maintenanceDefaultShowsFourCompleteRevisionsAndEveryCatalogueOperationWithoutInventingWork" classname="dev.p38journal.ui.JournalUiTest" time="7.582" />
+  <testcase name="groupedReviewRecordsOnlySelectedOperationWithPrefilledDateAndKilometres" classname="dev.p38journal.ui.JournalUiTest" time="11.331" />
+</testsuite>

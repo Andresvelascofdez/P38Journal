@@ -1,0 +1,11 @@
+python : Traceback (most recent call last):
+At line:4 char:1
++ python scripts/verify-v5-maintenance-screen.py *> docs/evidence/v5/ma ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v5-maintenance-screen.py", line 74, in <module>
+    assert f'{count} operaciones incluidas' in text
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

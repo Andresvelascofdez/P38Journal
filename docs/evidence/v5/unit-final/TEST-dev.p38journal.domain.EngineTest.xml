@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.p38journal.domain.EngineTest" tests="22" skipped="0" failures="0" errors="0" timestamp="2026-10-11T17:03:45.596Z" hostname="DESKTOP-DVUH6AS" time="0.018">
+  <properties/>
+  <testcase name="oldEntryAndLaterEvaluationDoNotChangeGenerationWhenLimitsStayTheSame" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <testcase name="metadataEditWithNewEventIdentifierPreservesNotificationCycle" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <testcase name="upgradeExposesExactV3HashAliasWithoutReplacingTheEffectiveScheduleGeneration" classname="dev.p38journal.domain.EngineTest" time="0.001"/>
+  <testcase name="monthsClampToCalendarMonthIncludingLeapYear" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <testcase name="customOnceUsesAbsoluteCalendarAndMileageAndNeverRepeatsAfterExplicitCompletion" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <testcase name="absentCurrentReadingDoesNotDisableCalendar" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <testcase name="partialServiceLeavesUnperformedCommonAndPhaseOperationsPending" classname="dev.p38journal.domain.EngineTest" time="0.001"/>
+  <testcase name="futureUniqueMilestoneDoesNotRepeatAfterCompletion" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <testcase name="realPostPurchaseWorkBeforeV3ActivationDateIsPreserved" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <testcase name="phasesArePlannedFromBaseWithBFirstAndCSecondWithoutQuestionnaire" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <testcase name="ownerBaselineSchedulesWithoutCreatingCompletedWork" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <testcase name="exactBoundaryAndOvershootRemainDueWithoutRoundingOdometry" classname="dev.p38journal.domain.EngineTest" time="0.001"/>
+  <testcase name="completedReplacementRestartsOnlyItsOwnCycle" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <testcase name="disabledRemindersKeepActualCalendarAndMetadataDoesNotStartANewCycle" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <testcase name="partiallyPreciseWorkKeepsPreviousOrPlanningReferenceForOtherDimension" classname="dev.p38journal.domain.EngineTest" time="0.001"/>
+  <testcase name="nicosiaLocalDateAcrossDstIsIndependentOfUtcDate" classname="dev.p38journal.domain.EngineTest" time="0.007"/>
+  <testcase name="pastUniqueMilestonesAndUnconfirmedConditionsDoNotCreateUrgency" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <testcase name="approximateWorkFallsBackToPlanningDimensions" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <testcase name="editingAndVoidingRecoverPreviousReferenceOrBaseline" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <testcase name="exactMoneySupportsBothDecimalSeparatorsAndRejectsInvalidPrecision" classname="dev.p38journal.domain.EngineTest" time="0.006"/>
+  <testcase name="historicalWorkBeforeBaseAndRecoveredEvidenceDoNotMovePlan" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <testcase name="calendarOrMileageEachTriggersAndBothAreOneTask" classname="dev.p38journal.domain.EngineTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,12 @@
+python : Traceback (most recent call last):
+At line:3 char:1
++ python scripts/verify-v5-maintenance-screen.py *> docs/evidence/v5/ma ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v5-maintenance-screen.py", line 82, in <module>
+    assert found == expected, sorted(expected-found)
+           ^^^^^^^^^^^^^^^^^
+AssertionError: ['Comprobaci�n de niveles en la revisi�n', 'Comprobar estado de la bater�a', 'Documentar revisi�n y 
+actuaciones adicionales del taller', 'Inspeccionar correa de accesorios']

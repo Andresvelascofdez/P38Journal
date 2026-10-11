@@ -1,15 +1,9 @@
-# Entrega de la corrección v4
+# Entrega P38 Journal4.1.0 / build5
 
-El encargo vigente está conservado íntegro en [REQUEST_V4.md](REQUEST_V4.md). Se corrigió el proyecto existente con agentes de dominio/datos, interfaz y revisión independiente. El coordinador integró previsión, filtros puros, plataforma, pruebas de actualización, firma y artefactos. No se publica ni se contratan servicios en este encargo.
+Mantenimiento principal muestra revisiones completas, con contador y «Qué incluye» sobre las mismas apariciones. Vencimientos reales separados para avisos/registro. Desde175.000 sin trabajos:195.00029,215.00033,235.00031 derivados del catálogo. Parcial aceite195.200→215.200 exacto; las restantes siguen pendientes. Se conservaron edición y filtros de gastos.
 
-APKs 4.0.0/code 4 en `dist/`: release `dev.p38journal`, firmado con el certificado original; debug `dev.p38journal.debug`, separado. Instalar release encima del anterior sin desinstalar. [Guía de ocho pasos](docs/USER_TEST.md), [informe de verificaciones](docs/TEST_REPORT.md), [progreso](docs/PROGRESS.md), [revisión independiente](docs/INDEPENDENT_REVIEW_V4.md) y [hashes](dist/SHA256SUMS.txt).
+Fuente productiva: commit localfd5a1b27ade4b718de2303244d2e25297aad4b36. Documentación y evidencia posteriores no cambian producto. Catálogo/Room3/applicationId/firma conservados; sin borrar datos ni reconstruir app. Copia previa en .tools/pre-v5. Sin publicación en GitHub.
 
-La base 175.000 y su fecha, el odómetro y los trabajos siguen separados. Vencimientos reales por operación y previsión hipotética tienen recorridos diferentes. La previsión inicial de 215.000 contiene 33 operaciones; B reaparece a 235.000. Trabajo real parcial recalcula solo lo realizado sin redondear. Catálogo canónico sin cambios, fuentes secundarias y seis grupos de próximos límites iniciales.
+APKs firmados4.1.0/code5 en dist, versión/build visibles. Instalar release encima sin desinstalar. [Guía](docs/USER_TEST.md), [pruebas y límites](docs/TEST_REPORT.md), [revisión independiente](docs/INDEPENDENT_REVIEW_V5.md), [hashes](dist/SHA256SUMS.txt). Release dev.p38journal; debug dev.p38journal.debug separado. Clave privada externa.
 
-Cada operación permite consulta, personalización, notas, intervalos y recordatorios. Propias recurrentes/únicas sin URL; restauración de fabricante. Recurrentes existentes conservan su modelo al editar; otra cita única se crea como tarea nueva, evitando que trabajo anterior complete una nueva cita. Visitas sin selección automática y confirmadas, búsqueda por operaciones/taller/notas. Gastos con filtros combinables, importes exactos y pago vinculado único; enlaces inactivos auditados y metadatos personalizados preservados. Si se corrige el pago, no se fabrica otro reparto de costes históricos.
-
-Room permanece en esquema 3; JSON de reglas ampliado y Snapshot 2/3 compatible, sin migración destructiva. Alias de generación anterior conserva ciclos emitidos y bandeja leída cuando el límite no cambia. Avisos reales al guardar km y por fecha con WorkManager; recordatorio de actualizar km opcional. La previsión no crea trabajo ni notificación.
-
-Respaldo previo v3 en `.tools/pre-v4` ignorado con fuente/APKs y hashes; fixtures solamente en debug del emulador. La clave privada permanece externa y no se incluye en código, logs, APK ni copia. Los antecedentes v3 archivados no certifican esta versión; los resultados y límites efectivamente observados figuran en el informe v4.
-
-Continuidad: conservar commits locales y evidencia real, no resembrar ni borrar datos del propietario. Reproducir con `scripts/build.ps1` y `gradlew.bat connectedDebugAndroidTest`; los scripts de ciclo/visual/runtime actúan exclusivamente sobre debug de `emulator-5554`. El usuario solo instala y prueba.
+Verificados49 unitarios/67 Android más actualización real/restores por etapas, pantalla nativa completa y5 runtime en API36. XML/PNG/logs honestos en docs/evidence/v5 y docs/screenshots/v5-*. No dispositivo físico disponible. No bloqueos pendientes. REQUEST_V5 sustituye instrucciones contradictorias4.0; reportes4.0 archivados como antecedentes.

@@ -1,0 +1,12 @@
+--------- beginning of main
+10-11 20:22:49.274  8700  8700 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=ca30ebe3-1b85-4b8c-a253-31005d26cbaf, generation=0)
+10-11 20:22:49.277  8700  8700 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-11 20:22:49.505  8700  8765 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=ca30ebe3-1b85-4b8c-a253-31005d26cbaf, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-11 20:22:49.506  8700  8765 I WM-WorkerWrapper: Setting status to enqueued for 8f602739-7709-4fd2-b635-3e0071916ad5
+10-11 20:22:49.507  8700  8700 D WM-SystemJobService: ca30ebe3-1b85-4b8c-a253-31005d26cbaf executed on JobScheduler
+10-11 20:22:49.517  8700  8700 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=8f602739-7709-4fd2-b635-3e0071916ad5, generation=0)
+10-11 20:22:49.524  8700  8700 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-11 20:22:49.625  8700  8763 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=8f602739-7709-4fd2-b635-3e0071916ad5, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-11 20:22:49.626  8700  8700 D WM-SystemJobService: 8f602739-7709-4fd2-b635-3e0071916ad5 executed on JobScheduler
+10-11 20:22:52.330  1646  1646 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=14a5d486-bc36-4fe3-9105-50a81a8a7c44, generation=124)
+10-11 20:22:52.367  1646  1646 D WM-WorkerWrapper: Starting work for androidx.work.multiprocess.RemoteListenableDelegatingWorker

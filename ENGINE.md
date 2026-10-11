@@ -1,3 +1,15 @@
+# Corrección vigente4.1 / build5
+
+REQUEST_V5.md sustituye el selector4.0: Mantenimiento muestra directamente las revisiones proyectadas completas. Recorrido: Repository.tasks → Engine.evaluate (vencimientos reales) → Forecast.project (apariciones independientes) → projectedMaintenanceGroups (ID por grupo/fecha/km) → ProjectedPlanPage → ProjectedRevisionDetail. Contador y «Qué incluye» consumen occurrences del mismo grupo, sin resolver el detalle desde una Task representativa.
+
+Desde175.000 sin historial:195.00029,215.00033,235.00031; cifras de pruebas derivadas del catálogo, no constantes productivas. firstKm/firstMonths solo fijan la primera aparición; siguientes usan km/months recurrentes. Proyección condicionada a cumplir revisiones anteriores; no genera trabajos ni avisos. Home, Vencimientos reales, TaskDetail, NotificationEvaluator y WorkManager siguen utilizando únicamente Task reales. Registrar desde una revisión ofrece solo sus apariciones sequence0 que coinciden con el próximo vencimiento real; las siguientes son consulta.
+
+La lista muestra los primeros cuatro grupos globales completos; operaciones propias aisladas con próximo vencimiento real permanecen visibles también fuera de ese horizonte. No se añaden grupos colectivos lejanos con una proyección truncada. Las operaciones reales completas siguen accesibles en Vencimientos reales. Trabajo parcial195.200 produce215.200 exacto para aceite; las restantes permanecen195.000. Fechas se recalculan por operación desde el trabajo real. Abrir una previsión no escribe Visit/Event/Reading.
+
+Sin cambio de Room3, catálogo, applicationId ni firma. Conservar edición, filtros de gastos y copias. Pruebas de pantalla nativa y detalle completo, parcial, actualizaciones reales de APK y evidencias nuevas en docs/TEST_REPORT.md; resultados4.0 archivados como antecedentes.
+
+## Antecedentes conservados donde sean compatibles
+
 # Ampliación v4 vigente
 
 REQUEST_V4.md prevalece sobre el antecedente v3 siguiente. `Engine.evaluate` sigue devolviendo exclusivamente el próximo vencimiento real por operación; sus tareas son las únicas que alimentan estados, avisos y registros. `Forecast.project` devuelve un tipo distinto y solo de consulta: el vencimiento actual y las apariciones siguientes suponiendo que se ejecuta cada anterior exactamente en sus límites de fecha/km. No crea Event, Visit, Reading ni recordatorios. Fecha y km permanecen separados, y la previsión no afirma cuál ocurrirá antes.

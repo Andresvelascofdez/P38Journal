@@ -22,9 +22,10 @@ def nodes():
         time.sleep(1)
     raise AssertionError('Native hierarchy did not settle')
 
-def swipe(down=False):
-    adb('shell', 'input', 'swipe', '500', '700' if down else '1850', '500', '1850' if down else '700', '250')
-    time.sleep(.35)
+def swipe(down=False, slow=False):
+    start, end = (1100,1700) if down and slow else (1700,1100) if slow else (700,1850) if down else (1850,700)
+    adb('shell', 'input', 'swipe', '500', str(start), '500', str(end), '650' if slow else '250')
+    time.sleep(.7 if slow else .35)
 
 def tap(text, scroll=False):
     for _ in range(16 if scroll else 1):
@@ -35,7 +36,7 @@ def tap(text, scroll=False):
                     adb('shell', 'input', 'tap', str((x1+x2)//2), str((y1+y2)//2))
                     time.sleep(.6)
                     return
-        swipe()
+        swipe(slow=True)
     raise AssertionError('Missing native control: ' + text)
 
 def capture(name):
@@ -46,6 +47,16 @@ def capture(name):
 def plan():
     tap('Mantenimiento')
     for _ in range(4): swipe(True)
+
+def expand_includes():
+    for _ in range(16):
+        text = {n.get('text') for n in nodes().iter('node')}
+        if 'Ocultar qué incluye' in text: return
+        if 'Qué incluye' in text:
+            tap('Qué incluye')
+            return
+        swipe(slow=True)
+    raise AssertionError('Includes toggle is not accessible')
 
 assert b'sdk_gphone' in adb('shell', 'getprop', 'ro.product.model')
 assert b'versionCode=5' in adb('shell', 'dumpsys', 'package', PKG)
@@ -69,22 +80,23 @@ try:
                     and (km-175000-(r.get('firstKm') or r['km'])) % r['km'] == 0}
         assert len(expected) == count
         plan(); tap('Revisión a los ' + f'{km:,}'.replace(',','.') + ' km', True)
+        for _ in range(10): swipe(True)
         text = {n.get('text') for n in nodes().iter('node')}
         assert f'{count} operaciones incluidas' in text
         capture(f'revision-{km}-counter')
-        tap('Qué incluye', True)
+        expand_includes()
         capture(f'revision-{km}-includes-first')
         found = set()
-        for _ in range(28):
+        for _ in range(40):
             found |= {n.get('text') for n in nodes().iter('node')} & expected
             if found == expected: break
-            swipe()
+            swipe(slow=True)
         assert found == expected, sorted(expected-found)
         capture(f'revision-{km}-includes-last')
         REPORT.append({'dueKm':km,'counter':count,'nativeOperationTitlesFound':len(found),'titles':sorted(found),'result':'PASS'})
     plan(); tap('Revisión a los 195.000 km', True)
     for _ in range(5): swipe(True)
-    if any(n.get('text') == 'Qué incluye' for n in nodes().iter('node')): tap('Qué incluye', True)
+    expand_includes()
     phase = next(r['title'] for r in rules if r['id'] == 'axle-level')
     tap(phase, True); capture('phase-b-operation')
     tap('Editar mantenimiento', True); capture('phase-b-editor')

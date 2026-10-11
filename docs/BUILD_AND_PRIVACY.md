@@ -1,3 +1,15 @@
+# Corrección vigente4.1 / build5
+
+REQUEST_V5.md sustituye el selector4.0: Mantenimiento muestra directamente las revisiones proyectadas completas. Recorrido: Repository.tasks → Engine.evaluate (vencimientos reales) → Forecast.project (apariciones independientes) → projectedMaintenanceGroups (ID por grupo/fecha/km) → ProjectedPlanPage → ProjectedRevisionDetail. Contador y «Qué incluye» consumen occurrences del mismo grupo, sin resolver el detalle desde una Task representativa.
+
+Desde175.000 sin historial:195.00029,215.00033,235.00031; cifras de pruebas derivadas del catálogo, no constantes productivas. firstKm/firstMonths solo fijan la primera aparición; siguientes usan km/months recurrentes. Proyección condicionada a cumplir revisiones anteriores; no genera trabajos ni avisos. Home, Vencimientos reales, TaskDetail, NotificationEvaluator y WorkManager siguen utilizando únicamente Task reales. Registrar desde una revisión ofrece solo sus apariciones sequence0 que coinciden con el próximo vencimiento real; las siguientes son consulta.
+
+La lista muestra los primeros cuatro grupos globales completos; operaciones propias aisladas con próximo vencimiento real permanecen visibles también fuera de ese horizonte. No se añaden grupos colectivos lejanos con una proyección truncada. Las operaciones reales completas siguen accesibles en Vencimientos reales. Trabajo parcial195.200 produce215.200 exacto para aceite; las restantes permanecen195.000. Fechas se recalculan por operación desde el trabajo real. Abrir una previsión no escribe Visit/Event/Reading.
+
+Sin cambio de Room3, catálogo, applicationId ni firma. Conservar edición, filtros de gastos y copias. Pruebas de pantalla nativa y detalle completo, parcial, actualizaciones reales de APK y evidencias nuevas en docs/TEST_REPORT.md; resultados4.0 archivados como antecedentes.
+
+## Antecedentes conservados donde sean compatibles
+
 # Compilación, privacidad y firma
 
 Proyecto Kotlin y Compose nativo, mínimo Android 8.0 (API 26), compilación/objetivo Android 16 (API 36). Gradle Wrapper 8.13; AGP 8.10.1; Kotlin/Compose compiler 2.0.21; Compose BOM 2024.12.01; Room 2.6.1; WorkManager 2.10.1; DataStore 1.1.2; JDK ejecutado 21.0.8, bytecode Java 17. Versiones estables fijadas en Gradle y catálogo de versiones. Se usa una combinación compatible explícita, no versiones preview. Resolución desde Google Maven/Maven Central/Gradle oficiales, sin repositorios privados.

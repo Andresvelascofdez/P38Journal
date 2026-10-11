@@ -1,0 +1,24 @@
+[
+  {
+    "check": "Visible test notification offline and actual PendingIntent destination",
+    "result": "PASS"
+  },
+  {
+    "check": "Manual reading 194999 to195000 produces real DUE notification offline and group PendingIntent",
+    "result": "PASS",
+    "current_km": 195000
+  },
+  {
+    "check": "Normal process kill retains scheduled jobs and reopening",
+    "result": "PASS"
+  },
+  {
+    "check": "Actual reboot retains WorkManager jobs; app reopens",
+    "result": "PASS"
+  },
+  {
+    "check": "Force-stop then explicit reopen reschedules jobs",
+    "result": "PASS",
+    "limit": "No delivery guarantee while force-stopped"
+  }
+]

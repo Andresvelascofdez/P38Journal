@@ -1,3 +1,7 @@
+# 4.1.0 / código5
+
+Mantenimiento abre revisiones completas proyectadas, con contador y detalle sobre las mismas apariciones;29/33/31 derivados de reglas. Vencimientos reales para avisos y registro separados. Registro parcial exacto y edición conservados, versión/build visibles. Pruebas de interfaz de cada revisión y actualizaciones en emulador; evidencia final en docs/TEST_REPORT.md.
+
 # Cambios
 
 ## 4.0 — 11/10/2026

@@ -1,0 +1,40 @@
+{
+  "unit": {
+    "cases": 49,
+    "passed": 49,
+    "skipped": 0,
+    "failed": 0,
+    "classes": {
+      "dev.p38journal.domain.ConditionalProfilesTest": 3,
+      "dev.p38journal.domain.EngineTest": 22,
+      "dev.p38journal.review.IndependentCatalogueTest": 11,
+      "dev.p38journal.review.IndependentV4Test": 8,
+      "dev.p38journal.review.ProjectedMaintenanceGroupsTest": 5
+    }
+  },
+  "android": {
+    "cases": 70,
+    "passed": 67,
+    "skipped": 3,
+    "failed": 0,
+    "classes": {
+      "dev.p38journal.data.CustomRulesAndPaymentsTest": 11,
+      "dev.p38journal.data.MigrationTest": 3,
+      "dev.p38journal.data.RepositoryTest": 23,
+      "dev.p38journal.platform.DeliveryLifecycleTest": 1,
+      "dev.p38journal.platform.DocumentViewerTest": 2,
+      "dev.p38journal.platform.PlatformTest": 11,
+      "dev.p38journal.platform.SystemWorkTest": 6,
+      "dev.p38journal.platform.UpgradeV4Test": 1,
+      "dev.p38journal.platform.UpgradeV5Test": 1,
+      "dev.p38journal.ui.JournalUiTest": 11
+    }
+  },
+  "lint": {
+    "Error": 0,
+    "Fatal": 0,
+    "Warning": 33,
+    "Hint": 2,
+    "Information": 0
+  }
+}

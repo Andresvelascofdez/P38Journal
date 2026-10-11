@@ -1,0 +1,113 @@
+
+C:\Users\Admin\SapAssistant\Range rover>if "Windows_NT" == "Windows_NT" setlocal
+
+C:\Users\Admin\SapAssistant\Range rover>set DIRNAME=C:\Users\Admin\SapAssistant\Range rover\ 
+
+C:\Users\Admin\SapAssistant\Range rover>if "C:\Users\Admin\SapAssistant\Range rover\" == "" set DIRNAME=. 
+
+C:\Users\Admin\SapAssistant\Range rover>set APP_BASE_NAME=gradlew 
+
+C:\Users\Admin\SapAssistant\Range rover>set APP_HOME=C:\Users\Admin\SapAssistant\Range rover\ 
+
+C:\Users\Admin\SapAssistant\Range rover>for %i in ("C:\Users\Admin\SapAssistant\Range rover\") do set APP_HOME=%~fi 
+
+C:\Users\Admin\SapAssistant\Range rover>set APP_HOME=C:\Users\Admin\SapAssistant\Range rover\ 
+
+C:\Users\Admin\SapAssistant\Range rover>set DEFAULT_JVM_OPTS="-Xmx64m" "-Xms64m" 
+
+C:\Users\Admin\SapAssistant\Range rover>if defined JAVA_HOME goto findJavaFromJavaHome 
+
+C:\Users\Admin\SapAssistant\Range rover>set JAVA_HOME=C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\ 
+
+C:\Users\Admin\SapAssistant\Range rover>set JAVA_EXE=C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\/bin/java.exe 
+
+C:\Users\Admin\SapAssistant\Range rover>if exist "C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\/bin/java.exe" goto execute 
+
+C:\Users\Admin\SapAssistant\Range rover>set CLASSPATH=C:\Users\Admin\SapAssistant\Range rover\\gradle\wrapper\gradle-wrapper.jar 
+
+C:\Users\Admin\SapAssistant\Range rover>"C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\/bin/java.exe" "-Xmx64m" "-Xms64m"   "-Dorg.gradle.appname=gradlew" -classpath "C:\Users\Admin\SapAssistant\Range rover\\gradle\wrapper\gradle-wrapper.jar" org.gradle.wrapper.GradleWrapperMain testDebugUnitTest assembleDebug assembleRelease assembleDebugAndroidTest lintDebug --console=plain --no-parallel --max-workers=1 
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:syncCatalogue UP-TO-DATE
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:generateDebugBuildConfig UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+> Task :app:kaptGenerateStubsDebugKotlin UP-TO-DATE
+> Task :app:kaptDebugKotlin UP-TO-DATE
+> Task :app:compileDebugKotlin UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:compileDebugJavaWithJavac UP-TO-DATE
+> Task :app:bundleDebugClassesToRuntimeJar
+> Task :app:bundleDebugClassesToCompileJar UP-TO-DATE
+
+> Task :app:kaptGenerateStubsDebugUnitTestKotlin
+w: Kapt currently doesn't support language version 2.0+. Falling back to 1.9.
+
+> Task :app:kaptDebugUnitTestKotlin
+warning: The following options were not recognized by any processor: '[room.schemaLocation, kapt.kotlin.generated]'
+
+> Task :app:compileDebugUnitTestKotlin
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileDebugUnitTest UP-TO-DATE
+> Task :app:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :app:processDebugJavaRes UP-TO-DATE
+> Task :app:processDebugUnitTestJavaRes UP-TO-DATE
+
+> Task :app:testDebugUnitTest FAILED
+
+ProjectedMaintenanceGroupsTest > farPersonalizedWorkshopTaskDoesNotAppendAnIncompleteFutureRevision FAILED
+    java.lang.NullPointerException at ProjectedMaintenanceGroupsTest.kt:103
+powershell : 
+At line:5 char:1
++ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build.ps1 ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+49 tests completed, 1 failed
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:testDebugUnitTest'.
+> There were failing tests. See the report at: 
+file:///C:/Users/Admin/SapAssistant/Range%20rover/app/build/reports/tests/testDebugUnitTest/index.html
+
+* Try:
+> Run with --scan to get full insights.
+
+BUILD FAILED in 4s
+29 actionable tasks: 5 executed, 24 up-to-date
+
+C:\Users\Admin\SapAssistant\Range rover>if 1 EQU 0 goto mainEnd 
+
+C:\Users\Admin\SapAssistant\Range rover>rem Set variable GRADLE_EXIT_CONSOLE if you need the _script_ return code instead of 
+
+C:\Users\Admin\SapAssistant\Range rover>rem the _cmd.exe /c_ return code! 
+
+C:\Users\Admin\SapAssistant\Range rover>set EXIT_CODE=1 
+
+C:\Users\Admin\SapAssistant\Range rover>if 1 EQU 0 set EXIT_CODE=1 
+
+C:\Users\Admin\SapAssistant\Range rover>if not "" == "" exit 1 
+
+C:\Users\Admin\SapAssistant\Range rover>exit /b 1 
+Gradle fallÃ³. Revisar su salida.
+At C:\Users\Admin\SapAssistant\Range rover\scripts\build.ps1:7 char:32
++ ... f ($LASTEXITCODE -ne 0) { throw 'Gradle fallÃ³. Revisar su salida.' }
++                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Gradle fallÃ³. Revisar su salida.:String) [], RuntimeException
+    + FullyQualifiedErrorId : Gradle fallÃ³. Revisar su salida.
+ 
