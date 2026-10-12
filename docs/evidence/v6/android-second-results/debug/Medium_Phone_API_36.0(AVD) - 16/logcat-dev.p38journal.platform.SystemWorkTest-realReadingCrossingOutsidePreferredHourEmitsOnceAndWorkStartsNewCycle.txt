@@ -1,0 +1,247 @@
+10-12 23:09:53.238  7140  7155 I TestRunner: started: realReadingCrossingOutsidePreferredHourEmitsOnceAndWorkStartsNewCycle(dev.p38journal.platform.SystemWorkTest)
+10-12 23:09:53.241  7140  7155 I UiAutomation: Initialized for user 0 on display 0
+10-12 23:09:53.247  1513  1529 I AiAiEcho: Settings changed for uri: content://settings/secure/accessibility_enabled
+10-12 23:09:53.248  1513  1632 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+10-12 23:09:53.248  1513  1632 I AiAiEcho: EchoTargets:
+10-12 23:09:53.248  1513  1632 I AiAiEcho: Filtered by AiAi flag check:
+10-12 23:09:53.248  1513  1632 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+10-12 23:09:53.248   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:53.248  1513  1632 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+10-12 23:09:53.248   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:53.248   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:53.248  1513  1632 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+10-12 23:09:53.249  1513  1632 I AiAiEcho: EchoTargets:
+10-12 23:09:53.249  1513  1632 I AiAiEcho: Filtered by AiAi flag check:
+10-12 23:09:53.249  1513  1632 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+10-12 23:09:53.249   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:53.249   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:53.249  1513  1632 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+10-12 23:09:53.249   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:53.249   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:53.249   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:53.249  1513  1632 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-12 23:09:53.249  7140  7155 I UiAutomationPermGranter: Attempting to grant android.permission.POST_NOTIFICATIONS to dev.p38journal.debug
+10-12 23:09:53.249   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:53.249   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:53.249   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:53.250   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:53.250   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:53.250  1513  1632 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+10-12 23:09:53.250   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:53.250   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:53.252  1060  1060 D SsBaseTemplateCard: No text view can be set up
+10-12 23:09:53.252  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:09:53.253  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:09:53.253  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:09:53.253  1060  1060 I SsBaseTemplateCard: Secondary card pane is null
+10-12 23:09:53.253   941   941 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-12 23:09:53.260  7140  7156 D WM-Processor: Processor cancelling 9febf187-7647-43bf-8dff-279713ed1533
+10-12 23:09:53.260  7140  7156 D WM-Processor: WorkerWrapper could not be found for 9febf187-7647-43bf-8dff-279713ed1533
+10-12 23:09:53.268  7140  7156 D WM-GreedyScheduler: Cancelling work ID 9febf187-7647-43bf-8dff-279713ed1533
+10-12 23:09:53.271  7140  7156 D WM-PackageManagerHelper: androidx.work.impl.background.systemalarm.RescheduleReceiver disabled
+10-12 23:09:53.597   701   845 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+10-12 23:09:53.597   701   845 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+10-12 23:09:53.597   701   845 D InetDiagMessage: Destroyed live tcp sockets for uids={10147} in 1ms
+10-12 23:09:53.598   701   845 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+10-12 23:09:53.598   701   845 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+10-12 23:09:53.598   701   845 D InetDiagMessage: Destroyed live tcp sockets for uids={20147} in 0ms
+10-12 23:09:54.118  7140  7153 W JobInfo : Requested important-while-foreground flag for job3 is ignored and takes no effect
+10-12 23:09:54.119  7140  7153 D WM-SystemJobScheduler: Scheduling work ID 8d823d7b-e0ad-442f-933b-a218eb7e0eafJob ID 3
+10-12 23:09:54.122  7140  7153 D WM-GreedyScheduler: Starting work for 8d823d7b-e0ad-442f-933b-a218eb7e0eaf
+10-12 23:09:54.123  7140  7140 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=8d823d7b-e0ad-442f-933b-a218eb7e0eaf, generation=0)
+10-12 23:09:54.123  7140  7153 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=8d823d7b-e0ad-442f-933b-a218eb7e0eaf, generation=0)
+10-12 23:09:54.125  7140  7153 D WM-Processor: Work WorkGenerationalId(workSpecId=8d823d7b-e0ad-442f-933b-a218eb7e0eaf, generation=0) is already enqueued for processing
+10-12 23:09:54.126  7140  7140 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:09:54.127  7140  7153 D WM-PackageManagerHelper: androidx.work.impl.background.systemalarm.RescheduleReceiver enabled
+10-12 23:09:54.274   701   811 I system_server: AssetManager2(0x7e19a18ee558) locale list changing from [] to [en-US]
+10-12 23:09:54.276  7140  7154 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=8d823d7b-e0ad-442f-933b-a218eb7e0eaf, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-12 23:09:54.276  7140  7154 I WM-WorkerWrapper: Setting status to enqueued for 5a50488c-7a6d-42c4-a480-327d240aa969
+10-12 23:09:54.277  1060  1140 D PackageUpdatedTask: Package updated: mOp=UPDATE packages=[dev.p38journal.debug], user=UserHandle{0}
+10-12 23:09:54.277  1513  7034 I AiAiEcho: AppIndexer Package:[dev.p38journal.debug] UserProfile:[0] Enabled:[true].
+10-12 23:09:54.278  1513  7034 I AiAiEcho: AppFetcherImplV2 updateApps package:[dev.p38journal.debug], userId:[0], reason:[package is updated.].
+10-12 23:09:54.278  7140  7140 D WM-Processor: Processor 8d823d7b-e0ad-442f-933b-a218eb7e0eaf executed; reschedule = false
+10-12 23:09:54.279   701   724 I system_server: AssetManager2(0x7e19a18f0178) locale list changing from [] to [en-US]
+10-12 23:09:54.280  7140  7140 D WM-SystemJobService: 8d823d7b-e0ad-442f-933b-a218eb7e0eaf executed on JobScheduler
+10-12 23:09:54.282   701   814 I system_server: AssetManager2(0x7e19a18ecc58) locale list changing from [] to [en-US]
+10-12 23:09:54.286   701   814 I system_server: AssetManager2(0x7e19a18e3c98) locale list changing from [] to [en-US]
+10-12 23:09:54.289   701   811 I system_server: AssetManager2(0x7e19a18e6538) locale list changing from [] to [en-US]
+10-12 23:09:54.291  4783  5868 I PermissionControllerServiceImpl: Updating user sensitive for uid 10269
+10-12 23:09:54.292  1513  1529 I AiAiEcho: Settings changed for uri: content://settings/secure/accessibility_enabled
+10-12 23:09:54.292   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:54.292   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:54.292   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:54.293   701   782 I system_server: AssetManager2(0x7e19a18e9738) locale list changing from [] to [en-US]
+10-12 23:09:54.294  1513  1632 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+10-12 23:09:54.294  1513  1632 I AiAiEcho: EchoTargets:
+10-12 23:09:54.294  1513  1632 I AiAiEcho: Filtered by AiAi flag check:
+10-12 23:09:54.294  1513  1632 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+10-12 23:09:54.294  1513  1632 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+10-12 23:09:54.294   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:54.294   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:54.294  1513  1632 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+10-12 23:09:54.294  1513  1632 I AiAiEcho: EchoTargets:
+10-12 23:09:54.294  1513  1632 I AiAiEcho: Filtered by AiAi flag check:
+10-12 23:09:54.294  1513  1632 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+10-12 23:09:54.295  7140  7153 D WM-GreedyScheduler: Cancelling work ID 8d823d7b-e0ad-442f-933b-a218eb7e0eaf
+10-12 23:09:54.295  1513  1632 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+10-12 23:09:54.295  1513  1632 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+10-12 23:09:54.296  1513  1632 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+10-12 23:09:54.296   941   941 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-12 23:09:54.300  7140  7153 W JobInfo : Requested important-while-foreground flag for job4 is ignored and takes no effect
+10-12 23:09:54.300  7140  7153 D WM-SystemJobScheduler: Scheduling work ID 5a50488c-7a6d-42c4-a480-327d240aa969Job ID 4
+10-12 23:09:54.306  7140  7153 D WM-GreedyScheduler: Starting work for 5a50488c-7a6d-42c4-a480-327d240aa969
+10-12 23:09:54.307  7140  7140 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=5a50488c-7a6d-42c4-a480-327d240aa969, generation=0)
+10-12 23:09:54.307   701   729 I system_server: AssetManager2(0x7e19a1938bf8) locale list changing from [] to [en-US]
+10-12 23:09:54.308  7140  7153 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=5a50488c-7a6d-42c4-a480-327d240aa969, generation=0)
+10-12 23:09:54.309  7140  7153 D WM-Processor: Work WorkGenerationalId(workSpecId=5a50488c-7a6d-42c4-a480-327d240aa969, generation=0) is already enqueued for processing
+10-12 23:09:54.313  7140  7140 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:09:54.313   701   729 I system_server: AssetManager2(0x7e19a18c7138) locale list changing from [] to [en-US]
+10-12 23:09:54.317   701   729 I system_server: AssetManager2(0x7e19a18dbc78) locale list changing from [] to [en-US]
+10-12 23:09:54.317  1060  1140 I s.nexuslauncher: AssetManager2(0x7e19a18979d8) locale list changing from [] to [en-US]
+10-12 23:09:54.335  1060  1140 W HWUI    : Image decoding logging dropped!
+10-12 23:09:54.336  1060  1140 D AlphabeticIndexCompat: computeSectionName: cs: P38 Journal · Prueba sectionName: P
+10-12 23:09:54.336  1060  1060 D AllAppsStore: setApps: apps.length=23
+10-12 23:09:54.336  1060  1060 D AllAppsStore: notifyUpdate: notifying listeners
+10-12 23:09:54.336  1060  1060 D ActivityAllAppsContainerView: onAppsUpdated; number of apps: 23
+10-12 23:09:54.336  1060  1060 D ActivityAllAppsContainerView: rebindAdapters: force: false
+10-12 23:09:54.336  1060  1060 D ActivityAllAppsContainerView: rebindAdapters: Not needed.
+10-12 23:09:54.336  1060  1060 D StatsLog: LAUNCHER_ALLAPPS_COUNT
+10-12 23:09:54.336  1060  1060 D AlphabeticalAppsList: Clearing FastScrollerSections.
+10-12 23:09:54.336  1060  1060 D AlphabeticalAppsList: Adding apps with sections. HasPrivateApps: false
+10-12 23:09:54.336  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: C with appInfoTitle: Calendar
+10-12 23:09:54.336  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: D with appInfoTitle: Drive
+10-12 23:09:54.336  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: E with appInfoTitle: Expo Go
+10-12 23:09:54.337  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: F with appInfoTitle: Files
+10-12 23:09:54.337  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: G with appInfoTitle: Gmail
+10-12 23:09:54.337  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: H with appInfoTitle: historias-en-un-clic
+10-12 23:09:54.337  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: M with appInfoTitle: Maps
+10-12 23:09:54.337  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: P with appInfoTitle: P38 Journal
+10-12 23:09:54.337  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: S with appInfoTitle: Safety
+10-12 23:09:54.337  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: T with appInfoTitle: TMoble
+10-12 23:09:54.337  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: Y with appInfoTitle: YouTube
+10-12 23:09:54.337  1060  1060 D AlphabeticalAppsList: Adding FastScrollSection duplicate to scroll to the bottom.
+10-12 23:09:54.337  1060  1060 D AlphabeticalAppsList: Clearing FastScrollerSections.
+10-12 23:09:54.337  1060  1060 D AlphabeticalAppsList: Adding apps with sections. HasPrivateApps: false
+10-12 23:09:54.337  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: C with appInfoTitle: Calendar
+10-12 23:09:54.337  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: D with appInfoTitle: Drive
+10-12 23:09:54.337  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: E with appInfoTitle: Expo Go
+10-12 23:09:54.337  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: F with appInfoTitle: Files
+10-12 23:09:54.338  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: G with appInfoTitle: Gmail
+10-12 23:09:54.338  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: H with appInfoTitle: historias-en-un-clic
+10-12 23:09:54.338  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: M with appInfoTitle: Maps
+10-12 23:09:54.338  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: P with appInfoTitle: P38 Journal
+10-12 23:09:54.338  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: S with appInfoTitle: Safety
+10-12 23:09:54.338  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: T with appInfoTitle: TMoble
+10-12 23:09:54.338  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: Y with appInfoTitle: YouTube
+10-12 23:09:54.338  1060  1060 D AlphabeticalAppsList: Adding FastScrollSection duplicate to scroll to the bottom.
+10-12 23:09:54.340  1060  1060 D b/387844520: getOutlineOffsetX: measured width = 173, mNormalizedIconSize = 159, last updated width = 173
+10-12 23:09:54.340  1060  1060 D SsBaseTemplateCard: No text view can be set up
+10-12 23:09:54.340  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:09:54.340  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:09:54.340  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:09:54.340  1060  1060 I SsBaseTemplateCard: Secondary card pane is null
+10-12 23:09:54.422  7140  7156 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=5a50488c-7a6d-42c4-a480-327d240aa969, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-12 23:09:54.424  7140  7156 I WM-WorkerWrapper: Setting status to enqueued for cb5ac1e8-14e1-4474-9618-650f26c5f701
+10-12 23:09:54.424  7140  7140 D WM-Processor: Processor 5a50488c-7a6d-42c4-a480-327d240aa969 executed; reschedule = false
+10-12 23:09:54.424  7140  7140 D WM-SystemJobService: 5a50488c-7a6d-42c4-a480-327d240aa969 executed on JobScheduler
+10-12 23:09:54.426  7140  7156 D WM-GreedyScheduler: Cancelling work ID 5a50488c-7a6d-42c4-a480-327d240aa969
+10-12 23:09:54.427  7140  7156 W JobInfo : Requested important-while-foreground flag for job5 is ignored and takes no effect
+10-12 23:09:54.427  7140  7156 D WM-SystemJobScheduler: Scheduling work ID cb5ac1e8-14e1-4474-9618-650f26c5f701Job ID 5
+10-12 23:09:54.430  7140  7156 D WM-GreedyScheduler: Starting work for cb5ac1e8-14e1-4474-9618-650f26c5f701
+10-12 23:09:54.430  7140  7140 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=cb5ac1e8-14e1-4474-9618-650f26c5f701, generation=0)
+10-12 23:09:54.431  7140  7156 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=cb5ac1e8-14e1-4474-9618-650f26c5f701, generation=0)
+10-12 23:09:54.433  7140  7156 D WM-Processor: Work WorkGenerationalId(workSpecId=cb5ac1e8-14e1-4474-9618-650f26c5f701, generation=0) is already enqueued for processing
+10-12 23:09:54.435  7140  7140 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:09:54.603  7140  7153 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=cb5ac1e8-14e1-4474-9618-650f26c5f701, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-12 23:09:54.605  7140  7153 I WM-WorkerWrapper: Setting status to enqueued for 8ea44925-48c3-44c6-af7c-6326a4976576
+10-12 23:09:54.606  7140  7140 D WM-Processor: Processor cb5ac1e8-14e1-4474-9618-650f26c5f701 executed; reschedule = false
+10-12 23:09:54.606  7140  7140 D WM-SystemJobService: cb5ac1e8-14e1-4474-9618-650f26c5f701 executed on JobScheduler
+10-12 23:09:54.608  7140  7153 D WM-GreedyScheduler: Cancelling work ID cb5ac1e8-14e1-4474-9618-650f26c5f701
+10-12 23:09:54.611  7140  7153 W JobInfo : Requested important-while-foreground flag for job6 is ignored and takes no effect
+10-12 23:09:54.611  7140  7153 D WM-SystemJobScheduler: Scheduling work ID 8ea44925-48c3-44c6-af7c-6326a4976576Job ID 6
+10-12 23:09:54.614  7140  7153 D WM-GreedyScheduler: Starting work for 8ea44925-48c3-44c6-af7c-6326a4976576
+10-12 23:09:54.617  7140  7153 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=8ea44925-48c3-44c6-af7c-6326a4976576, generation=0)
+10-12 23:09:54.620  7140  7140 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:09:54.627   701   701 D FlashNotifController: requestStartFlashNotification
+10-12 23:09:54.627   701   701 I FlashNotifController: startFlashNotification: type=1, tag=android
+10-12 23:09:54.627   701   701 D FlashNotifController: Flash notification is disabled
+10-12 23:09:54.628   941  1600 D RingtonePlayer: playAsync(uri=content://settings/system/notification_sound, user=UserHandle{0})
+10-12 23:09:54.628   941  1600 D RingtonePlayer: play uri=content://settings/system/notification_sound
+10-12 23:09:54.630  7140  7140 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=8ea44925-48c3-44c6-af7c-6326a4976576, generation=0)
+10-12 23:09:54.632  1513  1793 W AiAiEcho: LyftNotificationParser Ridesharing ETA not enabled
+10-12 23:09:54.632  1513  1793 I AiAiEcho: SmartspaceNotificationPredictor no parser can handle this notification or notification is invalid
+10-12 23:09:54.633  7140  7156 D WM-Processor: Work WorkGenerationalId(workSpecId=8ea44925-48c3-44c6-af7c-6326a4976576, generation=0) is already enqueued for processing
+10-12 23:09:54.634   941  7223 D RingtonePlayer: RemoveFirst
+10-12 23:09:54.634   941  7223 D RingtonePlayer: PLAY
+10-12 23:09:54.634  1060  1060 I NotificationListener: received notification posted event - dev.p38journal.debug#UserHandle{0},category=-1
+10-12 23:09:54.634   941  7223 D RingtonePlayer: startSound()
+10-12 23:09:54.636   941  7224 D RingtonePlayer: in run: new looper Looper (Thread-8, tid 111) {153d910}
+10-12 23:09:54.677   941  1307 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-12 23:09:54.690   941  1307 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-12 23:09:54.693   639   656 D NuPlayerDriver: NuPlayerDriver(0x75dc246cf4d0) created, clientPid(941)
+10-12 23:09:54.705   254   254 I hwservicemanager: getTransport: Cannot find entry android.hardware.media.omx@1.0::IOmx/default in either framework or device VINTF manifest.
+10-12 23:09:54.706   639   656 D MediaPlayerService: OMX service is not available
+10-12 23:09:54.775   639  7227 D GenericSource: FileSource remote
+10-12 23:09:54.792  7140  7157 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=8ea44925-48c3-44c6-af7c-6326a4976576, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-12 23:09:54.792  7140  7140 D WM-Processor: Processor 8ea44925-48c3-44c6-af7c-6326a4976576 executed; reschedule = false
+10-12 23:09:54.792  7140  7140 D WM-SystemJobService: 8ea44925-48c3-44c6-af7c-6326a4976576 executed on JobScheduler
+10-12 23:09:54.794  7140  7157 D WM-GreedyScheduler: Cancelling work ID 8ea44925-48c3-44c6-af7c-6326a4976576
+10-12 23:09:54.799  7140  7157 D WM-PackageManagerHelper: androidx.work.impl.background.systemalarm.RescheduleReceiver disabled
+10-12 23:09:54.813   941  7224 D RingtonePlayer: requesting AudioFocus
+10-12 23:09:54.823   701  1931 I MediaFocusControl: requestAudioFocus() from uid/pid 10185/941 AA=USAGE_NOTIFICATION/CONTENT_TYPE_SONIFICATION clientId=android.media.AudioManager@b941138 callingPack=com.android.systemui req=3 flags=0x0 sdk=36
+10-12 23:09:54.823   941  7224 D RingtonePlayer: notification will be delayed by 500ms
+10-12 23:09:54.838  7140  7154 W JobInfo : Requested important-while-foreground flag for job7 is ignored and takes no effect
+10-12 23:09:54.838  7140  7154 D WM-SystemJobScheduler: Scheduling work ID 8064c23a-0e6b-4e73-bc3f-364193c0ede9Job ID 7
+10-12 23:09:54.841  7140  7154 D WM-GreedyScheduler: Starting work for 8064c23a-0e6b-4e73-bc3f-364193c0ede9
+10-12 23:09:54.843  7140  7140 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=8064c23a-0e6b-4e73-bc3f-364193c0ede9, generation=0)
+10-12 23:09:54.843  7140  7154 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=8064c23a-0e6b-4e73-bc3f-364193c0ede9, generation=0)
+10-12 23:09:54.844  7140  7154 D WM-Processor: Work WorkGenerationalId(workSpecId=8064c23a-0e6b-4e73-bc3f-364193c0ede9, generation=0) is already enqueued for processing
+10-12 23:09:54.847  7140  7140 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:09:54.850  7140  7157 D WM-PackageManagerHelper: androidx.work.impl.background.systemalarm.RescheduleReceiver enabled
+10-12 23:09:54.985   941  2137 D RingtonePlayer: stopAsync()
+10-12 23:09:54.985   941  2137 D RingtonePlayer: stop
+10-12 23:09:54.989  1060  1060 I NotificationListener: received notification removed event - dev.p38journal.debug#UserHandle{0},category=-1
+10-12 23:09:55.029  7140  7153 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=8064c23a-0e6b-4e73-bc3f-364193c0ede9, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-12 23:09:55.031  7140  7153 I WM-WorkerWrapper: Setting status to enqueued for bc5588f7-7ea1-4556-8625-9d96432c07b5
+10-12 23:09:55.033  7140  7140 D WM-Processor: Processor 8064c23a-0e6b-4e73-bc3f-364193c0ede9 executed; reschedule = false
+10-12 23:09:55.033  7140  7140 D WM-SystemJobService: 8064c23a-0e6b-4e73-bc3f-364193c0ede9 executed on JobScheduler
+10-12 23:09:55.037  7140  7154 D WM-GreedyScheduler: Cancelling work ID 8064c23a-0e6b-4e73-bc3f-364193c0ede9
+10-12 23:09:55.039  7140  7154 W JobInfo : Requested important-while-foreground flag for job8 is ignored and takes no effect
+10-12 23:09:55.039  7140  7154 D WM-SystemJobScheduler: Scheduling work ID bc5588f7-7ea1-4556-8625-9d96432c07b5Job ID 8
+10-12 23:09:55.042  7140  7154 D WM-GreedyScheduler: Starting work for bc5588f7-7ea1-4556-8625-9d96432c07b5
+10-12 23:09:55.042  7140  7140 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=bc5588f7-7ea1-4556-8625-9d96432c07b5, generation=0)
+10-12 23:09:55.043  7140  7154 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=bc5588f7-7ea1-4556-8625-9d96432c07b5, generation=0)
+10-12 23:09:55.044  7140  7154 D WM-Processor: Work WorkGenerationalId(workSpecId=bc5588f7-7ea1-4556-8625-9d96432c07b5, generation=0) is already enqueued for processing
+10-12 23:09:55.047  7140  7140 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:09:55.184  7140  7157 D WM-Processor: Processor cancelling bc5588f7-7ea1-4556-8625-9d96432c07b5
+10-12 23:09:55.188  7140  7157 D WM-Processor: WorkerWrapper interrupted for bc5588f7-7ea1-4556-8625-9d96432c07b5
+10-12 23:09:55.189  7140  7157 D WM-GreedyScheduler: Cancelling work ID bc5588f7-7ea1-4556-8625-9d96432c07b5
+10-12 23:09:55.189  7140  7140 D WM-SystemJobService: onStopJob for WorkGenerationalId(workSpecId=bc5588f7-7ea1-4556-8625-9d96432c07b5, generation=0)
+10-12 23:09:55.190  7140  7157 I WM-WorkerWrapper: Work [ id=bc5588f7-7ea1-4556-8625-9d96432c07b5, tags={ dev.p38journal.platform.MaintenanceWorker } ] was cancelled
+10-12 23:09:55.190  7140  7157 I WM-WorkerWrapper: androidx.work.impl.WorkerStoppedException
+10-12 23:09:55.190  7140  7157 I WM-WorkerWrapper: 	at androidx.work.impl.WorkerWrapper.interrupt(WorkerWrapper.kt:348)
+10-12 23:09:55.190  7140  7157 I WM-WorkerWrapper: 	at androidx.work.impl.Processor.interrupt(Processor.java:439)
+10-12 23:09:55.190  7140  7157 I WM-WorkerWrapper: 	at androidx.work.impl.Processor.stopAndCancelWork(Processor.java:280)
+10-12 23:09:55.190  7140  7157 I WM-WorkerWrapper: 	at androidx.work.impl.utils.CancelWorkRunnable.cancel(CancelWorkRunnable.kt:33)
+10-12 23:09:55.190  7140  7157 I WM-WorkerWrapper: 	at androidx.work.impl.utils.CancelWorkRunnable.access$cancel(CancelWorkRunnable.kt:1)
+10-12 23:09:55.190  7140  7157 I WM-WorkerWrapper: 	at androidx.work.impl.utils.CancelWorkRunnable$forAll$1.invoke$lambda$0(CancelWorkRunnable.kt:149)
+10-12 23:09:55.190  7140  7157 I WM-WorkerWrapper: 	at androidx.work.impl.utils.CancelWorkRunnable$forAll$1.$r8$lambda$FiwYY7euQVFoWhAgDTmAY3zxQHo(Unknown Source:0)
+10-12 23:09:55.190  7140  7157 I WM-WorkerWrapper: 	at androidx.work.impl.utils.CancelWorkRunnable$forAll$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+10-12 23:09:55.190  7140  7157 I WM-WorkerWrapper: 	at androidx.room.RoomDatabase.runInTransaction(RoomDatabase.kt:585)
+10-12 23:09:55.190  7140  7157 I WM-WorkerWrapper: 	at androidx.work.impl.utils.CancelWorkRunnable$forAll$1.invoke(CancelWorkRunnable.kt:145)
+10-12 23:09:55.190  7140  7157 I WM-WorkerWrapper: 	at androidx.work.impl.utils.CancelWorkRunnable$forAll$1.invoke(CancelWorkRunnable.kt:139)
+10-12 23:09:55.190  7140  7157 I WM-WorkerWrapper: 	at androidx.work.OperationKt.launchOperation$lambda$2$lambda$1(Operation.kt:50)
+10-12 23:09:55.190  7140  7157 I WM-WorkerWrapper: 	at androidx.work.OperationKt.$r8$lambda$XKAkIiEN7OgIvwuLUZRQpJhjmyE(Unknown Source:0)
+10-12 23:09:55.190  7140  7157 I WM-WorkerWrapper: 	at androidx.work.OperationKt$$ExternalSyntheticLambda1.run(D8$$SyntheticClass:0)
+10-12 23:09:55.190  7140  7157 I WM-WorkerWrapper: 	at androidx.work.impl.utils.SerialExecutorImpl$Task.run(SerialExecutorImpl.java:96)
+10-12 23:09:55.190  7140  7157 I WM-WorkerWrapper: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+10-12 23:09:55.190  7140  7157 I WM-WorkerWrapper: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+10-12 23:09:55.190  7140  7157 I WM-WorkerWrapper: 	at java.lang.Thread.run(Thread.java:1119)
+10-12 23:09:55.191  7140  7157 D WM-WorkerWrapper: Status for bc5588f7-7ea1-4556-8625-9d96432c07b5 is CANCELLED ; not doing any work
+10-12 23:09:55.191  7140  7157 D WM-StopWorkRunnable: StopWorkRunnable for bc5588f7-7ea1-4556-8625-9d96432c07b5; Processor.stopWork = false
+10-12 23:09:55.191  7140  7157 D WM-StopWorkRunnable: StopWorkRunnable for bc5588f7-7ea1-4556-8625-9d96432c07b5; Processor.stopWork = false
+10-12 23:09:55.191  7140  7140 D WM-Processor: Processor bc5588f7-7ea1-4556-8625-9d96432c07b5 executed; reschedule = false
+10-12 23:09:55.191  7140  7140 D WM-SystemJobService: bc5588f7-7ea1-4556-8625-9d96432c07b5 executed on JobScheduler
+10-12 23:09:55.192  7140  7157 D WM-GreedyScheduler: Cancelling work ID bc5588f7-7ea1-4556-8625-9d96432c07b5
+10-12 23:09:55.194  7140  7157 D WM-PackageManagerHelper: androidx.work.impl.background.systemalarm.RescheduleReceiver disabled
+10-12 23:09:55.221  7140  7155 I TestRunner: finished: realReadingCrossingOutsidePreferredHourEmitsOnceAndWorkStartsNewCycle(dev.p38journal.platform.SystemWorkTest)

@@ -1,0 +1,14 @@
+[
+  {
+    "applicationId": "dev.p38journal",
+    "versionCode": 6,
+    "installedSha256": "eb64a294f5728c3fc9eb89f63fab96f1c3970c68e236a7ac2a985e625bcb24be",
+    "matchesExactDeliveredApk": true
+  },
+  {
+    "applicationId": "dev.p38journal.debug",
+    "versionCode": 6,
+    "installedSha256": "fae0760fb12462c0477bdb11a39befe66a5c44f4977c94ff4486f0ae7ba999cf",
+    "matchesExactDeliveredApk": true
+  }
+]

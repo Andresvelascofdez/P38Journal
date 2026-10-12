@@ -1,0 +1,2 @@
+10-12 23:09:44.337  7140  7155 I TestRunner: started: linkedPaymentEditAllowsVisitMetadataEditWithoutInventingANewAllocation(dev.p38journal.data.CustomRulesAndPaymentsTest)
+10-12 23:09:44.362  7140  7155 I TestRunner: finished: linkedPaymentEditAllowsVisitMetadataEditWithoutInventingANewAllocation(dev.p38journal.data.CustomRulesAndPaymentsTest)

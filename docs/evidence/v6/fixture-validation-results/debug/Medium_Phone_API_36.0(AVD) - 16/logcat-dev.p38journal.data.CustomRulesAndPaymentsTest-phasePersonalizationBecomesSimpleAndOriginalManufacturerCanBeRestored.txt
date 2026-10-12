@@ -1,0 +1,10 @@
+10-12 23:20:17.259  8755  8770 I TestRunner: started: phasePersonalizationBecomesSimpleAndOriginalManufacturerCanBeRestored(dev.p38journal.data.CustomRulesAndPaymentsTest)
+10-12 23:20:17.308   701   768 D ConnectivityService: requestNetwork for uid/pid:10149/5762 activeRequest: null callbackRequest: 256 [NetworkRequest [ REQUEST id=256, [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10149 RequestorUid: 10149 RequestorPkg: com.google.android.googlequicksearchbox MatchNonThreadLocalNetworks UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647 isUidTracked: false declaredMethods: AVAIL|LOSING|LOST|NC|LP
+10-12 23:20:17.312   701   845 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:20:17.314   701   845 D ConnectivityService: NetReassign [256 : null → 101] [c 0] [a 5] [i 0]
+10-12 23:20:17.314   701   845 D ConnectivityService: reportNetworkConnectivity(100, false) by 10149
+10-12 23:20:17.315  1012  2290 D NetworkMonitor/100: Forcing reevaluation for UID 10149. Dns signal count: 0
+10-12 23:20:17.330  1012  8784 D NetworkMonitor/100: PROBE_DNS connectivitycheck.gstatic.com 10ms OK 192.178.24.67,2a00:1450:4017:821::2003
+10-12 23:20:17.367  1012  8783 D NetworkMonitor/100: PROBE_DNS www.google.com 46ms OK 142.251.155.119,142.251.157.119,142.251.151.119,142.251.150.119,142.251.153.119,142.251.156.119,142.251.154.119,142.251.152.119,2001:4860:482c:7700::,2001:4860:4826:7700::,2001:4860:482d:7700::,2001:4860:4829:7700::,2001:4860:4828:7700::,2001:4860:482a:7700::,2001:4860:4827:7700::,2001:4860:482b:7700::
+10-12 23:20:17.405  1012  8784 D NetworkMonitor/100: PROBE_HTTP http://connectivitycheck.gstatic.com/generate_204 Probe failed with exception java.io.IOException: unexpected end of stream on com.android.okhttp.Address@bc12768c
+10-12 23:20:17.453  8755  8770 I TestRunner: finished: phasePersonalizationBecomesSimpleAndOriginalManufacturerCanBeRestored(dev.p38journal.data.CustomRulesAndPaymentsTest)

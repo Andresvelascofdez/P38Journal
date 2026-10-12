@@ -1,0 +1,14 @@
+python : Traceback (most recent call last):
+At line:2 char:117
++ ... -first.log; python scripts/verify-v6-native.py *> docs/evidence/v6/na ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v6-native.py", line 77, in <module>
+    section('Trabajos y mejoras');tap('Previstos');tap('Realizados');show('FIXTURE mejora 
+libre');capture('works-done',('FIXTURE mejora libre','Fecha no conocida'))
+                                  ~~~^^^^^^^^^^^^^
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v6-native.py", line 40, in tap
+    raise AssertionError('Missing native control: '+text)
+AssertionError: Missing native control: Previstos

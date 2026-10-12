@@ -1,0 +1,503 @@
+10-12 23:04:03.112  6284  6314 I TestRunner: started: scanWithoutTextDeclaresSearchUnavailable(dev.p38journal.platform.DocumentViewerTest)
+10-12 23:04:03.155  6284  6314 W FileTestStorage: Output properties is not supported.
+10-12 23:04:03.156  6284  6314 I Tracing : Tracer added: class androidx.test.platform.tracing.AndroidXTracer
+10-12 23:04:03.168  6284  6284 D EventInjectionStrategy: Creating injection strategy with input manager.
+10-12 23:04:03.168  6284  6284 I 38journal.debug: hiddenapi: Accessing hidden method Landroid/hardware/input/InputManager;->getInstance()Landroid/hardware/input/InputManager; (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/test/espresso/base/InputManagerEventInjectionStrategy; (domain=app) using reflection: allowed
+10-12 23:04:03.169  6284  6284 I 38journal.debug: hiddenapi: Accessing hidden method Landroid/hardware/input/InputManager;->injectInputEvent(Landroid/view/InputEvent;I)Z (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/test/espresso/base/InputManagerEventInjectionStrategy; (domain=app) using reflection: allowed
+10-12 23:04:03.169  6284  6284 I 38journal.debug: hiddenapi: Accessing hidden field Landroid/hardware/input/InputManager;->INJECT_INPUT_EVENT_MODE_WAIT_FOR_FINISH:I (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/test/espresso/base/InputManagerEventInjectionStrategy; (domain=app) using reflection: allowed
+10-12 23:04:03.176  6284  6284 I 38journal.debug: hiddenapi: Accessing hidden method Landroid/os/MessageQueue;->next()Landroid/os/Message; (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/test/espresso/base/Interrogator; (domain=app) using reflection: allowed
+10-12 23:04:03.176  6284  6284 I 38journal.debug: hiddenapi: Accessing hidden field Landroid/os/MessageQueue;->mMessages:Landroid/os/Message; (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/test/espresso/base/Interrogator; (domain=app) using reflection: allowed
+10-12 23:04:03.176  6284  6284 I 38journal.debug: hiddenapi: Accessing hidden method Landroid/os/Message;->recycleUnchecked()V (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/test/espresso/base/Interrogator; (domain=app) using reflection: allowed
+10-12 23:04:03.177  6284  6314 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@5be0891]
+10-12 23:04:03.190  6284  6314 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+10-12 23:04:03.221   701  1882 I system_server: AssetManager2(0x7e19a193a818) locale list changing from [] to [en-US]
+10-12 23:04:03.224   701  1882 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@74abdd5b does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-12 23:04:03.237   564   800 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:04:03.243  1060  1060 W SplitSelectStateCtor: Missing session instanceIds
+10-12 23:04:03.243  1060  1060 D StatsLog: LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
+10-12 23:04:03.245   941  1046 I ndroid.systemui: AssetManager2(0x7e19a1870f18) locale list changing from [] to [en-US]
+10-12 23:04:03.280   564   564 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:04:03.288  6284  6284 I 38journal.debug: AssetManager2(0x7e19a184adb8) locale list changing from [] to [en-US]
+10-12 23:04:03.321  6284  6284 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@d0ea8e7 in: PRE_ON_CREATE
+10-12 23:04:03.321  6284  6284 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+10-12 23:04:03.357  6284  6284 D CompatChangeReporter: Compat change id reported: 377864165; UID 10268; state: ENABLED
+10-12 23:04:03.359  6284  6284 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+10-12 23:04:03.378  6284  6326 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-12 23:04:03.379  6284  6326 I EGL_emulation: Opening libGLESv2_emulation.so
+10-12 23:04:03.388  6284  6326 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-12 23:04:03.389  6284  6284 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@d0ea8e7 in: CREATED
+10-12 23:04:03.389  6284  6284 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=androidx.activity.ComponentActivity@d0ea8e7
+10-12 23:04:03.389  6284  6284 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@d0ea8e7 in: STARTED
+10-12 23:04:03.390  6284  6284 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=androidx.activity.ComponentActivity@d0ea8e7
+10-12 23:04:03.396  6284  6284 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@d0ea8e7 in: RESUMED
+10-12 23:04:03.396  6284  6284 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=androidx.activity.ComponentActivity@d0ea8e7
+10-12 23:04:03.411  6284  6284 W HWUI    : Unknown dataspace 0
+10-12 23:04:03.439   564   800 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10268 pid=0
+10-12 23:04:03.439   564   800 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10268 => denied (428 us)
+10-12 23:04:03.439   564   800 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10268 pid=0
+10-12 23:04:03.439   564   925 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10268 pid=6284
+10-12 23:04:03.439   564   925 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10268 => denied (201 us)
+10-12 23:04:03.439   564   800 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10268 => denied (207 us)
+10-12 23:04:03.439   564   800 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10268 pid=0
+10-12 23:04:03.439   564   925 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10268 pid=6284
+10-12 23:04:03.439   564   925 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10268 => denied (197 us)
+10-12 23:04:03.439   564   800 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10268 => denied (184 us)
+10-12 23:04:03.532   701  1882 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10268 pid=0
+10-12 23:04:03.532   701  1882 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10268 => denied (130 us)
+10-12 23:04:03.532   701  1882 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10268 pid=0
+10-12 23:04:03.532   701  1882 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10268 => denied (44 us)
+10-12 23:04:03.532   701  1882 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10268 pid=0
+10-12 23:04:03.532   701  1882 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10268 => denied (96 us)
+10-12 23:04:03.539   701   721 I ActivityTaskManager: Displayed dev.p38journal.debug/androidx.activity.ComponentActivity for user 0: +334ms
+10-12 23:04:03.571   701   810 I ImeTracker: dev.p38journal.debug:6543e9e8: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:04:03.574  6284  6284 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:04:03.574  6284  6284 I ImeTracker: dev.p38journal.debug:6543e9e8: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:04:03.593   701  1882 I ImeTracker: system_server:d44f02d7: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:04:03.594   701   724 I ImeTracker: system_server:d44f02d7: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:04:03.607  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:04:03.614  6284  6288 I 38journal.debug: Compiler allocated 5042KB to compile void android.view.ViewRootImpl.performTraversals()
+10-12 23:04:03.628  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:04:03.636  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=dev.p38journal.debug, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: EmojiCompatManager.getEmojiCompatIfLoaded():343 EmojiCompat.init() was never called.
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: java.lang.IllegalStateException: EmojiCompat is not initialized. Please call EmojiCompat.init() first
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at asx.p(PG:6)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at axb.b(PG:13)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at jnr.b(PG:2)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at jnr.c(PG:4)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at jnr.f(PG:3)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at jnx.c(PG:3)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at kif.cz(PG:47)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at lhl.run(PG:1025)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at jaf.execute(PG:12)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at nco.v(PG:13)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at lhn.m(PG:96)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at lhn.k(PG:25)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at kgn.onStartInput(PG:250)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at android.inputmethodservice.InputMethodService.doStartInput(InputMethodService.java:3521)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at android.inputmethodservice.InputMethodService$InputMethodImpl.startInput(InputMethodService.java:879)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at android.inputmethodservice.InputMethodService$InputMethodImpl.dispatchStartInput(InputMethodService.java:908)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at android.inputmethodservice.IInputMethodWrapper.executeMessage(IInputMethodWrapper.java:201)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at com.android.internal.os.HandlerCaller$MyHandler.handleMessage(HandlerCaller.java:44)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at android.os.Handler.dispatchMessage(Handler.java:110)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at android.os.Looper.loopOnce(Looper.java:248)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at android.os.Looper.loop(Looper.java:338)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at android.app.ActivityThread.main(ActivityThread.java:9067)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at java.lang.reflect.Method.invoke(Native Method)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)
+10-12 23:04:03.648  5001  5001 I EmojiCompatManager: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)
+10-12 23:04:03.649  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:04:03.652  1060  1060 D VRI[NexusLauncherActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-12 23:04:03.681  1060  1060 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+10-12 23:04:03.694  1060  1060 D BaseDepthController: setSurface:
+10-12 23:04:03.694  1060  1060 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-12 23:04:03.694  1060  1060 D BaseDepthController: 	mBaseSurface: null
+10-12 23:04:03.696  1060  1060 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+10-12 23:04:03.696  1060  1060 I ActivityThread: Schedule relaunch activity: com.google.android.apps.nexuslauncher.NexusLauncherActivity
+10-12 23:04:03.698  1060  1060 D StateManager: goToState - fromState: Normal, toState: Normal, partial trace:
+10-12 23:04:03.698  1060  1060 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:4)
+10-12 23:04:03.698  1060  1060 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:1)
+10-12 23:04:03.698  1060  1060 D StateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:34)
+10-12 23:04:03.699  1060  1060 D StatsLog: LAUNCHER_ONSTOP
+10-12 23:04:03.708  1060  1060 D StatsLog: LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
+10-12 23:04:03.710  1060  1060 D CannedAnimCoordinator: Wrong controller access from H2.w@b2d21e1, actual provider null
+10-12 23:04:03.712  1060  1060 D RecentsView: destroy
+10-12 23:04:03.712  1060  1060 D TaskbarManager: onActivityDestroyed: displayId=0 isDefaultDisplay=true
+10-12 23:04:03.712  1060  1060 D TaskbarManager: onActivityDestroyed: unregistering callbacks displayId=0 isDefaultDisplay=true
+10-12 23:04:03.712  1060  1060 D TaskbarManager: onActivityDestroyed: setting taskbarUIController displayId=0 isDefaultDisplay=true
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: destroy task fragment
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: java.lang.Exception
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at com.google.android.apps.nexuslauncher.overlay.TaskFragmentOverlayManager.onActivityDestroyed(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:60)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at com.android.launcher3.Launcher.onDestroy(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:107)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at com.android.launcher3.uioverrides.QuickstepLauncher.onDestroy(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:77)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at com.google.android.apps.nexuslauncher.NexusLauncherActivity.onDestroy(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:35)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at android.app.Activity.performDestroy(Activity.java:9460)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at android.app.Instrumentation.callActivityOnDestroy(Instrumentation.java:1556)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at android.app.ActivityThread.performDestroyActivity(ActivityThread.java:6256)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at android.app.ActivityThread.handleDestroyActivity(ActivityThread.java:6301)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at android.app.ActivityThread.handleRelaunchActivityInner(ActivityThread.java:6586)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at android.app.ActivityThread.handleRelaunchActivity(ActivityThread.java:6501)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at android.app.servertransaction.ActivityRelaunchItem.execute(ActivityRelaunchItem.java:106)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at android.app.servertransaction.ActivityTransactionItem.execute(ActivityTransactionItem.java:63)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at android.app.servertransaction.TransactionExecutor.executeNonLifecycleItem(TransactionExecutor.java:133)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at android.app.servertransaction.TransactionExecutor.executeTransactionItems(TransactionExecutor.java:103)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:80)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at android.app.ClientTransactionHandler.executeTransaction(ClientTransactionHandler.java:69)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at android.app.ActivityThread.handleRelaunchActivityLocally(ActivityThread.java:6567)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2829)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at android.os.Handler.dispatchMessage(Handler.java:110)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at android.os.Looper.loopOnce(Looper.java:248)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at android.os.Looper.loop(Looper.java:338)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at android.app.ActivityThread.main(ActivityThread.java:9067)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at java.lang.reflect.Method.invoke(Native Method)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)
+10-12 23:04:03.713  1060  1060 D TaskFragmentComponent: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)
+10-12 23:04:03.721  1060  1060 D RecentsView: reset - mEnableDrawingLiveTile: false, mRecentsAnimationController: null
+10-12 23:04:03.725  1060  1060 I s.nexuslauncher: AssetManager2(0x7e19a1847578) locale list changing from [] to [en-US]
+10-12 23:04:03.728  1060  1060 D UnlockComponentFactory: instantiateActivity() com.google.android.apps.nexuslauncher.NexusLauncherActivity isUserLocked: false
+10-12 23:04:03.728  1060  1060 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=com.android.launcher3.uioverrides.QuickstepLauncher$3@4ffae40
+10-12 23:04:03.743  1060  1060 W Resources: Drawable com.google.android.apps.nexuslauncher:drawable/ic_chevron_end has unresolved theme attributes! Consider using Resources.getDrawable(int, Theme) or Context.getDrawable(int).
+10-12 23:04:03.743  1060  1060 W Resources: java.lang.RuntimeException
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.content.res.Resources.getDrawable(Resources.java:926)
+10-12 23:04:03.743  1060  1060 W Resources: 	at com.android.launcher3.pageindicators.PageIndicatorDots.<init>(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:16)
+10-12 23:04:03.743  1060  1060 W Resources: 	at com.android.launcher3.pageindicators.PageIndicatorDots.<init>(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:2)
+10-12 23:04:03.743  1060  1060 W Resources: 	at java.lang.reflect.Constructor.newInstance0(Native Method)
+10-12 23:04:03.743  1060  1060 W Resources: 	at java.lang.reflect.Constructor.newInstance(Constructor.java:343)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.view.LayoutInflater.createView(LayoutInflater.java:743)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:895)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:850)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.view.LayoutInflater.rInflate(LayoutInflater.java:1012)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.view.LayoutInflater.rInflateChildren(LayoutInflater.java:973)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.view.LayoutInflater.rInflate(LayoutInflater.java:1015)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.view.LayoutInflater.rInflateChildren(LayoutInflater.java:973)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.view.LayoutInflater.inflate(LayoutInflater.java:571)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.view.LayoutInflater.inflate(LayoutInflater.java:462)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.view.LayoutInflater.inflate(LayoutInflater.java:413)
+10-12 23:04:03.743  1060  1060 W Resources: 	at com.android.launcher3.statemanager.StatefulActivity.inflateRootView(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:6)
+10-12 23:04:03.743  1060  1060 W Resources: 	at com.android.launcher3.Launcher.setupViews(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:10)
+10-12 23:04:03.743  1060  1060 W Resources: 	at com.android.launcher3.uioverrides.QuickstepLauncher.setupViews(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:13)
+10-12 23:04:03.743  1060  1060 W Resources: 	at com.google.android.apps.nexuslauncher.NexusLauncherActivity.setupViews(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:19)
+10-12 23:04:03.743  1060  1060 W Resources: 	at com.android.launcher3.Launcher.onCreate(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:181)
+10-12 23:04:03.743  1060  1060 W Resources: 	at com.android.launcher3.uioverrides.QuickstepLauncher.onCreate(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:1)
+10-12 23:04:03.743  1060  1060 W Resources: 	at com.google.android.apps.nexuslauncher.NexusLauncherActivity.onCreate(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:1)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.app.Activity.performCreate(Activity.java:9155)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.app.Activity.performCreate(Activity.java:9133)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1521)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:4262)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:4467)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.app.ActivityThread.handleRelaunchActivityInner(ActivityThread.java:6610)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.app.ActivityThread.handleRelaunchActivity(ActivityThread.java:6501)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.app.servertransaction.ActivityRelaunchItem.execute(ActivityRelaunchItem.java:106)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.app.servertransaction.ActivityTransactionItem.execute(ActivityTransactionItem.java:63)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.app.servertransaction.TransactionExecutor.executeNonLifecycleItem(TransactionExecutor.java:133)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.app.servertransaction.TransactionExecutor.executeTransactionItems(TransactionExecutor.java:103)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:80)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.app.ClientTransactionHandler.executeTransaction(ClientTransactionHandler.java:69)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.app.ActivityThread.handleRelaunchActivityLocally(ActivityThread.java:6567)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2829)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.os.Handler.dispatchMessage(Handler.java:110)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.os.Looper.loopOnce(Looper.java:248)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.os.Looper.loop(Looper.java:338)
+10-12 23:04:03.743  1060  1060 W Resources: 	at android.app.ActivityThread.main(ActivityThread.java:9067)
+10-12 23:04:03.743  1060  1060 W Resources: 	at java.lang.reflect.Method.invoke(Native Method)
+10-12 23:04:03.744  1060  1060 W Resources: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)
+10-12 23:04:03.744  1060  1060 W Resources: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)
+10-12 23:04:03.744  1060  1060 W Resources: Drawable com.google.android.apps.nexuslauncher:drawable/ic_chevron_start has unresolved theme attributes! Consider using Resources.getDrawable(int, Theme) or Context.getDrawable(int).
+10-12 23:04:03.744  1060  1060 W Resources: java.lang.RuntimeException
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.content.res.Resources.getDrawable(Resources.java:926)
+10-12 23:04:03.744  1060  1060 W Resources: 	at com.android.launcher3.pageindicators.PageIndicatorDots.<init>(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:17)
+10-12 23:04:03.744  1060  1060 W Resources: 	at com.android.launcher3.pageindicators.PageIndicatorDots.<init>(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:2)
+10-12 23:04:03.744  1060  1060 W Resources: 	at java.lang.reflect.Constructor.newInstance0(Native Method)
+10-12 23:04:03.744  1060  1060 W Resources: 	at java.lang.reflect.Constructor.newInstance(Constructor.java:343)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.view.LayoutInflater.createView(LayoutInflater.java:743)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:895)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.view.LayoutInflater.createViewFromTag(LayoutInflater.java:850)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.view.LayoutInflater.rInflate(LayoutInflater.java:1012)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.view.LayoutInflater.rInflateChildren(LayoutInflater.java:973)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.view.LayoutInflater.rInflate(LayoutInflater.java:1015)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.view.LayoutInflater.rInflateChildren(LayoutInflater.java:973)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.view.LayoutInflater.inflate(LayoutInflater.java:571)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.view.LayoutInflater.inflate(LayoutInflater.java:462)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.view.LayoutInflater.inflate(LayoutInflater.java:413)
+10-12 23:04:03.744  1060  1060 W Resources: 	at com.android.launcher3.statemanager.StatefulActivity.inflateRootView(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:6)
+10-12 23:04:03.744  1060  1060 W Resources: 	at com.android.launcher3.Launcher.setupViews(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:10)
+10-12 23:04:03.744  1060  1060 W Resources: 	at com.android.launcher3.uioverrides.QuickstepLauncher.setupViews(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:13)
+10-12 23:04:03.744  1060  1060 W Resources: 	at com.google.android.apps.nexuslauncher.NexusLauncherActivity.setupViews(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:19)
+10-12 23:04:03.744  1060  1060 W Resources: 	at com.android.launcher3.Launcher.onCreate(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:181)
+10-12 23:04:03.744  1060  1060 W Resources: 	at com.android.launcher3.uioverrides.QuickstepLauncher.onCreate(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:1)
+10-12 23:04:03.744  1060  1060 W Resources: 	at com.google.android.apps.nexuslauncher.NexusLauncherActivity.onCreate(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:1)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.app.Activity.performCreate(Activity.java:9155)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.app.Activity.performCreate(Activity.java:9133)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1521)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:4262)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:4467)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.app.ActivityThread.handleRelaunchActivityInner(ActivityThread.java:6610)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.app.ActivityThread.handleRelaunchActivity(ActivityThread.java:6501)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.app.servertransaction.ActivityRelaunchItem.execute(ActivityRelaunchItem.java:106)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.app.servertransaction.ActivityTransactionItem.execute(ActivityTransactionItem.java:63)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.app.servertransaction.TransactionExecutor.executeNonLifecycleItem(TransactionExecutor.java:133)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.app.servertransaction.TransactionExecutor.executeTransactionItems(TransactionExecutor.java:103)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:80)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.app.ClientTransactionHandler.executeTransaction(ClientTransactionHandler.java:69)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.app.ActivityThread.handleRelaunchActivityLocally(ActivityThread.java:6567)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2829)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.os.Handler.dispatchMessage(Handler.java:110)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.os.Looper.loopOnce(Looper.java:248)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.os.Looper.loop(Looper.java:338)
+10-12 23:04:03.744  1060  1060 W Resources: 	at android.app.ActivityThread.main(ActivityThread.java:9067)
+10-12 23:04:03.744  1060  1060 W Resources: 	at java.lang.reflect.Method.invoke(Native Method)
+10-12 23:04:03.744  1060  1060 W Resources: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)
+10-12 23:04:03.744  1060  1060 W Resources: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)
+10-12 23:04:03.782  1060  1060 E RecyclerView: Cannot scroll to position a LayoutManager set. Call setLayoutManager with a non-null argument.
+10-12 23:04:03.783  1060  1060 D ActivityAllAppsContainerView: rebindAdapters: force: true
+10-12 23:04:03.783  1060  1060 D ActivityAllAppsContainerView: replaceAppsRVContainer: showTabs: false
+10-12 23:04:03.784  1060  1060 D AlphabeticalAppsList: Clearing FastScrollerSections.
+10-12 23:04:03.784  1060  1060 D AlphabeticalAppsList: Adding apps with sections. HasPrivateApps: true
+10-12 23:04:03.785  1060  1060 E RecyclerView: Cannot scroll to position a LayoutManager set. Call setLayoutManager with a non-null argument.
+10-12 23:04:03.787  1060  1060 D DeviceSearchAlg: search timeout = %d200
+10-12 23:04:03.789  1060  1060 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+10-12 23:04:03.789  1060  1060 W BcSmartspaceView: Current card is not present in the Adapter; cannot log.
+10-12 23:04:03.789  1060  1060 D CellLayout: Adding view to ShortcutsAndWidgetsContainer: com.google.android.apps.nexuslauncher.qsb.SmartspaceViewContainer{15a2547 V.E...... ......I. 0,0-0,0 #7f0a032d app:id/search_container_workspace}
+10-12 23:04:03.790  1060  1060 D OverviewActionsView: updateActionButtonsVisibility() called: showSingleTaskActions = [true], showGroupActions = [false]
+10-12 23:04:03.791  1060  6339 D ViewPool: initPool complete
+10-12 23:04:03.793  1060  6340 D ViewPool: initPool complete
+10-12 23:04:03.807  1060  1060 D KeyboardInsetsHandler: setState, toState:Normal StateManager(mLastStableState:Normal, mCurrentStableState:Normal, mState:Normal, mRestState:null, isInTransition:false)
+10-12 23:04:03.808  1060  1060 D CellLayout: Adding view to ShortcutsAndWidgetsContainer: com.google.android.apps.nexuslauncher.qsb.SmartspaceViewContainer{15a2547 V.E...... ......I. 0,0-0,0 #7f0a032d app:id/search_container_workspace}
+10-12 23:04:03.808  1060  1060 D ModelCallbacks: startBinding: hotseat layout was vertical: false and is setting to false
+10-12 23:04:03.809  1060  1060 D Launcher.Workspace: addInScreenFromBind: hotseat inflation with x = 0 and y = 0
+10-12 23:04:03.809  1060  1060 D CellLayout: Adding view to ShortcutsAndWidgetsContainer: com.android.launcher3.views.DoubleShadowBubbleTextView{e61277d VFED..C.. ......ID 0,0-0,0 #1}
+10-12 23:04:03.809  1060  1060 D Launcher.Workspace: addInScreenFromBind: hotseat inflation with x = 1 and y = 0
+10-12 23:04:03.809  1060  1060 D CellLayout: Adding view to ShortcutsAndWidgetsContainer: com.android.launcher3.views.DoubleShadowBubbleTextView{1141672 VFED..C.. ......ID 0,0-0,0 #2}
+10-12 23:04:03.809  1060  1060 D Launcher.Workspace: addInScreenFromBind: hotseat inflation with x = 2 and y = 0
+10-12 23:04:03.809  1060  1060 D CellLayout: Adding view to ShortcutsAndWidgetsContainer: com.android.launcher3.views.DoubleShadowBubbleTextView{2907ac3 VFED..C.. ......ID 0,0-0,0 #3}
+10-12 23:04:03.809  1060  1060 D CellLayout: Adding view to ShortcutsAndWidgetsContainer: com.android.launcher3.views.DoubleShadowBubbleTextView{2bddf40 VFED..C.. ......ID 0,0-0,0 #4}
+10-12 23:04:03.809  1060  1060 D CellLayout: Adding view to ShortcutsAndWidgetsContainer: com.android.launcher3.views.DoubleShadowBubbleTextView{5dbe79 VFED..C.. ......ID 0,0-0,0 #5}
+10-12 23:04:03.809  1060  1060 D CellLayout: Adding view to ShortcutsAndWidgetsContainer: com.android.launcher3.views.DoubleShadowBubbleTextView{28927be VFED..C.. ......ID 0,0-0,0 #6}
+10-12 23:04:03.809  1060  1060 D CellLayout: Adding view to ShortcutsAndWidgetsContainer: com.android.launcher3.views.DoubleShadowBubbleTextView{976001f VFED..C.. ......ID 0,0-0,0 #7}
+10-12 23:04:03.809  1060  1060 D SearchTargetUtil: queryLength=0 size=3
+10-12 23:04:03.809  1060  1060 D SearchTargetUtil: layoutType=extra_tall_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox
+10-12 23:04:03.809  1060  1060 D SearchTargetUtil: layoutType=short_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox
+10-12 23:04:03.809  1060  1060 D SearchTargetUtil: layoutType=extra_tall_icon_row resultType=131072 packageName=com.google.android.googlequicksearchbox
+10-12 23:04:03.810  1060  1060 D b/387844520: getOutlineOffsetX: measured width = 0, mNormalizedIconSize = 159, last updated width = 0
+10-12 23:04:03.810  1060  1060 D Launcher.Workspace: addInScreenFromBind: hotseat inflation with x = 3 and y = 0
+10-12 23:04:03.810  1060  1060 D CellLayout: Adding view to ShortcutsAndWidgetsContainer: com.android.launcher3.uioverrides.PredictedAppIcon{4047f3b VFED..C.. ......ID 0,0-0,0}
+10-12 23:04:03.820  1060  1060 D LauncherBinder: Starting async inflation
+10-12 23:04:03.820  1060  1060 D AllAppsStore: setApps: apps.length=23
+10-12 23:04:03.820  1060  1060 D AllAppsStore: notifyUpdate: notifying listeners
+10-12 23:04:03.820  1060  1060 D ActivityAllAppsContainerView: onAppsUpdated; number of apps: 23
+10-12 23:04:03.820  1060  1060 D ActivityAllAppsContainerView: rebindAdapters: force: false
+10-12 23:04:03.820  1060  1060 D ActivityAllAppsContainerView: rebindAdapters: Not needed.
+10-12 23:04:03.820  1060  1060 D StatsLog: LAUNCHER_ALLAPPS_COUNT
+10-12 23:04:03.820  1060  1060 D AlphabeticalAppsList: Clearing FastScrollerSections.
+10-12 23:04:03.820  1060  1060 D AlphabeticalAppsList: Adding apps with sections. HasPrivateApps: false
+10-12 23:04:03.820  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: C with appInfoTitle: Calendar
+10-12 23:04:03.820  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: D with appInfoTitle: Drive
+10-12 23:04:03.820  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: E with appInfoTitle: Expo Go
+10-12 23:04:03.820  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: F with appInfoTitle: Files
+10-12 23:04:03.820  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: G with appInfoTitle: Gmail
+10-12 23:04:03.820  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: H with appInfoTitle: historias-en-un-clic
+10-12 23:04:03.821  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: M with appInfoTitle: Maps
+10-12 23:04:03.821  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: P with appInfoTitle: P38 Journal
+10-12 23:04:03.821  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: S with appInfoTitle: Safety
+10-12 23:04:03.821  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: T with appInfoTitle: TMoble
+10-12 23:04:03.821  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: Y with appInfoTitle: YouTube
+10-12 23:04:03.821  1060  1060 D AlphabeticalAppsList: Adding FastScrollSection duplicate to scroll to the bottom.
+10-12 23:04:03.821  1060  1060 D AlphabeticalAppsList: Clearing FastScrollerSections.
+10-12 23:04:03.821  1060  1060 D AlphabeticalAppsList: Adding apps with sections. HasPrivateApps: false
+10-12 23:04:03.821  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: C with appInfoTitle: Calendar
+10-12 23:04:03.821  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: D with appInfoTitle: Drive
+10-12 23:04:03.821  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: E with appInfoTitle: Expo Go
+10-12 23:04:03.821  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: F with appInfoTitle: Files
+10-12 23:04:03.821  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: G with appInfoTitle: Gmail
+10-12 23:04:03.821  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: H with appInfoTitle: historias-en-un-clic
+10-12 23:04:03.821  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: M with appInfoTitle: Maps
+10-12 23:04:03.821  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: P with appInfoTitle: P38 Journal
+10-12 23:04:03.821  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: S with appInfoTitle: Safety
+10-12 23:04:03.821  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: T with appInfoTitle: TMoble
+10-12 23:04:03.821  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: Y with appInfoTitle: YouTube
+10-12 23:04:03.821  1060  1060 D AlphabeticalAppsList: Adding FastScrollSection duplicate to scroll to the bottom.
+10-12 23:04:03.825  1513  1513 I AiAiEcho: SearchContextManagerImpl::setSearchContext resultTypes=[139867] extras=[Bundle[{launcher.maxInlineIcons=3, dynamic_ranking_m3_enabled=true, qs_tiles_asi_enabled=true, allowlist_enabled=false, one_search_enabled=true, system_clock=true, version_code=12, gms_play_query_lower_bound=2, gms_play_query_upper_bound=20, recent_search_block_enabled=true, gms_play_feature_supported=true, launcher.gridSize=4, showhiddentargets_enabled=false, ose_info=1}]] sessionId=[com.google.android.apps.nexuslauncher:576d6623-05eb-437d-903a-69ece9f0a617,0]
+10-12 23:04:03.829  1060  1139 D SearchTargetUtil: queryLength=0 size=1
+10-12 23:04:03.829  1060  1139 D SearchTargetUtil: layoutType=icon_row resultType=4096 packageName=
+10-12 23:04:03.829  1060  1060 D AlphabeticIndexCompat: computeSectionName: cs: Settings sectionName: S
+10-12 23:04:03.829  1060  1060 D AlphabeticIndexCompat: computeSectionName: cs: Photos sectionName: P
+10-12 23:04:03.829  1060  1060 D AlphabeticIndexCompat: computeSectionName: cs: Battery sectionName: B
+10-12 23:04:03.829  1060  1060 D AlphabeticIndexCompat: computeSectionName: cs: Google Chrome sectionName: G
+10-12 23:04:03.830  1060  1060 D AlphabeticIndexCompat: computeSectionName: cs: Gmail sectionName: G
+10-12 23:04:03.830  1060  1060 D AlphabeticIndexCompat: computeSectionName: cs: Google Drive sectionName: G
+10-12 23:04:03.831  1060  1060 D AlphabeticIndexCompat: computeSectionName: cs: Clock sectionName: C
+10-12 23:04:03.831  1060  1060 D AlphabeticIndexCompat: computeSectionName: cs: Contacts sectionName: C
+10-12 23:04:03.832  1060  1060 D AlphabeticIndexCompat: computeSectionName: cs: Google Calendar sectionName: G
+10-12 23:04:03.832  1060  1060 D AlphabeticIndexCompat: computeSectionName: cs: Google Maps sectionName: G
+10-12 23:04:03.832  1060  1060 D AlphabeticIndexCompat: computeSectionName: cs: YouTube Music sectionName: Y
+10-12 23:04:03.832  1060  1060 D AlphabeticIndexCompat: computeSectionName: cs: YouTube sectionName: Y
+10-12 23:04:03.832  1060  1060 D AlphabeticIndexCompat: computeSectionName: cs: Google sectionName: G
+10-12 23:04:03.833  1060  1060 D AlphabeticIndexCompat: computeSectionName: cs: Android System Intelligence sectionName: A
+10-12 23:04:03.833  1060  1060 D AlphabeticIndexCompat: computeSectionName: cs: Digital Wellbeing sectionName: D
+10-12 23:04:03.833  1060  1060 D AlphabeticIndexCompat: computeSectionName: cs: Conversations sectionName: C
+10-12 23:04:03.839  1060  1060 I s.nexuslauncher: AssetManager2(0x7e19a186c0f8) locale list changing from [] to [en-US]
+10-12 23:04:03.844  1060  1060 D OverviewActionsView: updateActionButtonsVisibility() called: showSingleTaskActions = [true], showGroupActions = [false]
+10-12 23:04:03.844  1060  1060 D KeyboardInsetsHandler: setState, toState:Normal StateManager(mLastStableState:Normal, mCurrentStableState:Normal, mState:Normal, mRestState:null, isInTransition:false)
+10-12 23:04:03.844  1060  1060 D OverviewActionsView: updateActionButtonsVisibility() called: showSingleTaskActions = [true], showGroupActions = [false]
+10-12 23:04:03.845  1060  1060 D b/380940677: [mStateHandlerRequest=0, mCurrentStateRequest=0, mLastActivityFlags=5, mIgnoreAutoRotateSettings=false, mHomeRotationEnabled=false, mForceAllowRotationForTesting=false, mDestroyed=false, mIsFixedLandscape=false]
+10-12 23:04:03.846  1060  1060 D ActivityAllAppsContainerView: rebindAdapters: force: false
+10-12 23:04:03.846  1060  1060 D ActivityAllAppsContainerView: rebindAdapters: Not needed.
+10-12 23:04:03.847  1060  1139 D InputMonitorCompat: Input monitor (minus-one-disp0) created
+10-12 23:04:03.847  1060  1060 D ViewRootImpl: Skipping stats log for color mode
+10-12 23:04:03.847  1060  1060 W SplitSelectStateCtor: Missing session instanceIds
+10-12 23:04:03.847  1060  1060 D StatsLog: LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
+10-12 23:04:03.848  1060  1060 D ViewRootImpl: Skipping stats log for color mode
+10-12 23:04:03.848  1060  1060 D StateManager: goToState - fromState: Normal, toState: Normal, partial trace:
+10-12 23:04:03.848  1060  1060 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:4)
+10-12 23:04:03.848  1060  1060 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:1)
+10-12 23:04:03.848  1060  1060 D StateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:34)
+10-12 23:04:03.849  1060  1060 D StatsLog: LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
+10-12 23:04:03.854  1060  1060 I SsCardPagerAdapter: [rmv] Rendering flag - enabled: true rmv: null
+10-12 23:04:03.854  1060  1060 I SsCardPagerAdapter: Use UI template for the feature: 1
+10-12 23:04:03.856  1060  1060 D SsBaseTemplateCard: No text view can be set up
+10-12 23:04:03.856  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:04:03.856  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:04:03.856  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:04:03.856  1060  1060 I SsBaseTemplateCard: Secondary card pane is null
+10-12 23:04:03.858  1060  1060 D b/387844520: calling updateRingPath from onSizeChanged
+10-12 23:04:03.858  1060  1060 D b/387844520: getOutlineOffsetX: measured width = 173, mNormalizedIconSize = 159, last updated width = 173
+10-12 23:04:03.860  1060  1060 D InputMonitorCompat: Input event receiver for monitor (minus-one-disp0) disposed
+10-12 23:04:03.860  1060  1060 D InputMonitorCompat: Input monitor (minus-one-disp0) disposed
+10-12 23:04:03.861  1060  1060 D TISBindHelper: TIS service connected
+10-12 23:04:03.861  1060  1060 D TaskbarManager: setActivity: mActivity=null displayId=0 isDefaultDisplay=true
+10-12 23:04:03.861  1060  1060 D TaskbarManager: setActivity: registering activity lifecycle callbacks. displayId=0 isDefaultDisplay=true
+10-12 23:04:03.861  1060  1060 D TaskbarManager: getUnfoldTransitionProgressProviderForActivity displayId=0 isDefaultDisplay=true
+10-12 23:04:03.861  1060  1060 D TaskbarManager: setRecentsViewContainer displayId=0 isDefaultDisplay=true
+10-12 23:04:03.861  1060  1060 D TaskbarManager: createTaskbarUIControllerForRecentsViewContainer displayId=0 isDefaultDisplay=true
+10-12 23:04:03.861  1060  1060 D LauncherBinder: Calling onCompleteSignal
+10-12 23:04:03.861  1060  1060 D ViewOnDrawExecutor: markCompleted: executing tasks
+10-12 23:04:03.861  1060  1060 D ActivityAllAppsContainerView: rebindAdapters: force: false
+10-12 23:04:03.861  1060  1060 D ActivityAllAppsContainerView: rebindAdapters: Not needed.
+10-12 23:04:03.866  1060  1060 D TaskFragmentComponent: release and clear taskSurface
+10-12 23:04:03.866  1060  1060 D TaskFragmentComponent: Setting valid task fragment surface control in TYPE_TASK_FRAGMENT_APPEARED
+10-12 23:04:03.869  1060  1139 D InputMonitorCompat: Input event receiver for monitor (minus-one-disp0) created
+10-12 23:04:03.871   564   925 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:04:03.874   564   800 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:04:03.894   941   949 W System  : A resource failed to call release.
+10-12 23:04:03.894   941   949 W System  : A resource failed to call release.
+10-12 23:04:03.894   941   949 W System  : A resource failed to call release.
+10-12 23:04:04.042  5651  5661 I FontLog : (REDACTED) Received query %s, URI %s
+10-12 23:04:04.044  5651  5661 I FontLog : (REDACTED) Query [%s] resolved to %s
+10-12 23:04:04.060  5651  5699 I FontLog : (REDACTED) Updating from directory version %d to %d from disk
+10-12 23:04:04.065  5651  6033 I FontLog : (REDACTED) Using directory in FlatBuffer format
+10-12 23:04:04.072  5651  5661 I FontLog : (REDACTED) Fetch %s end status %s
+10-12 23:04:04.077  5651  5661 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+10-12 23:04:04.082  5651  5661 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+10-12 23:04:04.149  6284  6325 D nativeloader: Load libpdfclient.so using APEX ns com_android_mediaprovider for caller /apex/com.android.mediaprovider/javalib/framework-pdf.jar: ok
+10-12 23:04:04.387  6284  6325 D pdf_document_jni: Creating FPDF_DOCUMENT from fd: 133
+10-12 23:04:04.401  6284  6325 D pdf_document_jni: Deleting Document: 0x7e17a1869350
+10-12 23:04:04.401  6284  6325 D pdf_document_jni: Destroyed Document: 0x7e17a1869350
+10-12 23:04:04.896  6284  6323 D pdf_document_jni: Creating FPDF_DOCUMENT from fd: 133
+10-12 23:04:04.950  6284  6323 D pdf_document_jni: Deleting Document: 0x7e17a1868390
+10-12 23:04:04.950  6284  6323 D pdf_document_jni: Destroyed Document: 0x7e17a1868390
+10-12 23:04:04.993  6284  6343 D ProfileInstaller: Installing profile for dev.p38journal.debug
+10-12 23:04:05.421   701   716 I system_server: AssetManager2(0x7e19a193ae58) locale list changing from [] to [en-US]
+10-12 23:04:05.422   701   716 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@72f704bc does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-12 23:04:05.425   564   800 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:04:05.427   941  1046 I ndroid.systemui: AssetManager2(0x7e19a1879258) locale list changing from [] to [en-US]
+10-12 23:04:05.429  6284  6284 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@d0ea8e7 in: PAUSED
+10-12 23:04:05.429  6284  6284 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=androidx.activity.ComponentActivity@d0ea8e7
+10-12 23:04:05.430   564   564 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:04:05.437   701   724 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@72f704bc does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-12 23:04:05.443   490   490 D Zygote  : Forked child process 6345
+10-12 23:04:05.445   701   811 I system_server: AssetManager2(0x7e19a1931538) locale list changing from [] to [en-US]
+10-12 23:04:05.468  6345  6345 I rnal.debug.test: Late-enabling -Xcheck:jni
+10-12 23:04:05.471   701   811 I system_server: AssetManager2(0x7e19a193b498) locale list changing from [] to [en-US]
+10-12 23:04:05.478   941  1010 I ndroid.systemui: AssetManager2(0x7e19a1874438) locale list changing from [] to [en-US]
+10-12 23:04:05.487   941  1010 I ndroid.systemui: AssetManager2(0x7e19a186c0f8) locale list changing from [] to [en-US]
+10-12 23:04:05.495  6345  6345 I rnal.debug.test: Using CollectorTypeCMC GC.
+10-12 23:04:05.499  6345  6345 W rnal.debug.test: Unexpected CPU variant for x86: x86_64.
+10-12 23:04:05.499  6345  6345 W rnal.debug.test: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default
+10-12 23:04:05.503   570   597 I adbd    : jdwp connection from 6345
+10-12 23:04:05.514  6345  6345 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-12 23:04:05.550  6345  6345 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+10-12 23:04:05.556  6345  6345 D nativeloader: Configuring clns-9 for other apk /system/framework/android.test.mock.jar. target_sdk_version=36, uses_libraries=ALL, library_path=/data/app/~~StSnKjl8PqxG8VUgKLIbwg==/dev.p38journal.debug.test-ck7HOpPG3yxmw_IANDf7Bw==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/dev.p38journal.debug.test
+10-12 23:04:05.560  6345  6345 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+10-12 23:04:05.562  6345  6345 D nativeloader: Configuring clns-10 for other apk /system/framework/android.test.runner.jar. target_sdk_version=36, uses_libraries=ALL, library_path=/data/app/~~StSnKjl8PqxG8VUgKLIbwg==/dev.p38journal.debug.test-ck7HOpPG3yxmw_IANDf7Bw==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/dev.p38journal.debug.test
+10-12 23:04:05.585  6345  6345 D nativeloader: Configuring clns-11 for other apk /data/app/~~StSnKjl8PqxG8VUgKLIbwg==/dev.p38journal.debug.test-ck7HOpPG3yxmw_IANDf7Bw==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~StSnKjl8PqxG8VUgKLIbwg==/dev.p38journal.debug.test-ck7HOpPG3yxmw_IANDf7Bw==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/dev.p38journal.debug.test
+10-12 23:04:05.591  6345  6345 I rnal.debug.test: AssetManager2(0x7e19a183ebf8) locale list changing from [] to [en-US]
+10-12 23:04:05.597  6345  6345 V GraphicsEnvironment: Currently set values for:
+10-12 23:04:05.597  6345  6345 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-12 23:04:05.597  6345  6345 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-12 23:04:05.597  6345  6345 V GraphicsEnvironment: dev.p38journal.debug.test is not listed in per-application setting
+10-12 23:04:05.597  6345  6345 V GraphicsEnvironment: ANGLE allowlist from config:
+10-12 23:04:05.597  6345  6345 V GraphicsEnvironment: dev.p38journal.debug.test is not listed in ANGLE allowlist or settings, returning default
+10-12 23:04:05.597  6345  6345 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-12 23:04:05.616  6345  6345 I rnal.debug.test: AssetManager2(0x7e19a18481f8) locale list changing from [] to [en-US]
+10-12 23:04:05.624  6345  6345 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+10-12 23:04:05.637  6345  6345 D CompatChangeReporter: Compat change id reported: 377864165; UID 10267; state: ENABLED
+10-12 23:04:05.639  6345  6345 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+10-12 23:04:05.646  6345  6359 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-12 23:04:05.647  6345  6359 I EGL_emulation: Opening libGLESv2_emulation.so
+10-12 23:04:05.655  6345  6359 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-12 23:04:05.661  6345  6345 W HWUI    : Unknown dataspace 0
+10-12 23:04:05.676   564   800 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:04:05.688   564   616 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10267 pid=0
+10-12 23:04:05.688   564   616 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10267 => denied (225 us)
+10-12 23:04:05.688   564   616 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10267 pid=0
+10-12 23:04:05.688   564   616 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10267 => denied (463 us)
+10-12 23:04:05.689   564   616 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10267 pid=0
+10-12 23:04:05.689   564   616 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10267 => denied (976 us)
+10-12 23:04:05.689   564   800 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10267 pid=6345
+10-12 23:04:05.689   564   800 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10267 => denied (232 us)
+10-12 23:04:05.753   701   716 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10267 pid=0
+10-12 23:04:05.753   701   716 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10267 => denied (86 us)
+10-12 23:04:05.753   701   716 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10267 pid=0
+10-12 23:04:05.753   701   716 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10267 => denied (52 us)
+10-12 23:04:05.754   701   716 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10267 pid=0
+10-12 23:04:05.754   701   716 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10267 => denied (42 us)
+10-12 23:04:05.762  1060  1060 D StatsLog: LAUNCHER_ONRESUME
+10-12 23:04:05.764  1060  1060 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=6}
+10-12 23:04:05.770  1060  1060 D BaseDepthController: setSurface:
+10-12 23:04:05.770  1060  1060 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-12 23:04:05.770  1060  1060 D BaseDepthController: 	mBaseSurface: Surface(name=com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity)/@0xc57158a
+10-12 23:04:05.772  1060  1140 D QuickstepModelDelegate: notifyAppTargetEvent action=1 launchLocation=workspace/0/[-1,-1]/[1,1]
+10-12 23:04:05.785  1513  1632 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+10-12 23:04:05.785  1513  1632 I AiAiEcho: EchoTargets:
+10-12 23:04:05.785  1513  1632 I AiAiEcho: Filtered by AiAi flag check:
+10-12 23:04:05.785  1513  1632 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+10-12 23:04:05.786  1513  1632 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+10-12 23:04:05.790  1513  1632 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+10-12 23:04:05.795  1060  1060 D SsBaseTemplateCard: No text view can be set up
+10-12 23:04:05.795  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:04:05.795  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:04:05.795  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:04:05.795  1060  1060 I SsBaseTemplateCard: Secondary card pane is null
+10-12 23:04:05.807  6284  6284 D VRI[ComponentActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-12 23:04:05.818  6284  6326 D HWUI    : endAllActiveAnimators on 0x7e189185ed60 (UnprojectedRipple) with handle 0x7e192188c770
+10-12 23:04:05.818  6284  6326 D HWUI    : endAllActiveAnimators on 0x7e1891864df0 (UnprojectedRipple) with handle 0x7e192187cbd0
+10-12 23:04:05.822  1060  1060 D StateManager: createAtomicAnimation - fromState: Background, toState: Normal, partial trace:
+10-12 23:04:05.822  1060  1060 D StateManager: 	at com.android.quickstep.util.WorkspaceRevealAnim.prepareToAnimate(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:22)
+10-12 23:04:05.822  1060  1060 D StateManager: 	at com.android.quickstep.util.WorkspaceRevealAnim.<init>(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:11)
+10-12 23:04:05.822  1060  1060 D StateManager: 	at com.android.launcher3.QuickstepTransitionManager.createWallpaperOpenAnimations(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:339)
+10-12 23:04:05.824  1060  1060 D b/311077782: LauncherAnimationRunner.setAnimation
+10-12 23:04:05.825  6284  6284 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@d0ea8e7 in: STOPPED
+10-12 23:04:05.825  6284  6284 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=androidx.activity.ComponentActivity@d0ea8e7
+10-12 23:04:05.832  6284  6284 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@9086842
+10-12 23:04:05.835  6284  6284 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@d0ea8e7 in: DESTROYED
+10-12 23:04:05.835  6284  6284 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+10-12 23:04:05.839  6284  6284 D ViewRootImpl: Skipping stats log for color mode
+10-12 23:04:05.839   701   810 I ImeTracker: com.google.android.apps.nexuslauncher:952dbd5f: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:04:05.840   701  1210 I ImeTracker: system_server:4f905322: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:04:05.840  1060  1060 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:04:05.840  1060  1060 I ImeTracker: com.google.android.apps.nexuslauncher:952dbd5f: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:04:05.842  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:04:05.842  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:04:05.843   701  1883 I ImeTracker: system_server:80111d03: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:04:05.846   701   724 I ImeTracker: system_server:4f905322: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:04:05.848  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=com.google.android.apps.nexuslauncher, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: EmojiCompatManager.getEmojiCompatIfLoaded():343 EmojiCompat.init() was never called.
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: java.lang.IllegalStateException: EmojiCompat is not initialized. Please call EmojiCompat.init() first
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at asx.p(PG:6)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at axb.b(PG:13)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at jnr.b(PG:2)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at jnr.c(PG:4)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at jnr.f(PG:3)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at jnx.c(PG:3)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at kif.cz(PG:47)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at lhl.run(PG:1025)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at jaf.execute(PG:12)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at nco.v(PG:13)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at lhn.m(PG:96)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at lhn.k(PG:25)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at kgn.onStartInput(PG:250)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at android.inputmethodservice.InputMethodService.doStartInput(InputMethodService.java:3521)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at android.inputmethodservice.InputMethodService$InputMethodImpl.startInput(InputMethodService.java:879)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at android.inputmethodservice.InputMethodService$InputMethodImpl.dispatchStartInput(InputMethodService.java:908)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at android.inputmethodservice.IInputMethodWrapper.executeMessage(IInputMethodWrapper.java:201)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at com.android.internal.os.HandlerCaller$MyHandler.handleMessage(HandlerCaller.java:44)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at android.os.Handler.dispatchMessage(Handler.java:110)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at android.os.Looper.loopOnce(Looper.java:248)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at android.os.Looper.loop(Looper.java:338)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at android.app.ActivityThread.main(ActivityThread.java:9067)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at java.lang.reflect.Method.invoke(Native Method)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)
+10-12 23:04:05.848  5001  5001 I EmojiCompatManager: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)
+10-12 23:04:05.850  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:04:05.850   701   724 I ImeTracker: system_server:80111d03: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:04:05.858  6284  6314 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@5be0891]
+10-12 23:04:05.859  6284  6314 I TestRunner: finished: scanWithoutTextDeclaresSearchUnavailable(dev.p38journal.platform.DocumentViewerTest)

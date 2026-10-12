@@ -1,0 +1,2 @@
+10-12 23:09:46.311  7140  7155 I TestRunner: started: workAndPlanningChangesCancelOnlyAutomaticRecordsWithTheSameRuleId(dev.p38journal.data.RepositoryTest)
+10-12 23:09:46.357  7140  7155 I TestRunner: finished: workAndPlanningChangesCancelOnlyAutomaticRecordsWithTheSameRuleId(dev.p38journal.data.RepositoryTest)

@@ -1,0 +1,2 @@
+10-12 23:20:18.167  8755  8770 I TestRunner: started: oldSnapshotsTwoAndThreeDefaultVisitsToDoneWithoutInventingFuelOrDeadlineOrTyreRows(dev.p38journal.data.ExpandedRepositoryTest)
+10-12 23:20:18.227  8755  8770 I TestRunner: finished: oldSnapshotsTwoAndThreeDefaultVisitsToDoneWithoutInventingFuelOrDeadlineOrTyreRows(dev.p38journal.data.ExpandedRepositoryTest)

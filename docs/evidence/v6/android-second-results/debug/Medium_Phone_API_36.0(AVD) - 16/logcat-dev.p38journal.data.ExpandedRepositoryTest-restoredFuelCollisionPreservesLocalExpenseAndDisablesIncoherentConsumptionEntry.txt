@@ -1,0 +1,2 @@
+10-12 23:09:45.122  7140  7155 I TestRunner: started: restoredFuelCollisionPreservesLocalExpenseAndDisablesIncoherentConsumptionEntry(dev.p38journal.data.ExpandedRepositoryTest)
+10-12 23:09:45.163  7140  7155 I TestRunner: finished: restoredFuelCollisionPreservesLocalExpenseAndDisablesIncoherentConsumptionEntry(dev.p38journal.data.ExpandedRepositoryTest)

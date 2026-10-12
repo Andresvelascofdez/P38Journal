@@ -1,0 +1,621 @@
+INFO: Constructing runner from config.
+INFO: Configuring Android Instrumentation driver: android_instrumentation_runtime {
+  instrumentation_info {
+    app_package: "dev.p38journal.debug"
+    test_package: "dev.p38journal.debug.test"
+    test_runner_class: "androidx.test.runner.AndroidJUnitRunner"
+  }
+  instrumentation_args {
+    args_map {
+      key: "additionalTestOutputDir"
+      value: "/sdcard/Android/media/dev.p38journal.debug/additional_test_output"
+    }
+  }
+}
+am_instrument_timeout: 31536000
+
+INFO: Configuring AndroidTestApkInstallerPlugin: apks_to_install {
+  apk_paths: "C:\\Users\\Admin\\SapAssistant\\Range rover\\app\\build\\outputs\\apk\\debug\\app-debug.apk"
+  install_options {
+  }
+  uninstall_after_test: true
+}
+apks_to_install {
+  apk_paths: "C:\\Users\\Admin\\SapAssistant\\Range rover\\app\\build\\outputs\\apk\\androidTest\\debug\\app-debug-androidTest.apk"
+  install_options {
+  }
+  uninstall_after_test: true
+}
+
+INFO: No installables found in test fixture. Nothing to install.
+INFO: Installing [C:\Users\Admin\SapAssistant\Range rover\app\build\outputs\apk\debug\app-debug.apk] on device emulator-5554.
+INFO: Installing [C:\Users\Admin\SapAssistant\Range rover\app\build\outputs\apk\androidTest\debug\app-debug-androidTest.apk] on device emulator-5554.
+INFO: Start logcat streaming.
+INFO: Running Android Instrumentation driver.
+INFO: Copying files from device to host: /sdcard/Android/media/dev.p38journal.debug/additional_test_output to C:\Users\Admin\SapAssistant\Range rover\app\build\outputs\connected_android_test_additional_output\debugAndroidTest\connected\Medium_Phone_API_36.0(AVD) - 16
+INFO: Stop logcat streaming.
+INFO: Uninstalling dev.p38journal.debug for device emulator-5554.
+INFO: Uninstalling dev.p38journal.debug.test for device emulator-5554.
+INFO: Execute dev.p38journal.data.CustomRulesAndPaymentsTest.legacySnapshotsTwoAndThreeDetachInactiveLinksAndPermitReplacementWithoutLosingAudit: PASSED
+INFO: Execute dev.p38journal.data.CustomRulesAndPaymentsTest.voidLinkedExpenseAllowsNewPaymentAndVisitEditsKeepPersonalizedExpenseMetadata: PASSED
+INFO: Execute dev.p38journal.data.CustomRulesAndPaymentsTest.manufacturerPhaseMayBeExplicitlyPersonalizedAsAnAbsoluteUniqueTask: PASSED
+INFO: Execute dev.p38journal.data.CustomRulesAndPaymentsTest.linkedPaymentEditAllowsVisitMetadataEditWithoutInventingANewAllocation: PASSED
+INFO: Execute dev.p38journal.data.CustomRulesAndPaymentsTest.restoreActivePaymentOverLegacyInactiveLinkNormalizesExistingDataAndCountsOnce: PASSED
+INFO: Execute dev.p38journal.data.CustomRulesAndPaymentsTest.customUniqueTaskCompletesOnceAndVoidingRestoresItsOriginalAbsoluteLimits: PASSED
+INFO: Execute dev.p38journal.data.CustomRulesAndPaymentsTest.customCreateEditDisableAndSnapshotKeepIdentityHistoryAndReference: PASSED
+INFO: Execute dev.p38journal.data.CustomRulesAndPaymentsTest.ruleNameNotesPreserveEmissionButIntervalAndReminderToggleCancelIt: PASSED
+INFO: Execute dev.p38journal.data.CustomRulesAndPaymentsTest.phasePersonalizationBecomesSimpleAndOriginalManufacturerCanBeRestored: PASSED
+INFO: Execute dev.p38journal.data.CustomRulesAndPaymentsTest.oldRuleJsonDefaultsEnabledAndRetainsOwnerIdentityAndLegacyAbsoluteOnceTarget: PASSED
+INFO: Execute dev.p38journal.data.CustomRulesAndPaymentsTest.inactiveExpenseSavedDirectlyDetachesAndOldPaymentIsNeverSilentlyResurrected: PASSED
+INFO: Execute dev.p38journal.data.ExpandedRepositoryTest.fuelVoidAndInvalidRelationRollbackDoNotTouchIndependentExpensesOrReadings: PASSED
+INFO: Execute dev.p38journal.data.ExpandedRepositoryTest.tyreReviewChangesNextLimitButNotMountUsageOrTheOtherAxis: PASSED
+INFO: Execute dev.p38journal.data.ExpandedRepositoryTest.restoredFuelCollisionPreservesLocalExpenseAndDisablesIncoherentConsumptionEntry: PASSED
+INFO: Execute dev.p38journal.data.ExpandedRepositoryTest.freeDeadlineRenewsOnlyExplicitlyAndMetadataKeepsEmittedLedgerAndIdMapping: PASSED
+INFO: Execute dev.p38journal.data.ExpandedRepositoryTest.freeManualWorkCannotEraseExistingMaintenanceOperations: PASSED
+INFO: Execute dev.p38journal.data.ExpandedRepositoryTest.restoredTyreHistoryPreservesLocalTrackingWithoutInventingAnAnnullation: PASSED
+INFO: Execute dev.p38journal.data.ExpandedRepositoryTest.snapshotFourPreservesAllNewRelationsAndRejectsDanglingFuelAndTyreLinksAtomically: PASSED
+INFO: Execute dev.p38journal.data.ExpandedRepositoryTest.oldSnapshotsTwoAndThreeDefaultVisitsToDoneWithoutInventingFuelOrDeadlineOrTyreRows: PASSED
+INFO: Execute dev.p38journal.data.ExpandedRepositoryTest.correctingImportedTyreHistoryNeverOverwritesTheLocallyEditedVisitOrPayment: PASSED
+INFO: Execute dev.p38journal.data.ExpandedRepositoryTest.plannedWorkBecomesDoneWithSameIdentityAndNoEstimatedExpenseOrMaintenanceEvent: PASSED
+INFO: Execute dev.p38journal.data.ExpandedRepositoryTest.plannedActualPartsPaymentSurvivesConversionAndUnknownWorkDoesNotInventAnExpenseDate: PASSED
+INFO: Execute dev.p38journal.data.ExpandedRepositoryTest.importedUntrackedMountCannotMakeAReviewBeforeTheRealMountValid: PASSED
+INFO: Execute dev.p38journal.data.ExpandedRepositoryTest.fuelCreatesOneExpenseAndBidirectionalEditsAndCancellationRemainConsistent: PASSED
+INFO: Execute dev.p38journal.data.ExpandedRepositoryTest.changingBothTyreAxesCreatesOneVisitAndPaymentAndCorrectionKeepsSequenceAndMetadata: PASSED
+INFO: Execute dev.p38journal.data.MigrationTest.versionTwoMigrationPreservesOwnerRecordsAndOnlyCancelsInitialAutomaticMetadata: PASSED
+INFO: Execute dev.p38journal.data.MigrationTest.versionThreeMigrationToFourKeepsHistoricalAmountsAndReferencesWithoutSeedingNewDomains: PASSED
+INFO: Execute dev.p38journal.data.MigrationTest.rawBackupVerifiesOldDatabaseBeforeMigrationAndLeavesOriginalUntouched: PASSED
+INFO: Execute dev.p38journal.data.MigrationTest.versionOneFixtureRetainsExpenseReadingAndNoteWhileAddingAudit: PASSED
+INFO: Execute dev.p38journal.data.RepositoryTest.editingVisitMetadataOrAddingOlderWorkDoesNotInvalidateExistingNotificationCycle: PASSED
+INFO: Execute dev.p38journal.data.RepositoryTest.workAndPlanningChangesCancelOnlyAutomaticRecordsWithTheSameRuleId: PASSED
+INFO: Execute dev.p38journal.data.RepositoryTest.explicitOdometerCorrectionAndRetroactiveReadingPreserveHistory: PASSED
+INFO: Execute dev.p38journal.data.RepositoryTest.restoreIntoFreshSeedKeepsCopiedOverridesNewerStandardAndExistingLocalOverrides: PASSED
+INFO: Execute dev.p38journal.data.RepositoryTest.operationalAdoptionIsAuditedAndCreatesNoNewCompletedWork: PASSED
+INFO: Execute dev.p38journal.data.RepositoryTest.paymentAndDoubleSaveCountOnceAndFuelDoesNotAlterMaintenance: PASSED
+INFO: Execute dev.p38journal.data.RepositoryTest.workshopExtrasFuelEditAndVoidTotals: PASSED
+INFO: Execute dev.p38journal.data.RepositoryTest.atomicVisitAndReadingUpdatesCalendarAndPersistsPendingNotificationReconciliation: PASSED
+INFO: Execute dev.p38journal.data.RepositoryTest.deletedSeedHistoryIsNotRecreatedOnNextLaunch: PASSED
+INFO: Execute dev.p38journal.data.RepositoryTest.versionTwoSnapshotRecoversOnlyExplicitPlanCreationAndKeepsEditedLocalReference: PASSED
+INFO: Execute dev.p38journal.data.RepositoryTest.restoreKeepsLaterOwnerEditsAndVoids: PASSED
+INFO: Execute dev.p38journal.data.RepositoryTest.oldOwnerOverrideUsesCurrentCatalogueVisibilityWithoutLosingItsInterval: PASSED
+INFO: Execute dev.p38journal.data.RepositoryTest.catalogueUpdateKeepsOverridesAndResetKeepsRevisionHistory: PASSED
+INFO: Execute dev.p38journal.data.RepositoryTest.existingPaymentLinkDoesNotDuplicateAndDifferentPaymentsAreKept: PASSED
+INFO: Execute dev.p38journal.data.RepositoryTest.maliciousDocumentPathIsRejected: PASSED
+INFO: Execute dev.p38journal.data.RepositoryTest.snapshotRoundTripIsCompleteIdempotentAndInvalidSnapshotIsAtomic: PASSED
+INFO: Execute dev.p38journal.data.RepositoryTest.seedUpdatesOldUnmodifiedRuleButPreservesOwnerOverrideAndEventRevision: PASSED
+INFO: Execute dev.p38journal.data.RepositoryTest.movingPaymentClearsPreviousVisitAndLaterEditDoesNotDuplicateExpense: PASSED
+INFO: Execute dev.p38journal.data.RepositoryTest.seedIsIdempotentAndHasNoInventedCompletionsOrCurrentReading: PASSED
+INFO: Execute dev.p38journal.data.RepositoryTest.versionTwoSnapshotInfersOnlyFormalAutomaticIdsAndPreservesCustomOrExplicitManualRecords: PASSED
+INFO: Execute dev.p38journal.data.RepositoryTest.versionTwoSnapshotImportsWithoutInventingAPlanningDateOrCompletedWork: PASSED
+INFO: Execute dev.p38journal.data.RepositoryTest.planningReferenceRemainsSeparateFromActualReadingAndSurvivesSnapshotRestore: PASSED
+INFO: Execute dev.p38journal.data.RepositoryTest.invalidVisitRollsBackAndEditingVoidingRecalculates: PASSED
+INFO: Execute dev.p38journal.platform.DeliveryLifecycleTest.stagedUpdateUninstallAndCompleteRestore: IGNORED
+org.junit.AssumptionViolatedException: org.junit.AssumptionViolatedException: This test is explicitly orchestrated by scripts/verify-lifecycle.py
+at org.junit.Assume.assumeTrue(Assume.java:68)
+at dev.p38journal.platform.DeliveryLifecycleTest$stagedUpdateUninstallAndCompleteRestore$1.invokeSuspend(DeliveryLifecycleTest.kt:20)
+at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+at dev.p38journal.platform.DeliveryLifecycleTest.stagedUpdateUninstallAndCompleteRestore(DeliveryLifecycleTest.kt:18)
+at java.lang.reflect.Method.invoke(Native Method)
+at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
+at org.junit.runners.Suite.runChild(Suite.java:128)
+at org.junit.runners.Suite.runChild(Suite.java:27)
+at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2597)
+
+org.junit.AssumptionViolatedException: This test is explicitly orchestrated by scripts/verify-lifecycle.py
+at org.junit.Assume.assumeTrue(Assume.java:68)
+at dev.p38journal.platform.DeliveryLifecycleTest$stagedUpdateUninstallAndCompleteRestore$1.invokeSuspend(DeliveryLifecycleTest.kt:20)
+at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+at dev.p38journal.platform.DeliveryLifecycleTest.stagedUpdateUninstallAndCompleteRestore(DeliveryLifecycleTest.kt:18)
+at java.lang.reflect.Method.invoke(Native Method)
+at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
+at org.junit.runners.Suite.runChild(Suite.java:128)
+at org.junit.runners.Suite.runChild(Suite.java:27)
+at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2597)
+INFO: Execute dev.p38journal.platform.DocumentViewerTest.scanWithoutTextDeclaresSearchUnavailable: PASSED
+INFO: Execute dev.p38journal.platform.DocumentViewerTest.textPdfSearchAndBookmarksAreReal: PASSED
+INFO: Execute dev.p38journal.platform.ExpansionNotificationsTest.soonToDueReplacesOneVisibleNotificationAndStaysVisible: PASSED
+INFO: Execute dev.p38journal.platform.ExpansionNotificationsTest.perEntryLeadPermissionAndDeactivationAreHonest: PASSED
+INFO: Execute dev.p38journal.platform.ExpansionNotificationsTest.collidingHashesReceivePersistentDistinctAndroidIds: PASSED
+INFO: Execute dev.p38journal.platform.ExpansionNotificationsTest.tyresWithoutReadingDoNotInferCurrentKmFromPlanningBaseline: PASSED
+INFO: Execute dev.p38journal.platform.ExpansionNotificationsTest.realAndroidTransportPostsManualDeadlineAndCancelsAfterRenewal: PASSED
+INFO: Execute dev.p38journal.platform.ExpansionNotificationsTest.namedDeadlineDeduplicatesMetadataEditsAndRenewalCancels: PASSED
+INFO: Execute dev.p38journal.platform.ExpansionNotificationsTest.tyresCrossExactManualLimitAndReviewCancelsWithoutResettingUse: PASSED
+INFO: Execute dev.p38journal.platform.PlatformTest.fullBackupKeepsAttachmentsExactTotalsAndReimportIsIdempotent: PASSED
+INFO: Execute dev.p38journal.platform.PlatformTest.maliciousBackupAndWrongChecksumFailBeforeAnyWrite: PASSED
+INFO: Execute dev.p38journal.platform.PlatformTest.v3EmittedCycleAndReadInboxArePreservedByGenerationUpgrade: PASSED
+INFO: Execute dev.p38journal.platform.PlatformTest.partialCompletionInvalidatesGroupDestinationAndDisablingChannelsCancels: PASSED
+INFO: Execute dev.p38journal.platform.PlatformTest.dismissedSummaryIsNotResurrectedByPartialCompletion: PASSED
+INFO: Execute dev.p38journal.platform.PlatformTest.deniedPermissionKeepsInboxAndGrantEmitsRelevantSummary: PASSED
+INFO: Execute dev.p38journal.platform.PlatformTest.soonToDueHasNewNotificationKindInSameWeek: PASSED
+INFO: Execute dev.p38journal.platform.PlatformTest.freshBaselineComputesLimitsWithoutInitialInboxOrInventedReading: PASSED
+INFO: Execute dev.p38journal.platform.PlatformTest.concurrentNotificationsDeduplicateAndCompletionCancels: PASSED
+INFO: Execute dev.p38journal.platform.PlatformTest.notificationWindowAndDisabledPreferencesRemainHonest: PASSED
+INFO: Execute dev.p38journal.platform.PlatformTest.invalidDocumentImportDoesNotPersist: PASSED
+INFO: Execute dev.p38journal.platform.SystemWorkTest.realReadingCrossingOutsidePreferredHourEmitsOnceAndWorkStartsNewCycle: PASSED
+INFO: Execute dev.p38journal.platform.SystemWorkTest.realOptionalOdometerReminderDeduplicatesAndNewReadingCancels: PASSED
+INFO: Execute dev.p38journal.platform.SystemWorkTest.realWorkManagerRunsCleanPlanningAndBackupWithoutInitialInbox: PASSED
+INFO: Execute dev.p38journal.platform.SystemWorkTest.realDateDeadlineEmitsFromWorkManagerWhileActivityIsClosed: PASSED
+INFO: Execute dev.p38journal.platform.SystemWorkTest.realNotificationManagerEmitsTestWithoutMaintenanceEvents: PASSED
+INFO: Execute dev.p38journal.platform.SystemWorkTest.realRuleChangeCancelsObsoleteLimitAndReminderToggleKeepsHistory: PASSED
+INFO: Execute dev.p38journal.platform.UpgradeV4Test.stagedV3UpdateAndV4Restore: IGNORED
+org.junit.AssumptionViolatedException: org.junit.AssumptionViolatedException: Explicitly orchestrated on the disposable debug emulator
+at org.junit.Assume.assumeTrue(Assume.java:68)
+at dev.p38journal.platform.UpgradeV4Test$stagedV3UpdateAndV4Restore$1.invokeSuspend(UpgradeV4Test.kt:29)
+at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+at dev.p38journal.platform.UpgradeV4Test.stagedV3UpdateAndV4Restore(UpgradeV4Test.kt:27)
+at java.lang.reflect.Method.invoke(Native Method)
+at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
+at org.junit.runners.Suite.runChild(Suite.java:128)
+at org.junit.runners.Suite.runChild(Suite.java:27)
+at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2597)
+
+org.junit.AssumptionViolatedException: Explicitly orchestrated on the disposable debug emulator
+at org.junit.Assume.assumeTrue(Assume.java:68)
+at dev.p38journal.platform.UpgradeV4Test$stagedV3UpdateAndV4Restore$1.invokeSuspend(UpgradeV4Test.kt:29)
+at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+at dev.p38journal.platform.UpgradeV4Test.stagedV3UpdateAndV4Restore(UpgradeV4Test.kt:27)
+at java.lang.reflect.Method.invoke(Native Method)
+at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
+at org.junit.runners.Suite.runChild(Suite.java:128)
+at org.junit.runners.Suite.runChild(Suite.java:27)
+at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2597)
+INFO: Execute dev.p38journal.platform.UpgradeV5Test.stagedV4UpdateAndV5Restore: IGNORED
+org.junit.AssumptionViolatedException: org.junit.AssumptionViolatedException: Explicitly orchestrated on the disposable debug emulator
+at org.junit.Assume.assumeTrue(Assume.java:68)
+at dev.p38journal.platform.UpgradeV5Test$stagedV4UpdateAndV5Restore$1.invokeSuspend(UpgradeV5Test.kt:29)
+at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+at dev.p38journal.platform.UpgradeV5Test.stagedV4UpdateAndV5Restore(UpgradeV5Test.kt:27)
+at java.lang.reflect.Method.invoke(Native Method)
+at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
+at org.junit.runners.Suite.runChild(Suite.java:128)
+at org.junit.runners.Suite.runChild(Suite.java:27)
+at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2597)
+
+org.junit.AssumptionViolatedException: Explicitly orchestrated on the disposable debug emulator
+at org.junit.Assume.assumeTrue(Assume.java:68)
+at dev.p38journal.platform.UpgradeV5Test$stagedV4UpdateAndV5Restore$1.invokeSuspend(UpgradeV5Test.kt:29)
+at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+at dev.p38journal.platform.UpgradeV5Test.stagedV4UpdateAndV5Restore(UpgradeV5Test.kt:27)
+at java.lang.reflect.Method.invoke(Native Method)
+at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
+at org.junit.runners.Suite.runChild(Suite.java:128)
+at org.junit.runners.Suite.runChild(Suite.java:27)
+at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2597)
+INFO: Execute dev.p38journal.platform.UpgradeV6Test.actualV5UpdateAndV6CompleteRepeatedRestore: IGNORED
+org.junit.AssumptionViolatedException: org.junit.AssumptionViolatedException: Explicit APK lifecycle fixture on disposable emulator
+at org.junit.Assume.assumeTrue(Assume.java:68)
+at dev.p38journal.platform.UpgradeV6Test$actualV5UpdateAndV6CompleteRepeatedRestore$1.invokeSuspend(UpgradeV6Test.kt:24)
+at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+at dev.p38journal.platform.UpgradeV6Test.actualV5UpdateAndV6CompleteRepeatedRestore(UpgradeV6Test.kt:22)
+at java.lang.reflect.Method.invoke(Native Method)
+at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
+at org.junit.runners.Suite.runChild(Suite.java:128)
+at org.junit.runners.Suite.runChild(Suite.java:27)
+at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2597)
+
+org.junit.AssumptionViolatedException: Explicit APK lifecycle fixture on disposable emulator
+at org.junit.Assume.assumeTrue(Assume.java:68)
+at dev.p38journal.platform.UpgradeV6Test$actualV5UpdateAndV6CompleteRepeatedRestore$1.invokeSuspend(UpgradeV6Test.kt:24)
+at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+at dev.p38journal.platform.UpgradeV6Test.actualV5UpdateAndV6CompleteRepeatedRestore(UpgradeV6Test.kt:22)
+at java.lang.reflect.Method.invoke(Native Method)
+at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
+at org.junit.runners.Suite.runChild(Suite.java:128)
+at org.junit.runners.Suite.runChild(Suite.java:27)
+at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2597)
+INFO: Execute dev.p38journal.review.ExpansionReviewTest.fuelExpenseEditsAndRestorePreserveOnePaymentAndLocalCancellation: PASSED
+INFO: Execute dev.p38journal.review.ExpansionReviewTest.globalNotificationsOffOnKeepsAlreadyEmittedCycleAndReadInbox: PASSED
+INFO: Execute dev.p38journal.review.ExpansionReviewTest.correctionOfBothAxesKeepsSinglePaymentAndLaterFrontReplacement: PASSED
+INFO: Execute dev.p38journal.review.ExpansionReviewTest.plannedConversionUsesSameHistoryIdentityWithUnknownDateAndRealExpense: PASSED
+INFO: Execute dev.p38journal.review.ExpansionReviewTest.tyreNotificationRequiresActualReadingRatherThanPlanningBaseline: PASSED
+INFO: Execute dev.p38journal.review.ExpansionReviewTest.restoringFuelOverAConflictingLocalReceiptPreservesReceiptAndValidBackup: PASSED
+INFO: Execute dev.p38journal.review.ExpansionReviewTest.plannedWorkCanLinkARealPurchaseAndConversionDoesNotCountItTwice: PASSED
+INFO: Execute dev.p38journal.review.ExpansionReviewTest.foreignSequenceIsHistoryOnlyOverLocalTrackingButRestoresTrackingWhenClean: PASSED
+INFO: Execute dev.p38journal.ui.ExpansionUiTest.fuelQuickFormUsesDecimalLitresOneExpenseAndNoSilentOdometerUpdate: PASSED
+INFO: Execute dev.p38journal.ui.ExpansionUiTest.quickManualWorkConvertsSameRecordWithoutHistoricalDateExpenseOrManufacturerEvent: PASSED
+INFO: Execute dev.p38journal.ui.ExpansionUiTest.manualPlannedWorkLinksExistingExpenseAndRelationOpensBothWays: PASSED
+SEVERE: Execute dev.p38journal.ui.ExpansionUiTest.historicalManualWorkLinksMaintenanceUsingKnownKmWithoutInventingDate: FAILED
+java.lang.AssertionError: java.lang.AssertionError: expected:<200000> but was:<188000>
+at org.junit.Assert.fail(Assert.java:89)
+at org.junit.Assert.failNotEquals(Assert.java:835)
+at org.junit.Assert.assertEquals(Assert.java:120)
+at org.junit.Assert.assertEquals(Assert.java:146)
+at dev.p38journal.ui.ExpansionUiTest$historicalManualWorkLinksMaintenanceUsingKnownKmWithoutInventingDate$1.invokeSuspend(ExpansionUiTest.kt:151)
+at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+at dev.p38journal.ui.ExpansionUiTest.historicalManualWorkLinksMaintenanceUsingKnownKmWithoutInventingDate(ExpansionUiTest.kt:125)
+
+java.lang.AssertionError: expected:<200000> but was:<188000>
+at org.junit.Assert.fail(Assert.java:89)
+at org.junit.Assert.failNotEquals(Assert.java:835)
+at org.junit.Assert.assertEquals(Assert.java:120)
+at org.junit.Assert.assertEquals(Assert.java:146)
+at dev.p38journal.ui.ExpansionUiTest$historicalManualWorkLinksMaintenanceUsingKnownKmWithoutInventingDate$1.invokeSuspend(ExpansionUiTest.kt:151)
+at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+at dev.p38journal.ui.ExpansionUiTest.historicalManualWorkLinksMaintenanceUsingKnownKmWithoutInventingDate(ExpansionUiTest.kt:125)
+INFO: Execute dev.p38journal.ui.ExpansionUiTest.deadlineFreeNameRenewsManuallyPreservesHistoryAndDeactivates: PASSED
+INFO: Execute dev.p38journal.ui.ExpansionUiTest.tyreMountReviewAndBothChangePreserveUsageAndSinglePayment: PASSED
+INFO: Execute dev.p38journal.ui.JournalUiTest.visitRequiresExplicitCompletionAndKeepsUnselectedOperationsOpen: PASSED
+SEVERE: Execute dev.p38journal.ui.JournalUiTest.groupedOperationCanCustomizePhaseAndRestoreManufacturerWithoutWork: FAILED
+java.util.NoSuchElementException: java.util.NoSuchElementException: Collection contains no element matching the predicate.
+at dev.p38journal.ui.JournalUiTest$groupedOperationCanCustomizePhaseAndRestoreManufacturerWithoutWork$1.invokeSuspend(JournalUiTest.kt:543)
+at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+at dev.p38journal.ui.JournalUiTest.groupedOperationCanCustomizePhaseAndRestoreManufacturerWithoutWork(JournalUiTest.kt:340)
+
+java.util.NoSuchElementException: Collection contains no element matching the predicate.
+at dev.p38journal.ui.JournalUiTest$groupedOperationCanCustomizePhaseAndRestoreManufacturerWithoutWork$1.invokeSuspend(JournalUiTest.kt:543)
+at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+at dev.p38journal.ui.JournalUiTest.groupedOperationCanCustomizePhaseAndRestoreManufacturerWithoutWork(JournalUiTest.kt:340)
+INFO: Execute dev.p38journal.ui.JournalUiTest.ownUniqueMaintenanceCreatesEditsDisablesAndCompletesOnceWithoutUrl: PASSED
+INFO: Execute dev.p38journal.ui.JournalUiTest.readingFaultPartAndLinkedPdfWorkThroughNativeScreens: PASSED
+INFO: Execute dev.p38journal.ui.JournalUiTest.expenseFiltersCombinePersistAndReactToDateCategoryAndCancellation: PASSED
+INFO: Execute dev.p38journal.ui.JournalUiTest.expenseFormSurvivesRecreationAndSavesExactCentsWithoutChangingMaintenance: PASSED
+INFO: Execute dev.p38journal.ui.JournalUiTest.planningReferenceIsEditableWithoutInventingReadingOrWork: PASSED
+INFO: Execute dev.p38journal.ui.JournalUiTest.secondaryReferencesActivateAndDisableConditionalProfileWithoutInventedWork: PASSED
+INFO: Execute dev.p38journal.ui.JournalUiTest.editingVisitMetadataPreservesHistoricalAllocationAfterLinkedExpenseCorrection: PASSED
+SEVERE: Execute dev.p38journal.ui.JournalUiTest.maintenanceDefaultShowsFourCompleteRevisionsAndEveryCatalogueOperationWithoutInventingWork: FAILED
+java.lang.AssertionError: java.lang.AssertionError: Action performScrollTo() failed.
+Reason: Expected exactly '1' node but could not find any node that satisfies: (TestTag = 'projected_count_195000')
+
+at androidx.compose.ui.test.SemanticsNodeInteraction.fetchOneOrThrow(SemanticsNodeInteraction.kt:178)
+at androidx.compose.ui.test.SemanticsNodeInteraction.fetchOneOrThrow$default(SemanticsNodeInteraction.kt:150)
+at androidx.compose.ui.test.SemanticsNodeInteraction.fetchSemanticsNode(SemanticsNodeInteraction.kt:84)
+at androidx.compose.ui.test.ActionsKt.performScrollTo(Actions.kt:76)
+at dev.p38journal.ui.JournalUiTest$maintenanceDefaultShowsFourCompleteRevisionsAndEveryCatalogueOperationWithoutInventingWork$1.invokeSuspend(JournalUiTest.kt:397)
+at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+at dev.p38journal.ui.JournalUiTest.maintenanceDefaultShowsFourCompleteRevisionsAndEveryCatalogueOperationWithoutInventingWork(JournalUiTest.kt:381)
+
+java.lang.AssertionError: Action performScrollTo() failed.
+Reason: Expected exactly '1' node but could not find any node that satisfies: (TestTag = 'projected_count_195000')
+
+at androidx.compose.ui.test.SemanticsNodeInteraction.fetchOneOrThrow(SemanticsNodeInteraction.kt:178)
+at androidx.compose.ui.test.SemanticsNodeInteraction.fetchOneOrThrow$default(SemanticsNodeInteraction.kt:150)
+at androidx.compose.ui.test.SemanticsNodeInteraction.fetchSemanticsNode(SemanticsNodeInteraction.kt:84)
+at androidx.compose.ui.test.ActionsKt.performScrollTo(Actions.kt:76)
+at dev.p38journal.ui.JournalUiTest$maintenanceDefaultShowsFourCompleteRevisionsAndEveryCatalogueOperationWithoutInventingWork$1.invokeSuspend(JournalUiTest.kt:397)
+at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+at dev.p38journal.ui.JournalUiTest.maintenanceDefaultShowsFourCompleteRevisionsAndEveryCatalogueOperationWithoutInventingWork(JournalUiTest.kt:381)
+SEVERE: Execute dev.p38journal.ui.JournalUiTest.groupedReviewRecordsOnlySelectedOperationWithPrefilledDateAndKilometres: FAILED
+java.util.NoSuchElementException: java.util.NoSuchElementException: Collection contains no element matching the predicate.
+at dev.p38journal.ui.JournalUiTest$groupedReviewRecordsOnlySelectedOperationWithPrefilledDateAndKilometres$1.invokeSuspend(JournalUiTest.kt:528)
+at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+at dev.p38journal.ui.JournalUiTest.groupedReviewRecordsOnlySelectedOperationWithPrefilledDateAndKilometres(JournalUiTest.kt:122)
+
+java.util.NoSuchElementException: Collection contains no element matching the predicate.
+at dev.p38journal.ui.JournalUiTest$groupedReviewRecordsOnlySelectedOperationWithPrefilledDateAndKilometres$1.invokeSuspend(JournalUiTest.kt:528)
+at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+at dev.p38journal.ui.JournalUiTest.groupedReviewRecordsOnlySelectedOperationWithPrefilledDateAndKilometres(JournalUiTest.kt:122)

@@ -1,0 +1,2 @@
+10-12 23:09:45.271  7140  7155 I TestRunner: started: restoredTyreHistoryPreservesLocalTrackingWithoutInventingAnAnnullation(dev.p38journal.data.ExpandedRepositoryTest)
+10-12 23:09:45.333  7140  7155 I TestRunner: finished: restoredTyreHistoryPreservesLocalTrackingWithoutInventingAnAnnullation(dev.p38journal.data.ExpandedRepositoryTest)

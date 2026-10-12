@@ -1,0 +1,33 @@
+10-12 23:09:44.561  7140  7155 I TestRunner: started: ruleNameNotesPreserveEmissionButIntervalAndReminderToggleCancelIt(dev.p38journal.data.CustomRulesAndPaymentsTest)
+10-12 23:09:44.697   701   794 I RoleService: Granting default roles...
+10-12 23:09:44.698  1047  1293 I SatelliteAppTracker: onPackageModified : dev.p38journal.debug
+10-12 23:09:44.699   701   724 I system_server: AssetManager2(0x7e19a18e5278) locale list changing from [] to [en-US]
+10-12 23:09:44.700  1047  1047 D CarrierSvcBindHelper: onPackageModified: dev.p38journal.debug
+10-12 23:09:44.701   701  4122 W SignedPackage: Package doesn't have required signing certificate: com.google.android.retaildemo
+10-12 23:09:44.701   701  4122 E RoleControllerServiceImpl: Default/fallback role holder package doesn't qualify for the role, package: com.google.android.gms.supervision, role: android.app.role.SYSTEM_SUPERVISION
+10-12 23:09:44.702   701  4122 I Role    : com.google.android.gms not qualified for android.app.role.SYSTEM_CALL_STREAMING due to missing RequiredComponent{mIntentFilterData=IntentFilterData{mAction='android.telecom.CallStreamingService', mCategories='[]', mDataScheme='null', mDataType='null'}, mMinTargetSdkVersion=1, mFlags='0', mPermission='android.permission.BIND_CALL_STREAMING_SERVICE', mQueryFlags=0, mMetaData=[]}
+10-12 23:09:44.702   701  4122 E RoleControllerServiceImpl: Default/fallback role holder package doesn't qualify for the role, package: com.google.android.gms, role: android.app.role.SYSTEM_CALL_STREAMING
+10-12 23:09:44.702   701   814 I system_server: AssetManager2(0x7e19a18e4918) locale list changing from [] to [en-US]
+10-12 23:09:44.702   701  4122 W SignedPackage: Package doesn't have required signing certificate: com.google.android.apps.work.clouddpc
+10-12 23:09:44.703  4783  4802 I PermissionControllerServiceImpl: Updating user sensitive for uid 10269
+10-12 23:09:44.703   941   941 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 0
+10-12 23:09:44.707  1047  1047 D CarrierSvcBindHelper: No carrier app for: 0
+10-12 23:09:44.711  1047  1047 E SmsApplication: com.google.android.apps.messaging lost android:read_cell_broadcasts:  (fixing)
+10-12 23:09:44.716  4783  4802 I PermissionControllerServiceImpl: Updating user sensitive for uid 10269
+10-12 23:09:44.716   701  4122 I Role    : com.google.android.gms not qualified for android.app.role.SYSTEM_DEPENDENCY_INSTALLER due to missing RequiredComponent{mIntentFilterData=IntentFilterData{mAction='android.content.pm.action.INSTALL_DEPENDENCY', mCategories='[]', mDataScheme='null', mDataType='null'}, mMinTargetSdkVersion=1, mFlags='0', mPermission='android.permission.BIND_DEPENDENCY_INSTALLER', mQueryFlags=0, mMetaData=[]}
+10-12 23:09:44.716   701  4122 E RoleControllerServiceImpl: Default/fallback role holder package doesn't qualify for the role, package: com.google.android.gms, role: android.app.role.SYSTEM_DEPENDENCY_INSTALLER
+10-12 23:09:44.720   701   729 I system_server: AssetManager2(0x7e19a18e7e38) locale list changing from [] to [en-US]
+10-12 23:09:44.725  1047  1285 D ImsResolver: maybeAddedImsService, packageName: dev.p38journal.debug
+10-12 23:09:44.725  1047  1285 V ImsResolver: searchForImsServices: package=dev.p38journal.debug, users=[UserHandle{0}]
+10-12 23:09:44.726  1047  1285 V ImsResolver: searchForImsServices: package=dev.p38journal.debug, users=[UserHandle{0}]
+10-12 23:09:44.729  1047  1047 D SatelliteController: packageStateChanged: package:dev.p38journal.debug DefaultSmsPackageName:com.google.android.apps.messaging
+10-12 23:09:44.729  1047  1047 V SatelliteController: Neither SMS or SatelliteGateway package
+10-12 23:09:44.732  1047  1047 E SmsApplication: com.google.android.apps.messaging lost android:read_cell_broadcasts:  (fixing)
+10-12 23:09:44.732   701   814 I system_server: AssetManager2(0x7e19a18e5598) locale list changing from [] to [en-US]
+10-12 23:09:44.735  1047  1047 D SatelliteAccessController: Current default SMS app:ComponentInfo{com.google.android.apps.messaging/com.google.android.apps.messaging.shared.receiver.SmsDeliverReceiver}
+10-12 23:09:44.735  1047  1047 D SatelliteController: getSelectedSatelliteSubId: subId=-1
+10-12 23:09:44.735  1047  1047 D SatelliteAccessController: supportedMsgApps:com.google.android.apps.messaging
+10-12 23:09:44.737   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:44.737   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:44.738   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:44.739  7140  7155 I TestRunner: finished: ruleNameNotesPreserveEmissionButIntervalAndReminderToggleCancelIt(dev.p38journal.data.CustomRulesAndPaymentsTest)

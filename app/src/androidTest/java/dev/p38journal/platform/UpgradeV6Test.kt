@@ -54,10 +54,19 @@ class UpgradeV6Test {
                 assertEquals(175000,front.mount!!.km)
                 assertEquals(20200,front.usedKm)
                 assertEquals(205200,front.dueKm)
+                assertEquals(185200,repo.dao.allTyreEvents().single { it.id=="V6_RUNTIME_REVIEW" }.km)
+                assertTrue(repo.dao.allTyreEvents().any { it.axis=="front" && it.kind=="review" && it.active && it.id!="V6_RUNTIME_REVIEW" && it.km==195200 })
                 assertEquals(1,repo.dao.allDeadlineRenewals().count { it.deadlineId=="V6_RUNTIME_DEADLINE" })
                 NotificationEvaluator(context,repo).evaluate("work")
                 Thread.sleep(500)
-                assertFalse(manager.activeNotifications.any { it.notification.channelId in setOf(Notifications.TYRES,Notifications.DOCUMENTATION) })
+                val manualTargets=setOf("deadline:V6_RUNTIME_DEADLINE","tyres:front")
+                val manualIds=repo.dao.allLedger().filter { it.id.startsWith("v6-map:") && it.ruleId in manualTargets }.map { it.generation.toInt() }.toSet()
+                assertEquals(2,manualIds.size)
+                assertFalse(manager.activeNotifications.any { it.id in manualIds })
+                File(context.cacheDir,"v6-runtime-notification-state.json").writeText(com.google.gson.Gson().toJson(mapOf(
+                    "cancelledManualIds" to manualIds,
+                    "activeNotifications" to manager.activeNotifications.map { mapOf("id" to it.id,"tag" to it.tag,"channel" to it.notification.channelId,"flags" to it.notification.flags,"groupSummary" to ((it.notification.flags and android.app.Notification.FLAG_GROUP_SUMMARY)!=0)) }
+                )))
             }
             return@runBlocking
         }

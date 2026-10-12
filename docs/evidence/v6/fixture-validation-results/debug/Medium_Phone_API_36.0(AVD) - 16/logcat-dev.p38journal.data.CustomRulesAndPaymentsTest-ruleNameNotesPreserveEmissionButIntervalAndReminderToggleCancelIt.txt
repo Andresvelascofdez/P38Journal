@@ -1,0 +1,2 @@
+10-12 23:20:17.093  8755  8770 I TestRunner: started: ruleNameNotesPreserveEmissionButIntervalAndReminderToggleCancelIt(dev.p38journal.data.CustomRulesAndPaymentsTest)
+10-12 23:20:17.257  8755  8770 I TestRunner: finished: ruleNameNotesPreserveEmissionButIntervalAndReminderToggleCancelIt(dev.p38journal.data.CustomRulesAndPaymentsTest)

@@ -1,0 +1,5 @@
+10-12 23:09:45.190  7140  7155 I TestRunner: started: freeManualWorkCannotEraseExistingMaintenanceOperations(dev.p38journal.data.ExpandedRepositoryTest)
+10-12 23:09:45.204  5651  7123 I FraudProtectUtils: Not in testing population, skipping local test bank apps. [CONTEXT service_id=469 ]
+10-12 23:09:45.204  5651  7123 I FraudProtectUtils: (REDACTED) Latest bank app list size: %d, %s isBankApp: false
+10-12 23:09:45.204  5651  7123 W ComponentChangedIO: No package name in intent data or package is not a bank app [CONTEXT service_id=469 ]
+10-12 23:09:45.270  7140  7155 I TestRunner: finished: freeManualWorkCannotEraseExistingMaintenanceOperations(dev.p38journal.data.ExpandedRepositoryTest)

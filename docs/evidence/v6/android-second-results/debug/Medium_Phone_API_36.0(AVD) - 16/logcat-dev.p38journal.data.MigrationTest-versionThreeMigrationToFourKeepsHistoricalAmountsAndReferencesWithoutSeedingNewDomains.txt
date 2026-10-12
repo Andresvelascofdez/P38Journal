@@ -1,0 +1,2 @@
+10-12 23:09:46.058  7140  7155 I TestRunner: started: versionThreeMigrationToFourKeepsHistoricalAmountsAndReferencesWithoutSeedingNewDomains(dev.p38journal.data.MigrationTest)
+10-12 23:09:46.134  7140  7155 I TestRunner: finished: versionThreeMigrationToFourKeepsHistoricalAmountsAndReferencesWithoutSeedingNewDomains(dev.p38journal.data.MigrationTest)

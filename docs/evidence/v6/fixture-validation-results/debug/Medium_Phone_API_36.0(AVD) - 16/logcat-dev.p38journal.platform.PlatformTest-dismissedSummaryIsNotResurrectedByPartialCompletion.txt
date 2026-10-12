@@ -1,0 +1,2 @@
+10-12 23:20:25.679  8755  8770 I TestRunner: started: dismissedSummaryIsNotResurrectedByPartialCompletion(dev.p38journal.platform.PlatformTest)
+10-12 23:20:25.729  8755  8770 I TestRunner: finished: dismissedSummaryIsNotResurrectedByPartialCompletion(dev.p38journal.platform.PlatformTest)

@@ -1,0 +1,20 @@
+python : Traceback (most recent call last):
+At line:2 char:209
++ ... livery.log; python scripts/verify-v6-native.py --runtime-only *> docs ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v6-native.py", line 144, in <module>
+    capture('notification-opens-deadline',('FIXTURE documento aviso','Registrar renovaci�n'))
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v6-native.py", line 54, in capture
+    for value in required: assert any(value in text for text in texts),(name,value,texts)
+                                  ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('notification-opens-deadline', 'Registrar renovaci�n', [' ', ' ', ' ', ' ', ' ', ' ', ' ', 'FIXTURE 
+documento aviso ', 'Nombre de la documentaci�n ', '2026-10-12 ', 'Fecha de vencimiento (AAAA-MM-DD) ', ' ', 'Notas 
+(opcional) ', ' ', ' ', 'Aviso activado ', '0 ', 'D�as de antelaci�n ', '12 ', 'Repetici�n en meses (vac�o: puntual) 
+', 'La repetici�n solo sugiere la pr�xima fecha al renovar. No renueva ni genera gastos autom�ticamente. ', ' ', 
+'Guardar documentaci�n ', ' ', ' ', ' ', ' Volver', ' ', 'Documentaci�n y vencimientos ', 'v5.0.0-debug � 6 ', ' ', ' 
+M�s opciones', ' ', ' ', ' ', ' ', ' Inicio', 'Inicio ', ' ', ' ', ' ', ' Mantenimiento', 'Mant. ', ' ', ' ', ' ', ' 
+Historial', 'Historial ', ' ', ' ', ' ', ' Gastos', 'Gastos ', ' ', ' '])

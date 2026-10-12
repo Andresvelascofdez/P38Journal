@@ -1,0 +1,7 @@
+10-12 23:04:08.087  6284  6314 I TestRunner: started: tyresCrossExactManualLimitAndReviewCancelsWithoutResettingUse(dev.p38journal.platform.ExpansionNotificationsTest)
+10-12 23:04:08.087  5001  6384 I KeyboardGroupDefParser: KeyboardGroupDefParser.parseKeyboardGroupDef():86 parseKeyboardGroupDef() 2132216938 -> 0_resource_name_obfuscated : WaitTime = 1 ms : RunTime = 0 ms
+10-12 23:04:08.174  5001  5061 I native  : I0000 00:00:1791835448.174884    5061 input-context-store.cc:268] Ignoring stale client request for FetchSuggestions
+10-12 23:04:08.184  5001  5061 I native  : I0000 00:00:1791835448.184222    5061 input-context-store.cc:191] Ignoring stale client request for OverrideDecodedCandidates
+10-12 23:04:08.185  5001  5061 I Delight5Decoder: Delight5DecoderWrapper.setKeyboardLayout():521 setKeyboardLayout()
+10-12 23:04:08.186  5001  5001 W InputContextProxy: InputContextProxy.applyClientDiffInternal():957 Ignore [FetchSuggestions] diff due to stale request: 4<5, inputStateId=0, lastInputStateId=2
+10-12 23:04:08.206  6284  6314 I TestRunner: finished: tyresCrossExactManualLimitAndReviewCancelsWithoutResettingUse(dev.p38journal.platform.ExpansionNotificationsTest)

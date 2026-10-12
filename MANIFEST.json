@@ -1,11 +1,11 @@
 {
-  "package": "P38 Journal - native Android complete projected Maintenance screen",
-  "version": "4.1.0",
-  "prepared_on": "2026-10-11",
+  "package": "P38 Journal - native Android manual works, deadlines, fuel and tyres",
+  "version": "5.0.0",
+  "prepared_on": "2026-10-13",
   "artifact_type": "built_native_android_application",
   "platform": "native_android",
   "target": "existing_android_project_updated_preserving_identity_and_signing",
-  "supersedes": "REQUEST_V5.md supersedes conflicting v4 Maintenance screen selector instructions",
+  "supersedes": "REQUEST_V6.md authorizes simple consumption and supersedes conflicting previous scope",
   "files": [
     {
       "path": ".gitignore",
@@ -14,28 +14,28 @@
     },
     {
       "path": "AGENTS.md",
-      "bytes": 2838,
-      "sha256": "a190d2830fe5a34c264d037e0cd04f50172d2058c48c5a7f6bdf0e6761b488ef"
+      "bytes": 1841,
+      "sha256": "0695969877b2a9048caf58b62230e4cb336d637a9659e4b82d593a561d56f1a5"
     },
     {
       "path": "ANDROID.md",
-      "bytes": 4514,
-      "sha256": "d89ff8b9ba05022c46d0333612c584265ab9f6958fb389b65c96317ebf4f31a7"
+      "bytes": 5673,
+      "sha256": "a8800506de776e1971d8ce58171ba75fa96e53249522dd36423b790306056a1b"
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 3212,
-      "sha256": "32aae8759cdf9d092928ce40480ebe8975d69738ba173d9b74ee3f767602b1be"
+      "bytes": 4594,
+      "sha256": "e63ad935ca1e167c283764e88dbedb985f72e2c707766c1354f5b1276e1ef3be"
     },
     {
       "path": "ENGINE.md",
-      "bytes": 10602,
-      "sha256": "22c1c5e2820bd832aa9fda2fd820a2c47d547255af9baf4d7dac49f110e99bb4"
+      "bytes": 11865,
+      "sha256": "6a383f6689fb35847099451cd047300a614c14e8bcb225251cca01390e3cc65b"
     },
     {
       "path": "HANDOFF.md",
-      "bytes": 1388,
-      "sha256": "c3470793e4e52292d4488b59c9749e4e01724268edea562a1eee6b7c5087b96c"
+      "bytes": 2007,
+      "sha256": "e9343330dafa35416ec2a02c93d7adb28999700f1bee4009938f60e465a4c7e5"
     },
     {
       "path": "INICIO_CODEX.txt",
@@ -44,23 +44,23 @@
     },
     {
       "path": "MIGRATION.md",
-      "bytes": 10014,
-      "sha256": "99e8c4f89ae71e7fa404d4974265d56218f988686b3083072375ca907c646045"
+      "bytes": 11173,
+      "sha256": "f318ac32b2521fce66d950a0d171503f17c85532721e0a2c59b3674d9a79f87c"
     },
     {
       "path": "PROMPT_CODEX.md",
-      "bytes": 9211,
-      "sha256": "bbad950b1e005b4282a599ff0ebff3ca38d078cb7a7db588e1aa2b0a96708beb"
+      "bytes": 10088,
+      "sha256": "b2cc993b0cd4587582390cad351a0610c6d76e975e070aa7ec0f9c080c61f289"
     },
     {
       "path": "QA.md",
-      "bytes": 11715,
-      "sha256": "11623da9760d5a6e0839889d1c3dadc59854bc5355e32bfbf5e69e7617122781"
+      "bytes": 12874,
+      "sha256": "0919424b92f4f91af70e7a36ae2e416e0aea933b99a920256b57c649dbbd0e9b"
     },
     {
       "path": "README.md",
-      "bytes": 2774,
-      "sha256": "08d2a217a3061d855488bc8126cf76e6046e29e20dd04776d351db4e9d303e45"
+      "bytes": 3661,
+      "sha256": "0badd8dbac70505aa0ad4c6988d8c780dd1cbbdabcedece41556ed30aed2e2a4"
     },
     {
       "path": "REQUEST_V4.md",
@@ -73,19 +73,24 @@
       "sha256": "22c643e94bb04e3cedb8c7e7edac8e05e55f4ac026df467f76d8e97afdb202c5"
     },
     {
+      "path": "REQUEST_V6.md",
+      "bytes": 10007,
+      "sha256": "0da0968eff48281bd829e59e4ba9667f11bfb420441fdf1cdb3da09caf096f7f"
+    },
+    {
       "path": "SOURCES.md",
       "bytes": 5060,
       "sha256": "3533ac165aa98e588ef6fd55b10229e490157374df9ee450411510dba6c395e4"
     },
     {
       "path": "SPEC.md",
-      "bytes": 8613,
-      "sha256": "8e772ab74854509fca285657156b775f8396e45f98a9d3499b58000932a0e442"
+      "bytes": 3923,
+      "sha256": "eb1051d3d0573a95ff40a9e4fe1f385d23183ab1f449e674725093cc27813bd2"
     },
     {
       "path": "app/build.gradle.kts",
       "bytes": 4287,
-      "sha256": "0b1de1a3c4a64f0ac58cee7909e9a8dfda6494690f5c3a71d1f7cc1c21e8c856"
+      "sha256": "6667f3f8a0d29703e240b958f584d9ff3583078df8268251506e62496c306123"
     },
     {
       "path": "app/schemas/dev.p38journal.data.JournalDatabase/1.json",
@@ -103,6 +108,11 @@
       "sha256": "21172b45c8b9fb6c078c8f442854c8d58595e54e86c2c2232ed982451e1c3a09"
     },
     {
+      "path": "app/schemas/dev.p38journal.data.JournalDatabase/4.json",
+      "bytes": 36061,
+      "sha256": "300ef80dd5c26099e495e069022c3f3791dd5584d9f976b978611368e243e0a3"
+    },
+    {
       "path": "app/src/androidTest/assets/fixture-scan.pdf",
       "bytes": 2403575,
       "sha256": "9374a89b855e1af41efb917196500218742026762bb229301cbf8b51b2f96bdc"
@@ -118,14 +128,19 @@
       "sha256": "250cb19e4416d1186449506926206d334af6ca380cd1a3081b5eeff4657dd58c"
     },
     {
+      "path": "app/src/androidTest/java/dev/p38journal/data/ExpandedRepositoryTest.kt",
+      "bytes": 25038,
+      "sha256": "5c854f5fbbaffd1abf5b0a27561e033b6a4260515883d73635354103a50dee48"
+    },
+    {
       "path": "app/src/androidTest/java/dev/p38journal/data/MigrationTest.kt",
-      "bytes": 7901,
-      "sha256": "2dd60c979e137348da4be85699a99f2df9193a051361935457dfa976e7627707"
+      "bytes": 10520,
+      "sha256": "b32ce8920208f4af05e1dcf9dac10f4918bba2aec02294381b4998f08cf6abf8"
     },
     {
       "path": "app/src/androidTest/java/dev/p38journal/data/RepositoryTest.kt",
       "bytes": 25634,
-      "sha256": "04735ae4d9f9890cdac3be0d9a28c7274e5f3201c4225ad999d07f7a927094eb"
+      "sha256": "aa876263c1de1a41291a806bf8a759b9da52a1d211ca3aa44eddb3ea3cae2f04"
     },
     {
       "path": "app/src/androidTest/java/dev/p38journal/platform/DeliveryLifecycleTest.kt",
@@ -136,6 +151,11 @@
       "path": "app/src/androidTest/java/dev/p38journal/platform/DocumentViewerTest.kt",
       "bytes": 3186,
       "sha256": "0c18db2240e0ab79bb939463fb60ffb250588d4dad11f99792891f37c0650fd2"
+    },
+    {
+      "path": "app/src/androidTest/java/dev/p38journal/platform/ExpansionNotificationsTest.kt",
+      "bytes": 10724,
+      "sha256": "95ee83256e8d28195bb84c583dfc5a2d2ff10160408ddc2abae75d204a033c73"
     },
     {
       "path": "app/src/androidTest/java/dev/p38journal/platform/PlatformTest.kt",
@@ -158,9 +178,24 @@
       "sha256": "bb16901c2d0e0fb52816badd85d7f55a29029db618a6f760978c4deca5b452a2"
     },
     {
+      "path": "app/src/androidTest/java/dev/p38journal/platform/UpgradeV6Test.kt",
+      "bytes": 10261,
+      "sha256": "e4cbbd0006331ff5f29a3bec709eae22ac02dda56fffba2da5f069a6c6017048"
+    },
+    {
+      "path": "app/src/androidTest/java/dev/p38journal/review/ExpansionReviewTest.kt",
+      "bytes": 12284,
+      "sha256": "811bec13d759bbf33f5aa1db21c2eb3564ba3da662de28d1255ebc4cfe8f0f16"
+    },
+    {
+      "path": "app/src/androidTest/java/dev/p38journal/ui/ExpansionUiTest.kt",
+      "bytes": 17411,
+      "sha256": "c9e2052132a1153333c70452df8c43dec6a5deeb95a2d7b4eeb3d951ec3f9543"
+    },
+    {
       "path": "app/src/androidTest/java/dev/p38journal/ui/JournalUiTest.kt",
-      "bytes": 36223,
-      "sha256": "9a64eaadc0910570f73a2f69949710712a09f25fbb96fc80366ae8924246fda6"
+      "bytes": 36297,
+      "sha256": "8d2967ec5344539a4f11131239da1660689b17f7064cac8a3b20ac3f1ed5494c"
     },
     {
       "path": "app/src/main/AndroidManifest.xml",
@@ -184,23 +219,28 @@
     },
     {
       "path": "app/src/main/java/dev/p38journal/data/Entities.kt",
-      "bytes": 4722,
-      "sha256": "8f71842645b9ec74e22631240e46d6cee539b817e7bf2ed5d260616c400b62ad"
+      "bytes": 6560,
+      "sha256": "3f040113a94556d6b2ba2cbb2a178c5b1732853d3cfa86ae6c11af5706c31309"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/data/ExpandedRecords.kt",
+      "bytes": 14922,
+      "sha256": "d8e93f882442ea4a03bab1341ad6eb5fba94d9efca749f155f3a975b34081c9e"
     },
     {
       "path": "app/src/main/java/dev/p38journal/data/JournalDatabase.kt",
-      "bytes": 9197,
-      "sha256": "e9f52ddfd8a43348686fd7f01c2563395ef611485e115252bd64c79714b02598"
+      "bytes": 12731,
+      "sha256": "68ddc5b7a2d2742f598b4024699f365373813900a007ff504c749ea34f2b0a75"
     },
     {
       "path": "app/src/main/java/dev/p38journal/data/PreMigrationBackup.kt",
       "bytes": 3795,
-      "sha256": "add71d769505451035a7dd00a54100d6aeae626502dac23aa622f0b04b3788b1"
+      "sha256": "71066f92d080255c06e535c1c23ba217c14f6411063d8f679f2cdd1cc7bc0bf5"
     },
     {
       "path": "app/src/main/java/dev/p38journal/data/Repository.kt",
-      "bytes": 37213,
-      "sha256": "e14c883ebdb383c9b24ee5dde92b333feb05a4d2b6bb3ea505bfd8b2f6c8f0b8"
+      "bytes": 46341,
+      "sha256": "84e69083510ee69803b65edafa22c69a0db0b20d5ff60c7b00e0d35f55875622"
     },
     {
       "path": "app/src/main/java/dev/p38journal/domain/ConditionalProfiles.kt",
@@ -208,9 +248,14 @@
       "sha256": "a800f9eff5aedad652452d55e42bc61f8a515cbdd27747ed1538cede011ec8d2"
     },
     {
+      "path": "app/src/main/java/dev/p38journal/domain/Consumption.kt",
+      "bytes": 3561,
+      "sha256": "d81b76eaec6e9f09c7fad3bf5bc664eca0de3007807e2a23fe5a8536482c19ae"
+    },
+    {
       "path": "app/src/main/java/dev/p38journal/domain/Engine.kt",
-      "bytes": 7987,
-      "sha256": "af977f680eea24005b4594b18606f33602a2519acb9c0f13129e0bac04a4b8e7"
+      "bytes": 8250,
+      "sha256": "da66c3f09f55b11c7e103b92cc64f8eb600a74aaae3640af79cf5a4a7b822b7e"
     },
     {
       "path": "app/src/main/java/dev/p38journal/domain/ExpenseFilters.kt",
@@ -223,14 +268,19 @@
       "sha256": "8cb368de575dc9912e10995c4ba9000d93fb59f32e780ac7fb8f5f710f467aee"
     },
     {
+      "path": "app/src/main/java/dev/p38journal/domain/Tyres.kt",
+      "bytes": 1564,
+      "sha256": "fe007f6c24be6c8576e32c79fe59b3170a797d8c399e6fd810dad46c1ce76c87"
+    },
+    {
       "path": "app/src/main/java/dev/p38journal/platform/DocumentViewer.kt",
       "bytes": 8646,
       "sha256": "f668c8cab294bb6c1a29f887f3b0dc3c4b01ac76a6974b3013767650dfc600a9"
     },
     {
       "path": "app/src/main/java/dev/p38journal/platform/Files.kt",
-      "bytes": 19254,
-      "sha256": "fd737ce054fc49ad0a963b6139640e3abfe461229e33f778993c4de236c19d72"
+      "bytes": 19496,
+      "sha256": "5e42f7ecd97f51f703df32b1148be4456d1dba8405175058a36decb5b8ac776f"
     },
     {
       "path": "app/src/main/java/dev/p38journal/platform/JournalApplication.kt",
@@ -238,9 +288,14 @@
       "sha256": "6fa647e1c05174c59f8585d069c0567c2423fb10856c78fab115ea95c7395905"
     },
     {
+      "path": "app/src/main/java/dev/p38journal/platform/ManualNotifications.kt",
+      "bytes": 7857,
+      "sha256": "a1dfd3539ef5afdb624238463b8911cb13be3b65481d523bf457011fa211a07d"
+    },
+    {
       "path": "app/src/main/java/dev/p38journal/platform/Notifications.kt",
-      "bytes": 15145,
-      "sha256": "5b363b7b9c3eec72bf6ca30e50281bf17b6fdd08d4d0434f1f65de85a22802ef"
+      "bytes": 15597,
+      "sha256": "790c2396fd93c5cc01f3796d6ca334c808c5b97eb949acc5291304f47cff5da7"
     },
     {
       "path": "app/src/main/java/dev/p38journal/platform/Preferences.kt",
@@ -249,8 +304,8 @@
     },
     {
       "path": "app/src/main/java/dev/p38journal/ui/Components.kt",
-      "bytes": 8431,
-      "sha256": "8d6403174febc95a573417336967cef8a6365d45ead3fe685654ce5e3d3d3639"
+      "bytes": 8459,
+      "sha256": "f7e137045a82cbe6b0de663a71f07269235dcf4977ba0df595d80f18838f7d51"
     },
     {
       "path": "app/src/main/java/dev/p38journal/ui/ConditionalProfileForm.kt",
@@ -258,14 +313,24 @@
       "sha256": "f6bb5e3128c0d8ecf83e368fae6a637386e89069b5e09f073286f198e5280fee"
     },
     {
+      "path": "app/src/main/java/dev/p38journal/ui/DeadlinesPage.kt",
+      "bytes": 6961,
+      "sha256": "6bcbc71fa98333f927758bc32a44512eb1045fba1e837fc3474d75a40cdb4f4e"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/ui/FuelPage.kt",
+      "bytes": 7768,
+      "sha256": "f4997d13c2d04738847baa05541de557b967fa8ea1a61e2cfc27d31848fe3f2b"
+    },
+    {
       "path": "app/src/main/java/dev/p38journal/ui/JournalApp.kt",
-      "bytes": 26587,
-      "sha256": "bb3b023e26ae86f94393a53420f2fbc0b93bed06e8edd2be9e584ff57087b8fe"
+      "bytes": 34178,
+      "sha256": "922b818d8b46e8de298a97ad91abaad4357aa71eecae2558a0d74964ae6d262c"
     },
     {
       "path": "app/src/main/java/dev/p38journal/ui/JournalViewModel.kt",
-      "bytes": 7660,
-      "sha256": "dd4e329369151805a77548b974a7b1e49211539aa2c6d5ce8427a61e6234dd05"
+      "bytes": 9782,
+      "sha256": "d7d9d6cc2300b93deb95cdfc42403919eeaf7331e8846dedfec2cae305026027"
     },
     {
       "path": "app/src/main/java/dev/p38journal/ui/LibrarySettings.kt",
@@ -289,13 +354,23 @@
     },
     {
       "path": "app/src/main/java/dev/p38journal/ui/RecordForms.kt",
-      "bytes": 15234,
-      "sha256": "995cba06f5ee25e5c43956cac15da5be7d4071fbe99c007b660222c094d4f381"
+      "bytes": 16953,
+      "sha256": "ab1f58c1076b9e51788fd296ecb252f9e425af674f843a55faf33335535332be"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/ui/TyresPage.kt",
+      "bytes": 9854,
+      "sha256": "e7a658c8760df6b927d8d62c90e68300f2ece0395ce3899f333d8be3bf8ac347"
     },
     {
       "path": "app/src/main/java/dev/p38journal/ui/VisitForms.kt",
-      "bytes": 14106,
-      "sha256": "9aa194643c6ad5ccf7071bab6ce3873efdbdf9516312c12d41c12c69925a4562"
+      "bytes": 15953,
+      "sha256": "5f2025a12d9a28b9312dda4dfe7483cd26b443c5c4bd91447c80c7690842ad46"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/ui/WorksPage.kt",
+      "bytes": 8700,
+      "sha256": "6fc078b72140417f8cebe15168d35f21664db6d6da3078c840714ac6be17e219"
     },
     {
       "path": "app/src/main/res/drawable/ic_journal.xml",
@@ -328,9 +403,24 @@
       "sha256": "0ae7afe81d862863eace69d9f14fcc9b8b95abcba4266a83258ae66328990bc3"
     },
     {
+      "path": "app/src/test/java/dev/p38journal/domain/ConsumptionTest.kt",
+      "bytes": 4247,
+      "sha256": "7cddf0e7bb1a96272917276a12ee22db1318be63b450253e86e7dd6952d71d79"
+    },
+    {
       "path": "app/src/test/java/dev/p38journal/domain/EngineTest.kt",
-      "bytes": 11278,
-      "sha256": "a5cb2b9698c3a3b88f3ff2f64d970f2fd8ce487b7d44f8bc46e1ad173467e692"
+      "bytes": 14202,
+      "sha256": "984df8e4133b574881727ea76aeaf1b35923f64e079c92b1c3c8b37de8793918"
+    },
+    {
+      "path": "app/src/test/java/dev/p38journal/domain/TyresTest.kt",
+      "bytes": 2517,
+      "sha256": "8f036bfbef84487b7dd910121f5bc5595dc6d92f698b45f3d51cced96d2695fa"
+    },
+    {
+      "path": "app/src/test/java/dev/p38journal/review/ExpansionIndependentTest.kt",
+      "bytes": 6782,
+      "sha256": "1543c120720d881f4cc12fc6a86311bc0cf080ec9b67f1f19caf4d2730745a7f"
     },
     {
       "path": "app/src/test/java/dev/p38journal/review/IndependentCatalogueTest.kt",
@@ -369,18 +459,23 @@
     },
     {
       "path": "dist/LEEME.md",
-      "bytes": 823,
-      "sha256": "abdd71cf43ef7b38534e7cbec2bf8a9630d8ede16479a261141f420c988a8b19"
+      "bytes": 1168,
+      "sha256": "ea8b85396c34557d4610d624c317cef91fae6b368dc901f7fe4ec2f7c1062620"
     },
     {
       "path": "dist/SHA256SUMS.txt",
-      "bytes": 768,
-      "sha256": "a3d79c43473eeed4fd2c61476aec2aea4cdfc90942c66a0f5dbd321aefe3de03"
+      "bytes": 960,
+      "sha256": "ab4db171fba314a93aaa98bb5353c6c7447f8ee36ac72828331e828c953782fa"
+    },
+    {
+      "path": "docs/AGENTS_V5.md",
+      "bytes": 2838,
+      "sha256": "a190d2830fe5a34c264d037e0cd04f50172d2058c48c5a7f6bdf0e6761b488ef"
     },
     {
       "path": "docs/BUILD_AND_PRIVACY.md",
-      "bytes": 10657,
-      "sha256": "1c920afdbd001bc4b879380fef4047c4828ff26973deb7f4129ef9c317b39181"
+      "bytes": 11534,
+      "sha256": "75618bd5c445d1f42daec331d3cf60ac1a3295c24882776e7be8e8dedb1b22d4"
     },
     {
       "path": "docs/CATALOGUE.md",
@@ -389,8 +484,13 @@
     },
     {
       "path": "docs/CONTRACTS.md",
-      "bytes": 16150,
-      "sha256": "eee07fc3d363eecaf142ce1855e0bc40359c7969f0ee0637daba604427eda219"
+      "bytes": 17027,
+      "sha256": "b3b3501f23cb78daf4d0f1726e2706b472e3a11820f1956fc70fa296b2c7a96e"
+    },
+    {
+      "path": "docs/CONTRACT_V6.md",
+      "bytes": 6061,
+      "sha256": "9c380aa6abe834588f9e366d65d35d04bcab193c4e4648e76eb04bdb2d20db90"
     },
     {
       "path": "docs/INDEPENDENT_REVIEW.md",
@@ -408,9 +508,14 @@
       "sha256": "c924dcd418eb093bbba02a7ddde102fc0373eb22a1002c8a4c5391605f94963a"
     },
     {
+      "path": "docs/INDEPENDENT_REVIEW_V6.md",
+      "bytes": 9815,
+      "sha256": "19d7083a0d6a03fae37d61d4ccec232a54e64fa6590bfa21b6b6385281a843f1"
+    },
+    {
       "path": "docs/PROGRESS.md",
-      "bytes": 1205,
-      "sha256": "5c78f5ec60617cd273422576a33a358df10117721e680a3e1f3e613ab12317ca"
+      "bytes": 825,
+      "sha256": "c8861b93f2b96a719ba0812279fab967a8525f01757a11000a8c0cedb81627b8"
     },
     {
       "path": "docs/PROGRESS_V2.md",
@@ -428,9 +533,19 @@
       "sha256": "40c975a32ae34775bdc01739ebc63f7ec603e61b2e0ac926d9d1d6f1c3a249b3"
     },
     {
+      "path": "docs/PROGRESS_V5.md",
+      "bytes": 1205,
+      "sha256": "5c78f5ec60617cd273422576a33a358df10117721e680a3e1f3e613ab12317ca"
+    },
+    {
+      "path": "docs/SPEC_V5.md",
+      "bytes": 8613,
+      "sha256": "8e772ab74854509fca285657156b775f8396e45f98a9d3499b58000932a0e442"
+    },
+    {
       "path": "docs/TEST_REPORT.md",
-      "bytes": 7391,
-      "sha256": "08af08a8d48189ac920f612d5aa1c7709e8c31913709b3ba444c9a9c29007016"
+      "bytes": 9451,
+      "sha256": "3e7f323ba4826ee9359795c6eb2e1d0ea2ce70d0f4c1281e79244ae7620ef096"
     },
     {
       "path": "docs/TEST_REPORT_V2.md",
@@ -448,9 +563,14 @@
       "sha256": "621359475f841eb9bb1c0f6818e33dd2ba7aba3e90985a1047ad08255d0aa779"
     },
     {
+      "path": "docs/TEST_REPORT_V5.md",
+      "bytes": 7391,
+      "sha256": "08af08a8d48189ac920f612d5aa1c7709e8c31913709b3ba444c9a9c29007016"
+    },
+    {
       "path": "docs/USER_TEST.md",
-      "bytes": 1945,
-      "sha256": "946b9dbc685083223560c9e41c3be6671b6a001278290f8c30c506d2d8c0448a"
+      "bytes": 3022,
+      "sha256": "efe65be22453f9b80870672a3ec5175041aae97f18638ec54bd6ecf8ed4685fe"
     },
     {
       "path": "docs/USER_TEST_V2.md",
@@ -466,6 +586,11 @@
       "path": "docs/USER_TEST_V4.md",
       "bytes": 2867,
       "sha256": "408862ba23ca53f02a5d4459e8f7cab86e2bf725216b4f6416b44d14d886d88e"
+    },
+    {
+      "path": "docs/USER_TEST_V5.md",
+      "bytes": 1945,
+      "sha256": "946b9dbc685083223560c9e41c3be6671b6a001278290f8c30c506d2d8c0448a"
     },
     {
       "path": "docs/apk-debug-metadata.txt",
@@ -811,6 +936,1976 @@
       "path": "docs/evidence/v5/unit-first/TEST-dev.p38journal.review.ProjectedMaintenanceGroupsTest.xml",
       "bytes": 5401,
       "sha256": "4d601589014ff040f90c606935b75189867e211f9985997d45a994504bb633cb"
+    },
+    {
+      "path": "docs/evidence/v6/android-final-results/TEST-Medium_Phone_API_36.0(AVD) - 16-_app-.xml",
+      "bytes": 16941,
+      "sha256": "382846baef00c3ea8918f190ffaf6ac9c7c3ce7977663a7399664bc4cdf9ce82"
+    },
+    {
+      "path": "docs/evidence/v6/android-final.log",
+      "bytes": 8098,
+      "sha256": "afd2e6e8f7bba6befc9ad4e5b6eb9a10a8812f6863e68c052c113b9dc166b319"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/aapt.exe.1.ok.txt",
+      "bytes": 6407,
+      "sha256": "6535f5d59dfad500ef18337dc13cc69569873b156d895a3e1629c9d9d623c8bc"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/aapt.exe.2.ok.txt",
+      "bytes": 1752,
+      "sha256": "2769ef75ca7459adef5a1f090a397e1324668441cba7beace5d60bb1eccb8920"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/cpuinfo",
+      "bytes": 4702,
+      "sha256": "88197aa9175ef7e993f4197d0beebfb300ce48d3614cc5182a9688367cc66c7a"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/device-info.pb",
+      "bytes": 146,
+      "sha256": "3d8cc25520a95559b09834789095c554301dacba3eb38f21972329e648ad680d"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-customCreateEditDisableAndSnapshotKeepIdentityHistoryAndReference.txt",
+      "bytes": 339,
+      "sha256": "97eb20408c05fb19b60b86467b099664ae4cb8d8401df1a7569a48801e8d5580"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-customUniqueTaskCompletesOnceAndVoidingRestoresItsOriginalAbsoluteLimits.txt",
+      "bytes": 353,
+      "sha256": "7181e590230f3458ea8fba033632c1249d52bb1f1b7f7b1dbd83444e70bb35dc"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-inactiveExpenseSavedDirectlyDetachesAndOldPaymentIsNeverSilentlyResurrected.txt",
+      "bytes": 359,
+      "sha256": "bf6e844ce2b527ffdd8edc329cfbd7a0de7d76c3162cfba46fb3e1c598da5f07"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-legacySnapshotsTwoAndThreeDetachInactiveLinksAndPermitReplacementWithoutLosingAudit.txt",
+      "bytes": 553,
+      "sha256": "7ba8132848d87dd15b91a2e0cdd9f53cc38378ddaabe99ab35fce9f89a377b13"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-linkedPaymentEditAllowsVisitMetadataEditWithoutInventingANewAllocation.txt",
+      "bytes": 349,
+      "sha256": "79d667474adafccbf8d62393a1417fae0af7f753ded0f3eb10ed3487ad953bf8"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-manufacturerPhaseMayBeExplicitlyPersonalizedAsAnAbsoluteUniqueTask.txt",
+      "bytes": 341,
+      "sha256": "898675bec66dddddd2d9eacab06f30eb3b24563dd02adb970def89976655886e"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-oldRuleJsonDefaultsEnabledAndRetainsOwnerIdentityAndLegacyAbsoluteOnceTarget.txt",
+      "bytes": 361,
+      "sha256": "52104c9858ca8c417fc73610676b0945500f0fcb2a2c8654e68cf9709e0b6b58"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-phasePersonalizationBecomesSimpleAndOriginalManufacturerCanBeRestored.txt",
+      "bytes": 453,
+      "sha256": "0c376b0ea8b8c87f52c785e2b34098f57ca7aa81c55666d549de6cc123d59e44"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-restoreActivePaymentOverLegacyInactiveLinkNormalizesExistingDataAndCountsOnce.txt",
+      "bytes": 363,
+      "sha256": "4fe29eb2d98334c40b691ebb3adadb493219f8d5b49d07f7fb53fbba075ee893"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-ruleNameNotesPreserveEmissionButIntervalAndReminderToggleCancelIt.txt",
+      "bytes": 339,
+      "sha256": "2fafc413535dc4be32f76d89f2f38a40f82f29622a220b5c1cc0c268553a4bb3"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-voidLinkedExpenseAllowsNewPaymentAndVisitEditsKeepPersonalizedExpenseMetadata.txt",
+      "bytes": 363,
+      "sha256": "69cf698f42f4549dcb305e2959a4388771a32617d753288823ad4d8a0bfa8fe0"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-changingBothTyreAxesCreatesOneVisitAndPaymentAndCorrectionKeepsSequenceAndMetadata.txt",
+      "bytes": 365,
+      "sha256": "dbfcc6d85c387b5428cd2cbc7ef0a6b1de61ee19b8d508e13a6b1e98e290ba56"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-correctingImportedTyreHistoryNeverOverwritesTheLocallyEditedVisitOrPayment.txt",
+      "bytes": 349,
+      "sha256": "50389f2df82eff2e5e9f32650948877007cb03626b78c2e5e25479c53980aa77"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-freeDeadlineRenewsOnlyExplicitlyAndMetadataKeepsEmittedLedgerAndIdMapping.txt",
+      "bytes": 347,
+      "sha256": "912bbf74f16cbae251e3f8d75eeed67b272d0e9d0c212a7af0279043e395b1be"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-freeManualWorkCannotEraseExistingMaintenanceOperations.txt",
+      "bytes": 309,
+      "sha256": "2e3ec797549e4f89987b96525874f6d05ec6c9772f81394572d77a4fb540713e"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-fuelCreatesOneExpenseAndBidirectionalEditsAndCancellationRemainConsistent.txt",
+      "bytes": 537,
+      "sha256": "98c390d5b2c6a434b83d890785343578a1c219b5d7af0de88964b64024ad9242"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-fuelVoidAndInvalidRelationRollbackDoNotTouchIndependentExpensesOrReadings.txt",
+      "bytes": 347,
+      "sha256": "6e45c73330c446e6dc894954d0d6bd6f477d901107655e6a86fcb25b5c44b712"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-importedUntrackedMountCannotMakeAReviewBeforeTheRealMountValid.txt",
+      "bytes": 325,
+      "sha256": "7d19af39ea75888bd0cd089ef1f516c11b103e0cf26a2a4fac740178055e38ca"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-oldSnapshotsTwoAndThreeDefaultVisitsToDoneWithoutInventingFuelOrDeadlineOrTyreRows.txt",
+      "bytes": 365,
+      "sha256": "ab2a7af04c5a41fdb749734b699127043e58b7b70002d28129f24f34e8d89770"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-plannedActualPartsPaymentSurvivesConversionAndUnknownWorkDoesNotInventAnExpenseDate.txt",
+      "bytes": 367,
+      "sha256": "d7cc2948c6b6a6f0962c772d44ea003a2e573635a2278ebdd81e3e4f67d3f225"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-plannedWorkBecomesDoneWithSameIdentityAndNoEstimatedExpenseOrMaintenanceEvent.txt",
+      "bytes": 355,
+      "sha256": "b89460a23b46bacb1dfd3606c2ff25a62566c1b9965e723fd59692073902d571"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-restoredFuelCollisionPreservesLocalExpenseAndDisablesIncoherentConsumptionEntry.txt",
+      "bytes": 437,
+      "sha256": "721e9d08353b563b95732570e463a64e237a4ea059cb4c9700a3217841ffadeb"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-restoredTyreHistoryPreservesLocalTrackingWithoutInventingAnAnnullation.txt",
+      "bytes": 341,
+      "sha256": "7047093be2d3c189c6981c72a2fa3d79fb6f866edf80ecddef4e3f7914750f12"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-snapshotFourPreservesAllNewRelationsAndRejectsDanglingFuelAndTyreLinksAtomically.txt",
+      "bytes": 541,
+      "sha256": "34ffefa49b6950c9cbdacae6baae78dd0a7ddb1d41d9c17a9b37dc7f5e2a5bdf"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-tyreReviewChangesNextLimitButNotMountUsageOrTheOtherAxis.txt",
+      "bytes": 313,
+      "sha256": "967bc363903c96d7daa6eadac7104032eafe58beac0772d8f437dbd6eac8d54d"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.MigrationTest-rawBackupVerifiesOldDatabaseBeforeMigrationAndLeavesOriginalUntouched.txt",
+      "bytes": 321,
+      "sha256": "a0666c0c2ff11f2d4a24a7316205b44700d5ef792afb6ca9c69a8bdb3c57623d"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.MigrationTest-versionOneFixtureRetainsExpenseReadingAndNoteWhileAddingAudit.txt",
+      "bytes": 979,
+      "sha256": "ab2994e8d0c85361aa182d031341f7c982d172544d0837c57e79d70e9844a8d0"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.MigrationTest-versionThreeMigrationToFourKeepsHistoricalAmountsAndReferencesWithoutSeedingNewDomains.txt",
+      "bytes": 355,
+      "sha256": "e3075f5c798ff159522ba161dec150ed7858121b2170388a1ea9bedde36664e8"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.MigrationTest-versionTwoMigrationPreservesOwnerRecordsAndOnlyCancelsInitialAutomaticMetadata.txt",
+      "bytes": 339,
+      "sha256": "bac06fc564fcd60c731b70a0d02fc015ab17ec0d10cea7a56dba810b1f61e55d"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-atomicVisitAndReadingUpdatesCalendarAndPersistsPendingNotificationReconciliation.txt",
+      "bytes": 345,
+      "sha256": "5eb792019158078864afe53b2a89ab6578c19016c40f1d7fba880e1f9009f45b"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-catalogueUpdateKeepsOverridesAndResetKeepsRevisionHistory.txt",
+      "bytes": 299,
+      "sha256": "ee4b3a01045a6b7578b78e442f8271a4856e09eeeeaa89802cbdb2676e3f8162"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-deletedSeedHistoryIsNotRecreatedOnNextLaunch.txt",
+      "bytes": 273,
+      "sha256": "418038344216803fe905025c68c7699351caca69a2a131dbb0a570546de3126f"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-editingVisitMetadataOrAddingOlderWorkDoesNotInvalidateExistingNotificationCycle.txt",
+      "bytes": 343,
+      "sha256": "e41737d52d437e568945f7e3f8369c633578522918c5de02c422463425ae7c44"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-existingPaymentLinkDoesNotDuplicateAndDifferentPaymentsAreKept.txt",
+      "bytes": 309,
+      "sha256": "617067fa53c51b3c5d09710fc90f83846ad6efb6804617627c1d80a6324b855a"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-explicitOdometerCorrectionAndRetroactiveReadingPreserveHistory.txt",
+      "bytes": 309,
+      "sha256": "033e3e528ddcaab8c53a1dd5d91c5099d80f52375d2ead9567a4bfa1630c4cd2"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-invalidVisitRollsBackAndEditingVoidingRecalculates.txt",
+      "bytes": 285,
+      "sha256": "c02b0241ba07100eda73c1e84230d9ba2c79d6a5fc24bd50b653d31e0f90d82a"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-maliciousDocumentPathIsRejected.txt",
+      "bytes": 247,
+      "sha256": "3c6c0a48c3ad1629b9bbc9e03c6898ab82a875710bf1a204d4790532e7cd7138"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-movingPaymentClearsPreviousVisitAndLaterEditDoesNotDuplicateExpense.txt",
+      "bytes": 319,
+      "sha256": "dc1b70e8a88615b21abe6a06d689901ff2a3f971fc0f6eddf7874e8360eacb7c"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-oldOwnerOverrideUsesCurrentCatalogueVisibilityWithoutLosingItsInterval.txt",
+      "bytes": 325,
+      "sha256": "689394cc07f14d7cd9e7cda41301b4b043eaec50e114399327c029224dd2add9"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-operationalAdoptionIsAuditedAndCreatesNoNewCompletedWork.txt",
+      "bytes": 297,
+      "sha256": "c6f24c56cebb6dcd9a8fe22acd38c9981f460220524a0a63b4241d8e63c96524"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-paymentAndDoubleSaveCountOnceAndFuelDoesNotAlterMaintenance.txt",
+      "bytes": 303,
+      "sha256": "901c7ba13dff37a3c854978d9aabe5ec3dc19aeb42db99ac35f3c43119b2689c"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-planningReferenceRemainsSeparateFromActualReadingAndSurvivesSnapshotRestore.txt",
+      "bytes": 335,
+      "sha256": "261c7b8d361628256867adb8e0c4fd9f118e1de7bd31753a3e7498ad713eef75"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-restoreIntoFreshSeedKeepsCopiedOverridesNewerStandardAndExistingLocalOverrides.txt",
+      "bytes": 1015,
+      "sha256": "495f6e23c2977a070d89ad92b3ff8f595ad4691a0767fcae8465cee0dc74f2ab"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-restoreKeepsLaterOwnerEditsAndVoids.txt",
+      "bytes": 255,
+      "sha256": "f9ad6421218e4bc62113a3a9f9c618263597c2d307859261ab84fda140595fe9"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-seedIsIdempotentAndHasNoInventedCompletionsOrCurrentReading.txt",
+      "bytes": 303,
+      "sha256": "39e534eddb7ad20cb9043a0d87c07009dbf3ef2f7c2cefda86060dfd32e4ec0b"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-seedUpdatesOldUnmodifiedRuleButPreservesOwnerOverrideAndEventRevision.txt",
+      "bytes": 323,
+      "sha256": "c524b995b43ad0defccfa0193878c869ec20af0606aa88779ce824f32d3cb8d3"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-snapshotRoundTripIsCompleteIdempotentAndInvalidSnapshotIsAtomic.txt",
+      "bytes": 311,
+      "sha256": "c3ff8709fea6ae58bf7ac1f0f35f725d96b49c382b6ac058dcbb64a55754e00e"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-versionTwoSnapshotImportsWithoutInventingAPlanningDateOrCompletedWork.txt",
+      "bytes": 323,
+      "sha256": "5def784a4d36f8ec3b8a84cee2c1d989ef6dbcbd5f0f0b445f4152e4a093eb2e"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-versionTwoSnapshotInfersOnlyFormalAutomaticIdsAndPreservesCustomOrExplicitManualRecords.txt",
+      "bytes": 359,
+      "sha256": "a470bc0912643a0a480a89af0c9d8a5fe4bae8bfbff9dce4bf98359111952658"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-versionTwoSnapshotRecoversOnlyExplicitPlanCreationAndKeepsEditedLocalReference.txt",
+      "bytes": 341,
+      "sha256": "43b1790fcc8cf1edd4eb0c8208209b5b76b0285e3a8659d5620f0e5971b663ac"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-workAndPlanningChangesCancelOnlyAutomaticRecordsWithTheSameRuleId.txt",
+      "bytes": 315,
+      "sha256": "bf33c6911bc45338f34c40f4f535c7a1d28a22643ac930e440d5ec9e5af2c336"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-workshopExtrasFuelEditAndVoidTotals.txt",
+      "bytes": 255,
+      "sha256": "eaaf3ebe7802ee315c308639913a4b589235c448f7f53c9efae990df96d81ec3"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.DeliveryLifecycleTest-stagedUpdateUninstallAndCompleteRestore.txt",
+      "bytes": 6014,
+      "sha256": "facddfc086e946c112e8d9c30664a04cfa1595167f88a4acf82f04529cfefc24"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.DocumentViewerTest-scanWithoutTextDeclaresSearchUnavailable.txt",
+      "bytes": 64584,
+      "sha256": "e45bf615c12d08b86d2a013ba01d76e423d9ad1ff26b4a2d754577f07cd8252e"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.DocumentViewerTest-textPdfSearchAndBookmarksAreReal.txt",
+      "bytes": 89248,
+      "sha256": "72935f82552544b5af7c3af770d4f8337d8c26dc10977c31457ea6715d968016"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.ExpansionNotificationsTest-collidingHashesReceivePersistentDistinctAndroidIds.txt",
+      "bytes": 1575,
+      "sha256": "24503cc3358a160c07bbae638585b5c03380fe820fefdda444cc042b6a5827e2"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.ExpansionNotificationsTest-namedDeadlineDeduplicatesMetadataEditsAndRenewalCancels.txt",
+      "bytes": 12352,
+      "sha256": "e5188e6fa01ba865f0f7f0eb73051c007f922ef8090af166a6ce2b34c9d31b3a"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.ExpansionNotificationsTest-perEntryLeadPermissionAndDeactivationAreHonest.txt",
+      "bytes": 309,
+      "sha256": "a80106f5ae734e995b90e397df99f35c4080883ea74f45c0dd850c45278c323a"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.ExpansionNotificationsTest-realAndroidTransportPostsManualDeadlineAndCancelsAfterRenewal.txt",
+      "bytes": 12841,
+      "sha256": "9575c6a4e9d85fd6397b4461a577273181732e5702921a0810440657abeadbbe"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.ExpansionNotificationsTest-soonToDueReplacesOneVisibleNotificationAndStaysVisible.txt",
+      "bytes": 523,
+      "sha256": "5d366b366b7c1509099a87c88a5994da9683b04dc7415d8a37fc7ed1c692a064"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.ExpansionNotificationsTest-tyresCrossExactManualLimitAndReviewCancelsWithoutResettingUse.txt",
+      "bytes": 1190,
+      "sha256": "76e0622032b72326e1ea661c729f947fb24fc62639f947debde75ba199975487"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.ExpansionNotificationsTest-tyresWithoutReadingDoNotInferCurrentKmFromPlanningBaseline.txt",
+      "bytes": 333,
+      "sha256": "9a48a4f77b52b04bf5ed0319afd750a55ad04d42826e7000f3bd3c92b4a02d18"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-concurrentNotificationsDeduplicateAndCompletionCancels.txt",
+      "bytes": 586,
+      "sha256": "a9cdcd5a148b13ed43fae2d1c26dd232cb55d9dd26f252557dc226af9851caf3"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-deniedPermissionKeepsInboxAndGrantEmitsRelevantSummary.txt",
+      "bytes": 297,
+      "sha256": "62da73697ad70c82e4b379530bee67fb5655868b010b5d29e18b72945877df67"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-dismissedSummaryIsNotResurrectedByPartialCompletion.txt",
+      "bytes": 821,
+      "sha256": "0e5562830f7b652e80ed23f11c37919c5d31edcff2a51309abcdaaa3f9233740"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-freshBaselineComputesLimitsWithoutInitialInboxOrInventedReading.txt",
+      "bytes": 315,
+      "sha256": "58b6be5af476e1c8e837e3669f519e5c14a0f4b71093c8ad8049f122d0cce0dc"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-fullBackupKeepsAttachmentsExactTotalsAndReimportIsIdempotent.txt",
+      "bytes": 1514,
+      "sha256": "fcf486a42195361d30ee47352cb58261ac02b2f2e6f6084c2a7d6b16907b3812"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-invalidDocumentImportDoesNotPersist.txt",
+      "bytes": 259,
+      "sha256": "d34d13dcbdbb2c14fd43a65dd63ddc72a56f393b3376f91f2ccd1f3e5059ab07"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-maliciousBackupAndWrongChecksumFailBeforeAnyWrite.txt",
+      "bytes": 548,
+      "sha256": "a8031336faee04e2f6049c220afb37e3bed10059753428f73e4fcaaef40b095d"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-notificationWindowAndDisabledPreferencesRemainHonest.txt",
+      "bytes": 293,
+      "sha256": "2fc61da441a043d5da6210e5916810b8f226629c9213d63e36a5014aeaa98726"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-partialCompletionInvalidatesGroupDestinationAndDisablingChannelsCancels.txt",
+      "bytes": 2374,
+      "sha256": "5df5e27403b0a0b21d0ce9c4f40ec9f679f693fa267afb355242af77ca7408a5"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-soonToDueHasNewNotificationKindInSameWeek.txt",
+      "bytes": 271,
+      "sha256": "3429c3530e1874d5d73854fedac90b4e3bafeb7ed4255b99dd16222f8b2a65e5"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-v3EmittedCycleAndReadInboxArePreservedByGenerationUpgrade.txt",
+      "bytes": 303,
+      "sha256": "60e53097a817aed86c8b2c1ebf8d2690dc13d983ce20934514046e659948e32a"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.SystemWorkTest-realDateDeadlineEmitsFromWorkManagerWhileActivityIsClosed.txt",
+      "bytes": 8161,
+      "sha256": "790c64fb68ae4cb90dc9a7e2340c5672dbb2931aa34a5adaadb985f742c0cab5"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.SystemWorkTest-realNotificationManagerEmitsTestWithoutMaintenanceEvents.txt",
+      "bytes": 2951,
+      "sha256": "8b6fcdfd41ec5201c4d605a70b8f72c88194e298d9d6f67ad486c2b4eadbe629"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.SystemWorkTest-realOptionalOdometerReminderDeduplicatesAndNewReadingCancels.txt",
+      "bytes": 29709,
+      "sha256": "845988eab6f21a5c44af6912aae7058ac4c6454a9fdd759b433014fdd37d5391"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.SystemWorkTest-realReadingCrossingOutsidePreferredHourEmitsOnceAndWorkStartsNewCycle.txt",
+      "bytes": 27541,
+      "sha256": "fccd2dba8696fd6d7c6db8c7184c7ae7ba4217b25bc0e4c8b04390a1e96cf1fb"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.SystemWorkTest-realRuleChangeCancelsObsoleteLimitAndReminderToggleKeepsHistory.txt",
+      "bytes": 26525,
+      "sha256": "55e075679e4dc6fbcca21ccd05f2e972472266e29f4dcfdcf26e76f67d3623d1"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.SystemWorkTest-realWorkManagerRunsCleanPlanningAndBackupWithoutInitialInbox.txt",
+      "bytes": 4331,
+      "sha256": "edb330bd4e87f9d2c8e72fb0ee1988684bf296e33f6a870f9b74d3e24c6bc5d9"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.UpgradeV4Test-stagedV3UpdateAndV4Restore.txt",
+      "bytes": 5882,
+      "sha256": "cea03ea232666df738171718f95e2f242cf5bb394d28d7b123513a8b18166ab0"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.UpgradeV5Test-stagedV4UpdateAndV5Restore.txt",
+      "bytes": 5882,
+      "sha256": "b7dd513dc8c0b82421132420f7951b223b23dde07b0a5293f0ee652f242a6016"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.UpgradeV6Test-actualV5UpdateAndV6CompleteRepeatedRestore.txt",
+      "bytes": 5959,
+      "sha256": "d92223a8a40c84925c1c3f65f8cf7b5411c48cf17f27b91c69f44ae94f1eec4a"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-correctionOfBothAxesKeepsSinglePaymentAndLaterFrontReplacement.txt",
+      "bytes": 323,
+      "sha256": "21c2bc09428f216072286813cc90d7402a5b5c312a3a124f26aa7ea33238a684"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-foreignSequenceIsHistoryOnlyOverLocalTrackingButRestoresTrackingWhenClean.txt",
+      "bytes": 521,
+      "sha256": "5821eff5a25106355f4278192c01aaefa910a2b204053ad01d3b4b99e7eacb28"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-fuelExpenseEditsAndRestorePreserveOnePaymentAndLocalCancellation.txt",
+      "bytes": 7054,
+      "sha256": "dcbb0138e49b08f07a416eb1415d94a44c87a71abb29899ab65893880873117c"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-globalNotificationsOffOnKeepsAlreadyEmittedCycleAndReadInbox.txt",
+      "bytes": 319,
+      "sha256": "22aab296a94ef7e2d82e708020aa29db5c47add07bc19e0c0e71b95cf2d9f965"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-plannedConversionUsesSameHistoryIdentityWithUnknownDateAndRealExpense.txt",
+      "bytes": 337,
+      "sha256": "fc66c24f8fb677a21ca94b53dbac53815cb10210ea06b87255b3743602e93881"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-plannedWorkCanLinkARealPurchaseAndConversionDoesNotCountItTwice.txt",
+      "bytes": 325,
+      "sha256": "e86f60199dccc8e0e411b281e56943ac39813b73b1699ff00e5b69654bbc22be"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-restoringFuelOverAConflictingLocalReceiptPreservesReceiptAndValidBackup.txt",
+      "bytes": 341,
+      "sha256": "85aab8cb01c973aba6b8b471469a79c4108e9bf745f79557c1c5f8ca7386093b"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-tyreNotificationRequiresActualReadingRatherThanPlanningBaseline.txt",
+      "bytes": 708,
+      "sha256": "e4a463ca69dcad8b0e293355523ebdba6c957217025b65b87335af24f47fb20b"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.ExpansionUiTest-deadlineFreeNameRenewsManuallyPreservesHistoryAndDeactivates.txt",
+      "bytes": 126554,
+      "sha256": "0b26f8bf6e90680e813b0a69790108c33be94983e4f307b592f05eec2ae51770"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.ExpansionUiTest-fuelQuickFormUsesDecimalLitresOneExpenseAndNoSilentOdometerUpdate.txt",
+      "bytes": 208730,
+      "sha256": "131db76ca0308d72e39fe1a2b05a1e523063c7c626955fd702d3125e86d0a3c6"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.ExpansionUiTest-historicalManualWorkLinksMaintenanceUsingKnownKmWithoutInventingDate.txt",
+      "bytes": 36336,
+      "sha256": "19e62492349e5e943be2eeeeb6e764b9d19a9b2861ae33db8c097a31acd697d1"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.ExpansionUiTest-manualPlannedWorkLinksExistingExpenseAndRelationOpensBothWays.txt",
+      "bytes": 107896,
+      "sha256": "758db8fc9fd767a313e4a37f82508dbdd6cbe4dc71107761bd61e7339f026c3e"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.ExpansionUiTest-quickManualWorkConvertsSameRecordWithoutHistoricalDateExpenseOrManufacturerEvent.txt",
+      "bytes": 91418,
+      "sha256": "628ac93163c40807995aa9d1a186f8bd3e209674272cef8c79c991be82a2d64d"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.ExpansionUiTest-tyreMountReviewAndBothChangePreserveUsageAndSinglePayment.txt",
+      "bytes": 79278,
+      "sha256": "165bd9052ed122d9d2269b906435a1164670233b69ccac0aa39cc13313ce2ca6"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-editingVisitMetadataPreservesHistoricalAllocationAfterLinkedExpenseCorrection.txt",
+      "bytes": 107107,
+      "sha256": "9a38224f402004fea3426713d130e8d53fcff1897348738e4b1fdb7829eb8012"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-expenseFiltersCombinePersistAndReactToDateCategoryAndCancellation.txt",
+      "bytes": 49193,
+      "sha256": "7af616c994b23367a38e7493639e7997caec01b96035a7d700a9b5dd5e64ce04"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-expenseFormSurvivesRecreationAndSavesExactCentsWithoutChangingMaintenance.txt",
+      "bytes": 67092,
+      "sha256": "eecbb7a249beda75aff6c36ccbed0d4f62b40dacacbb40b30c8f788aac1a1ae7"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-groupedOperationCanCustomizePhaseAndRestoreManufacturerWithoutWork.txt",
+      "bytes": 169478,
+      "sha256": "4ce2b961f5add510fd7952b42c3d181b3b7ba96103d0a9b562ab20826da82a26"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-groupedReviewRecordsOnlySelectedOperationWithPrefilledDateAndKilometres.txt",
+      "bytes": 171385,
+      "sha256": "3c2dc2b0d0ce4779787394b1ccef02011ed932b6e8a078787d4e0cea0d93b707"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-maintenanceDefaultShowsFourCompleteRevisionsAndEveryCatalogueOperationWithoutInventingWork.txt",
+      "bytes": 18310,
+      "sha256": "2fe67b2dca3bec8164c1cd14674567945ec27c212c11cc7c509c8e3807620343"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-ownUniqueMaintenanceCreatesEditsDisablesAndCompletesOnceWithoutUrl.txt",
+      "bytes": 262861,
+      "sha256": "71d170b0ba56b7215b23619c9ca2130a9a8e1f75c04baed664ca20b9fc33e85e"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-planningReferenceIsEditableWithoutInventingReadingOrWork.txt",
+      "bytes": 86855,
+      "sha256": "deb61be5484f54a3579341304ffaffd93da41cdc051a1f30b7f5942f0d4112ee"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-readingFaultPartAndLinkedPdfWorkThroughNativeScreens.txt",
+      "bytes": 201964,
+      "sha256": "be3cf815882de0ebfbf32d439ebb323cbff60e12e11696bcc0a3a82c64975546"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-secondaryReferencesActivateAndDisableConditionalProfileWithoutInventedWork.txt",
+      "bytes": 135663,
+      "sha256": "ab594871fb09395f2826f0a7b971f1d6e07838ce2f116cd0e3fe3e278328f9a0"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-visitRequiresExplicitCompletionAndKeepsUnselectedOperationsOpen.txt",
+      "bytes": 107994,
+      "sha256": "08351220040a59e2a550e461fa1e1fea018b9be86ac955ef709cef605e12ff72"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/meminfo",
+      "bytes": 1338,
+      "sha256": "4a0120f701ba4c475ee1708358535f30ff00ec1147564a9e737d7adea8b19ca1"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/profiling/emulator-5554_profile.pb",
+      "bytes": 32,
+      "sha256": "324ad0375da3eafc3a4215bfb1b34234f0bd60ee8b6a9054f367b8a66fe46aef"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/test-result.pb",
+      "bytes": 144059,
+      "sha256": "d51ad6687c6df70f29d34e3201cceb92e09786445de1641ad8b822c902806f4a"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/test-result.textproto",
+      "bytes": 221165,
+      "sha256": "8697d2693b159918db67cf57d59dc5f57656e25a211bfad69ac96bf47f2dbec4"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/testlog/test-results.log",
+      "bytes": 118270,
+      "sha256": "ce50ef35e8408eefdc8d45d11dabb155bbc424c700f2a2efe97559f352b725c4"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/utp.0.log",
+      "bytes": 60348,
+      "sha256": "a4fab36152ada76b00dfc4bcb2b2a4381735777a4e7e2e813f1c242ff7179807"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/Medium_Phone_API_36.0(AVD) - 16/utp.0.log.lck",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/TEST-Medium_Phone_API_36.0(AVD) - 16-_app-.xml",
+      "bytes": 25932,
+      "sha256": "497317c3adc8162225ae0ade1d3d9520595ab5740f09f67ec4f84530b96359c2"
+    },
+    {
+      "path": "docs/evidence/v6/android-first-results/debug/test-result.pb",
+      "bytes": 144035,
+      "sha256": "a548b8780653aa8c34a74a5949286e5a66b25114b1dea39bda496666f240cce8"
+    },
+    {
+      "path": "docs/evidence/v6/android-first.log",
+      "bytes": 11395,
+      "sha256": "c672c40bb0dcca311494161b9942b1bf0a833d560c87b825b0c6ed809bda5c15"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/cpuinfo",
+      "bytes": 4702,
+      "sha256": "88197aa9175ef7e993f4197d0beebfb300ce48d3614cc5182a9688367cc66c7a"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/device-info.pb",
+      "bytes": 146,
+      "sha256": "3d8cc25520a95559b09834789095c554301dacba3eb38f21972329e648ad680d"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-customCreateEditDisableAndSnapshotKeepIdentityHistoryAndReference.txt",
+      "bytes": 339,
+      "sha256": "831c72728700cc0184bccac9f97a14c72064bfa5df0ff77ef2cb1924e9918213"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-customUniqueTaskCompletesOnceAndVoidingRestoresItsOriginalAbsoluteLimits.txt",
+      "bytes": 353,
+      "sha256": "e25491b439201378490073c75f7cda262bba972520a2c0f8f7cf4ad9266efa0c"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-inactiveExpenseSavedDirectlyDetachesAndOldPaymentIsNeverSilentlyResurrected.txt",
+      "bytes": 359,
+      "sha256": "ff883d945d2d991fd3304a61776c053eab7b96b32e86d601c64f0618cafecac9"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-legacySnapshotsTwoAndThreeDetachInactiveLinksAndPermitReplacementWithoutLosingAudit.txt",
+      "bytes": 375,
+      "sha256": "fe8ade9bfefc31edd5f983d2ebdde3fc884600a129b546419cff2f953f0438d5"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-linkedPaymentEditAllowsVisitMetadataEditWithoutInventingANewAllocation.txt",
+      "bytes": 349,
+      "sha256": "41311fc078d6f222a15897b013b2b901a5fe3fa00ad45c4b4033fded78e13bd6"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-manufacturerPhaseMayBeExplicitlyPersonalizedAsAnAbsoluteUniqueTask.txt",
+      "bytes": 992,
+      "sha256": "03f918366a795d480dbaf6061123b95c14e90e9ea78d7dc629e55dd2da2c2efb"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-oldRuleJsonDefaultsEnabledAndRetainsOwnerIdentityAndLegacyAbsoluteOnceTarget.txt",
+      "bytes": 361,
+      "sha256": "cb8fadb0899b1bbfdc228e33107ac4ca0e7bf3f35291c67f958395385fa7dbc8"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-phasePersonalizationBecomesSimpleAndOriginalManufacturerCanBeRestored.txt",
+      "bytes": 5662,
+      "sha256": "93110f47df94b767fafae46adeabf06923ae2b26b94d9cffe344c452e9c1265a"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-restoreActivePaymentOverLegacyInactiveLinkNormalizesExistingDataAndCountsOnce.txt",
+      "bytes": 363,
+      "sha256": "b9ec12663a9a04365c6b55c4878e660ea42973e5bc7cb0e7dd5b9ccc7cf6adf8"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-ruleNameNotesPreserveEmissionButIntervalAndReminderToggleCancelIt.txt",
+      "bytes": 4762,
+      "sha256": "e7e2a692243ce1a30098d1cc7d6611706bc993fa99b5480d098ae00f90de337e"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-voidLinkedExpenseAllowsNewPaymentAndVisitEditsKeepPersonalizedExpenseMetadata.txt",
+      "bytes": 363,
+      "sha256": "60a387b37a1653090fbd65bd997c1537b24a47f7b8ade211343e5de4debb7f4c"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-changingBothTyreAxesCreatesOneVisitAndPaymentAndCorrectionKeepsSequenceAndMetadata.txt",
+      "bytes": 365,
+      "sha256": "69d96e372c26c2cb929cfee46b15670db02457cde23fd700b9ce08b4c9639b6c"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-correctingImportedTyreHistoryNeverOverwritesTheLocallyEditedVisitOrPayment.txt",
+      "bytes": 349,
+      "sha256": "1cfa5179b95e78da8653aad51d48f874da7854917757a12cc6d03266fcd60029"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-freeDeadlineRenewsOnlyExplicitlyAndMetadataKeepsEmittedLedgerAndIdMapping.txt",
+      "bytes": 347,
+      "sha256": "a3e7c726165c254bfab7dbd445309a90b98fe9b47713c061afe9a214b71cff07"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-freeManualWorkCannotEraseExistingMaintenanceOperations.txt",
+      "bytes": 701,
+      "sha256": "969bf707cfefb5ef778903cd8e9cebbd326329cbac9ce524773e3f491b713363"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-fuelCreatesOneExpenseAndBidirectionalEditsAndCancellationRemainConsistent.txt",
+      "bytes": 537,
+      "sha256": "0affb3f238224e8d690c542bce6b5b85e2f5f3e74933282f262a1fbf3421d04f"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-fuelVoidAndInvalidRelationRollbackDoNotTouchIndependentExpensesOrReadings.txt",
+      "bytes": 347,
+      "sha256": "f868215da969e9e48cb539af8f9015be46a00e3087131965579d07bc607a6c2a"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-importedUntrackedMountCannotMakeAReviewBeforeTheRealMountValid.txt",
+      "bytes": 325,
+      "sha256": "d06ecad550dc61e41a1839426d2301adbb7f1cf763bd4797bc0763f5956503ed"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-oldSnapshotsTwoAndThreeDefaultVisitsToDoneWithoutInventingFuelOrDeadlineOrTyreRows.txt",
+      "bytes": 365,
+      "sha256": "f22a26b8edb79183f127cd3788d8761de615b95820ce20e6d564e0b2e91ee5ab"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-plannedActualPartsPaymentSurvivesConversionAndUnknownWorkDoesNotInventAnExpenseDate.txt",
+      "bytes": 367,
+      "sha256": "a0b1b0973a965a69a852a1d6ce992fcdd1d5c7fb5e8f215a6efe4542c3c2825b"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-plannedWorkBecomesDoneWithSameIdentityAndNoEstimatedExpenseOrMaintenanceEvent.txt",
+      "bytes": 355,
+      "sha256": "f7bc61aae934773104d97fa16aeae88ae5fe4a8a95c28a0e1bfe684d10445984"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-restoredFuelCollisionPreservesLocalExpenseAndDisablesIncoherentConsumptionEntry.txt",
+      "bytes": 359,
+      "sha256": "28f78158f2817de1ce93774c62f4cfb9d0989b7c9ccd534f6ce00e22f10b8bb8"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-restoredTyreHistoryPreservesLocalTrackingWithoutInventingAnAnnullation.txt",
+      "bytes": 341,
+      "sha256": "7909d205cebec32d6de80f0cc3a165181284237bcbed3553c299078d3590ef36"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-snapshotFourPreservesAllNewRelationsAndRejectsDanglingFuelAndTyreLinksAtomically.txt",
+      "bytes": 541,
+      "sha256": "31ffd5fec95b55cd2bd9910a4b68c5c0ce63c5acec6027573d14acec8f01a60d"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-tyreReviewChangesNextLimitButNotMountUsageOrTheOtherAxis.txt",
+      "bytes": 313,
+      "sha256": "5ae03d9f426d64afdd8d04bb5caa6e8254fcef8a4d40f41cd8e8185ca740fe3b"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.MigrationTest-rawBackupVerifiesOldDatabaseBeforeMigrationAndLeavesOriginalUntouched.txt",
+      "bytes": 321,
+      "sha256": "79af49c2f38fc189ffc2bc9d9e03acc58594e0b877252624120e131cb44283fa"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.MigrationTest-versionOneFixtureRetainsExpenseReadingAndNoteWhileAddingAudit.txt",
+      "bytes": 305,
+      "sha256": "a79d66c0e1edcde32e20791cdf968709da6150e75dad0cdf0456431842a0983b"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.MigrationTest-versionThreeMigrationToFourKeepsHistoricalAmountsAndReferencesWithoutSeedingNewDomains.txt",
+      "bytes": 355,
+      "sha256": "329f1e1e3a9125828a063efbb6527dab17b0f8c18553a84b4fcb54062007a17b"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.MigrationTest-versionTwoMigrationPreservesOwnerRecordsAndOnlyCancelsInitialAutomaticMetadata.txt",
+      "bytes": 339,
+      "sha256": "7494bf4c53c95e5b4440ed21361c1e354991576a823e2382b0349e51b67282b0"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-atomicVisitAndReadingUpdatesCalendarAndPersistsPendingNotificationReconciliation.txt",
+      "bytes": 345,
+      "sha256": "d9b393f5a588235e4d8e3f6ef4bb7de7230735dcec7a793041deb0ac9d59432d"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-catalogueUpdateKeepsOverridesAndResetKeepsRevisionHistory.txt",
+      "bytes": 299,
+      "sha256": "7fac258118edda82dc6eb1026656b5f7b62fce63e8977440f9f5600c576dfc11"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-deletedSeedHistoryIsNotRecreatedOnNextLaunch.txt",
+      "bytes": 273,
+      "sha256": "f507c56a7242c3fe403589aef9706e568716d77b8fffaf5a9d61db03581f208b"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-editingVisitMetadataOrAddingOlderWorkDoesNotInvalidateExistingNotificationCycle.txt",
+      "bytes": 343,
+      "sha256": "be9facd7c1a8cca59f7cb177fc708aa0ca34d78cfe0c369c4d1e0f63fb33f4a0"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-existingPaymentLinkDoesNotDuplicateAndDifferentPaymentsAreKept.txt",
+      "bytes": 309,
+      "sha256": "acf77451bc1e35c00dbb1f613adc52c74b8b49fd71bd13e0ab30dbef88f11efc"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-explicitOdometerCorrectionAndRetroactiveReadingPreserveHistory.txt",
+      "bytes": 309,
+      "sha256": "f11de5fd19dfa46cd9060a80efc72519b89c6ab04cc902b6c0c04f944bfe84cd"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-invalidVisitRollsBackAndEditingVoidingRecalculates.txt",
+      "bytes": 285,
+      "sha256": "3c10b10998bc9cb31d6d93794bbe266620aae2265269f9ee5748b4dbd19e064c"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-maliciousDocumentPathIsRejected.txt",
+      "bytes": 247,
+      "sha256": "3072c9375ca497a50c3a76e320d1f099d935a01607a5f900ebe5e7fc2b88092f"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-movingPaymentClearsPreviousVisitAndLaterEditDoesNotDuplicateExpense.txt",
+      "bytes": 319,
+      "sha256": "47a0a71701ef30a7a6e49f30218a02067e77fffe875bb39a02edaa9ca7f53df2"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-oldOwnerOverrideUsesCurrentCatalogueVisibilityWithoutLosingItsInterval.txt",
+      "bytes": 325,
+      "sha256": "52b880e6f65973ceb50fb0b43ba57e88f9c8c7291c107b48b720d3e0bd5aa545"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-operationalAdoptionIsAuditedAndCreatesNoNewCompletedWork.txt",
+      "bytes": 297,
+      "sha256": "bc6bc71f080e7c860eb6a19106e92f9858b82785ae778fe8dc193bcb243af92e"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-paymentAndDoubleSaveCountOnceAndFuelDoesNotAlterMaintenance.txt",
+      "bytes": 303,
+      "sha256": "7c71a0a0f32611dde1692cb65caac6789fec0ac027b4d5dfbf620ec14f303a2d"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-planningReferenceRemainsSeparateFromActualReadingAndSurvivesSnapshotRestore.txt",
+      "bytes": 335,
+      "sha256": "dc6b952b2b4057e0f57849145be42cf7869a18e32c8dea52dc38a2ba610fdbd0"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-restoreIntoFreshSeedKeepsCopiedOverridesNewerStandardAndExistingLocalOverrides.txt",
+      "bytes": 341,
+      "sha256": "49e55f31319872133e2e5b4742dc86e75f5e7287106af0cdd3b54238eea5fd73"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-restoreKeepsLaterOwnerEditsAndVoids.txt",
+      "bytes": 255,
+      "sha256": "34cf6490001f2688e408c60f84073dac92d348b126ec42af27a738c189a36844"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-seedIsIdempotentAndHasNoInventedCompletionsOrCurrentReading.txt",
+      "bytes": 303,
+      "sha256": "489b2f8eb2f1dee6048958eebb9bced4f8068d77c7e2dfe535aee6066fc12afe"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-seedUpdatesOldUnmodifiedRuleButPreservesOwnerOverrideAndEventRevision.txt",
+      "bytes": 323,
+      "sha256": "dc4726e2b223779710d6d46d7f20112bad015b5c73b2fff21b9be312b71592cb"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-snapshotRoundTripIsCompleteIdempotentAndInvalidSnapshotIsAtomic.txt",
+      "bytes": 311,
+      "sha256": "c596473eb1cebf24f708f99c06ae77fffb6cb3f318b92bf0771cdb17d359d4b6"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-versionTwoSnapshotImportsWithoutInventingAPlanningDateOrCompletedWork.txt",
+      "bytes": 323,
+      "sha256": "720fb0b652610f167705a1bbc1dbb3e7ea10e96abe13d131e542fa1afc4e6dc2"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-versionTwoSnapshotInfersOnlyFormalAutomaticIdsAndPreservesCustomOrExplicitManualRecords.txt",
+      "bytes": 359,
+      "sha256": "43b69d8756937c82dd15c7a9d700464aee8d158a95a278dcf089e94e235b8424"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-versionTwoSnapshotRecoversOnlyExplicitPlanCreationAndKeepsEditedLocalReference.txt",
+      "bytes": 341,
+      "sha256": "d44a86eeb8c11343e360314a413405a8425abe75808eaff6900334d3024723cc"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-workAndPlanningChangesCancelOnlyAutomaticRecordsWithTheSameRuleId.txt",
+      "bytes": 315,
+      "sha256": "b3ba645e9a6f832c5cb00f86aaa39c480cd78485d8a7f677fd2c754f634a1ad0"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-workshopExtrasFuelEditAndVoidTotals.txt",
+      "bytes": 255,
+      "sha256": "6918e0e2426aac11c8281327bc4faade7f45ccb27bba5fbb03dc193b8c26c709"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.DeliveryLifecycleTest-stagedUpdateUninstallAndCompleteRestore.txt",
+      "bytes": 6014,
+      "sha256": "3b9a1cba9f099476202e2c0c3865aae8b67802e18f4b60341250a2e1e47dd5d7"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.DocumentViewerTest-scanWithoutTextDeclaresSearchUnavailable.txt",
+      "bytes": 25290,
+      "sha256": "81b638512afbf066ddadda1346924a2b16bb40e77a1f54fea58466bb1b2757a2"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.DocumentViewerTest-textPdfSearchAndBookmarksAreReal.txt",
+      "bytes": 45770,
+      "sha256": "cb553afe71c72024f2378912daad68ba44a903848190b04b0665817e3548ecf5"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.ExpansionNotificationsTest-collidingHashesReceivePersistentDistinctAndroidIds.txt",
+      "bytes": 886,
+      "sha256": "ce0b8eb36be65ae87d08d8e8224f7852d2629d9c95e3f6067a18240c5428a743"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.ExpansionNotificationsTest-namedDeadlineDeduplicatesMetadataEditsAndRenewalCancels.txt",
+      "bytes": 327,
+      "sha256": "6be2adf7f86312524c6be3e2f7054ebd095ee4748e9e848ea4e7a7a299472006"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.ExpansionNotificationsTest-perEntryLeadPermissionAndDeactivationAreHonest.txt",
+      "bytes": 309,
+      "sha256": "76a0defe70fea942d8b1807b7df067efb389da2d313eb19507dde086c06823be"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.ExpansionNotificationsTest-realAndroidTransportPostsManualDeadlineAndCancelsAfterRenewal.txt",
+      "bytes": 6437,
+      "sha256": "7ad17d2bbcc1171394f12064adcf3733008180af1e98772788303d222adaaf68"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.ExpansionNotificationsTest-soonToDueReplacesOneVisibleNotificationAndStaysVisible.txt",
+      "bytes": 13460,
+      "sha256": "97709556ae7e82ffdc81386a2e24712fd2a4f974c9ac563f63f52c51e1c6daf3"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.ExpansionNotificationsTest-tyresCrossExactManualLimitAndReviewCancelsWithoutResettingUse.txt",
+      "bytes": 1285,
+      "sha256": "df3ac6414964c78462708a315468de1747a9f304ac0885244c8371d282cb3d33"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.ExpansionNotificationsTest-tyresWithoutReadingDoNotInferCurrentKmFromPlanningBaseline.txt",
+      "bytes": 531,
+      "sha256": "1c4d8e9b60133fbba3dea4da0cb69dc041b12706e47d3879f26ccf8eeb32246a"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-concurrentNotificationsDeduplicateAndCompletionCancels.txt",
+      "bytes": 297,
+      "sha256": "400788da38871f741a78fe6339b64531fbff6184357e44f79210693dab197a6a"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-deniedPermissionKeepsInboxAndGrantEmitsRelevantSummary.txt",
+      "bytes": 297,
+      "sha256": "68412f50f7cc3fa8a3f5a43ae754bdba33142f07dcdc533f5c58200736a2f2f6"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-dismissedSummaryIsNotResurrectedByPartialCompletion.txt",
+      "bytes": 291,
+      "sha256": "1445a9501c9e22e17b2002824bb84f7d24f8312ab08a1cdeff4f302dd32f3568"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-freshBaselineComputesLimitsWithoutInitialInboxOrInventedReading.txt",
+      "bytes": 315,
+      "sha256": "34630ee1fa4a031b0576fa49e6e6002df88922ee1d2265f0ac8a02614da97544"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-fullBackupKeepsAttachmentsExactTotalsAndReimportIsIdempotent.txt",
+      "bytes": 1961,
+      "sha256": "da9871b74186f985fcfee795153d606d3e42dc0cfc315bebd18557765589bc67"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-invalidDocumentImportDoesNotPersist.txt",
+      "bytes": 259,
+      "sha256": "d805a08a1a7efbb383ec89263ed7396707e3074e7c9af5ad2bfa8d92ab727105"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-maliciousBackupAndWrongChecksumFailBeforeAnyWrite.txt",
+      "bytes": 548,
+      "sha256": "91e51ca52c7c46bf6762e4b2c76b943f2327bdafb7f8a879704ae9ff80dcf9ea"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-notificationWindowAndDisabledPreferencesRemainHonest.txt",
+      "bytes": 293,
+      "sha256": "cdcb83a7343f2b351060db718df58dd83223a2078eee6d479493961e72c1ff13"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-partialCompletionInvalidatesGroupDestinationAndDisablingChannelsCancels.txt",
+      "bytes": 861,
+      "sha256": "b8c15fcfefe9c340847efa69fb53add5ddb2ded59a636abeabf7c4d6c368290d"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-soonToDueHasNewNotificationKindInSameWeek.txt",
+      "bytes": 271,
+      "sha256": "586b8882a63830534a04e328a55d90770194f8a202e41a26f14efa9598df34f9"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-v3EmittedCycleAndReadInboxArePreservedByGenerationUpgrade.txt",
+      "bytes": 1895,
+      "sha256": "5790fb391693eb2349bd4ec325d9bbdc6cf40eeb437d0cc4d91ee1834735f81a"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.SystemWorkTest-realDateDeadlineEmitsFromWorkManagerWhileActivityIsClosed.txt",
+      "bytes": 10067,
+      "sha256": "0d80175db71e4249ed3b523d86601847b13142b3c65a5a90dc50d1dcd436c4a1"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.SystemWorkTest-realNotificationManagerEmitsTestWithoutMaintenanceEvents.txt",
+      "bytes": 2952,
+      "sha256": "07f4e1ab4b1c4b25d9a972abaaba0379dd823e0ee2030bce6917a212dac61b95"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.SystemWorkTest-realOptionalOdometerReminderDeduplicatesAndNewReadingCancels.txt",
+      "bytes": 24385,
+      "sha256": "8c1b471f3218e59192630f9101793e088bbc4a33c3263ea41856f529485d3a8f"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.SystemWorkTest-realReadingCrossingOutsidePreferredHourEmitsOnceAndWorkStartsNewCycle.txt",
+      "bytes": 28513,
+      "sha256": "cb81f49609e0b554a4b257bb0d8dcd0aa12b08be5959258066200a8dc66065c1"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.SystemWorkTest-realRuleChangeCancelsObsoleteLimitAndReminderToggleKeepsHistory.txt",
+      "bytes": 26657,
+      "sha256": "b90909cafbdb9677d72f4b92cc07c8f351584037663c90363864baf497967a05"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.SystemWorkTest-realWorkManagerRunsCleanPlanningAndBackupWithoutInitialInbox.txt",
+      "bytes": 4107,
+      "sha256": "7c6a9ea876d26facbde4182d8842f43b39e3830e5f1bb7596bbdecd05b381244"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.UpgradeV4Test-stagedV3UpdateAndV4Restore.txt",
+      "bytes": 5882,
+      "sha256": "16c6e6d3faad825b9d54250820514cf7e1ab5c5ab9446843e0317e5916893f78"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.UpgradeV5Test-stagedV4UpdateAndV5Restore.txt",
+      "bytes": 5882,
+      "sha256": "8c88ad32536c92c3b9721ab44b054ffdbe06d2f18ba367d03a8f20cdaf5610f6"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.UpgradeV6Test-actualV5UpdateAndV6CompleteRepeatedRestore.txt",
+      "bytes": 5959,
+      "sha256": "929b78ec5e01cda29fe020a6640e800407f48cd6887de0e0ef9c9dd043e6ff2e"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-correctionOfBothAxesKeepsSinglePaymentAndLaterFrontReplacement.txt",
+      "bytes": 323,
+      "sha256": "d47f8b8235c8c0e74e94385ce5ca2171955351fa2456e5e1a0f77f3a0f32c21e"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-foreignSequenceIsHistoryOnlyOverLocalTrackingButRestoresTrackingWhenClean.txt",
+      "bytes": 345,
+      "sha256": "c637519a9847d1b1977a4a3818c612e202749bc211129ad706ecb225897a9a41"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-fuelExpenseEditsAndRestorePreserveOnePaymentAndLocalCancellation.txt",
+      "bytes": 1190,
+      "sha256": "0cb57d1af1d98a3e59e4ef7c310978489dc5df71708c2c9f1c8ef01ed51472a6"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-globalNotificationsOffOnKeepsAlreadyEmittedCycleAndReadInbox.txt",
+      "bytes": 4559,
+      "sha256": "2ea7fe9cbaa09413e5f4f605ea4bc36e48a6159e6185365b76526e9256c74007"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-plannedConversionUsesSameHistoryIdentityWithUnknownDateAndRealExpense.txt",
+      "bytes": 337,
+      "sha256": "7fd5033710d11bd44eebec8d1247167ef8291f6290d56c8d16ea4c63bdf7d99d"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-plannedWorkCanLinkARealPurchaseAndConversionDoesNotCountItTwice.txt",
+      "bytes": 325,
+      "sha256": "78e2e79cb0a1fd271bedf8f2ff4eefa709523ac051da74b0989b1b3fa3b9c7c8"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-restoringFuelOverAConflictingLocalReceiptPreservesReceiptAndValidBackup.txt",
+      "bytes": 341,
+      "sha256": "383075f5e094e3372d6f02f0fd6c058bb4e1c37708f1dd47a6b681699a59f994"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-tyreNotificationRequiresActualReadingRatherThanPlanningBaseline.txt",
+      "bytes": 325,
+      "sha256": "df62d4d92f890b3901707f9bccc37b34e18de6e6a4e67d2f10798648882727ea"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.ExpansionUiTest-deadlineFreeNameRenewsManuallyPreservesHistoryAndDeactivates.txt",
+      "bytes": 155583,
+      "sha256": "505a09327746df2e05244c7e75551470f11649992660cc014273b27b9c80add7"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.ExpansionUiTest-fuelQuickFormUsesDecimalLitresOneExpenseAndNoSilentOdometerUpdate.txt",
+      "bytes": 174697,
+      "sha256": "7f0feacb3b307e8baa4896f9f7f6589e0950d61a3f215b1125073074d96823dc"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.ExpansionUiTest-historicalManualWorkLinksMaintenanceUsingKnownKmWithoutInventingDate.txt",
+      "bytes": 29172,
+      "sha256": "7098286d22ef7e1444cdc3ea659aa9890a46007ecde9796560c82aeb395f4fb3"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.ExpansionUiTest-manualPlannedWorkLinksExistingExpenseAndRelationOpensBothWays.txt",
+      "bytes": 253675,
+      "sha256": "5dd87e65a982b2ef38e4ea7298e9a112a11df7060014f58c66e6726dd505da2a"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.ExpansionUiTest-quickManualWorkConvertsSameRecordWithoutHistoricalDateExpenseOrManufacturerEvent.txt",
+      "bytes": 168099,
+      "sha256": "f79dd913ecd5b84522ed463f32d1ff2b9086186cd90729da61506839c66fceb0"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.ExpansionUiTest-tyreMountReviewAndBothChangePreserveUsageAndSinglePayment.txt",
+      "bytes": 358500,
+      "sha256": "03f886501e590c958edb6d82aa018a644225c58ec9aa1a33b0c5e51741221ae3"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-editingVisitMetadataPreservesHistoricalAllocationAfterLinkedExpenseCorrection.txt",
+      "bytes": 103702,
+      "sha256": "11bfe41f9be7193b8f5f319ddcc9560e10bc7050107defa9a8a098f690c53a41"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-expenseFiltersCombinePersistAndReactToDateCategoryAndCancellation.txt",
+      "bytes": 49095,
+      "sha256": "a18d38e80f7f928e9cde8c753b06ca7eeae824753474fd9cf03111fdac731b02"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-expenseFormSurvivesRecreationAndSavesExactCentsWithoutChangingMaintenance.txt",
+      "bytes": 66483,
+      "sha256": "26594672d8abd9b4f12f8dae740cc4552e8065e919b50bbae699aa77449f4b1e"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-groupedOperationCanCustomizePhaseAndRestoreManufacturerWithoutWork.txt",
+      "bytes": 141330,
+      "sha256": "b432f43eeca790d41425b67d4ff06c977a13cfd5f1bd11a3537cab0bc317d8c5"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-groupedReviewRecordsOnlySelectedOperationWithPrefilledDateAndKilometres.txt",
+      "bytes": 108923,
+      "sha256": "e5a4c5003cea01a1d7d7e31aa65b55dd7f4ff0b633c06689301408d454f3ccb6"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-maintenanceDefaultShowsFourCompleteRevisionsAndEveryCatalogueOperationWithoutInventingWork.txt",
+      "bytes": 22248,
+      "sha256": "87d95c2ef4aff53837177dc787bb8484fc1ded0e39655f96981066a417699838"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-ownUniqueMaintenanceCreatesEditsDisablesAndCompletesOnceWithoutUrl.txt",
+      "bytes": 260342,
+      "sha256": "be44b8d746e47126efceb7a97cb9a185496cadbfdf3c0af319b15e565c4a254f"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-planningReferenceIsEditableWithoutInventingReadingOrWork.txt",
+      "bytes": 90620,
+      "sha256": "05e579108f026bbe840a0346219da411fe7dca792ed598eb39c8e26f74b45174"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-readingFaultPartAndLinkedPdfWorkThroughNativeScreens.txt",
+      "bytes": 263111,
+      "sha256": "e61f996491bb584a6f2d20adec753b89e016b952d6d2faef1a9e26593ccda003"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-secondaryReferencesActivateAndDisableConditionalProfileWithoutInventedWork.txt",
+      "bytes": 120259,
+      "sha256": "8a99ef941fe7bf424b6d2b804b648484391c47081fea32ace5715c1f9442b1ab"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-visitRequiresExplicitCompletionAndKeepsUnselectedOperationsOpen.txt",
+      "bytes": 114365,
+      "sha256": "083bb5631ace3aba9c6f6c080a5793a599e247d64cc1d2a972f6c0a53d9b2b12"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/meminfo",
+      "bytes": 1338,
+      "sha256": "d29c136eb9c74f24bf239518af55a7246ba8c43388d3bbcff08a85e0e095e132"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/profiling/emulator-5554_profile.pb",
+      "bytes": 16,
+      "sha256": "29c9b0e92f0269cba2d3087eba61f8bf06e9f907ecf4f1f34454b28d21acf375"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/testlog/test-results.log",
+      "bytes": 97200,
+      "sha256": "6f38054ea35ae389db8facb062b9493a72a511baf8e3418ba617c00ee207f6da"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/utp.0.log",
+      "bytes": 1392,
+      "sha256": "18d4656ae16ee3cdb69566bbdd41ea1d7af45ae6c331b9fabce66075b4912369"
+    },
+    {
+      "path": "docs/evidence/v6/android-second-results/debug/Medium_Phone_API_36.0(AVD) - 16/utp.0.log.lck",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/v6/artifacts-delivery.log",
+      "bytes": 117,
+      "sha256": "7dc63cf83fb41c6ea863b39ea03a30bee6b61982e7cc466c25a02315174eb59c"
+    },
+    {
+      "path": "docs/evidence/v6/build-first.log",
+      "bytes": 8185,
+      "sha256": "48172feaed6f8399a3868126d7a8413e6986270207d840a837295fa15edaf53a"
+    },
+    {
+      "path": "docs/evidence/v6/build-validation.log",
+      "bytes": 10499,
+      "sha256": "fbe825977a1ca4126091a32d008dd02b2cc8eeb5263b8397e47c1b1b72b54f7a"
+    },
+    {
+      "path": "docs/evidence/v6/delivery-validation.log",
+      "bytes": 12049,
+      "sha256": "3d14557476b05f8058228794597c9e278b3772cea9e9c313b3ce89bdf3c75c94"
+    },
+    {
+      "path": "docs/evidence/v6/emulator-stderr.txt",
+      "bytes": 3922,
+      "sha256": "0386a84a0dd81481f418395eebe7c171763359063a823dfe8f2f659765e44007"
+    },
+    {
+      "path": "docs/evidence/v6/emulator-stdout.txt",
+      "bytes": 23117,
+      "sha256": "6cc958cef41ed467565f0b05316cb0d4fcc28f4f9713c60fc5802086e036f924"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/aapt.exe.1.ok.txt",
+      "bytes": 6407,
+      "sha256": "b618069865fe0e63734f0f4d838e3c456bc88c49edc3b3a8fbe3256c7517934e"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/aapt.exe.2.ok.txt",
+      "bytes": 1752,
+      "sha256": "cebf8794439f820aa719e4a8320b0ab29f0265518b2c405e5498fd4801751575"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/cpuinfo",
+      "bytes": 4702,
+      "sha256": "88197aa9175ef7e993f4197d0beebfb300ce48d3614cc5182a9688367cc66c7a"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/device-info.pb",
+      "bytes": 146,
+      "sha256": "3d8cc25520a95559b09834789095c554301dacba3eb38f21972329e648ad680d"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-customCreateEditDisableAndSnapshotKeepIdentityHistoryAndReference.txt",
+      "bytes": 339,
+      "sha256": "e4f26f456cbc7c626517b79689df39d6c6ec601490d37b4e05711ac38dd97b2e"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-customUniqueTaskCompletesOnceAndVoidingRestoresItsOriginalAbsoluteLimits.txt",
+      "bytes": 353,
+      "sha256": "8f75a970995bc801997cb0b7aa88c98a7dd67558d5f5fe478ad4b1701a32bf37"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-inactiveExpenseSavedDirectlyDetachesAndOldPaymentIsNeverSilentlyResurrected.txt",
+      "bytes": 359,
+      "sha256": "40a3c975d3675bd6a35b07a900ee9c9758fdf1003fa812ba76667b4034c6df47"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-legacySnapshotsTwoAndThreeDetachInactiveLinksAndPermitReplacementWithoutLosingAudit.txt",
+      "bytes": 375,
+      "sha256": "9b77e4407bbb3da1ae4cabd4e9272064336c07193086b07d78fa77d2a33fc6e6"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-linkedPaymentEditAllowsVisitMetadataEditWithoutInventingANewAllocation.txt",
+      "bytes": 349,
+      "sha256": "305d797b9cd60117cd82ef21c3ec06da156eb7bbd8a3cd768c77e270db82efde"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-manufacturerPhaseMayBeExplicitlyPersonalizedAsAnAbsoluteUniqueTask.txt",
+      "bytes": 341,
+      "sha256": "f6b36c37e836fd0c45e442a02cf6bebc9ed03753f78b2be97bf3945652352e62"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-oldRuleJsonDefaultsEnabledAndRetainsOwnerIdentityAndLegacyAbsoluteOnceTarget.txt",
+      "bytes": 1265,
+      "sha256": "eba07c8aef83ac01053f76986da6b541bfb6add0ec35576e7dd123428d69b688"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-phasePersonalizationBecomesSimpleAndOriginalManufacturerCanBeRestored.txt",
+      "bytes": 2041,
+      "sha256": "9479cf8f52909662b452699ce94f61e3aec2b8506efb14e3ee4b19fac6d7cfa0"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-restoreActivePaymentOverLegacyInactiveLinkNormalizesExistingDataAndCountsOnce.txt",
+      "bytes": 363,
+      "sha256": "e7160aebec22d85d01091f038eb85e5e361a4bf3ee919393af6f9708faf4a2a5"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-ruleNameNotesPreserveEmissionButIntervalAndReminderToggleCancelIt.txt",
+      "bytes": 339,
+      "sha256": "01ee2e69724ff8b6116fe2dc48ddb626eb0839a3bf54f8cd733fd3ced4119cf7"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.CustomRulesAndPaymentsTest-voidLinkedExpenseAllowsNewPaymentAndVisitEditsKeepPersonalizedExpenseMetadata.txt",
+      "bytes": 363,
+      "sha256": "dfc80944f70700186a2fc73dfc98f229b26d183f13f00aec75d66e07f808dd0a"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-changingBothTyreAxesCreatesOneVisitAndPaymentAndCorrectionKeepsSequenceAndMetadata.txt",
+      "bytes": 365,
+      "sha256": "871c65795197e4d9758562a680921939735f4465268e7bb860590105be074e3f"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-correctingImportedTyreHistoryNeverOverwritesTheLocallyEditedVisitOrPayment.txt",
+      "bytes": 349,
+      "sha256": "894cf62b8cf90049851349d82937b0b36ca3f482043282e85f56ec6ac82b4366"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-freeDeadlineRenewsOnlyExplicitlyAndMetadataKeepsEmittedLedgerAndIdMapping.txt",
+      "bytes": 347,
+      "sha256": "7037af63bd1de16d1d7a75bf9ad5ffef826b7670ee2f8e1f36c9e7eef518098e"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-freeManualWorkCannotEraseExistingMaintenanceOperations.txt",
+      "bytes": 309,
+      "sha256": "027cfc2409c8eaa11cfe451e3f1f2f4ba0d24950fbfca47d36d2d30af00d616b"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-fuelCreatesOneExpenseAndBidirectionalEditsAndCancellationRemainConsistent.txt",
+      "bytes": 537,
+      "sha256": "3751802e6ca0a7857d79600459dde6fb78cd6a82f125f014351512df5a29799e"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-fuelVoidAndInvalidRelationRollbackDoNotTouchIndependentExpensesOrReadings.txt",
+      "bytes": 347,
+      "sha256": "37998053f682c85f79783d9e7ce4fd2625b55b8c22222e66f6088c5551192c49"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-importedUntrackedMountCannotMakeAReviewBeforeTheRealMountValid.txt",
+      "bytes": 325,
+      "sha256": "1d183e2284e6613ed8f53a7185eaa2c929381d3c2add6f80aaafc906af243815"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-oldSnapshotsTwoAndThreeDefaultVisitsToDoneWithoutInventingFuelOrDeadlineOrTyreRows.txt",
+      "bytes": 365,
+      "sha256": "46c9e67f003db31a94d356121b6a2544934522aab55813b385507a5a5d3cad22"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-plannedActualPartsPaymentSurvivesConversionAndUnknownWorkDoesNotInventAnExpenseDate.txt",
+      "bytes": 367,
+      "sha256": "ab09737bd7421126de709733e8a462b9cfb04a1ad4a5c38121f6a99bbe56cf8a"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-plannedWorkBecomesDoneWithSameIdentityAndNoEstimatedExpenseOrMaintenanceEvent.txt",
+      "bytes": 355,
+      "sha256": "062afaa9db4eb57022b6ce8a9f7f9510ff49f51e29ec184a09cff8c97e24c7dc"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-restoredFuelCollisionPreservesLocalExpenseAndDisablesIncoherentConsumptionEntry.txt",
+      "bytes": 359,
+      "sha256": "6e3c0db2f0aa9ca1bbdc1e5e31dd62e16889115106c377b971fc11ccbcf875d2"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-restoredTyreHistoryPreservesLocalTrackingWithoutInventingAnAnnullation.txt",
+      "bytes": 341,
+      "sha256": "60ca95cbb8ed70b58b5e76880f95eed062fd902440bef42ec492491dc8c20dbd"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-snapshotFourPreservesAllNewRelationsAndRejectsDanglingFuelAndTyreLinksAtomically.txt",
+      "bytes": 541,
+      "sha256": "10565e451d2215804e3ff8f26c85e2dd7038b66c34f3a1ba0ddafae48f0eb0f6"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.ExpandedRepositoryTest-tyreReviewChangesNextLimitButNotMountUsageOrTheOtherAxis.txt",
+      "bytes": 313,
+      "sha256": "97efff038ad4469549f6eb8855a481907154406a640826b5a9b7bbf82dadb457"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.MigrationTest-rawBackupVerifiesOldDatabaseBeforeMigrationAndLeavesOriginalUntouched.txt",
+      "bytes": 321,
+      "sha256": "63a9d28fd714a8c7902e56a9f03a875e21c395df259110089186054b4d30d20c"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.MigrationTest-versionOneFixtureRetainsExpenseReadingAndNoteWhileAddingAudit.txt",
+      "bytes": 305,
+      "sha256": "8864e19c18f6e9f05f8d7d4f54237397468803cf0bd33a35896f299ab89d1dbc"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.MigrationTest-versionThreeMigrationToFourKeepsHistoricalAmountsAndReferencesWithoutSeedingNewDomains.txt",
+      "bytes": 355,
+      "sha256": "b138f6bf40d4810c4b4c4a6bae892207585dce7d371072ed8fa3d5c0ce1463fc"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.MigrationTest-versionTwoMigrationPreservesOwnerRecordsAndOnlyCancelsInitialAutomaticMetadata.txt",
+      "bytes": 339,
+      "sha256": "ae796f3b12f23102b8e23a12e809a0c0b34845526cfcc4b40be0fca7741b4afd"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-atomicVisitAndReadingUpdatesCalendarAndPersistsPendingNotificationReconciliation.txt",
+      "bytes": 345,
+      "sha256": "727a04d468fd1bf549174dc638de049ec3c914f9b14441cf83b6a7b259d2eb82"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-catalogueUpdateKeepsOverridesAndResetKeepsRevisionHistory.txt",
+      "bytes": 299,
+      "sha256": "da735ef5329f2f99f3789fd631d3e003b880b69a489e51aa57cb51bd1042dd96"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-deletedSeedHistoryIsNotRecreatedOnNextLaunch.txt",
+      "bytes": 273,
+      "sha256": "86b852425495841e5bc84ec1705ca3d65c830be4d41437d40d0decfc25cdefa3"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-editingVisitMetadataOrAddingOlderWorkDoesNotInvalidateExistingNotificationCycle.txt",
+      "bytes": 343,
+      "sha256": "7424fcc3efa75b4cd27b2c977392c525a188cbb884e727fc156312733af7a9eb"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-existingPaymentLinkDoesNotDuplicateAndDifferentPaymentsAreKept.txt",
+      "bytes": 309,
+      "sha256": "5e6a3d775d8c7d2cce36ba8d92e6ccab6b361a1771dcc4509f0a437eb864e33b"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-explicitOdometerCorrectionAndRetroactiveReadingPreserveHistory.txt",
+      "bytes": 309,
+      "sha256": "556a02a4976511502d504430aaaead13f6bbdb13af8b953598332f0c7600be1a"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-invalidVisitRollsBackAndEditingVoidingRecalculates.txt",
+      "bytes": 285,
+      "sha256": "101c635bc1d8bb25575097d8569809227c68d7bb308752c5c7ffa56e3b1ad693"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-maliciousDocumentPathIsRejected.txt",
+      "bytes": 247,
+      "sha256": "faf948b4d637d582e63628a0d2786401eb978f40742f8483ad1adbdaa97b75e3"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-movingPaymentClearsPreviousVisitAndLaterEditDoesNotDuplicateExpense.txt",
+      "bytes": 319,
+      "sha256": "92f7c11295a56fed9127232618f43f85758e6a753a8ce18ac112884ccef047eb"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-oldOwnerOverrideUsesCurrentCatalogueVisibilityWithoutLosingItsInterval.txt",
+      "bytes": 325,
+      "sha256": "259fc71a965bb74e22a8a675ffc51d4f76d2d8f7911558f167200386b9d35e9a"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-operationalAdoptionIsAuditedAndCreatesNoNewCompletedWork.txt",
+      "bytes": 297,
+      "sha256": "a572259147c7cf57995233e0d957803bc8b6bf53adc2fb15eef080b1e1a7007d"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-paymentAndDoubleSaveCountOnceAndFuelDoesNotAlterMaintenance.txt",
+      "bytes": 381,
+      "sha256": "1edc9a46d610acce97a040271904515544c4694d71679f93268b85f23109cb3e"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-planningReferenceRemainsSeparateFromActualReadingAndSurvivesSnapshotRestore.txt",
+      "bytes": 335,
+      "sha256": "b49ea405bb97bba9a2a401fbdc8ceac24ae0069bcf4ff1566f6c2eebb808895a"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-restoreIntoFreshSeedKeepsCopiedOverridesNewerStandardAndExistingLocalOverrides.txt",
+      "bytes": 341,
+      "sha256": "9f6f6741ba543eeab2d89df3507328663300a84b1fcafb9f4cbb0c2ad42391c4"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-restoreKeepsLaterOwnerEditsAndVoids.txt",
+      "bytes": 255,
+      "sha256": "77c23a06d7a2611b80739c225d4d808435b18ac30697f7115ad0db90698739bb"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-seedIsIdempotentAndHasNoInventedCompletionsOrCurrentReading.txt",
+      "bytes": 303,
+      "sha256": "cc91cb262a8248b580456a26f0fc2c57e8ad8c99588d270b1819e040f3896fc6"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-seedUpdatesOldUnmodifiedRuleButPreservesOwnerOverrideAndEventRevision.txt",
+      "bytes": 542,
+      "sha256": "452028f3c63a684bbfae1abf9d5b78076c04f0ccf95cb79e85e1e264de664203"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-snapshotRoundTripIsCompleteIdempotentAndInvalidSnapshotIsAtomic.txt",
+      "bytes": 417,
+      "sha256": "f4b000863e87ce75bca262b36baca5a7fbe1dfd120af381b8aa447a946acd614"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-versionTwoSnapshotImportsWithoutInventingAPlanningDateOrCompletedWork.txt",
+      "bytes": 997,
+      "sha256": "29395c341a11e4e9c90f969f922020305c9f1946a40abf000507245dfa1aac12"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-versionTwoSnapshotInfersOnlyFormalAutomaticIdsAndPreservesCustomOrExplicitManualRecords.txt",
+      "bytes": 359,
+      "sha256": "0192762e90f2c2d89f8dc14f1f3c3d4bdd1cc199b538cfcdc8f278b5d4738186"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-versionTwoSnapshotRecoversOnlyExplicitPlanCreationAndKeepsEditedLocalReference.txt",
+      "bytes": 341,
+      "sha256": "221368e6b34d9267687057255a5163822d0408f08a095cbc023f40001077d7f5"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-workAndPlanningChangesCancelOnlyAutomaticRecordsWithTheSameRuleId.txt",
+      "bytes": 315,
+      "sha256": "a7970e430933ab256a3bcdf6aea4e97112c39b0e6d91effc87242321dc326707"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.data.RepositoryTest-workshopExtrasFuelEditAndVoidTotals.txt",
+      "bytes": 255,
+      "sha256": "423433f8f28cb10b5461ef02e33e143cb440c40404b5e9a2c15348b71e7cdef8"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.DeliveryLifecycleTest-stagedUpdateUninstallAndCompleteRestore.txt",
+      "bytes": 6014,
+      "sha256": "f3c6203d04ad97de4c9d22c4060249ae4ea6643d1d0ac0dbfabf1c4aeae46dcb"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.DocumentViewerTest-scanWithoutTextDeclaresSearchUnavailable.txt",
+      "bytes": 26160,
+      "sha256": "ab665dcce7e8b0bb0a327e3e5eedb91bf5de004d01db4e481ced8c71fd77e084"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.DocumentViewerTest-textPdfSearchAndBookmarksAreReal.txt",
+      "bytes": 44925,
+      "sha256": "8ddf48ba41d4ea974476684db9e137514897758a4d6e038b1f45b90f477456aa"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.ExpansionNotificationsTest-collidingHashesReceivePersistentDistinctAndroidIds.txt",
+      "bytes": 1096,
+      "sha256": "e4c60a43de7cfda91495a14ad952e7df6be32c3aa6c23f8c8a686d5e4b781025"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.ExpansionNotificationsTest-namedDeadlineDeduplicatesMetadataEditsAndRenewalCancels.txt",
+      "bytes": 327,
+      "sha256": "ad1418a944643c27960361118763ec843b99206c676e83647c274dd9d0ffde7a"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.ExpansionNotificationsTest-perEntryLeadPermissionAndDeactivationAreHonest.txt",
+      "bytes": 848,
+      "sha256": "2ae62b063d6974ed8127e8d4064235c14c77bad8b90cd11c6f4b2809fbbd4f7b"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.ExpansionNotificationsTest-realAndroidTransportPostsManualDeadlineAndCancelsAfterRenewal.txt",
+      "bytes": 339,
+      "sha256": "53cfb90d0661048f75b00655674349d38a63991ea9fa3377bb1f02019b7fcf32"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.ExpansionNotificationsTest-soonToDueReplacesOneVisibleNotificationAndStaysVisible.txt",
+      "bytes": 13578,
+      "sha256": "86667c0b78f1ad3cced612d791be17ce86365c1a13a884b2e6d7511819cb41f8"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.ExpansionNotificationsTest-tyresCrossExactManualLimitAndReviewCancelsWithoutResettingUse.txt",
+      "bytes": 1125,
+      "sha256": "ae088c797edabf260ec79201704e5cd03b87e627683b9fd04533cd55306f4932"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.ExpansionNotificationsTest-tyresWithoutReadingDoNotInferCurrentKmFromPlanningBaseline.txt",
+      "bytes": 333,
+      "sha256": "ca5382c20e5af30d048bcdd6599f170cdf1baa08be805cca1222c61ba3e02869"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-concurrentNotificationsDeduplicateAndCompletionCancels.txt",
+      "bytes": 297,
+      "sha256": "1bbd1ef1f00ac39b78a3ec1727bbddc78eaf47cbc44faa9735ac74de4d8f0427"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-deniedPermissionKeepsInboxAndGrantEmitsRelevantSummary.txt",
+      "bytes": 297,
+      "sha256": "e7b7db4c3c08489732d67c8e1dd8df693802607ac7016bd1611339f3de6d6ea0"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-dismissedSummaryIsNotResurrectedByPartialCompletion.txt",
+      "bytes": 291,
+      "sha256": "b820d8a2f0d9075af3aa548a6b6d5f00bfbdaed91efe4c60b949336c192cb83c"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-freshBaselineComputesLimitsWithoutInitialInboxOrInventedReading.txt",
+      "bytes": 315,
+      "sha256": "7b7841d4e0d6748b84f397004e19c389adffa5518a2db7a6607ecf3f6fe0222c"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-fullBackupKeepsAttachmentsExactTotalsAndReimportIsIdempotent.txt",
+      "bytes": 4892,
+      "sha256": "09a9b5cb7e94d352b4ecbb7cc072e2a97b78b1dfbcde197ee2ae59c70f260d8e"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-invalidDocumentImportDoesNotPersist.txt",
+      "bytes": 259,
+      "sha256": "d6b61de4cd4b53d761f842015cc118e7ba662a8a0747929e3b408f499b2ff7b0"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-maliciousBackupAndWrongChecksumFailBeforeAnyWrite.txt",
+      "bytes": 982,
+      "sha256": "886237b352ab6dcff4e4b1adaed2f70861582d7b7270b9f555ec4b5c765816f9"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-notificationWindowAndDisabledPreferencesRemainHonest.txt",
+      "bytes": 293,
+      "sha256": "3bd9dd07260a85faebebc2c929442c424eb6644883da8609899616df7ec567ac"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-partialCompletionInvalidatesGroupDestinationAndDisablingChannelsCancels.txt",
+      "bytes": 861,
+      "sha256": "d13234d84c0f840f125bd36229b12803d3bfa3e4046bb7b52900320047613570"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-soonToDueHasNewNotificationKindInSameWeek.txt",
+      "bytes": 271,
+      "sha256": "d9bcd6faf9e7a00d80480355da94950cb10a9e3a0700b46ccda43ade88dd7a84"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.PlatformTest-v3EmittedCycleAndReadInboxArePreservedByGenerationUpgrade.txt",
+      "bytes": 1895,
+      "sha256": "46adec7c0f84382009fde80f49df3b16323b07167197419b8b694c6f9ba2b4d1"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.SystemWorkTest-realDateDeadlineEmitsFromWorkManagerWhileActivityIsClosed.txt",
+      "bytes": 9928,
+      "sha256": "541fbb2cbdca9628ee9e807162b45b28e1a16bf55686e0d56ae9a81819658497"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.SystemWorkTest-realNotificationManagerEmitsTestWithoutMaintenanceEvents.txt",
+      "bytes": 1208,
+      "sha256": "80fb5ac398fa748a82655502b91e98d34e6551b84a104a3bd7b2ecbad9e78a0d"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.SystemWorkTest-realOptionalOdometerReminderDeduplicatesAndNewReadingCancels.txt",
+      "bytes": 24150,
+      "sha256": "3b5c4667768f2ea03dd584e9b33055a6e710125f0a8d1abbb22e96976ae770aa"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.SystemWorkTest-realReadingCrossingOutsidePreferredHourEmitsOnceAndWorkStartsNewCycle.txt",
+      "bytes": 28149,
+      "sha256": "49bff415ee81fcc48ad5c669b93610fc08cab345abc99ac89e392c51611a0509"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.SystemWorkTest-realRuleChangeCancelsObsoleteLimitAndReminderToggleKeepsHistory.txt",
+      "bytes": 18152,
+      "sha256": "6ffdd899308b9dc6119e8c8b1bbbaed722d1b01f05aab2462349ddee2fb3fc07"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.SystemWorkTest-realWorkManagerRunsCleanPlanningAndBackupWithoutInitialInbox.txt",
+      "bytes": 4107,
+      "sha256": "56549986daf878df4235260d7b6b2f44962f45c203fa0bebafd2083a9c33cc23"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.UpgradeV4Test-stagedV3UpdateAndV4Restore.txt",
+      "bytes": 5882,
+      "sha256": "b4670807a69866f65ef61d1c50c1f80352c450e6db336e9ad4fa695babd1fd83"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.UpgradeV5Test-stagedV4UpdateAndV5Restore.txt",
+      "bytes": 5882,
+      "sha256": "7dd0d08a430fa35cdb7b835edc7165a231233f58dc10c243af0052cc35b8f88e"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.platform.UpgradeV6Test-actualV5UpdateAndV6CompleteRepeatedRestore.txt",
+      "bytes": 5959,
+      "sha256": "7bcd21e0a7a79b211799b58bffcc7bcae43f75909dbf5b6e31f6fb629f5d7197"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-correctionOfBothAxesKeepsSinglePaymentAndLaterFrontReplacement.txt",
+      "bytes": 323,
+      "sha256": "d8cee17dca2f37ac88c549bb536a9db88c2ea8694e494138795606b0ee6c4472"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-foreignSequenceIsHistoryOnlyOverLocalTrackingButRestoresTrackingWhenClean.txt",
+      "bytes": 701,
+      "sha256": "8e131d8a3c74de02feace16bf657fb91202c00c416799ae1ace5fa04b9f2b3c0"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-fuelExpenseEditsAndRestorePreserveOnePaymentAndLocalCancellation.txt",
+      "bytes": 1190,
+      "sha256": "6b3221f2421460eb61aebc747d3c7e74becd7d36ffbab286d1b376270eefcccc"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-globalNotificationsOffOnKeepsAlreadyEmittedCycleAndReadInbox.txt",
+      "bytes": 4559,
+      "sha256": "ae42671d0c789fc00b923313a92ee8180313d78c8c70e4782628bfb0757dbff6"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-plannedConversionUsesSameHistoryIdentityWithUnknownDateAndRealExpense.txt",
+      "bytes": 337,
+      "sha256": "3a1538bd5dcaa281d0169952cfe189592a17993f29f7a02ba0518371b7b1552e"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-plannedWorkCanLinkARealPurchaseAndConversionDoesNotCountItTwice.txt",
+      "bytes": 325,
+      "sha256": "f054bf7292be9032646487d84dcff60620c48f9ec97a938ebbbe6e0706134744"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-restoringFuelOverAConflictingLocalReceiptPreservesReceiptAndValidBackup.txt",
+      "bytes": 341,
+      "sha256": "5828016263fd78bd9ca9c2304660e6cd87ad1fa96f901e47c0d377d0318baf58"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.review.ExpansionReviewTest-tyreNotificationRequiresActualReadingRatherThanPlanningBaseline.txt",
+      "bytes": 325,
+      "sha256": "837a2c27be6f3489c1222fe470334371f381588f1e757792fcce7557bcad8ad0"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.ExpansionUiTest-deadlineFreeNameRenewsManuallyPreservesHistoryAndDeactivates.txt",
+      "bytes": 158868,
+      "sha256": "ca1d791d8d4bc23795ae5fa0d5b441280fbf82bbf7f9a4d7a50f9e03f1b4a2eb"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.ExpansionUiTest-fuelQuickFormUsesDecimalLitresOneExpenseAndNoSilentOdometerUpdate.txt",
+      "bytes": 202532,
+      "sha256": "f0fd50f04ee37d34647cd335b9628d036a937c3652eeaa19944d8f25d439384d"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.ExpansionUiTest-historicalManualWorkLinksMaintenanceUsingKnownKmWithoutInventingDate.txt",
+      "bytes": 109490,
+      "sha256": "2c0495f5dd6c11b4b654714d206832a4ec73d71521516f1dd21353266984c80d"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.ExpansionUiTest-manualPlannedWorkLinksExistingExpenseAndRelationOpensBothWays.txt",
+      "bytes": 243933,
+      "sha256": "9097d37c7aa10d6d09c7d23ea83f0fef0f63d9dab20bfb13048987a3f6a1bd7e"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.ExpansionUiTest-quickManualWorkConvertsSameRecordWithoutHistoricalDateExpenseOrManufacturerEvent.txt",
+      "bytes": 157218,
+      "sha256": "6738cc8aa0cb04026ddcfcb50b72b7a7e840e46cdfa374f0802c629ea194a0b9"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.ExpansionUiTest-tyreMountReviewAndBothChangePreserveUsageAndSinglePayment.txt",
+      "bytes": 353962,
+      "sha256": "3aa55c06e204b8405072f4ee4b107568348a6b560b1ecc0f723ea88bf338da58"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-editingVisitMetadataPreservesHistoricalAllocationAfterLinkedExpenseCorrection.txt",
+      "bytes": 108484,
+      "sha256": "36805c7472fad96ba2baae888efc16c26ef4243422dbb602b2893dfad7be55c8"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-expenseFiltersCombinePersistAndReactToDateCategoryAndCancellation.txt",
+      "bytes": 55339,
+      "sha256": "5cab15fed59ecc02433bc6708b66a451592508b5c6a8e5ff55acf97211e0297a"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-expenseFormSurvivesRecreationAndSavesExactCentsWithoutChangingMaintenance.txt",
+      "bytes": 67917,
+      "sha256": "4d27ea9232ec68906a1caa289461899aedfa8231229538a1c938769df5d36a24"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-groupedOperationCanCustomizePhaseAndRestoreManufacturerWithoutWork.txt",
+      "bytes": 42512,
+      "sha256": "0b8f0f106ab34a5a299aab3ce87b9aabb4f513ec9e472d40a9c1640b33cd0a0b"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-groupedReviewRecordsOnlySelectedOperationWithPrefilledDateAndKilometres.txt",
+      "bytes": 26230,
+      "sha256": "5210e0e6d215429e97614348934b32be9d3764f59324858113708d450995d202"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-maintenanceDefaultShowsFourCompleteRevisionsAndEveryCatalogueOperationWithoutInventingWork.txt",
+      "bytes": 23334,
+      "sha256": "f52ba9471b0493c19fa8021c1310522b7f0653385a548f9797ed0a71058987fa"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-ownUniqueMaintenanceCreatesEditsDisablesAndCompletesOnceWithoutUrl.txt",
+      "bytes": 260428,
+      "sha256": "f73787de37ebf969678d50d85d6be2f3e41e66b9653075b35ead0dd1c2d44173"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-planningReferenceIsEditableWithoutInventingReadingOrWork.txt",
+      "bytes": 90376,
+      "sha256": "d33455956d2793d67d27353cb41cf9a8d2a4571703aba133bfcc1c872544b7d4"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-readingFaultPartAndLinkedPdfWorkThroughNativeScreens.txt",
+      "bytes": 243560,
+      "sha256": "d51d566dfef923464a4dd53dd60df0c2151c6033c68e9905487cea664bdcc6ff"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-secondaryReferencesActivateAndDisableConditionalProfileWithoutInventedWork.txt",
+      "bytes": 113376,
+      "sha256": "35720bd91dd419b19fbd3931b2f7f2f38a2032513d0f44413f1def0e13a73916"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/logcat-dev.p38journal.ui.JournalUiTest-visitRequiresExplicitCompletionAndKeepsUnselectedOperationsOpen.txt",
+      "bytes": 106422,
+      "sha256": "ea71b762da0e1a09fd7d2bd1f0f49fe162dc9050cc6d9d6a6293f42844f2616c"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/meminfo",
+      "bytes": 1338,
+      "sha256": "3165a459b8ef1e4f38190ca9f5f4189f1e0c3ec893a600070759755d2cd4d5a9"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/profiling/emulator-5554_profile.pb",
+      "bytes": 32,
+      "sha256": "92ad33bc177d1b1f64178a168b0ee5130deacb29eb66b82006a00e8c89991935"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/test-result.pb",
+      "bytes": 135056,
+      "sha256": "7dc7a8d7cabd1936ca70cf1508383f8140d19bbffb6b39fbae20bd223e430452"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/test-result.textproto",
+      "bytes": 211875,
+      "sha256": "78361edd096559477b514bdef05985ef6207e595123f7e237fb2117c557c4e06"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/testlog/test-results.log",
+      "bytes": 104100,
+      "sha256": "922768deb8143dc8f8013c4e35c8dc91166eb7a33e78fda0c91b36f6490211b3"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/utp.0.log",
+      "bytes": 51272,
+      "sha256": "897b5e4f9a46d6fa083b27499a4af0c8164235d82ac7c38ab67d666465008253"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/Medium_Phone_API_36.0(AVD) - 16/utp.0.log.lck",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/TEST-Medium_Phone_API_36.0(AVD) - 16-_app-.xml",
+      "bytes": 21382,
+      "sha256": "4ecf6fb657ea5bcda84081ec86c2f24c2cc7c9a535aa4860c4bd3ec4051e7c17"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation-results/debug/test-result.pb",
+      "bytes": 135032,
+      "sha256": "b4032cffff7e19a103636674cb470fdc0f0ee78fa03a52b675e592c4f3c3ae5b"
+    },
+    {
+      "path": "docs/evidence/v6/fixture-validation.log",
+      "bytes": 14688,
+      "sha256": "545b68751a17e4f475d65ca32c11c8e81a61d0c218826e0281c7871486859c7d"
+    },
+    {
+      "path": "docs/evidence/v6/lifecycle-delivery.log",
+      "bytes": 122,
+      "sha256": "a23f10f63c507822eb8bb619a4d2756e0d9456d02558f58e49929e0160eeeda2"
+    },
+    {
+      "path": "docs/evidence/v6/lifecycle-final.log",
+      "bytes": 122,
+      "sha256": "a23f10f63c507822eb8bb619a4d2756e0d9456d02558f58e49929e0160eeeda2"
+    },
+    {
+      "path": "docs/evidence/v6/lint-final.xml",
+      "bytes": 35197,
+      "sha256": "386964e36af71a5250223359c8ce63dde94b5e993048d538b1b9fa883d9d4ef8"
+    },
+    {
+      "path": "docs/evidence/v6/native-capture-deadline-viewport.log",
+      "bytes": 1750,
+      "sha256": "39f12050a9da0d9c118af3213cf696fe5d0ece0713aaa657b5b492abc9fc9b7a"
+    },
+    {
+      "path": "docs/evidence/v6/native-capture-dialog-title.log",
+      "bytes": 3308,
+      "sha256": "bae7ff3596433439f22a83b2fdd0a758603ce3f84332b6ad4add296509dda489"
+    },
+    {
+      "path": "docs/evidence/v6/native-capture-first.log",
+      "bytes": 1694,
+      "sha256": "c252c7e62334c22355b097196e6b0b9f96fa8bb1f4685821941e6dcd4e45f295"
+    },
+    {
+      "path": "docs/evidence/v6/native-capture-grouped-preview.log",
+      "bytes": 1731,
+      "sha256": "04407ce150de6b99a5ad76e067031514068876c3cdc5b40095131bc8696b6cb7"
+    },
+    {
+      "path": "docs/evidence/v6/native-capture-historical-card.log",
+      "bytes": 702,
+      "sha256": "272d2375253e01a9d682f30e2b9bc36b267c6aab584ce9e0028d49058559d723"
+    },
+    {
+      "path": "docs/evidence/v6/native-capture-history-action.log",
+      "bytes": 797,
+      "sha256": "a4f7505bfe5e613ad5171cac68d326abb7ee85987c24df76d10822ad1f417882"
+    },
+    {
+      "path": "docs/evidence/v6/native-capture-input-transient.log",
+      "bytes": 1484,
+      "sha256": "a2d079e096cfd9378a940f8d6e9422c33baf800f9740f66b0b6c245be8fefd73"
+    },
+    {
+      "path": "docs/evidence/v6/native-capture-os-summary.log",
+      "bytes": 3241,
+      "sha256": "8a9b67a76c06f21b64679772ce030582ab63676a1748a2277942aa78cfc8bfd5"
+    },
+    {
+      "path": "docs/evidence/v6/native-capture-second.log",
+      "bytes": 910,
+      "sha256": "cbab42d769349f92e2613d8aa1e727a030e018f3529fe47f64095f30fb6358f8"
+    },
+    {
+      "path": "docs/evidence/v6/native-capture-statusbar-transient.log",
+      "bytes": 1305,
+      "sha256": "16f9d25580993c2e6da5d36a5373aa9f1ef454f2d0c333e922861d0da2206e6e"
+    },
+    {
+      "path": "docs/evidence/v6/native-delivery.log",
+      "bytes": 115,
+      "sha256": "d474b6c0e9912118e5420853f4c9031bc57f664548077b0b3c477b25ced11511"
+    },
+    {
+      "path": "docs/evidence/v6/native-runtime-seed.txt",
+      "bytes": 76,
+      "sha256": "eafbdde36fe408442324867bf30c1eee14d69a62fd42d26258410b66a868dc77"
+    },
+    {
+      "path": "docs/evidence/v6/native-runtime-verify.txt",
+      "bytes": 77,
+      "sha256": "498074c69240f854bc432436fb5558c7a79e3cc2f4dcc33357dc3c963ba7747d"
+    },
+    {
+      "path": "docs/evidence/v6/native-test-apk-final.log",
+      "bytes": 5229,
+      "sha256": "dd091f8bde80b9a43e75d068c5fb53d9cd53fbec068053a5a453d0af9846fbdc"
+    },
+    {
+      "path": "docs/evidence/v6/native-test-apk.log",
+      "bytes": 5229,
+      "sha256": "11da5337cef0ae3b41bfde106772e5cc89477e096240d14800f584d9745f2829"
+    },
+    {
+      "path": "docs/evidence/v6/real-deadline-delivery.txt",
+      "bytes": 90,
+      "sha256": "6db8c65d66b981524b0071fdcbbdbe3a477871ba400175326087e4b30a9a6ef7"
+    },
+    {
+      "path": "docs/evidence/v6/real-deadline-notification.txt",
+      "bytes": 90,
+      "sha256": "626dd25e871c9669d48b7391c09a4b21aea2f300bd742bc16b7e5a5500a7b349"
+    },
+    {
+      "path": "docs/evidence/v6/test-apk-final.log",
+      "bytes": 5875,
+      "sha256": "8df4281444069e8bdf043877bf765868eec9b0039a9f1591464ed2d8533d5d7d"
+    },
+    {
+      "path": "docs/evidence/v6/unit-final/TEST-dev.p38journal.domain.ConditionalProfilesTest.xml",
+      "bytes": 812,
+      "sha256": "fc02bd48180ea0a942d2fc1a84cb0705d4c43113723988937b411905dce19aa6"
+    },
+    {
+      "path": "docs/evidence/v6/unit-final/TEST-dev.p38journal.domain.ConsumptionTest.xml",
+      "bytes": 1435,
+      "sha256": "e0a68e02c8837cb19c3382cee8bbc68904e6bcfcf66174c23280796d156306d0"
+    },
+    {
+      "path": "docs/evidence/v6/unit-final/TEST-dev.p38journal.domain.EngineTest.xml",
+      "bytes": 3952,
+      "sha256": "274be6b401db536d7f20cc520a6ee11ab6c90c8d21149c186a88a1080cad10c7"
+    },
+    {
+      "path": "docs/evidence/v6/unit-final/TEST-dev.p38journal.domain.TyresTest.xml",
+      "bytes": 979,
+      "sha256": "8588356974725b333a31052da601d0ad3fc7cddfad9da09ae1b8bf2cce19c075"
+    },
+    {
+      "path": "docs/evidence/v6/unit-final/TEST-dev.p38journal.review.ExpansionIndependentTest.xml",
+      "bytes": 1567,
+      "sha256": "3ff8411138b59e90ac3419dc3082ac96b7826e03ee89035cf801af05ee29b65b"
+    },
+    {
+      "path": "docs/evidence/v6/unit-final/TEST-dev.p38journal.review.IndependentCatalogueTest.xml",
+      "bytes": 2067,
+      "sha256": "0af6c79752d6add95e36350d78343daf925fccce2e1d211fbfa96a7f2553d61f"
+    },
+    {
+      "path": "docs/evidence/v6/unit-final/TEST-dev.p38journal.review.IndependentV4Test.xml",
+      "bytes": 1565,
+      "sha256": "a5df9eeb78635c49d7214cbcd6acc3a59f9154ee7c0344c506edf8f624602a5f"
+    },
+    {
+      "path": "docs/evidence/v6/unit-final/TEST-dev.p38journal.review.ProjectedMaintenanceGroupsTest.xml",
+      "bytes": 1204,
+      "sha256": "d44d53c31a2593c516f1c1971551512ed71124af55a123a6c2c0ffc5c0e3eaee"
+    },
+    {
+      "path": "docs/evidence/v6/validation-final.log",
+      "bytes": 13667,
+      "sha256": "574dff8a30ade26a33aab1de3e35c13381c7043b4bc515678f2ef5ffc3d61094"
     },
     {
       "path": "docs/first-compile.log",
@@ -1878,6 +3973,246 @@
       "sha256": "e90c33f1f16ec984b1edd0a2138da14912caad7538d52f0a1b8f90278304f07c"
     },
     {
+      "path": "docs/screenshots/v6-deadline-history.png",
+      "bytes": 185343,
+      "sha256": "1f3e8a94b9cf44a7c0248323e66e5c00a8d34acab7c03370ecce15ddfe67d3e7"
+    },
+    {
+      "path": "docs/screenshots/v6-deadline-history.xml",
+      "bytes": 21228,
+      "sha256": "bde692fffb5655cef301831f33ae4bbb8777a959fbd27949e9341566ef8c75e1"
+    },
+    {
+      "path": "docs/screenshots/v6-deadline-renew-confirm.png",
+      "bytes": 158169,
+      "sha256": "0880a07f925b8d5e7de9ae70aa4cf760317314b56e84103669789eaef9797050"
+    },
+    {
+      "path": "docs/screenshots/v6-deadline-renew-confirm.xml",
+      "bytes": 7028,
+      "sha256": "485e41e6c46b7a9c3fae000e8be0985ac4907b17253d05b63ed35ecb951a625c"
+    },
+    {
+      "path": "docs/screenshots/v6-deadlines-renewed.png",
+      "bytes": 144253,
+      "sha256": "d13244d2f8190df44ca0f69fa2c7e70d6785e5aa667c830c466a2ea3c374f874"
+    },
+    {
+      "path": "docs/screenshots/v6-deadlines-renewed.xml",
+      "bytes": 17612,
+      "sha256": "a995a99da11675af4247f4a24fca3f368955abe6c7ed0ba7b29a16cb0f122512"
+    },
+    {
+      "path": "docs/screenshots/v6-fuel-summary.png",
+      "bytes": 209317,
+      "sha256": "82587de9652302d3d9419e216a3867c62513945b92f5e458edabc82a518c4831"
+    },
+    {
+      "path": "docs/screenshots/v6-fuel-summary.xml",
+      "bytes": 20245,
+      "sha256": "2887a43e408967b9df077fa5a46254b8ba36557846000ec64ef81027524fa3a0"
+    },
+    {
+      "path": "docs/screenshots/v6-home-320dp-actions.png",
+      "bytes": 209778,
+      "sha256": "36e0be1c37abccf3d07af12561e8a5a3b66701157c02524c8a333ab9fb43c6e2"
+    },
+    {
+      "path": "docs/screenshots/v6-home-320dp-actions.xml",
+      "bytes": 22225,
+      "sha256": "3a82663f809ab5163484312c4763f6361b69a27fe8ea06bc2cc8b6e6c84e5eac"
+    },
+    {
+      "path": "docs/screenshots/v6-home-320dp-dark-font130.png",
+      "bytes": 237455,
+      "sha256": "f5c918662ac3b0da82482566972a8dae00d43c117d09912c5bc5a5f5ea8095c2"
+    },
+    {
+      "path": "docs/screenshots/v6-home-320dp-dark-font130.xml",
+      "bytes": 20796,
+      "sha256": "b858e7514a8d73cf412d0dab663a74526043382158887e724502fe1da628c77b"
+    },
+    {
+      "path": "docs/screenshots/v6-home-320dp.png",
+      "bytes": 210224,
+      "sha256": "c5c208bb07c25422f45dfae40aa15b618e9cee497db69bdda196cc7a5b0b19bf"
+    },
+    {
+      "path": "docs/screenshots/v6-home-320dp.xml",
+      "bytes": 22225,
+      "sha256": "3a82663f809ab5163484312c4763f6361b69a27fe8ea06bc2cc8b6e6c84e5eac"
+    },
+    {
+      "path": "docs/screenshots/v6-home-360dp-actions.png",
+      "bytes": 208207,
+      "sha256": "8ef7263880174ab17d47e163e1c5697e25e36e1377c82bf3e54b8890ed7ae163"
+    },
+    {
+      "path": "docs/screenshots/v6-home-360dp-actions.xml",
+      "bytes": 22249,
+      "sha256": "8a53752e9e1126dff054a30749da7046dcdb2973beff2a91618100d94c8d181d"
+    },
+    {
+      "path": "docs/screenshots/v6-home-360dp.png",
+      "bytes": 208207,
+      "sha256": "8ef7263880174ab17d47e163e1c5697e25e36e1377c82bf3e54b8890ed7ae163"
+    },
+    {
+      "path": "docs/screenshots/v6-home-360dp.xml",
+      "bytes": 22249,
+      "sha256": "8a53752e9e1126dff054a30749da7046dcdb2973beff2a91618100d94c8d181d"
+    },
+    {
+      "path": "docs/screenshots/v6-home-390dp-actions.png",
+      "bytes": 214670,
+      "sha256": "9b0ca16b3f1cc244f9860446a3e337b4ea62f2741112f4e69d0851c8e4e5af55"
+    },
+    {
+      "path": "docs/screenshots/v6-home-390dp-actions.xml",
+      "bytes": 22255,
+      "sha256": "a39a48d0b646e7ed8f393070c64faa1fe93af84737676975399022492c59937a"
+    },
+    {
+      "path": "docs/screenshots/v6-home-390dp.png",
+      "bytes": 214670,
+      "sha256": "9b0ca16b3f1cc244f9860446a3e337b4ea62f2741112f4e69d0851c8e4e5af55"
+    },
+    {
+      "path": "docs/screenshots/v6-home-390dp.xml",
+      "bytes": 22255,
+      "sha256": "a39a48d0b646e7ed8f393070c64faa1fe93af84737676975399022492c59937a"
+    },
+    {
+      "path": "docs/screenshots/v6-home-430dp-actions.png",
+      "bytes": 202147,
+      "sha256": "7928cf5a5e9d6db81411cef100c903a557eca360de5cda7e45052d4da05b4fbc"
+    },
+    {
+      "path": "docs/screenshots/v6-home-430dp-actions.xml",
+      "bytes": 22258,
+      "sha256": "30513312cdce3c6aee38988e3d0de8fa5bdb9f67733b3ab57970221e58f84452"
+    },
+    {
+      "path": "docs/screenshots/v6-home-430dp.png",
+      "bytes": 202147,
+      "sha256": "7928cf5a5e9d6db81411cef100c903a557eca360de5cda7e45052d4da05b4fbc"
+    },
+    {
+      "path": "docs/screenshots/v6-home-430dp.xml",
+      "bytes": 22258,
+      "sha256": "30513312cdce3c6aee38988e3d0de8fa5bdb9f67733b3ab57970221e58f84452"
+    },
+    {
+      "path": "docs/screenshots/v6-home-consumption.png",
+      "bytes": 208642,
+      "sha256": "6717b95ec9d9770250d27339666241c3fbf63ff0e8fc29d0548d91e46c081f1f"
+    },
+    {
+      "path": "docs/screenshots/v6-home-consumption.xml",
+      "bytes": 22249,
+      "sha256": "8a53752e9e1126dff054a30749da7046dcdb2973beff2a91618100d94c8d181d"
+    },
+    {
+      "path": "docs/screenshots/v6-home-updated.png",
+      "bytes": 208642,
+      "sha256": "6717b95ec9d9770250d27339666241c3fbf63ff0e8fc29d0548d91e46c081f1f"
+    },
+    {
+      "path": "docs/screenshots/v6-home-updated.xml",
+      "bytes": 22249,
+      "sha256": "8a53752e9e1126dff054a30749da7046dcdb2973beff2a91618100d94c8d181d"
+    },
+    {
+      "path": "docs/screenshots/v6-notification-opens-deadline.png",
+      "bytes": 184086,
+      "sha256": "eaaf442e3eac2c4a273073770daac765acf0ee24ecc4e6ec0d0c446971758c5d"
+    },
+    {
+      "path": "docs/screenshots/v6-notification-opens-deadline.xml",
+      "bytes": 19839,
+      "sha256": "5433d72f41733aca12a52a4d4da1b14f5b62504d8ce0c038b5d814df649d4e4c"
+    },
+    {
+      "path": "docs/screenshots/v6-notification-opens-front.png",
+      "bytes": 209862,
+      "sha256": "178a103bd97d22fdfe02a283b528bddaf97bbbd4728c10dbe47d478eaad95290"
+    },
+    {
+      "path": "docs/screenshots/v6-notification-opens-front.xml",
+      "bytes": 21209,
+      "sha256": "e37f16ad2549282b0dd22e804d46485d99915d6d4cac1578104031569dfaeba1"
+    },
+    {
+      "path": "docs/screenshots/v6-notifications-manual-limit.png",
+      "bytes": 147033,
+      "sha256": "06740f1c1a49a1bbfcb347dc7722b5e95806c4eeb78e232d9565650ffcc21e97"
+    },
+    {
+      "path": "docs/screenshots/v6-notifications-manual-limit.xml",
+      "bytes": 56982,
+      "sha256": "5d491c5f3c4e282dc42d557ab1df29c0af47079f464182b550760956e7913661"
+    },
+    {
+      "path": "docs/screenshots/v6-release-home.png",
+      "bytes": 198797,
+      "sha256": "1454496b86d9177fde6c30db5e083bdfb30720bbc82ca37ef20fddc44c33b431"
+    },
+    {
+      "path": "docs/screenshots/v6-release-home.xml",
+      "bytes": 23303,
+      "sha256": "e8a933dbbb18fb076a05f6f1632ede9c9f7779bc6b1c5bc42ef2e2e563d5bec4"
+    },
+    {
+      "path": "docs/screenshots/v6-release-maintenance.png",
+      "bytes": 212948,
+      "sha256": "e79bf126f31ed669090166c04c159e55c4008c5bbb580d3d195ef15645998d6f"
+    },
+    {
+      "path": "docs/screenshots/v6-release-maintenance.xml",
+      "bytes": 20679,
+      "sha256": "99929cc4a140465a3eb699f17b725be0a34dc31921b9e8cc386fd5596bd975af"
+    },
+    {
+      "path": "docs/screenshots/v6-tyres-change.png",
+      "bytes": 189845,
+      "sha256": "67a2f17e7c730e05ded3fae75d06e58f3e63b9cbf996c15ba11f3df56cdb80e6"
+    },
+    {
+      "path": "docs/screenshots/v6-tyres-change.xml",
+      "bytes": 20818,
+      "sha256": "02ab29b10b398b9c8d6973af3b9802c0b2adef3e0efd7bcdad43630de80e2ebc"
+    },
+    {
+      "path": "docs/screenshots/v6-tyres-reviewed-keeps-usage.png",
+      "bytes": 202248,
+      "sha256": "db371b0ce251b1433a9ca3718a38d69b271f3e0df0125b2d98507d1e693b76fa"
+    },
+    {
+      "path": "docs/screenshots/v6-tyres-reviewed-keeps-usage.xml",
+      "bytes": 21187,
+      "sha256": "f1466ace00e6b4480b9409ba371af9fa8021d83b6e8293229429772c25005688"
+    },
+    {
+      "path": "docs/screenshots/v6-work-form-320dp-dark-font130.png",
+      "bytes": 174241,
+      "sha256": "d8008d67390cad318af6e145526835d5ca493350c39ad8c6396128f79c606f1c"
+    },
+    {
+      "path": "docs/screenshots/v6-work-form-320dp-dark-font130.xml",
+      "bytes": 18988,
+      "sha256": "c5952276479ad2478b8ca1002e530560a853f9650dbbe70db8f9b53e59b90c39"
+    },
+    {
+      "path": "docs/screenshots/v6-works-done.png",
+      "bytes": 197037,
+      "sha256": "8f56f8184ca5dafe5d6375631b88784554ed7588696feb2702a83a24d0ce89e0"
+    },
+    {
+      "path": "docs/screenshots/v6-works-done.xml",
+      "bytes": 20874,
+      "sha256": "9b716bb84f7e6ba97ea2722f59032d2002ca4ed8512d9edc72f6a7bfe40f4cff"
+    },
+    {
       "path": "docs/signature-candidate.log",
       "bytes": 1976,
       "sha256": "285fbef09740a6f74014fc8a825456288aee0efe6eb727339b02f5ae14a55a38"
@@ -2278,6 +4613,41 @@
       "sha256": "7ca53f26f87544007148ac4dcecce20932cdff4b0fe9640f1bb4f371883b508b"
     },
     {
+      "path": "docs/v6-installed-verification.json",
+      "bytes": 419,
+      "sha256": "25ba6b7b1b078937e8d112d276c6864e34efbbe61d94246c91f64714641624eb"
+    },
+    {
+      "path": "docs/v6-lifecycle-verification.json",
+      "bytes": 1018,
+      "sha256": "0c7b35ad7f0ebca68388824301f9e8ec0cd4b48c81106084f50b95d2cbab0053"
+    },
+    {
+      "path": "docs/v6-native-verification.json",
+      "bytes": 4188,
+      "sha256": "7d68e44004b75d91de66b199c0e89ca70fd7448636298efe79b4da361875b82b"
+    },
+    {
+      "path": "docs/v6-release-install-verification.json",
+      "bytes": 1081,
+      "sha256": "e8487815a83236ccc827514f09295fa370fd85d81fce6030a6b7ffd20315734a"
+    },
+    {
+      "path": "docs/v6-runtime-notification-state.json",
+      "bytes": 274,
+      "sha256": "ef001ade43a21132962c63ca0aff69101f69ff079be14e027a54da57bb78ec6f"
+    },
+    {
+      "path": "docs/v6-source-verification.json",
+      "bytes": 8563,
+      "sha256": "6df2c5bf43fd4e8eddde84f933c531b54e45e852a7ccd08a841c95dac8f3ad91"
+    },
+    {
+      "path": "docs/v6-tests-verification.json",
+      "bytes": 2109,
+      "sha256": "79fbe951ea3383c4f4959b075ce555364eb2e4098fd1d53d7b81b9b413fa8476"
+    },
+    {
       "path": "docs/validation-1.log",
       "bytes": 23152,
       "sha256": "60407a14b9e4253a3a3e90332b0e90e5c6b78ca77a9470f9aec40bfcb2b37621"
@@ -2340,12 +4710,12 @@
     {
       "path": "scripts/build.ps1",
       "bytes": 900,
-      "sha256": "eeff9c9dd766f41c1a0e0dc0dc8e52643e1e0c0bd12147f7e9a3acff39aab76d"
+      "sha256": "50ff9f3a5a1723f675eca4b2a45d10887e81a5e8462244835ae3e2da1393688a"
     },
     {
       "path": "scripts/build.sh",
       "bytes": 424,
-      "sha256": "2e98f3a4aeb693a91efcfccb5c452a729b66ce25a08a32b0f95f17ef6dc1923e"
+      "sha256": "ed68f1a86e245acd116df54815f4987cf78c962711b9b16614b3247184836654"
     },
     {
       "path": "scripts/verify-lifecycle.py",
@@ -2403,6 +4773,21 @@
       "sha256": "6512043dec0e1b27b7274a3336ef2b47f654eb68c149afeb551dd0e097982167"
     },
     {
+      "path": "scripts/verify-v6-artifacts.py",
+      "bytes": 4301,
+      "sha256": "a2ba3a45c136e1df3273c7f1d000f95f795db365903640d95bcb98ac0090726f"
+    },
+    {
+      "path": "scripts/verify-v6-lifecycle.py",
+      "bytes": 2878,
+      "sha256": "999960b9176629805f86826241d2acc33682e954e25e46df345737311b8e6f27"
+    },
+    {
+      "path": "scripts/verify-v6-native.py",
+      "bytes": 10441,
+      "sha256": "10e664cf7370fe89deb518edf4f8dd4f06d522dc0314048a5970ea46fc9dffda"
+    },
+    {
       "path": "scripts/verify-visual.py",
       "bytes": 2635,
       "sha256": "445bb920aea89bd687c816244fe6a381ebbb6875648c57c396b7383dcf4b9045"
@@ -2414,26 +4799,25 @@
     }
   ],
   "delivery": {
-    "sourceCodeCommit": "fd5a1b27ade4b718de2303244d2e25297aad4b36",
+    "sourceCodeCommit": "b68a9d171b20551d1767612e92a60a79fffb5d44",
     "productionChangedAfterCommit": false,
     "testReport": "docs/TEST_REPORT.md",
     "userGuide": "docs/USER_TEST.md",
-    "independentReview": "docs/INDEPENDENT_REVIEW_V5.md",
-    "progress": "docs/PROGRESS.md",
+    "independentReview": "docs/INDEPENDENT_REVIEW_V6.md",
     "artifacts": [
       {
-        "path": "dist/p38-journal-4.1.0-release.apk",
+        "path": "dist/p38-journal-5.0.0-release.apk",
         "applicationId": "dev.p38journal",
-        "bytes": 20435368,
-        "sha256": "7fbcdcec1457a1cda65fd198f2acd0eb5b5a7cc0404115efb139d97f7d96bf27",
+        "bytes": 20599208,
+        "sha256": "eb64a294f5728c3fc9eb89f63fab96f1c3970c68e236a7ac2a985e625bcb24be",
         "certificateSha256": "ce157b9b800d3e21c544ca21cbb398ffdfb3fab46ba5318adcc63d8cd14adf2b",
         "catalogueMatchesSource": true
       },
       {
-        "path": "dist/p38-journal-4.1.0-debug.apk",
+        "path": "dist/p38-journal-5.0.0-debug.apk",
         "applicationId": "dev.p38journal.debug",
-        "bytes": 27598229,
-        "sha256": "4d2d5083ef9a98ba7910c6b76717fd87bfc2ba3a6af3a8992b6093a5c8cbae9a",
+        "bytes": 27655723,
+        "sha256": "fae0760fb12462c0477bdb11a39befe66a5c44f4977c94ff4486f0ae7ba999cf",
         "certificateSha256": "27e1e6329b2c436d8012067dd213c39e828e26984531070c541dc6998666c4ea",
         "catalogueMatchesSource": true
       }
@@ -2443,17 +4827,22 @@
       33,
       31
     ],
-    "nativeFullDetailsVerified": true,
-    "runtimeChecksPassed": 5,
-    "published": false,
-    "unitTestsPassed": 49,
-    "androidTestsPassed": 67,
-    "androidStagesSkippedInSuite": 3,
-    "stagedV4UpdateAndRepeatedRestorePassed": true,
+    "nativeFullDetailsVerifiedByCompose": true,
+    "nativeScreenshots": 24,
+    "unitTestsPassed": 74,
+    "androidTestsPassed": 103,
+    "androidSuiteSkipped": 5,
+    "separateRealDeadlineTestPassed": true,
+    "stagedV5UpdateAndRepeatedRestorePassed": true,
+    "nativeNotificationTargetsAndCancellationVerified": true,
+    "installedApksMatchDeliveredSha256": true,
     "lintErrors": 0,
     "lintWarnings": 33,
     "lintHints": 2,
-    "physicalDeviceTested": false
+    "physicalDeviceTested": false,
+    "published": false
   },
-  "versionCode": 5
+  "versionCode": 6,
+  "roomSchema": 4,
+  "snapshotVersion": 4
 }

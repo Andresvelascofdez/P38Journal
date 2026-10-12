@@ -1,0 +1,2 @@
+10-12 23:09:47.865  7140  7155 I TestRunner: started: planningReferenceRemainsSeparateFromActualReadingAndSurvivesSnapshotRestore(dev.p38journal.data.RepositoryTest)
+10-12 23:09:48.031  7140  7155 I TestRunner: finished: planningReferenceRemainsSeparateFromActualReadingAndSurvivesSnapshotRestore(dev.p38journal.data.RepositoryTest)

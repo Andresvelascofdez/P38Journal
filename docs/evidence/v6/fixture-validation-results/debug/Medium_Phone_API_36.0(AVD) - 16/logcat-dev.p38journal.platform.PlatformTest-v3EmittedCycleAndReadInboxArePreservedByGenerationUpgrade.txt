@@ -1,0 +1,14 @@
+10-12 23:20:25.535  8755  8770 I TestRunner: started: v3EmittedCycleAndReadInboxArePreservedByGenerationUpgrade(dev.p38journal.platform.PlatformTest)
+10-12 23:20:25.579  8755  8773 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=c68b13bc-acdb-47f9-a328-6b2d50e01561, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-12 23:20:25.580  8755  8773 I WM-WorkerWrapper: Setting status to enqueued for d64b56f3-8f68-4c1e-b930-f7023ca24e94
+10-12 23:20:25.581  8755  8755 D WM-Processor: Processor c68b13bc-acdb-47f9-a328-6b2d50e01561 executed; reschedule = false
+10-12 23:20:25.581  8755  8755 D WM-SystemJobService: c68b13bc-acdb-47f9-a328-6b2d50e01561 executed on JobScheduler
+10-12 23:20:25.583  8755  8773 D WM-GreedyScheduler: Cancelling work ID c68b13bc-acdb-47f9-a328-6b2d50e01561
+10-12 23:20:25.586  8755  8773 W JobInfo : Requested important-while-foreground flag for job4 is ignored and takes no effect
+10-12 23:20:25.586  8755  8773 D WM-SystemJobScheduler: Scheduling work ID d64b56f3-8f68-4c1e-b930-f7023ca24e94Job ID 4
+10-12 23:20:25.590  8755  8755 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=d64b56f3-8f68-4c1e-b930-f7023ca24e94, generation=0)
+10-12 23:20:25.591  8755  8773 D WM-GreedyScheduler: Starting work for d64b56f3-8f68-4c1e-b930-f7023ca24e94
+10-12 23:20:25.592  8755  8773 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=d64b56f3-8f68-4c1e-b930-f7023ca24e94, generation=0)
+10-12 23:20:25.592  8755  8773 D WM-Processor: Work WorkGenerationalId(workSpecId=d64b56f3-8f68-4c1e-b930-f7023ca24e94, generation=0) is already enqueued for processing
+10-12 23:20:25.594  8755  8755 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:20:25.597  8755  8770 I TestRunner: finished: v3EmittedCycleAndReadInboxArePreservedByGenerationUpgrade(dev.p38journal.platform.PlatformTest)

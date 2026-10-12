@@ -1,0 +1,2 @@
+10-12 23:09:44.019  7140  7155 I TestRunner: started: legacySnapshotsTwoAndThreeDetachInactiveLinksAndPermitReplacementWithoutLosingAudit(dev.p38journal.data.CustomRulesAndPaymentsTest)
+10-12 23:09:44.115  7140  7155 I TestRunner: finished: legacySnapshotsTwoAndThreeDetachInactiveLinksAndPermitReplacementWithoutLosingAudit(dev.p38journal.data.CustomRulesAndPaymentsTest)

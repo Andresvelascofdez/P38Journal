@@ -1,0 +1,2 @@
+10-12 23:09:44.934  7140  7155 I TestRunner: started: oldRuleJsonDefaultsEnabledAndRetainsOwnerIdentityAndLegacyAbsoluteOnceTarget(dev.p38journal.data.CustomRulesAndPaymentsTest)
+10-12 23:09:45.047  7140  7155 I TestRunner: finished: oldRuleJsonDefaultsEnabledAndRetainsOwnerIdentityAndLegacyAbsoluteOnceTarget(dev.p38journal.data.CustomRulesAndPaymentsTest)

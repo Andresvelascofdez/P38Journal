@@ -1,0 +1,2 @@
+10-12 23:04:02.473  6284  6314 I TestRunner: started: seedUpdatesOldUnmodifiedRuleButPreservesOwnerOverrideAndEventRevision(dev.p38journal.data.RepositoryTest)
+10-12 23:04:02.610  6284  6314 I TestRunner: finished: seedUpdatesOldUnmodifiedRuleButPreservesOwnerOverrideAndEventRevision(dev.p38journal.data.RepositoryTest)

@@ -1,0 +1,2 @@
+10-12 23:20:33.558  8755  8770 I TestRunner: started: plannedConversionUsesSameHistoryIdentityWithUnknownDateAndRealExpense(dev.p38journal.review.ExpansionReviewTest)
+10-12 23:20:33.653  8755  8770 I TestRunner: finished: plannedConversionUsesSameHistoryIdentityWithUnknownDateAndRealExpense(dev.p38journal.review.ExpansionReviewTest)

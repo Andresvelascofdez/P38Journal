@@ -1,0 +1,2 @@
+10-12 23:04:00.923  6284  6314 I TestRunner: started: plannedActualPartsPaymentSurvivesConversionAndUnknownWorkDoesNotInventAnExpenseDate(dev.p38journal.data.ExpandedRepositoryTest)
+10-12 23:04:00.947  6284  6314 I TestRunner: finished: plannedActualPartsPaymentSurvivesConversionAndUnknownWorkDoesNotInventAnExpenseDate(dev.p38journal.data.ExpandedRepositoryTest)

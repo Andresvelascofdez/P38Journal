@@ -1,0 +1,2 @@
+10-12 23:04:00.137  6284  6314 I TestRunner: started: inactiveExpenseSavedDirectlyDetachesAndOldPaymentIsNeverSilentlyResurrected(dev.p38journal.data.CustomRulesAndPaymentsTest)
+10-12 23:04:00.154  6284  6314 I TestRunner: finished: inactiveExpenseSavedDirectlyDetachesAndOldPaymentIsNeverSilentlyResurrected(dev.p38journal.data.CustomRulesAndPaymentsTest)

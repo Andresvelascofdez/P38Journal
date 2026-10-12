@@ -1,0 +1,3 @@
+10-12 23:20:19.936  8755  8770 I TestRunner: started: seedUpdatesOldUnmodifiedRuleButPreservesOwnerOverrideAndEventRevision(dev.p38journal.data.RepositoryTest)
+10-12 23:20:19.976  5651  5651 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.common.telemetry.service.START dat=chimera-action:/... xflg=0x4 cmp=com.google.android.gms/.chimera.PersistentApiService }
+10-12 23:20:20.072  8755  8770 I TestRunner: finished: seedUpdatesOldUnmodifiedRuleButPreservesOwnerOverrideAndEventRevision(dev.p38journal.data.RepositoryTest)

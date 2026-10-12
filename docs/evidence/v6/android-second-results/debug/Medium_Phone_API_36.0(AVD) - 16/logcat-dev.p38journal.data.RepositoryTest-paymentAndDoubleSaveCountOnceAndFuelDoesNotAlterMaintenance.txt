@@ -1,0 +1,2 @@
+10-12 23:09:46.665  7140  7155 I TestRunner: started: paymentAndDoubleSaveCountOnceAndFuelDoesNotAlterMaintenance(dev.p38journal.data.RepositoryTest)
+10-12 23:09:46.700  7140  7155 I TestRunner: finished: paymentAndDoubleSaveCountOnceAndFuelDoesNotAlterMaintenance(dev.p38journal.data.RepositoryTest)

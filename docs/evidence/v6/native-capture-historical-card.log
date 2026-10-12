@@ -1,0 +1,11 @@
+python : Traceback (most recent call last):
+At line:2 char:209
++ ... livery.log; python scripts/verify-v6-native.py --runtime-only *> docs ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v6-native.py", line 137, in <module>
+    assert first.get('text')=='', 'Expected new review; historical records must not be overwritten'
+           ^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected new review; historical records must not be overwritten

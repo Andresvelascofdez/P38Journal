@@ -1,0 +1,2 @@
+10-12 23:20:19.533  8755  8770 I TestRunner: started: restoreKeepsLaterOwnerEditsAndVoids(dev.p38journal.data.RepositoryTest)
+10-12 23:20:19.557  8755  8770 I TestRunner: finished: restoreKeepsLaterOwnerEditsAndVoids(dev.p38journal.data.RepositoryTest)

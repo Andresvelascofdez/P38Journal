@@ -1,0 +1,2 @@
+10-12 23:20:20.234  8755  8770 I TestRunner: started: versionTwoSnapshotInfersOnlyFormalAutomaticIdsAndPreservesCustomOrExplicitManualRecords(dev.p38journal.data.RepositoryTest)
+10-12 23:20:20.281  8755  8770 I TestRunner: finished: versionTwoSnapshotInfersOnlyFormalAutomaticIdsAndPreservesCustomOrExplicitManualRecords(dev.p38journal.data.RepositoryTest)

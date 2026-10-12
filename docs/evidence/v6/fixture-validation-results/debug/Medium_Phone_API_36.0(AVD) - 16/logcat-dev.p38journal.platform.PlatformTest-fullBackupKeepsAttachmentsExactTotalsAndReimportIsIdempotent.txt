@@ -1,0 +1,42 @@
+10-12 23:20:25.358  8755  8770 I TestRunner: started: fullBackupKeepsAttachmentsExactTotalsAndReimportIsIdempotent(dev.p38journal.platform.PlatformTest)
+10-12 23:20:25.383  8755  8779 D pdf_document_jni: Creating FPDF_DOCUMENT from fd: 117
+10-12 23:20:25.384  8755  8779 D pdf_document_jni: Deleting Document: 0x7e17a186d090
+10-12 23:20:25.384  8755  8779 D pdf_document_jni: Destroyed Document: 0x7e17a186d090
+10-12 23:20:25.396  1530  2164 E fidv    : (REDACTED) Trace %s timed out after %d ms. Complete trace: %s
+10-12 23:20:25.396  1530  2164 E fidv    : fiff:
+10-12 23:20:25.396  1530  2164 E fidv    : 	at tk_trace.RxThreadPoolStartupListener(Started After:2)
+10-12 23:20:25.396  1530  2164 E fidv    : 	at tk_trace.Startup Listeners(Started After:2)
+10-12 23:20:25.396  1530  2164 E fidv    : 	at tk_trace.Application.onCreate(Started After:2)
+10-12 23:20:25.396  1530  2164 E fidv    : 	at tk_trace.Application creation(Started After:0)
+10-12 23:20:25.401  1530  2072 E fidv    : (REDACTED) Trace %s timed out after %d ms. Complete trace: %s
+10-12 23:20:25.401  1530  2072 E fidv    : fiff:
+10-12 23:20:25.401  1530  2072 E fidv    : 	at tk_trace.java.com.google.android.apps.search.assistant.surfaces.voice.robin.eligibility.EligibilityService/GetEligibility(Started After:4)
+10-12 23:20:25.401  1530  2072 E fidv    : 	at tk_trace.VoiceAssistantPinnedClient#onCreate(Started After:1)
+10-12 23:20:25.401  1530  2072 E fidv    : 	at tk_trace.PropagatingContext(Started After:0)
+10-12 23:20:25.401  1530  2072 E fidv    : 	at tk_trace.VoiceInteractionServiceLifecycleCallbacks#onReady(Started After:0)
+10-12 23:20:25.401  1530  2072 E fidv    : 	at tk_trace.ApaVoiceInteractionService#onReady(Started After:0)
+10-12 23:20:25.401  1530  2072 E fidv    : 	Suppressed: fife:
+10-12 23:20:25.401  1530  2072 E fidv    : 		at tk_trace.java.com.google.android.libraries.search.assistant.invocation.invocationstate.InvocationStateServiceObserve(unfinished)(Unknown Source:0)
+10-12 23:20:25.401  1530  2072 E fidv    : 		at tk_trace.VoiceAssistantPinnedClientonCreate 879 ms(Unknown Source:0)
+10-12 23:20:25.401  1530  2072 E fidv    : 		at tk_trace.PropagatingContext 1612 ms(Unknown Source:0)
+10-12 23:20:25.401  1530  2072 E fidv    : 		at tk_trace.VoiceInteractionServiceLifecycleCallbacksonReady 307 ms(Unknown Source:0)
+10-12 23:20:25.401  1530  2072 E fidv    : 		at tk_trace.ApaVoiceInteractionServiceonReady 0 ms(Unknown Source:0)
+10-12 23:20:25.401  1530  2072 E fidv    : 	Suppressed: fife:
+10-12 23:20:25.401  1530  2072 E fidv    : 		at tk_trace.java.com.google.android.libraries.search.assistant.invocation.triggering.api.ApaTriggeringServiceConnect(unfinished)(Unknown Source:0)
+10-12 23:20:25.401  1530  2072 E fidv    : 		at tk_trace.VoiceAssistantPinnedClientonCreate 879 ms(Unknown Source:0)
+10-12 23:20:25.401  1530  2072 E fidv    : 		at tk_trace.PropagatingContext 1612 ms(Unknown Source:0)
+10-12 23:20:25.401  1530  2072 E fidv    : 		at tk_trace.VoiceInteractionServiceLifecycleCallbacksonReady 307 ms(Unknown Source:0)
+10-12 23:20:25.401  1530  2072 E fidv    : 		at tk_trace.ApaVoiceInteractionServiceonReady 0 ms(Unknown Source:0)
+10-12 23:20:25.401  1530  2072 E fidv    : 	Suppressed: fife:
+10-12 23:20:25.401  1530  2072 E fidv    : 		at tk_trace.java.com.google.android.libraries.search.assistant.invocation.triggering.oracle.InvocationOracleServiceOnPreferredClientMappingChanged(unfinished)(Unknown Source:0)
+10-12 23:20:25.401  1530  2072 E fidv    : 		at tk_trace.VoiceInteractionServiceLifecycleCallbacksonReady 307 ms(Unknown Source:0)
+10-12 23:20:25.401  1530  2072 E fidv    : 		at tk_trace.ApaVoiceInteractionServiceonReady 0 ms(Unknown Source:0)
+10-12 23:20:25.420  1530  2155 E fidv    : (REDACTED) Trace %s timed out after %d ms. Complete trace: %s
+10-12 23:20:25.420  1530  2155 E fidv    : fiff:
+10-12 23:20:25.420  1530  2155 E fidv    : 	at tk_trace.handleBroadcast(Started After:0)
+10-12 23:20:25.420  1530  2155 E fidv    : 	at tk_trace.Broadcast to com.google.android.apps.search.assistant.surfaces.bisto.interactor.broadcasts.BistoInternalIntentReceiver_Receiver com.google.android.apps.gsa.broadcastreceiver.SETTINGS_CHANGED(Started After:0)
+10-12 23:20:25.468  8755  8771 W JobInfo : Requested important-while-foreground flag for job3 is ignored and takes no effect
+10-12 23:20:25.469  8755  8771 D WM-SystemJobScheduler: Scheduling work ID c68b13bc-acdb-47f9-a328-6b2d50e01561Job ID 3
+10-12 23:20:25.476  8755  8771 D WM-GreedyScheduler: Starting work for c68b13bc-acdb-47f9-a328-6b2d50e01561
+10-12 23:20:25.477  8755  8755 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=c68b13bc-acdb-47f9-a328-6b2d50e01561, generation=0)
+10-12 23:20:25.482  8755  8770 I TestRunner: finished: fullBackupKeepsAttachmentsExactTotalsAndReimportIsIdempotent(dev.p38journal.platform.PlatformTest)

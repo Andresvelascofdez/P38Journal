@@ -1,0 +1,2 @@
+10-12 23:20:18.457  8755  8770 I TestRunner: started: changingBothTyreAxesCreatesOneVisitAndPaymentAndCorrectionKeepsSequenceAndMetadata(dev.p38journal.data.ExpandedRepositoryTest)
+10-12 23:20:18.494  8755  8770 I TestRunner: finished: changingBothTyreAxesCreatesOneVisitAndPaymentAndCorrectionKeepsSequenceAndMetadata(dev.p38journal.data.ExpandedRepositoryTest)

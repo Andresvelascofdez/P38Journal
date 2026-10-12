@@ -1,0 +1,2 @@
+10-12 23:20:33.730  8755  8770 I TestRunner: started: restoringFuelOverAConflictingLocalReceiptPreservesReceiptAndValidBackup(dev.p38journal.review.ExpansionReviewTest)
+10-12 23:20:33.883  8755  8770 I TestRunner: finished: restoringFuelOverAConflictingLocalReceiptPreservesReceiptAndValidBackup(dev.p38journal.review.ExpansionReviewTest)

@@ -1,0 +1,210 @@
+{
+  "sourceCodeCommit": "b68a9d171b20551d1767612e92a60a79fffb5d44",
+  "productionChangedAfterCommit": false,
+  "workspaceFiles": [
+    {
+      "path": "app/build.gradle.kts",
+      "sha256": "6667f3f8a0d29703e240b958f584d9ff3583078df8268251506e62496c306123"
+    },
+    {
+      "path": "app/schemas/dev.p38journal.data.JournalDatabase/1.json",
+      "sha256": "464b84ff806a8835b658be51330da9a7a1a7d640c9c052f74ad6ecb661212bdb"
+    },
+    {
+      "path": "app/schemas/dev.p38journal.data.JournalDatabase/2.json",
+      "sha256": "52b22096ca7addd7917542b0756250f02c3ad84cc14804c2cafc7a07956f4b66"
+    },
+    {
+      "path": "app/schemas/dev.p38journal.data.JournalDatabase/3.json",
+      "sha256": "21172b45c8b9fb6c078c8f442854c8d58595e54e86c2c2232ed982451e1c3a09"
+    },
+    {
+      "path": "app/schemas/dev.p38journal.data.JournalDatabase/4.json",
+      "sha256": "300ef80dd5c26099e495e069022c3f3791dd5584d9f976b978611368e243e0a3"
+    },
+    {
+      "path": "app/src/main/AndroidManifest.xml",
+      "sha256": "f5854c0c43a3ee2644e38375115334f0c02a0e640ac8966437d581f68942889c"
+    },
+    {
+      "path": "app/src/main/assets/maintenance-catalogue.json",
+      "sha256": "3319e47625b379a22ca0f48bb8adc35ef8a7d24734dfeaa2c2beb722d1d72a6c"
+    },
+    {
+      "path": "app/src/main/assets/vehicle.json",
+      "sha256": "ba8d114e6098744f4752bbc905ee2ba83846863657076b15b2a79a47a3b84de9"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/MainActivity.kt",
+      "sha256": "02e6033b968032932399c069e3e734fd2cd5aced2d3f58936a60889ea9857fa2"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/data/Entities.kt",
+      "sha256": "3f040113a94556d6b2ba2cbb2a178c5b1732853d3cfa86ae6c11af5706c31309"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/data/ExpandedRecords.kt",
+      "sha256": "d8e93f882442ea4a03bab1341ad6eb5fba94d9efca749f155f3a975b34081c9e"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/data/JournalDatabase.kt",
+      "sha256": "68ddc5b7a2d2742f598b4024699f365373813900a007ff504c749ea34f2b0a75"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/data/PreMigrationBackup.kt",
+      "sha256": "71066f92d080255c06e535c1c23ba217c14f6411063d8f679f2cdd1cc7bc0bf5"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/data/Repository.kt",
+      "sha256": "84e69083510ee69803b65edafa22c69a0db0b20d5ff60c7b00e0d35f55875622"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/domain/ConditionalProfiles.kt",
+      "sha256": "a800f9eff5aedad652452d55e42bc61f8a515cbdd27747ed1538cede011ec8d2"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/domain/Consumption.kt",
+      "sha256": "d81b76eaec6e9f09c7fad3bf5bc664eca0de3007807e2a23fe5a8536482c19ae"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/domain/Engine.kt",
+      "sha256": "da66c3f09f55b11c7e103b92cc64f8eb600a74aaae3640af79cf5a4a7b822b7e"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/domain/ExpenseFilters.kt",
+      "sha256": "500f74db37f4ba8fdb510a2a8a9ce61da992085be9e64d96160c7f0ea25d529b"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/domain/Forecast.kt",
+      "sha256": "8cb368de575dc9912e10995c4ba9000d93fb59f32e780ac7fb8f5f710f467aee"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/domain/Tyres.kt",
+      "sha256": "fe007f6c24be6c8576e32c79fe59b3170a797d8c399e6fd810dad46c1ce76c87"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/platform/DocumentViewer.kt",
+      "sha256": "f668c8cab294bb6c1a29f887f3b0dc3c4b01ac76a6974b3013767650dfc600a9"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/platform/Files.kt",
+      "sha256": "5e42f7ecd97f51f703df32b1148be4456d1dba8405175058a36decb5b8ac776f"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/platform/JournalApplication.kt",
+      "sha256": "6fa647e1c05174c59f8585d069c0567c2423fb10856c78fab115ea95c7395905"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/platform/ManualNotifications.kt",
+      "sha256": "a1dfd3539ef5afdb624238463b8911cb13be3b65481d523bf457011fa211a07d"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/platform/Notifications.kt",
+      "sha256": "790c2396fd93c5cc01f3796d6ca334c808c5b97eb949acc5291304f47cff5da7"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/platform/Preferences.kt",
+      "sha256": "abf83e4d4777678ddc23e776a02ed5c524df6bcf3c2afceed1db7e1dba419a1b"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/ui/Components.kt",
+      "sha256": "f7e137045a82cbe6b0de663a71f07269235dcf4977ba0df595d80f18838f7d51"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/ui/ConditionalProfileForm.kt",
+      "sha256": "f6bb5e3128c0d8ecf83e368fae6a637386e89069b5e09f073286f198e5280fee"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/ui/DeadlinesPage.kt",
+      "sha256": "6bcbc71fa98333f927758bc32a44512eb1045fba1e837fc3474d75a40cdb4f4e"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/ui/FuelPage.kt",
+      "sha256": "f4997d13c2d04738847baa05541de557b967fa8ea1a61e2cfc27d31848fe3f2b"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/ui/JournalApp.kt",
+      "sha256": "922b818d8b46e8de298a97ad91abaad4357aa71eecae2558a0d74964ae6d262c"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/ui/JournalViewModel.kt",
+      "sha256": "d7d9d6cc2300b93deb95cdfc42403919eeaf7331e8846dedfec2cae305026027"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/ui/LibrarySettings.kt",
+      "sha256": "37ded05901d7ef6e54410d8e53118add69a1195866ee8eb557891d9a4ee3ad96"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/ui/MaintenanceGroups.kt",
+      "sha256": "8bd1c0a6bb3cdbe5ed4dfd2340ec34fb044f626f37ba0848d4933fc4f9bd09f5"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/ui/OverrideForm.kt",
+      "sha256": "0f6b0e19804f0bfab3274e943271aee468aaee47152798b9fbaea8dcc343c10f"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/ui/ProjectedPlanPage.kt",
+      "sha256": "7b3206e2b6755f9caea9ebe906d12d6777aa13efe3d69e5f1add3089f06cbbf3"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/ui/RecordForms.kt",
+      "sha256": "ab1f58c1076b9e51788fd296ecb252f9e425af674f843a55faf33335535332be"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/ui/TyresPage.kt",
+      "sha256": "e7a658c8760df6b927d8d62c90e68300f2ece0395ce3899f333d8be3bf8ac347"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/ui/VisitForms.kt",
+      "sha256": "5f2025a12d9a28b9312dda4dfe7483cd26b443c5c4bd91447c80c7690842ad46"
+    },
+    {
+      "path": "app/src/main/java/dev/p38journal/ui/WorksPage.kt",
+      "sha256": "6fc078b72140417f8cebe15168d35f21664db6d6da3078c840714ac6be17e219"
+    },
+    {
+      "path": "app/src/main/res/drawable/ic_journal.xml",
+      "sha256": "fad86a945eec1a7e1f4d21d9dbc94a5a431d48cd37bb51964b6279de17219165"
+    },
+    {
+      "path": "app/src/main/res/values/styles.xml",
+      "sha256": "564122ca19acf1fb087182493f197c816b6b0b7e56f8f9012e575426a6d0011a"
+    },
+    {
+      "path": "app/src/main/res/xml/backup_rules.xml",
+      "sha256": "a555261ad13fb50898ed97095201e5c3ddc96d058359956d90a2875bed0f9f0f"
+    },
+    {
+      "path": "app/src/main/res/xml/data_extraction_rules.xml",
+      "sha256": "25caeb79c9d18ae5c63233ef4c798f0c043c4a85dddba8d70883a8307a486941"
+    },
+    {
+      "path": "app/src/main/res/xml/file_paths.xml",
+      "sha256": "69f667eb3a22abf0f3848b1eabb5736837d1337da5e3467ec477e4633186cb69"
+    },
+    {
+      "path": "build.gradle.kts",
+      "sha256": "7b841a78deba152a2d9e6d7316ff2e78dd217cfd564cddebc9e52e944466dd40"
+    },
+    {
+      "path": "gradle.properties",
+      "sha256": "cefa3dfd7b48daba517496c6c52139d1c4213fd62a88b3188b1a86de27c46ba8"
+    },
+    {
+      "path": "gradle/libs.versions.toml",
+      "sha256": "ed524bfead42f0de5772c261b79251c57ef4654a45b9ae1ae4eb682c838e733e"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.jar",
+      "sha256": "81a82aaea5abcc8ff68b3dfcb58b3c3c429378efd98e7433460610fecd7ae45f"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.properties",
+      "sha256": "cdab1ffb439219b1db125e3c99a86cf2424f8762b9b3faa404ed061e3635ecde"
+    },
+    {
+      "path": "settings.gradle.kts",
+      "sha256": "f85d76a4bd040d101da86fae9b35fa88186887d3956085bbcc1ba4b51d7e8a8b"
+    }
+  ]
+}

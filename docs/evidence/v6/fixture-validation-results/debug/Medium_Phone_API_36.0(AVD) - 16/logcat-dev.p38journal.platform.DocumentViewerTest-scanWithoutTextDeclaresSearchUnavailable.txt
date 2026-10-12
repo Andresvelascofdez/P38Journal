@@ -1,0 +1,196 @@
+10-12 23:20:20.579  8755  8770 I TestRunner: started: scanWithoutTextDeclaresSearchUnavailable(dev.p38journal.platform.DocumentViewerTest)
+10-12 23:20:20.621  8755  8770 W FileTestStorage: Output properties is not supported.
+10-12 23:20:20.621  8755  8770 I Tracing : Tracer added: class androidx.test.platform.tracing.AndroidXTracer
+10-12 23:20:20.633  8755  8755 D EventInjectionStrategy: Creating injection strategy with input manager.
+10-12 23:20:20.636  8755  8755 I 38journal.debug: hiddenapi: Accessing hidden method Landroid/hardware/input/InputManager;->getInstance()Landroid/hardware/input/InputManager; (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/test/espresso/base/InputManagerEventInjectionStrategy; (domain=app) using reflection: allowed
+10-12 23:20:20.638  8755  8755 I 38journal.debug: hiddenapi: Accessing hidden method Landroid/hardware/input/InputManager;->injectInputEvent(Landroid/view/InputEvent;I)Z (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/test/espresso/base/InputManagerEventInjectionStrategy; (domain=app) using reflection: allowed
+10-12 23:20:20.638  8755  8755 I 38journal.debug: hiddenapi: Accessing hidden field Landroid/hardware/input/InputManager;->INJECT_INPUT_EVENT_MODE_WAIT_FOR_FINISH:I (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/test/espresso/base/InputManagerEventInjectionStrategy; (domain=app) using reflection: allowed
+10-12 23:20:20.645  8755  8755 I 38journal.debug: hiddenapi: Accessing hidden method Landroid/os/MessageQueue;->next()Landroid/os/Message; (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/test/espresso/base/Interrogator; (domain=app) using reflection: allowed
+10-12 23:20:20.645  8755  8755 I 38journal.debug: hiddenapi: Accessing hidden field Landroid/os/MessageQueue;->mMessages:Landroid/os/Message; (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/test/espresso/base/Interrogator; (domain=app) using reflection: allowed
+10-12 23:20:20.645  8755  8755 I 38journal.debug: hiddenapi: Accessing hidden method Landroid/os/Message;->recycleUnchecked()V (runtime_flags=0, domain=platform, api=unsupported) from Landroidx/test/espresso/base/Interrogator; (domain=app) using reflection: allowed
+10-12 23:20:20.646  8755  8770 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@5be0891]
+10-12 23:20:20.660  8755  8770 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+10-12 23:20:20.680   701  1931 I system_server: AssetManager2(0x7e19a19039f8) locale list changing from [] to [en-US]
+10-12 23:20:20.681   701  1931 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@809dc9b4 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-12 23:20:20.711   564   582 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:20:20.711   941  1046 I ndroid.systemui: AssetManager2(0x7e19a1879258) locale list changing from [] to [en-US]
+10-12 23:20:20.716  1060  1060 W SplitSelectStateCtor: Missing session instanceIds
+10-12 23:20:20.716  1060  1060 D StatsLog: LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
+10-12 23:20:20.747   564   564 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:20:20.757  8755  8755 I 38journal.debug: AssetManager2(0x7e19a18465d8) locale list changing from [] to [en-US]
+10-12 23:20:20.784  8755  8755 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@d0ea8e7 in: PRE_ON_CREATE
+10-12 23:20:20.785  8755  8755 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+10-12 23:20:20.795  8755  8796 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-12 23:20:20.796  8755  8796 I EGL_emulation: Opening libGLESv2_emulation.so
+10-12 23:20:20.803  8755  8755 D CompatChangeReporter: Compat change id reported: 377864165; UID 10275; state: ENABLED
+10-12 23:20:20.803  8755  8796 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-12 23:20:20.805  8755  8755 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+10-12 23:20:20.821  8755  8755 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@d0ea8e7 in: CREATED
+10-12 23:20:20.821  8755  8755 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=androidx.activity.ComponentActivity@d0ea8e7
+10-12 23:20:20.822  8755  8755 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@d0ea8e7 in: STARTED
+10-12 23:20:20.822  8755  8755 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=androidx.activity.ComponentActivity@d0ea8e7
+10-12 23:20:20.826  8755  8755 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@d0ea8e7 in: RESUMED
+10-12 23:20:20.826  8755  8755 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=androidx.activity.ComponentActivity@d0ea8e7
+10-12 23:20:20.845  8755  8755 W HWUI    : Unknown dataspace 0
+10-12 23:20:20.876   564   582 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10275 pid=8755
+10-12 23:20:20.876   564   582 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10275 => denied (153 us)
+10-12 23:20:20.876   564   616 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10275 pid=0
+10-12 23:20:20.876   564   616 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10275 => denied (909 us)
+10-12 23:20:20.876   564   616 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10275 pid=0
+10-12 23:20:20.876   564   582 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10275 pid=8755
+10-12 23:20:20.876   564   582 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10275 => denied (196 us)
+10-12 23:20:20.876   564   616 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10275 => denied (114 us)
+10-12 23:20:20.877   564   582 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10275 pid=8755
+10-12 23:20:20.877   564   582 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10275 => denied (179 us)
+10-12 23:20:20.877   564   616 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10275 pid=0
+10-12 23:20:20.877   564   616 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10275 => denied (197 us)
+10-12 23:20:20.960   701   768 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10275 pid=0
+10-12 23:20:20.961   701   768 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10275 => denied (729 us)
+10-12 23:20:20.961   701   768 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10275 pid=0
+10-12 23:20:20.961   701   768 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10275 => denied (111 us)
+10-12 23:20:20.961   701   768 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10275 pid=0
+10-12 23:20:20.961   701   768 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10275 => denied (61 us)
+10-12 23:20:20.973   701   721 I ActivityTaskManager: Displayed dev.p38journal.debug/androidx.activity.ComponentActivity for user 0: +303ms
+10-12 23:20:21.004   701   810 I ImeTracker: dev.p38journal.debug:fc98c3ac: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:20:21.010  8755  8755 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:20:21.011  8755  8755 I ImeTracker: dev.p38journal.debug:fc98c3ac: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:20:21.015  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:20:21.015   701   768 I ImeTracker: system_server:119e33c7: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:20:21.016   701   724 I ImeTracker: system_server:119e33c7: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:20:21.025  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:20:21.028  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=dev.p38journal.debug, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:20:21.050  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:20:21.085  1060  1060 D VRI[NexusLauncherActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-12 23:20:21.098  1060  1060 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+10-12 23:20:21.110  1060  1060 D BaseDepthController: setSurface:
+10-12 23:20:21.110  1060  1060 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-12 23:20:21.110  1060  1060 D BaseDepthController: 	mBaseSurface: null
+10-12 23:20:21.110  1060  1060 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+10-12 23:20:21.113  1060  1060 D StateManager: goToState - fromState: Normal, toState: Normal, partial trace:
+10-12 23:20:21.113  1060  1060 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:4)
+10-12 23:20:21.113  1060  1060 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:1)
+10-12 23:20:21.113  1060  1060 D StateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:34)
+10-12 23:20:21.114  1060  1060 D StatsLog: LAUNCHER_ONSTOP
+10-12 23:20:21.114  8755  8759 I 38journal.debug: Compiler allocated 5042KB to compile void android.view.ViewRootImpl.performTraversals()
+10-12 23:20:21.114  1060  1060 D StatsLog: LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
+10-12 23:20:21.343  5651  5756 I FontLog : (REDACTED) Received query %s, URI %s
+10-12 23:20:21.346  5651  5756 I FontLog : (REDACTED) Query [%s] resolved to %s
+10-12 23:20:21.347   941   949 W System  : A resource failed to call release.
+10-12 23:20:21.347   941   949 W System  : A resource failed to call release.
+10-12 23:20:21.347   941   949 W System  : A resource failed to call release.
+10-12 23:20:21.347   941   949 W System  : A resource failed to call release.
+10-12 23:20:21.348   941   949 W System  : A resource failed to call release.
+10-12 23:20:21.348   941   949 W System  : A resource failed to call release.
+10-12 23:20:21.348   941   949 W System  : A resource failed to call release.
+10-12 23:20:21.355  5651  5756 I FontLog : (REDACTED) Fetch %s end status %s
+10-12 23:20:21.360  5651  5756 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+10-12 23:20:21.374  5651  5756 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+10-12 23:20:21.531  8755  8779 D nativeloader: Load libpdfclient.so using APEX ns com_android_mediaprovider for caller /apex/com.android.mediaprovider/javalib/framework-pdf.jar: ok
+10-12 23:20:21.559  8755  8806 D ProfileInstaller: Installing profile for dev.p38journal.debug
+10-12 23:20:21.708  8755  8779 D pdf_document_jni: Creating FPDF_DOCUMENT from fd: 133
+10-12 23:20:21.718  8755  8779 D pdf_document_jni: Deleting Document: 0x7e17a1846dd0
+10-12 23:20:21.718  8755  8779 D pdf_document_jni: Destroyed Document: 0x7e17a1846dd0
+10-12 23:20:22.211  8755  8781 D pdf_document_jni: Creating FPDF_DOCUMENT from fd: 133
+10-12 23:20:22.263  8755  8781 D pdf_document_jni: Deleting Document: 0x7e17a186a310
+10-12 23:20:22.264  8755  8781 D pdf_document_jni: Destroyed Document: 0x7e17a186a310
+10-12 23:20:22.686   701  2179 I system_server: AssetManager2(0x7e19a19052f8) locale list changing from [] to [en-US]
+10-12 23:20:22.687   701  2179 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@7ee8f115 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-12 23:20:22.690   564   582 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:20:22.692   941  1046 I ndroid.systemui: AssetManager2(0x7e19a1872b38) locale list changing from [] to [en-US]
+10-12 23:20:22.694   701   724 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@7ee8f115 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-12 23:20:22.694  8755  8755 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@d0ea8e7 in: PAUSED
+10-12 23:20:22.694  8755  8755 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=androidx.activity.ComponentActivity@d0ea8e7
+10-12 23:20:22.696   564   564 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:20:22.701   490   490 D Zygote  : Forked child process 8809
+10-12 23:20:22.703   701   811 I system_server: AssetManager2(0x7e19a1902738) locale list changing from [] to [en-US]
+10-12 23:20:22.718   701   811 I system_server: AssetManager2(0x7e19a1907eb8) locale list changing from [] to [en-US]
+10-12 23:20:22.727   941  1010 I ndroid.systemui: AssetManager2(0x7e19a1875d38) locale list changing from [] to [en-US]
+10-12 23:20:22.728  8809  8809 I rnal.debug.test: Late-enabling -Xcheck:jni
+10-12 23:20:22.733   941  1010 I ndroid.systemui: AssetManager2(0x7e19a1871eb8) locale list changing from [] to [en-US]
+10-12 23:20:22.752  8809  8809 I rnal.debug.test: Using CollectorTypeCMC GC.
+10-12 23:20:22.753  8809  8809 W rnal.debug.test: Unexpected CPU variant for x86: x86_64.
+10-12 23:20:22.753  8809  8809 W rnal.debug.test: Known variants: atom, sandybridge, silvermont, goldmont, goldmont-plus, goldmont-without-sha-xsaves, tremont, kabylake, alderlake, default
+10-12 23:20:22.763   570   597 I adbd    : jdwp connection from 8809
+10-12 23:20:22.774  8809  8809 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-12 23:20:22.836  8809  8809 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+10-12 23:20:22.841  8809  8809 D nativeloader: Configuring clns-9 for other apk /system/framework/android.test.mock.jar. target_sdk_version=36, uses_libraries=ALL, library_path=/data/app/~~Y6eGoacpOsSuGfwKTnt1JA==/dev.p38journal.debug.test-op-qYtpNTyGYx5m9abj9_Q==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/dev.p38journal.debug.test
+10-12 23:20:22.845  8809  8809 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+10-12 23:20:22.852  8809  8809 D nativeloader: Configuring clns-10 for other apk /system/framework/android.test.runner.jar. target_sdk_version=36, uses_libraries=ALL, library_path=/data/app/~~Y6eGoacpOsSuGfwKTnt1JA==/dev.p38journal.debug.test-op-qYtpNTyGYx5m9abj9_Q==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/dev.p38journal.debug.test
+10-12 23:20:22.878  8809  8809 D nativeloader: Configuring clns-11 for other apk /data/app/~~Y6eGoacpOsSuGfwKTnt1JA==/dev.p38journal.debug.test-op-qYtpNTyGYx5m9abj9_Q==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~Y6eGoacpOsSuGfwKTnt1JA==/dev.p38journal.debug.test-op-qYtpNTyGYx5m9abj9_Q==/lib/x86_64, permitted_path=/data:/mnt/expand:/data/user/0/dev.p38journal.debug.test
+10-12 23:20:22.885  8809  8809 I rnal.debug.test: AssetManager2(0x7e19a183ebf8) locale list changing from [] to [en-US]
+10-12 23:20:22.894  8809  8809 V GraphicsEnvironment: Currently set values for:
+10-12 23:20:22.894  8809  8809 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-12 23:20:22.894  8809  8809 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-12 23:20:22.894  8809  8809 V GraphicsEnvironment: dev.p38journal.debug.test is not listed in per-application setting
+10-12 23:20:22.894  8809  8809 V GraphicsEnvironment: ANGLE allowlist from config:
+10-12 23:20:22.894  8809  8809 V GraphicsEnvironment: dev.p38journal.debug.test is not listed in ANGLE allowlist or settings, returning default
+10-12 23:20:22.895  8809  8809 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-12 23:20:22.910  8809  8809 I rnal.debug.test: AssetManager2(0x7e19a18481f8) locale list changing from [] to [en-US]
+10-12 23:20:22.914  8809  8809 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+10-12 23:20:22.931  8809  8809 D CompatChangeReporter: Compat change id reported: 377864165; UID 10274; state: ENABLED
+10-12 23:20:22.933  8809  8809 D DesktopModeFlags: Toggle override initialized to: OVERRIDE_UNSET
+10-12 23:20:22.946  8809  8823 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-12 23:20:22.946  8809  8823 I EGL_emulation: Opening libGLESv2_emulation.so
+10-12 23:20:22.953  8809  8823 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-12 23:20:22.962  8809  8809 W HWUI    : Unknown dataspace 0
+10-12 23:20:22.978   564   800 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:20:22.989   564   582 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10274 pid=0
+10-12 23:20:22.989   564   582 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10274 => denied (294 us)
+10-12 23:20:22.989   564   582 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10274 pid=0
+10-12 23:20:22.989   564   582 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10274 => denied (614 us)
+10-12 23:20:22.990   564   583 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10274 pid=8809
+10-12 23:20:22.990   564   583 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10274 => denied (261 us)
+10-12 23:20:22.990   564   582 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10274 pid=0
+10-12 23:20:22.990   564   582 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10274 => denied (211 us)
+10-12 23:20:22.990   564   583 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10274 pid=8809
+10-12 23:20:22.990   564   583 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10274 => denied (129 us)
+10-12 23:20:23.042   701  2179 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10274 pid=0
+10-12 23:20:23.042   701  2179 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10274 => denied (138 us)
+10-12 23:20:23.042   701  2179 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10274 pid=0
+10-12 23:20:23.042   701  2179 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10274 => denied (65 us)
+10-12 23:20:23.042   701  2179 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10274 pid=0
+10-12 23:20:23.042   701  2179 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10274 => denied (46 us)
+10-12 23:20:23.052  1060  1060 D ViewRootImpl: Skipping stats log for color mode
+10-12 23:20:23.056  1060  1060 D StatsLog: LAUNCHER_ONRESUME
+10-12 23:20:23.060  1060  1140 D QuickstepModelDelegate: notifyAppTargetEvent action=1 launchLocation=workspace/0/[-1,-1]/[1,1]
+10-12 23:20:23.063  1060  1060 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=6}
+10-12 23:20:23.070  1060  1060 D BaseDepthController: setSurface:
+10-12 23:20:23.070  1060  1060 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-12 23:20:23.070  1060  1060 D BaseDepthController: 	mBaseSurface: Surface(name=com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity)/@0xc57158a
+10-12 23:20:23.081  1513  1632 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+10-12 23:20:23.081  1513  1632 I AiAiEcho: EchoTargets:
+10-12 23:20:23.081  1513  1632 I AiAiEcho: Filtered by AiAi flag check:
+10-12 23:20:23.081  1513  1632 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+10-12 23:20:23.085  1513  1632 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+10-12 23:20:23.090  1513  1632 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+10-12 23:20:23.094  1060  1060 D SsBaseTemplateCard: No text view can be set up
+10-12 23:20:23.094  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:20:23.094  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:20:23.094  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:20:23.094  1060  1060 I SsBaseTemplateCard: Secondary card pane is null
+10-12 23:20:23.110  8755  8755 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@d0ea8e7 in: STOPPED
+10-12 23:20:23.110  8755  8755 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=androidx.activity.ComponentActivity@d0ea8e7
+10-12 23:20:23.112  1060  1060 D StateManager: createAtomicAnimation - fromState: Background, toState: Normal, partial trace:
+10-12 23:20:23.112  1060  1060 D StateManager: 	at com.android.quickstep.util.WorkspaceRevealAnim.prepareToAnimate(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:22)
+10-12 23:20:23.112  1060  1060 D StateManager: 	at com.android.quickstep.util.WorkspaceRevealAnim.<init>(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:11)
+10-12 23:20:23.112  1060  1060 D StateManager: 	at com.android.launcher3.QuickstepTransitionManager.createWallpaperOpenAnimations(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:339)
+10-12 23:20:23.114  1060  1060 D b/311077782: LauncherAnimationRunner.setAnimation
+10-12 23:20:23.120   701   810 I ImeTracker: com.google.android.apps.nexuslauncher:7929a603: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:20:23.121  1060  1060 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:20:23.121  1060  1060 I ImeTracker: com.google.android.apps.nexuslauncher:7929a603: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:20:23.126  8755  8755 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@9086842
+10-12 23:20:23.127  8755  8755 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@d0ea8e7 in: DESTROYED
+10-12 23:20:23.128  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:20:23.128   701   717 I ImeTracker: system_server:5add1e22: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:20:23.128  8755  8755 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+10-12 23:20:23.128  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:20:23.131   701   724 I ImeTracker: system_server:5add1e22: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:20:23.137  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=com.google.android.apps.nexuslauncher, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:20:23.140  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:20:23.144  8755  8796 D HWUI    : endAllActiveAnimators on 0x7e1891862750 (UnprojectedRipple) with handle 0x7e1921897c30
+10-12 23:20:23.144  8755  8796 D HWUI    : endAllActiveAnimators on 0x7e1891865ad0 (UnprojectedRipple) with handle 0x7e192188e3c0
+10-12 23:20:23.147  8755  8755 D ViewRootImpl: Skipping stats log for color mode
+10-12 23:20:23.158  1060  1060 D RecentsView: onTaskRemoved: 422, not handling task stack changes
+10-12 23:20:23.159  1060  1060 D RecentsView: onTaskRemoved: 422, not handling task stack changes
+10-12 23:20:23.178  8755  8770 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@5be0891]
+10-12 23:20:23.180  8755  8770 I TestRunner: finished: scanWithoutTextDeclaresSearchUnavailable(dev.p38journal.platform.DocumentViewerTest)

@@ -1,0 +1,18 @@
+python : Traceback (most recent call last):
+At line:2 char:206
++ ... livery.log; python scripts/verify-v6-native.py --runtime-only *> docs ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v6-native.py", line 148, in <module>
+    adb('shell','cmd','statusbar','expand-notifications');time.sleep(1)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v6-native.py", line 19, in adb
+    return subprocess.run(['adb','-s','emulator-5554',*args],capture_output=True,check=True,timeout=90).stdout
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python313\Lib\subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['adb', '-s', 'emulator-5554', 'shell', 'cmd', 'statusbar', 
+'expand-notifications']' returned non-zero exit status 1.

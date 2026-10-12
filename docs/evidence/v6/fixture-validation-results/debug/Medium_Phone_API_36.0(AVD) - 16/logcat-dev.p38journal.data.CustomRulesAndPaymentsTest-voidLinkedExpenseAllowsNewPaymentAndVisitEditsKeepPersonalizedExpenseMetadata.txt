@@ -1,0 +1,2 @@
+10-12 23:20:16.620  8755  8770 I TestRunner: started: voidLinkedExpenseAllowsNewPaymentAndVisitEditsKeepPersonalizedExpenseMetadata(dev.p38journal.data.CustomRulesAndPaymentsTest)
+10-12 23:20:16.651  8755  8770 I TestRunner: finished: voidLinkedExpenseAllowsNewPaymentAndVisitEditsKeepPersonalizedExpenseMetadata(dev.p38journal.data.CustomRulesAndPaymentsTest)

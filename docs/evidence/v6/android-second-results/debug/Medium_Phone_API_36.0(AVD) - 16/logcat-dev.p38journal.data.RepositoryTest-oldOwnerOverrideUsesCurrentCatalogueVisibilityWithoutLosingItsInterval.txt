@@ -1,0 +1,2 @@
+10-12 23:09:46.975  7140  7155 I TestRunner: started: oldOwnerOverrideUsesCurrentCatalogueVisibilityWithoutLosingItsInterval(dev.p38journal.data.RepositoryTest)
+10-12 23:09:47.110  7140  7155 I TestRunner: finished: oldOwnerOverrideUsesCurrentCatalogueVisibilityWithoutLosingItsInterval(dev.p38journal.data.RepositoryTest)

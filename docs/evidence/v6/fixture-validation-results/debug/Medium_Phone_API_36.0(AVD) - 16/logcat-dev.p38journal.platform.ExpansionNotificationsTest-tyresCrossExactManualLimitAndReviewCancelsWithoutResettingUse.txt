@@ -1,0 +1,8 @@
+10-12 23:20:25.270  8755  8770 I TestRunner: started: tyresCrossExactManualLimitAndReviewCancelsWithoutResettingUse(dev.p38journal.platform.ExpansionNotificationsTest)
+10-12 23:20:25.298   701   845 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+10-12 23:20:25.298   701   845 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+10-12 23:20:25.298   701   845 D InetDiagMessage: Destroyed live tcp sockets for uids={10168} in 1ms
+10-12 23:20:25.347  5001  5001 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():154 Tooltip with id undo_access_point_promotion_banner not found in tooltipManager.
+10-12 23:20:25.351   701  1122 I ImeTracker: system_server:e70caa1b: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:20:25.351   701   724 I ImeTracker: system_server:e70caa1b: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:20:25.356  8755  8770 I TestRunner: finished: tyresCrossExactManualLimitAndReviewCancelsWithoutResettingUse(dev.p38journal.platform.ExpansionNotificationsTest)

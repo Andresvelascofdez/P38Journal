@@ -1,0 +1,102 @@
+python : Traceback (most recent call last):
+At line:2 char:213
++ ... livery.log; python scripts/verify-v6-native.py --runtime-only *> docs ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v6-native.py", line 165, in <module>
+    stage('runtime-verify')
+    ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v6-native.py", line 108, in stage
+    assert 'OK (1 test)' in out,out
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: 
+
+dev.p38journal.platform.UpgradeV6Test:
+
+Error in actualV5UpdateAndV6CompleteRepeatedRestore(dev.p38journal.platform.UpgradeV6Test):
+
+java.lang.AssertionError
+
+	at org.junit.Assert.fail(Assert.java:87)
+
+	at org.junit.Assert.assertTrue(Assert.java:42)
+
+	at org.junit.Assert.assertFalse(Assert.java:65)
+
+	at org.junit.Assert.assertFalse(Assert.java:75)
+
+	at 
+dev.p38journal.platform.UpgradeV6Test$actualV5UpdateAndV6CompleteRepeatedRestore$1.invokeSuspend(UpgradeV6Test.kt:62)
+
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+
+	at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+
+	at dev.p38journal.platform.UpgradeV6Test.actualV5UpdateAndV6CompleteRepeatedRestore(UpgradeV6Test.kt:22)
+
+
+
+
+
+Time: 0.874
+
+There was 1 failure:
+
+1) actualV5UpdateAndV6CompleteRepeatedRestore(dev.p38journal.platform.UpgradeV6Test)
+
+java.lang.AssertionError
+
+	at org.junit.Assert.fail(Assert.java:87)
+
+	at org.junit.Assert.assertTrue(Assert.java:42)
+
+	at org.junit.Assert.assertFalse(Assert.java:65)
+
+	at org.junit.Assert.assertFalse(Assert.java:75)
+
+	at 
+dev.p38journal.platform.UpgradeV6Test$actualV5UpdateAndV6CompleteRepeatedRestore$1.invokeSuspend(UpgradeV6Test.kt:62)
+
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+
+	at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+
+	at dev.p38journal.platform.UpgradeV6Test.actualV5UpdateAndV6CompleteRepeatedRestore(UpgradeV6Test.kt:22)
+
+
+
+FAILURES!!!
+
+Tests run: 1,  Failures: 1
+
+
+
+
+
+

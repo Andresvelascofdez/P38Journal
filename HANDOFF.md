@@ -1,9 +1,11 @@
-# Entrega P38 Journal4.1.0 / build5
+# Entrega P38 Journal 5.0.0 · build 6
 
-Mantenimiento principal muestra revisiones completas, con contador y «Qué incluye» sobre las mismas apariciones. Vencimientos reales separados para avisos/registro. Desde175.000 sin trabajos:195.00029,215.00033,235.00031 derivados del catálogo. Parcial aceite195.200→215.200 exacto; las restantes siguen pendientes. Se conservaron edición y filtros de gastos.
+El encargo vigente es [REQUEST_V6.md](REQUEST_V6.md). Se amplía la app existente conservando Kotlin/Compose/Room/WorkManager, identidad, clave de firma original y datos. La referencia operativa y su fecha, catálogo, calendario del fabricante, revisiones proyectadas, registro parcial y filtros de gastos se mantienen. No hay publicación ni servicios nuevos.
 
-Fuente productiva: commit localfd5a1b27ade4b718de2303244d2e25297aad4b36. Documentación y evidencia posteriores no cambian producto. Catálogo/Room3/applicationId/firma conservados; sin borrar datos ni reconstruir app. Copia previa en .tools/pre-v5. Sin publicación en GitHub.
+Las nuevas funciones son trabajos/mejoras previstos o realizados, documentación libre con renovación manual, repostajes y consumo medio entre llenados completos, y ruedas por eje. Previsto→realizado conserva Visit.id y no convierte el coste estimado en gasto. Repostaje↔gasto se sincroniza y cuenta una vez. Renovar requiere fecha confirmada. Revisar ruedas conserva el montaje/uso; cambiar ambas comparte visita/pago. Los datos desconocidos quedan sin fecha/km/litros inventados.
 
-APKs firmados4.1.0/code5 en dist, versión/build visibles. Instalar release encima sin desinstalar. [Guía](docs/USER_TEST.md), [pruebas y límites](docs/TEST_REPORT.md), [revisión independiente](docs/INDEPENDENT_REVIEW_V5.md), [hashes](dist/SHA256SUMS.txt). Release dev.p38journal; debug dev.p38journal.debug separado. Clave privada externa.
+Room 4 añade tablas y campos compatibles mediante migración 3→4; las copias admiten snapshot 2/3/4. El respaldo privado previo incluye SQLite+WAL y validación. La restauración conserva modificaciones locales; el historial de ruedas incorporado que entra en conflicto no sustituye el seguimiento actual ni recibe una anulación ficticia. Corregir/anular ese histórico protege el trabajo y pago local vinculados.
 
-Verificados49 unitarios/67 Android más actualización real/restores por etapas, pantalla nativa completa y5 runtime en API36. XML/PNG/logs honestos en docs/evidence/v5 y docs/screenshots/v5-*. No dispositivo físico disponible. No bloqueos pendientes. REQUEST_V5 sustituye instrucciones contradictorias4.0; reportes4.0 archivados como antecedentes.
+Artefactos: [release 5.0.0](dist/p38-journal-5.0.0-release.apk), [debug separado](dist/p38-journal-5.0.0-debug.apk), [guía breve](docs/USER_TEST.md) y [hashes](dist/SHA256SUMS.txt). Instalar release como actualización sin desinstalar. Release: `dev.p38journal`; debug: `dev.p38journal.debug`. Clave privada externa, no añadida al repositorio.
+
+El cierre de verificación de build 6 corresponde al coordinador y se recoge en [TEST_REPORT](docs/TEST_REPORT.md): comandos y resultados, firma/versionCode, actualización con datos, copias, pruebas Android y limitaciones. Este documento no atribuye a build 6 las pruebas de 4.1 ni afirma un commit o una comprobación todavía pendiente.

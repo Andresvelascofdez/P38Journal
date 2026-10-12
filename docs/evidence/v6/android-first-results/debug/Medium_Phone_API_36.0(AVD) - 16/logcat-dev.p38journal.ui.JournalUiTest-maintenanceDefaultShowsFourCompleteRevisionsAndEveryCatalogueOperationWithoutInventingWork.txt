@@ -1,0 +1,148 @@
+10-12 23:05:32.538  6284  6314 I TestRunner: started: maintenanceDefaultShowsFourCompleteRevisionsAndEveryCatalogueOperationWithoutInventingWork(dev.p38journal.ui.JournalUiTest)
+10-12 23:05:32.540  6284  6314 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@e7688b]
+10-12 23:05:32.542  6284  6314 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+10-12 23:05:32.545   701  1996 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@74abdd5b does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-12 23:05:32.552   564   616 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:05:32.556  1060  1060 W SplitSelectStateCtor: Missing session instanceIds
+10-12 23:05:32.556  1060  1060 D StatsLog: LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
+10-12 23:05:32.566  6284  6284 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@9f39275 in: PRE_ON_CREATE
+10-12 23:05:32.566  6284  6284 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+10-12 23:05:32.570  6284  6284 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@9f39275 in: CREATED
+10-12 23:05:32.570  6284  6284 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=dev.p38journal.MainActivity@9f39275
+10-12 23:05:32.570  6284  6284 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@9f39275 in: STARTED
+10-12 23:05:32.570  6284  6284 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=dev.p38journal.MainActivity@9f39275
+10-12 23:05:32.574  6284  6284 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@9f39275 in: RESUMED
+10-12 23:05:32.574  6284  6284 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=dev.p38journal.MainActivity@9f39275
+10-12 23:05:32.580   564   564 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:05:32.624   701   712 I system_server: NativeAlloc concurrent mark compact GC freed 11MB AllocSpace bytes, 5(100KB) LOS objects, 41% free, 33MB/57MB, paused 4.194ms,4.413ms total 121.735ms
+10-12 23:05:32.628   701   810 I ImeTracker: dev.p38journal.debug:da7449c1: setFinished at PHASE_CLIENT_ANIMATION_CANCEL with STATUS_TIMEOUT
+10-12 23:05:32.631   701   714 W System  : A resource failed to call release.
+10-12 23:05:32.632   701   714 W System  : A resource failed to call release.
+10-12 23:05:32.632   701   714 W System  : A resource failed to call HardwareBuffer.close.
+10-12 23:05:32.632   701   714 W System  : A resource failed to call release.
+10-12 23:05:32.632   701   714 W System  : A resource failed to call release.
+10-12 23:05:32.632   701   714 W System  : A resource failed to call release.
+10-12 23:05:32.632   701   714 W System  : A resource failed to call release.
+10-12 23:05:32.633   701   714 W System  : A resource failed to call release.
+10-12 23:05:32.637   701   721 I ActivityTaskManager: Displayed dev.p38journal.debug/dev.p38journal.MainActivity for user 0: +92ms
+10-12 23:05:32.669   701   810 I ImeTracker: dev.p38journal.debug:b5824c9d: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:05:32.670  6284  6284 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:05:32.672  6284  6284 I ImeTracker: dev.p38journal.debug:b5824c9d: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:05:32.675  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:05:32.675   701  1996 I ImeTracker: system_server:37f5ad6f: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:32.676   701   724 I ImeTracker: system_server:37f5ad6f: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:32.676  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:05:32.678  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=dev.p38journal.debug, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:05:32.679  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:05:32.689  6284  6315 W JobInfo : Requested important-while-foreground flag for job87 is ignored and takes no effect
+10-12 23:05:32.689  6284  6315 D WM-SystemJobScheduler: Scheduling work ID 64755772-8812-4a20-8713-663d65099d3fJob ID 87
+10-12 23:05:32.695  6284  6315 D WM-GreedyScheduler: Starting work for 64755772-8812-4a20-8713-663d65099d3f
+10-12 23:05:32.695  6284  6284 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=64755772-8812-4a20-8713-663d65099d3f, generation=0)
+10-12 23:05:32.696  6284  6315 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=64755772-8812-4a20-8713-663d65099d3f, generation=0)
+10-12 23:05:32.696  6284  6315 D WM-Processor: Work WorkGenerationalId(workSpecId=64755772-8812-4a20-8713-663d65099d3f, generation=0) is already enqueued for processing
+10-12 23:05:32.700  6284  6284 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:05:32.827  6284  6309 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=64755772-8812-4a20-8713-663d65099d3f, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-12 23:05:32.828  6284  6284 D WM-Processor: Processor 64755772-8812-4a20-8713-663d65099d3f executed; reschedule = false
+10-12 23:05:32.828  6284  6284 D WM-SystemJobService: 64755772-8812-4a20-8713-663d65099d3f executed on JobScheduler
+10-12 23:05:32.832  6284  6309 D WM-GreedyScheduler: Cancelling work ID 64755772-8812-4a20-8713-663d65099d3f
+10-12 23:05:32.903  1060  1060 D VRI[NexusLauncherActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-12 23:05:32.914  1060  1060 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+10-12 23:05:32.923  1060  1060 D BaseDepthController: setSurface:
+10-12 23:05:32.923  1060  1060 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-12 23:05:32.923  1060  1060 D BaseDepthController: 	mBaseSurface: null
+10-12 23:05:32.923  1060  1060 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+10-12 23:05:32.925  1060  1060 D StateManager: goToState - fromState: Normal, toState: Normal, partial trace:
+10-12 23:05:32.925  1060  1060 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:4)
+10-12 23:05:32.925  1060  1060 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:1)
+10-12 23:05:32.925  1060  1060 D StateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:34)
+10-12 23:05:32.925  1060  1060 D StatsLog: LAUNCHER_ONSTOP
+10-12 23:05:32.926  1060  1060 D StatsLog: LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
+10-12 23:05:32.929  1060  1079 W System  : A resource failed to call release.
+10-12 23:05:32.929  1060  1079 W System  : A resource failed to call release.
+10-12 23:05:32.929  1060  1079 W System  : A resource failed to call release.
+10-12 23:05:32.929  1060  1079 W System  : A resource failed to call release.
+10-12 23:05:32.929  1060  1079 W System  : A resource failed to call release.
+10-12 23:05:32.929  1060  1079 W System  : A resource failed to call release.
+10-12 23:05:32.929  1060  1079 W System  : A resource failed to call release.
+10-12 23:05:32.929  1060  1079 W System  : A resource failed to call release.
+10-12 23:05:32.929  1060  1079 W System  : A resource failed to call release.
+10-12 23:05:34.458  6284  6284 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@d5fbdd3
+10-12 23:05:35.925  6284  6284 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@d5fbdd3
+10-12 23:05:37.307  6284  6284 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@d5fbdd3
+10-12 23:05:38.017   701   810 I ImeTracker: system_server:69f84a13: setFinished at PHASE_WM_GET_CONTROL_WITH_LEASH with STATUS_TIMEOUT
+10-12 23:05:38.299   701   810 I ImeTracker: dev.p38journal.debug:892a8da1: setFinished at PHASE_CLIENT_ANIMATION_CANCEL with STATUS_TIMEOUT
+10-12 23:05:38.785   701  1979 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@72f704bc does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-12 23:05:38.790   564   582 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:05:38.793  6284  6284 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@9f39275 in: PAUSED
+10-12 23:05:38.793  6284  6284 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=dev.p38journal.MainActivity@9f39275
+10-12 23:05:38.795  6345  6359 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-12 23:05:38.795  6345  6359 I EGL_emulation: Opening libGLESv2_emulation.so
+10-12 23:05:38.797   564   564 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:05:38.801  6345  6359 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-12 23:05:38.803   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:05:38.803   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:05:38.803   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:05:38.804   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:05:38.804   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:05:38.804   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:05:38.804   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:05:38.805   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:05:38.805   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:05:38.805   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:05:38.805   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:05:38.805   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:05:38.805   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:05:38.805   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:05:38.805   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:05:38.805   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:05:38.805   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:05:38.806   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:05:38.827   941  1010 I ndroid.systemui: AssetManager2(0x7e19a186bdd8) locale list changing from [] to [en-US]
+10-12 23:05:38.834   941  1010 I ndroid.systemui: AssetManager2(0x7e19a1872b38) locale list changing from [] to [en-US]
+10-12 23:05:38.886   564   925 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:05:38.888   701   721 I ActivityTaskManager: Displayed dev.p38journal.debug.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity for user 0: +102ms
+10-12 23:05:38.895  1060  1060 D ViewRootImpl: Skipping stats log for color mode
+10-12 23:05:38.897  1060  1060 D StatsLog: LAUNCHER_ONRESUME
+10-12 23:05:38.898  1060  1060 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=6}
+10-12 23:05:38.902  1060  1140 D QuickstepModelDelegate: notifyAppTargetEvent action=1 launchLocation=workspace/0/[-1,-1]/[1,1]
+10-12 23:05:38.904  1060  1060 D BaseDepthController: setSurface:
+10-12 23:05:38.904  1060  1060 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-12 23:05:38.904  1060  1060 D BaseDepthController: 	mBaseSurface: Surface(name=com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity)/@0xc57158a
+10-12 23:05:38.909  1513  1632 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+10-12 23:05:38.910  1513  1632 I AiAiEcho: EchoTargets:
+10-12 23:05:38.910  1513  1632 I AiAiEcho: Filtered by AiAi flag check:
+10-12 23:05:38.910  1513  1632 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+10-12 23:05:38.910  1513  1632 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+10-12 23:05:38.911  1513  1632 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+10-12 23:05:38.925  1060  1060 I NotificationListener: Handling notification state refresh for dev.p38journal.debug#0
+10-12 23:05:38.925  1060  1060 D SsBaseTemplateCard: No text view can be set up
+10-12 23:05:38.925  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:05:38.925  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:05:38.925  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:05:38.925  1060  1060 I SsBaseTemplateCard: Secondary card pane is null
+10-12 23:05:38.936  6284  6284 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-12 23:05:38.940  1060  1060 D StateManager: createAtomicAnimation - fromState: Background, toState: Normal, partial trace:
+10-12 23:05:38.940  1060  1060 D StateManager: 	at com.android.quickstep.util.WorkspaceRevealAnim.prepareToAnimate(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:22)
+10-12 23:05:38.940  1060  1060 D StateManager: 	at com.android.quickstep.util.WorkspaceRevealAnim.<init>(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:11)
+10-12 23:05:38.940  1060  1060 D StateManager: 	at com.android.launcher3.QuickstepTransitionManager.createWallpaperOpenAnimations(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:339)
+10-12 23:05:38.940  1060  1060 D b/311077782: LauncherAnimationRunner.setAnimation
+10-12 23:05:38.953   701   810 I ImeTracker: com.google.android.apps.nexuslauncher:518174a9: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:05:38.954  1060  1060 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:05:38.955  1060  1060 I ImeTracker: com.google.android.apps.nexuslauncher:518174a9: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:05:38.957  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:05:38.957  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:05:38.958   701  1968 I ImeTracker: system_server:67cc85ae: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:38.959  6284  6326 D HWUI    : endAllActiveAnimators on 0x7e18918a8de0 (UnprojectedRipple) with handle 0x7e19218c43f0
+10-12 23:05:38.959  6284  6326 D HWUI    : endAllActiveAnimators on 0x7e18918c6a40 (UnprojectedRipple) with handle 0x7e192193ebe0
+10-12 23:05:38.960   701   724 I ImeTracker: system_server:67cc85ae: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:38.960  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=com.google.android.apps.nexuslauncher, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:05:38.960  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:05:38.962  6284  6284 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.activity.OnBackPressedDispatcher$Api34Impl$createOnBackAnimationCallback$1@d5fbdd3
+10-12 23:05:38.972  6284  6284 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@9f39275 in: STOPPED
+10-12 23:05:38.972  6284  6284 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=dev.p38journal.MainActivity@9f39275
+10-12 23:05:38.989  6284  6284 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@4c901dc
+10-12 23:05:38.989  6284  6284 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@9f39275 in: DESTROYED
+10-12 23:05:38.990  6284  6284 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+10-12 23:05:38.992  6284  6314 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@e7688b]
+10-12 23:05:38.993  6284  6284 D ViewRootImpl: Skipping stats log for color mode
+10-12 23:05:38.997  6284  6314 I TestRunner: finished: maintenanceDefaultShowsFourCompleteRevisionsAndEveryCatalogueOperationWithoutInventingWork(dev.p38journal.ui.JournalUiTest)

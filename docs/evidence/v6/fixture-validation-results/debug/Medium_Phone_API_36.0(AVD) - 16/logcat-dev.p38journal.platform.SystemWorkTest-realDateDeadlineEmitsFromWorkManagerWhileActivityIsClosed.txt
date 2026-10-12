@@ -1,0 +1,86 @@
+10-12 23:20:29.833  8755  8770 I TestRunner: started: realDateDeadlineEmitsFromWorkManagerWhileActivityIsClosed(dev.p38journal.platform.SystemWorkTest)
+10-12 23:20:29.834  8755  8770 I UiAutomationPermGranter: Permission: android.permission.POST_NOTIFICATIONS is already granted!
+10-12 23:20:29.883  1047  1293 D SatelliteController: iisInCarrierRoamingNbIotNtn: satellite is disabled
+10-12 23:20:30.087  1060  1140 D PackageUpdatedTask: Package updated: mOp=UPDATE packages=[dev.p38journal.debug], user=UserHandle{0}
+10-12 23:20:30.087  1513  8635 I AiAiEcho: AppIndexer Package:[dev.p38journal.debug] UserProfile:[0] Enabled:[true].
+10-12 23:20:30.088  1513  8635 I AiAiEcho: AppFetcherImplV2 updateApps package:[dev.p38journal.debug], userId:[0], reason:[package is updated.].
+10-12 23:20:30.089   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:20:30.089   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:20:30.089   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:20:30.090   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:20:30.090  4783  4798 I PermissionControllerServiceImpl: Updating user sensitive for uid 10275
+10-12 23:20:30.090   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:20:30.104  1060  1140 W HWUI    : Image decoding logging dropped!
+10-12 23:20:30.105  1060  1140 D AlphabeticIndexCompat: computeSectionName: cs: P38 Journal · Prueba sectionName: P
+10-12 23:20:30.105  1060  1060 D AllAppsStore: setApps: apps.length=23
+10-12 23:20:30.105  1060  1060 D AllAppsStore: notifyUpdate: notifying listeners
+10-12 23:20:30.105  1060  1060 D ActivityAllAppsContainerView: onAppsUpdated; number of apps: 23
+10-12 23:20:30.105  1060  1060 D ActivityAllAppsContainerView: rebindAdapters: force: false
+10-12 23:20:30.105  1060  1060 D ActivityAllAppsContainerView: rebindAdapters: Not needed.
+10-12 23:20:30.105  1060  1060 D StatsLog: LAUNCHER_ALLAPPS_COUNT
+10-12 23:20:30.105  1060  1060 D AlphabeticalAppsList: Clearing FastScrollerSections.
+10-12 23:20:30.105  1060  1060 D AlphabeticalAppsList: Adding apps with sections. HasPrivateApps: false
+10-12 23:20:30.105  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: C with appInfoTitle: Calendar
+10-12 23:20:30.105  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: D with appInfoTitle: Drive
+10-12 23:20:30.105  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: E with appInfoTitle: Expo Go
+10-12 23:20:30.105  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: F with appInfoTitle: Files
+10-12 23:20:30.105  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: G with appInfoTitle: Gmail
+10-12 23:20:30.105  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: H with appInfoTitle: historias-en-un-clic
+10-12 23:20:30.105  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: M with appInfoTitle: Maps
+10-12 23:20:30.105  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: P with appInfoTitle: P38 Journal
+10-12 23:20:30.105  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: S with appInfoTitle: Safety
+10-12 23:20:30.105  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: T with appInfoTitle: TMoble
+10-12 23:20:30.105  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: Y with appInfoTitle: YouTube
+10-12 23:20:30.105  1060  1060 D AlphabeticalAppsList: Adding FastScrollSection duplicate to scroll to the bottom.
+10-12 23:20:30.105  1060  1060 D AlphabeticalAppsList: Clearing FastScrollerSections.
+10-12 23:20:30.106  1060  1060 D AlphabeticalAppsList: Adding apps with sections. HasPrivateApps: false
+10-12 23:20:30.106  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: C with appInfoTitle: Calendar
+10-12 23:20:30.106  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: D with appInfoTitle: Drive
+10-12 23:20:30.106  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: E with appInfoTitle: Expo Go
+10-12 23:20:30.106  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: F with appInfoTitle: Files
+10-12 23:20:30.106  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: G with appInfoTitle: Gmail
+10-12 23:20:30.106  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: H with appInfoTitle: historias-en-un-clic
+10-12 23:20:30.106  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: M with appInfoTitle: Maps
+10-12 23:20:30.106  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: P with appInfoTitle: P38 Journal
+10-12 23:20:30.106  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: S with appInfoTitle: Safety
+10-12 23:20:30.106  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: T with appInfoTitle: TMoble
+10-12 23:20:30.106  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: Y with appInfoTitle: YouTube
+10-12 23:20:30.106  1060  1060 D AlphabeticalAppsList: Adding FastScrollSection duplicate to scroll to the bottom.
+10-12 23:20:30.108  1060  1060 D b/387844520: getOutlineOffsetX: measured width = 173, mNormalizedIconSize = 159, last updated width = 173
+10-12 23:20:30.126  1755  1755 I Finsky  : [2] Memory trim requested to level 40
+10-12 23:20:30.127  1755  1755 I Finsky  : [2] Flushing in-memory image cache
+10-12 23:20:30.132  3278  3278 I Finsky:background: [2] Memory trim requested to level 40
+10-12 23:20:30.138  1755  1755 I Finsky  : [2] SCH: job service start with id 9465.
+10-12 23:20:30.147  1755  8651 I Finsky  : [298] SCH: Satisfied jobs for 9465 are: 12-1
+10-12 23:20:30.151  1755  8867 I Finsky  : [305] SCH: Job 12-1 starting
+10-12 23:20:30.152  1755  1755 I Finsky  : [2] WM::SCH: Logging work start for 12-1
+10-12 23:20:30.152  1755  1755 I Finsky  : [2] [ContentSync] job started
+10-12 23:20:30.195  1755  8868 E Finsky  : [306] [Counters] attempted to use a non-positive increment for: 9200
+10-12 23:20:30.195  1755  8868 I Finsky  : [306] App states replicator found 25 unowned apps
+10-12 23:20:30.200  1755  2078 I Finsky  : [56] Completed 0 account content syncs with 0 successful.
+10-12 23:20:30.201  1755  1755 I Finsky  : [2] [ContentSync] Installation state replication succeeded.
+10-12 23:20:30.201  1755  1755 I Finsky  : [2] SCH: jobFinished: 12-1. TimeElapsed: 50ms.
+10-12 23:20:30.202  1755  1755 I Finsky  : [2] WM::SCH: Logging work end for 12-1
+10-12 23:20:30.227  1755  2087 I Finsky  : [58] SCH: Scheduling phonesky job Id: 1-1337, CT: 1791834156981, Constraints: [{ L: 25905050, D: 69105050, C: CHARGING_NONE, I: IDLE_NONE, N: NET_ANY, B: BATTERY_ANY }]
+10-12 23:20:30.232  1755  2068 I Finsky  : [54] SCH: Scheduling 1 system job(s)
+10-12 23:20:30.232  1755  2068 I Finsky  : [54] SCH: Scheduling system job Id: 9470, L: 23631799, D: 66831799, C: false, I: false, N: 1
+10-12 23:20:30.236  1755  8867 I Finsky  : [305] SCH: job service finished with id 9465.
+10-12 23:20:30.242  1755  1755 I Finsky  : [2] Memory trim requested to level 40
+10-12 23:20:30.242  1755  1755 I Finsky  : [2] Flushing in-memory image cache
+10-12 23:20:30.242  3278  3278 I Finsky:background: [2] Memory trim requested to level 40
+10-12 23:20:30.308  5651  5651 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.auth.aang.events.services.START dat=chimera-action:/... xflg=0x4 cmp=com.google.android.gms/.chimera.PersistentApiService }
+10-12 23:20:30.389  5651  5651 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.feedback.internal.IFeedbackService dat=chimera-action:/... xflg=0x4 cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+10-12 23:20:30.672  8755  8769 W JobInfo : Requested important-while-foreground flag for job16 is ignored and takes no effect
+10-12 23:20:30.672  8755  8769 D WM-SystemJobScheduler: Scheduling work ID f79a57f9-4f77-4bc6-b47b-459eb946ede2Job ID 16
+10-12 23:20:30.676  8755  8769 D WM-GreedyScheduler: Starting work for f79a57f9-4f77-4bc6-b47b-459eb946ede2
+10-12 23:20:30.676  8755  8755 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=f79a57f9-4f77-4bc6-b47b-459eb946ede2, generation=0)
+10-12 23:20:30.678  8755  8769 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=f79a57f9-4f77-4bc6-b47b-459eb946ede2, generation=0)
+10-12 23:20:30.678  8755  8769 D WM-Processor: Work WorkGenerationalId(workSpecId=f79a57f9-4f77-4bc6-b47b-459eb946ede2, generation=0) is already enqueued for processing
+10-12 23:20:30.681  8755  8755 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:20:30.683  8755  8769 D WM-PackageManagerHelper: androidx.work.impl.background.systemalarm.RescheduleReceiver enabled
+10-12 23:20:30.770  8755  8773 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=f79a57f9-4f77-4bc6-b47b-459eb946ede2, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-12 23:20:30.773  8755  8755 D WM-Processor: Processor f79a57f9-4f77-4bc6-b47b-459eb946ede2 executed; reschedule = false
+10-12 23:20:30.773  8755  8755 D WM-SystemJobService: f79a57f9-4f77-4bc6-b47b-459eb946ede2 executed on JobScheduler
+10-12 23:20:30.776  8755  8773 D WM-GreedyScheduler: Cancelling work ID f79a57f9-4f77-4bc6-b47b-459eb946ede2
+10-12 23:20:30.778  8755  8773 D WM-PackageManagerHelper: androidx.work.impl.background.systemalarm.RescheduleReceiver disabled
+10-12 23:20:30.919  8755  8770 I TestRunner: finished: realDateDeadlineEmitsFromWorkManagerWhileActivityIsClosed(dev.p38journal.platform.SystemWorkTest)

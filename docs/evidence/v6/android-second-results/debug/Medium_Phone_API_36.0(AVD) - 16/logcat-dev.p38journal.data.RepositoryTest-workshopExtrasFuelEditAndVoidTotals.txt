@@ -1,0 +1,2 @@
+10-12 23:09:46.702  7140  7155 I TestRunner: started: workshopExtrasFuelEditAndVoidTotals(dev.p38journal.data.RepositoryTest)
+10-12 23:09:46.716  7140  7155 I TestRunner: finished: workshopExtrasFuelEditAndVoidTotals(dev.p38journal.data.RepositoryTest)

@@ -1,0 +1,213 @@
+[
+  {
+    "capture": "home-updated",
+    "requiredNativeText": [
+      "v5.0.0-debug",
+      "Actualizar kilómetros"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "home-consumption",
+    "requiredNativeText": [
+      "14,00"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "fuel-summary",
+    "requiredNativeText": [
+      "14,00",
+      "500 km"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "works-done",
+    "requiredNativeText": [
+      "FIXTURE mejora libre",
+      "Fecha no conocida"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "deadlines-renewed",
+    "requiredNativeText": [
+      "FIXTURE documento libre"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "deadline-history",
+    "requiredNativeText": [
+      "Historial de renovaciones"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "tyres-change",
+    "requiredNativeText": [
+      "190.000 km",
+      "200.000 km"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "home-320dp",
+    "requiredNativeText": [
+      "v5.0.0-debug"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "home-320dp-actions",
+    "requiredNativeText": [
+      "Añadir gasto",
+      "Registrar repostaje"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "home-360dp",
+    "requiredNativeText": [
+      "v5.0.0-debug"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "home-360dp-actions",
+    "requiredNativeText": [
+      "Añadir gasto",
+      "Registrar repostaje"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "home-390dp",
+    "requiredNativeText": [
+      "v5.0.0-debug"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "home-390dp-actions",
+    "requiredNativeText": [
+      "Añadir gasto",
+      "Registrar repostaje"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "home-430dp",
+    "requiredNativeText": [
+      "v5.0.0-debug"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "home-430dp-actions",
+    "requiredNativeText": [
+      "Añadir gasto",
+      "Registrar repostaje"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "home-320dp-dark-font130",
+    "requiredNativeText": [
+      "v5.0.0-debug"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "work-form-320dp-dark-font130",
+    "requiredNativeText": [
+      "Previsto"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "tyres-reviewed-keeps-usage",
+    "requiredNativeText": [
+      "205.200 km",
+      "20.200 km"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "tyres-reviewed-keeps-usage",
+    "requiredNativeText": [
+      "205.200 km",
+      "20.200 km"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "deadline-renew-confirm",
+    "requiredNativeText": [
+      "Confirmar renovación",
+      "Nueva fecha real"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "tyres-reviewed-keeps-usage",
+    "requiredNativeText": [
+      "205.200 km",
+      "20.200 km"
+    ],
+    "result": "PASS"
+  },
+  {
+    "stage": "runtime-seed",
+    "result": "PASS"
+  },
+  {
+    "capture": "notifications-manual-limit",
+    "requiredNativeText": [
+      "FIXTURE documento aviso",
+      "revisar ruedas delanteras"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "notification-opens-front",
+    "requiredNativeText": [
+      "Ruedas delanteras",
+      "195.200 km",
+      "20.200 km"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "tyres-reviewed-keeps-usage",
+    "requiredNativeText": [
+      "205.200 km",
+      "20.200 km"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "notification-opens-deadline",
+    "requiredNativeText": [
+      "FIXTURE documento aviso"
+    ],
+    "result": "PASS"
+  },
+  {
+    "capture": "deadline-renew-confirm",
+    "requiredNativeText": [
+      "Confirmar renovación",
+      "Nueva fecha real"
+    ],
+    "result": "PASS"
+  },
+  {
+    "stage": "runtime-verify",
+    "result": "PASS"
+  },
+  {
+    "check": "Real Android notification taps open exact deadline/front; UI renewal/review cancel them; wheel use remains20200 and next205200",
+    "result": "PASS"
+  }
+]

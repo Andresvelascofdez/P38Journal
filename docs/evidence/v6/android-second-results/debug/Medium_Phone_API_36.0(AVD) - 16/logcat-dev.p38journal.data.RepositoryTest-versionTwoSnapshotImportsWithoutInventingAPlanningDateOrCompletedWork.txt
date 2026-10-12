@@ -1,0 +1,2 @@
+10-12 23:09:47.782  7140  7155 I TestRunner: started: versionTwoSnapshotImportsWithoutInventingAPlanningDateOrCompletedWork(dev.p38journal.data.RepositoryTest)
+10-12 23:09:47.864  7140  7155 I TestRunner: finished: versionTwoSnapshotImportsWithoutInventingAPlanningDateOrCompletedWork(dev.p38journal.data.RepositoryTest)

@@ -1,0 +1,2 @@
+10-12 23:09:47.565  7140  7155 I TestRunner: started: movingPaymentClearsPreviousVisitAndLaterEditDoesNotDuplicateExpense(dev.p38journal.data.RepositoryTest)
+10-12 23:09:47.589  7140  7155 I TestRunner: finished: movingPaymentClearsPreviousVisitAndLaterEditDoesNotDuplicateExpense(dev.p38journal.data.RepositoryTest)

@@ -1,0 +1,8 @@
+10-12 23:20:25.483  8755  8770 I TestRunner: started: maliciousBackupAndWrongChecksumFailBeforeAnyWrite(dev.p38journal.platform.PlatformTest)
+10-12 23:20:25.487  8755  8771 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=c68b13bc-acdb-47f9-a328-6b2d50e01561, generation=0)
+10-12 23:20:25.489  8755  8771 D WM-Processor: Work WorkGenerationalId(workSpecId=c68b13bc-acdb-47f9-a328-6b2d50e01561, generation=0) is already enqueued for processing
+10-12 23:20:25.493  8755  8755 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:20:25.501  8755  8779 D pdf_document_jni: Creating FPDF_DOCUMENT from fd: 117
+10-12 23:20:25.501  8755  8779 D pdf_document_jni: Deleting Document: 0x7e17a1865d10
+10-12 23:20:25.501  8755  8779 D pdf_document_jni: Destroyed Document: 0x7e17a1865d10
+10-12 23:20:25.533  8755  8770 I TestRunner: finished: maliciousBackupAndWrongChecksumFailBeforeAnyWrite(dev.p38journal.platform.PlatformTest)

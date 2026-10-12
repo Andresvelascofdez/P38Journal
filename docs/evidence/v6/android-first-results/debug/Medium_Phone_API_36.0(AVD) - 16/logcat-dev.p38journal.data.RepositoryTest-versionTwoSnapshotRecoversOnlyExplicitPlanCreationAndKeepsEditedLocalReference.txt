@@ -1,0 +1,2 @@
+10-12 23:04:01.977  6284  6314 I TestRunner: started: versionTwoSnapshotRecoversOnlyExplicitPlanCreationAndKeepsEditedLocalReference(dev.p38journal.data.RepositoryTest)
+10-12 23:04:02.071  6284  6314 I TestRunner: finished: versionTwoSnapshotRecoversOnlyExplicitPlanCreationAndKeepsEditedLocalReference(dev.p38journal.data.RepositoryTest)

@@ -1,0 +1,6 @@
+10-12 23:09:52.878  7140  7155 I TestRunner: started: partialCompletionInvalidatesGroupDestinationAndDisablingChannelsCancels(dev.p38journal.platform.PlatformTest)
+10-12 23:09:52.912  7140  7153 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=27134f40-b430-4786-b887-aa04336a7e6d, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-12 23:09:52.913  7140  7140 D WM-Processor: Processor 27134f40-b430-4786-b887-aa04336a7e6d executed; reschedule = false
+10-12 23:09:52.913  7140  7140 D WM-SystemJobService: 27134f40-b430-4786-b887-aa04336a7e6d executed on JobScheduler
+10-12 23:09:52.915  7140  7153 D WM-GreedyScheduler: Cancelling work ID 27134f40-b430-4786-b887-aa04336a7e6d
+10-12 23:09:52.941  7140  7155 I TestRunner: finished: partialCompletionInvalidatesGroupDestinationAndDisablingChannelsCancels(dev.p38journal.platform.PlatformTest)

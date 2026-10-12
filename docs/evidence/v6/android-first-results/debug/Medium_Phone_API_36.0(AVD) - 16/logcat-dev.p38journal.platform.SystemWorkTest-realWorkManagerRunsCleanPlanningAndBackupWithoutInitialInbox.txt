@@ -1,0 +1,32 @@
+10-12 23:04:12.527  6284  6314 I TestRunner: started: realWorkManagerRunsCleanPlanningAndBackupWithoutInitialInbox(dev.p38journal.platform.SystemWorkTest)
+10-12 23:04:12.529  6284  6314 I UiAutomationPermGranter: Permission: android.permission.POST_NOTIFICATIONS is already granted!
+10-12 23:04:12.614  6284  6316 W JobInfo : Requested important-while-foreground flag for job29 is ignored and takes no effect
+10-12 23:04:12.614  6284  6316 D WM-SystemJobScheduler: Scheduling work ID f44ff9c0-f4b0-491f-96a8-ef98e8975b9aJob ID 29
+10-12 23:04:12.620  5651  5651 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.feedback.internal.IFeedbackService dat=chimera-action:/... xflg=0x4 cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+10-12 23:04:12.620  6284  6316 D WM-GreedyScheduler: Starting work for f44ff9c0-f4b0-491f-96a8-ef98e8975b9a
+10-12 23:04:12.621  6284  6284 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=f44ff9c0-f4b0-491f-96a8-ef98e8975b9a, generation=0)
+10-12 23:04:12.623  6284  6316 W JobInfo : Requested important-while-foreground flag for job30 is ignored and takes no effect
+10-12 23:04:12.623  6284  6316 D WM-SystemJobScheduler: Scheduling work ID a698c928-ab67-47f9-b027-8a1e712a1ccaJob ID 30
+10-12 23:04:12.625  6284  6316 D WM-GreedyScheduler: Starting work for a698c928-ab67-47f9-b027-8a1e712a1cca
+10-12 23:04:12.626  6284  6284 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=a698c928-ab67-47f9-b027-8a1e712a1cca, generation=0)
+10-12 23:04:12.627  6284  6316 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=f44ff9c0-f4b0-491f-96a8-ef98e8975b9a, generation=0)
+10-12 23:04:12.628  6284  6316 D WM-Processor: Work WorkGenerationalId(workSpecId=f44ff9c0-f4b0-491f-96a8-ef98e8975b9a, generation=0) is already enqueued for processing
+10-12 23:04:12.629  6284  6316 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=a698c928-ab67-47f9-b027-8a1e712a1cca, generation=0)
+10-12 23:04:12.629  6284  6316 D WM-Processor: Work WorkGenerationalId(workSpecId=a698c928-ab67-47f9-b027-8a1e712a1cca, generation=0) is already enqueued for processing
+10-12 23:04:12.632  6284  6284 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:04:12.633  6284  6284 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:04:12.636  6284  6316 D WM-PackageManagerHelper: androidx.work.impl.background.systemalarm.RescheduleReceiver enabled
+10-12 23:04:12.760  6284  6309 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=f44ff9c0-f4b0-491f-96a8-ef98e8975b9a, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-12 23:04:12.762  6284  6284 D WM-Processor: Processor f44ff9c0-f4b0-491f-96a8-ef98e8975b9a executed; reschedule = false
+10-12 23:04:12.762  6284  6284 D WM-SystemJobService: f44ff9c0-f4b0-491f-96a8-ef98e8975b9a executed on JobScheduler
+10-12 23:04:12.764  6284  6315 D WM-GreedyScheduler: Cancelling work ID f44ff9c0-f4b0-491f-96a8-ef98e8975b9a
+10-12 23:04:12.768  6284  6315 D WM-SystemJobScheduler: Scheduling work ID f44ff9c0-f4b0-491f-96a8-ef98e8975b9aJob ID 29
+10-12 23:04:12.772  6284  6315 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=a698c928-ab67-47f9-b027-8a1e712a1cca, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-12 23:04:12.774  6284  6284 D WM-Processor: Processor a698c928-ab67-47f9-b027-8a1e712a1cca executed; reschedule = false
+10-12 23:04:12.774  6284  6284 D WM-SystemJobService: a698c928-ab67-47f9-b027-8a1e712a1cca executed on JobScheduler
+10-12 23:04:12.776  6284  6315 D WM-GreedyScheduler: Cancelling work ID a698c928-ab67-47f9-b027-8a1e712a1cca
+10-12 23:04:12.850  6284  6316 D WM-Processor: Processor cancelling f44ff9c0-f4b0-491f-96a8-ef98e8975b9a
+10-12 23:04:12.850  6284  6316 D WM-Processor: WorkerWrapper could not be found for f44ff9c0-f4b0-491f-96a8-ef98e8975b9a
+10-12 23:04:12.855  6284  6316 D WM-GreedyScheduler: Cancelling work ID f44ff9c0-f4b0-491f-96a8-ef98e8975b9a
+10-12 23:04:12.857  6284  6316 D WM-PackageManagerHelper: androidx.work.impl.background.systemalarm.RescheduleReceiver disabled
+10-12 23:04:12.889  6284  6314 I TestRunner: finished: realWorkManagerRunsCleanPlanningAndBackupWithoutInitialInbox(dev.p38journal.platform.SystemWorkTest)

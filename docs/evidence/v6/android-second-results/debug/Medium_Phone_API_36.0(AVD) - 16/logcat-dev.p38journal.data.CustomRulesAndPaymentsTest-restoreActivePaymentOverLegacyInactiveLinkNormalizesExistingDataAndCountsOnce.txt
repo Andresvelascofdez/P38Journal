@@ -1,0 +1,2 @@
+10-12 23:09:44.364  7140  7155 I TestRunner: started: restoreActivePaymentOverLegacyInactiveLinkNormalizesExistingDataAndCountsOnce(dev.p38journal.data.CustomRulesAndPaymentsTest)
+10-12 23:09:44.402  7140  7155 I TestRunner: finished: restoreActivePaymentOverLegacyInactiveLinkNormalizesExistingDataAndCountsOnce(dev.p38journal.data.CustomRulesAndPaymentsTest)

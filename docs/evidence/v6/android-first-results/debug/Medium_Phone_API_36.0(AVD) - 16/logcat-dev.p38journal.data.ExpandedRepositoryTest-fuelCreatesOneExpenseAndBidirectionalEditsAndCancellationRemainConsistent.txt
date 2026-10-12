@@ -1,0 +1,3 @@
+10-12 23:04:00.967  6284  6314 I TestRunner: started: fuelCreatesOneExpenseAndBidirectionalEditsAndCancellationRemainConsistent(dev.p38journal.data.ExpandedRepositoryTest)
+10-12 23:04:00.971  6284  6288 I 38journal.debug: Compiler allocated 4279KB to compile java.lang.Object dev.p38journal.data.ExpandedRecords$saveTyreEvents$2.invokeSuspend(java.lang.Object)
+10-12 23:04:00.998  6284  6314 I TestRunner: finished: fuelCreatesOneExpenseAndBidirectionalEditsAndCancellationRemainConsistent(dev.p38journal.data.ExpandedRepositoryTest)

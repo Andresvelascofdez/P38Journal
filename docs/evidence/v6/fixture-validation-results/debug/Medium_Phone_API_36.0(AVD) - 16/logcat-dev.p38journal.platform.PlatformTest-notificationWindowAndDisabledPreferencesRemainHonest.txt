@@ -1,0 +1,2 @@
+10-12 23:20:25.911  8755  8770 I TestRunner: started: notificationWindowAndDisabledPreferencesRemainHonest(dev.p38journal.platform.PlatformTest)
+10-12 23:20:25.953  8755  8770 I TestRunner: finished: notificationWindowAndDisabledPreferencesRemainHonest(dev.p38journal.platform.PlatformTest)

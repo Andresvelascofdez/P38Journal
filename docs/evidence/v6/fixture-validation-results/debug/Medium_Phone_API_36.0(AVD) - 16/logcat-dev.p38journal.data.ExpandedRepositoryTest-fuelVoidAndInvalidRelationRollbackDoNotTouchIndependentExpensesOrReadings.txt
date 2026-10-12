@@ -1,0 +1,2 @@
+10-12 23:20:17.601  8755  8770 I TestRunner: started: fuelVoidAndInvalidRelationRollbackDoNotTouchIndependentExpensesOrReadings(dev.p38journal.data.ExpandedRepositoryTest)
+10-12 23:20:17.619  8755  8770 I TestRunner: finished: fuelVoidAndInvalidRelationRollbackDoNotTouchIndependentExpensesOrReadings(dev.p38journal.data.ExpandedRepositoryTest)

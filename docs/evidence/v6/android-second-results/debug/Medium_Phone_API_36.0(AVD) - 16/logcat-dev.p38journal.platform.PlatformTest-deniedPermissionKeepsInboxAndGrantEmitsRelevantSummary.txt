@@ -1,0 +1,2 @@
+10-12 23:09:52.996  7140  7155 I TestRunner: started: deniedPermissionKeepsInboxAndGrantEmitsRelevantSummary(dev.p38journal.platform.PlatformTest)
+10-12 23:09:53.041  7140  7155 I TestRunner: finished: deniedPermissionKeepsInboxAndGrantEmitsRelevantSummary(dev.p38journal.platform.PlatformTest)

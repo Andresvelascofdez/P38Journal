@@ -1,0 +1,2 @@
+10-12 23:09:53.084  7140  7155 I TestRunner: started: freshBaselineComputesLimitsWithoutInitialInboxOrInventedReading(dev.p38journal.platform.PlatformTest)
+10-12 23:09:53.118  7140  7155 I TestRunner: finished: freshBaselineComputesLimitsWithoutInitialInboxOrInventedReading(dev.p38journal.platform.PlatformTest)

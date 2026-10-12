@@ -1,8 +1,18 @@
-# 4.1.0 / código5
+# Cambios
+
+## 5.0.0 · código 6
+
+Ampliación autorizada en REQUEST_V6.md: trabajos y mejoras previstos/realizados reutilizan las visitas, conservan identidad al convertir y admiten datos históricos desconocidos. Costes previstos separados de pagos reales; relación con gastos accesible sin duplicar importes.
+
+Documentación de nombre libre, avisos configurables y renovaciones confirmadas con historial. Repostajes con un único gasto gasolina, edición/anulación sincronizadas y consumo entre llenados completos con media ponderada; registros incompletos no producen un consumo ficticio. Seguimiento sencillo por eje: montaje explícito, revisión sin reiniciar uso, cambios y operación conjunta con un solo trabajo/pago.
+
+Acciones rápidas y consumo medio en Inicio, accesos secundarios y navegación existente conservada. Room/snapshot esquema 4, migración no destructiva y copias compatibles 2/3/4; respaldo previo SQLite+WAL. Restauración y corrección de histórico de ruedas protegen el seguimiento y datos locales. Sin cambios de intervalos del fabricante, firma o referencia operativa; sin backend ni publicación.
+
+Artefactos: [release](dist/p38-journal-5.0.0-release.apk) y [debug](dist/p38-journal-5.0.0-debug.apk). Las verificaciones ejecutadas de esta versión se detallan en docs/TEST_REPORT.md; los apartados siguientes corresponden a entregas anteriores.
+
+## 4.1.0 / código 5
 
 Mantenimiento abre revisiones completas proyectadas, con contador y detalle sobre las mismas apariciones;29/33/31 derivados de reglas. Vencimientos reales para avisos y registro separados. Registro parcial exacto y edición conservados, versión/build visibles. Pruebas de interfaz de cada revisión y actualizaciones en emulador; evidencia final en docs/TEST_REPORT.md.
-
-# Cambios
 
 ## 4.0 — 11/10/2026
 

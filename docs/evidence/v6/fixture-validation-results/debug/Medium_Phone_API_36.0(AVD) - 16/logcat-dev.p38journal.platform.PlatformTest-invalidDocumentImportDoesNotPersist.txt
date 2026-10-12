@@ -1,0 +1,2 @@
+10-12 23:20:25.956  8755  8770 I TestRunner: started: invalidDocumentImportDoesNotPersist(dev.p38journal.platform.PlatformTest)
+10-12 23:20:25.973  8755  8770 I TestRunner: finished: invalidDocumentImportDoesNotPersist(dev.p38journal.platform.PlatformTest)

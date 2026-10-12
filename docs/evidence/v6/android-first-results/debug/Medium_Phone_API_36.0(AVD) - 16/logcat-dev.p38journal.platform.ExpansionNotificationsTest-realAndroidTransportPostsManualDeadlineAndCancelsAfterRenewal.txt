@@ -1,0 +1,87 @@
+10-12 23:04:07.902  6284  6314 I TestRunner: started: realAndroidTransportPostsManualDeadlineAndCancelsAfterRenewal(dev.p38journal.platform.ExpansionNotificationsTest)
+10-12 23:04:07.903  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.904  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.905  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.905  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.905  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.906  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.906  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.906  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.907  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.907  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.907  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.907  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.907  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.907  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.908  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.908  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.908  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.908  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.908  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.908  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.908  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.908  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.908  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.908  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.909  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.909  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.909  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.909  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.909  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.909  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.909  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.910  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.910  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.910  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.910  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.910  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.910  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.910  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.911  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.911  5001  5001 W TextView: onProvideContentCaptureStructure(): calling assumeLayout()
+10-12 23:04:07.912   701  1210 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10160 pid=0
+10-12 23:04:07.912   701  1210 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10160 => denied (136 us)
+10-12 23:04:07.912   701  1210 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10160 pid=0
+10-12 23:04:07.912   701  1210 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10160 => denied (321 us)
+10-12 23:04:07.912   701  1210 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10160 pid=0
+10-12 23:04:07.912   701  1210 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10160 => denied (88 us)
+10-12 23:04:07.920  5001  5001 I GoogleInputMethodService: GoogleInputMethodService$1.onKeyboardViewShown():312 onKeyboardViewShown: keyboardType=prime, keyboardViewType=HEADER keyboardView=com.google.android.libraries.inputmethod.widgets.SoftKeyboardView{77b0a19 V.E...... ........ 0,0-1080,116 aid=9}
+10-12 23:04:07.920  5001  5001 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():46 leave 281 height for app when ime window height:2211, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1814
+10-12 23:04:07.922  5001  5001 I GoogleInputMethodService: GoogleInputMethodService$1.onKeyboardViewShown():312 onKeyboardViewShown: keyboardType=prime, keyboardViewType=BODY keyboardView=com.google.android.libraries.inputmethod.widgets.SoftKeyboardView{ea40bbc V.E...... ........ 0,0-1080,641 aid=38}
+10-12 23:04:07.922  5001  5001 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():46 leave 281 height for app when ime window height:2211, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1814
+10-12 23:04:07.922  5001  5001 I NewLanguagePromptExtension: NewLanguagePromptExtension$1.onKeyboardViewShown():96 Not show new language banner: no change in enabled input method entries
+10-12 23:04:07.929  5001  5001 I ProactiveUndoTriggerExtension: ProactiveUndoTriggerExtension.eventConsumer$lambda$0():125 kyp{intention=null, keyCode=-10044, UPDATE_KEYBOARD_LAYOUT, data=# qsn@533a82fd}
+10-12 23:04:07.929  5001  5061 I Delight5Decoder: Delight5DecoderWrapper.setKeyboardLayout():521 setKeyboardLayout()
+10-12 23:04:07.930  5001  5001 I ProactiveUndoTriggerExtension: ProactiveUndoTriggerExtension.eventConsumer$lambda$0():125 kyp{intention=null, keyCode=-10188, SET_KEYBOARD_LAYOUT, data=# qsn@17fd96a2}
+10-12 23:04:07.932  5001  5001 I ProactiveUndoTriggerExtension: ProactiveUndoTriggerExtension.eventConsumer$lambda$0():125 kyp{intention=null, keyCode=-400000, SPELL_CHECK_SUGGESTIONS, data=null}
+10-12 23:04:07.932  5001  5001 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():154 Tooltip with id spell_check_add_to_dictionary not found in tooltipManager.
+10-12 23:04:07.933  5651  5651 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.chimera.container.moduleinstall.ModuleInstallService.START dat=chimera-action:/... xflg=0x4 cmp=com.google.android.gms/.chimera.GmsApiService }
+10-12 23:04:07.933  5651  5651 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.chimera.container.moduleinstall.ModuleInstallService.START dat=chimera-action:/... xflg=0x4 cmp=com.google.android.gms/.chimera.GmsApiService }
+10-12 23:04:07.934  5001  5001 I KeyboardManager: KeyboardManager.requestKeyboard():248 Creating keyboard prime, imeId=ime_english_united_states, cacheKey=theme_!gsf_!pgsans_!pgsf_!use_system_font_BORDER=true_FLAVOR_DPI=XXHDPI_KEYBOARD_WIDTH_CATEGORY=NORMAL_LIGHT_THEME=true_PHYSICAL_DIAGONAL=6.1297245_SCREEN_SHORTEST_WIDTH=411_SCREEN_SHORTEST_WIDTH_NO_SCALE=411_bottom4dp_enable_google_fonts_icons=true_enable_popup_on_keypress=true_keyboard_redesign_google_sans=true_noshadow_overlay_builtin_dynamic_color_light_base.binarypb:gm3-light-fffaf8ff-ff495d92-82b625f90d810779661adb8ce93b5ac5_silkpopup_unify_function_key_color=true
+10-12 23:04:07.940  5001  5001 W ExtensionWrapper: ExtensionWrapper.requestKeyboard():783 class jiq is not activate
+10-12 23:04:07.960  5001  5001 I Choreographer: Skipped 35 frames!  The application may be doing too much work on its main thread.
+10-12 23:04:07.964  5001  5001 I ProactiveUndoTriggerExtension: ProactiveUndoTriggerExtension.eventConsumer$lambda$0():125 kyp{intention=null, keyCode=-10044, UPDATE_KEYBOARD_LAYOUT, data=# qsn@533a82fd}
+10-12 23:04:07.966  5001  5001 I ProactiveUndoTriggerExtension: ProactiveUndoTriggerExtension.eventConsumer$lambda$0():125 kyp{intention=null, keyCode=-10188, SET_KEYBOARD_LAYOUT, data=# qsn@17fd96a2}
+10-12 23:04:07.971  5001  5001 I KeyboardModeUtils: KeyboardModeUtils.getKeyboardBottomOffset():437 inch: 0.000000 ydpi: 420.000000 adjustKeyboardBottomByDisplaySize: false currentDensityDpi: 420 defaultDensityDpi: 420 keyboardBottomToScreenPx: 0 keyboardBottomToNavBarPx: -126 navBarHeight: 126
+10-12 23:04:07.971  5001  5001 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():46 leave 281 height for app when ime window height:2211, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1814
+10-12 23:04:07.971  5001  5001 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():46 leave 281 height for app when ime window height:2211, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1814
+10-12 23:04:07.972  5001  5001 I KeyboardModeUtils: KeyboardModeUtils.getKeyboardBottomOffset():437 inch: 0.000000 ydpi: 420.000000 adjustKeyboardBottomByDisplaySize: false currentDensityDpi: 420 defaultDensityDpi: 420 keyboardBottomToScreenPx: 0 keyboardBottomToNavBarPx: -126 navBarHeight: 126
+10-12 23:04:07.972  5001  5001 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():46 leave 281 height for app when ime window height:2211, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1814
+10-12 23:04:07.972  5001  5001 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():46 leave 281 height for app when ime window height:2211, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1814
+10-12 23:04:07.972  5001  5001 I AndroidIME: KeyboardViewManagerV2.saveKeyboardBottomGap():271 windowHeight: 2211 windowHeightInInches: 5.264286
+10-12 23:04:07.972  5001  5001 I AndroidIME: keyboardHolderHeight: 757 navigationHeight: 126
+10-12 23:04:07.972  5001  5001 I AndroidIME: getKeyboardBodyViewHolderPaddingBottom(): 0
+10-12 23:04:07.972  5001  5001 I AndroidIME: keyboardBottomGap: 126 bodyViewHolderBottomPadding: 0
+10-12 23:04:07.972  5001  5001 I AndroidIME: decorViewStableInsetBottom: 126 updated: false
+10-12 23:04:07.972  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInputView():1524
+10-12 23:04:07.973  5001  5001 I GlobeKeyExtension: GlobeKeyExtension.onDeactivate():104
+10-12 23:04:07.976  5001  5001 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.shutdown():122 shutdown()
+10-12 23:04:07.977   701  1100 I ImeTracker: system_server:fa2776a8: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:04:07.986  5001  5001 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():154 Tooltip with id access_points_entry_button_tooltip not found in tooltipManager.
+10-12 23:04:07.987  5001  5001 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():154 Tooltip with id spell_check_add_to_dictionary not found in tooltipManager.
+10-12 23:04:07.990  5001  5001 I InputBundle: InputBundle.consumeEvent():949 Skip consuming an event as keyboard status is 0
+10-12 23:04:07.992  5001  5001 E native  : E0000 00:00:1791835447.993387    5001 key-correction-manager.cc:344] User feature cache is not ready for key correction!
+10-12 23:04:07.994  5001  5001 I AndroidIME: AbstractIme.onDeactivate():203 LatinIme.onDeactivate()
+10-12 23:04:07.996  5001  5070 W ModuleManager: ModuleManager.loadModule():547 Module mly is not available
+10-12 23:04:08.000  1060  1060 I ImeTracker: dev.p38journal.debug:8c51352c: onCancelled at PHASE_CLIENT_ON_CONTROLS_CHANGED
+10-12 23:04:08.002  6284  6314 I TestRunner: finished: realAndroidTransportPostsManualDeadlineAndCancelsAfterRenewal(dev.p38journal.platform.ExpansionNotificationsTest)

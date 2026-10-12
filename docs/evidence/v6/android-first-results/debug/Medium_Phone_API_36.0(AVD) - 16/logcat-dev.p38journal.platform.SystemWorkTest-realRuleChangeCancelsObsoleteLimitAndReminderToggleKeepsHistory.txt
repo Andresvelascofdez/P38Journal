@@ -1,0 +1,225 @@
+10-12 23:04:14.356  6284  6314 I TestRunner: started: realRuleChangeCancelsObsoleteLimitAndReminderToggleKeepsHistory(dev.p38journal.platform.SystemWorkTest)
+10-12 23:04:14.356  6284  6314 I UiAutomationPermGranter: Permission: android.permission.POST_NOTIFICATIONS is already granted!
+10-12 23:04:14.715  1060  1140 D PackageUpdatedTask: Package updated: mOp=UPDATE packages=[dev.p38journal.debug], user=UserHandle{0}
+10-12 23:04:14.717  1513  6135 I AiAiEcho: AppIndexer Package:[dev.p38journal.debug] UserProfile:[0] Enabled:[true].
+10-12 23:04:14.717  1513  6135 I AiAiEcho: AppFetcherImplV2 updateApps package:[dev.p38journal.debug], userId:[0], reason:[package is updated.].
+10-12 23:04:14.722  4783  6136 I PermissionControllerServiceImpl: Updating user sensitive for uid 10268
+10-12 23:04:14.723   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:04:14.723   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:04:14.732  1060  1140 W HWUI    : Image decoding logging dropped!
+10-12 23:04:14.732   639  6447 I GenericSource: start
+10-12 23:04:14.732   941  6445 D RingtonePlayer: player.start piid:103
+10-12 23:04:14.732  1060  1140 D AlphabeticIndexCompat: computeSectionName: cs: P38 Journal · Prueba sectionName: P
+10-12 23:04:14.733   941  6444 D RingtonePlayer: RemoveFirst
+10-12 23:04:14.733   941  6444 D RingtonePlayer: STOP
+10-12 23:04:14.733  1060  1060 D AllAppsStore: setApps: apps.length=23
+10-12 23:04:14.733  1060  1060 D AllAppsStore: notifyUpdate: notifying listeners
+10-12 23:04:14.733  1060  1060 D ActivityAllAppsContainerView: onAppsUpdated; number of apps: 23
+10-12 23:04:14.733  1060  1060 D ActivityAllAppsContainerView: rebindAdapters: force: false
+10-12 23:04:14.733  1060  1060 D ActivityAllAppsContainerView: rebindAdapters: Not needed.
+10-12 23:04:14.733  1060  1060 D StatsLog: LAUNCHER_ALLAPPS_COUNT
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: Clearing FastScrollerSections.
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: Adding apps with sections. HasPrivateApps: false
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: C with appInfoTitle: Calendar
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: D with appInfoTitle: Drive
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: E with appInfoTitle: Expo Go
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: F with appInfoTitle: Files
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: G with appInfoTitle: Gmail
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: H with appInfoTitle: historias-en-un-clic
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: M with appInfoTitle: Maps
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: P with appInfoTitle: P38 Journal
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: S with appInfoTitle: Safety
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: T with appInfoTitle: TMoble
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: Y with appInfoTitle: YouTube
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: Adding FastScrollSection duplicate to scroll to the bottom.
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: Clearing FastScrollerSections.
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: Adding apps with sections. HasPrivateApps: false
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: C with appInfoTitle: Calendar
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: D with appInfoTitle: Drive
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: E with appInfoTitle: Expo Go
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: F with appInfoTitle: Files
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: G with appInfoTitle: Gmail
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: H with appInfoTitle: historias-en-un-clic
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: M with appInfoTitle: Maps
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: P with appInfoTitle: P38 Journal
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: S with appInfoTitle: Safety
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: T with appInfoTitle: TMoble
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: addAppsWithSections: adding sectionName: Y with appInfoTitle: YouTube
+10-12 23:04:14.733  1060  1060 D AlphabeticalAppsList: Adding FastScrollSection duplicate to scroll to the bottom.
+10-12 23:04:14.734   639  6452 D CCodec  : allocate(c2.android.vorbis.decoder)
+10-12 23:04:14.735  1060  1060 D b/387844520: getOutlineOffsetX: measured width = 173, mNormalizedIconSize = 159, last updated width = 173
+10-12 23:04:14.736   639  6452 I CCodec  : setting up 'default' as default (vendor) store
+10-12 23:04:14.736   639   656 D NuPlayerDriver: stop(0x75dc246d0110)
+10-12 23:04:14.737   941  6444 I RingtonePlayer: About to release MediaPlayer piid:103 due to notif cancelled
+10-12 23:04:14.737   941  6444 V MediaPlayer: resetDrmState:  mDrmInfo=null mDrmProvisioningThread=null mPrepareDrmInProgress=false mActiveDrmScheme=false
+10-12 23:04:14.737   941  6444 V MediaPlayer: cleanDrmObj: mDrmObj=null mDrmSessionId=null
+10-12 23:04:14.737   941   941 D MediaRouter: onRestoreRoute() : route=RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-12 23:04:14.737   639   656 D NuPlayerDriver: reset(0x75dc246d0110) at state 8
+10-12 23:04:14.737   941   941 V MediaRouter: Selecting route: RouteInfo{ name=Phone, description=null, status=null, category=RouteCategory{ name=System types=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO  groupable=false }, supportedTypes=ROUTE_TYPE_LIVE_AUDIO ROUTE_TYPE_LIVE_VIDEO , presentationDisplay=null }
+10-12 23:04:14.738   639  6452 I CCodec  : Created component [c2.android.vorbis.decoder] for [c2.android.vorbis.decoder]
+10-12 23:04:14.739   639  6452 D CCodecConfig: read media type: audio/vorbis
+10-12 23:04:14.742   639  6452 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.max-count.values
+10-12 23:04:14.742   639  6452 D ReflectedParamUpdater: extent() != 1 for single value type: output.subscribed-indices.values
+10-12 23:04:14.743   639  6452 D ReflectedParamUpdater: extent() != 1 for single value type: input.buffers.allocator-ids.values
+10-12 23:04:14.743   639  6452 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.allocator-ids.values
+10-12 23:04:14.743   639  6452 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.allocator-ids.values
+10-12 23:04:14.743   639  6452 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.pool-ids.values
+10-12 23:04:14.743   639  6452 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.pool-ids.values
+10-12 23:04:14.745   639  6452 I CCodecConfig: query failed after returning 8 values (BAD_INDEX)
+10-12 23:04:14.745   639  6452 D CCodecConfig: c2 config diff is Dict {
+10-12 23:04:14.745   639  6452 D CCodecConfig:   c2::u32 coded.bitrate.value = 64000
+10-12 23:04:14.745   639  6452 D CCodecConfig:   c2::u32 input.buffers.max-size.value = 32768
+10-12 23:04:14.745   639  6452 D CCodecConfig:   c2::u32 input.delay.value = 0
+10-12 23:04:14.745   639  6452 D CCodecConfig:   string input.media-type.value = "audio/vorbis"
+10-12 23:04:14.745   639  6452 D CCodecConfig:   c2::u32 output.large-frame.max-size = 0
+10-12 23:04:14.745   639  6452 D CCodecConfig:   c2::u32 output.large-frame.threshold-size = 0
+10-12 23:04:14.745   639  6452 D CCodecConfig:   string output.media-type.value = "audio/raw"
+10-12 23:04:14.745   639  6452 D CCodecConfig:   c2::u32 raw.channel-count.value = 1
+10-12 23:04:14.745   639  6452 D CCodecConfig:   c2::u32 raw.sample-rate.value = 48000
+10-12 23:04:14.745   639  6452 D CCodecConfig: }
+10-12 23:04:14.747   639  6451 W ServiceManagerCppClient: Failed to get isDeclared for media_quality: Status(-1, EX_SECURITY): 'SELinux denied for service.'
+10-12 23:04:14.747   639  6451 E MediaCodec: Media Quality Service not found.
+10-12 23:04:14.747   639  6452 D CCodec  : [c2.android.vorbis.decoder] buffers are bound to CCodec for this session
+10-12 23:04:14.747   639  6452 D CCodecConfig: no c2 equivalents for durationUs
+10-12 23:04:14.747   639  6452 D CCodecConfig: no c2 equivalents for csd-1
+10-12 23:04:14.747   639  6452 D CCodecConfig: no c2 equivalents for flags
+10-12 23:04:14.748   639  6452 D CCodecConfig: c2 config diff is   c2::u32 coded.bitrate.value = 70000
+10-12 23:04:14.748   639  6452 W Codec2Client: query -- param skipped: index = 1107298332.
+10-12 23:04:14.748   639  6452 D CCodec  : encoding statistics level = 0
+10-12 23:04:14.748   639  6452 D CCodec  : setup formats input: AMessage(what = 0x00000000) = {
+10-12 23:04:14.748   639  6452 D CCodec  :   int32_t bitrate = 70000
+10-12 23:04:14.748   639  6452 D CCodec  :   int32_t channel-count = 1
+10-12 23:04:14.748   639  6452 D CCodec  :   int32_t max-input-size = 32768
+10-12 23:04:14.748   639  6452 D CCodec  :   string mime = "audio/vorbis"
+10-12 23:04:14.748   639  6452 D CCodec  :   int32_t sample-rate = 48000
+10-12 23:04:14.748   639  6452 D CCodec  : }
+10-12 23:04:14.748   639  6452 D CCodec  : setup formats output: AMessage(what = 0x00000000) = {
+10-12 23:04:14.748   639  6452 D CCodec  :   int32_t buffer-batch-max-output-size = 0
+10-12 23:04:14.748   639  6452 D CCodec  :   int32_t buffer-batch-threshold-output-size = 0
+10-12 23:04:14.748   639  6452 D CCodec  :   int32_t channel-count = 1
+10-12 23:04:14.748   639  6452 D CCodec  :   string mime = "audio/raw"
+10-12 23:04:14.748   639  6452 D CCodec  :   int32_t sample-rate = 48000
+10-12 23:04:14.748   639  6452 D CCodec  :   int32_t channel-mask = 1
+10-12 23:04:14.748   639  6452 D CCodec  :   int32_t android._config-pcm-encoding = 2
+10-12 23:04:14.748   639  6452 D CCodec  : }
+10-12 23:04:14.748   639  6452 I CCodecConfig: query failed after returning 8 values (BAD_INDEX)
+10-12 23:04:14.748   639  6452 E mediaserver: Failed to query component interface for required system resources: 6
+10-12 23:04:14.750   639  6452 I MediaCodec: MediaCodec will operate in async mode
+10-12 23:04:14.750   639  6451 D MediaCodec: keep callback message for reclaim
+10-12 23:04:14.751   639  6452 W Codec2Client: query -- param skipped: index = 1342179345.
+10-12 23:04:14.751   639  6452 W Codec2Client: query -- param skipped: index = 2415921170.
+10-12 23:04:14.752   639  6452 D CCodecBufferChannel: [c2.android.vorbis.decoder#263] Created input block pool with allocatorID 16 => poolID 18 - OK (0)
+10-12 23:04:14.753   639  6452 I CCodecBufferChannel: [c2.android.vorbis.decoder#263] Created output block pool with allocatorID 16 => poolID 38 - OK
+10-12 23:04:14.753   639  6452 D CCodecBufferChannel: [c2.android.vorbis.decoder#263] Configured output block pool ids 38 => OK
+10-12 23:04:14.754   642  1665 E Codec2-ComponentInterface: We have a failed config
+10-12 23:04:14.755   642  6453 D SimpleC2Component: Using output block pool with poolID 38 => got 38 - 0
+10-12 23:04:14.757   639  6452 D CCodecBufferChannel: [c2.android.vorbis.decoder#263] Discard frames from previous generation.
+10-12 23:04:14.757   639  6452 D CCodecBufferChannel: [c2.android.vorbis.decoder#263] Discard frames from previous generation.
+10-12 23:04:14.759   639  6452 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+10-12 23:04:14.759   642   689 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+10-12 23:04:14.760   642  1665 D BufferPoolAccessor2.0: Destruction - bufferpool2 0x7b6499a8b848 cached: 0/0M, 0/0% in use; allocs: 0, 0% recycled; transfers: 0, 0% unfetched
+10-12 23:04:14.760   642   689 D BufferPoolAccessor2.0: Destruction - bufferpool2 0x7b6499a880c8 cached: 0/0M, 0/0% in use; allocs: 0, 0% recycled; transfers: 0, 0% unfetched
+10-12 23:04:14.761   639  6447 D NuPlayerDriver: notifyResetComplete(0x75dc246d0110)
+10-12 23:04:14.761   639   656 W AMessage: failed to post message as target looper for handler 0 is gone.
+10-12 23:04:14.762   941  6444 D RingtonePlayer: in STOP: abandonning AudioFocus
+10-12 23:04:14.762   701  1210 I MediaFocusControl: abandonAudioFocus() from uid/pid 10185/941 clientId=android.media.AudioManager@cc6f8d1 callingPack=com.android.systemui
+10-12 23:04:14.762   941  6444 D RingtonePlayer: in STOP: quitting looper Looper (Thread-4, tid 92) {3dfef99}
+10-12 23:04:15.369  6284  6317 W JobInfo : Requested important-while-foreground flag for job32 is ignored and takes no effect
+10-12 23:04:15.369  6284  6317 D WM-SystemJobScheduler: Scheduling work ID 67588a4c-055d-4ac0-a064-af8df55e7174Job ID 32
+10-12 23:04:15.373  6284  6317 D WM-GreedyScheduler: Starting work for 67588a4c-055d-4ac0-a064-af8df55e7174
+10-12 23:04:15.374  6284  6284 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=67588a4c-055d-4ac0-a064-af8df55e7174, generation=0)
+10-12 23:04:15.374  6284  6317 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=67588a4c-055d-4ac0-a064-af8df55e7174, generation=0)
+10-12 23:04:15.375  6284  6317 D WM-Processor: Work WorkGenerationalId(workSpecId=67588a4c-055d-4ac0-a064-af8df55e7174, generation=0) is already enqueued for processing
+10-12 23:04:15.377  6284  6284 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:04:15.380  6284  6317 D WM-PackageManagerHelper: androidx.work.impl.background.systemalarm.RescheduleReceiver enabled
+10-12 23:04:15.538  6284  6315 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=67588a4c-055d-4ac0-a064-af8df55e7174, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-12 23:04:15.539  6284  6315 I WM-WorkerWrapper: Setting status to enqueued for 74ee96a2-a601-4e02-aca9-5a3c1fc56fce
+10-12 23:04:15.540  6284  6284 D WM-Processor: Processor 67588a4c-055d-4ac0-a064-af8df55e7174 executed; reschedule = false
+10-12 23:04:15.540  6284  6284 D WM-SystemJobService: 67588a4c-055d-4ac0-a064-af8df55e7174 executed on JobScheduler
+10-12 23:04:15.542  6284  6315 D WM-GreedyScheduler: Cancelling work ID 67588a4c-055d-4ac0-a064-af8df55e7174
+10-12 23:04:15.543  6284  6315 W JobInfo : Requested important-while-foreground flag for job33 is ignored and takes no effect
+10-12 23:04:15.544  6284  6315 D WM-SystemJobScheduler: Scheduling work ID 74ee96a2-a601-4e02-aca9-5a3c1fc56fceJob ID 33
+10-12 23:04:15.547  6284  6315 D WM-GreedyScheduler: Starting work for 74ee96a2-a601-4e02-aca9-5a3c1fc56fce
+10-12 23:04:15.548  6284  6284 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=74ee96a2-a601-4e02-aca9-5a3c1fc56fce, generation=0)
+10-12 23:04:15.549  6284  6315 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=74ee96a2-a601-4e02-aca9-5a3c1fc56fce, generation=0)
+10-12 23:04:15.549  6284  6315 D WM-Processor: Work WorkGenerationalId(workSpecId=74ee96a2-a601-4e02-aca9-5a3c1fc56fce, generation=0) is already enqueued for processing
+10-12 23:04:15.551  6284  6284 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:04:15.675  6284  6315 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=74ee96a2-a601-4e02-aca9-5a3c1fc56fce, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-12 23:04:15.676  6284  6315 I WM-WorkerWrapper: Setting status to enqueued for f3db0823-0178-424f-ad97-65081dcc0d61
+10-12 23:04:15.677  6284  6284 D WM-Processor: Processor 74ee96a2-a601-4e02-aca9-5a3c1fc56fce executed; reschedule = false
+10-12 23:04:15.677  6284  6284 D WM-SystemJobService: 74ee96a2-a601-4e02-aca9-5a3c1fc56fce executed on JobScheduler
+10-12 23:04:15.678  6284  6315 D WM-GreedyScheduler: Cancelling work ID 74ee96a2-a601-4e02-aca9-5a3c1fc56fce
+10-12 23:04:15.680  6284  6315 W JobInfo : Requested important-while-foreground flag for job34 is ignored and takes no effect
+10-12 23:04:15.680  6284  6315 D WM-SystemJobScheduler: Scheduling work ID f3db0823-0178-424f-ad97-65081dcc0d61Job ID 34
+10-12 23:04:15.684  6284  6315 D WM-GreedyScheduler: Starting work for f3db0823-0178-424f-ad97-65081dcc0d61
+10-12 23:04:15.684  6284  6284 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=f3db0823-0178-424f-ad97-65081dcc0d61, generation=0)
+10-12 23:04:15.686  6284  6315 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=f3db0823-0178-424f-ad97-65081dcc0d61, generation=0)
+10-12 23:04:15.687  6284  6315 D WM-Processor: Work WorkGenerationalId(workSpecId=f3db0823-0178-424f-ad97-65081dcc0d61, generation=0) is already enqueued for processing
+10-12 23:04:15.689  6284  6284 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:04:15.824  6284  6317 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=f3db0823-0178-424f-ad97-65081dcc0d61, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-12 23:04:15.824  6284  6317 I WM-WorkerWrapper: Setting status to enqueued for e1f7acd2-79d5-4f74-933b-d880e321f249
+10-12 23:04:15.825  6284  6284 D WM-Processor: Processor f3db0823-0178-424f-ad97-65081dcc0d61 executed; reschedule = false
+10-12 23:04:15.825  6284  6284 D WM-SystemJobService: f3db0823-0178-424f-ad97-65081dcc0d61 executed on JobScheduler
+10-12 23:04:15.826  6284  6317 D WM-GreedyScheduler: Cancelling work ID f3db0823-0178-424f-ad97-65081dcc0d61
+10-12 23:04:15.828  6284  6317 W JobInfo : Requested important-while-foreground flag for job35 is ignored and takes no effect
+10-12 23:04:15.828  6284  6317 D WM-SystemJobScheduler: Scheduling work ID e1f7acd2-79d5-4f74-933b-d880e321f249Job ID 35
+10-12 23:04:15.830  6284  6317 D WM-GreedyScheduler: Starting work for e1f7acd2-79d5-4f74-933b-d880e321f249
+10-12 23:04:15.830  6284  6284 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=e1f7acd2-79d5-4f74-933b-d880e321f249, generation=0)
+10-12 23:04:15.833  6284  6317 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=e1f7acd2-79d5-4f74-933b-d880e321f249, generation=0)
+10-12 23:04:15.833  6284  6317 D WM-Processor: Work WorkGenerationalId(workSpecId=e1f7acd2-79d5-4f74-933b-d880e321f249, generation=0) is already enqueued for processing
+10-12 23:04:15.835  6284  6284 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:04:15.842  1513  1793 W AiAiEcho: LyftNotificationParser Ridesharing ETA not enabled
+10-12 23:04:15.842  1513  1793 I AiAiEcho: SmartspaceNotificationPredictor no parser can handle this notification or notification is invalid
+10-12 23:04:15.842  1060  1060 I NotificationListener: received notification posted event - dev.p38journal.debug#UserHandle{0},category=-1
+10-12 23:04:15.855   941  1307 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-12 23:04:15.859   941  1307 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-12 23:04:15.977  1060  1060 I NotificationListener: received notification removed event - dev.p38journal.debug#UserHandle{0},category=-1
+10-12 23:04:16.024  6284  6309 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=e1f7acd2-79d5-4f74-933b-d880e321f249, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-12 23:04:16.024  6284  6284 D WM-Processor: Processor e1f7acd2-79d5-4f74-933b-d880e321f249 executed; reschedule = false
+10-12 23:04:16.024  6284  6284 D WM-SystemJobService: e1f7acd2-79d5-4f74-933b-d880e321f249 executed on JobScheduler
+10-12 23:04:16.026  6284  6309 D WM-GreedyScheduler: Cancelling work ID e1f7acd2-79d5-4f74-933b-d880e321f249
+10-12 23:04:16.029  6284  6309 D WM-PackageManagerHelper: androidx.work.impl.background.systemalarm.RescheduleReceiver disabled
+10-12 23:04:16.043  6284  6317 W JobInfo : Requested important-while-foreground flag for job36 is ignored and takes no effect
+10-12 23:04:16.043  6284  6317 D WM-SystemJobScheduler: Scheduling work ID 50a47b53-3f6d-4b9d-a0e4-e42efc558592Job ID 36
+10-12 23:04:16.047  6284  6317 D WM-GreedyScheduler: Starting work for 50a47b53-3f6d-4b9d-a0e4-e42efc558592
+10-12 23:04:16.051  6284  6284 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=50a47b53-3f6d-4b9d-a0e4-e42efc558592, generation=0)
+10-12 23:04:16.055  6284  6316 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=50a47b53-3f6d-4b9d-a0e4-e42efc558592, generation=0)
+10-12 23:04:16.056  6284  6316 D WM-Processor: Work WorkGenerationalId(workSpecId=50a47b53-3f6d-4b9d-a0e4-e42efc558592, generation=0) is already enqueued for processing
+10-12 23:04:16.058  6284  6284 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:04:16.060  6284  6316 D WM-PackageManagerHelper: androidx.work.impl.background.systemalarm.RescheduleReceiver enabled
+10-12 23:04:16.216   701   963 D BufferPoolAccessor2.0: evictor expired: 5, evicted: 0
+10-12 23:04:16.216   941  1347 D BufferPoolAccessor2.0: evictor expired: 3, evicted: 0
+10-12 23:04:16.216   642   686 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 0
+10-12 23:04:16.236  6284  6315 D WM-Processor: Processor cancelling 50a47b53-3f6d-4b9d-a0e4-e42efc558592
+10-12 23:04:16.236  6284  6315 D WM-Processor: WorkerWrapper interrupted for 50a47b53-3f6d-4b9d-a0e4-e42efc558592
+10-12 23:04:16.238   639  6431 D BufferPoolAccessor2.0: bufferpool2 0x75dbd46d0158 : 0(0 size) total buffers - 0(0 size) used buffers - 0/5 (recycle/alloc) - 2/4 (fetch/transfer)
+10-12 23:04:16.238   639  6431 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 1
+10-12 23:04:16.240  6284  6284 D WM-SystemJobService: onStopJob for WorkGenerationalId(workSpecId=50a47b53-3f6d-4b9d-a0e4-e42efc558592, generation=0)
+10-12 23:04:16.241  6284  6315 D WM-GreedyScheduler: Cancelling work ID 50a47b53-3f6d-4b9d-a0e4-e42efc558592
+10-12 23:04:16.245  6284  6315 I WM-WorkerWrapper: Work [ id=50a47b53-3f6d-4b9d-a0e4-e42efc558592, tags={ dev.p38journal.platform.MaintenanceWorker } ] was cancelled
+10-12 23:04:16.245  6284  6315 I WM-WorkerWrapper: androidx.work.impl.WorkerStoppedException
+10-12 23:04:16.245  6284  6315 I WM-WorkerWrapper: 	at androidx.work.impl.WorkerWrapper.interrupt(WorkerWrapper.kt:348)
+10-12 23:04:16.245  6284  6315 I WM-WorkerWrapper: 	at androidx.work.impl.Processor.interrupt(Processor.java:439)
+10-12 23:04:16.245  6284  6315 I WM-WorkerWrapper: 	at androidx.work.impl.Processor.stopAndCancelWork(Processor.java:280)
+10-12 23:04:16.245  6284  6315 I WM-WorkerWrapper: 	at androidx.work.impl.utils.CancelWorkRunnable.cancel(CancelWorkRunnable.kt:33)
+10-12 23:04:16.245  6284  6315 I WM-WorkerWrapper: 	at androidx.work.impl.utils.CancelWorkRunnable.access$cancel(CancelWorkRunnable.kt:1)
+10-12 23:04:16.245  6284  6315 I WM-WorkerWrapper: 	at androidx.work.impl.utils.CancelWorkRunnable$forAll$1.invoke$lambda$0(CancelWorkRunnable.kt:149)
+10-12 23:04:16.245  6284  6315 I WM-WorkerWrapper: 	at androidx.work.impl.utils.CancelWorkRunnable$forAll$1.$r8$lambda$FiwYY7euQVFoWhAgDTmAY3zxQHo(Unknown Source:0)
+10-12 23:04:16.245  6284  6315 I WM-WorkerWrapper: 	at androidx.work.impl.utils.CancelWorkRunnable$forAll$1$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+10-12 23:04:16.245  6284  6315 I WM-WorkerWrapper: 	at androidx.room.RoomDatabase.runInTransaction(RoomDatabase.kt:585)
+10-12 23:04:16.245  6284  6315 I WM-WorkerWrapper: 	at androidx.work.impl.utils.CancelWorkRunnable$forAll$1.invoke(CancelWorkRunnable.kt:145)
+10-12 23:04:16.245  6284  6315 I WM-WorkerWrapper: 	at androidx.work.impl.utils.CancelWorkRunnable$forAll$1.invoke(CancelWorkRunnable.kt:139)
+10-12 23:04:16.245  6284  6315 I WM-WorkerWrapper: 	at androidx.work.OperationKt.launchOperation$lambda$2$lambda$1(Operation.kt:50)
+10-12 23:04:16.245  6284  6315 I WM-WorkerWrapper: 	at androidx.work.OperationKt.$r8$lambda$XKAkIiEN7OgIvwuLUZRQpJhjmyE(Unknown Source:0)
+10-12 23:04:16.245  6284  6315 I WM-WorkerWrapper: 	at androidx.work.OperationKt$$ExternalSyntheticLambda1.run(D8$$SyntheticClass:0)
+10-12 23:04:16.245  6284  6315 I WM-WorkerWrapper: 	at androidx.work.impl.utils.SerialExecutorImpl$Task.run(SerialExecutorImpl.java:96)
+10-12 23:04:16.245  6284  6315 I WM-WorkerWrapper: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+10-12 23:04:16.245  6284  6315 I WM-WorkerWrapper: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+10-12 23:04:16.245  6284  6315 I WM-WorkerWrapper: 	at java.lang.Thread.run(Thread.java:1119)
+10-12 23:04:16.245  6284  6315 D WM-WorkerWrapper: Status for 50a47b53-3f6d-4b9d-a0e4-e42efc558592 is CANCELLED ; not doing any work
+10-12 23:04:16.245  6284  6315 D WM-StopWorkRunnable: StopWorkRunnable for 50a47b53-3f6d-4b9d-a0e4-e42efc558592; Processor.stopWork = false
+10-12 23:04:16.245  6284  6284 D WM-Processor: Processor 50a47b53-3f6d-4b9d-a0e4-e42efc558592 executed; reschedule = false
+10-12 23:04:16.245  6284  6315 D WM-StopWorkRunnable: StopWorkRunnable for 50a47b53-3f6d-4b9d-a0e4-e42efc558592; Processor.stopWork = false
+10-12 23:04:16.246  6284  6315 D WM-GreedyScheduler: Cancelling work ID 50a47b53-3f6d-4b9d-a0e4-e42efc558592
+10-12 23:04:16.249  6284  6315 D WM-PackageManagerHelper: androidx.work.impl.background.systemalarm.RescheduleReceiver disabled
+10-12 23:04:16.291  6284  6314 I TestRunner: finished: realRuleChangeCancelsObsoleteLimitAndReminderToggleKeepsHistory(dev.p38journal.platform.SystemWorkTest)

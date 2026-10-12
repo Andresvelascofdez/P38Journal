@@ -1,0 +1,15 @@
+10-12 23:09:52.670  7140  7155 I TestRunner: started: fullBackupKeepsAttachmentsExactTotalsAndReimportIsIdempotent(dev.p38journal.platform.PlatformTest)
+10-12 23:09:52.686  7140  7159 D pdf_document_jni: Creating FPDF_DOCUMENT from fd: 121
+10-12 23:09:52.686  7140  7159 D pdf_document_jni: Deleting Document: 0x7e17a1864650
+10-12 23:09:52.686  7140  7159 D pdf_document_jni: Destroyed Document: 0x7e17a1864650
+10-12 23:09:52.730  5001  5001 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():154 Tooltip with id undo_access_point_promotion_banner not found in tooltipManager.
+10-12 23:09:52.734   701   912 I ImeTracker: system_server:506e00fc: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:09:52.734   701   724 I ImeTracker: system_server:506e00fc: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:09:52.744  7140  7156 W JobInfo : Requested important-while-foreground flag for job1 is ignored and takes no effect
+10-12 23:09:52.745  7140  7156 D WM-SystemJobScheduler: Scheduling work ID 670c4e8e-772b-459f-bae2-b62b612d6982Job ID 1
+10-12 23:09:52.748  7140  7156 D WM-GreedyScheduler: Starting work for 670c4e8e-772b-459f-bae2-b62b612d6982
+10-12 23:09:52.749  7140  7140 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=670c4e8e-772b-459f-bae2-b62b612d6982, generation=0)
+10-12 23:09:52.752  7140  7153 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=670c4e8e-772b-459f-bae2-b62b612d6982, generation=0)
+10-12 23:09:52.752  7140  7153 D WM-Processor: Work WorkGenerationalId(workSpecId=670c4e8e-772b-459f-bae2-b62b612d6982, generation=0) is already enqueued for processing
+10-12 23:09:52.754  7140  7140 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:09:52.774  7140  7155 I TestRunner: finished: fullBackupKeepsAttachmentsExactTotalsAndReimportIsIdempotent(dev.p38journal.platform.PlatformTest)

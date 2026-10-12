@@ -1,0 +1,2 @@
+10-12 23:04:01.874  6284  6314 I TestRunner: started: deletedSeedHistoryIsNotRecreatedOnNextLaunch(dev.p38journal.data.RepositoryTest)
+10-12 23:04:01.975  6284  6314 I TestRunner: finished: deletedSeedHistoryIsNotRecreatedOnNextLaunch(dev.p38journal.data.RepositoryTest)

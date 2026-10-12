@@ -1,0 +1,2 @@
+10-12 23:04:07.858  6284  6314 I TestRunner: started: tyresWithoutReadingDoNotInferCurrentKmFromPlanningBaseline(dev.p38journal.platform.ExpansionNotificationsTest)
+10-12 23:04:07.882  6284  6314 I TestRunner: finished: tyresWithoutReadingDoNotInferCurrentKmFromPlanningBaseline(dev.p38journal.platform.ExpansionNotificationsTest)

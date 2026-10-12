@@ -1,0 +1,2 @@
+10-12 23:09:47.348  7140  7155 I TestRunner: started: snapshotRoundTripIsCompleteIdempotentAndInvalidSnapshotIsAtomic(dev.p38journal.data.RepositoryTest)
+10-12 23:09:47.411  7140  7155 I TestRunner: finished: snapshotRoundTripIsCompleteIdempotentAndInvalidSnapshotIsAtomic(dev.p38journal.data.RepositoryTest)

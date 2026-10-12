@@ -1,0 +1,2 @@
+10-12 23:20:20.529  8755  8770 I TestRunner: started: invalidVisitRollsBackAndEditingVoidingRecalculates(dev.p38journal.data.RepositoryTest)
+10-12 23:20:20.569  8755  8770 I TestRunner: finished: invalidVisitRollsBackAndEditingVoidingRecalculates(dev.p38journal.data.RepositoryTest)

@@ -1,0 +1,20 @@
+python : Traceback (most recent call last):
+At line:2 char:118
++ ... second.log; python scripts/verify-v6-native.py *> docs/evidence/v6/na ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v6-native.py", line 103, in <module>
+    capture('notification-opens-front',('Ruedas delanteras','195.200 km','20.200 km'))
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v6-native.py", line 45, in capture
+    for value in required: assert any(value in text for text in texts),(name,value,texts)
+                                  ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('notification-opens-front', 'Ruedas delanteras', [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'Range 
+Rover P38 ', 'Autobiography � 4.6 V8 � Autom�tico � 2000 ', '195.200 km ', 'Lectura del 12/10/2026 ', ' ', 'Actualizar 
+kil�metros ', ' ', ' ', 'Registrar trabajo ', ' ', 'Mantenimiento realizado: selecciona expresamente las operaciones 
+completadas. ', ' ', 'A�adir gasto ', ' ', ' ', 'Registrar repostaje ', ' ', ' ', 'A�adir trabajo o mejora ', ' ', ' 
+', 'Consumo medio ', '14,00 L/100 km ', ' ', 'Ver repostajes ', ' ', ' ', 'P38 Journal ', 'v5.0.0-debug � 6 ', ' ', ' 
+M�s opciones', ' ', ' ', ' ', ' ', ' Inicio', 'Inicio ', ' ', ' ', ' ', ' Mantenimiento', 'Mant. ', ' ', ' ', ' ', ' 
+Historial', 'Historial ', ' ', ' ', ' ', ' Gastos', 'Gastos ', ' ', ' '])

@@ -1,0 +1,2 @@
+10-12 23:20:25.772  8755  8770 I TestRunner: started: soonToDueHasNewNotificationKindInSameWeek(dev.p38journal.platform.PlatformTest)
+10-12 23:20:25.819  8755  8770 I TestRunner: finished: soonToDueHasNewNotificationKindInSameWeek(dev.p38journal.platform.PlatformTest)

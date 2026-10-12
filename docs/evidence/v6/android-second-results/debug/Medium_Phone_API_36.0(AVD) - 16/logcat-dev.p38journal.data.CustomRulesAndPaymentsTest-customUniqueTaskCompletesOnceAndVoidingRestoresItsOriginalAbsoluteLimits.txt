@@ -1,0 +1,2 @@
+10-12 23:09:44.404  7140  7155 I TestRunner: started: customUniqueTaskCompletesOnceAndVoidingRestoresItsOriginalAbsoluteLimits(dev.p38journal.data.CustomRulesAndPaymentsTest)
+10-12 23:09:44.437  7140  7155 I TestRunner: finished: customUniqueTaskCompletesOnceAndVoidingRestoresItsOriginalAbsoluteLimits(dev.p38journal.data.CustomRulesAndPaymentsTest)

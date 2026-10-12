@@ -1,0 +1,20 @@
+python : Traceback (most recent call last):
+At line:2 char:1
++ python scripts/verify-v6-native.py *> docs/evidence/v6/native-deliver ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v6-native.py", line 82, in <module>
+    swipe();capture(f'home-{width}dp-actions',('A�adir gasto','Registrar repostaje'))
+            ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\SapAssistant\Range rover\scripts\verify-v6-native.py", line 45, in capture
+    for value in required: assert any(value in text for text in texts),(name,value,texts)
+                                  ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('home-320dp-actions', 'A�adir gasto', [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'Ver repostajes 
+', ' ', 'Pendiente ', ' ', 'FIXTURE aviso v4 ya emitido ', 'Pendiente ', 'Pr�ximo: 176.000 km ', '01/10/2027 ', 
+'Pendiente por kilometraje � Faltan 354 d�as ', 'Pr�ximo mantenimiento ', ' ', 'Revisi�n a los 195.000 km ', 
+'Programado ', 'Pr�ximo: 195.000 km ', '01/10/2027 ', 'Te faltan 13.000 km � Faltan 354 d�as ', '28 operaciones 
+incluidas ', ' ', 'Ver todos los pendientes (1) ', ' ', ' ', 'P38 Journal ', 'v5.0.0-debug � 6 ', ' ', ' M�s 
+opciones', ' ', ' ', ' ', ' ', ' Inicio', 'Inicio ', ' ', ' ', ' ', ' Mantenimiento', 'Mant. ', ' ', ' ', ' ', ' 
+Historial', 'Historial ', ' ', ' ', ' ', ' Gastos', 'Gastos ', ' ', ' '])

@@ -1,0 +1,5 @@
+10-12 23:04:16.713  6284  6314 I TestRunner: started: tyreNotificationRequiresActualReadingRatherThanPlanningBaseline(dev.p38journal.review.ExpansionReviewTest)
+10-12 23:04:16.775  6127  6129 I AidlLazyServiceRegistrar: Process has 0 (of 1 available) client(s) in use after notification artd has clients: 0
+10-12 23:04:16.775  6127  6129 I AidlLazyServiceRegistrar: Trying to shut down the service. No clients in use for any service in process.
+10-12 23:04:16.776  6127  6129 I AidlLazyServiceRegistrar: Unregistered all clients and exiting
+10-12 23:04:16.790  6284  6314 I TestRunner: finished: tyreNotificationRequiresActualReadingRatherThanPlanningBaseline(dev.p38journal.review.ExpansionReviewTest)

@@ -1,0 +1,2 @@
+10-12 23:04:00.828  6284  6314 I TestRunner: started: plannedWorkBecomesDoneWithSameIdentityAndNoEstimatedExpenseOrMaintenanceEvent(dev.p38journal.data.ExpandedRepositoryTest)
+10-12 23:04:00.920  6284  6314 I TestRunner: finished: plannedWorkBecomesDoneWithSameIdentityAndNoEstimatedExpenseOrMaintenanceEvent(dev.p38journal.data.ExpandedRepositoryTest)

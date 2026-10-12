@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.p38journal.domain.TyresTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-12T20:26:37.906Z" hostname="DESKTOP-DVUH6AS" time="0.007">
+  <properties/>
+  <testcase name="replacingFrontNeverResetsRearAndCorrectionsFollowTheRecordedSequence" classname="dev.p38journal.domain.TyresTest" time="0.004"/>
+  <testcase name="voidCorrectionUnknownOdometerAndOverflowAreExplicit" classname="dev.p38journal.domain.TyresTest" time="0.002"/>
+  <testcase name="reviewKeepsUsageAndSetsExactNextLimit" classname="dev.p38journal.domain.TyresTest" time="0.0"/>
+  <testcase name="noMountDoesNotFabricateTyresAtThePlanningBaseline" classname="dev.p38journal.domain.TyresTest" time="0.0"/>
+  <testcase name="metadataChangesDoNotCreateAnotherNotificationCycle" classname="dev.p38journal.domain.TyresTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

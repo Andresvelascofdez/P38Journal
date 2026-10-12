@@ -1,0 +1,17 @@
+10-12 23:04:08.472  6284  6314 I TestRunner: started: partialCompletionInvalidatesGroupDestinationAndDisablingChannelsCancels(dev.p38journal.platform.PlatformTest)
+10-12 23:04:08.525  6284  6315 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=b586bfed-00e8-461e-9cdd-954c656048d9, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-12 23:04:08.525  6284  6315 I WM-WorkerWrapper: Setting status to enqueued for 930de2eb-ddc4-49ab-b00a-9fe9de56e414
+10-12 23:04:08.526  6284  6284 D WM-Processor: Processor b586bfed-00e8-461e-9cdd-954c656048d9 executed; reschedule = false
+10-12 23:04:08.526  6284  6284 D WM-SystemJobService: b586bfed-00e8-461e-9cdd-954c656048d9 executed on JobScheduler
+10-12 23:04:08.529  6284  6315 D WM-GreedyScheduler: Cancelling work ID b586bfed-00e8-461e-9cdd-954c656048d9
+10-12 23:04:08.531  6284  6315 W JobInfo : Requested important-while-foreground flag for job20 is ignored and takes no effect
+10-12 23:04:08.531  6284  6315 D WM-SystemJobScheduler: Scheduling work ID 930de2eb-ddc4-49ab-b00a-9fe9de56e414Job ID 20
+10-12 23:04:08.539  6284  6315 D WM-GreedyScheduler: Starting work for 930de2eb-ddc4-49ab-b00a-9fe9de56e414
+10-12 23:04:08.539  6284  6284 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=930de2eb-ddc4-49ab-b00a-9fe9de56e414, generation=0)
+10-12 23:04:08.540  6284  6315 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=930de2eb-ddc4-49ab-b00a-9fe9de56e414, generation=0)
+10-12 23:04:08.541  6284  6315 D WM-Processor: Work WorkGenerationalId(workSpecId=930de2eb-ddc4-49ab-b00a-9fe9de56e414, generation=0) is already enqueued for processing
+10-12 23:04:08.543  6284  6284 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:04:08.548  5001  5001 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():154 Tooltip with id undo_access_point_promotion_banner not found in tooltipManager.
+10-12 23:04:08.555   701   716 I ImeTracker: system_server:a21150ca: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:04:08.555   701   724 I ImeTracker: system_server:a21150ca: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:04:08.570  6284  6314 I TestRunner: finished: partialCompletionInvalidatesGroupDestinationAndDisablingChannelsCancels(dev.p38journal.platform.PlatformTest)

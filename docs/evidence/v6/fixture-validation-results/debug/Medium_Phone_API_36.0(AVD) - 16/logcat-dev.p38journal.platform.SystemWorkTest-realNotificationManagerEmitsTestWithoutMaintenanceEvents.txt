@@ -1,0 +1,9 @@
+10-12 23:20:30.920  8755  8770 I TestRunner: started: realNotificationManagerEmitsTestWithoutMaintenanceEvents(dev.p38journal.platform.SystemWorkTest)
+10-12 23:20:30.922  8755  8770 I UiAutomationPermGranter: Permission: android.permission.POST_NOTIFICATIONS is already granted!
+10-12 23:20:31.192  1513  1793 W AiAiEcho: LyftNotificationParser Ridesharing ETA not enabled
+10-12 23:20:31.193  1513  1793 I AiAiEcho: SmartspaceNotificationPredictor no parser can handle this notification or notification is invalid
+10-12 23:20:31.193  1060  1060 I NotificationListener: received notification posted event - dev.p38journal.debug#UserHandle{0},category=-1
+10-12 23:20:31.209   941  1307 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-12 23:20:31.213   941  1307 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-12 23:20:31.291  1060  1060 I NotificationListener: received notification removed event - dev.p38journal.debug#UserHandle{0},category=-1
+10-12 23:20:31.327  8755  8770 I TestRunner: finished: realNotificationManagerEmitsTestWithoutMaintenanceEvents(dev.p38journal.platform.SystemWorkTest)

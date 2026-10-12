@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.p38journal.domain.ConsumptionTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-10-12T20:26:37.866Z" hostname="DESKTOP-DVUH6AS" time="0.006">
+  <properties/>
+  <testcase name="aggregateIsWeightedByDistanceAndPendingPartialDoesNotEnterIt" classname="dev.p38journal.domain.ConsumptionTest" time="0.003"/>
+  <testcase name="incompletePartialOnClosingDayIsNotSilentlyOmitted" classname="dev.p38journal.domain.ConsumptionTest" time="0.0"/>
+  <testcase name="editsAndCancellationRecalculateWithoutIncludingOldReferenceLitres" classname="dev.p38journal.domain.ConsumptionTest" time="0.0"/>
+  <testcase name="zeroNegativeAndIncompleteDistancesNeverProduceConsumption" classname="dev.p38journal.domain.ConsumptionTest" time="0.0"/>
+  <testcase name="firstFullIsReferencePartialAndFinalSumToFourteen" classname="dev.p38journal.domain.ConsumptionTest" time="0.0"/>
+  <testcase name="invalidClosedIntervalDoesNotPoisonTheNextValidReference" classname="dev.p38journal.domain.ConsumptionTest" time="0.0"/>
+  <testcase name="noFullOrOnlyOneFullIsInsufficient" classname="dev.p38journal.domain.ConsumptionTest" time="0.0"/>
+  <testcase name="commaAndPointDecimalLitresAreExactAndOverprecisionRejected" classname="dev.p38journal.domain.ConsumptionTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

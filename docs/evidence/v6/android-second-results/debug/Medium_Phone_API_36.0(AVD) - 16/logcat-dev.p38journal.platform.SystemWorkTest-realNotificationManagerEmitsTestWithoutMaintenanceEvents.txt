@@ -1,0 +1,27 @@
+10-12 23:09:58.076  7140  7155 I TestRunner: started: realNotificationManagerEmitsTestWithoutMaintenanceEvents(dev.p38journal.platform.SystemWorkTest)
+10-12 23:09:58.077  7140  7155 I UiAutomationPermGranter: Permission: android.permission.POST_NOTIFICATIONS is already granted!
+10-12 23:09:58.343   701   701 D FlashNotifController: requestStartFlashNotification
+10-12 23:09:58.343   941  2137 D RingtonePlayer: playAsync(uri=content://settings/system/notification_sound, user=UserHandle{0})
+10-12 23:09:58.343   701   701 I FlashNotifController: startFlashNotification: type=1, tag=android
+10-12 23:09:58.343   701   701 D FlashNotifController: Flash notification is disabled
+10-12 23:09:58.344   941  2137 D RingtonePlayer: play uri=content://settings/system/notification_sound
+10-12 23:09:58.346   941  7240 D RingtonePlayer: RemoveFirst
+10-12 23:09:58.346   941  7240 D RingtonePlayer: PLAY
+10-12 23:09:58.346   941  7240 D RingtonePlayer: startSound()
+10-12 23:09:58.347   941  7241 D RingtonePlayer: in run: new looper Looper (Thread-9, tid 114) {b8bcf50}
+10-12 23:09:58.350  1513  1793 W AiAiEcho: LyftNotificationParser Ridesharing ETA not enabled
+10-12 23:09:58.350  1513  1793 I AiAiEcho: SmartspaceNotificationPredictor no parser can handle this notification or notification is invalid
+10-12 23:09:58.351  1060  1060 I NotificationListener: received notification posted event - dev.p38journal.debug#UserHandle{0},category=-1
+10-12 23:09:58.353   639   656 D NuPlayerDriver: NuPlayerDriver(0x75dc246d0810) created, clientPid(941)
+10-12 23:09:58.353   254   254 I hwservicemanager: getTransport: Cannot find entry android.hardware.media.omx@1.0::IOmx/default in either framework or device VINTF manifest.
+10-12 23:09:58.353   639   656 D MediaPlayerService: OMX service is not available
+10-12 23:09:58.358   639  7244 D GenericSource: FileSource remote
+10-12 23:09:58.361   941  7241 D RingtonePlayer: requesting AudioFocus
+10-12 23:09:58.362   701   930 I MediaFocusControl: requestAudioFocus() from uid/pid 10185/941 AA=USAGE_NOTIFICATION/CONTENT_TYPE_SONIFICATION clientId=android.media.AudioManager@bca3868 callingPack=com.android.systemui req=3 flags=0x0 sdk=36
+10-12 23:09:58.363   941  7241 D RingtonePlayer: notification will be delayed by 500ms
+10-12 23:09:58.371   941  1307 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-12 23:09:58.375   941  1307 D LocalImageResolver: Couldn't use ImageDecoder for drawable, falling back to non-resized load.
+10-12 23:09:58.441   941  2137 D RingtonePlayer: stopAsync()
+10-12 23:09:58.441   941  2137 D RingtonePlayer: stop
+10-12 23:09:58.443  1060  1060 I NotificationListener: received notification removed event - dev.p38journal.debug#UserHandle{0},category=-1
+10-12 23:09:58.465  7140  7155 I TestRunner: finished: realNotificationManagerEmitsTestWithoutMaintenanceEvents(dev.p38journal.platform.SystemWorkTest)

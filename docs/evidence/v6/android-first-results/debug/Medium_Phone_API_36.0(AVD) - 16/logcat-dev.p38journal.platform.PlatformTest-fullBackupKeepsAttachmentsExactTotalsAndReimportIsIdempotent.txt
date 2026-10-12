@@ -1,0 +1,12 @@
+10-12 23:04:08.208  6284  6314 I TestRunner: started: fullBackupKeepsAttachmentsExactTotalsAndReimportIsIdempotent(dev.p38journal.platform.PlatformTest)
+10-12 23:04:08.230  6284  6323 D pdf_document_jni: Creating FPDF_DOCUMENT from fd: 115
+10-12 23:04:08.230  6284  6323 D pdf_document_jni: Deleting Document: 0x7e17a187d8d0
+10-12 23:04:08.230  6284  6323 D pdf_document_jni: Destroyed Document: 0x7e17a187d8d0
+10-12 23:04:08.324  6284  6315 W JobInfo : Requested important-while-foreground flag for job19 is ignored and takes no effect
+10-12 23:04:08.324  6284  6315 D WM-SystemJobScheduler: Scheduling work ID b586bfed-00e8-461e-9cdd-954c656048d9Job ID 19
+10-12 23:04:08.329  6284  6315 D WM-GreedyScheduler: Starting work for b586bfed-00e8-461e-9cdd-954c656048d9
+10-12 23:04:08.331  6284  6284 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=b586bfed-00e8-461e-9cdd-954c656048d9, generation=0)
+10-12 23:04:08.338  6284  6315 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=b586bfed-00e8-461e-9cdd-954c656048d9, generation=0)
+10-12 23:04:08.339  6284  6315 D WM-Processor: Work WorkGenerationalId(workSpecId=b586bfed-00e8-461e-9cdd-954c656048d9, generation=0) is already enqueued for processing
+10-12 23:04:08.346  6284  6284 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:04:08.355  6284  6314 I TestRunner: finished: fullBackupKeepsAttachmentsExactTotalsAndReimportIsIdempotent(dev.p38journal.platform.PlatformTest)

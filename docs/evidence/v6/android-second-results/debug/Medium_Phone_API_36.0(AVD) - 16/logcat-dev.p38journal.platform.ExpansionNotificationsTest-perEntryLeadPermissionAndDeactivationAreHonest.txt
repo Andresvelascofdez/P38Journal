@@ -1,0 +1,2 @@
+10-12 23:09:52.343  7140  7155 I TestRunner: started: perEntryLeadPermissionAndDeactivationAreHonest(dev.p38journal.platform.ExpansionNotificationsTest)
+10-12 23:09:52.405  7140  7155 I TestRunner: finished: perEntryLeadPermissionAndDeactivationAreHonest(dev.p38journal.platform.ExpansionNotificationsTest)

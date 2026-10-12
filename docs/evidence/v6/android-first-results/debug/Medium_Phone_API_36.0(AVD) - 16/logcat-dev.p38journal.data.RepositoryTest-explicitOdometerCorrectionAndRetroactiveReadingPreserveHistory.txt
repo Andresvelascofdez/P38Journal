@@ -1,0 +1,2 @@
+10-12 23:04:01.478  6284  6314 I TestRunner: started: explicitOdometerCorrectionAndRetroactiveReadingPreserveHistory(dev.p38journal.data.RepositoryTest)
+10-12 23:04:01.490  6284  6314 I TestRunner: finished: explicitOdometerCorrectionAndRetroactiveReadingPreserveHistory(dev.p38journal.data.RepositoryTest)

@@ -1,3 +1,9 @@
+# Ampliación vigente5.0 / build6
+
+REQUEST_V6.md y docs/CONTRACT_V6.md prevalecen sobre las exclusiones de consumo y esquema anteriores. El consumo sencillo está autorizado: llenos completos, litros posteriores y media ponderada, sin gráficos/informes. Trabajos previstos/realizados reutilizan Visit; documentación libre, renovación manual y ruedas2ejes separados del fabricante. Room4/Snapshot4 compatibles con2/3 y todos los nuevos datos/relaciones en copias. No inventar montajes a175.000, lecturas, trabajos ni datos históricos. Mantener intactas las funciones de mantenimiento de4.1 y filtros de gastos. Fuente base local6957c1a, respaldo previo en .tools/pre-v6. La evidencia final de esta entrega estará en docs/TEST_REPORT.md; las verificaciones4.1 archivadas son antecedentes.
+
+## Antecedentes históricos, aplicables solo donde no contradigan REQUEST_V6
+
 # Corrección vigente4.1 / build5
 
 REQUEST_V5.md sustituye el selector4.0: Mantenimiento muestra directamente las revisiones proyectadas completas. Recorrido: Repository.tasks → Engine.evaluate (vencimientos reales) → Forecast.project (apariciones independientes) → projectedMaintenanceGroups (ID por grupo/fecha/km) → ProjectedPlanPage → ProjectedRevisionDetail. Contador y «Qué incluye» consumen occurrences del mismo grupo, sin resolver el detalle desde una Task representativa.

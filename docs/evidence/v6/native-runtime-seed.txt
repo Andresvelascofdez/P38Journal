@@ -1,0 +1,8 @@
+
+dev.p38journal.platform.UpgradeV6Test:.
+
+Time: 0.72
+
+OK (1 test)
+
+

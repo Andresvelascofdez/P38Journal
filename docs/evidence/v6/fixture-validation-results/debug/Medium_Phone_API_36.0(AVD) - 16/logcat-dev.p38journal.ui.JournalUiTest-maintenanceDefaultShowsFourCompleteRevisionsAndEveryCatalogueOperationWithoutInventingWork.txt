@@ -1,0 +1,176 @@
+10-12 23:22:35.470  8755  8770 I TestRunner: started: maintenanceDefaultShowsFourCompleteRevisionsAndEveryCatalogueOperationWithoutInventingWork(dev.p38journal.ui.JournalUiTest)
+10-12 23:22:35.472  8755  8770 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@86d3391]
+10-12 23:22:35.473  8755  8770 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+10-12 23:22:35.475   701  1944 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@809dc9b4 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-12 23:22:35.478   564   800 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:22:35.481   564   564 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:22:35.482  1060  1060 W SplitSelectStateCtor: Missing session instanceIds
+10-12 23:22:35.482  1060  1060 D StatsLog: LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
+10-12 23:22:35.489  8755  8755 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@d23da0b in: PRE_ON_CREATE
+10-12 23:22:35.489  8755  8755 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+10-12 23:22:35.495  8755  8755 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@d23da0b in: CREATED
+10-12 23:22:35.496  8755  8755 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=dev.p38journal.MainActivity@d23da0b
+10-12 23:22:35.497  8755  8755 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@d23da0b in: STARTED
+10-12 23:22:35.497  8755  8755 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=dev.p38journal.MainActivity@d23da0b
+10-12 23:22:35.501  8755  8755 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@d23da0b in: RESUMED
+10-12 23:22:35.501  8755  8755 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=dev.p38journal.MainActivity@d23da0b
+10-12 23:22:35.561   701   721 I ActivityTaskManager: Displayed dev.p38journal.debug/dev.p38journal.MainActivity for user 0: +84ms
+10-12 23:22:35.577  8755  8769 W JobInfo : Requested important-while-foreground flag for job89 is ignored and takes no effect
+10-12 23:22:35.577  8755  8769 D WM-SystemJobScheduler: Scheduling work ID 41cbfd90-a4a9-4ab2-8ff5-de3b70471fa2Job ID 89
+10-12 23:22:35.580  8755  8769 D WM-GreedyScheduler: Starting work for 41cbfd90-a4a9-4ab2-8ff5-de3b70471fa2
+10-12 23:22:35.580  8755  8755 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=41cbfd90-a4a9-4ab2-8ff5-de3b70471fa2, generation=0)
+10-12 23:22:35.581  8755  8769 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=41cbfd90-a4a9-4ab2-8ff5-de3b70471fa2, generation=0)
+10-12 23:22:35.583  8755  8769 D WM-Processor: Work WorkGenerationalId(workSpecId=41cbfd90-a4a9-4ab2-8ff5-de3b70471fa2, generation=0) is already enqueued for processing
+10-12 23:22:35.590   701   810 I ImeTracker: dev.p38journal.debug:9ab191b6: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:22:35.593  8755  8755 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:22:35.593  8755  8755 I ImeTracker: dev.p38journal.debug:9ab191b6: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:22:35.595  8755  8755 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:22:35.597  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:22:35.597  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:22:35.598  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=dev.p38journal.debug, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:22:35.598   701  1931 I ImeTracker: system_server:d59d3da8: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:22:35.600  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:22:35.605   701   724 I ImeTracker: system_server:d59d3da8: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:22:35.719  8755  8773 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=41cbfd90-a4a9-4ab2-8ff5-de3b70471fa2, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-12 23:22:35.721  8755  8755 D WM-Processor: Processor 41cbfd90-a4a9-4ab2-8ff5-de3b70471fa2 executed; reschedule = false
+10-12 23:22:35.721  8755  8755 D WM-SystemJobService: 41cbfd90-a4a9-4ab2-8ff5-de3b70471fa2 executed on JobScheduler
+10-12 23:22:35.725  8755  8769 D WM-GreedyScheduler: Cancelling work ID 41cbfd90-a4a9-4ab2-8ff5-de3b70471fa2
+10-12 23:22:35.806  1060  1060 D VRI[NexusLauncherActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-12 23:22:35.821  1060  1060 D BaseDepthController: setSurface:
+10-12 23:22:35.821  1060  1060 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-12 23:22:35.821  1060  1060 D BaseDepthController: 	mBaseSurface: null
+10-12 23:22:35.821  1060  1060 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+10-12 23:22:35.822  1060  1060 D StateManager: goToState - fromState: Normal, toState: Normal, partial trace:
+10-12 23:22:35.822  1060  1060 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:4)
+10-12 23:22:35.822  1060  1060 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:1)
+10-12 23:22:35.822  1060  1060 D StateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:34)
+10-12 23:22:35.822  1060  1060 D StatsLog: LAUNCHER_ONSTOP
+10-12 23:22:35.823  1060  1060 D StatsLog: LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
+10-12 23:22:35.823  1060  1060 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+10-12 23:22:35.827  1060  1060 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+10-12 23:22:36.207   701   983 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@7ee8f115 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-12 23:22:36.210   564   583 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:22:36.213  8755  8755 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@d23da0b in: PAUSED
+10-12 23:22:36.213  8755  8755 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=dev.p38journal.MainActivity@d23da0b
+10-12 23:22:36.214   564   564 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:22:36.217  8809  8823 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-12 23:22:36.218  8809  8823 I EGL_emulation: Opening libGLESv2_emulation.so
+10-12 23:22:36.227  8809  8823 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-12 23:22:36.247   941  1010 I ndroid.systemui: AssetManager2(0x7e19a186d098) locale list changing from [] to [en-US]
+10-12 23:22:36.253   941  1010 I ndroid.systemui: AssetManager2(0x7e19a1870298) locale list changing from [] to [en-US]
+10-12 23:22:36.258   564   616 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:22:36.320  1060  1060 D StatsLog: LAUNCHER_ONRESUME
+10-12 23:22:36.325  1060  1140 D QuickstepModelDelegate: notifyAppTargetEvent action=1 launchLocation=workspace/0/[-1,-1]/[1,1]
+10-12 23:22:36.328  1513  1632 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+10-12 23:22:36.328  1513  1632 I AiAiEcho: EchoTargets:
+10-12 23:22:36.328  1513  1632 I AiAiEcho: Filtered by AiAi flag check:
+10-12 23:22:36.328  1513  1632 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+10-12 23:22:36.328  1513  1632 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+10-12 23:22:36.328  1513  1632 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+10-12 23:22:36.330  1060  1060 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=6}
+10-12 23:22:36.335  1060  1060 D BaseDepthController: setSurface:
+10-12 23:22:36.335  1060  1060 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-12 23:22:36.335  1060  1060 D BaseDepthController: 	mBaseSurface: Surface(name=com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity)/@0xc57158a
+10-12 23:22:36.354  1060  1060 D SsBaseTemplateCard: No text view can be set up
+10-12 23:22:36.354  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:22:36.354  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:22:36.354  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:22:36.354  1060  1060 I SsBaseTemplateCard: Secondary card pane is null
+10-12 23:22:36.365  8755  8755 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-12 23:22:36.370  1060  1060 D StateManager: createAtomicAnimation - fromState: Background, toState: Normal, partial trace:
+10-12 23:22:36.370  1060  1060 D StateManager: 	at com.android.quickstep.util.WorkspaceRevealAnim.prepareToAnimate(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:22)
+10-12 23:22:36.370  1060  1060 D StateManager: 	at com.android.quickstep.util.WorkspaceRevealAnim.<init>(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:11)
+10-12 23:22:36.370  1060  1060 D StateManager: 	at com.android.launcher3.QuickstepTransitionManager.createWallpaperOpenAnimations(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:339)
+10-12 23:22:36.370  1060  1060 D b/311077782: LauncherAnimationRunner.setAnimation
+10-12 23:22:36.381  8755  8796 D HWUI    : endAllActiveAnimators on 0x7e18918d2b60 (UnprojectedRipple) with handle 0x7e19218de8e0
+10-12 23:22:36.386   701   810 I ImeTracker: com.google.android.apps.nexuslauncher:b2262775: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:22:36.386  1060  1060 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:22:36.386  1060  1060 I ImeTracker: com.google.android.apps.nexuslauncher:b2262775: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:22:36.389  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:22:36.389  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:22:36.391   701  1122 I ImeTracker: system_server:1095050e: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:22:36.391  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=com.google.android.apps.nexuslauncher, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:22:36.392   701   724 I ImeTracker: system_server:1095050e: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:22:36.393  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:22:36.394  8755  8755 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@d23da0b in: STOPPED
+10-12 23:22:36.394  8755  8755 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=dev.p38journal.MainActivity@d23da0b
+10-12 23:22:36.401  8755  8755 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@2fd598a
+10-12 23:22:36.401  8755  8755 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@d23da0b in: DESTROYED
+10-12 23:22:36.401  8755  8755 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+10-12 23:22:36.403  8755  8770 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@86d3391]
+10-12 23:22:36.405  8755  8755 D ViewRootImpl: Skipping stats log for color mode
+10-12 23:22:36.412  8755  8770 E TestRunner: failed: maintenanceDefaultShowsFourCompleteRevisionsAndEveryCatalogueOperationWithoutInventingWork(dev.p38journal.ui.JournalUiTest)
+10-12 23:22:36.412  8755  8770 E TestRunner: ----- begin exception -----
+10-12 23:22:36.412  8755  8770 E TestRunner: java.lang.AssertionError: Action performScrollTo() failed.
+10-12 23:22:36.412  8755  8770 E TestRunner: Reason: Expected exactly '1' node but could not find any node that satisfies: (TestTag = 'projected_count_195000')
+10-12 23:22:36.412  8755  8770 E TestRunner:
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.SemanticsNodeInteraction.fetchOneOrThrow(SemanticsNodeInteraction.kt:178)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.SemanticsNodeInteraction.fetchOneOrThrow$default(SemanticsNodeInteraction.kt:150)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.SemanticsNodeInteraction.fetchSemanticsNode(SemanticsNodeInteraction.kt:84)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.ActionsKt.performScrollTo(Actions.kt:76)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at dev.p38journal.ui.JournalUiTest$maintenanceDefaultShowsFourCompleteRevisionsAndEveryCatalogueOperationWithoutInventingWork$1.invokeSuspend(JournalUiTest.kt:397)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at dev.p38journal.ui.JournalUiTest.maintenanceDefaultShowsFourCompleteRevisionsAndEveryCatalogueOperationWithoutInventingWork(JournalUiTest.kt:381)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at java.lang.reflect.Method.invoke(Native Method)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:272)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1$evaluate$1.invoke(AndroidComposeTestRule.android.kt:271)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$AndroidComposeUiTestImpl.withDisposableContent(ComposeUiTest.android.kt:505)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1$1.invoke(ComposeUiTest.android.kt:333)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withComposeIdlingResource(ComposeUiTest.android.kt:385)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withComposeIdlingResource(ComposeUiTest.android.kt:219)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1$1.invoke(ComposeUiTest.android.kt:332)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withWindowRecomposer(ComposeUiTest.android.kt:359)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withWindowRecomposer(ComposeUiTest.android.kt:219)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1$1.invoke(ComposeUiTest.android.kt:331)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.withTestCoroutines(ComposeUiTest.android.kt:372)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.access$withTestCoroutines(ComposeUiTest.android.kt:219)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1$1.invoke(ComposeUiTest.android.kt:330)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.EspressoLink.withStrategy(EspressoLink.android.kt:66)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1$1.invoke(ComposeUiTest.android.kt:329)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.IdlingResourceRegistry.withRegistry(IdlingResourceRegistry.jvm.kt:155)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment$runTest$1.invoke(ComposeUiTest.android.kt:328)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.ComposeRootRegistry.withRegistry(ComposeRootRegistry.android.kt:146)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.AndroidComposeUiTestEnvironment.runTest(ComposeUiTest.android.kt:327)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.compose.ui.test.junit4.AndroidComposeTestRule$apply$1.evaluate(AndroidComposeTestRule.android.kt:271)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.test.ext.junit.runners.AndroidJUnit4.run(AndroidJUnit4.java:162)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:128)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runners.Suite.runChild(Suite.java:27)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:68)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.test.internal.runner.TestExecutor.execute(TestExecutor.java:59)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at androidx.test.runner.AndroidJUnitRunner.onStart(AndroidJUnitRunner.java:463)
+10-12 23:22:36.412  8755  8770 E TestRunner: 	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2597)
+10-12 23:22:36.412  8755  8770 E TestRunner: ----- end exception -----
+10-12 23:22:36.412  8755  8770 I TestRunner: finished: maintenanceDefaultShowsFourCompleteRevisionsAndEveryCatalogueOperationWithoutInventingWork(dev.p38journal.ui.JournalUiTest)

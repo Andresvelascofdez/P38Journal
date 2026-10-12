@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.p38journal.review.IndependentV4Test" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-10-12T20:26:38.051Z" hostname="DESKTOP-DVUH6AS" time="0.055">
+  <properties/>
+  <testcase name="actualBWorkAt195200RepeatsAt235200WithoutMovingOtherOperations" classname="dev.p38journal.review.IndependentV4Test" time="0.008"/>
+  <testcase name="monthAcrossAllYearsIncludesCalendarDatesAndExcludesInactiveExpenses" classname="dev.p38journal.review.IndependentV4Test" time="0.009"/>
+  <testcase name="futureFortyThousandServiceContainsCommonOperationsAndCButNotB" classname="dev.p38journal.review.IndependentV4Test" time="0.01"/>
+  <testcase name="combinableExpenseFiltersAndClearingFiltersKeepAccumulatedTotal" classname="dev.p38journal.review.IndependentV4Test" time="0.004"/>
+  <testcase name="forecastAlternatesPhasesAndKeepsSixtyThousandAdditionalOperations" classname="dev.p38journal.review.IndependentV4Test" time="0.008"/>
+  <testcase name="timeAndKilometresCanIndependentlyExpireWithoutChangingForecastOrGeneration" classname="dev.p38journal.review.IndependentV4Test" time="0.004"/>
+  <testcase name="partialLateOilWorkKeepsUnperformedTasksAndTheirForecastSeparate" classname="dev.p38journal.review.IndependentV4Test" time="0.007"/>
+  <testcase name="editingDateCategoryAndVoidingExpenseImmediatelyChangesRowsAndExactTotals" classname="dev.p38journal.review.IndependentV4Test" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

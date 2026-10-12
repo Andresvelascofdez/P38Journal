@@ -1,0 +1,2 @@
+10-12 23:20:19.219  8755  8770 I TestRunner: started: operationalAdoptionIsAuditedAndCreatesNoNewCompletedWork(dev.p38journal.data.RepositoryTest)
+10-12 23:20:19.247  8755  8770 I TestRunner: finished: operationalAdoptionIsAuditedAndCreatesNoNewCompletedWork(dev.p38journal.data.RepositoryTest)

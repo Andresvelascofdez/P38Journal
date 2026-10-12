@@ -1,0 +1,606 @@
+10-12 23:04:05.862  6284  6314 I TestRunner: started: textPdfSearchAndBookmarksAreReal(dev.p38journal.platform.DocumentViewerTest)
+10-12 23:04:05.865  6284  6314 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@c9ed181]
+10-12 23:04:05.868  6284  6314 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+10-12 23:04:05.874   701  1210 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@74abdd5b does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-12 23:04:05.907  1060  1060 D RecentsView: onTaskRemoved: 308, not handling task stack changes
+10-12 23:04:05.907  1060  1060 D RecentsView: onTaskRemoved: 308, not handling task stack changes
+10-12 23:04:05.916  1060  1060 W SplitSelectStateCtor: Missing session instanceIds
+10-12 23:04:05.916  1060  1060 D StatsLog: LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
+10-12 23:04:05.924   564   925 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:04:05.925  6284  6284 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@3a9f0d6 in: PRE_ON_CREATE
+10-12 23:04:05.926  6284  6284 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+10-12 23:04:05.931  6284  6284 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@3a9f0d6 in: CREATED
+10-12 23:04:05.932  6284  6284 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=androidx.activity.ComponentActivity@3a9f0d6
+10-12 23:04:05.934  6284  6284 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@3a9f0d6 in: STARTED
+10-12 23:04:05.936  6284  6284 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=androidx.activity.ComponentActivity@3a9f0d6
+10-12 23:04:05.941  6284  6284 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@3a9f0d6 in: RESUMED
+10-12 23:04:05.941  6284  6284 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=androidx.activity.ComponentActivity@3a9f0d6
+10-12 23:04:05.946   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:04:05.947   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:04:05.947   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:04:05.947   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:04:05.947   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:04:05.947   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:04:05.947   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:04:05.947   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:04:05.947   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:04:06.006   701   721 I ActivityTaskManager: Displayed dev.p38journal.debug/androidx.activity.ComponentActivity for user 0: +114ms
+10-12 23:04:06.012  6345  6345 D VRI[InstrumentationActivityInvoker$EmptyActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-12 23:04:06.041  6345  6345 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@a6b2e3e
+10-12 23:04:06.043  6345  6345 D ViewRootImpl: Skipping stats log for color mode
+10-12 23:04:06.053  4889  4922 E TraceManagerImpl: Trace WorkManager:TikTokListenableWorker startWork timed out after 1201966 ms. Complete trace: # rkt@6966eb19
+10-12 23:04:06.053  4889  4922 E TraceManagerImpl: rky:
+10-12 23:04:06.053  4889  4922 E TraceManagerImpl: 	at tk_trace.Read PackageSuspensionHandlerPreferences(Started After:0)
+10-12 23:04:06.053  4889  4922 E TraceManagerImpl: 	at tk_trace.Update PackageSuspensionHandlerPreferences(Started After:0)
+10-12 23:04:06.053  4889  4922 E TraceManagerImpl: 	at tk_trace.Perform task for WorkerId MY_PACKAGE_REPLACED_COALESCED_BROADCAST_WORKER_ID(Started After:0)
+10-12 23:04:06.053  4889  4922 E TraceManagerImpl: 	at tk_trace.Processing task for broadcast receiver.(Started After:0)
+10-12 23:04:06.053  4889  4922 E TraceManagerImpl: 	at tk_trace.NoAccountWorkerFactory startWork()(Started After:0)
+10-12 23:04:06.053  4889  4922 E TraceManagerImpl: 	at tk_trace.com.google.android.apps.wellbeing.task.Task startWork()(Started After:0)
+10-12 23:04:06.053  4889  4922 E TraceManagerImpl: 	at tk_trace.com.google.android.apps.wellbeing.task.Task startWork()(Started After:0)
+10-12 23:04:06.053  4889  4922 E TraceManagerImpl: 	at tk_trace.WorkManager:TikTokListenableWorker startWork(Started After:0)
+10-12 23:04:06.057  1060  1060 D RecentsView: onTaskRemoved: 309, not handling task stack changes
+10-12 23:04:06.057  1060  1060 D RecentsView: onTaskRemoved: 309, not handling task stack changes
+10-12 23:04:06.071   701   810 I ImeTracker: dev.p38journal.debug:dc16447: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:04:06.072  6284  6284 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:04:06.073  6284  6284 I ImeTracker: dev.p38journal.debug:dc16447: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:04:06.073  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:04:06.074  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:04:06.074   701  1100 I ImeTracker: system_server:980a739a: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:04:06.074   701   724 I ImeTracker: system_server:980a739a: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:04:06.078  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=dev.p38journal.debug, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: EmojiCompatManager.getEmojiCompatIfLoaded():343 EmojiCompat.init() was never called.
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: java.lang.IllegalStateException: EmojiCompat is not initialized. Please call EmojiCompat.init() first
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at asx.p(PG:6)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at axb.b(PG:13)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at jnr.b(PG:2)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at jnr.c(PG:4)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at jnr.f(PG:3)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at jnx.c(PG:3)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at kif.cz(PG:47)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at lhl.run(PG:1025)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at jaf.execute(PG:12)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at nco.v(PG:13)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at lhn.m(PG:96)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at lhn.k(PG:25)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at kgn.onStartInput(PG:250)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at android.inputmethodservice.InputMethodService.doStartInput(InputMethodService.java:3521)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at android.inputmethodservice.InputMethodService$InputMethodImpl.startInput(InputMethodService.java:879)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at android.inputmethodservice.InputMethodService$InputMethodImpl.dispatchStartInput(InputMethodService.java:908)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at android.inputmethodservice.IInputMethodWrapper.executeMessage(IInputMethodWrapper.java:201)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at com.android.internal.os.HandlerCaller$MyHandler.handleMessage(HandlerCaller.java:44)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at android.os.Handler.dispatchMessage(Handler.java:110)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at android.os.Looper.loopOnce(Looper.java:248)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at android.os.Looper.loop(Looper.java:338)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at android.app.ActivityThread.main(ActivityThread.java:9067)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at java.lang.reflect.Method.invoke(Native Method)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)
+10-12 23:04:06.079  5001  5001 I EmojiCompatManager: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)
+10-12 23:04:06.080  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:04:06.180  1060  1060 D WorkspaceRevealAnim: onAnimationEnd: workspace alpha = 1.0
+10-12 23:04:06.319  1060  1060 D VRI[NexusLauncherActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-12 23:04:06.329  6345  6350 I rnal.debug.test: Compiler allocated 5042KB to compile void android.view.ViewRootImpl.performTraversals()
+10-12 23:04:06.333  1060  1060 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+10-12 23:04:06.333   701  6371 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-12 23:04:06.339   701  6371 I EGL_emulation: Opening libGLESv2_emulation.so
+10-12 23:04:06.343   701  6371 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-12 23:04:06.345  1060  1060 D BaseDepthController: setSurface:
+10-12 23:04:06.345  1060  1060 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-12 23:04:06.345  1060  1060 D BaseDepthController: 	mBaseSurface: null
+10-12 23:04:06.345  1060  1060 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+10-12 23:04:06.348   701   845 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+10-12 23:04:06.349  1060  1060 D StateManager: goToState - fromState: Normal, toState: Normal, partial trace:
+10-12 23:04:06.349  1060  1060 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:4)
+10-12 23:04:06.349  1060  1060 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:1)
+10-12 23:04:06.349  1060  1060 D StateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:34)
+10-12 23:04:06.350  1060  1060 D StatsLog: LAUNCHER_ONSTOP
+10-12 23:04:06.351   701   845 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+10-12 23:04:06.351  1060  1060 D StatsLog: LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
+10-12 23:04:06.355   701   845 D InetDiagMessage: Destroyed live tcp sockets for uids={10168} in 7ms
+10-12 23:04:06.364   701  1883 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:04:06.384  4783  4794 W ssioncontroller: Suspending all threads took: 6.269ms
+10-12 23:04:06.393  4783  4794 W ssioncontroller: Reducing the number of considered missed Gc histogram windows from 119 to 100
+10-12 23:04:06.520  6284  6325 D pdf_document_jni: Creating FPDF_DOCUMENT from fd: 133
+10-12 23:04:06.520  6284  6325 D pdf_document_jni: Deleting Document: 0x7e17a1871d90
+10-12 23:04:06.520  6284  6325 D pdf_document_jni: Destroyed Document: 0x7e17a1871d90
+10-12 23:04:06.557  6284  6323 D pdf_document_jni: Creating FPDF_DOCUMENT from fd: 136
+10-12 23:04:06.569  6284  6323 D pdf_document_jni: Deleting Document: 0x7e17a1868550
+10-12 23:04:06.569  6284  6323 D pdf_document_jni: Destroyed Document: 0x7e17a1868550
+10-12 23:04:06.596   701   845 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+10-12 23:04:06.596   701   845 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+10-12 23:04:06.597   701   845 D InetDiagMessage: Destroyed live tcp sockets for uids={10152} in 1ms
+10-12 23:04:06.619  6284  6325 D PdfBox-Android: Type 4 GSUB lookup table is not supported and will be ignored
+10-12 23:04:06.619  6284  6325 D PdfBox-Android: Type 4 GSUB lookup table is not supported and will be ignored
+10-12 23:04:06.619  6284  6325 D PdfBox-Android: Type 6 GSUB lookup table is not supported and will be ignored
+10-12 23:04:06.619  6284  6325 D PdfBox-Android: Type 4 GSUB lookup table is not supported and will be ignored
+10-12 23:04:06.619  6284  6325 D PdfBox-Android: Type 4 GSUB lookup table is not supported and will be ignored
+10-12 23:04:06.637  6284  6325 W PdfBox-Android: Using fallback font LiberationSans for base font Times-Bold
+10-12 23:04:06.642  6284  6325 W PdfBox-Android: Using fallback font Roboto-Regular for base font Times-Italic
+10-12 23:04:06.645  6284  6325 W PdfBox-Android: Using fallback font LiberationSans for base font Times-BoldItalic
+10-12 23:04:06.651  6284  6325 W PdfBox-Android: Using fallback font LiberationSans for base font Helvetica-Bold
+10-12 23:04:06.653  6284  6325 W PdfBox-Android: Using fallback font Roboto-Regular for base font Helvetica-Oblique
+10-12 23:04:06.656  6284  6325 W PdfBox-Android: Using fallback font LiberationSans for base font Helvetica-BoldOblique
+10-12 23:04:06.671  6284  6289 W 38journal.debug: Cleared Reference was only reachable from finalizer (only reported once)
+10-12 23:04:06.671  6284  6325 W PdfBox-Android: Using fallback font Roboto-Regular for base font Symbol
+10-12 23:04:06.675  6284  6325 W PdfBox-Android: Using fallback font Roboto-Regular for base font ZapfDingbats
+10-12 23:04:06.771  6284  6284 D InsetsController: show(ime(), fromIme=false)
+10-12 23:04:06.771  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:04:06.771  6284  6284 I ImeTracker: dev.p38journal.debug:8c51352c: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT_BY_INSETS_API fromUser false
+10-12 23:04:06.771  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:04:06.773  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=dev.p38journal.debug, inputType=8001, inputTypeString=Normal[AutoCorrect], enableLearning=true, autoCorrection=true, autoComplete=true, imeOptions=2000006, privateImeOptions=null, actionName=DONE, actionLabel=null, initialSelStart=0, initialSelEnd=0, initialCapsMode=0, label=null, fieldId=-1, fieldName=null, extras=Bundle[mParcelledData.dataSize=404], hintText=null, hintLocales=[]}}, false)
+10-12 23:04:06.872  6284  6284 I ImeTracker: dev.p38journal.debug:e2072d43: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+10-12 23:04:06.872  6284  6284 D InsetsController: show(ime(), fromIme=false)
+10-12 23:04:06.872  6284  6284 I ImeTracker: dev.p38journal.debug:e2072d43: onCancelled at PHASE_CLIENT_REPORT_REQUESTED_VISIBLE_TYPES
+10-12 23:04:06.873  6284  6284 W RemoteInputConnectionImpl: requestCursorUpdates on inactive InputConnection
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: EmojiCompatManager.getEmojiCompatIfLoaded():343 EmojiCompat.init() was never called.
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: java.lang.IllegalStateException: EmojiCompat is not initialized. Please call EmojiCompat.init() first
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at asx.p(PG:6)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at axb.b(PG:13)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at jnr.b(PG:2)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at jnr.c(PG:4)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at jnr.f(PG:3)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at jnx.c(PG:3)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at kif.cz(PG:47)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at lhl.run(PG:1025)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at jaf.execute(PG:12)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at nco.v(PG:13)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at lhn.m(PG:96)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at lhn.k(PG:25)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at kgn.onStartInput(PG:250)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at android.inputmethodservice.InputMethodService.doStartInput(InputMethodService.java:3521)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at android.inputmethodservice.InputMethodService$InputMethodImpl.startInput(InputMethodService.java:879)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at android.inputmethodservice.InputMethodService$InputMethodImpl.dispatchStartInput(InputMethodService.java:908)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at android.inputmethodservice.IInputMethodWrapper.executeMessage(IInputMethodWrapper.java:201)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at com.android.internal.os.HandlerCaller$MyHandler.handleMessage(HandlerCaller.java:44)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at android.os.Handler.dispatchMessage(Handler.java:110)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at android.os.Looper.loopOnce(Looper.java:248)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at android.os.Looper.loop(Looper.java:338)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at android.app.ActivityThread.main(ActivityThread.java:9067)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at java.lang.reflect.Method.invoke(Native Method)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)
+10-12 23:04:06.874  5001  5001 I EmojiCompatManager: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)
+10-12 23:04:06.875  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:04:06.877  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=dev.p38journal.debug, inputType=8001, inputTypeString=Normal[AutoCorrect], enableLearning=true, autoCorrection=true, autoComplete=true, imeOptions=2000006, privateImeOptions=null, actionName=DONE, actionLabel=null, initialSelStart=0, initialSelEnd=0, initialCapsMode=0, label=null, fieldId=-1, fieldName=null, extras=Bundle[mParcelledData.dataSize=404], hintText=null, hintLocales=[]}}, true)
+10-12 23:04:06.877  5001  5001 W SessionManager: SessionManager.beginSession():53 Try to begin an already begun session [INPUT_SESSION], end it first
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: EmojiCompatManager.getEmojiCompatIfLoaded():343 EmojiCompat.init() was never called.
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: java.lang.IllegalStateException: EmojiCompat is not initialized. Please call EmojiCompat.init() first
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at asx.p(PG:6)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at axb.b(PG:13)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at jnr.b(PG:2)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at jnr.c(PG:4)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at jnr.f(PG:3)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at jnx.c(PG:3)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at kif.cz(PG:47)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at lhl.run(PG:1025)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at jaf.execute(PG:12)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at nco.v(PG:13)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at lhn.m(PG:96)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at lhn.k(PG:25)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at kgn.onStartInput(PG:250)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at android.inputmethodservice.InputMethodService.doStartInput(InputMethodService.java:3521)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at android.inputmethodservice.InputMethodService$InputMethodImpl.restartInput(InputMethodService.java:891)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at android.inputmethodservice.InputMethodService$InputMethodImpl.dispatchStartInput(InputMethodService.java:906)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at android.inputmethodservice.IInputMethodWrapper.executeMessage(IInputMethodWrapper.java:201)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at com.android.internal.os.HandlerCaller$MyHandler.handleMessage(HandlerCaller.java:44)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at android.os.Handler.dispatchMessage(Handler.java:110)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at android.os.Looper.loopOnce(Looper.java:248)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at android.os.Looper.loop(Looper.java:338)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at android.app.ActivityThread.main(ActivityThread.java:9067)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at java.lang.reflect.Method.invoke(Native Method)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:593)
+10-12 23:04:06.880  5001  5001 I EmojiCompatManager: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:932)
+10-12 23:04:06.880  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:04:06.883  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onCreateInputView():1233 onCreateInputView()
+10-12 23:04:06.897  5001  5001 I AndroidIME: KeyboardViewManagerV2.updateKeyboardBackgroundFrameVisibility():327 Set background frame visibility. old:8, new:8
+10-12 23:04:06.897  5001  5001 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():46 leave 281 height for app when ime window height:2337, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1940
+10-12 23:04:06.901  5001  5001 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():46 leave 281 height for app when ime window height:2337, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1940
+10-12 23:04:06.902  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInputView():1392 onStartInputView(EditorInfo{EditorInfo{packageName=dev.p38journal.debug, inputType=8001, inputTypeString=Normal[AutoCorrect], enableLearning=true, autoCorrection=true, autoComplete=true, imeOptions=2000006, privateImeOptions=null, actionName=DONE, actionLabel=null, initialSelStart=0, initialSelEnd=0, initialCapsMode=0, label=null, fieldId=-1, fieldName=null, extras=Bundle[{android.support.text.emoji.emojiCompat_metadataVersion=12, androidx.core.view.inputmethod.EditorInfoCompat.STYLUS_HANDWRITING_ENABLED=true, android.support.text.emoji.emojiCompat_replaceAll=false}], hintText=null, hintLocales=[]}}, false)
+10-12 23:04:06.908  5001  5001 I NativeLibHelper: NativeLibHelper.loadLibrary():162 Loaded native library:integrated_shared_object (result=true)
+10-12 23:04:06.911  5001  5001 I KeyboardHeightUtil: KeyboardHeightUtil.getOemKeyboardHeightRatio():161 systemKeyboardHeightRatio:1.000000.
+10-12 23:04:06.921  5001  5007 W putmethod.latin: Missing inline cache for int sey.a(java.lang.Object)
+10-12 23:04:06.929  5001  5001 I InputContextChangeTracker: InputContextChangeTracker.fixLyingSelectionRangeFromSurroundingText():1665 fixLyingSelectionRangeFromSurroundingText(): [0, 0]([0, 0]) -> [8, 8]([8, 8])
+10-12 23:04:06.931  5001  5001 I AndroidIME: InputBundleManager.loadActiveInputBundleId():483 loadActiveInputBundleId: en-US, ime_english_united_states
+10-12 23:04:06.938  5001  5001 I LatinIme: LatinIme.<init>():392 Language = en-US
+10-12 23:04:06.945  5001  5001 I Delight5Facilitator: Delight5Facilitator.initializeForIme():729 initializeForIme() : Locale = [en_US], layout = qwerty
+10-12 23:04:06.945  5001  5001 I Delight5Facilitator: Delight5Facilitator.resetDecoder():901 resetDecoder() : Locale = [en_US]
+10-12 23:04:06.946   701  1210 D FileUtils: Rounded bytes from 2066776064 to 4000000000
+10-12 23:04:06.960  5001  5001 I Delight5Decoder: Delight5DecoderWrapper.createOrResetDecoder():383 Decoder reset
+10-12 23:04:06.961   701   845 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+10-12 23:04:06.964   701   845 D InetDiagMessage: Destroyed 4 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+10-12 23:04:06.964   701   845 D InetDiagMessage: Destroyed live tcp sockets for uids={10146} in 3ms
+10-12 23:04:06.992  5001  5071 I MainLanguageModelLoader: MainLanguageModelLoader.loadInternal():150 Running LM loader for [en_US]
+10-12 23:04:06.994  5001  6378 I MDDSuperpacks: MDDSuperpacks$1.onSuccess():128 superpack kc_tflite_model migrated to MDD
+10-12 23:04:06.994  5001  6374 E MDDSuperpacks: MDDSuperpacks.parseManifest():476 cannot find metadata for delight_overrides
+10-12 23:04:06.996  5001  6383 I MDDSuperpacks: MDDSuperpacks$1.onSuccess():128 superpack next-word-predictor migrated to MDD
+10-12 23:04:06.996  5001  6378 I MDDSuperpacks: MDDSuperpacks$1.onSuccess():128 superpack transformer_expression migrated to MDD
+10-12 23:04:06.996  5001  6374 I MDDSuperpacks: MDDSuperpacks$1.onSuccess():128 superpack expressive_concepts_triggering migrated to MDD
+10-12 23:04:06.998  5001  5001 I AndroidIME: AbstractIme.onActivate():90 LatinIme.onActivate() : EditorInfo = EditorInfo{packageName=dev.p38journal.debug, inputType=8001, inputTypeString=Normal[AutoCorrect], enableLearning=true, autoCorrection=true, autoComplete=true, imeOptions=2000006, privateImeOptions=null, actionName=DONE, actionLabel=null, initialSelStart=0, initialSelEnd=0, initialCapsMode=0, label=null, fieldId=-1, fieldName=null, extras=Bundle[{android.support.text.emoji.emojiCompat_metadataVersion=12, androidx.core.view.inputmethod.EditorInfoCompat.STYLUS_HANDWRITING_ENABLED=true, android.support.text.emoji.emojiCompat_replaceAll=false}], hintText=null, hintLocales=[]}, IncognitoMode = false, DeviceLocked = false
+10-12 23:04:06.999  5001  6379 I SuperDelight: SuperDelightBundledMetadataParser.addSystemLms():202 system lm dir /system/usr/share/ime/google/d3_lms does not exist or is not readable
+10-12 23:04:06.999  5001  6379 I SuperDelight: SuperDelightBundledMetadataParser.parse():192 SuperDelightBundledMetadataParser#parse(): manifest parsed with 1 packs
+10-12 23:04:07.000  5001  5001 I InputBundle: InputBundle.consumeEvent():949 Skip consuming an event as keyboard status is 0
+10-12 23:04:07.003  5001  5001 I LatinIme: LatinIme.updateEnableInlineSuggestionsOnDecoderSideFlags():1256 inline flag updated to:false
+10-12 23:04:07.004  5001  5071 I DelightDataFileManagerLanguageModelProvider: DelightDataFileManagerLanguageModelProvider.fetchLanguageModel():76 find data en-840 mdd
+10-12 23:04:07.007  5001  5071 I SuperDelight: SuperDelightManager.syncBundledLanguageModels():733 syncBundledLanguageModels(): clearing bundled_delight selection
+10-12 23:04:07.008  5001  5071 I LmManager: LmManager.asyncUpdateEnabledLanguageModels():96 asyncUpdateEnabledLanguageModels()
+10-12 23:04:07.008  5001  5071 I SuperDelight: SuperDelightManager.initializeOverridesSuperpacks():405 initializeOverridesSuperpacks()
+10-12 23:04:07.009  5001  5071 I DelightKLPDownloader: DelightKLPDownloader.downloadKLPInternal():199 downloading KLP for en_840
+10-12 23:04:07.009  5001  5071 I ManifestedDataDownloader: ManifestedDataDownloader.download():63 downloading manifest https://www.gstatic.com/android/keyboard/dictionarypack/2025031619/metadata.json-perlang/en-840.json?v=2025052001
+10-12 23:04:07.009  5001  5001 I LatinIme: LatinIme.updateEnableInlineSuggestionsOnDecoderSideFlags():1256 inline flag updated to:false
+10-12 23:04:07.010  5001  5071 I DelightDataFileManagerLanguageModelProvider: DelightDataFileManagerLanguageModelProvider.fetchLanguageModel():76 find data en-US bundled_delight
+10-12 23:04:07.011  5001  5071 I LmManager: LmManager.asyncUpdateEnabledLanguageModels():96 asyncUpdateEnabledLanguageModels()
+10-12 23:04:07.011  5001  5071 I SuperDelight: SuperDelightManager.initializeOverridesSuperpacks():405 initializeOverridesSuperpacks()
+10-12 23:04:07.012  5001  5071 I DelightKLPDownloader: DelightKLPDownloader.downloadKLPInternal():199 downloading KLP for en_840
+10-12 23:04:07.012  5001  5071 I ManifestedDataDownloader: ManifestedDataDownloader.download():63 downloading manifest https://www.gstatic.com/android/keyboard/dictionarypack/2025031619/metadata.json-perlang/en-840.json?v=2025052001
+10-12 23:04:07.013  5001  6387 I SuperDelight: SuperDelightManager.initializeBundledDelightSuperpacks():379 initializeBundledDelightSuperpacks()
+10-12 23:04:07.015  5001  5071 I MainLanguageModelLoader: MainLanguageModelLoader.updateLmAvailableState():359 updateLmAvailableState(): locale? en_US prevState? AVAILABLE
+10-12 23:04:07.015  5001  5071 I MainLanguageModelLoader: MainLanguageModelLoader.updateLmAvailableState():395 updateLmAvailableState(): locale? en_US newState? AVAILABLE
+10-12 23:04:07.015  5001  5071 I Delight5Facilitator: BlocklistLoader.call():39 Running blocklist loader
+10-12 23:04:07.016  5001  5061 I Delight5Decoder: Delight5DecoderWrapper.loadLanguageModel():740 loadLanguageModel() : 1, version [2025031300]
+10-12 23:04:07.018  5001  5071 I Delight5Facilitator: ContactsLanguageModelLoader.call():37 Running contacts language model loader
+10-12 23:04:07.019  5001  5071 I Delight5Facilitator: ContactsLanguageModelLoader.call():49 Contacts language model is unloaded: preferences=false, deviceLocked=false, blockPersonalData=false
+10-12 23:04:07.019  5001  5071 I Delight5Facilitator: PersonalLanguageModelLoader.call():47 Running personal language model loader
+10-12 23:04:07.020  5001  5071 I Delight5Facilitator: UserHistoryLanguageModelLoader.call():84 Running user history language model loader
+10-12 23:04:07.022  5001  5071 I EmojiSuperpacksManager: EmojiSuperpacksManager.triggerSync():382 triggerSync() : isBundled = false
+10-12 23:04:07.024  5001  5071 I EmojiSuperpacksManager: EmojiSuperpacksManager.triggerSync():382 triggerSync() : isBundled = true
+10-12 23:04:07.025  5001  5071 I EmojiShortcutsLoader: EmojiShortcutsLoader.getEmojiShortcuts():132 Emoji shortcut file does not exist.
+10-12 23:04:07.025  5001  5071 I EmojiShortcutsLoader: EmojiShortcutsLoader.call():71 0 emoji shortcut maps loaded.
+10-12 23:04:07.025  5001  5071 I EmojiShortcutsLoader: EmojiShortcutsLoader.call():82 Finished loading emoji shortcuts
+10-12 23:04:07.025  5001  6384 I SuperDelight: SuperDelightManager.initializeBundledDelightSuperpacks():379 initializeBundledDelightSuperpacks()
+10-12 23:04:07.026  5001  5071 I Delight5Facilitator: EmailLanguageModelLoader.call():32 Running email language model loader
+10-12 23:04:07.026  5001  5071 I Delight5Facilitator: KeyCorrectionTfliteModelLoader.call():31 Running Key Correction Tflite Model loader
+10-12 23:04:07.027  5001  5001 I InputBundle: InputBundle.consumeEvent():949 Skip consuming an event as keyboard status is 0
+10-12 23:04:07.027  5001  5071 I MDDSuperpacks: MDDSuperpacks.getPacks():548 getting packs for superpack: next-word-predictor
+10-12 23:04:07.028  5001  6389 I SuperDelight: SuperDelightManager.syncOverridesLanguageModels():687 SuperDelightManager#syncOverridesLanguageModels(): Superpack delight_overrides not found or negative version provided
+10-12 23:04:07.028  5001  6385 I MDDSuperpacks: MDDSuperpacks.getPacks():548 getting packs for superpack: delight_overrides
+10-12 23:04:07.029  5001  5001 I InputBundle: InputBundle.consumeEvent():949 Skip consuming an event as keyboard status is 0
+10-12 23:04:07.040  5001  5001 I KeyboardWrapper: KeyboardWrapper.activateKeyboard():562 activateKeyboard(): type=prime, status=0, imeDef=kyj{stringId=ime_english_united_states, language=en-US, languageTag=en-US, processedConditions={enable_number_row=false, device=phone}, className=com.google.android.libraries.inputmethod.ime.experiment.ExperimentImeWrapper, label=0, keyEventInterpreter=null, inlineComposing=true, autoCapital=true, announceAutoSelectedCandidate=true, statusIcon=0, primeKeyboardType=SOFT, indicatorIcon=0, indicatorLabel=US, displayAppCompletions=true, extraValues=kyb{#0x7f0b021c=TypedValue{t=0x3/d=0x0 "writing_helper_enable_by_word_revert=false"}, #0x7f0b0222=TypedValue{t=0x3/d=0x0 "com.google.android.apps.inputmethod.libs.latin5.LatinIme"}, #0x7f0b0223=TypedValue{t=0x3/d=0x0 "com.google.android.apps.inputmethod.libs.edittracker.EditTrackingImeWrapper"}, #0x7f0b0224=TypedValue{t=0x3/d=0x0 "com.google.android.apps.inputmethod.libs.latin5.LatinIme"}}, processors=lac@fbaaffa, unacceptableMetaKeys=4098, languageSpecificSettings=0, asciiCapable=true, alwaysShowSuggestions=false, useAsciiPasswordKeyboard=false, secondaryIme=null, keyboardGroupDef=kzl@2e19832, phenotypeFlagId=0, localizationLanguageTag=null, supportsInlineSuggestion=true}
+10-12 23:04:07.040  5001  5001 I KeyboardManager: KeyboardManager.requestKeyboard():248 Creating keyboard prime, imeId=ime_english_united_states, cacheKey=theme_!gsf_!pgsans_!pgsf_!use_system_font_BORDER=true_FLAVOR_DPI=XXHDPI_KEYBOARD_WIDTH_CATEGORY=NORMAL_LIGHT_THEME=true_PHYSICAL_DIAGONAL=6.1297245_SCREEN_SHORTEST_WIDTH=411_SCREEN_SHORTEST_WIDTH_NO_SCALE=411_bottom4dp_enable_google_fonts_icons=true_enable_popup_on_keypress=true_keyboard_redesign_google_sans=true_noshadow_overlay_builtin_dynamic_color_light_base.binarypb:gm3-light-fffaf8ff-ff495d92-82b625f90d810779661adb8ce93b5ac5_silkpopup_unify_function_key_color=true
+10-12 23:04:07.041  5001  5001 I KeyboardWrapper: KeyboardWrapper.onKeyboardReady():212 onKeyboardReady(): type=null(prime), kb=com.google.android.apps.inputmethod.latin.keyboard.LatinPrimeKeyboard@f0d057e
+10-12 23:04:07.041  5001  5001 I KeyboardWrapper: KeyboardWrapper.doActivateKeyboard():589 doActivateKeyboard(): prime
+10-12 23:04:07.042  5001  5041 I SP      : Registering emoji.2025011518, url: https://www.gstatic.com/android/keyboard/modelpack/emoji/20250115185814/superpacks_manifest.zip, constraints: m:*:*:*, flags: *, requested: 2025011518, current: 2025011518
+10-12 23:04:07.044  5001  5070 I EmojiCompatManager: EmojiCompatManager.getEmojiCompatIfLoaded():343 EmojiCompat.init() was never called.
+10-12 23:04:07.044  5001  5070 I EmojiCompatManager: java.lang.IllegalStateException: EmojiCompat is not initialized. Please call EmojiCompat.init() first
+10-12 23:04:07.044  5001  5070 I EmojiCompatManager: 	at asx.p(PG:6)
+10-12 23:04:07.044  5001  5070 I EmojiCompatManager: 	at axb.b(PG:13)
+10-12 23:04:07.044  5001  5070 I EmojiCompatManager: 	at jnr.b(PG:2)
+10-12 23:04:07.044  5001  5070 I EmojiCompatManager: 	at jnr.c(PG:4)
+10-12 23:04:07.044  5001  5070 I EmojiCompatManager: 	at ddi.b(PG:1940)
+10-12 23:04:07.044  5001  5070 I EmojiCompatManager: 	at lat.d(PG:11)
+10-12 23:04:07.044  5001  5070 I EmojiCompatManager: 	at ddh.g(PG:8)
+10-12 23:04:07.044  5001  5070 I EmojiCompatManager: 	at lcb.c(PG:78)
+10-12 23:04:07.044  5001  5070 I EmojiCompatManager: 	at kci.run(PG:31)
+10-12 23:04:07.044  5001  5070 I EmojiCompatManager: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+10-12 23:04:07.044  5001  5070 I EmojiCompatManager: 	at qfr.a(PG:3)
+10-12 23:04:07.044  5001  5070 I EmojiCompatManager: 	at qev.run(PG:19)
+10-12 23:04:07.044  5001  5070 I EmojiCompatManager: 	at qfs.run(PG:5)
+10-12 23:04:07.044  5001  5070 I EmojiCompatManager: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+10-12 23:04:07.044  5001  5070 I EmojiCompatManager: 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+10-12 23:04:07.044  5001  5070 I EmojiCompatManager: 	at jag.run(PG:8)
+10-12 23:04:07.044  5001  5070 I EmojiCompatManager: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+10-12 23:04:07.044  5001  5070 I EmojiCompatManager: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+10-12 23:04:07.044  5001  5070 I EmojiCompatManager: 	at java.lang.Thread.run(Thread.java:1119)
+10-12 23:04:07.044  5001  5070 I EmojiCompatManager: 	at izq.run(PG:8)
+10-12 23:04:07.051  5001  5041 I SP      : Registering bundled_emoji.2025011518, url: null, constraints: m:*:*:*, flags: *, requested: 2025011518, current: 2025011518
+10-12 23:04:07.066  5001  5041 I EmojiSlicingStrategy: EmojiSlicingStrategy.matchEnabledLocalesWithPackLocales():129 matchEnabledLocalesWithPackLocales() : User enabled 1 locales; returning 1 slices
+10-12 23:04:07.066  5001  5041 I SP      : Syncing emoji (2025011518) with slices: [{2b8bc459159046c494d928dec1c678ff, m:*:*:*}], metadata: false
+10-12 23:04:07.072  5001  5041 I EmojiSlicingStrategy: EmojiSlicingStrategy.matchEnabledLocalesWithPackLocales():129 matchEnabledLocalesWithPackLocales() : User enabled 1 locales; returning 1 slices
+10-12 23:04:07.072  5001  5041 I SP      : Syncing bundled_emoji (2025011518) with slices: [{2b8bc459159046c494d928dec1c678ff, m:*:*:*}], metadata: false
+10-12 23:04:07.091  5001  5061 I tflite  : Initialized TensorFlow Lite runtime.
+10-12 23:04:07.096  5001  5008 W putmethod.latin: Reducing the number of considered missed Gc histogram windows from 119 to 100
+10-12 23:04:07.109  5001  5001 I KeyboardViewHelper: KeyboardViewHelper.getView():178 Get view with height ratio:1.000000
+10-12 23:04:07.124  5651  5757 I FontLog : (REDACTED) Received query %s, URI %s
+10-12 23:04:07.124  5651  5757 I FontLog : (REDACTED) Query [%s] resolved to %s
+10-12 23:04:07.128  5651  5757 I FontLog : (REDACTED) Font PFD returned from cache for %s
+10-12 23:04:07.128  5651  5757 I FontLog : (REDACTED) Fetch %s end status %s
+10-12 23:04:07.132  5651  5757 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+10-12 23:04:07.154  5001  6385 I MDDSuperpacks: MDDSuperpacks.getPacks():548 getting packs for superpack: delight_overrides
+10-12 23:04:07.156  5001  6389 I SuperDelight: SuperDelightManager.syncOverridesLanguageModels():687 SuperDelightManager#syncOverridesLanguageModels(): Superpack delight_overrides not found or negative version provided
+10-12 23:04:07.156   701  1883 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@72f704bc does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-12 23:04:07.159   564   616 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:04:07.163  6284  6284 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@3a9f0d6 in: PAUSED
+10-12 23:04:07.164  6284  6284 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=androidx.activity.ComponentActivity@3a9f0d6
+10-12 23:04:07.172  6345  6359 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-12 23:04:07.172  6345  6359 I EGL_emulation: Opening libGLESv2_emulation.so
+10-12 23:04:07.175  5001  5041 I SP      : Sync for emoji succeeded in 115 ms: no changes
+10-12 23:04:07.176  5001  5001 W HWUI    : Image decoding logging dropped!
+10-12 23:04:07.176  5001  5041 I SP      : Sync for bundled_emoji succeeded in 115 ms: no changes
+10-12 23:04:07.176  5001  5041 I SP      : GC for 'emoji' (10) with ttl of 0 ms took 0 ms (0/0/0)
+10-12 23:04:07.176  5001  5041 I SP      : GC for 'bundled_emoji' (10) with ttl of 0 ms took 0 ms (0/0/0)
+10-12 23:04:07.176  6345  6359 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-12 23:04:07.178  5001  5001 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():46 leave 281 height for app when ime window height:2337, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1940
+10-12 23:04:07.178  5001  5001 I SoftKeyboardView: SoftKeyboardView.setMaxHeight():1089 Set max keyboard height:1940.
+10-12 23:04:07.179  5001  6378 I EmojiSuperpacksManager: EmojiSuperpacksManager.processPackSet():503 processPackSet() : isBundled = true
+10-12 23:04:07.180  5001  6374 I EmojiSuperpacksManager: EmojiSuperpacksManager.processPackSet():503 processPackSet() : isBundled = false
+10-12 23:04:07.180   564   564 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:04:07.181  5001  5001 I GlobeKeyExtension: GlobeKeyExtension.getKeyboardInitialStates():131
+10-12 23:04:07.182  5001  5001 W KeyboardDef: KeyboardDef.getKeyboardViewDef():757 KeyboardViewDef is not found: keyboardDef=kze{processedConditions={enable_more_candidates_view_for_multilingual=false, layout_9key_split=false, enable_secondary_symbols=false, language=en-US, deprecate_long_press_space_for_ime_picker=false, expressions=normal, enable_flick_symbols=true, variant=qwerty, device=phone, keyboard_mode=normal, show_secondary_digits=true, enable_preemptive_decode=true, rtl_layout=false}, globalConditions={global_theme_key=theme_!gsf_!pgsans_!pgsf_!use_system_font_BORDER=true_FLAVOR_DPI=XXHDPI_KEYBOARD_WIDTH_CATEGORY=NORMAL_LIGHT_THEME=true_PHYSICAL_DIAGONAL=6.1297245_SCREEN_SHORTEST_WIDTH=411_SCREEN_SHORTEST_WIDTH_NO_SCALE=411_bottom4dp_enable_google_fonts_icons=true_enable_popup_on_keypress=true_keyboard_redesign_google_sans=true_noshadow_overlay_builtin_dynamic_color_light_base.binarypb:gm3-light-fffaf8ff-ff495d92-82b625f90d810779661adb8ce93b5ac5_silkpopup_unify_function_key_color=true, global_locale=en_US, global_density_dpi=420, global_orientation=1}, className=.latin.keyboard.LatinPrimeKeyboard, resourceIds=[#0x7f17065e, #0x7f1708dc], initialStates=0, keyboardViewDefs=[kzt{direction=null, id=#0x7f0b0166, isScalable=true, layoutId=#0x7f0e0346, type=BODY, touchable=true, defaultShow=true}, kzt{direction=null, id=#0x7f0b0166, isScalable=false, layoutId=#0x7f0e01db, type=FLOATING_CANDIDATES, touchable=false, defaultShow=false}, kzt{direction=LOCALE, id=#0x7f0b0166, isScalable=false, layoutId=#0x7f0e04da, type=HEADER, touchable=true, defaultShow=true}], persistentStates=0, persistentStatesPrefKey=null, popupBubbleLayoutId=#0x7f0e05ce, recentKeyLayoutId=0, recentKeyPopupLayoutId=0, recentKeyType=null, rememberRecentKey=NONE, sessionStates=17592186044419}, type=WIDGET, id=2131427686
+10-12 23:04:07.182  5001  5001 W Keyboard: Keyboard.getKeyboardViewHelper():597 null helper is returned: keyboardDef=kze{processedConditions={enable_more_candidates_view_for_multilingual=false, layout_9key_split=false, enable_secondary_symbols=false, language=en-US, deprecate_long_press_space_for_ime_picker=false, expressions=normal, enable_flick_symbols=true, variant=qwerty, device=phone, keyboard_mode=normal, show_secondary_digits=true, enable_preemptive_decode=true, rtl_layout=false}, globalConditions={global_theme_key=theme_!gsf_!pgsans_!pgsf_!use_system_font_BORDER=true_FLAVOR_DPI=XXHDPI_KEYBOARD_WIDTH_CATEGORY=NORMAL_LIGHT_THEME=true_PHYSICAL_DIAGONAL=6.1297245_SCREEN_SHORTEST_WIDTH=411_SCREEN_SHORTEST_WIDTH_NO_SCALE=411_bottom4dp_enable_google_fonts_icons=true_enable_popup_on_keypress=true_keyboard_redesign_google_sans=true_noshadow_overlay_builtin_dynamic_color_light_base.binarypb:gm3-light-fffaf8ff-ff495d92-82b625f90d810779661adb8ce93b5ac5_silkpopup_unify_function_key_color=true, global_locale=en_US, global_density_dpi=420, global_orientation=1}, className=.latin.keyboard.LatinPrimeKeyboard, resourceIds=[#0x7f17065e, #0x7f1708dc], initialStates=0, keyboardViewDefs=[kzt{direction=null, id=#0x7f0b0166, isScalable=true, layoutId=#0x7f0e0346, type=BODY, touchable=true, defaultShow=true}, kzt{direction=null, id=#0x7f0b0166, isScalable=false, layoutId=#0x7f0e01db, type=FLOATING_CANDIDATES, touchable=false, defaultShow=false}, kzt{direction=LOCALE, id=#0x7f0b0166, isScalable=false, layoutId=#0x7f0e04da, type=HEADER, touchable=true, defaultShow=true}], persistentStates=0, persistentStatesPrefKey=null, popupBubbleLayoutId=#0x7f0e05ce, recentKeyLayoutId=0, recentKeyPopupLayoutId=0, recentKeyType=null, rememberRecentKey=NONE, sessionStates=17592186044419}, type=WIDGET, helpersCreated=[kkl@7da39b0, kkl@39e6029, kkl@4719fae, null], context.getResources().getConfiguration(): {1.0 310mcc260mnc [en_US] ldltr sw411dp w411dp h914dp 420dpi nrml long port finger qwerty/v/v dpad/v winConfig={ mBounds=Rect(0, 0 - 1080, 2400) mAppBounds=Rect(0, 0 - 1080, 2400) mMaxBounds=Rect(0, 0 - 1080, 2400) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} s.12 fontWeightAdjustment=0}
+10-12 23:04:07.187  5001  5061 I Delight5Decoder: Delight5DecoderWrapper.loadLanguageModel():766 Loaded main LM 1.en
+10-12 23:04:07.188  5001  5001 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():46 leave 281 height for app when ime window height:2337, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1940
+10-12 23:04:07.190   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:04:07.190   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:04:07.190  5001  5001 D CompatChangeReporter: Compat change id reported: 270674727; UID 10160; state: ENABLED
+10-12 23:04:07.190   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:04:07.191  5001  5061 I Delight5Decoder: Delight5DecoderWrapper.loadLanguageModel():740 loadLanguageModel() : 7, version [n/a]
+10-12 23:04:07.193  5001  5061 I native  : I0000 00:00:1791835447.191504    5061 blocklist-assembly.cc:126] LoadBlocklist en
+10-12 23:04:07.194  5001  5061 I Delight5Decoder: Delight5DecoderWrapper.loadLanguageModel():785 Loaded dynamic LM 7.en
+10-12 23:04:07.194  5001  5061 I Delight5Decoder: Delight5DecoderWrapper.loadLanguageModel():740 loadLanguageModel() : 4, version [n/a]
+10-12 23:04:07.196  5001  5061 I Delight5Decoder: Delight5DecoderWrapper.loadLanguageModel():785 Loaded dynamic LM 4.en
+10-12 23:04:07.197  5001  5061 I Delight5Decoder: Delight5DecoderWrapper.loadLanguageModel():740 loadLanguageModel() : 3, version [n/a]
+10-12 23:04:07.199  5001  5001 I AndroidIME: InputBundleManager.startInput():361 startInput() with kzp[keyboardType=prime, payload=null]
+10-12 23:04:07.200  5001  5001 I GlobeKeyExtension: GlobeKeyExtension.onActivate():70
+10-12 23:04:07.202  5001  5061 I Delight5Decoder: Delight5DecoderWrapper.loadLanguageModel():785 Loaded dynamic LM 3.en
+10-12 23:04:07.202  5001  5001 I CrowdsourceExtension: CrowdsourceExtension.checkIfDefaultBrowserIsAllowed():109 Failed to get default browser. The default browser may be deactivated.
+10-12 23:04:07.203  5001  5001 I HardKeyTracker: HardKeyTracker.registerKeySequence():138 Register key sequence lsr{labelResId=2132020165, callback=cbb@649946, lastModifier=2, keyCodes=[56], actions=[0]}
+10-12 23:04:07.203  5651  5757 I FontLog : (REDACTED) Received query %s, URI %s
+10-12 23:04:07.204  5651  5757 I FontLog : (REDACTED) Query [%s] resolved to %s
+10-12 23:04:07.204  5001  5001 I HardKeyTracker: HardKeyTracker.registerKeySequence():138 Register key sequence lsr{labelResId=2132020165, callback=cbb@5e1ee5d, lastModifier=0, keyCodes=[317], actions=[0]}
+10-12 23:04:07.207  5651  5757 I FontLog : (REDACTED) Font PFD returned from cache for %s
+10-12 23:04:07.207  5651  5757 I FontLog : (REDACTED) Fetch %s end status %s
+10-12 23:04:07.209  5001  5001 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.cancelShutdown():100 cancelShutdown()
+10-12 23:04:07.209  5001  5001 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.syncLanguagePacks():112 syncLanguagePacks()
+10-12 23:04:07.211  5651  5661 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+10-12 23:04:07.211  5001  5001 I VoiceInputManager: VoiceInputManager.onKeyboardActivated():1023 onKeyboardActivated() [UD]
+10-12 23:04:07.212  5001  6396 I SpeechFactory: SpeechRecognitionFactory.maybeScheduleAutoPackDownloadForFallback():161 maybeScheduleAutoPackDownloadForFallback()
+10-12 23:04:07.212  5001  6396 I FallbackOnDeviceRecognitionProvider: FallbackOnDeviceRecognitionProvider.maybeScheduleAutoPackDownload():198 maybeScheduleAutoPackDownload() for language tag en-US
+10-12 23:04:07.214  5001  5070 I NetworkInfoNotification: NetworkInfoNotification$Listener.onReceive():107 onNetworkAvailable: networkState = NON_METERED, isAirplaneModeOn = false
+10-12 23:04:07.218  5001  5001 I AccessoryInputModeManager: AccessoryInputModeManager.onModeStarted():322 Accessory input mode started: null
+10-12 23:04:07.220  5001  6379 I DownloadManager: DownloadManager.downloadInternal():412 Download for __KLP_manifest_delight__en-840 scheduled with params DownloadParams{allowMetered=true, requireCharging=false, foreground=false, immediately=true, priority=0}
+10-12 23:04:07.220  5001  6379 I DownloadManager: DownloadManager.startDownload():495 start download of __KLP_manifest_delight__en-840
+10-12 23:04:07.221  5001  5001 I ProactiveUndoTriggerExtension: ProactiveUndoTriggerExtension.eventConsumer$lambda$0():125 kyp{intention=null, keyCode=-10160, DEACTIVATE_SUPPLEMENTARY_KEYBOARD, data=accessory_candidates_consumer}
+10-12 23:04:07.222  5001  5001 W SupplementaryKeyboardsWrapper: SupplementaryKeyboardsWrapper.deactivateKeyboard():160 keyboard accessory_candidates_consumer is not activated before!
+10-12 23:04:07.223  5001  6378 I SuperDelight: SuperDelightBundledMetadataParser.addSystemLms():202 system lm dir /system/usr/share/ime/google/d3_lms does not exist or is not readable
+10-12 23:04:07.224  5001  6378 I SuperDelight: SuperDelightBundledMetadataParser.parse():192 SuperDelightBundledMetadataParser#parse(): manifest parsed with 1 packs
+10-12 23:04:07.224  5001  6378 E MDDSuperpacks: MDDSuperpacks.parseManifest():476 cannot find metadata for delight_overrides
+10-12 23:04:07.225  5001  6390 I MDDSuperpacks: MDDSuperpacks$3.onSuccess():558 packs [tflite-nwp-756c50035b995cfb0f7e8feb7d1b10ee] got for superpack: next-word-predictor
+10-12 23:04:07.225  5001  6378 W MDDSuperpacks: MDDSuperpacks.constructPackSet():578 file group is empty
+10-12 23:04:07.226  5001  6390 I MDDSuperpacks: MDDSuperpacks$3.onSuccess():558 packs [] got for superpack: delight_overrides
+10-12 23:04:07.227  5001  6379 I DownloadManager: DownloadManager$4.onFailure():573 download for __KLP_manifest_delight__en-840 is cancelled
+10-12 23:04:07.227  5001  6379 I DownloadManager: DownloadManager.downloadInternal():410 Previous download for __KLP_manifest_delight__en-840 is cancelled
+10-12 23:04:07.227  5001  6379 I DownloadManager: DownloadManager.downloadInternal():412 Download for __KLP_manifest_delight__en-840 scheduled with params DownloadParams{allowMetered=true, requireCharging=false, foreground=false, immediately=true, priority=0}
+10-12 23:04:07.227  5001  6379 I DownloadManager: DownloadManager.startDownload():495 start download of __KLP_manifest_delight__en-840
+10-12 23:04:07.227  5001  6378 W MDDSuperpacks: MDDSuperpacks.constructPackSet():578 file group is empty
+10-12 23:04:07.227  5001  6390 I MDDSuperpacks: MDDSuperpacks$3.onSuccess():558 packs [] got for superpack: delight_overrides
+10-12 23:04:07.228  5001  6378 E MDDSuperpacks: MDDSuperpacks.parseManifest():476 cannot find metadata for delight_overrides
+10-12 23:04:07.229  5001  6379 I DownloadManager: DownloadManager.downloadInternal():412 Download for __SP_MANIFEST_bundled_delight scheduled with params DownloadParams{allowMetered=true, requireCharging=false, foreground=false, immediately=true, priority=0}
+10-12 23:04:07.229  5001  6379 I DownloadManager: DownloadManager.startDownload():495 start download of __SP_MANIFEST_bundled_delight
+10-12 23:04:07.230  5001  6379 I DownloadManager: DownloadManager$4.onFailure():573 download for __SP_MANIFEST_bundled_delight is cancelled
+10-12 23:04:07.230  5001  6379 I DownloadManager: DownloadManager.downloadInternal():410 Previous download for __SP_MANIFEST_bundled_delight is cancelled
+10-12 23:04:07.230  5001  6379 I DownloadManager: DownloadManager.downloadInternal():412 Download for __SP_MANIFEST_bundled_delight scheduled with params DownloadParams{allowMetered=true, requireCharging=false, foreground=false, immediately=true, priority=0}
+10-12 23:04:07.230  5001  6379 I DownloadManager: DownloadManager.startDownload():495 start download of __SP_MANIFEST_bundled_delight
+10-12 23:04:07.231  5001  6379 I DownloadManager: DownloadManager.downloadInternal():412 Download for __SP_MANIFEST_kc_tflite_model scheduled with params DownloadParams{allowMetered=true, requireCharging=false, foreground=false, immediately=true, priority=0}
+10-12 23:04:07.231  5001  6379 I DownloadManager: DownloadManager.startDownload():495 start download of __SP_MANIFEST_kc_tflite_model
+10-12 23:04:07.231  5001  6379 I DownloadManager: DownloadManager$4.onFailure():573 download for __SP_MANIFEST_kc_tflite_model is cancelled
+10-12 23:04:07.232  5001  6384 I SuperDelight: SuperDelightManager$2.onSuccess():635 delight_overrides sync success, adding to data file manager
+10-12 23:04:07.232  5001  6379 I DownloadManager: DownloadManager.downloadInternal():410 Previous download for __SP_MANIFEST_kc_tflite_model is cancelled
+10-12 23:04:07.232  5001  6387 I SuperDelight: SuperDelightManager$2.onSuccess():635 delight_overrides sync success, adding to data file manager
+10-12 23:04:07.232  5001  6379 I DownloadManager: DownloadManager.downloadInternal():412 Download for __SP_MANIFEST_kc_tflite_model scheduled with params DownloadParams{allowMetered=true, requireCharging=false, foreground=false, immediately=true, priority=0}
+10-12 23:04:07.232  5001  6379 I DownloadManager: DownloadManager.startDownload():495 start download of __SP_MANIFEST_kc_tflite_model
+10-12 23:04:07.234  5001  6379 I DownloadManager: DownloadManager$4.onFailure():573 download for __SP_MANIFEST_kc_tflite_model is cancelled
+10-12 23:04:07.234  5001  6379 I DownloadManager: DownloadManager.downloadInternal():410 Previous download for __SP_MANIFEST_kc_tflite_model is cancelled
+10-12 23:04:07.234  5001  6379 I DownloadManager: DownloadManager.downloadInternal():412 Download for __SP_MANIFEST_kc_tflite_model scheduled with params DownloadParams{allowMetered=true, requireCharging=false, foreground=false, immediately=true, priority=0}
+10-12 23:04:07.234  5001  6379 I DownloadManager: DownloadManager.startDownload():495 start download of __SP_MANIFEST_kc_tflite_model
+10-12 23:04:07.235  5001  6379 I DownloadManager: DownloadManager$4.onFailure():573 download for __SP_MANIFEST_kc_tflite_model is cancelled
+10-12 23:04:07.235  5001  6379 I DownloadManager: DownloadManager.downloadInternal():410 Previous download for __SP_MANIFEST_kc_tflite_model is cancelled
+10-12 23:04:07.235  5001  6379 I DownloadManager: DownloadManager.downloadInternal():412 Download for __SP_MANIFEST_kc_tflite_model scheduled with params DownloadParams{allowMetered=true, requireCharging=false, foreground=false, immediately=true, priority=0}
+10-12 23:04:07.235  5001  6379 I DownloadManager: DownloadManager.startDownload():495 start download of __SP_MANIFEST_kc_tflite_model
+10-12 23:04:07.237  5001  6379 I DownloadManager: DownloadManager$4.onFailure():573 download for __SP_MANIFEST_kc_tflite_model is cancelled
+10-12 23:04:07.237  5001  6379 I DownloadManager: DownloadManager.downloadInternal():410 Previous download for __SP_MANIFEST_kc_tflite_model is cancelled
+10-12 23:04:07.237  5001  6379 I DownloadManager: DownloadManager.downloadInternal():412 Download for __SP_MANIFEST_kc_tflite_model scheduled with params DownloadParams{allowMetered=true, requireCharging=false, foreground=false, immediately=true, priority=0}
+10-12 23:04:07.238  5001  6379 I DownloadManager: DownloadManager.startDownload():495 start download of __SP_MANIFEST_kc_tflite_model
+10-12 23:04:07.239  5001  6378 I SuperDelight: SuperDelightBundledMetadataParser.addSystemLms():202 system lm dir /system/usr/share/ime/google/d3_lms does not exist or is not readable
+10-12 23:04:07.239  5001  6378 I SuperDelight: SuperDelightBundledMetadataParser.parse():192 SuperDelightBundledMetadataParser#parse(): manifest parsed with 1 packs
+10-12 23:04:07.240  5001  6379 I DownloadManager: DownloadManager$4.onSuccess():564 download for __KLP_manifest_delight__en-840 is finished with files # mxp@f9d35940
+10-12 23:04:07.240  5001  5071 I CrankEngineLocales: CrankEngineLocales.getLocaleToUseForCrankEngine():66 Using locale en_US for emoji prediction
+10-12 23:04:07.240  5001  5071 I CrankEngineLocales: CrankEngineLocales.getLocaleToUseForCrankEngine():66 Using locale en_US for emoji prediction
+10-12 23:04:07.240  5001  5071 I CrankEngineLocales: CrankEngineLocales.getLocaleToUseForCrankEngine():66 Using locale en_US for emoji prediction
+10-12 23:04:07.241  5001  5071 I MDDSuperpacks: MDDSuperpacks.getPacks():548 getting packs for superpack: transformer_expression
+10-12 23:04:07.242  5001  6379 I DownloadManager: DownloadManager$4.onSuccess():564 download for __SP_MANIFEST_bundled_delight is finished with files # mxp@ac050a45
+10-12 23:04:07.242  5001  6378 I SuperDelight: SuperDelightBundledMetadataParser.addSystemLms():202 system lm dir /system/usr/share/ime/google/d3_lms does not exist or is not readable
+10-12 23:04:07.243  5001  6378 I SuperDelight: SuperDelightBundledMetadataParser.parse():192 SuperDelightBundledMetadataParser#parse(): manifest parsed with 1 packs
+10-12 23:04:07.243  5001  6379 I DownloadManager: DownloadManager$4.onSuccess():564 download for __SP_MANIFEST_kc_tflite_model is finished with files # mxp@5c07eadc
+10-12 23:04:07.245  5001  6390 I SuperDelight: SuperDelightBundledMetadataParser.addSystemLms():202 system lm dir /system/usr/share/ime/google/d3_lms does not exist or is not readable
+10-12 23:04:07.245  5001  6390 I SuperDelight: SuperDelightBundledMetadataParser.parse():192 SuperDelightBundledMetadataParser#parse(): manifest parsed with 1 packs
+10-12 23:04:07.247  5001  6375 I MDDSuperpacks: MDDSuperpacks.sync():223 sync requested for kc_tflite_model
+10-12 23:04:07.247  5001  6375 I MDDSuperpacks: MDDSuperpacks.sync():223 sync requested for kc_tflite_model
+10-12 23:04:07.248  5001  6375 I MDDSuperpacks: MDDSuperpacks.sync():223 sync requested for kc_tflite_model
+10-12 23:04:07.248  5001  6399 I MDDSuperpacks: MDDSuperpacks$2.onFailure():281 Sync for kc_tflite_model cancelled
+10-12 23:04:07.249  5001  6375 I MDDSuperpacks: MDDSuperpacks.sync():223 sync requested for kc_tflite_model
+10-12 23:04:07.249  5001  6402 I MDDSuperpacks: MDDSuperpacks$2.onFailure():281 Sync for kc_tflite_model cancelled
+10-12 23:04:07.249  5001  6399 I MDDSuperpacks: MDDSuperpacks$2.onFailure():281 Sync for kc_tflite_model cancelled
+10-12 23:04:07.249  5001  6375 I MDDSuperpacks: MDDSuperpacks.sync():223 sync requested for kc_tflite_model
+10-12 23:04:07.250  5001  6378 I MDDSuperpacks: MDDSuperpacks$2.onFailure():281 Sync for kc_tflite_model cancelled
+10-12 23:04:07.266  5001  6382 I ManifestedDataDownloader: ManifestedDataDownloader.checkVersionAndDownload():91 filegroup __KLP_delight__en-840 with version 2025031300 is already downloaded
+10-12 23:04:07.266  5001  6382 I ManifestedDataDownloader: ManifestedDataDownloader.checkVersionAndDownload():91 filegroup __KLP_delight__en-840 with version 2025031300 is already downloaded
+10-12 23:04:07.266  5001  5071 I CrankEngineLocales: CrankEngineLocales.getLocaleToUseForCrankEngine():66 Using locale en_US for emoji prediction
+10-12 23:04:07.266  5001  5071 I CrankEngineLocales: CrankEngineLocales.getLocaleToUseForCrankEngine():66 Using locale en_US for emoji prediction
+10-12 23:04:07.266  5001  5071 I MDDSuperpacks: MDDSuperpacks.getPacks():548 getting packs for superpack: transformer_expression
+10-12 23:04:07.267  5001  6378 I MDDSuperpacks: MDDSuperpacks$3.onSuccess():558 packs [2023012316_en] got for superpack: transformer_expression
+10-12 23:04:07.267  5001  6402 I MDDSuperpacks: MDDSuperpacks.getPacks():548 getting packs for superpack: kc_tflite_model
+10-12 23:04:07.271  5001  6391 I DelightKLPDownloader: DelightKLPDownloader$2.onSuccess():222 klp en_840 downloaded with version 2025031300
+10-12 23:04:07.273  5001  6384 I SuperDelight: SuperDelightManager.syncBundledLanguageModels():773 SuperDelightManager#syncBundledLanguageModels(): Syncing for version 2025021100
+10-12 23:04:07.274  5001  5071 I CrankEngineLocales: CrankEngineLocales.getLocaleToUseForCrankEngine():66 Using locale en_US for emoji prediction
+10-12 23:04:07.274  5001  5071 I MDDSuperpacks: MDDSuperpacks.getPacks():548 getting packs for superpack: transformer_expression
+10-12 23:04:07.274  5001  5007 W putmethod.latin: Missing inline cache for qex dnr.a()
+10-12 23:04:07.275  5001  6382 I DelightKLPDownloader: DelightKLPDownloader$2.onSuccess():222 klp en_840 downloaded with version 2025031300
+10-12 23:04:07.280  5001  6399 I SuperDelight: SuperDelightBundledMetadataParser.addSystemLms():202 system lm dir /system/usr/share/ime/google/d3_lms does not exist or is not readable
+10-12 23:04:07.280  5001  6399 I SuperDelight: SuperDelightBundledMetadataParser.parse():192 SuperDelightBundledMetadataParser#parse(): manifest parsed with 1 packs
+10-12 23:04:07.281  5001  6398 E MDDSuperpacks: MDDSuperpacks.parseManifest():476 cannot find metadata for delight_overrides
+10-12 23:04:07.282  5001  6398 I MDDSuperpacks: MDDSuperpacks.getPacks():548 getting packs for superpack: kc_tflite_model
+10-12 23:04:07.282  5001  6384 I MDDSuperpacks: MDDSuperpacks.sync():223 sync requested for bundled_delight
+10-12 23:04:07.284  5001  6374 I MDDSuperpacks: MDDSuperpacks$3.onSuccess():558 packs [2023012316_en] got for superpack: transformer_expression
+10-12 23:04:07.284  5001  6402 I MDDSuperpacks: MDDSuperpacks$3.onSuccess():558 packs [tflite-kc-en_us_key_pair-20240423_102657] got for superpack: kc_tflite_model
+10-12 23:04:07.285  5001  6383 E MDDSuperpacks: MDDSuperpacks.parseManifest():476 cannot find metadata for delight_overrides
+10-12 23:04:07.287  5001  6402 I SuperDelight: SuperDelightBundledMetadataParser.addSystemLms():202 system lm dir /system/usr/share/ime/google/d3_lms does not exist or is not readable
+10-12 23:04:07.288  5001  6402 I SuperDelight: SuperDelightBundledMetadataParser.parse():192 SuperDelightBundledMetadataParser#parse(): manifest parsed with 1 packs
+10-12 23:04:07.288  5001  6399 I MDDSuperpacks: MDDSuperpacks$3.onSuccess():558 packs [tflite-kc-en_us_key_pair-20240423_102657] got for superpack: kc_tflite_model
+10-12 23:04:07.289  5001  6374 I MDDSuperpacks: MDDSuperpacks$3.onSuccess():558 packs [2023012316_en] got for superpack: transformer_expression
+10-12 23:04:07.290  5001  6384 I SuperDelight: SuperDelightManager.syncBundledLanguageModels():773 SuperDelightManager#syncBundledLanguageModels(): Syncing for version 2025021100
+10-12 23:04:07.290  5001  6384 I MDDSuperpacks: MDDSuperpacks.sync():223 sync requested for bundled_delight
+10-12 23:04:07.290  5001  6402 I MDDSuperpacks: MDDSuperpacks$2.onSuccess():274 Sync success for kc_tflite_model with result: {old=[tflite-kc-en_us_key_pair-20240423_102657], new=[tflite-kc-en_us_key_pair-20240423_102657], metadata=false, last batch=true}
+10-12 23:04:07.291  5001  6384 I LmManager: LmManager$1.onFailure():87 Bundled delight sync failed
+10-12 23:04:07.291  5001  6384 I LmManager: java.util.concurrent.CancellationException: Task was cancelled.
+10-12 23:04:07.291  5001  6384 I LmManager: 	at qcq.r(PG:33)
+10-12 23:04:07.291  5001  6384 I LmManager: 	at qcq.get(PG:3)
+10-12 23:04:07.291  5001  6384 I LmManager: 	at a.k(PG:2)
+10-12 23:04:07.291  5001  6384 I LmManager: 	at pqu.E(PG:10)
+10-12 23:04:07.291  5001  6384 I LmManager: 	at qek.run(PG:88)
+10-12 23:04:07.291  5001  6384 I LmManager: 	at qds.execute(PG:1)
+10-12 23:04:07.291  5001  6384 I LmManager: 	at qcq.h(PG:1)
+10-12 23:04:07.291  5001  6384 I LmManager: 	at qcq.k(PG:101)
+10-12 23:04:07.291  5001  6384 I LmManager: 	at qcq.cancel(PG:53)
+10-12 23:04:07.291  5001  6384 I LmManager: 	at dmp.g(PG:37)
+10-12 23:04:07.291  5001  6384 I LmManager: 	at dga.apply(PG:328)
+10-12 23:04:07.291  5001  6384 I LmManager: 	at l$$ExternalSyntheticApiModelOutline0.m(D8$$SyntheticClass:42)
+10-12 23:04:07.291  5001  6384 I LmManager: 	at dmt.x(PG:16)
+10-12 23:04:07.291  5001  6384 I LmManager: 	at dmt.k(PG:14)
+10-12 23:04:07.291  5001  6384 I LmManager: 	at djw.a(PG:504)
+10-12 23:04:07.291  5001  6384 I LmManager: 	at qcs.e(PG:3)
+10-12 23:04:07.291  5001  6384 I LmManager: 	at qcu.run(PG:38)
+10-12 23:04:07.291  5001  6384 I LmManager: 	at jab.run(PG:51)
+10-12 23:04:07.291  5001  6384 I LmManager: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+10-12 23:04:07.291  5001  6384 I LmManager: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+10-12 23:04:07.291  5001  6384 I LmManager: 	at java.lang.Thread.run(Thread.java:1119)
+10-12 23:04:07.291  5001  6384 I LmManager: 	at izq.run(PG:8)
+10-12 23:04:07.291  5001  6400 I MDDSuperpacks: MDDSuperpacks$2.onFailure():281 Sync for bundled_delight cancelled
+10-12 23:04:07.291  5001  6384 I MDDSuperpacks: MDDSuperpacks.getPacks():548 getting packs for superpack: bundled_delight
+10-12 23:04:07.291  5001  6399 W MDDSuperpacks: MDDSuperpacks.constructPackSet():578 file group is empty
+10-12 23:04:07.292  5001  6391 I MDDSuperpacks: MDDSuperpacks.getPacks():548 getting packs for superpack: kc_tflite_model
+10-12 23:04:07.293  5001  6378 I SuperDelight: SuperDelightBundledMetadataParser.addSystemLms():202 system lm dir /system/usr/share/ime/google/d3_lms does not exist or is not readable
+10-12 23:04:07.293  5001  6400 I MDDSuperpacks: MDDSuperpacks$3.onSuccess():558 packs [] got for superpack: bundled_delight
+10-12 23:04:07.294  5001  6378 I SuperDelight: SuperDelightBundledMetadataParser.parse():192 SuperDelightBundledMetadataParser#parse(): manifest parsed with 1 packs
+10-12 23:04:07.295  5001  6400 I MDDSuperpacks: MDDSuperpacks.getPacks():548 getting packs for superpack: bundled_delight
+10-12 23:04:07.297  5001  6385 I SuperDelight: SuperDelightManager$2.onSuccess():635 bundled_delight sync success, adding to data file manager
+10-12 23:04:07.297  5001  6385 I DataFileManager: DataFileManager.removeDataWithoutNotify():219 removing data en-US bundled_delight
+10-12 23:04:07.299  5001  6399 W MDDSuperpacks: MDDSuperpacks.constructPackSet():578 file group is empty
+10-12 23:04:07.300  5001  5001 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():46 leave 281 height for app when ime window height:2337, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1940
+10-12 23:04:07.300  5001  5001 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():46 leave 281 height for app when ime window height:2337, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1940
+10-12 23:04:07.302  5001  6399 I MDDSuperpacks: MDDSuperpacks$3.onSuccess():558 packs [] got for superpack: bundled_delight
+10-12 23:04:07.302  5001  6378 I MDDSuperpacks: MDDSuperpacks$3.onSuccess():558 packs [tflite-kc-en_us_key_pair-20240423_102657] got for superpack: kc_tflite_model
+10-12 23:04:07.303  5001  6383 I SuperDelight: SuperDelightBundledSlicingStrategy.getSlices():41 BundledSlicing#getSlices() : Locale = [en_US]
+10-12 23:04:07.303  5001  6383 I SuperDelight: SuperDelightBundledSlicingStrategy.getSlices():67 BundledSlicing#getSlices(): result {slices=[bundled_delight:main_en_us_2024102000_2], last batch=true, sync metadata=false}
+10-12 23:04:07.304  5001  5001 W ExtensionWrapper: ExtensionWrapper.setExtensionViewVisibility():801 interface koa is not activate
+10-12 23:04:07.306  5001  5001 W FDL     : FDL logging failed. Add a dependency for Firebase Analytics to your app to enable logging of Dynamic Link events.
+10-12 23:04:07.308  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:04:07.309  5001  5071 I CrankEngineLocales: CrankEngineLocales.getLocaleToUseForCrankEngine():66 Using locale en_US for emoji prediction
+10-12 23:04:07.311  5001  6383 I MDDSuperpacks: MDDSuperpacks.downloadSlices():370 start download __SP_bundled_delight
+10-12 23:04:07.312  5001  5001 I HardKeyTracker: HardKeyTracker.unregisterKeySequence():182 Unregister key sequence lsr{labelResId=2132020167, callback=cbb@33c3ae1, lastModifier=2, keyCodes=[37], actions=[0]}
+10-12 23:04:07.315  5001  5071 I EmojiShortcutsLoader: EmojiShortcutsLoader.getEmojiShortcuts():135 Reading en_US emoji shortcuts
+10-12 23:04:07.315  5651  5661 I FontLog : (REDACTED) Received query %s, URI %s
+10-12 23:04:07.316  5651  5661 I FontLog : (REDACTED) Query [%s] resolved to %s
+10-12 23:04:07.316  5001  5001 I HardKeyTracker: HardKeyTracker.registerKeySequence():138 Register key sequence lsr{labelResId=2132020167, callback=cbb@e027b8f, lastModifier=2, keyCodes=[37], actions=[0]}
+10-12 23:04:07.319  5001  5001 I HardKeyTracker: HardKeyTracker.unregisterKeySequence():182 Unregister key sequence lsr{labelResId=2132020164, callback=cbb@246fe8c, lastModifier=2, keyCodes=[50], actions=[0]}
+10-12 23:04:07.319  5651  5661 I FontLog : (REDACTED) Fetch %s end status %s
+10-12 23:04:07.321  5001  5001 I HardKeyTracker: HardKeyTracker.registerKeySequence():138 Register key sequence lsr{labelResId=2132020164, callback=cbb@1e60820, lastModifier=2, keyCodes=[50], actions=[0]}
+10-12 23:04:07.321  5001  5001 I HardKeyTracker: HardKeyTracker.unregisterKeySequence():182 Unregister key sequence lsr{labelResId=2132020169, callback=cbb@4ab7778, lastModifier=2, keyCodes=[48], actions=[0]}
+10-12 23:04:07.322  5001  5001 I HardKeyTracker: HardKeyTracker.registerKeySequence():138 Register key sequence lsr{labelResId=2132020169, callback=cbb@fe38695, lastModifier=2, keyCodes=[48], actions=[0]}
+10-12 23:04:07.325   564   583 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:04:07.329  5651  5661 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+10-12 23:04:07.332  5651  5661 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+10-12 23:04:07.336  5001  5001 W NotificationCenter: NotificationCenter$NotificationQueue.notifyPendingNotificationsOnExecutor():877 Heavy notify work detected on UI thread: [kig->imt, kig->lux, kig->ilu, kig->ilu, kig->ilu, kig->gkl, kig->ilu, kig->ijm, kig->ilu, kig->ilu, kig->fef, kig->jnx, kig->ilu, kig->fcb, kig->ilu, kig->ilu, kig->ilu, kig->khg, kig->ilu, kig->ilu, kig->ilu, kig->khc, kig->fro, ilp->erl, ilp->erl, ilp->erl, ilp->erl, ilp->erl, ilp->erl, ilp->erl, ilp->erl, ilp->erl, ilp->erl, ilp->erl] takes 30ms
+10-12 23:04:07.337  5001  5001 I VoiceImeExtension: VoiceImeExtension.shouldStartVoiceInputAutomaticallyInCurrentInputBox():469 No private IME option set to start voice input.
+10-12 23:04:07.344  5001  5001 I HardKeyTracker: HardKeyTracker.registerKeySequence():138 Register key sequence lsr{labelResId=2132020170, callback=cbb@97c0326, lastModifier=2, keyCodes=[32], actions=[0]}
+10-12 23:04:07.345  5651  5651 D BoundBrokerSvc: onBind: Intent { act=com.google.firebase.dynamiclinks.service.START xflg=0x4 pkg=com.google.android.gms }
+10-12 23:04:07.345  5651  5651 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.firebase.dynamiclinks.service.START xflg=0x4 pkg=com.google.android.gms }
+10-12 23:04:07.346  1060  1060 D ViewRootImpl: Skipping stats log for color mode
+10-12 23:04:07.350  5001  6399 I DownloadManager: DownloadManager.downloadInternal():412 Download for __SP_bundled_delight scheduled with params DownloadParams{allowMetered=false, requireCharging=false, foreground=false, immediately=true, priority=500}
+10-12 23:04:07.351  5001  6399 I DownloadManager: DownloadManager.startDownload():495 start download of __SP_bundled_delight
+10-12 23:04:07.351  1060  1060 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=6}
+10-12 23:04:07.352  5001  6378 I MDDSuperpacks: MDDSuperpacks.getPacks():548 getting packs for superpack: bundled_delight
+10-12 23:04:07.353  5001  6399 I DownloadManager: DownloadManager$4.onSuccess():564 download for __SP_bundled_delight is finished with files # mxp@9de90daa
+10-12 23:04:07.356  5001  6383 I MDDSuperpacks: MDDSuperpacks$3.onSuccess():558 packs [main_en_us_2024102000_2] got for superpack: bundled_delight
+10-12 23:04:07.357  5001  5071 I EmojiShortcutsLoader: EmojiShortcutsLoader.getEmojiShortcuts():156 Read en_US emoji shortcuts successfully.
+10-12 23:04:07.358  5001  6383 I LmManager: LmManager$1.onSuccess():82 Bundled delight sync success
+10-12 23:04:07.358  5001  6399 I MDDSuperpacks: MDDSuperpacks$2.onSuccess():274 Sync success for bundled_delight with result: {old=[], new=[main_en_us_2024102000_2], metadata=false, last batch=true}
+10-12 23:04:07.358  5001  6389 I MDDSuperpacks: MDDSuperpacks.getPacks():548 getting packs for superpack: bundled_delight
+10-12 23:04:07.360  5001  6383 I MDDSuperpacks: MDDSuperpacks$3.onSuccess():558 packs [main_en_us_2024102000_2] got for superpack: bundled_delight
+10-12 23:04:07.360  5001  6384 I SuperDelight: SuperDelightManager$2.onSuccess():635 bundled_delight sync success, adding to data file manager
+10-12 23:04:07.360  5001  6384 I DataFileManager: DataFileManager.addDataWithoutNotify():185 adding data en-US bundled_delight
+10-12 23:04:07.364  1060  1060 D BaseDepthController: setSurface:
+10-12 23:04:07.364  1060  1060 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-12 23:04:07.364  1060  1060 D BaseDepthController: 	mBaseSurface: Surface(name=com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity)/@0xc57158a
+10-12 23:04:07.365  5001  5071 I EmojiShortcutsLoader: EmojiShortcutsLoader.call():71 1 emoji shortcut maps loaded.
+10-12 23:04:07.369  5001  5071 I EmojiShortcutsLoader: EmojiShortcutsLoader.call():82 Finished loading emoji shortcuts
+10-12 23:04:07.369  5001  5071 I EmojiShortcutsLoader: EmojiShortcutsLoader.getEmojiShortcuts():135 Reading en_US emoji shortcuts
+10-12 23:04:07.375   564   616 W ServiceManagerCppClient: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10160 pid=0
+10-12 23:04:07.375   564   616 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10160 => denied (175 us)
+10-12 23:04:07.376  5001  5071 I EmojiShortcutsLoader: EmojiShortcutsLoader.getEmojiShortcuts():156 Read en_US emoji shortcuts successfully.
+10-12 23:04:07.377   564   925 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10160 pid=5001
+10-12 23:04:07.377   564   925 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10160 => denied (843 us)
+10-12 23:04:07.378   564   925 W ServiceManagerCppClient: Permission failure: android.permission.INTERNAL_SYSTEM_WINDOW from uid=10160 pid=5001
+10-12 23:04:07.378   564   925 D PermissionCache: checking android.permission.INTERNAL_SYSTEM_WINDOW for uid=10160 => denied (505 us)
+10-12 23:04:07.379   564   616 W ServiceManagerCppClient: Permission failure: android.permission.ROTATE_SURFACE_FLINGER from uid=10160 pid=0
+10-12 23:04:07.379   564   616 D PermissionCache: checking android.permission.ROTATE_SURFACE_FLINGER for uid=10160 => denied (3482 us)
+10-12 23:04:07.379  5001  5071 I EmojiShortcutsLoader: EmojiShortcutsLoader.call():71 1 emoji shortcut maps loaded.
+10-12 23:04:07.382  5001  5071 I EmojiShortcutsLoader: EmojiShortcutsLoader.call():82 Finished loading emoji shortcuts
+10-12 23:04:07.386  5001  5001 I AndroidIME: KeyboardViewManagerV2.updateKeyboardBackgroundFrameVisibility():327 Set background frame visibility. old:8, new:8
+10-12 23:04:07.387  5001  5001 I KeyboardModeUtils: KeyboardModeUtils.getKeyboardBottomOffset():437 inch: 0.000000 ydpi: 420.000000 adjustKeyboardBottomByDisplaySize: false currentDensityDpi: 420 defaultDensityDpi: 420 keyboardBottomToScreenPx: 0 keyboardBottomToNavBarPx: 0 navBarHeight: 0
+10-12 23:04:07.387  5001  5001 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():46 leave 281 height for app when ime window height:2337, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1940
+10-12 23:04:07.388  5001  5001 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():46 leave 281 height for app when ime window height:2337, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1940
+10-12 23:04:07.389  5001  5001 I WindowMetricsNotification: WindowMetricsNotification.notifyWithWindow():166
+10-12 23:04:07.389  5001  5001 I DeviceModeModule: DeviceModeModule.calculateAndNotify():223 Device mode 'phone' from display metrics 'DisplayMetrics{density=0.0, width=1080, height=2400, scaledDensity=0.0, xdpi=420.0, ydpi=420.0}' or smallestScreenWidthDp: 411
+10-12 23:04:07.390  5001  5001 I KeyboardModeUtils: KeyboardModeUtils.getKeyboardBottomOffset():437 inch: 0.000000 ydpi: 420.000000 adjustKeyboardBottomByDisplaySize: false currentDensityDpi: 420 defaultDensityDpi: 420 keyboardBottomToScreenPx: 0 keyboardBottomToNavBarPx: -126 navBarHeight: 126
+10-12 23:04:07.390  5001  5001 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():46 leave 281 height for app when ime window height:2211, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1814
+10-12 23:04:07.390  5001  5001 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():46 leave 281 height for app when ime window height:2211, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1814
+10-12 23:04:07.390  5001  5001 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():46 leave 281 height for app when ime window height:2211, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1814
+10-12 23:04:07.390  5001  5001 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():46 leave 281 height for app when ime window height:2211, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1814
+10-12 23:04:07.390  5001  5001 I GoogleInputMethodService: GoogleInputMethodService$7.onWindowMetricsChanged():769 windowMetrics: bounds() = Rect(0, 63 - 1080, 2400), insets() = Rect(0, 0 - 0, 126)
+10-12 23:04:07.392  5001  5001 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():46 leave 281 height for app when ime window height:2211, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1814
+10-12 23:04:07.392  5001  5001 I SoftKeyboardView: SoftKeyboardView.setMaxHeight():1089 Set max keyboard height:1814.
+10-12 23:04:07.395  5001  5001 I WindowMetricsNotification: WindowMetricsNotification.notify():159 mub[bounds=Rect(0, 63 - 1080, 2400), insets=Rect(0, 0 - 0, 126), densityDpi=420, smallestScreenWidthDp=411, displayWidth=1080, displayHeight=2400, xdpi=420.0, ydpi=420.0, isTrustable=true, displayId=0]; DisplayMetrics{density=2.625, width=1080, height=2400, scaledDensity=2.625, xdpi=420.0, ydpi=420.0}
+10-12 23:04:07.395  5001  5001 W View    : requestLayout() improperly called by com.google.android.libraries.inputmethod.widgets.scaledkeyboard.ScaledKeyboardViewInner{bf2265e V.E...... ......ID 0,0-1080,116 #7f0b02ba app:id/0_resource_name_obfuscated} during layout: running second layout pass
+10-12 23:04:07.395  5001  5001 W View    : requestLayout() improperly called by com.google.android.libraries.inputmethod.widgets.SoftKeyView{87f2a3f VFE...C.. ......ID 5,0-115,116 #7f0b03e2 app:id/key_pos_header_access_points_menu} during layout: running second layout pass
+10-12 23:04:07.395  5001  5001 W View    : requestLayout() improperly called by com.google.android.libraries.inputmethod.widgets.CopyImageSourceView{8be5f0c V.ED..... ......ID 5,0-1075,116 #7f0b014c app:id/0_resource_name_obfuscated} during layout: running second layout pass
+10-12 23:04:07.395  5001  5001 W View    : requestLayout() improperly called by android.widget.LinearLayout{94c5055 V.E...... ......ID 115,0-965,116 #7f0b02bc app:id/0_resource_name_obfuscated} during layout: running second layout pass
+10-12 23:04:07.395  5001  5001 W View    : requestLayout() improperly called by com.google.android.libraries.inputmethod.widgets.SoftKeyView{cb64a6a VFE...C.. ......ID 965,0-1075,116 #7f0b03ea app:id/key_pos_header_power_key} during layout: running second layout pass
+10-12 23:04:07.395  5001  5001 W View    : requestLayout() improperly called by com.google.android.libraries.inputmethod.widgets.KeyboardHolder{c462b5b V.E...... ......ID 0,0-1080,757 #7f0b04ed app:id/keyboard_holder} during layout: running second layout pass
+10-12 23:04:07.395  5001  5001 W View    : requestLayout() improperly called by com.google.android.libraries.inputmethod.keyboard.impl.KeyboardViewHolder{e785ff8 V.E...... ......ID 0,0-1080,116 #7f0b04ec app:id/keyboard_header_view_holder} during layout: running second layout pass
+10-12 23:04:07.395  5001  5001 W View    : requestLayout() improperly called by android.widget.FrameLayout{84e9cd1 V.E...... ......ID 0,116-1080,757} during layout: running second layout pass
+10-12 23:04:07.395  5001  5001 W View    : requestLayout() improperly called by com.google.android.libraries.inputmethod.keyboard.impl.KeyboardViewHolder{7e6a336 V.E...... ......ID 0,0-1080,641 #7f0b04c2 app:id/0_resource_name_obfuscated} during layout: running second layout pass
+10-12 23:04:07.395  5001  5001 W View    : requestLayout() improperly called by android.widget.FrameLayout{4b22237 V.E...... ......ID 0,1580-1080,2337 #7f0b04bf app:id/0_resource_name_obfuscated} during layout: running second layout pass
+10-12 23:04:07.395  5001  5001 W View    : requestLayout() improperly called by android.widget.FrameLayout{3cf83a4 V.E...... ......ID 0,641-1080,641 #7f0b04c3 app:id/0_resource_name_obfuscated} during layout: running second layout pass
+10-12 23:04:07.395  5001  5001 W View    : requestLayout() improperly called by com.google.android.libraries.inputmethod.inputview.InputView{e4f350d V.ED..... ......ID 0,0-1080,2337 #7f0b0303 app:id/0_resource_name_obfuscated} during layout: running second layout pass
+10-12 23:04:07.396  5001  5001 I KeyboardModeUtils: KeyboardModeUtils.getKeyboardBottomOffset():437 inch: 0.000000 ydpi: 420.000000 adjustKeyboardBottomByDisplaySize: false currentDensityDpi: 420 defaultDensityDpi: 420 keyboardBottomToScreenPx: 0 keyboardBottomToNavBarPx: -126 navBarHeight: 126
+10-12 23:04:07.396  5001  5001 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():46 leave 281 height for app when ime window height:2211, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1814
+10-12 23:04:07.398  5001  5001 I KeyboardHeightUtil: KeyboardHeightUtil.calculateMaxKeyboardBodyHeight():46 leave 281 height for app when ime window height:2211, header height:116 and isFullscreenMode:false, so the max keyboard body height is:1814
+10-12 23:04:07.413  1060  1060 D StatsLog: LAUNCHER_ONRESUME
+10-12 23:04:07.413  5001  5134 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-12 23:04:07.413  5001  5134 I EGL_emulation: Opening libGLESv2_emulation.so
+10-12 23:04:07.419  5001  5134 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-12 23:04:07.428  1060  1140 D QuickstepModelDelegate: notifyAppTargetEvent action=1 launchLocation=workspace/0/[-1,-1]/[1,1]
+10-12 23:04:07.430  1513  1632 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+10-12 23:04:07.431  1513  1632 I AiAiEcho: EchoTargets:
+10-12 23:04:07.431  1513  1632 I AiAiEcho: Filtered by AiAi flag check:
+10-12 23:04:07.431  1513  1632 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+10-12 23:04:07.432  1513  1632 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+10-12 23:04:07.446  1513  1632 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+10-12 23:04:07.446  1060  1060 D SsBaseTemplateCard: No text view can be set up
+10-12 23:04:07.446  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:04:07.446  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:04:07.446  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:04:07.446  1060  1060 I SsBaseTemplateCard: Secondary card pane is null
+10-12 23:04:07.448  1060  1060 D StateManager: createAtomicAnimation - fromState: Background, toState: Normal, partial trace:
+10-12 23:04:07.448  1060  1060 D StateManager: 	at com.android.quickstep.util.WorkspaceRevealAnim.prepareToAnimate(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:22)
+10-12 23:04:07.448  1060  1060 D StateManager: 	at com.android.quickstep.util.WorkspaceRevealAnim.<init>(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:11)
+10-12 23:04:07.448  1060  1060 D StateManager: 	at com.android.launcher3.QuickstepTransitionManager.createWallpaperOpenAnimations(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:339)
+10-12 23:04:07.448  1060  1060 D b/311077782: LauncherAnimationRunner.setAnimation
+10-12 23:04:07.453  5001  6409 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-12 23:04:07.454  6284  6284 D VRI[ComponentActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-12 23:04:07.458   701   810 I ImeTracker: com.google.android.apps.nexuslauncher:5773d759: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:04:07.459  6284  6284 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@3a9f0d6 in: STOPPED
+10-12 23:04:07.459  6284  6284 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=androidx.activity.ComponentActivity@3a9f0d6
+10-12 23:04:07.466  1060  1060 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:04:07.466  1060  1060 I ImeTracker: com.google.android.apps.nexuslauncher:5773d759: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:04:07.477  6284  6284 D LifecycleMonitor: Lifecycle status change: androidx.activity.ComponentActivity@3a9f0d6 in: DESTROYED
+10-12 23:04:07.477  6284  6284 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+10-12 23:04:07.477  6284  6284 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ImeBackAnimationController@a4140de
+10-12 23:04:07.479  6284  6326 D HWUI    : endAllActiveAnimators on 0x7e1891860720 (UnprojectedRipple) with handle 0x7e19218779b0
+10-12 23:04:07.479  6284  6326 D HWUI    : endAllActiveAnimators on 0x7e1891878960 (UnprojectedRipple) with handle 0x7e1921877800
+10-12 23:04:07.479  6284  6326 D HWUI    : endAllActiveAnimators on 0x7e1891850c10 (UnprojectedRipple) with handle 0x7e1921877740
+10-12 23:04:07.479  6284  6326 D HWUI    : endAllActiveAnimators on 0x7e1891843e10 (UnprojectedRipple) with handle 0x7e19218764b0
+10-12 23:04:07.482  6284  6284 D ViewRootImpl: Skipping stats log for color mode
+10-12 23:04:07.484   701   716 I ImeTracker: system_server:89ea51c8: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:04:07.489  6284  6284 I ImeTracker: dev.p38journal.debug:7e01f1f7: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false
+10-12 23:04:07.489  6284  6284 I ImeTracker: dev.p38journal.debug:7e01f1f7: onFailed at PHASE_CLIENT_VIEW_SERVED
+10-12 23:04:07.490  6284  6284 D CompatChangeReporter: Compat change id reported: 395521150; UID 10268; state: ENABLED
+10-12 23:04:07.496  6284  6314 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@c9ed181]
+10-12 23:04:07.498  6284  6314 I TestRunner: finished: textPdfSearchAndBookmarksAreReal(dev.p38journal.platform.DocumentViewerTest)

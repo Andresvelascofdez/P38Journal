@@ -1,0 +1,340 @@
+10-12 23:05:14.861  6284  6314 I TestRunner: started: expenseFiltersCombinePersistAndReactToDateCategoryAndCancellation(dev.p38journal.ui.JournalUiTest)
+10-12 23:05:14.862  6284  6314 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@3fe6865]
+10-12 23:05:14.865  6284  6314 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+10-12 23:05:14.869   701  1979 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@74abdd5b does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-12 23:05:14.877  1060  1060 W SplitSelectStateCtor: Missing session instanceIds
+10-12 23:05:14.877  1060  1060 D StatsLog: LAUNCHER_SPLIT_SELECTION_EXIT_INTERRUPTED
+10-12 23:05:14.888   564   582 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:05:14.888  6284  6284 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@3755abf in: PRE_ON_CREATE
+10-12 23:05:14.888  6284  6284 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+10-12 23:05:14.893  6284  6284 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@3755abf in: CREATED
+10-12 23:05:14.894  6284  6284 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=dev.p38journal.MainActivity@3755abf
+10-12 23:05:14.895  6284  6284 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@3755abf in: STARTED
+10-12 23:05:14.895  6284  6284 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=dev.p38journal.MainActivity@3755abf
+10-12 23:05:14.900  6284  6284 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@3755abf in: RESUMED
+10-12 23:05:14.901  6284  6284 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=dev.p38journal.MainActivity@3755abf
+10-12 23:05:14.947  6345  6345 D VRI[InstrumentationActivityInvoker$EmptyActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-12 23:05:14.982   701   721 I ActivityTaskManager: Displayed dev.p38journal.debug/dev.p38journal.MainActivity for user 0: +112ms
+10-12 23:05:14.998  6345  6345 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@78d829b
+10-12 23:05:15.000  6345  6345 D ViewRootImpl: Skipping stats log for color mode
+10-12 23:05:15.007   701   810 I ImeTracker: dev.p38journal.debug:8ce1d99b: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:05:15.009  6284  6284 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:05:15.009  6284  6284 I ImeTracker: dev.p38journal.debug:8ce1d99b: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:05:15.011  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:05:15.014   701  1100 I ImeTracker: system_server:993adf2c: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:15.014  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:05:15.022  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=dev.p38journal.debug, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:05:15.023   701   724 I ImeTracker: system_server:993adf2c: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:15.023  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:05:15.033  6284  6315 W JobInfo : Requested important-while-foreground flag for job72 is ignored and takes no effect
+10-12 23:05:15.033  6284  6315 D WM-SystemJobScheduler: Scheduling work ID 55c48b4f-b634-4fa3-a860-ddb8a5e9f62bJob ID 72
+10-12 23:05:15.038  1060  1060 D RecentsView: onTaskRemoved: 331, not handling task stack changes
+10-12 23:05:15.038  1060  1060 D RecentsView: onTaskRemoved: 331, not handling task stack changes
+10-12 23:05:15.043  6284  6315 D WM-GreedyScheduler: Starting work for 55c48b4f-b634-4fa3-a860-ddb8a5e9f62b
+10-12 23:05:15.046  6284  6315 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=55c48b4f-b634-4fa3-a860-ddb8a5e9f62b, generation=0)
+10-12 23:05:15.046  6284  6284 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=55c48b4f-b634-4fa3-a860-ddb8a5e9f62b, generation=0)
+10-12 23:05:15.049  6284  6284 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:05:15.051  6284  6317 D WM-Processor: Work WorkGenerationalId(workSpecId=55c48b4f-b634-4fa3-a860-ddb8a5e9f62b, generation=0) is already enqueued for processing
+10-12 23:05:15.165  1060  1060 D WorkspaceRevealAnim: onAnimationEnd: workspace alpha = 1.0
+10-12 23:05:15.189  6284  6315 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=55c48b4f-b634-4fa3-a860-ddb8a5e9f62b, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-12 23:05:15.191  6284  6284 D WM-Processor: Processor 55c48b4f-b634-4fa3-a860-ddb8a5e9f62b executed; reschedule = false
+10-12 23:05:15.191  6284  6284 D WM-SystemJobService: 55c48b4f-b634-4fa3-a860-ddb8a5e9f62b executed on JobScheduler
+10-12 23:05:15.194  6284  6315 D WM-GreedyScheduler: Cancelling work ID 55c48b4f-b634-4fa3-a860-ddb8a5e9f62b
+10-12 23:05:15.216   941  1046 W FrameTracker: Missed App frame:UNKNOWN: 3, 61943, 68370864, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+10-12 23:05:15.216   941  1046 W FrameTracker: Missed SF frame:UNKNOWN: 3, 61943, 68370864, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+10-12 23:05:15.216   941  1046 W FrameTracker: Missed SF frame:JANK_COMPOSER, 61986, 51722398, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+10-12 23:05:15.216   941  1046 W FrameTracker: Missed App frame:UNKNOWN: 3, 62079, 101393666, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+10-12 23:05:15.216   941  1046 W FrameTracker: Missed SF frame:UNKNOWN: 3, 62079, 101393666, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+10-12 23:05:15.216   941  1046 W FrameTracker: Missed SF frame:JANK_COMPOSER, 62173, 56262168, CUJ=J<SPLASHSCREEN_EXIT_ANIM>
+10-12 23:05:15.226  1060  1060 W FrameTracker: Missed SF frame:JANK_COMPOSER, 61611, 15563924, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK>
+10-12 23:05:15.226  1060  1060 W FrameTracker: Missed App frame:UNKNOWN: 3, 61683, 18269092, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK>
+10-12 23:05:15.227  1060  1060 W FrameTracker: Missed SF frame:UNKNOWN: 3, 61683, 18269092, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK>
+10-12 23:05:15.227  1060  1060 W FrameTracker: Missed SF frame:JANK_COMPOSER, 61719, 15842826, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK>
+10-12 23:05:15.227  1060  1060 W FrameTracker: Missed SF frame:JANK_COMPOSER, 61748, 34726360, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK>
+10-12 23:05:15.227  1060  1060 W FrameTracker: Missed SF frame:JANK_COMPOSER, 61784, 34737194, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK>
+10-12 23:05:15.227  1060  1060 W FrameTracker: Missed SF frame:JANK_COMPOSER, 61813, 21737428, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK>
+10-12 23:05:15.227  1060  1060 W FrameTracker: Missed SF frame:JANK_COMPOSER, 61842, 23367262, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK>
+10-12 23:05:15.227  1060  1060 W FrameTracker: Missed SF frame:JANK_COMPOSER, 61885, 28203196, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK>
+10-12 23:05:15.227  1060  1060 W FrameTracker: Missed SF frame:JANK_COMPOSER, 61914, 19934130, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK>
+10-12 23:05:15.227  1060  1060 W FrameTracker: Missed SF frame:JANK_COMPOSER, 61950, 33735164, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK>
+10-12 23:05:15.227  1060  1060 W FrameTracker: Missed App frame:UNKNOWN: 3, 61993, 35323498, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK>
+10-12 23:05:15.227  1060  1060 W FrameTracker: Missed SF frame:UNKNOWN: 3, 61993, 35323498, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK>
+10-12 23:05:15.227  1060  1060 W FrameTracker: Missed SF frame:JANK_COMPOSER, 62036, 35122932, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK>
+10-12 23:05:15.227  1060  1060 W FrameTracker: Missed SF frame:JANK_COMPOSER, 62086, 33949866, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK>
+10-12 23:05:15.227  1060  1060 W FrameTracker: Missed SF frame:JANK_COMPOSER, 62122, 33982100, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK>
+10-12 23:05:15.227  1060  1060 W FrameTracker: Missed SF frame:JANK_COMPOSER, 62151, 34145634, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK>
+10-12 23:05:15.227  1060  1060 W FrameTracker: Missed App frame:UNKNOWN: 3, 62180, 34813968, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK>
+10-12 23:05:15.227  1060  1060 W FrameTracker: Missed SF frame:UNKNOWN: 3, 62180, 34813968, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK>
+10-12 23:05:15.227  1060  1060 W FrameTracker: Missed SF frame:JANK_COMPOSER, 62195, 51241002, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK>
+10-12 23:05:15.227  1060  1060 W FrameTracker: Missed SF frame:JANK_COMPOSER, 62232, 27028070, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK>
+10-12 23:05:15.227  1060  1060 W FrameTracker: Missed SF frame:JANK_COMPOSER, 62268, 34692604, CUJ=J<LAUNCHER_APP_CLOSE_TO_HOME_FALLBACK>
+10-12 23:05:15.251   941   949 W System  : A resource failed to call release.
+10-12 23:05:15.251   941   949 W System  : A resource failed to call release.
+10-12 23:05:15.251   941   949 W System  : A resource failed to call release.
+10-12 23:05:15.252  1060  1060 D VRI[NexusLauncherActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-12 23:05:15.251   941   949 W System  : A resource failed to call release.
+10-12 23:05:15.252   941   949 W System  : A resource failed to call release.
+10-12 23:05:15.252   941   949 W System  : A resource failed to call release.
+10-12 23:05:15.259   941   949 W System  : A resource failed to call release.
+10-12 23:05:15.259   941   949 W System  : A resource failed to call release.
+10-12 23:05:15.259   941   949 W System  : A resource failed to call release.
+10-12 23:05:15.259   941   949 W System  : A resource failed to call release.
+10-12 23:05:15.264  1060  1060 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=7}
+10-12 23:05:15.273  1060  1060 D BaseDepthController: setSurface:
+10-12 23:05:15.273  1060  1060 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-12 23:05:15.273  1060  1060 D BaseDepthController: 	mBaseSurface: null
+10-12 23:05:15.273  1060  1060 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+10-12 23:05:15.273  1060  1060 D StateManager: goToState - fromState: Normal, toState: Normal, partial trace:
+10-12 23:05:15.273  1060  1060 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:4)
+10-12 23:05:15.273  1060  1060 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:1)
+10-12 23:05:15.273  1060  1060 D StateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:34)
+10-12 23:05:15.273  1060  1060 D StatsLog: LAUNCHER_ONSTOP
+10-12 23:05:15.274  1060  1060 D StatsLog: LAUNCHER_GOOGLE_SEARCH_RESTORE_LIST_SIZE_AFTER_ACTIVITY_RESTART
+10-12 23:05:15.702   701   810 I ImeTracker: dev.p38journal.debug:45328fd8: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:05:15.703  6284  6284 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:05:15.703  6284  6284 I ImeTracker: dev.p38journal.debug:45328fd8: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:05:15.703  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:05:15.704  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:05:15.705   701  1210 I ImeTracker: system_server:5c04d6ab: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:15.706  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=dev.p38journal.debug, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:05:15.706   701   724 I ImeTracker: system_server:5c04d6ab: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:15.706  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:05:15.738  6284  6284 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.compose.ui.window.Api33Impl$$ExternalSyntheticLambda0@27b9f5b
+10-12 23:05:15.741  6284  6326 D HWUI    : endAllActiveAnimators on 0x7e1891863430 (UnprojectedRipple) with handle 0x7e19219075f0
+10-12 23:05:15.742   701  1968 I ImeTracker: system_server:182f048: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:15.743   701   724 I ImeTracker: system_server:182f048: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:15.769   701   810 I ImeTracker: dev.p38journal.debug:ea245110: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:05:15.770  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:05:15.771  6284  6284 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:05:15.771  6284  6284 I ImeTracker: dev.p38journal.debug:ea245110: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:05:15.771  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:05:15.772   701  1210 I ImeTracker: system_server:85f2b57: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:15.772  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=dev.p38journal.debug, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:05:15.773   701   724 I ImeTracker: system_server:85f2b57: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:15.773  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:05:15.861   701   810 I ImeTracker: dev.p38journal.debug:b435f33c: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:05:15.862  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:05:15.862  6284  6284 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:05:15.862  6284  6284 I ImeTracker: dev.p38journal.debug:b435f33c: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:05:15.862   701  1979 I ImeTracker: system_server:9c5cd2a3: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:15.864   701   724 I ImeTracker: system_server:9c5cd2a3: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:15.864  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:05:15.865  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=dev.p38journal.debug, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:05:15.865  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:05:15.914  6284  6284 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.compose.ui.window.Api33Impl$$ExternalSyntheticLambda0@4b37dc9
+10-12 23:05:15.918  6284  6326 D HWUI    : endAllActiveAnimators on 0x7e18918e0cb0 (UnprojectedRipple) with handle 0x7e19218cf490
+10-12 23:05:15.919   701  1100 I ImeTracker: system_server:f46d7a7e: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:15.919   701   724 I ImeTracker: system_server:f46d7a7e: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:15.952   701   810 I ImeTracker: dev.p38journal.debug:5ca8d118: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:05:15.953  6284  6284 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:05:15.953  6284  6284 I ImeTracker: dev.p38journal.debug:5ca8d118: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:05:15.953  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:05:15.954  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:05:15.955   701  1100 I ImeTracker: system_server:b3b0face: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:15.955   701   724 I ImeTracker: system_server:b3b0face: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:15.956  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=dev.p38journal.debug, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:05:15.957  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:05:16.090   701   810 I ImeTracker: dev.p38journal.debug:a315b063: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:05:16.091  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:05:16.091  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:05:16.092   701  1100 I ImeTracker: system_server:6e946545: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:16.093   701   724 I ImeTracker: system_server:6e946545: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:16.094  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=dev.p38journal.debug, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:05:16.094  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:05:16.096  6284  6284 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:05:16.096  6284  6284 I ImeTracker: dev.p38journal.debug:a315b063: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:05:16.145  6284  6284 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.compose.ui.window.Api33Impl$$ExternalSyntheticLambda0@b84c7d4
+10-12 23:05:16.150  6284  6326 D HWUI    : endAllActiveAnimators on 0x7e18918d6bc0 (UnprojectedRipple) with handle 0x7e1921905520
+10-12 23:05:16.152   701  1100 I ImeTracker: system_server:c29e364d: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:16.152   701   724 I ImeTracker: system_server:c29e364d: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:16.190   701   810 I ImeTracker: dev.p38journal.debug:655b2823: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:05:16.192  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:05:16.192  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:05:16.193   701  1100 I ImeTracker: system_server:abe8fb80: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:16.193   701   724 I ImeTracker: system_server:abe8fb80: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:16.194  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=dev.p38journal.debug, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:05:16.194  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:05:16.200   701   810 I ImeTracker: dev.p38journal.debug:8d8f32a3: setFinished at PHASE_CLIENT_ANIMATION_CANCEL with STATUS_TIMEOUT
+10-12 23:05:16.228  6284  6284 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:05:16.228  6284  6284 I ImeTracker: dev.p38journal.debug:655b2823: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:05:16.268  6284  6284 I ActivityThread: Schedule relaunch activity: dev.p38journal.MainActivity
+10-12 23:05:16.270  6284  6284 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@3755abf in: PAUSED
+10-12 23:05:16.270  6284  6284 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=dev.p38journal.MainActivity@3755abf
+10-12 23:05:16.273  6284  6284 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@3755abf in: STOPPED
+10-12 23:05:16.273  6284  6284 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=dev.p38journal.MainActivity@3755abf
+10-12 23:05:16.278  6284  6284 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@1f7258e
+10-12 23:05:16.278  6284  6284 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@3755abf in: DESTROYED
+10-12 23:05:16.278  6284  6284 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+10-12 23:05:16.281  6284  6284 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@f691562 in: PRE_ON_CREATE
+10-12 23:05:16.281  6284  6284 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was DESTROYED
+10-12 23:05:16.291  6284  6284 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@f691562 in: CREATED
+10-12 23:05:16.292  6284  6284 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=dev.p38journal.MainActivity@f691562
+10-12 23:05:16.292  6284  6284 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@f691562 in: STARTED
+10-12 23:05:16.292  6284  6284 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=dev.p38journal.MainActivity@f691562
+10-12 23:05:16.296  6284  6284 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@f691562 in: RESUMED
+10-12 23:05:16.296  6284  6284 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=dev.p38journal.MainActivity@f691562
+10-12 23:05:16.305  6284  6316 W JobInfo : Requested important-while-foreground flag for job73 is ignored and takes no effect
+10-12 23:05:16.305  6284  6316 D WM-SystemJobScheduler: Scheduling work ID 0de83cc7-f59d-4bf2-abb1-0a515a42b210Job ID 73
+10-12 23:05:16.308  6284  6316 D WM-GreedyScheduler: Starting work for 0de83cc7-f59d-4bf2-abb1-0a515a42b210
+10-12 23:05:16.310  6284  6316 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=0de83cc7-f59d-4bf2-abb1-0a515a42b210, generation=0)
+10-12 23:05:16.340  6284  6284 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:05:16.341  6284  6284 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=0de83cc7-f59d-4bf2-abb1-0a515a42b210, generation=0)
+10-12 23:05:16.342  6284  6317 D WM-Processor: Work WorkGenerationalId(workSpecId=0de83cc7-f59d-4bf2-abb1-0a515a42b210, generation=0) is already enqueued for processing
+10-12 23:05:16.457  6284  6309 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=0de83cc7-f59d-4bf2-abb1-0a515a42b210, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-12 23:05:16.460   701   810 I ImeTracker: dev.p38journal.debug:2f149eec: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:05:16.460  6284  6284 D WM-Processor: Processor 0de83cc7-f59d-4bf2-abb1-0a515a42b210 executed; reschedule = false
+10-12 23:05:16.460  6284  6284 D WM-SystemJobService: 0de83cc7-f59d-4bf2-abb1-0a515a42b210 executed on JobScheduler
+10-12 23:05:16.461  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:05:16.461  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:05:16.461   701  1100 I ImeTracker: system_server:bdd1fafd: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:16.462  6284  6316 D WM-GreedyScheduler: Cancelling work ID 0de83cc7-f59d-4bf2-abb1-0a515a42b210
+10-12 23:05:16.462   701   724 I ImeTracker: system_server:bdd1fafd: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:16.462  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=dev.p38journal.debug, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:05:16.463  6284  6284 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:05:16.463  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:05:16.463  6284  6284 I ImeTracker: dev.p38journal.debug:2f149eec: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:05:16.463  6284  6284 D WM-SystemJobService: onStopJob for WorkGenerationalId(workSpecId=0de83cc7-f59d-4bf2-abb1-0a515a42b210, generation=0)
+10-12 23:05:16.510  6284  6284 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.compose.ui.window.Api33Impl$$ExternalSyntheticLambda0@e1b0853
+10-12 23:05:16.512  6284  6326 D HWUI    : endAllActiveAnimators on 0x7e189185ad00 (UnprojectedRipple) with handle 0x7e192186bec0
+10-12 23:05:16.516   701  1979 I ImeTracker: system_server:77cbcfa2: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:16.516   701   724 I ImeTracker: system_server:77cbcfa2: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:16.567   701   810 I ImeTracker: dev.p38journal.debug:ed0bf7a6: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:05:16.569  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:05:16.570  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:05:16.570   701  1210 I ImeTracker: system_server:cd9fa26f: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:16.570   701   724 I ImeTracker: system_server:cd9fa26f: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:16.572  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=dev.p38journal.debug, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:05:16.573  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:05:16.577  6284  6284 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:05:16.577  6284  6284 I ImeTracker: dev.p38journal.debug:ed0bf7a6: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:05:16.634   701   810 I ImeTracker: dev.p38journal.debug:6c5306e7: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:05:16.636  6284  6284 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:05:16.636  6284  6284 I ImeTracker: dev.p38journal.debug:6c5306e7: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:05:16.638  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:05:16.639  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:05:16.639   701  1979 I ImeTracker: system_server:df91676c: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:16.640   701   724 I ImeTracker: system_server:df91676c: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:16.640  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=dev.p38journal.debug, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:05:16.641  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:05:16.678  6284  6284 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.compose.ui.window.Api33Impl$$ExternalSyntheticLambda0@ee4181b
+10-12 23:05:16.680  6284  6326 D HWUI    : endAllActiveAnimators on 0x7e18918708a0 (UnprojectedRipple) with handle 0x7e1921909750
+10-12 23:05:16.681   701  1210 I ImeTracker: system_server:70693249: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:16.682   701   724 I ImeTracker: system_server:70693249: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:16.719   701   810 I ImeTracker: dev.p38journal.debug:a7a31377: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:05:16.721  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:05:16.721   701  1210 I ImeTracker: system_server:440f90c6: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:16.722  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:05:16.722   701   724 I ImeTracker: system_server:440f90c6: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:16.722  6284  6284 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:05:16.722  6284  6284 I ImeTracker: dev.p38journal.debug:a7a31377: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:05:16.723  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=dev.p38journal.debug, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:05:16.723  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:05:16.802   701   810 I ImeTracker: dev.p38journal.debug:27f9dee6: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:05:16.803  6284  6284 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:05:16.803  6284  6284 I ImeTracker: dev.p38journal.debug:27f9dee6: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:05:16.804  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:05:16.804  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:05:16.805   701  1210 I ImeTracker: system_server:149851ea: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:16.805   701   724 I ImeTracker: system_server:149851ea: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:16.806  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=dev.p38journal.debug, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:05:16.807  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:05:16.830  6284  6284 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.compose.ui.window.Api33Impl$$ExternalSyntheticLambda0@ee664b6
+10-12 23:05:16.831  6284  6326 D HWUI    : endAllActiveAnimators on 0x7e18918aa7a0 (UnprojectedRipple) with handle 0x7e19218b1b80
+10-12 23:05:16.834   701  1210 I ImeTracker: system_server:70a6586f: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:16.837   701   724 I ImeTracker: system_server:70a6586f: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:16.869   701   810 I ImeTracker: dev.p38journal.debug:a9654d67: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:05:16.870  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:05:16.871  6284  6284 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:05:16.871  6284  6284 I ImeTracker: dev.p38journal.debug:a9654d67: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:05:16.871  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:05:16.871   701  1968 I ImeTracker: system_server:22676fbe: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:16.872   701   724 I ImeTracker: system_server:22676fbe: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:16.872  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=dev.p38journal.debug, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:05:16.873  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:05:16.938   701   810 I ImeTracker: dev.p38journal.debug:1a0edc83: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:05:16.938  6284  6284 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:05:16.938  6284  6284 I ImeTracker: dev.p38journal.debug:1a0edc83: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:05:16.939  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:05:16.940   701  1979 I ImeTracker: system_server:b9027a88: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:16.940  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:05:16.941  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=dev.p38journal.debug, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:05:16.941   701   724 I ImeTracker: system_server:b9027a88: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:16.942  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:05:16.978  6284  6284 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=androidx.compose.ui.window.Api33Impl$$ExternalSyntheticLambda0@bf602fe
+10-12 23:05:16.982  6284  6326 D HWUI    : endAllActiveAnimators on 0x7e18918938b0 (UnprojectedRipple) with handle 0x7e19218aca50
+10-12 23:05:16.985   701  1210 I ImeTracker: system_server:3668e02c: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:16.986   701   724 I ImeTracker: system_server:3668e02c: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:17.034   701   810 I ImeTracker: dev.p38journal.debug:2870cad9: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:05:17.036  6284  6284 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:05:17.036  6284  6284 I ImeTracker: dev.p38journal.debug:2870cad9: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:05:17.037  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:05:17.038  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:05:17.040   701  1210 I ImeTracker: system_server:5adbb3f3: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:17.040  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=dev.p38journal.debug, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:05:17.041   701   724 I ImeTracker: system_server:5adbb3f3: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:17.041  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:05:17.159   701  1968 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@72f704bc does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+10-12 23:05:17.161   564   583 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:05:17.164  6284  6284 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@f691562 in: PAUSED
+10-12 23:05:17.164  6284  6284 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=dev.p38journal.MainActivity@f691562
+10-12 23:05:17.168  6345  6359 I EGL_emulation: Opening libGLESv1_CM_emulation.so
+10-12 23:05:17.168  6345  6359 I EGL_emulation: Opening libGLESv2_emulation.so
+10-12 23:05:17.174  6345  6359 W HWUI    : Failed to initialize 101010-2 format, error = EGL_SUCCESS
+10-12 23:05:17.180   564   564 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:05:17.192   941  1010 I ndroid.systemui: AssetManager2(0x7e19a186e678) locale list changing from [] to [en-US]
+10-12 23:05:17.197   941  1010 I ndroid.systemui: AssetManager2(0x7e19a1871b98) locale list changing from [] to [en-US]
+10-12 23:05:17.220  1060  1079 W System  : A resource failed to call release.
+10-12 23:05:17.220  1060  1079 W System  : A resource failed to call release.
+10-12 23:05:17.220  1060  1079 W System  : A resource failed to call release.
+10-12 23:05:17.220  1060  1079 W System  : A resource failed to call release.
+10-12 23:05:17.220  1060  1079 W System  : A resource failed to call release.
+10-12 23:05:17.220  1060  1079 W System  : A resource failed to call release.
+10-12 23:05:17.256   701   721 I ActivityTaskManager: Displayed dev.p38journal.debug.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity for user 0: +94ms
+10-12 23:05:17.260   564   582 I BpBinder: onLastStrongRef automatically unlinking death recipients:
+10-12 23:05:17.265  1060  1060 D ViewRootImpl: Skipping stats log for color mode
+10-12 23:05:17.268  1060  1060 D StatsLog: LAUNCHER_ONRESUME
+10-12 23:05:17.274  1060  1140 D QuickstepModelDelegate: notifyAppTargetEvent action=1 launchLocation=workspace/0/[-1,-1]/[1,1]
+10-12 23:05:17.277  1513  1632 I AiAiEcho: Predicting[0]:  [CONTEXT sampling_count=5 ]
+10-12 23:05:17.277  1513  1632 I AiAiEcho: EchoTargets:
+10-12 23:05:17.277  1513  1632 I AiAiEcho: Filtered by AiAi flag check:
+10-12 23:05:17.277  1513  1632 I AiAiEcho: [CONTEXT ratelimit_period="10 SECONDS" ]
+10-12 23:05:17.277  1513  1632 I AiAiEcho: #remoteViewsTwiddler: feature disabled.
+10-12 23:05:17.278  1513  1632 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+10-12 23:05:17.280  1060  1060 D NexusLauncherModelDelegate: notifySmartspaceEvent: SmartspaceTargetEvent{mSmartspaceTarget=null, mSmartspaceActionId='null', mEventType=6}
+10-12 23:05:17.290  1060  1060 D BaseDepthController: setSurface:
+10-12 23:05:17.290  1060  1060 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+10-12 23:05:17.290  1060  1060 D BaseDepthController: 	mBaseSurface: Surface(name=com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity)/@0xc57158a
+10-12 23:05:17.311  1060  1060 I NotificationListener: Handling notification state refresh for dev.p38journal.debug#0
+10-12 23:05:17.311  1060  1060 D SsBaseTemplateCard: No text view can be set up
+10-12 23:05:17.311  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:05:17.311  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:05:17.311  1060  1060 D SsBaseTemplateCard: Passed-in item info is null
+10-12 23:05:17.311  1060  1060 I SsBaseTemplateCard: Secondary card pane is null
+10-12 23:05:17.329  6284  6284 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-12 23:05:17.332  6284  6326 D HWUI    : endAllActiveAnimators on 0x7e18918972a0 (UnprojectedRipple) with handle 0x7e19218a76b0
+10-12 23:05:17.332  6284  6326 D HWUI    : endAllActiveAnimators on 0x7e189189e010 (UnprojectedRipple) with handle 0x7e1921905520
+10-12 23:05:17.332  6284  6326 D HWUI    : endAllActiveAnimators on 0x7e18918ef470 (UnprojectedRipple) with handle 0x7e19218ae970
+10-12 23:05:17.336  1060  1060 D StateManager: createAtomicAnimation - fromState: Background, toState: Normal, partial trace:
+10-12 23:05:17.336  1060  1060 D StateManager: 	at com.android.quickstep.util.WorkspaceRevealAnim.prepareToAnimate(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:22)
+10-12 23:05:17.336  1060  1060 D StateManager: 	at com.android.quickstep.util.WorkspaceRevealAnim.<init>(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:11)
+10-12 23:05:17.336  1060  1060 D StateManager: 	at com.android.launcher3.QuickstepTransitionManager.createWallpaperOpenAnimations(go/retraceme ee19ec8c009da7af1d458e7d1683a6f5bf3b93b44f6674aa108e1a3e78584fe0:339)
+10-12 23:05:17.336  1060  1060 D b/311077782: LauncherAnimationRunner.setAnimation
+10-12 23:05:17.343  6284  6284 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@f691562 in: STOPPED
+10-12 23:05:17.343  6284  6284 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=dev.p38journal.MainActivity@f691562
+10-12 23:05:17.360   701   810 I ImeTracker: com.google.android.apps.nexuslauncher:1f97896b: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+10-12 23:05:17.361  1060  1060 D InsetsController: hide(ime(), fromIme=false)
+10-12 23:05:17.361  1060  1060 I ImeTracker: com.google.android.apps.nexuslauncher:1f97896b: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+10-12 23:05:17.367  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2043
+10-12 23:05:17.367  6284  6284 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@e26f3
+10-12 23:05:17.367  6284  6284 D LifecycleMonitor: Lifecycle status change: dev.p38journal.MainActivity@f691562 in: DESTROYED
+10-12 23:05:17.367  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 0, locked = false
+10-12 23:05:17.367  6284  6284 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+10-12 23:05:17.374   701  1210 I ImeTracker: system_server:5ea6dc5b: onRequestHide at ORIGIN_SERVER reason IME_REQUESTED_CHANGED_LISTENER fromUser false
+10-12 23:05:17.375  6284  6314 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@3fe6865]
+10-12 23:05:17.376   701   724 I ImeTracker: system_server:5ea6dc5b: onCancelled at PHASE_SERVER_SHOULD_HIDE
+10-12 23:05:17.376  6284  6284 D ViewRootImpl: Skipping stats log for color mode
+10-12 23:05:17.377  5001  5001 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1293 onStartInput(EditorInfo{EditorInfo{packageName=com.google.android.apps.nexuslauncher, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+10-12 23:05:17.379  5001  5001 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():100 repeatCheckTimes = 1, locked = false
+10-12 23:05:17.383  1060  1060 D RecentsView: onTaskRemoved: 332, not handling task stack changes
+10-12 23:05:17.383  1060  1060 D RecentsView: onTaskRemoved: 332, not handling task stack changes
+10-12 23:05:17.394  6284  6314 I TestRunner: finished: expenseFiltersCombinePersistAndReactToDateCategoryAndCancellation(dev.p38journal.ui.JournalUiTest)

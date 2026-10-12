@@ -1,0 +1,2 @@
+10-12 23:20:18.496  8755  8770 I TestRunner: started: versionTwoMigrationPreservesOwnerRecordsAndOnlyCancelsInitialAutomaticMetadata(dev.p38journal.data.MigrationTest)
+10-12 23:20:18.622  8755  8770 I TestRunner: finished: versionTwoMigrationPreservesOwnerRecordsAndOnlyCancelsInitialAutomaticMetadata(dev.p38journal.data.MigrationTest)

@@ -1,0 +1,2 @@
+10-12 23:04:02.637  6284  6314 I TestRunner: started: seedIsIdempotentAndHasNoInventedCompletionsOrCurrentReading(dev.p38journal.data.RepositoryTest)
+10-12 23:04:02.769  6284  6314 I TestRunner: finished: seedIsIdempotentAndHasNoInventedCompletionsOrCurrentReading(dev.p38journal.data.RepositoryTest)

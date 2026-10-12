@@ -1,0 +1,2 @@
+10-12 23:10:01.127  7140  7155 I TestRunner: started: foreignSequenceIsHistoryOnlyOverLocalTrackingButRestoresTrackingWhenClean(dev.p38journal.review.ExpansionReviewTest)
+10-12 23:10:01.347  7140  7155 I TestRunner: finished: foreignSequenceIsHistoryOnlyOverLocalTrackingButRestoresTrackingWhenClean(dev.p38journal.review.ExpansionReviewTest)

@@ -1,0 +1,7 @@
+10-12 23:09:44.149  7140  7155 I TestRunner: started: manufacturerPhaseMayBeExplicitlyPersonalizedAsAnAbsoluteUniqueTask(dev.p38journal.data.CustomRulesAndPaymentsTest)
+10-12 23:09:44.219  7140  7154 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=9febf187-7647-43bf-8dff-279713ed1533, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-12 23:09:44.221  7140  7140 D WM-Processor: Processor 9febf187-7647-43bf-8dff-279713ed1533 executed; reschedule = false
+10-12 23:09:44.221  7140  7140 D WM-SystemJobService: 9febf187-7647-43bf-8dff-279713ed1533 executed on JobScheduler
+10-12 23:09:44.223  7140  7154 D WM-GreedyScheduler: Cancelling work ID 9febf187-7647-43bf-8dff-279713ed1533
+10-12 23:09:44.225  7140  7154 D WM-SystemJobScheduler: Scheduling work ID 9febf187-7647-43bf-8dff-279713ed1533Job ID 0
+10-12 23:09:44.336  7140  7155 I TestRunner: finished: manufacturerPhaseMayBeExplicitlyPersonalizedAsAnAbsoluteUniqueTask(dev.p38journal.data.CustomRulesAndPaymentsTest)

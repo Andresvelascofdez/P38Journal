@@ -1,0 +1,5 @@
+10-12 23:04:08.357  6284  6314 I TestRunner: started: maliciousBackupAndWrongChecksumFailBeforeAnyWrite(dev.p38journal.platform.PlatformTest)
+10-12 23:04:08.382  6284  6325 D pdf_document_jni: Creating FPDF_DOCUMENT from fd: 120
+10-12 23:04:08.382  6284  6325 D pdf_document_jni: Deleting Document: 0x7e17a187ab50
+10-12 23:04:08.382  6284  6325 D pdf_document_jni: Destroyed Document: 0x7e17a187ab50
+10-12 23:04:08.397  6284  6314 I TestRunner: finished: maliciousBackupAndWrongChecksumFailBeforeAnyWrite(dev.p38journal.platform.PlatformTest)

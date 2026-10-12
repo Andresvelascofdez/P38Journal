@@ -1,0 +1,3 @@
+10-12 23:04:00.444  6284  6314 I TestRunner: started: snapshotFourPreservesAllNewRelationsAndRejectsDanglingFuelAndTyreLinksAtomically(dev.p38journal.data.ExpandedRepositoryTest)
+10-12 23:04:00.619  6284  6288 I 38journal.debug: Compiler allocated 4282KB to compile dev.p38journal.data.Snapshot dev.p38journal.data.Repository.parseSnapshot(java.lang.String)
+10-12 23:04:00.705  6284  6314 I TestRunner: finished: snapshotFourPreservesAllNewRelationsAndRejectsDanglingFuelAndTyreLinksAtomically(dev.p38journal.data.ExpandedRepositoryTest)

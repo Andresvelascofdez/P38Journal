@@ -1,0 +1,2 @@
+10-12 23:20:18.229  8755  8770 I TestRunner: started: correctingImportedTyreHistoryNeverOverwritesTheLocallyEditedVisitOrPayment(dev.p38journal.data.ExpandedRepositoryTest)
+10-12 23:20:18.284  8755  8770 I TestRunner: finished: correctingImportedTyreHistoryNeverOverwritesTheLocallyEditedVisitOrPayment(dev.p38journal.data.ExpandedRepositoryTest)

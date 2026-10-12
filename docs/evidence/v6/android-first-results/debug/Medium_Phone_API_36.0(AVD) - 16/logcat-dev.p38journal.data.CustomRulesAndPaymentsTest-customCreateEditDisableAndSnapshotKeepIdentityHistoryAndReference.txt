@@ -1,0 +1,2 @@
+10-12 23:03:59.460  6284  6314 I TestRunner: started: customCreateEditDisableAndSnapshotKeepIdentityHistoryAndReference(dev.p38journal.data.CustomRulesAndPaymentsTest)
+10-12 23:03:59.588  6284  6314 I TestRunner: finished: customCreateEditDisableAndSnapshotKeepIdentityHistoryAndReference(dev.p38journal.data.CustomRulesAndPaymentsTest)

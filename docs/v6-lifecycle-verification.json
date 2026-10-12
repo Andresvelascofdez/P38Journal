@@ -1,0 +1,30 @@
+[
+  {
+    "class": "dev.p38journal.platform.UpgradeV5Test",
+    "stage": "seed-v4",
+    "result": "PASS",
+    "instrumentation": "\r\ndev.p38journal.platform.UpgradeV5Test:.\r\n\r\nTime: 0.763\r\n\r\nOK (1 test)\r\n\r\n\r\n"
+  },
+  {
+    "backup": "v5-before-update.zip",
+    "bytes": 19585,
+    "sha256": "b2ee642e246eebd70d0e9dca4442de4548cd0c83c950cdf5c46649c23d8e4853"
+  },
+  {
+    "class": "dev.p38journal.platform.UpgradeV6Test",
+    "stage": "verify-update",
+    "result": "PASS",
+    "instrumentation": "\r\ndev.p38journal.platform.UpgradeV6Test:.\r\n\r\nTime: 0.673\r\n\r\nOK (1 test)\r\n\r\n\r\n"
+  },
+  {
+    "backup": "v6-after-update.zip",
+    "bytes": 21393,
+    "sha256": "d64dbeca4c8891c05e0bde5aa45c373d6578cab3b00a95b17aac33a4bed8c581"
+  },
+  {
+    "class": "dev.p38journal.platform.UpgradeV6Test",
+    "stage": "restore",
+    "result": "PASS",
+    "instrumentation": "\r\ndev.p38journal.platform.UpgradeV6Test:.\r\n\r\nTime: 0.673\r\n\r\nOK (1 test)\r\n\r\n\r\n"
+  }
+]

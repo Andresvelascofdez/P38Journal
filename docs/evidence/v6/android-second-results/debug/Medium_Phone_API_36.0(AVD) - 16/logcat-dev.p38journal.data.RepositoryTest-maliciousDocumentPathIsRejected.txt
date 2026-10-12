@@ -1,0 +1,2 @@
+10-12 23:09:47.338  7140  7155 I TestRunner: started: maliciousDocumentPathIsRejected(dev.p38journal.data.RepositoryTest)
+10-12 23:09:47.346  7140  7155 I TestRunner: finished: maliciousDocumentPathIsRejected(dev.p38journal.data.RepositoryTest)

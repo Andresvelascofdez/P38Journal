@@ -1,0 +1,10 @@
+10-12 23:10:00.427  7140  7155 I TestRunner: started: fuelExpenseEditsAndRestorePreserveOnePaymentAndLocalCancellation(dev.p38journal.review.ExpansionReviewTest)
+10-12 23:10:00.536  4783  5868 I PermissionControllerServiceImpl: Updating user sensitive for uid 10269
+10-12 23:10:00.537   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:10:00.537  1513  7034 I AiAiEcho: AppIndexer Package:[dev.p38journal.debug] UserProfile:[0] Enabled:[true].
+10-12 23:10:00.537  1513  7034 I AiAiEcho: AppFetcherImplV2 updateApps package:[dev.p38journal.debug], userId:[0], reason:[package is updated.].
+10-12 23:10:00.537  1060  1140 D PackageUpdatedTask: Package updated: mOp=UPDATE packages=[dev.p38journal.debug], user=UserHandle{0}
+10-12 23:10:00.537   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:10:00.537   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:10:00.538   701   701 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:10:00.547  7140  7155 I TestRunner: finished: fuelExpenseEditsAndRestorePreserveOnePaymentAndLocalCancellation(dev.p38journal.review.ExpansionReviewTest)

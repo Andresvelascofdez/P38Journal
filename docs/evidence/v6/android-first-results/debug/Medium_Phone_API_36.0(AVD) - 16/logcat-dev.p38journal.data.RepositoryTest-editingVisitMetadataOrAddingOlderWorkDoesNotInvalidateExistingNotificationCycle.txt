@@ -1,0 +1,2 @@
+10-12 23:04:01.379  6284  6314 I TestRunner: started: editingVisitMetadataOrAddingOlderWorkDoesNotInvalidateExistingNotificationCycle(dev.p38journal.data.RepositoryTest)
+10-12 23:04:01.425  6284  6314 I TestRunner: finished: editingVisitMetadataOrAddingOlderWorkDoesNotInvalidateExistingNotificationCycle(dev.p38journal.data.RepositoryTest)

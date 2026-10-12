@@ -1,0 +1,4 @@
+10-12 23:04:07.500  6284  6314 I TestRunner: started: soonToDueReplacesOneVisibleNotificationAndStaysVisible(dev.p38journal.platform.ExpansionNotificationsTest)
+10-12 23:04:07.501  1060  1060 D RecentsView: onTaskRemoved: 310, not handling task stack changes
+10-12 23:04:07.505  1060  1060 D RecentsView: onTaskRemoved: 310, not handling task stack changes
+10-12 23:04:07.723  6284  6314 I TestRunner: finished: soonToDueReplacesOneVisibleNotificationAndStaysVisible(dev.p38journal.platform.ExpansionNotificationsTest)

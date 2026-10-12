@@ -1,0 +1,2 @@
+10-12 23:09:46.174  7140  7155 I TestRunner: started: versionOneFixtureRetainsExpenseReadingAndNoteWhileAddingAudit(dev.p38journal.data.MigrationTest)
+10-12 23:09:46.258  7140  7155 I TestRunner: finished: versionOneFixtureRetainsExpenseReadingAndNoteWhileAddingAudit(dev.p38journal.data.MigrationTest)

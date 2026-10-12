@@ -1,0 +1,4 @@
+10-12 23:09:52.476  7140  7155 I TestRunner: started: tyresWithoutReadingDoNotInferCurrentKmFromPlanningBaseline(dev.p38journal.platform.ExpansionNotificationsTest)
+10-12 23:09:52.487  1060  1060 D RecentsView: onTaskRemoved: 349, not handling task stack changes
+10-12 23:09:52.487  1060  1060 D RecentsView: onTaskRemoved: 349, not handling task stack changes
+10-12 23:09:52.506  7140  7155 I TestRunner: finished: tyresWithoutReadingDoNotInferCurrentKmFromPlanningBaseline(dev.p38journal.platform.ExpansionNotificationsTest)

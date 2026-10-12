@@ -6,3 +6,5 @@ fa81561c32199b983e64026ae1a64c90105482f56c3fdaacd6f1db396afa9729  p38-journal-3.
 c0a444d332b63297fa292f22f42c0ff6080acaca3de97212aa50528a91f2a7df  p38-journal-4.0.0-release.apk
 4d2d5083ef9a98ba7910c6b76717fd87bfc2ba3a6af3a8992b6093a5c8cbae9a  p38-journal-4.1.0-debug.apk
 7fbcdcec1457a1cda65fd198f2acd0eb5b5a7cc0404115efb139d97f7d96bf27  p38-journal-4.1.0-release.apk
+fae0760fb12462c0477bdb11a39befe66a5c44f4977c94ff4486f0ae7ba999cf  p38-journal-5.0.0-debug.apk
+eb64a294f5728c3fc9eb89f63fab96f1c3970c68e236a7ac2a985e625bcb24be  p38-journal-5.0.0-release.apk

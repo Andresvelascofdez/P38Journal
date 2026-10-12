@@ -1,0 +1,4 @@
+10-12 23:04:17.021  6284  6314 I TestRunner: started: foreignSequenceIsHistoryOnlyOverLocalTrackingButRestoresTrackingWhenClean(dev.p38journal.review.ExpansionReviewTest)
+10-12 23:04:17.217   701   963 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 0
+10-12 23:04:17.217   642   686 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 0
+10-12 23:04:17.243  6284  6314 I TestRunner: finished: foreignSequenceIsHistoryOnlyOverLocalTrackingButRestoresTrackingWhenClean(dev.p38journal.review.ExpansionReviewTest)

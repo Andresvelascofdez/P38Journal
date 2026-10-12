@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="dev.p38journal.data.CustomRulesAndPaymentsTest" tests="107" failures="4" errors="0" skipped="4" time="141.64" timestamp="2026-10-12T20:22:38" hostname="localhost">
+  <properties>
+    <property name="device" value="Medium_Phone_API_36.0(AVD) - 16" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="legacySnapshotsTwoAndThreeDetachInactiveLinksAndPermitReplacementWithoutLosingAudit" classname="dev.p38journal.data.CustomRulesAndPaymentsTest" time="0.14" />
+  <testcase name="voidLinkedExpenseAllowsNewPaymentAndVisitEditsKeepPersonalizedExpenseMetadata" classname="dev.p38journal.data.CustomRulesAndPaymentsTest" time="0.03" />
+  <testcase name="manufacturerPhaseMayBeExplicitlyPersonalizedAsAnAbsoluteUniqueTask" classname="dev.p38journal.data.CustomRulesAndPaymentsTest" time="0.207" />
+  <testcase name="linkedPaymentEditAllowsVisitMetadataEditWithoutInventingANewAllocation" classname="dev.p38journal.data.CustomRulesAndPaymentsTest" time="0.027" />
+  <testcase name="restoreActivePaymentOverLegacyInactiveLinkNormalizesExistingDataAndCountsOnce" classname="dev.p38journal.data.CustomRulesAndPaymentsTest" time="0.027" />
+  <testcase name="customUniqueTaskCompletesOnceAndVoidingRestoresItsOriginalAbsoluteLimits" classname="dev.p38journal.data.CustomRulesAndPaymentsTest" time="0.055" />
+  <testcase name="customCreateEditDisableAndSnapshotKeepIdentityHistoryAndReference" classname="dev.p38journal.data.CustomRulesAndPaymentsTest" time="0.105" />
+  <testcase name="ruleNameNotesPreserveEmissionButIntervalAndReminderToggleCancelIt" classname="dev.p38journal.data.CustomRulesAndPaymentsTest" time="0.182" />
+  <testcase name="phasePersonalizationBecomesSimpleAndOriginalManufacturerCanBeRestored" classname="dev.p38journal.data.CustomRulesAndPaymentsTest" time="0.179" />
+  <testcase name="oldRuleJsonDefaultsEnabledAndRetainsOwnerIdentityAndLegacyAbsoluteOnceTarget" classname="dev.p38journal.data.CustomRulesAndPaymentsTest" time="0.13" />
+  <testcase name="inactiveExpenseSavedDirectlyDetachesAndOldPaymentIsNeverSilentlyResurrected" classname="dev.p38journal.data.CustomRulesAndPaymentsTest" time="0.028" />
+  <testcase name="fuelVoidAndInvalidRelationRollbackDoNotTouchIndependentExpensesOrReadings" classname="dev.p38journal.data.ExpandedRepositoryTest" time="0.001" />
+  <testcase name="tyreReviewChangesNextLimitButNotMountUsageOrTheOtherAxis" classname="dev.p38journal.data.ExpandedRepositoryTest" time="0.027" />
+  <testcase name="restoredFuelCollisionPreservesLocalExpenseAndDisablesIncoherentConsumptionEntry" classname="dev.p38journal.data.ExpandedRepositoryTest" time="0.055" />
+  <testcase name="freeDeadlineRenewsOnlyExplicitlyAndMetadataKeepsEmittedLedgerAndIdMapping" classname="dev.p38journal.data.ExpandedRepositoryTest" time="0.028" />
+  <testcase name="freeManualWorkCannotEraseExistingMaintenanceOperations" classname="dev.p38journal.data.ExpandedRepositoryTest" time="0.097" />
+  <testcase name="restoredTyreHistoryPreservesLocalTrackingWithoutInventingAnAnnullation" classname="dev.p38journal.data.ExpandedRepositoryTest" time="0.077" />
+  <testcase name="snapshotFourPreservesAllNewRelationsAndRejectsDanglingFuelAndTyreLinksAtomically" classname="dev.p38journal.data.ExpandedRepositoryTest" time="0.258" />
+  <testcase name="oldSnapshotsTwoAndThreeDefaultVisitsToDoneWithoutInventingFuelOrDeadlineOrTyreRows" classname="dev.p38journal.data.ExpandedRepositoryTest" time="0.053" />
+  <testcase name="correctingImportedTyreHistoryNeverOverwritesTheLocallyEditedVisitOrPayment" classname="dev.p38journal.data.ExpandedRepositoryTest" time="0.055" />
+  <testcase name="plannedWorkBecomesDoneWithSameIdentityAndNoEstimatedExpenseOrMaintenanceEvent" classname="dev.p38journal.data.ExpandedRepositoryTest" time="0.106" />
+  <testcase name="plannedActualPartsPaymentSurvivesConversionAndUnknownWorkDoesNotInventAnExpenseDate" classname="dev.p38journal.data.ExpandedRepositoryTest" time="0.028" />
+  <testcase name="importedUntrackedMountCannotMakeAReviewBeforeTheRealMountValid" classname="dev.p38journal.data.ExpandedRepositoryTest" time="0.002" />
+  <testcase name="fuelCreatesOneExpenseAndBidirectionalEditsAndCancellationRemainConsistent" classname="dev.p38journal.data.ExpandedRepositoryTest" time="0.027" />
+  <testcase name="changingBothTyreAxesCreatesOneVisitAndPaymentAndCorrectionKeepsSequenceAndMetadata" classname="dev.p38journal.data.ExpandedRepositoryTest" time="0.053" />
+  <testcase name="versionTwoMigrationPreservesOwnerRecordsAndOnlyCancelsInitialAutomaticMetadata" classname="dev.p38journal.data.MigrationTest" time="0.131" />
+  <testcase name="versionThreeMigrationToFourKeepsHistoricalAmountsAndReferencesWithoutSeedingNewDomains" classname="dev.p38journal.data.MigrationTest" time="0.078" />
+  <testcase name="rawBackupVerifiesOldDatabaseBeforeMigrationAndLeavesOriginalUntouched" classname="dev.p38journal.data.MigrationTest" time="0.028" />
+  <testcase name="versionOneFixtureRetainsExpenseReadingAndNoteWhileAddingAudit" classname="dev.p38journal.data.MigrationTest" time="0.104" />
+  <testcase name="editingVisitMetadataOrAddingOlderWorkDoesNotInvalidateExistingNotificationCycle" classname="dev.p38journal.data.RepositoryTest" time="0.054" />
+  <testcase name="workAndPlanningChangesCancelOnlyAutomaticRecordsWithTheSameRuleId" classname="dev.p38journal.data.RepositoryTest" time="0.028" />
+  <testcase name="explicitOdometerCorrectionAndRetroactiveReadingPreserveHistory" classname="dev.p38journal.data.RepositoryTest" time="0.028" />
+  <testcase name="restoreIntoFreshSeedKeepsCopiedOverridesNewerStandardAndExistingLocalOverrides" classname="dev.p38journal.data.RepositoryTest" time="0.257" />
+  <testcase name="operationalAdoptionIsAuditedAndCreatesNoNewCompletedWork" classname="dev.p38journal.data.RepositoryTest" time="0.028" />
+  <testcase name="paymentAndDoubleSaveCountOnceAndFuelDoesNotAlterMaintenance" classname="dev.p38journal.data.RepositoryTest" time="0.028" />
+  <testcase name="workshopExtrasFuelEditAndVoidTotals" classname="dev.p38journal.data.RepositoryTest" time="0.026" />
+  <testcase name="atomicVisitAndReadingUpdatesCalendarAndPersistsPendingNotificationReconciliation" classname="dev.p38journal.data.RepositoryTest" time="0.028" />
+  <testcase name="deletedSeedHistoryIsNotRecreatedOnNextLaunch" classname="dev.p38journal.data.RepositoryTest" time="0.104" />
+  <testcase name="versionTwoSnapshotRecoversOnlyExplicitPlanCreationAndKeepsEditedLocalReference" classname="dev.p38journal.data.RepositoryTest" time="0.103" />
+  <testcase name="restoreKeepsLaterOwnerEditsAndVoids" classname="dev.p38journal.data.RepositoryTest" time="0.027" />
+  <testcase name="oldOwnerOverrideUsesCurrentCatalogueVisibilityWithoutLosingItsInterval" classname="dev.p38journal.data.RepositoryTest" time="0.106" />
+  <testcase name="catalogueUpdateKeepsOverridesAndResetKeepsRevisionHistory" classname="dev.p38journal.data.RepositoryTest" time="0.182" />
+  <testcase name="existingPaymentLinkDoesNotDuplicateAndDifferentPaymentsAreKept" classname="dev.p38journal.data.RepositoryTest" time="0.002" />
+  <testcase name="maliciousDocumentPathIsRejected" classname="dev.p38journal.data.RepositoryTest" time="0.028" />
+  <testcase name="snapshotRoundTripIsCompleteIdempotentAndInvalidSnapshotIsAtomic" classname="dev.p38journal.data.RepositoryTest" time="0.053" />
+  <testcase name="seedUpdatesOldUnmodifiedRuleButPreservesOwnerOverrideAndEventRevision" classname="dev.p38journal.data.RepositoryTest" time="0.129" />
+  <testcase name="movingPaymentClearsPreviousVisitAndLaterEditDoesNotDuplicateExpense" classname="dev.p38journal.data.RepositoryTest" time="0.028" />
+  <testcase name="seedIsIdempotentAndHasNoInventedCompletionsOrCurrentReading" classname="dev.p38journal.data.RepositoryTest" time="0.131" />
+  <testcase name="versionTwoSnapshotInfersOnlyFormalAutomaticIdsAndPreservesCustomOrExplicitManualRecords" classname="dev.p38journal.data.RepositoryTest" time="0.056" />
+  <testcase name="versionTwoSnapshotImportsWithoutInventingAPlanningDateOrCompletedWork" classname="dev.p38journal.data.RepositoryTest" time="0.078" />
+  <testcase name="planningReferenceRemainsSeparateFromActualReadingAndSurvivesSnapshotRestore" classname="dev.p38journal.data.RepositoryTest" time="0.157" />
+  <testcase name="invalidVisitRollsBackAndEditingVoidingRecalculates" classname="dev.p38journal.data.RepositoryTest" time="0.053" />
+  <testcase name="stagedUpdateUninstallAndCompleteRestore" classname="dev.p38journal.platform.DeliveryLifecycleTest" time="0.007">
+    <skipped />
+  </testcase>
+  <testcase name="scanWithoutTextDeclaresSearchUnavailable" classname="dev.p38journal.platform.DocumentViewerTest" time="2.59" />
+  <testcase name="textPdfSearchAndBookmarksAreReal" classname="dev.p38journal.platform.DocumentViewerTest" time="1.595" />
+  <testcase name="soonToDueReplacesOneVisibleNotificationAndStaysVisible" classname="dev.p38journal.platform.ExpansionNotificationsTest" time="0.24" />
+  <testcase name="perEntryLeadPermissionAndDeactivationAreHonest" classname="dev.p38journal.platform.ExpansionNotificationsTest" time="0.079" />
+  <testcase name="collidingHashesReceivePersistentDistinctAndroidIds" classname="dev.p38journal.platform.ExpansionNotificationsTest" time="0.027" />
+  <testcase name="tyresWithoutReadingDoNotInferCurrentKmFromPlanningBaseline" classname="dev.p38journal.platform.ExpansionNotificationsTest" time="0.029" />
+  <testcase name="realAndroidTransportPostsManualDeadlineAndCancelsAfterRenewal" classname="dev.p38journal.platform.ExpansionNotificationsTest" time="0.052" />
+  <testcase name="namedDeadlineDeduplicatesMetadataEditsAndRenewalCancels" classname="dev.p38journal.platform.ExpansionNotificationsTest" time="0.055" />
+  <testcase name="tyresCrossExactManualLimitAndReviewCancelsWithoutResettingUse" classname="dev.p38journal.platform.ExpansionNotificationsTest" time="0.079" />
+  <testcase name="fullBackupKeepsAttachmentsExactTotalsAndReimportIsIdempotent" classname="dev.p38journal.platform.PlatformTest" time="0.13" />
+  <testcase name="maliciousBackupAndWrongChecksumFailBeforeAnyWrite" classname="dev.p38journal.platform.PlatformTest" time="0.054" />
+  <testcase name="v3EmittedCycleAndReadInboxArePreservedByGenerationUpgrade" classname="dev.p38journal.platform.PlatformTest" time="0.054" />
+  <testcase name="partialCompletionInvalidatesGroupDestinationAndDisablingChannelsCancels" classname="dev.p38journal.platform.PlatformTest" time="0.079" />
+  <testcase name="dismissedSummaryIsNotResurrectedByPartialCompletion" classname="dev.p38journal.platform.PlatformTest" time="0.052" />
+  <testcase name="deniedPermissionKeepsInboxAndGrantEmitsRelevantSummary" classname="dev.p38journal.platform.PlatformTest" time="0.052" />
+  <testcase name="soonToDueHasNewNotificationKindInSameWeek" classname="dev.p38journal.platform.PlatformTest" time="0.03" />
+  <testcase name="freshBaselineComputesLimitsWithoutInitialInboxOrInventedReading" classname="dev.p38journal.platform.PlatformTest" time="0.027" />
+  <testcase name="concurrentNotificationsDeduplicateAndCompletionCancels" classname="dev.p38journal.platform.PlatformTest" time="0.053" />
+  <testcase name="notificationWindowAndDisabledPreferencesRemainHonest" classname="dev.p38journal.platform.PlatformTest" time="0.028" />
+  <testcase name="invalidDocumentImportDoesNotPersist" classname="dev.p38journal.platform.PlatformTest" time="0.028" />
+  <testcase name="realReadingCrossingOutsidePreferredHourEmitsOnceAndWorkStartsNewCycle" classname="dev.p38journal.platform.SystemWorkTest" time="2.021" />
+  <testcase name="realOptionalOdometerReminderDeduplicatesAndNewReadingCancels" classname="dev.p38journal.platform.SystemWorkTest" time="1.458" />
+  <testcase name="realWorkManagerRunsCleanPlanningAndBackupWithoutInitialInbox" classname="dev.p38journal.platform.SystemWorkTest" time="0.385" />
+  <testcase name="realDateDeadlineEmitsFromWorkManagerWhileActivityIsClosed" classname="dev.p38journal.platform.SystemWorkTest" time="1.073" />
+  <testcase name="realNotificationManagerEmitsTestWithoutMaintenanceEvents" classname="dev.p38journal.platform.SystemWorkTest" time="0.411" />
+  <testcase name="realRuleChangeCancelsObsoleteLimitAndReminderToggleKeepsHistory" classname="dev.p38journal.platform.SystemWorkTest" time="1.922" />
+  <testcase name="stagedV3UpdateAndV4Restore" classname="dev.p38journal.platform.UpgradeV4Test" time="0.011">
+    <skipped />
+  </testcase>
+  <testcase name="stagedV4UpdateAndV5Restore" classname="dev.p38journal.platform.UpgradeV5Test" time="0.007">
+    <skipped />
+  </testcase>
+  <testcase name="actualV5UpdateAndV6CompleteRepeatedRestore" classname="dev.p38journal.platform.UpgradeV6Test" time="0.007">
+    <skipped />
+  </testcase>
+  <testcase name="fuelExpenseEditsAndRestorePreserveOnePaymentAndLocalCancellation" classname="dev.p38journal.review.ExpansionReviewTest" time="0.105" />
+  <testcase name="globalNotificationsOffOnKeepsAlreadyEmittedCycleAndReadInbox" classname="dev.p38journal.review.ExpansionReviewTest" time="0.104" />
+  <testcase name="correctionOfBothAxesKeepsSinglePaymentAndLaterFrontReplacement" classname="dev.p38journal.review.ExpansionReviewTest" time="0.077" />
+  <testcase name="plannedConversionUsesSameHistoryIdentityWithUnknownDateAndRealExpense" classname="dev.p38journal.review.ExpansionReviewTest" time="0.08" />
+  <testcase name="tyreNotificationRequiresActualReadingRatherThanPlanningBaseline" classname="dev.p38journal.review.ExpansionReviewTest" time="0.081" />
+  <testcase name="restoringFuelOverAConflictingLocalReceiptPreservesReceiptAndValidBackup" classname="dev.p38journal.review.ExpansionReviewTest" time="0.157" />
+  <testcase name="plannedWorkCanLinkARealPurchaseAndConversionDoesNotCountItTwice" classname="dev.p38journal.review.ExpansionReviewTest" time="0.081" />
+  <testcase name="foreignSequenceIsHistoryOnlyOverLocalTrackingButRestoresTrackingWhenClean" classname="dev.p38journal.review.ExpansionReviewTest" time="0.234" />
+  <testcase name="fuelQuickFormUsesDecimalLitresOneExpenseAndNoSilentOdometerUpdate" classname="dev.p38journal.ui.ExpansionUiTest" time="17.429" />
+  <testcase name="quickManualWorkConvertsSameRecordWithoutHistoricalDateExpenseOrManufacturerEvent" classname="dev.p38journal.ui.ExpansionUiTest" time="10.13" />
+  <testcase name="manualPlannedWorkLinksExistingExpenseAndRelationOpensBothWays" classname="dev.p38journal.ui.ExpansionUiTest" time="14.134" />
+  <testcase name="historicalManualWorkLinksMaintenanceUsingKnownKmWithoutInventingDate" classname="dev.p38journal.ui.ExpansionUiTest" time="7.695">
+    <failure>java.lang.AssertionError: expected:&lt;200000&gt; but was:&lt;188000&gt;
+at org.junit.Assert.fail(Assert.java:89)
+at org.junit.Assert.failNotEquals(Assert.java:835)
+at org.junit.Assert.assertEquals(Assert.java:120)
+at org.junit.Assert.assertEquals(Assert.java:146)
+at dev.p38journal.ui.ExpansionUiTest$historicalManualWorkLinksMaintenanceUsingKnownKmWithoutInventingDate$1.invokeSuspend(ExpansionUiTest.kt:151)
+at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+at dev.p38journal.ui.ExpansionUiTest.historicalManualWorkLinksMaintenanceUsingKnownKmWithoutInventingDate(ExpansionUiTest.kt:125)
+</failure>
+  </testcase>
+  <testcase name="deadlineFreeNameRenewsManuallyPreservesHistoryAndDeactivates" classname="dev.p38journal.ui.ExpansionUiTest" time="13.19" />
+  <testcase name="tyreMountReviewAndBothChangePreserveUsageAndSinglePayment" classname="dev.p38journal.ui.ExpansionUiTest" time="15.538" />
+  <testcase name="visitRequiresExplicitCompletionAndKeepsUnselectedOperationsOpen" classname="dev.p38journal.ui.JournalUiTest" time="2.212" />
+  <testcase name="groupedOperationCanCustomizePhaseAndRestoreManufacturerWithoutWork" classname="dev.p38journal.ui.JournalUiTest" time="1.978">
+    <failure>java.util.NoSuchElementException: Collection contains no element matching the predicate.
+at dev.p38journal.ui.JournalUiTest$groupedOperationCanCustomizePhaseAndRestoreManufacturerWithoutWork$1.invokeSuspend(JournalUiTest.kt:543)
+at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+at dev.p38journal.ui.JournalUiTest.groupedOperationCanCustomizePhaseAndRestoreManufacturerWithoutWork(JournalUiTest.kt:340)
+</failure>
+  </testcase>
+  <testcase name="ownUniqueMaintenanceCreatesEditsDisablesAndCompletesOnceWithoutUrl" classname="dev.p38journal.ui.JournalUiTest" time="9.999" />
+  <testcase name="readingFaultPartAndLinkedPdfWorkThroughNativeScreens" classname="dev.p38journal.ui.JournalUiTest" time="10.983" />
+  <testcase name="expenseFiltersCombinePersistAndReactToDateCategoryAndCancellation" classname="dev.p38journal.ui.JournalUiTest" time="2.447" />
+  <testcase name="expenseFormSurvivesRecreationAndSavesExactCentsWithoutChangingMaintenance" classname="dev.p38journal.ui.JournalUiTest" time="1.793" />
+  <testcase name="planningReferenceIsEditableWithoutInventingReadingOrWork" classname="dev.p38journal.ui.JournalUiTest" time="1.638" />
+  <testcase name="secondaryReferencesActivateAndDisableConditionalProfileWithoutInventedWork" classname="dev.p38journal.ui.JournalUiTest" time="5.689" />
+  <testcase name="editingVisitMetadataPreservesHistoricalAllocationAfterLinkedExpenseCorrection" classname="dev.p38journal.ui.JournalUiTest" time="6.39" />
+  <testcase name="maintenanceDefaultShowsFourCompleteRevisionsAndEveryCatalogueOperationWithoutInventingWork" classname="dev.p38journal.ui.JournalUiTest" time="0.962">
+    <failure>java.lang.AssertionError: Action performScrollTo() failed.
+Reason: Expected exactly '1' node but could not find any node that satisfies: (TestTag = 'projected_count_195000')
+
+at androidx.compose.ui.test.SemanticsNodeInteraction.fetchOneOrThrow(SemanticsNodeInteraction.kt:178)
+at androidx.compose.ui.test.SemanticsNodeInteraction.fetchOneOrThrow$default(SemanticsNodeInteraction.kt:150)
+at androidx.compose.ui.test.SemanticsNodeInteraction.fetchSemanticsNode(SemanticsNodeInteraction.kt:84)
+at androidx.compose.ui.test.ActionsKt.performScrollTo(Actions.kt:76)
+at dev.p38journal.ui.JournalUiTest$maintenanceDefaultShowsFourCompleteRevisionsAndEveryCatalogueOperationWithoutInventingWork$1.invokeSuspend(JournalUiTest.kt:397)
+at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+at dev.p38journal.ui.JournalUiTest.maintenanceDefaultShowsFourCompleteRevisionsAndEveryCatalogueOperationWithoutInventingWork(JournalUiTest.kt:381)
+</failure>
+  </testcase>
+  <testcase name="groupedReviewRecordsOnlySelectedOperationWithPrefilledDateAndKilometres" classname="dev.p38journal.ui.JournalUiTest" time="0.882">
+    <failure>java.util.NoSuchElementException: Collection contains no element matching the predicate.
+at dev.p38journal.ui.JournalUiTest$groupedReviewRecordsOnlySelectedOperationWithPrefilledDateAndKilometres$1.invokeSuspend(JournalUiTest.kt:528)
+at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source:1)
+at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source:1)
+at dev.p38journal.ui.JournalUiTest.groupedReviewRecordsOnlySelectedOperationWithPrefilledDateAndKilometres(JournalUiTest.kt:122)
+</failure>
+  </testcase>
+</testsuite>

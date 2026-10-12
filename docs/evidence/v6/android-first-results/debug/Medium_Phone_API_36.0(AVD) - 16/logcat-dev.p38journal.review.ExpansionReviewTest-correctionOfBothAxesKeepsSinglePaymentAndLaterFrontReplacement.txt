@@ -1,0 +1,2 @@
+10-12 23:04:16.527  6284  6314 I TestRunner: started: correctionOfBothAxesKeepsSinglePaymentAndLaterFrontReplacement(dev.p38journal.review.ExpansionReviewTest)
+10-12 23:04:16.611  6284  6314 I TestRunner: finished: correctionOfBothAxesKeepsSinglePaymentAndLaterFrontReplacement(dev.p38journal.review.ExpansionReviewTest)

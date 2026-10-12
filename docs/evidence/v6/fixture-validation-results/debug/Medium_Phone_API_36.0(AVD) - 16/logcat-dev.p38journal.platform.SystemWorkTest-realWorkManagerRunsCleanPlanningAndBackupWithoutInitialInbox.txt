@@ -1,0 +1,31 @@
+10-12 23:20:29.456  8755  8770 I TestRunner: started: realWorkManagerRunsCleanPlanningAndBackupWithoutInitialInbox(dev.p38journal.platform.SystemWorkTest)
+10-12 23:20:29.457  8755  8770 I UiAutomationPermGranter: Permission: android.permission.POST_NOTIFICATIONS is already granted!
+10-12 23:20:29.542  8755  8769 W JobInfo : Requested important-while-foreground flag for job13 is ignored and takes no effect
+10-12 23:20:29.542  8755  8769 D WM-SystemJobScheduler: Scheduling work ID 11ba69e7-e844-458a-9bdf-c3f4839ab608Job ID 13
+10-12 23:20:29.548  8755  8755 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=11ba69e7-e844-458a-9bdf-c3f4839ab608, generation=0)
+10-12 23:20:29.552  8755  8769 D WM-GreedyScheduler: Starting work for 11ba69e7-e844-458a-9bdf-c3f4839ab608
+10-12 23:20:29.559  8755  8769 W JobInfo : Requested important-while-foreground flag for job14 is ignored and takes no effect
+10-12 23:20:29.559  8755  8769 D WM-SystemJobScheduler: Scheduling work ID 7856b60a-eb45-42d4-9f8c-c2759da8d7cdJob ID 14
+10-12 23:20:29.562  8755  8755 D WM-SystemJobService: onStartJob for WorkGenerationalId(workSpecId=7856b60a-eb45-42d4-9f8c-c2759da8d7cd, generation=0)
+10-12 23:20:29.563  8755  8769 D WM-GreedyScheduler: Starting work for 7856b60a-eb45-42d4-9f8c-c2759da8d7cd
+10-12 23:20:29.566  8755  8769 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=11ba69e7-e844-458a-9bdf-c3f4839ab608, generation=0)
+10-12 23:20:29.570  8755  8769 D WM-Processor: Work WorkGenerationalId(workSpecId=11ba69e7-e844-458a-9bdf-c3f4839ab608, generation=0) is already enqueued for processing
+10-12 23:20:29.571  8755  8769 D WM-Processor: Processor: processing WorkGenerationalId(workSpecId=7856b60a-eb45-42d4-9f8c-c2759da8d7cd, generation=0)
+10-12 23:20:29.571  8755  8769 D WM-Processor: Work WorkGenerationalId(workSpecId=7856b60a-eb45-42d4-9f8c-c2759da8d7cd, generation=0) is already enqueued for processing
+10-12 23:20:29.574  8755  8755 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:20:29.576  8755  8755 D WM-WorkerWrapper: Starting work for dev.p38journal.platform.MaintenanceWorker
+10-12 23:20:29.577  8755  8769 D WM-PackageManagerHelper: androidx.work.impl.background.systemalarm.RescheduleReceiver enabled
+10-12 23:20:29.712  8755  8773 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=11ba69e7-e844-458a-9bdf-c3f4839ab608, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-12 23:20:29.714  8755  8755 D WM-Processor: Processor 11ba69e7-e844-458a-9bdf-c3f4839ab608 executed; reschedule = false
+10-12 23:20:29.714  8755  8755 D WM-SystemJobService: 11ba69e7-e844-458a-9bdf-c3f4839ab608 executed on JobScheduler
+10-12 23:20:29.720  8755  8773 D WM-GreedyScheduler: Cancelling work ID 11ba69e7-e844-458a-9bdf-c3f4839ab608
+10-12 23:20:29.724  8755  8773 D WM-SystemJobScheduler: Scheduling work ID 11ba69e7-e844-458a-9bdf-c3f4839ab608Job ID 15
+10-12 23:20:29.734  8755  8769 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=7856b60a-eb45-42d4-9f8c-c2759da8d7cd, tags={ dev.p38journal.platform.MaintenanceWorker } ]
+10-12 23:20:29.736  8755  8755 D WM-Processor: Processor 7856b60a-eb45-42d4-9f8c-c2759da8d7cd executed; reschedule = false
+10-12 23:20:29.736  8755  8755 D WM-SystemJobService: 7856b60a-eb45-42d4-9f8c-c2759da8d7cd executed on JobScheduler
+10-12 23:20:29.738  8755  8769 D WM-GreedyScheduler: Cancelling work ID 7856b60a-eb45-42d4-9f8c-c2759da8d7cd
+10-12 23:20:29.790  8755  8769 D WM-Processor: Processor cancelling 11ba69e7-e844-458a-9bdf-c3f4839ab608
+10-12 23:20:29.790  8755  8769 D WM-Processor: WorkerWrapper could not be found for 11ba69e7-e844-458a-9bdf-c3f4839ab608
+10-12 23:20:29.795  8755  8769 D WM-GreedyScheduler: Cancelling work ID 11ba69e7-e844-458a-9bdf-c3f4839ab608
+10-12 23:20:29.798  8755  8769 D WM-PackageManagerHelper: androidx.work.impl.background.systemalarm.RescheduleReceiver disabled
+10-12 23:20:29.831  8755  8770 I TestRunner: finished: realWorkManagerRunsCleanPlanningAndBackupWithoutInitialInbox(dev.p38journal.platform.SystemWorkTest)

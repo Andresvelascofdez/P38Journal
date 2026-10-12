@@ -1,0 +1,2 @@
+10-12 23:09:46.138  7140  7155 I TestRunner: started: rawBackupVerifiesOldDatabaseBeforeMigrationAndLeavesOriginalUntouched(dev.p38journal.data.MigrationTest)
+10-12 23:09:46.172  7140  7155 I TestRunner: finished: rawBackupVerifiesOldDatabaseBeforeMigrationAndLeavesOriginalUntouched(dev.p38journal.data.MigrationTest)

@@ -1,0 +1,2 @@
+10-12 23:04:00.290  6284  6314 I TestRunner: started: freeManualWorkCannotEraseExistingMaintenanceOperations(dev.p38journal.data.ExpandedRepositoryTest)
+10-12 23:04:00.373  6284  6314 I TestRunner: finished: freeManualWorkCannotEraseExistingMaintenanceOperations(dev.p38journal.data.ExpandedRepositoryTest)

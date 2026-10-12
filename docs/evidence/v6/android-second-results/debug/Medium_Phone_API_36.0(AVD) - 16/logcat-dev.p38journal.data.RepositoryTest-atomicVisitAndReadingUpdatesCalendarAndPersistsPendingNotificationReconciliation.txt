@@ -1,0 +1,2 @@
+10-12 23:09:46.718  7140  7155 I TestRunner: started: atomicVisitAndReadingUpdatesCalendarAndPersistsPendingNotificationReconciliation(dev.p38journal.data.RepositoryTest)
+10-12 23:09:46.749  7140  7155 I TestRunner: finished: atomicVisitAndReadingUpdatesCalendarAndPersistsPendingNotificationReconciliation(dev.p38journal.data.RepositoryTest)

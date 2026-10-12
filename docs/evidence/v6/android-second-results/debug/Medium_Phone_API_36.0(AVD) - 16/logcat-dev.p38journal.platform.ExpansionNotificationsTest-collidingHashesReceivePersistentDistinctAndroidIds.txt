@@ -1,0 +1,7 @@
+10-12 23:09:52.407  7140  7155 I TestRunner: started: collidingHashesReceivePersistentDistinctAndroidIds(dev.p38journal.platform.ExpansionNotificationsTest)
+10-12 23:09:52.433  1060  1060 D WorkspaceRevealAnim: onAnimationEnd: workspace alpha = 1.0
+10-12 23:09:52.437  7178  7178 D VRI[InstrumentationActivityInvoker$EmptyActivity]: visibilityChanged oldVisibility=true newVisibility=false
+10-12 23:09:52.439   701   724 W IPCThreadState: Sending oneway calls to frozen process.
+10-12 23:09:52.468  7178  7178 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@2fb59ab
+10-12 23:09:52.470  7178  7178 D ViewRootImpl: Skipping stats log for color mode
+10-12 23:09:52.472  7140  7155 I TestRunner: finished: collidingHashesReceivePersistentDistinctAndroidIds(dev.p38journal.platform.ExpansionNotificationsTest)
