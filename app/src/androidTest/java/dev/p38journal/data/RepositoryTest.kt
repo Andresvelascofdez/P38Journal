@@ -42,7 +42,7 @@ class RepositoryTest {
             val restored = Repository(context, restoredDb); restored.initialize(); restored.restoreSnapshot(snapshot)
             assertEquals(repo.planningReference(), restored.planningReference()); assertEquals(182000, restored.currentKm())
             assertTrue(restored.allEvents().isEmpty()); assertTrue(restoredDb.dao().allVisits().isEmpty())
-            assertEquals(3, JsonParser.parseString(snapshot).asJsonObject.get("schemaVersion").asInt)
+            assertEquals(4, JsonParser.parseString(snapshot).asJsonObject.get("schemaVersion").asInt)
         } finally { restoredDb.close() }
     }
     @Test fun oldOwnerOverrideUsesCurrentCatalogueVisibilityWithoutLosingItsInterval() = runBlocking {

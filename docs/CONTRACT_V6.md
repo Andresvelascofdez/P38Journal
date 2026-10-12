@@ -1,0 +1,30 @@
+# Contratos de ampliación aprobada — 5.0.0 / build 6
+
+REQUEST_V6.md prevalece sobre exclusiones previas de consumo. El coordinador ejecuta Gradle/adb y entrega; los agentes no los ejecutan en paralelo. Firma/applicationId, fabricante/Engine/Forecast y filtros se conservan. Room4/Snapshot4 acepta copias2/3/4 con defaults explícitos en Gson.
+
+## Datos y API compartidos
+
+Visit añade status: String = "done" ("planned"/"done"), manual: Boolean = false, targetDate: String? = null, estimatedCents: Long? = null. Fecha desconocida usa date="", dateExact=false; no una fecha histórica ficticia. Historial/observeVisits solo done activos; observeWorks todos activos. Un previsto convertido conserva ID; costes previstos no crean gasto. Manuales libres no crean Event/Rule. Mantener saveVisit/voidVisit existentes; editor de mantenimiento exige datos válidos al vincular expresamente.
+
+Expense añade fuelId: String? = null con índice único; no compartir visitId/fuelId. FuelEntry(id:String, date:String, km:Int?, litresMilli:Long?, totalCents:Long, full:Boolean, expenseId:String?, active:Boolean=true). Un repostaje crea/actualiza exactamente un gasto gasolina; editar/anular gasto vinculado sincroniza o anula el repostaje sin duplicar. No crear repostajes a partir de gastos anteriores. Litros en mililitros, dinero céntimos. Actualizar odómetro solo Reading explícita aparte.
+
+Deadline(id:String, name:String, dueDate:String, notes:String="", enabled:Boolean=true, leadDays:Int=30, repeatMonths:Int?=null, active:Boolean=true). DeadlineRenewal(id:String, deadlineId:String, previousDueDate:String, newDueDate:String, renewedAt:String). Repetición solo sugiere, renovación manual conserva fecha anterior; no gasto automático. No sembrar Seguro/Road tax/MOT.
+
+TyreEvent(id:String, axis:String [front/rear], kind:String [mount/review/change], date:String?=null, km:Int, intervalKm:Int, notes:String="", visitId:String?=null, sequence:Long=0, active:Boolean=true). Secuencia persistida por eje: corregir evento antiguo no reemplaza juego posterior. Juego actual desde último mount/change activo; último review válido posterior cambia aviso, no uso. Montajes iniciales no usan175.000 automático. Cambios/revisiones reutilizan Visit/WorkLine, ambos ejes un Visit y un gasto. Corregir/anular evento mantiene relaciones coherentes.
+
+Repository nuevas propiedades Flow: observeWorks, observeFuelEntries, observeDeadlines, observeDeadlineRenewals, observeTyreEvents.
+DAO: allFuelEntries/putFuelEntry, allDeadlines/putDeadline, allDeadlineRenewals/putDeadlineRenewal, allTyreEvents/putTyreEvent y sus observeX.
+Repository API fija: saveManualWork(Visit, existingExpenseId:String?=null); saveFuelEntry(FuelEntry); voidFuelEntry(id:String); saveDeadline(Deadline); renewDeadline(id:String,newDate:String); saveTyreEvents(events:List<TyreEvent>,paidCents:Long?=null); voidTyreEvent(id:String). Usar saveDeadline(copy(active=false)) para desactivar, voidVisit para anular trabajo. saveTyreEvents acepta1/2ejes y conserva ID/secuencia/visitId al corregir, genera una sola visita para nuevos review/change; mount inicial con fecha opcional no fabrica historial anterior. Puede rechazarse anular solo un eje de visita ambas y ofrecer anular operación conjunta explícitamente; nunca desactivar silenciosamente otro eje. Los datos nuevos y relaciones se validan y restauran idempotentemente.
+
+## Dominio puro del coordinador
+
+Actualización de conflictos de copias: TyreEvent añade tracking:Boolean=true (SQLdefault1/JSONdefault explícito). En ejes con seguimiento local vigente, IDs nuevos de otra copia se conservan con active original y tracking=false; son histórico importado, no anulación ficticia ni cambio automático del montaje local. Una restauración limpia recupera tracking original. Tyres usa active&&tracking. UI muestra explicación secundaria, no estado Anulado. Un cambio nuevo explícito comienza su seguimiento normal. Fuel/Expense conflictos conservan el gasto local y el registro fuente auditado sin contar dinero dos veces.
+
+Consumption.calculate(entries:List<FuelEntry>): ConsumptionSummary con average:BigDecimal?, totalLitresMilli:Long, totalKm:Long, intervals:List<FuelInterval>, pendingCount:Int. FuelInterval(startDate,endDate,startKm,endKm,litresMilli), consumption:BigDecimal. Primer lleno referencia; posteriores litros hasta lleno final. Registros incompletos invalidan ese tramo; parciales abiertos no cuentan. Promedio ponderado, orden fecha/kilómetros, distancia positiva; no inferir litros.
+DecimalInput.parseLitresMilli(text):Long admite coma/punto, escala3 estricta. Tyres.evaluate(events:List<TyreEvent>,currentKm:Int?):List<TyreState> siempre front/rear. TyreState(axis,mount:TyreEvent?,review:TyreEvent?,dueKm:Int?,usedKm:Int?,remainingKm:Int?,generation:String). Última revisión por secuencia válida desde montaje, límites exactos con overflow protegido.
+
+## Avisos y UI
+
+ManualNotificationEvaluator(context,repo,clock,transport).evaluate() llamado desde NotificationEvaluator al evaluar reales, no sustituirlos. Canales documentación/ruedas, ledger/inbox por entrada/eje y generación exacta, cancelar obsoletos en editar/renovar/desactivar/anular. IDs Android estables separados1001-1003. Target rule IDs `deadline:<id>` y `tyres:<axis>`; UI enruta esos prefijos desde PendingIntent y Bandeja a entrada/eje correctos. Validación de Inbox acepta entidades nuevas. Jobs WorkManager existentes evalúan fecha; km solo lecturas manuales.
+
+UI conserva cuatro pestañas. Inicio acciones rápidas compactas y consumo medio/acceso; documentación y ruedas secundarios. Trabajos y mejoras Previsto/Realizado, documentación libre/renovar, repostajes/detalle consumo, ruedas por eje/historial/corregir/ambas. Relaciones gasto↔trabajo/repostaje accesibles desde ambas pantallas. Tags útiles UI: quick_fuel, quick_expense, quick_manual_work, work_name, work_status, fuel_litres, fuel_km, fuel_amount, deadline_name, deadline_due, tyre_km, tyre_interval. Los agentes coordinan detalles, no inventan API divergente.

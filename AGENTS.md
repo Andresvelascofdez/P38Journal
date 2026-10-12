@@ -1,19 +1,11 @@
-# Encargo vigente: corrección Mantenimiento 4.1 / build 5
+# Encargo vigente — ampliación Android5.0 / build6
 
-La instrucción más reciente es REQUEST_V5.md y sustituye el selector descrito para4.0. Mantenimiento debe abrir directamente la proyección completa; tarjeta y detalle comparten la misma lista de ocurrencias. Vencimientos reales separados para avisos/registro. Conservar datos, firma, edición y filtros de gastos. Usar agentes, pruebas de ESTA pantalla y evidencia de emulador real. Entrega local, sin publicación.
+Leer REQUEST_V6.md y docs/CONTRACT_V6.md, junto a PROMPT_CODEX, SPEC, ENGINE, MIGRATION, QA, ANDROID y SOURCES. El encargo nuevo prevalece sobre las exclusiones de consumo anteriores. Ampliar el proyecto local existente, aunque sus cambios no estén publicados. Usar agentes con responsabilidades claras, integración y revisión independiente.
 
-# Instrucciones vigentes — ampliación Android v4
+Autorizado: trabajos y mejoras previstos/realizados; documentación libre y renovación manual; acciones rápidas; repostajes y consumo medio sencillo; ruedas por dos ejes; migraciones y copias completas. Sin gráficos, autonomía, informes, OCR/OBD, backend, cuentas ni gestión avanzada de ruedas. Mantener capacidades existentes y evitar funcionalidades adicionales no aprobadas.
 
-El encargo vigente es [REQUEST_V4.md](REQUEST_V4.md), recibido después de la entrega v3. Prevalece sobre las restricciones contradictorias siguientes. Separar próximos vencimientos reales de previsión hipotética, permitir operaciones propias/personalizadas y filtros de consulta de gastos por mes/año/tipo. Informes, gráficos y consumo siguen fuera del alcance. Conservar fecha de referencia y base 175.000 separadas de trabajos y odómetro. No publicar cambios ni contratar servicios en este encargo.
+Conservar Kotlin/Compose/Room/WorkManager, datos, applicationId y firma. No borrar datos ni reconstruir app. Respaldo previo verificable antes de migrar; Room4 y Snapshot4 compatibles con2/3. No inventar fechas/km históricos, litros ni cambios. Referencia175.000 separada de lectura y trabajos.
 
-## Instrucciones v3 conservadas donde sean compatibles
+Mantener intacto mantenimiento correcto: catálogo/fases, intervalos, proyección completa29/33/31 derivada de reglas, registro parcial exacto, edición, avisos y filtros de gastos. Nuevos módulos no crean reglas ni completan mantenimiento salvo vínculo y datos expresos del usuario. Consumo autorizado ahora, sin cambiar gastos antiguos ni inferir litros.
 
-Leer PROMPT_CODEX.md, SPEC.md, ENGINE.md, MIGRATION.md, QA.md, ANDROID.md y SOURCES.md. La documentación anterior queda sustituida cuando contradiga v3. El encargo es corregir el proyecto Android existente y entregar APK actualizado, no crear otra app ni borrar datos.
-
-El propietario fija base operativa 175.000 km para calcular intervalos verificados y quiere calendario, registro, notificaciones y gastos simples. Eliminar mantenimiento inicial generado por falta de historial. No inventar eventos a 175.000 ni cambiar lectura actual real. Detalle amigable, fuentes secundarias, inspecciones de taller agrupadas y controles rutinarios fuera del plan/avisos por defecto.
-
-Usar subagentes disponibles expresamente: dominio/migración, interfaz, catálogo/avisos y revisión independiente. Coordinador inspecciona contratos, reparte archivos, integra, espera revisión y corrige. Sin herramienta de agentes, informar y continuar secuencialmente sin simular delegación. No fijar modelos del usuario.
-
-Conservar stack Kotlin/Compose/Room/WorkManager actual, applicationId, firma y datos. Copia antes de migrar, transacciones y versiones reproducibles. Datos reales separados de fixtures. Guardar lectura → evaluar → notificación real de límite; aviso visible y bandeja, no solo badge. No añadir infraestructura o funciones ajenas antes de corregir lo solicitado.
-
-Proceder con decisiones reversibles; usuario solo instala/prueba y registra uso. No pedirle programar, depurar o configurar tareas una a una. Documentar progreso y pruebas honestas; bloqueos concretos no justifican abandonar lo independiente. No publicar, contratar ni enviar mensajes. Entregar código corregido, APK y guía breve, no solo un plan.
+Proceder autónomamente con decisiones rutinarias. Coordinador ejecuta Gradle/adb en serie, integra, corrige y documenta evidencia real. No afirmar pruebas físicas ni resultados no ejecutados. APK nueva con versión/build visible, release firmado original y debug separado, guía breve. Entrega local; no publicar/contratar/enviar mensajes. Antecedentes V5 archivados; REQUEST_V6 manda.

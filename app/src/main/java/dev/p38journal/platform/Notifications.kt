@@ -66,12 +66,16 @@ object Notifications {
     const val MAINTENANCE = "maintenance-v1"
     const val CHECKS = "checks-v1"
     const val TEST = "test-v1"
+    const val DOCUMENTATION = "documentation-v1"
+    const val TYRES = "tyres-v1"
     fun channels(context: Context) {
         val manager = context.getSystemService(NotificationManager::class.java)
         manager.createNotificationChannels(listOf(
             NotificationChannel(MAINTENANCE, "Mantenimiento", NotificationManager.IMPORTANCE_DEFAULT),
             NotificationChannel(CHECKS, "Controles y kilómetros", NotificationManager.IMPORTANCE_LOW),
-            NotificationChannel(TEST, "Avisos de prueba", NotificationManager.IMPORTANCE_DEFAULT)
+            NotificationChannel(TEST, "Avisos de prueba", NotificationManager.IMPORTANCE_DEFAULT),
+            NotificationChannel(DOCUMENTATION, "Documentación y vencimientos", NotificationManager.IMPORTANCE_DEFAULT),
+            NotificationChannel(TYRES, "Revisión de ruedas", NotificationManager.IMPORTANCE_DEFAULT)
         ))
     }
     fun schedule(context: Context) {
@@ -99,7 +103,7 @@ object Notifications {
     fun permissionState(context: Context): String {
         channels(context)
         val transport = AndroidNotificationTransport(context)
-        val states = listOf(MAINTENANCE to "mantenimiento", CHECKS to "controles", TEST to "prueba")
+        val states = listOf(MAINTENANCE to "mantenimiento", CHECKS to "controles", DOCUMENTATION to "documentación", TYRES to "ruedas", TEST to "prueba")
         return states.joinToString(" · ") { (channel, title) -> "$title: ${if (transport.allowed(channel)) "permitido" else "bloqueado"}" }
     }
     fun openSettings(context: Context) {
@@ -199,6 +203,7 @@ class NotificationEvaluator(
             if (reconcile != null) repo.dao.putLedger(reconcile.copy(state = "reconciled", updatedAt = timestamp))
             evaluateOdometerReminder(settings, now, timestamp, inWindow)
         }
+        ManualNotificationEvaluator(context, repo, clock, transport).evaluate(trigger)
     }
 
     private suspend fun evaluateOdometerReminder(settings: Settings, now: ZonedDateTime, timestamp: String, inWindow: Boolean) {

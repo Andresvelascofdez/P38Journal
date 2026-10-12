@@ -47,13 +47,14 @@ fun ExpensesPage(expenses: List<Expense>, add: () -> Unit, edit: (Expense) -> Un
                 Text(money(expense.cents), style = MaterialTheme.typography.titleMedium)
                 if (!expense.active) Hint("Anulado; no incluido en el total")
                 if (expense.visitId != null) Hint("Pago vinculado a una visita")
+                if (expense.fuelId != null) Hint("Pago vinculado a un repostaje")
             }
         }
     }
 }
 
 @Composable
-fun ExpenseForm(model: JournalViewModel, original: Expense?, visits: List<Visit>, expenses: List<Expense>, busy: Boolean, after: () -> Unit, attachments: (String) -> Unit) {
+fun ExpenseForm(model: JournalViewModel, original: Expense?, visits: List<Visit>, expenses: List<Expense>, busy: Boolean, after: () -> Unit, attachments: (String) -> Unit, work: (String) -> Unit, fuel: (String) -> Unit) {
     val id = rememberSaveable { original?.id ?: freshId() }
     var date by rememberSaveable { mutableStateOf(original?.date ?: model.today()) }
     var concept by rememberSaveable { mutableStateOf(original?.concept ?: "") }
@@ -63,28 +64,47 @@ fun ExpenseForm(model: JournalViewModel, original: Expense?, visits: List<Visit>
     var visit by rememberSaveable { mutableStateOf(original?.visitId ?: "") }
     var error by rememberSaveable { mutableStateOf<String?>(null) }
     var confirm by rememberSaveable { mutableStateOf(false) }
+    val canonical = original?.let { Gson().toJson(it) }
+    var loadedCanonical by rememberSaveable { mutableStateOf(canonical) }
+    LaunchedEffect(canonical) {
+        if (original != null && canonical != loadedCanonical) {
+            val previous = loadedCanonical?.let { Gson().fromJson(it, Expense::class.java) }
+            if (previous?.date != original.date) date = original.date
+            if (previous?.concept != original.concept) concept = original.concept
+            if (previous?.cents != original.cents) amount = moneyInput(original.cents)
+            if (previous?.category != original.category) category = original.category
+            if (previous?.notes != original.notes) notes = original.notes
+            if (previous?.visitId != original.visitId) visit = original.visitId ?: ""
+            loadedCanonical = canonical
+        }
+    }
     Page {
         Field(amount, { amount = it }, "Importe EUR", "expense_amount", numeric = true)
         Field(concept, { concept = it }, "Concepto", "expense_concept")
-        Choice("Categoría", category, categories) { category = it }
+        if (original?.fuelId != null) Hint("Gasolina · pago único del repostaje") else Choice("Categoría", category, categories) { category = it }
         Field(date, { date = it }, "Fecha (AAAA-MM-DD)", "expense_date")
         Field(notes, { notes = it }, "Notas (opcional)", multiline = true)
-        val availableVisits = visits.filter { it.active && expenses.none { expense -> expense.active && expense.visitId == it.id && expense.id != original?.id } }
-        Choice("Vincular a visita (opcional)", visit, listOf("" to "Gasto independiente") + availableVisits.map { it.id to "${dateLabel(it.date)} · ${it.title}" }) { visit = it }
-        if (visit.isNotEmpty()) Hint("El pago se contará una vez como gasto de esta visita. No crea ni completa operaciones.")
-        Hint("Si la visita ya tiene un pago, abre el trabajo en Historial para vincular allí este gasto existente.")
+        if (original?.fuelId == null) {
+            val availableVisits = visits.filter { it.active && expenses.none { expense -> expense.active && expense.visitId == it.id && expense.id != original?.id } }
+            Choice("Vincular a visita (opcional)", visit, listOf("" to "Gasto independiente") + availableVisits.map { it.id to "${dateLabel(it.date)} · ${it.title}" }) { visit = it }
+            if (visit.isNotEmpty()) Hint("El pago se contará una vez como gasto de esta visita. No crea ni completa operaciones.")
+            Hint("Si la visita ya tiene un pago, abre el trabajo en Historial para vincular allí este gasto existente.")
+        }
+        original?.visitId?.let { workId -> OutlinedButton(onClick = { work(workId) }, modifier = Modifier.fillMaxWidth()) { Text("Consultar trabajo vinculado") } }
+        original?.fuelId?.let { fuelId -> OutlinedButton(onClick = { fuel(fuelId) }, modifier = Modifier.fillMaxWidth()) { Text("Consultar repostaje vinculado") } }
         if (original != null) OutlinedButton(onClick = { attachments(id) }, modifier = Modifier.fillMaxWidth()) { Text("Recibo o foto") }
         else Hint("Guarda el gasto y vuelve a abrirlo para añadir un recibo o una foto, si quieres.")
         error?.let { Text(it, color = MaterialTheme.colorScheme.error) }
         Button(onClick = {
             runCatching {
                 require(concept.isNotBlank()) { "Introduce el concepto." }
-                Expense(id = id, date = validateDate(date), cents = requireNotNull(parseMoney(amount)), concept = concept.trim(), category = category, notes = notes, visitId = visit.ifBlank { null }, active = true)
+                (original ?: Expense(id = id, cents = 0, concept = "")).copy(date = validateDate(date), cents = requireNotNull(parseMoney(amount)), concept = concept.trim(), category = if (original?.fuelId != null) "fuel" else category,
+                    notes = notes, visitId = if (original?.fuelId != null) null else visit.ifBlank { null }, active = true)
             }.onSuccess { model.saveExpense(it, after) }.onFailure { error = it.message ?: "Revisa el importe y la fecha." }
         }, enabled = !busy, modifier = Modifier.fillMaxWidth()) { Text("Guardar gasto") }
         if (original?.active == true) OutlinedButton(onClick = { confirm = true }, enabled = !busy, modifier = Modifier.fillMaxWidth()) { Text("Eliminar gasto") }
     }
-    if (confirm) Confirm("Eliminar gasto", "El pago se anulará y dejará de formar parte del total. Se conservará la auditoría.", "Eliminar", { confirm = false }) { confirm = false; model.voidExpense(id, after) }
+    if (confirm) Confirm("Eliminar gasto", "El pago se anulará y dejará de formar parte del total. ${if (original?.fuelId != null) "También se anulará el repostaje y se recalculará el consumo. " else ""}Se conservará la auditoría.", "Eliminar", { confirm = false }) { confirm = false; model.voidExpense(id, after) }
 }
 
 private data class StructuredNote(

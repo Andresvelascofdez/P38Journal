@@ -131,7 +131,7 @@ fun parseKm(text: String): Int? {
     return text.trim().toInt().also { require(it >= 0) { "Los kilómetros deben ser positivos." } }
 }
 fun validateDate(text: String): String = LocalDate.parse(text.trim()).toString()
-fun dateLabel(text: String?): String = text?.let { runCatching { LocalDate.parse(it).format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) }.getOrDefault(it) } ?: "Fecha no conocida"
+fun dateLabel(text: String?): String = text?.takeIf { it.isNotBlank() }?.let { runCatching { LocalDate.parse(it).format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) }.getOrDefault(it) } ?: "Fecha no conocida"
 fun kmLabel(km: Int?): String = km?.let { "${NumberFormat.getIntegerInstance(Locale.forLanguageTag("es-ES")).format(it)} km" } ?: "Kilómetros no registrados"
 fun systemLabel(system: String): String = mapOf("engine" to "Motor", "cooling" to "Refrigeración", "transmission" to "Transmisión", "brakes" to "Frenos", "suspension" to "Suspensión", "electrical" to "Electricidad", "body" to "Carrocería", "steering" to "Dirección", "tyres" to "Neumáticos", "general" to "General", "exhaust" to "Escape", "fuel" to "Alimentación")[system] ?: system
 fun statusLabel(status: String): String = when (status) { "DUE" -> "Pendiente"; "SOON" -> "Próximamente"; else -> "Programado" }

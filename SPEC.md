@@ -1,71 +1,33 @@
-# Corrección vigente4.1 / build5
+# P38 Journal — alcance aprobado5.0 / build6
 
-REQUEST_V5.md sustituye el selector4.0: Mantenimiento muestra directamente las revisiones proyectadas completas. Recorrido: Repository.tasks → Engine.evaluate (vencimientos reales) → Forecast.project (apariciones independientes) → projectedMaintenanceGroups (ID por grupo/fecha/km) → ProjectedPlanPage → ProjectedRevisionDetail. Contador y «Qué incluye» consumen occurrences del mismo grupo, sin resolver el detalle desde una Task representativa.
+REQUEST_V6.md contiene el encargo vigente completo y sustituye exclusiones anteriores de consumo. Se amplía la app Android local existente para un solo P38, sin rehacer mantenimiento ni navegación inferior. El usuario instala y prueba los APK generados.
 
-Desde175.000 sin historial:195.00029,215.00033,235.00031; cifras de pruebas derivadas del catálogo, no constantes productivas. firstKm/firstMonths solo fijan la primera aparición; siguientes usan km/months recurrentes. Proyección condicionada a cumplir revisiones anteriores; no genera trabajos ni avisos. Home, Vencimientos reales, TaskDetail, NotificationEvaluator y WorkManager siguen utilizando únicamente Task reales. Registrar desde una revisión ofrece solo sus apariciones sequence0 que coinciden con el próximo vencimiento real; las siguientes son consulta.
+## Capacidades conservadas
 
-La lista muestra los primeros cuatro grupos globales completos; operaciones propias aisladas con próximo vencimiento real permanecen visibles también fuera de ese horizonte. No se añaden grupos colectivos lejanos con una proyección truncada. Las operaciones reales completas siguen accesibles en Vencimientos reales. Trabajo parcial195.200 produce215.200 exacto para aceite; las restantes permanecen195.000. Fechas se recalculan por operación desde el trabajo real. Abrir una previsión no escribe Visit/Event/Reading.
+Referencia operativa175.000 km separada del odómetro manual y trabajos. Mantenimiento del fabricante, fases B/C, próximos vencimientos reales, proyección completa de revisiones desde reglas y detalles/contadores consistentes. Registro parcial, edición/anulación, avisos locales y filtros de gastos por mes/año/tipo. Manuales/documentos importados, adjuntos y copias existentes conservados.
 
-Sin cambio de Room3, catálogo, applicationId ni firma. Conservar edición, filtros de gastos y copias. Pruebas de pantalla nativa y detalle completo, parcial, actualizaciones reales de APK y evidencias nuevas en docs/TEST_REPORT.md; resultados4.0 archivados como antecedentes.
+## Trabajos y mejoras
 
-## Antecedentes conservados donde sean compatibles
+Vistas Previstos/Realizados; alta directa, edición, anulación confirmada y conversión. Visit es identidad canónica, también visible en Historial al realizar; no duplicados. Nombre libre/notas, fecha/km reales cuando conocidos; desconocidos explícitos sin fechas ficticias. Objetivo/estimado opcionales en previstos; el estimado no genera gasto. Relación opcional con un gasto real consultable en ambos sentidos. Solo la vinculación expresa con mantenimiento y datos suficientes genera Event, sin nuevas periodicidades.
 
-# Producto: calendario sencillo del P38
+## Documentación y vencimientos
 
-## Ampliación vigente v4
+Entradas de nombre libre, fecha, notas, aviso activado/antelación y repetición puntual/configurable. Seguro/Road tax/MOT sugeridos, sin obligaciones sembradas. Próximos y vencidos; renovación manual guarda fecha anterior y exige nueva fecha confirmada. Repetición solo sugiere, no declara vigente ni crea gasto. Avisos locales separados del fabricante, destinos correctos, cancelar/reprogramar al editar/renovar/desactivar.
 
-[REQUEST_V4.md](REQUEST_V4.md) prevalece sobre los criterios anteriores. La consulta ofrece vencimientos reales y una previsión hipotética de los primeros cuatro hitos; solo los reales generan avisos y permiten registrar. La previsión supone realizar los trabajos previos en sus límites, sin crear historial. La referencia y su fecha siguen separadas del odómetro.
+## Inicio y navegación
 
-Cada operación se consulta y personaliza desde el detalle del grupo. Una visita nueva empieza sin operaciones marcadas y requiere confirmar fecha, km y selección. Se pueden crear operaciones propias recurrentes o únicas sin URL; editar una recurrente no la convierte en una tarea única: para otra cita se crea una operación nueva. Restaurar el fabricante conserva identidad e historial.
+Cuatro pestañas conservadas. Acciones compactas: kilómetros, mantenimiento realizado, gasto, repostaje y trabajo/mejora previsto o realizado. Accesos sencillos a documentación y ruedas por navegación secundaria. Inicio muestra únicamente consumo medio y acceso a repostajes, junto al calendario habitual.
 
-Gastos permite filtros combinables de mes/año/tipo, Todos y limpiar; conserva selección al navegar y recrear. Lista, subtotal filtrado y total acumulado usan gastos activos y céntimos enteros. Son filtros de consulta; informes, gráficos y consumo quedan fuera del alcance. Historial busca también operaciones, taller y notas.
+## Repostajes y consumo sencillo
 
-## Alcance
+Fecha, km, litros, importe total y lleno; editar/anular. Exactamente un gasto gasolina por repostaje, visible desde ambos. Gastos gasolina anteriores siguen sin datos de consumo inventados. Dinero céntimos y litros mililitros; coma/punto.
 
-Android nativo, español, km/EUR, vehículo único P38 4.6 gasolina automático año 2000. Funciones principales: calendario del fabricante, kilometraje manual, registro/historial, notificaciones y gastos. Manuales y copias como accesos secundarios. No ampliar con gestores de piezas, averías, diagnósticos o paneles de incertidumbre. Si ya existen datos de esos módulos, conservarlos y su exportación sin hacerlos centro de la navegación.
+Primer lleno referencia sin incluir sus litros. Cada cierre completo suma litros posteriores parciales+lleno final y usa distancia positiva entre llenos. Media acumulada ponderada por distancias, nunca media simple de tasas. Parciales abiertos pendientes; tramos incompletos no calculados. Mostrar Datos insuficientes si no hay tramo válido. Detalle con período/km usados, sin gráficos/autonomía/informes. Editar/anular recalcula. Km de repostaje solo actualiza lectura mediante opción expresa válida, nunca silenciosamente ni al registrar histórico.
 
-## Referencias
+## Ruedas
 
-Base operativa de km = 175.000, elegida expresamente por el propietario. En instalación nueva puede mostrarse «175.000 km · valor inicial» hasta la primera lectura manual, sin adjudicarle una fecha de lectura real. En la app existente conservar última lectura real, aunque sea superior. Base y odómetro actual son campos distintos: actualizar km no mueve la base. Ajustes muestra «Referencia del plan: 175.000 km» sin exigir una confirmación de servicios previos.
+Dos ejes: delanteras/traseras. Montaje/km de aviso configurables por separado, nota opcional, uso desde montaje y restante. Montajes introducidos por usuario, sin175.000 automático ni sustituciones ficticias. Revisadas registra km y próximo intervalo sin resetear uso; Cambiadas archiva juego anterior y arranca desde km reales; Cambiar ambas una operación/visita y un solo gasto si existe. Corregir/anular datos recalcula por secuencia persistida. Aviso al cruce manual: revisar el eje y valorar cambio, sin declarar desgaste o sustitución automática.
 
-Fecha del plan editable, por defecto creación recuperable del plan o fecha de migración; identificada como referencia del calendario, sin fingir fecha de compra/intervención. Intervalos oficiales conservados, incluido tiempo si procede. Históricos recuperados permanecen en Historial; no generan pendientes iniciales ni modifican silenciosamente la base elegida.
+## Compatibilidad y entrega
 
-## Navegación e Inicio
-
-Barra inferior: Inicio, Mantenimiento, Historial y Gastos. Icono secundario para Ajustes/Manuales/Copias. Inicio contiene:
-
-- Lectura actual visible y «Actualizar kilómetros».
-- Próxima revisión o mantenimiento: título, próximo km, plazo si existe y «Te faltan X km».
-- «Pendiente» solo cuando un límite real del calendario operativo se alcanza; «Próximamente» para preavisos.
-- «Registrar trabajo» accesible; aviso de permisos solo si procede.
-
-Tarjetas compactas y listas legibles, sin repetir párrafos. Nada de «Mantenimiento inicial», «no consta una referencia precisa», «Por aclarar» o «Punto de partida» en flujos ordinarios. Si no hay pendientes, mostrar «Todo al día» con próximos mantenimientos; no generar tareas para rellenar la pantalla.
-
-## Mantenimiento y detalle
-
-Lista ordenada por vencimiento con filtro sencillo Todos/Próximos/Pendientes. Cada fila: nombre natural, km/plazo próximo y estado. Revisiones con operaciones coincidentes agrupadas; expandir para ver «Qué incluye». No crear alertas separadas para todos los puntos de una revisión.
-
-Detalle prioritario:
-
-1. Título: «Cambio de aceite y filtro», «Cambio de líquido de frenos», etc.
-2. «Cada X km o Y meses» cuando ambas unidades estén documentadas.
-3. «Próximo: Z km» y fecha si aplica, más «Faltan N km» o motivo «Pendiente por kilometraje»/«Pendiente por fecha».
-4. «Último registrado: fecha · km» o «Plan calculado desde 175.000 km» cuando todavía no hay ejecución; esta última frase solo secundaria.
-5. Botón claro «Registrar realizado».
-6. «Qué incluye», notas útiles y «Fuente del fabricante» desplegables.
-
-No volcar JSON, códigos ingleses ni párrafos de razonamiento técnico. Traducir y resumir contenido fuente con etiquetas naturales. La información documental sigue disponible, pero fuera del bloque principal. Fuentes distinguen páginas impresas/PDF. Condiciones no resueltas no crean una tarea inicial urgente; solo reglas aplicables producen alertas. La cobertura técnica explica la limitación.
-
-## Registro
-
-Desde la tarea: operación ya seleccionada, fecha hoy y última lectura precargadas/editables. Guardar únicamente lo realmente realizado. Campos secundarios taller, notas, coste/recibo opcionales. Una visita puede satisfacer varias operaciones explícitas. Una revisión parcial no cierra todas. Un gasto aislado no satisface reglas. Actualizar kilometraje desde un trabajo actual es posible con confirmación simple; un trabajo retroactivo no reduce la lectura actual.
-
-Historial cronológico con trabajo, fecha/km, notas/gasto/documento si existen; editar/anular recalcula. Datos de pruebas en debug separado. No servicios inventados a 175.000 km.
-
-## Gastos
-
-Total acumulado y lista cronológica. Filtros combinables de consulta por mes, año y tipo, cada uno con Todos y acción para limpiar. El mes con Todos los años abarca ese mes en cualquier año; los años disponibles proceden de gastos activos. Se filtra por fecha de calendario del gasto. Lista y «Total de estos gastos» reaccionan a altas/ediciones/anulaciones, junto con «Total acumulado» de todos los activos, calculados en céntimos. Selección conservada al navegar/recrear pantalla. Añadir gasto: fecha, euros, concepto, categoría Taller/Extras/Gasolina/Otros; nota/foto opcionales. Sin exigencia de km, factura, avería o tarea. Pago de taller contado una vez. Los filtros de consulta están autorizados; informes, gráficos y consumo/litros permanecen excluidos. Presupuestos/importes desconocidos no suman.
-
-## Ajustes, documentos y avisos
-
-Preferencias de preaviso, permiso/canales y prueba de aviso, fecha del plan y km de referencia, idioma/zona horaria. Defaults de producto separados de intervalos oficiales. Acceso secundario a bandeja, manuales con enlaces/visor/búsqueda textual disponible y exportación/restauración completa. Android Compose responsive 320–430 dp, tema oscuro, fuentes grandes, accesibilidad, teclado/insets/Back. Cálculo/datos/avisos locales sin servidor. No añadir nuevas funciones antes de corregir este recorrido.
+Room4 no destructivo; copias2/3/4, todas relaciones nuevas y anteriores. Identidad/firma original. Version5.0.0/code6 visible. Probar contratos, UI real en emulador disponible, actualización/restore, notificaciones y regresión del fabricante. Documentar resultados y bloqueos concretos en TEST_REPORT. Fuera de alcance la lista final de REQUEST_V6; no añadir ideas ajenas.

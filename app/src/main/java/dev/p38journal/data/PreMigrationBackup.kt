@@ -15,7 +15,7 @@ object PreMigrationBackup {
         val header = ByteArray(100)
         source.inputStream().use { require(it.read(header) == 100) }
         val headerVersion = ByteBuffer.wrap(header, 60, 4).int
-        if (headerVersion !in 1..2 && !(headerVersion == 0 && File(source.path + "-wal").exists())) return null
+        if (headerVersion !in 1..3 && !(headerVersion == 0 && File(source.path + "-wal").exists())) return null
         val sourceFiles = listOf(source, File(source.path + "-wal")).filter { it.exists() }
         val currentChecksums = sourceFiles.associate { it.name to checksum(it) }
         val previous = File(context.filesDir, "migration-backups").listFiles()?.firstOrNull { directory ->
@@ -28,7 +28,7 @@ object PreMigrationBackup {
             }.getOrDefault(false)
         }
         if (previous != null) return previous
-        val folder = File(context.filesDir, "migration-backups/pre-v3-${Instant.now().toEpochMilli()}-${java.util.UUID.randomUUID()}")
+        val folder = File(context.filesDir, "migration-backups/pre-v4-${Instant.now().toEpochMilli()}-${java.util.UUID.randomUUID()}")
         require(folder.mkdirs()) { "No se pudo preparar copia previa a la migración" }
         try {
             val checksums = linkedMapOf<String, String>()
@@ -47,10 +47,10 @@ object PreMigrationBackup {
                 }
                 copyVersion = copy.version
             } finally { copy.close() }
-            if (copyVersion >= 3) { folder.deleteRecursively(); return null }
+            if (copyVersion >= 4) { folder.deleteRecursively(); return null }
             File(folder, "manifest.json").writeText(Gson().toJson(mapOf(
                 "format" to "p38-pre-migration", "sourceSchema" to copyVersion,
-                "targetSchema" to 3, "createdAt" to Instant.now().toString(),
+                "targetSchema" to 4, "createdAt" to Instant.now().toString(),
                 "checksums" to checksums, "verifiedIntegrity" to true,
                 "attachments" to "Unmodified private documents remain in their original location")))
             return folder

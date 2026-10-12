@@ -22,13 +22,15 @@ import java.time.LocalDate
 import java.time.ZoneId
 
 data class Snapshot(
-    val schemaVersion: Int = 3, val vehicle: List<VehicleRecord> = emptyList(),
+    val schemaVersion: Int = 4, val vehicle: List<VehicleRecord> = emptyList(),
     val rules: List<RuleRecord> = emptyList(), val revisions: List<RuleRevisionRecord> = emptyList(),
     val visits: List<Visit> = emptyList(), val lines: List<WorkLine> = emptyList(),
     val events: List<EventRecord> = emptyList(), val expenses: List<Expense> = emptyList(),
     val readings: List<Reading> = emptyList(), val notes: List<Note> = emptyList(),
     val documents: List<Document> = emptyList(), val inbox: List<Inbox> = emptyList(),
-    val audit: List<Audit> = emptyList(), val planning: List<PlanningRecord> = emptyList()
+    val audit: List<Audit> = emptyList(), val planning: List<PlanningRecord> = emptyList(),
+    val fuelEntries: List<FuelEntry> = emptyList(), val deadlines: List<Deadline> = emptyList(),
+    val deadlineRenewals: List<DeadlineRenewal> = emptyList(), val tyreEvents: List<TyreEvent> = emptyList()
 )
 
 class Repository(
@@ -39,9 +41,15 @@ class Repository(
     val db: JournalDatabase by lazy { database ?: getDatabase(this.context) }
     val dao get() = db.dao()
     private val gson = Gson()
+    private val expanded by lazy { ExpandedRecords(this, clock) }
     @Volatile private var cataloguePolicy: Map<String, Rule> = emptyMap()
     private fun <T> observe(query: () -> Flow<T>): Flow<T> = flow { withContext(Dispatchers.IO) { db }; emitAll(query()) }
     val observeVisits = observe { dao.observeVisits() }
+    val observeWorks = observe { dao.observeWorks() }
+    val observeFuelEntries = observe { dao.observeFuelEntries() }
+    val observeDeadlines = observe { dao.observeDeadlines() }
+    val observeDeadlineRenewals = observe { dao.observeDeadlineRenewals() }
+    val observeTyreEvents = observe { dao.observeTyreEvents() }
     val observeExpenses = observe { dao.observeExpenses() }
     val observeReadings = observe { dao.observeReadings() }
     val observeNotes = observe { dao.observeNotes() }
@@ -113,6 +121,13 @@ class Repository(
     suspend fun workLines(visitId: String) = dao.visitLines(visitId)
     suspend fun visitLines(visitId: String) = dao.visitLines(visitId)
     suspend fun totalExpenses(): Long = dao.totalExpenses()
+    suspend fun saveManualWork(visit: Visit, existingExpenseId: String? = null) = expanded.saveManualWork(visit, existingExpenseId)
+    suspend fun saveFuelEntry(entry: FuelEntry) = expanded.saveFuelEntry(entry)
+    suspend fun voidFuelEntry(id: String) = expanded.voidFuelEntry(id)
+    suspend fun saveDeadline(value: Deadline) = expanded.saveDeadline(value)
+    suspend fun renewDeadline(id: String, newDate: String) = expanded.renewDeadline(id, newDate)
+    suspend fun saveTyreEvents(events: List<TyreEvent>, paidCents: Long? = null) = expanded.saveTyreEvents(events, paidCents)
+    suspend fun voidTyreEvent(id: String) = expanded.voidTyreEvent(id)
 
     suspend fun saveVisit(visit: Visit, lines: List<WorkLine>, ruleIds: List<String>, existingExpenseId: String? = null, updateCurrentReading: Reading? = null) {
         validateVisit(visit)
@@ -120,11 +135,14 @@ class Repository(
         require(lines.map { it.id }.distinct().size == lines.size)
         require(lines.all { it.ruleId == null || it.ruleId in ruleIds }) { "Cada operación debe vincularse explícitamente" }
         require(ruleIds.all { id -> lines.any { it.ruleId == id } }) { "Cada operación realizada necesita una línea de trabajo explícita" }
+        require(ruleIds.isEmpty() || visit.status == "done" && (visit.date.isNotBlank() && visit.dateExact || visit.km != null && visit.kmExact)) { "La operación necesita una fecha o kilometraje real precisos" }
         db.withTransaction {
             normalizeExpenseLinks()
             val rules = allRules().associateBy { it.id }
             require(ruleIds.all { it in rules }) { "Operación desconocida" }
             val previous = dao.allVisits().find { it.id == visit.id }
+            val tyres = dao.allTyreEvents().filter { it.visitId == visit.id && it.active }
+            require(tyres.isEmpty() || visit.active && visit.status == "done" && tyres.all { it.km == visit.km && it.date.orEmpty() == visit.date }) { "Corrige fecha o kilómetros desde la operación conjunta de ruedas" }
             val previousLines = dao.visitLines(visit.id)
             if (visit.paidCents != null && lines.isNotEmpty() && lines.all { it.costCents != null }) {
                 val total = lines.fold(0L) { sum, line -> Math.addExact(sum, line.costCents!!) }
@@ -146,21 +164,23 @@ class Repository(
             lines.forEach { dao.putLine(it) }
             oldEvents.forEach { dao.putEvent(it.copy(active = false)) }
             val revision = (dao.allEvents().filter { it.visitId == visit.id }.maxOfOrNull { it.id.substringAfterLast(':').toIntOrNull() ?: 0 } ?: 0) + 1
-            if (visit.active) ruleIds.distinct().forEach { ruleId ->
+            if (visit.active && visit.status == "done") ruleIds.distinct().forEach { ruleId ->
                 val rule = rules.getValue(ruleId)
                 val line = lines.firstOrNull { it.ruleId == ruleId }
-                dao.putEvent(EventRecord("${visit.id}:$ruleId:$revision", visit.id, ruleId, visit.date, visit.km,
+                dao.putEvent(EventRecord("${visit.id}:$ruleId:$revision", visit.id, ruleId, visit.date.takeIf { it.isNotBlank() }, visit.km,
                     visit.dateExact, visit.kmExact, true, rule.revision, line?.id, "owner_recorded", visit.operationalAnchor))
             }
             val expenses = dao.allExpenses()
             val linked = expenses.find { it.active && it.visitId == visit.id }
             val selected = existingExpenseId?.let { id -> expenses.find { it.id == id } ?: error("Gasto elegido no encontrado") }
             require(selected == null || selected.active) { "El gasto elegido está anulado" }
+            require(selected?.fuelId == null) { "El gasto pertenece a un repostaje" }
             require(selected == null || selected.visitId == null || selected.visitId == visit.id) { "El gasto ya pertenece a otra visita" }
             if (selected != null && linked != null && selected.id != linked.id) dao.putExpense(linked.copy(active = false, visitId = null))
             val payment = selected ?: linked
-            val paidCents = if (visit.active) visit.paidCents ?: selected?.cents else null
+            val paidCents = if (!visit.active) null else if (visit.status == "planned") selected?.cents ?: linked?.cents else visit.paidCents ?: selected?.cents
             if (paidCents != null) {
+                require(payment != null || visit.date.isNotBlank()) { "Indica fecha real para crear el gasto, o vincula uno existente" }
                 val paymentId = payment?.id ?: "${visit.id}:payment".takeIf { id -> expenses.none { it.id == id } } ?: java.util.UUID.randomUUID().toString()
                 val expense = payment?.copy(cents = paidCents, visitId = visit.id, active = true)
                     ?: Expense(paymentId, visit.date, paidCents, visit.title, "workshop", visitId = visit.id)
@@ -185,22 +205,25 @@ class Repository(
         val nextGenerations = scheduleGenerations(affectedRules)
         affectedRules.filter { previousGenerations[it] != nextGenerations[it] }.forEach { invalidate(it) }
         dao.allExpenses().filter { it.visitId == id }.forEach { dao.putExpense(it.copy(active = false, visitId = null)) }
+        expanded.visitVoided(id)
         audit("visit_voided", id, gson.toJson(visit))
     }
 
     suspend fun saveExpense(expense: Expense) = db.withTransaction {
         validateExpense(expense)
         normalizeExpenseLinks()
-        val normalized = if (expense.active) expense else expense.copy(visitId = null)
+        val normalized = if (expense.active) expense else expense.copy(visitId = null, fuelId = null)
         val existing = dao.allExpenses()
         require(normalized.visitId == null || existing.none { it.active && it.visitId == normalized.visitId && it.id != expense.id }) { "La visita ya tiene un gasto; edita o vincula el existente" }
-        normalized.visitId?.let { id -> require(dao.allVisits().any { it.id == id && it.active }) { "Visita no válida" } }
+        normalized.visitId?.let { id -> require(dao.allVisits().any { it.id == id && it.active }) { "Trabajo no válido" } }
         val previous = existing.find { it.id == expense.id }
+        expanded.validateFuelExpense(expense, previous)
         if (previous == normalized) return@withTransaction
         previous?.visitId?.takeIf { it != normalized.visitId }?.let { previousVisitId ->
             dao.allVisits().firstOrNull { it.id == previousVisitId }?.let { dao.putVisit(it.copy(paidCents = null)) }
         }
         dao.putExpense(normalized)
+        expanded.expenseSaved(previous, normalized)
         normalized.visitId?.let { id -> val visit = dao.allVisits().first { it.id == id }; dao.putVisit(visit.copy(paidCents = normalized.cents)) }
         audit(if (previous == null) "expense_created" else "expense_edited", expense.id, gson.toJson(previous) + " -> " + gson.toJson(normalized))
     }
@@ -208,7 +231,9 @@ class Repository(
         normalizeExpenseLinks()
         val expense = dao.allExpenses().find { it.id == id } ?: error("Gasto no encontrado")
         if (expense.active) {
-            dao.putExpense(expense.copy(active = false, visitId = null))
+            val revised = expense.copy(active = false, visitId = null, fuelId = null)
+            dao.putExpense(revised)
+            expanded.expenseSaved(expense, revised)
             expense.visitId?.let { visitId -> dao.allVisits().find { it.id == visitId }?.let { dao.putVisit(it.copy(paidCents = null)) } }
             audit("expense_voided", id, gson.toJson(expense))
         }
@@ -315,6 +340,7 @@ class Repository(
                 audit("visit_payment_normalized", visit.id, gson.toJson(visit))
             }
         }
+        expanded.normalizeFuelLinks()
     }
     private suspend fun scheduleGenerations(ruleIds: List<String>): Map<String, String> {
         if (ruleIds.isEmpty()) return emptyMap()
@@ -329,7 +355,8 @@ class Repository(
         planningReference()
         Snapshot(vehicle = dao.allVehicles(), rules = dao.allRules(), revisions = dao.allRevisions(), visits = dao.allVisits(),
             lines = dao.allLines(), events = dao.allEvents(), expenses = dao.allExpenses(), readings = dao.allReadings(),
-            notes = dao.allNotes(), documents = dao.allDocuments(), inbox = dao.allInbox(), audit = dao.allAudit(), planning = dao.allPlanningReferences())
+            notes = dao.allNotes(), documents = dao.allDocuments(), inbox = dao.allInbox(), audit = dao.allAudit(), planning = dao.allPlanningReferences(),
+            fuelEntries = dao.allFuelEntries(), deadlines = dao.allDeadlines(), deadlineRenewals = dao.allDeadlineRenewals(), tyreEvents = dao.allTyreEvents())
     }
     suspend fun exportSnapshot(): String = gson.toJson(allRecords())
     fun validateSnapshot(json: String) { parseSnapshot(json) }
@@ -337,7 +364,27 @@ class Repository(
         require(json.toByteArray().size <= 20 * 1024 * 1024) { "Copia demasiado grande" }
         val root = JsonParser.parseString(json).asJsonObject
         val version = root.get("schemaVersion")?.asInt
-        require(version in listOf(2, 3)) { "Versión de copia no compatible" }
+        require(version in listOf(2, 3, 4)) { "Versión de copia no compatible" }
+        if (version != 4) listOf("fuelEntries", "deadlines", "deadlineRenewals", "tyreEvents").forEach { if (!root.has(it)) root.add(it, com.google.gson.JsonArray()) }
+        root.getAsJsonArray("visits")?.forEach { row -> row.asJsonObject.apply {
+            if (!has("status") || get("status").isJsonNull) addProperty("status", "done")
+            if (!has("manual") || get("manual").isJsonNull) addProperty("manual", false)
+        } }
+        root.getAsJsonArray("tyreEvents")?.forEach { row -> row.asJsonObject.apply {
+            if (!has("tracking") || get("tracking").isJsonNull) addProperty("tracking", true)
+            if (!has("active") || get("active").isJsonNull) addProperty("active", true)
+            if (!has("notes") || get("notes").isJsonNull) addProperty("notes", "")
+        } }
+        root.getAsJsonArray("fuelEntries")?.forEach { row -> row.asJsonObject.apply {
+            if (!has("active") || get("active").isJsonNull) addProperty("active", true)
+            if (!has("full") || get("full").isJsonNull) addProperty("full", false)
+        } }
+        root.getAsJsonArray("deadlines")?.forEach { row -> row.asJsonObject.apply {
+            if (!has("active") || get("active").isJsonNull) addProperty("active", true)
+            if (!has("enabled") || get("enabled").isJsonNull) addProperty("enabled", true)
+            if (!has("leadDays") || get("leadDays").isJsonNull) addProperty("leadDays", 30)
+            if (!has("notes") || get("notes").isJsonNull) addProperty("notes", "")
+        } }
         if (version == 2) {
             root.add("planning", com.google.gson.JsonArray())
             root.getAsJsonArray("inbox")?.forEach { row -> row.asJsonObject.apply {
@@ -348,7 +395,7 @@ class Repository(
                 if (!has("policyVersion")) addProperty("policyVersion", 2)
             } }
         }
-        (listOf("vehicle", "rules", "revisions", "visits", "lines", "events", "expenses", "readings", "notes", "documents", "inbox", "audit") + "planning").forEach {
+        (listOf("vehicle", "rules", "revisions", "visits", "lines", "events", "expenses", "readings", "notes", "documents", "inbox", "audit", "planning", "fuelEntries", "deadlines", "deadlineRenewals", "tyreEvents")).forEach {
             require(root.has(it) && root.get(it).isJsonArray && root.getAsJsonArray(it).size() <= 100_000) { "Tabla de copia no válida: $it" }
             val ids = root.getAsJsonArray(it).map { row -> row.asJsonObject.get("id").asString.also(::validId) }
             require(ids.distinct().size == ids.size) { "Identificadores duplicados en $it" }
@@ -364,7 +411,7 @@ class Repository(
         val snapshot = rawSnapshot.copy(expenses = expenses,
             visits = rawSnapshot.visits.map { it.copy(paidCents = payments[it.id]?.cents) },
             audit = rawSnapshot.audit + normalizationAudit.filter { added -> rawSnapshot.audit.none { it.id == added.id } })
-        if (version == 3) require(snapshot.planning.size == 1) { "La copia no incluye la referencia completa del plan" }
+        if (version in listOf(3, 4)) require(snapshot.planning.size == 1) { "La copia no incluye la referencia completa del plan" }
         val visits = snapshot.visits.associateBy { it.id }
         val rules = snapshot.rules.associateBy { it.id }
         snapshot.visits.forEach(::validateVisit)
@@ -372,15 +419,49 @@ class Repository(
         snapshot.expenses.forEach { validateExpense(it); require(it.visitId == null || it.visitId in visits) }
         require(snapshot.expenses.mapNotNull { it.visitId }.distinct().size == snapshot.expenses.count { it.visitId != null })
         snapshot.lines.forEach { require(it.visitId in visits && it.title.isNotBlank() && (it.costCents == null || it.costCents >= 0)); require(it.ruleId == null || it.ruleId in rules) }
-        snapshot.events.forEach { require(it.visitId in visits && it.ruleId in rules); if (it.date != null) date(it.date); require(it.km == null || it.km >= 0); require(it.workLineId == null || snapshot.lines.any { line -> line.id == it.workLineId && line.visitId == it.visitId } || !it.active) }
+        snapshot.events.forEach { require(it.visitId in visits && it.ruleId in rules); if (it.date != null) date(it.date); require(!it.active || visits.getValue(it.visitId).status == "done"); require(it.km == null || it.km >= 0); require(it.workLineId == null || snapshot.lines.any { line -> line.id == it.workLineId && line.visitId == it.visitId } || !it.active) }
         snapshot.readings.forEach { date(it.date); Instant.parse(it.recordedAt); require(it.km >= 0) }
         snapshot.notes.forEach { require(it.title.isNotBlank() && it.kind in listOf("fault", "part", "history", "appointment")); if(it.date.isNotBlank()) date(it.date) }
         snapshot.documents.forEach(::validateDocument)
         snapshot.revisions.forEach { require(it.ruleId in rules); validateRule(decodeRule(it.json)) }
-        snapshot.inbox.forEach { require(it.ruleId in rules || it.ruleId in listOf("summary", "odometer")); Instant.parse(it.createdAt) }
+        snapshot.inbox.forEach { require(it.ruleId in rules || it.ruleId in listOf("summary", "odometer", "tyres:front", "tyres:rear") || it.ruleId.startsWith("deadline:") && snapshot.deadlines.any { value -> "deadline:${value.id}" == it.ruleId }); Instant.parse(it.createdAt) }
         snapshot.audit.forEach { Instant.parse(it.at); require(it.action.isNotBlank()) }
         snapshot.planning.forEach { require(it.id == "main" && it.baselineKm >= 0 && it.policyVersion == 3 && it.provenance.isNotBlank()); date(it.baselineDate) }
+        validateExpandedSnapshot(snapshot)
         return snapshot
+    }
+    private fun validateExpandedSnapshot(snapshot: Snapshot) {
+        val fuel = snapshot.fuelEntries.associateBy { it.id }
+        val expenses = snapshot.expenses.associateBy { it.id }
+        val visits = snapshot.visits.associateBy { it.id }
+        snapshot.fuelEntries.forEach { entry ->
+            expanded.validateFuel(entry)
+            require(entry.expenseId == null || entry.expenseId in expenses)
+            if (entry.active) {
+                val payment = expenses[entry.expenseId] ?: error("El repostaje no tiene gasto")
+                require(payment.active && payment.fuelId == entry.id && payment.visitId == null && payment.category == "fuel" && payment.cents == entry.totalCents && payment.date == entry.date)
+            }
+        }
+        require(snapshot.fuelEntries.mapNotNull { it.expenseId }.distinct().size == snapshot.fuelEntries.count { it.expenseId != null })
+        snapshot.expenses.forEach { expense -> expense.fuelId?.let { fuelId ->
+            require(fuelId in fuel && fuel.getValue(fuelId).expenseId == expense.id)
+            require(expense.category == "fuel" && expense.visitId == null && (!expense.active || fuel.getValue(fuelId).active))
+        } }
+        require(snapshot.expenses.mapNotNull { it.fuelId }.distinct().size == snapshot.expenses.count { it.fuelId != null })
+        snapshot.deadlines.forEach(expanded::validateDeadline)
+        val deadlineIds = snapshot.deadlines.map { it.id }.toSet()
+        snapshot.deadlineRenewals.forEach { renewal ->
+            require(renewal.deadlineId in deadlineIds); date(renewal.previousDueDate); date(renewal.newDueDate); Instant.parse(renewal.renewedAt)
+        }
+        snapshot.tyreEvents.forEach { event ->
+            expanded.validateTyre(event); require(event.sequence > 0)
+            require(event.visitId == null || event.visitId in visits)
+            if (event.active && event.tracking && event.visitId != null) {
+                val visit = visits.getValue(event.visitId)
+                require(visit.active && visit.status == "done" && visit.km == event.km && visit.date == event.date.orEmpty())
+            }
+            require(event.kind != "mount" || event.visitId == null)
+        }
     }
     suspend fun restoreSnapshot(json: String) {
         val incoming = withContext(Dispatchers.IO) { parseSnapshot(json) }
@@ -411,15 +492,37 @@ class Repository(
             merge(incoming.visits, current.visits, { it.id }, dao::putVisit)
             merge(incoming.lines.filter { it.visitId !in existingVisitIds }, current.lines, { it.id }, dao::putLine)
             merge(incoming.events.filter { it.visitId !in existingVisitIds }, current.events, { it.id }, dao::putEvent)
+            merge(incoming.deadlines, current.deadlines, { it.id }, dao::putDeadline)
+            merge(incoming.deadlineRenewals, current.deadlineRenewals, { it.id }, dao::putDeadlineRenewal)
+            val existingFuelIds = current.fuelEntries.map { it.id }.toSet()
+            val existingFuelExpenses = current.fuelEntries.mapNotNull { it.expenseId }.toSet()
+            incoming.fuelEntries.filter { it.id !in existingFuelIds }.forEach { entry ->
+                if (entry.expenseId != null && entry.expenseId in existingFuelExpenses) {
+                    dao.putFuelEntry(entry.copy(expenseId = null, active = false)); audit("backup_fuel_link_detached", entry.id, gson.toJson(entry))
+                } else dao.putFuelEntry(entry)
+            }
             val existingPaymentVisits = current.expenses.filter { it.active }.mapNotNull { it.visitId }.toSet()
             val targetVisits = dao.allVisits().associateBy { it.id }
+            val targetFuel = dao.allFuelEntries().associateBy { it.id }
             val copiedExpenses = incoming.expenses.map { expense ->
                 if (expense.visitId != null && (expense.visitId in existingPaymentVisits || targetVisits[expense.visitId]?.active == false)) {
                     if (current.expenses.none { it.id == expense.id }) audit("backup_expense_link_detached", expense.id, gson.toJson(expense))
                     expense.copy(visitId = null, active = expense.active && targetVisits[expense.visitId]?.active != false)
+                } else if (expense.fuelId != null && (targetFuel[expense.fuelId]?.active != true || targetFuel[expense.fuelId]?.expenseId != expense.id)) {
+                    if (current.expenses.none { it.id == expense.id }) audit("backup_fuel_expense_detached", expense.id, gson.toJson(expense))
+                    expense.copy(fuelId = null, active = expense.active && (targetFuel[expense.fuelId]?.active != false || expense.fuelId !in existingFuelIds))
                 } else expense
             }
             merge(copiedExpenses, current.expenses, { it.id }, dao::putExpense)
+            val targetTyres = dao.allTyreEvents()
+            val preservedTyreAxes = current.tyreEvents.filter { it.active && it.tracking }.map { it.axis }.toSet()
+            incoming.tyreEvents.filter { item -> targetTyres.none { it.id == item.id } }.forEach { event ->
+                val visit = event.visitId?.let(targetVisits::get)
+                val coherent = event.visitId == null || visit != null && visit.active && visit.status == "done" && visit.km == event.km && visit.date == event.date.orEmpty()
+                val tracking = event.tracking && coherent && event.axis !in preservedTyreAxes
+                dao.putTyreEvent(event.copy(tracking = tracking))
+                if (event.tracking && !tracking) audit("backup_tyre_tracking_conflict", event.id, gson.toJson(event))
+            }
             merge(incoming.readings, current.readings, { it.id }, dao::putReading)
             merge(incoming.notes, current.notes, { it.id }, dao::putNote)
             merge(incoming.documents, current.documents, { it.id }, dao::putDocument)
@@ -431,8 +534,13 @@ class Repository(
         }
     }
 
-    private fun validateVisit(value: Visit) { validId(value.id); date(value.date); require(value.title.isNotBlank()); require(value.km == null || value.km >= 0); require(value.paidCents == null || value.paidCents >= 0) }
-    private fun validateExpense(value: Expense) { validId(value.id); date(value.date); require(value.cents >= 0 && value.concept.isNotBlank()); require(value.category in listOf("workshop", "extras", "fuel", "other")) }
+    private fun validateVisit(value: Visit) {
+        validId(value.id); require(value.status in setOf("planned", "done"))
+        if (value.date.isNotBlank()) date(value.date) else require(value.manual && !value.dateExact) { "Una fecha desconocida no debe figurar como precisa" }
+        value.targetDate?.let(::date); require(value.estimatedCents == null || value.estimatedCents >= 0)
+        require(value.title.isNotBlank()); require(value.km == null || value.km >= 0); require(value.paidCents == null || value.paidCents >= 0)
+    }
+    private fun validateExpense(value: Expense) { validId(value.id); date(value.date); require(value.cents >= 0 && value.concept.isNotBlank()); require(value.category in listOf("workshop", "extras", "fuel", "other")); require(value.visitId == null || value.fuelId == null) }
     private fun validateDocument(value: Document) { validId(value.id); require(value.name.isNotBlank() && value.mime.isNotBlank() && value.size >= 0); require(value.sha256.matches(Regex("[0-9a-fA-F]{64}"))); require(value.path.isNotBlank() && !value.path.contains("..") && !value.path.startsWith("/") && !value.path.contains(":")) { "Ruta de documento no válida" } }
     private fun validateRule(value: Rule) {
         validId(value.id); require(value.title.isNotBlank())
@@ -480,7 +588,7 @@ class Repository(
             instance ?: run {
                 PreMigrationBackup.ensure(context)
                 Room.databaseBuilder(context, JournalDatabase::class.java, "p38-journal.db")
-                    .addMigrations(JournalDatabase.MIGRATION_1_2, JournalDatabase.MIGRATION_2_3).build().also { instance = it }
+                    .addMigrations(JournalDatabase.MIGRATION_1_2, JournalDatabase.MIGRATION_2_3, JournalDatabase.MIGRATION_3_4).build().also { instance = it }
             }
         }
     }

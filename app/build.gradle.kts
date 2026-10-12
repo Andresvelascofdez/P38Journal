@@ -15,8 +15,8 @@ android {
         applicationId = "dev.p38journal"
         minSdk = 26
         targetSdk = 36
-        versionCode = 5
-        versionName = "4.1.0"
+        versionCode = 6
+        versionName = "5.0.0"
         resValue("string", "app_name", "P38 Journal")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         javaCompileOptions { annotationProcessorOptions { arguments["room.schemaLocation"] = "$projectDir/schemas" } }

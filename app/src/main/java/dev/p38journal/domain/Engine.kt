@@ -52,9 +52,11 @@ object Engine {
             if (customOnce) true else if (event.kmExact && event.km != null) event.km >= reference.baselineKm
             else event.dateExact && event.date != null && LocalDate.parse(event.date) >= baseDate }
         val ordered = matching.sortedWith(compareBy<Event> { it.date ?: "" }.thenBy { it.km ?: -1 }.thenBy { it.id })
-        val anchor = ordered.lastOrNull()
         val exactDate = ordered.lastOrNull { it.dateExact && it.date != null }
-        val exactKm = ordered.lastOrNull { it.kmExact && it.km != null }
+        val orderedKm = ordered.lastOrNull { it.kmExact && it.km != null }
+        val undatedKm = ordered.lastOrNull { it.kmExact && it.km != null && it.date == null }
+        val exactKm = if (undatedKm != null && (orderedKm == null || undatedKm.km!! > orderedKm.km!!)) undatedKm else orderedKm
+        val anchor = exactKm?.takeIf { it.date == null } ?: ordered.lastOrNull()
         val phase = rule.recurrence in listOf("phase", "phase_b")
         val oneOff = rule.recurrence in listOf("initial", "once")
         if (oneOff && (matching.isNotEmpty() || !customOnce && (rule.firstKm == null || rule.firstKm <= reference.baselineKm))) {

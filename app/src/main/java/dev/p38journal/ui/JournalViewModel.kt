@@ -4,6 +4,7 @@ import android.app.Application
 import android.net.Uri
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.room.withTransaction
 import dev.p38journal.data.*
 import dev.p38journal.domain.Task
 import dev.p38journal.platform.Files
@@ -34,6 +35,11 @@ class JournalViewModel(application: Application) : AndroidViewModel(application)
     val workLines = _workLines.asStateFlow()
     val settings = preferences.flow.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), Settings())
     val visits = repository.observeVisits.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
+    val works = repository.observeWorks.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
+    val fuelEntries = repository.observeFuelEntries.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
+    val deadlines = repository.observeDeadlines.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
+    val deadlineRenewals = repository.observeDeadlineRenewals.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
+    val tyreEvents = repository.observeTyreEvents.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
     val expenses = repository.observeExpenses.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
     val readings = repository.observeReadings.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
     val notes = repository.observeNotes.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
@@ -100,6 +106,21 @@ class JournalViewModel(application: Application) : AndroidViewModel(application)
     fun saveExpense(expense: Expense, after: () -> Unit) = action(after = after) { repository.saveExpense(expense) }
     fun voidExpense(id: String, after: () -> Unit) = action("Gasto anulado", after) { repository.voidExpense(id) }
     fun saveReading(reading: Reading, correction: Boolean, after: () -> Unit) = action(after = after, evaluateTrigger = "reading") { repository.saveReading(reading, correction) }
+    fun saveManualWork(work: Visit, expenseId: String?, after: () -> Unit) = action(after = after, evaluateTrigger = "work") { repository.saveManualWork(work, expenseId) }
+    fun saveFuel(entry: FuelEntry, reading: Reading?, after: () -> Unit) = action(after = after, evaluateTrigger = if (reading == null) "change" else "reading") {
+        repository.db.withTransaction {
+            repository.saveFuelEntry(entry)
+            if (reading != null) repository.saveReading(reading)
+        }
+    }
+    fun voidFuel(id: String, after: () -> Unit) = action("Repostaje anulado", after, "change") { repository.voidFuelEntry(id) }
+    fun saveDeadline(entry: Deadline, after: () -> Unit) = action(after = after, evaluateTrigger = "change") { repository.saveDeadline(entry) }
+    fun renewDeadline(id: String, date: String, after: () -> Unit) = action("Renovación guardada", after, "change") { repository.renewDeadline(id, date) }
+    fun saveTyres(entries: List<TyreEvent>, paid: Long?, after: () -> Unit) = action(after = after, evaluateTrigger = "work") { repository.saveTyreEvents(entries, paid) }
+    fun voidTyre(id: String, after: () -> Unit) = action("Registro de ruedas anulado", after, "work") { repository.voidTyreEvent(id) }
+    fun voidHistoricalTyres(ids: List<String>, after: () -> Unit) = action("Histórico de ruedas anulado", after, "change") {
+        repository.db.withTransaction { ids.forEach { repository.voidTyreEvent(it) } }
+    }
     fun updatePlanning(date: String, km: Int) = action("Referencia del plan guardada", evaluateTrigger = "change") { repository.updatePlanningReference(date, km) }
     fun saveMaintenance(rule: dev.p38journal.domain.Rule, custom: Boolean, after: () -> Unit) = action("Mantenimiento guardado", after, "change") {
         if (custom) repository.saveCustomRule(rule) else repository.saveRuleOverride(rule)

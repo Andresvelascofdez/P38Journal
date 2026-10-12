@@ -17,7 +17,7 @@ private val gson = Gson()
 private fun parseKmOrNull(value: String): Int? = runCatching { parseKm(value) }.getOrNull()
 
 @Composable
-fun VisitForm(model: JournalViewModel, original: Visit?, tasks: List<Task>, expenses: List<Expense>, preselected: List<String>, currentKm: Int, busy: Boolean, after: () -> Unit, attachments: (String) -> Unit) {
+fun VisitForm(model: JournalViewModel, original: Visit?, tasks: List<Task>, expenses: List<Expense>, preselected: List<String>, currentKm: Int, busy: Boolean, after: () -> Unit, attachments: (String) -> Unit, expense: (String) -> Unit) {
     val id = rememberSaveable { original?.id ?: freshId() }
     val detail = remember(original?.id) { original?.notes?.let { runCatching { gson.fromJson(it, VisitDetail::class.java) }.getOrNull() } }
     var date by rememberSaveable { mutableStateOf(original?.date ?: model.today()) }
@@ -43,6 +43,14 @@ fun VisitForm(model: JournalViewModel, original: Visit?, tasks: List<Task>, expe
     var confirm by rememberSaveable { mutableStateOf(false) }
     var voidConfirm by rememberSaveable { mutableStateOf(false) }
     var validation by rememberSaveable { mutableStateOf<String?>(null) }
+    val canonicalPayment = "${original?.paidCents}/${expenses.firstOrNull { it.active && it.visitId == id }?.cents}"
+    var loadedPayment by rememberSaveable { mutableStateOf(canonicalPayment) }
+    LaunchedEffect(canonicalPayment) {
+        if (canonicalPayment != loadedPayment) {
+            paid = moneyInput(expenses.firstOrNull { it.active && it.visitId == id }?.cents ?: original?.paidCents)
+            loadedPayment = canonicalPayment
+        }
+    }
     val lines = runCatching { gson.fromJson(lineJson, Array<LineDraft>::class.java).toList() }.getOrDefault(listOf(LineDraft()))
     val completedLines = lines.filter { it.completed }
     fun replace(index: Int, value: LineDraft) { lineJson = gson.toJson(lines.toMutableList().also { it[index] = value }) }
@@ -63,13 +71,18 @@ fun VisitForm(model: JournalViewModel, original: Visit?, tasks: List<Task>, expe
         }
     }
     fun validate() {
-        validateDate(date)
-        require(LocalDate.parse(date) <= LocalDate.parse(model.today())) { "Un trabajo realizado no puede tener fecha futura." }
+        if (date.isBlank()) require(original?.manual == true) { "Introduce la fecha del trabajo." }
+        else {
+            validateDate(date)
+            require(LocalDate.parse(date) <= LocalDate.parse(model.today())) { "Un trabajo realizado no puede tener fecha futura." }
+        }
         require(title.isNotBlank()) { "Introduce una descripción del trabajo." }
-        parseKm(km)
+        val actualKm = parseKm(km)
         parseMoney(budget, true)
         val payment = parseMoney(paid, true)
         require(completedLines.isNotEmpty() && completedLines.all { it.title.isNotBlank() }) { "Selecciona al menos un trabajo realizado y escribe su descripción." }
+        if (completedLines.any { it.ruleId.isNotBlank() }) require(date.isNotBlank() && exactDate || actualKm != null && exactKm) { "Para vincular mantenimiento, indica una fecha o unos kilómetros exactos que conozcas." }
+        require(payment == null || date.isNotBlank() || linked.isNotBlank() || expenses.any { it.active && it.visitId == id }) { "Para un trabajo de fecha desconocida, vincula un gasto real con su propia fecha." }
         val costs = completedLines.map { parseMoney(it.cost, true) }
         val allocation = gson.toJson(completedLines.zip(costs).sortedBy { it.first.id }.map { "${it.first.id}:${it.second}" })
         val unchangedHistoricalAllocation = original != null && payment == original.paidCents && allocation == originalAllocation &&
@@ -83,7 +96,8 @@ fun VisitForm(model: JournalViewModel, original: Visit?, tasks: List<Task>, expe
         if (!loaded) { CircularProgressIndicator(); return@Page }
         if (original?.active == false) Hint("Trabajo anulado. Guardar una corrección lo reactivará y quedará auditado.")
         Field(title, { title = it }, "Descripción del trabajo", "visit_title")
-        Field(date, { date = it }, "Fecha (AAAA-MM-DD)", "visit_date")
+        Field(date, { date = it; if (original?.manual == true && original.date.isBlank() && it.isNotBlank()) exactDate = true }, if (original?.manual == true) "Fecha (AAAA-MM-DD, si se conoce)" else "Fecha (AAAA-MM-DD)", "visit_date")
+        if (original?.manual == true) Hint("Puedes conservar la fecha desconocida. Para vincular un mantenimiento aporta fecha o kilómetros exactos; se usará solo la dimensión conocida.")
         Field(km, { km = it }, "Kilómetros del trabajo (opcional)", "visit_km", numeric = true)
         if (date == model.today() && exactKm && (parseKmOrNull(km) ?: -1) >= currentKm) Check("Actualizar también el odómetro con estos kilómetros", updateOdometer) { updateOdometer = it }
         Heading("Trabajos realizados")
@@ -113,15 +127,16 @@ fun VisitForm(model: JournalViewModel, original: Visit?, tasks: List<Task>, expe
         if (optional) {
         Field(workshop, { workshop = it }, "Taller o contacto (opcional)")
         Field(notes, { notes = it }, "Notas", multiline = true)
-        Check("Fecha exacta", exactDate) { exactDate = it }
+        if (date.isNotBlank()) Check("Fecha exacta", exactDate) { exactDate = it }
         Check("Kilómetros exactos", exactKm) { exactKm = it }
         Field(budget, { budget = it }, "Presupuesto EUR (no se suma a gastos)", numeric = true)
         Hint("Vacío significa importe desconocido. La factura se cuenta una vez.")
-        val candidates = expenses.filter { it.active && (it.visitId == null || it.visitId == id) }
+        val candidates = expenses.filter { it.active && it.fuelId == null && (it.visitId == null || it.visitId == id) }
         Choice("Pago ya registrado", linked, listOf("" to "Crear o mantener el pago de esta visita") + candidates.map { it.id to "${it.concept} · ${money(it.cents)}" }) { expenseId ->
             linked = expenseId
             candidates.firstOrNull { it.id == expenseId }?.let { paid = moneyInput(it.cents) }
         }
+        expenses.firstOrNull { it.active && it.visitId == id }?.let { payment -> OutlinedButton(onClick = { expense(payment.id) }, modifier = Modifier.fillMaxWidth()) { Text("Consultar gasto vinculado") } }
         }
         if (original != null) OutlinedButton(onClick = { attachments(id) }, modifier = Modifier.fillMaxWidth()) { Text("Fotos y documentos de este trabajo") }
         else Hint("Después de guardar, abre el trabajo en Historial para añadir fotos o PDF.")
@@ -133,7 +148,8 @@ fun VisitForm(model: JournalViewModel, original: Visit?, tasks: List<Task>, expe
         confirm = false
         model.saveVisit(
             Visit(id = id, date = date, km = parseKm(km), kmExact = exactKm, title = title.trim(), workshop = workshop.trim(),
-                notes = gson.toJson(VisitDetail(notes = notes, budget = budget, lines = lines)), paidCents = parseMoney(paid, true), active = true, dateExact = exactDate, operationalAnchor = anchor),
+                notes = gson.toJson(VisitDetail(notes = notes, budget = budget, lines = lines)), paidCents = parseMoney(paid, true), active = true, dateExact = date.isNotBlank() && exactDate, operationalAnchor = anchor,
+                status = "done", manual = original?.manual ?: false, targetDate = original?.targetDate, estimatedCents = original?.estimatedCents),
             completedLines.map { WorkLine(id = it.id, visitId = id, title = it.title.trim(), ruleId = it.ruleId.ifBlank { null }, costCents = parseMoney(it.cost, true), category = it.category, parts = it.pieces) },
             completedLines.map { it.ruleId }.filter { it.isNotBlank() }.distinct(), linked.ifBlank { null },
             if (updateOdometer && date == model.today() && exactKm && (parseKmOrNull(km) ?: -1) >= currentKm) Reading(id = readingId, date = date, km = requireNotNull(parseKm(km))) else null, after)

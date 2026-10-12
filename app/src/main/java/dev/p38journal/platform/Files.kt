@@ -183,7 +183,8 @@ class Files(private val context: Context, private val repo: Repository) {
                 require(!existing.exists() || checksum(existing) == doc.sha256) { "Conflicto de adjunto; no se sobrescribirá" }
             }
             require(context.filesDir.usableSpace > total * 2) { "Espacio insuficiente para restaurar" }
-            val counts = listOf("visits", "expenses", "readings", "notes", "documents").joinToString(" · ") { "$it: ${root.getAsJsonArray(it)?.size() ?: 0}" }
+            val counts = listOf("visits" to "trabajos", "expenses" to "gastos", "readings" to "lecturas", "notes" to "notas", "documents" to "archivos", "fuelEntries" to "repostajes", "deadlines" to "vencimientos", "deadlineRenewals" to "renovaciones", "tyreEvents" to "registros de ruedas")
+                .joinToString(" · ") { (key, label) -> "$label: ${root.getAsJsonArray(key)?.size() ?: 0}" }
             return Prepared(stage, records, settings.copy(externalFolderUri = ""), documents, favourites, "Copia validada. $counts. Se integrarán por identificador; los registros con el mismo ID se conservarán tal como están en este teléfono. Los registros locales ausentes en la copia se conservarán. Las reglas personalizadas de la copia sustituyen reglas precargadas; las personalizaciones locales se conservan y el catálogo estándar no retrocede de revisión. Los avisos se recalcularán.")
         } catch (e: Exception) { stage.deleteRecursively(); throw e }
     }

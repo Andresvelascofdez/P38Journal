@@ -154,4 +154,46 @@ class EngineTest {
         assertNotEquals(task.legacyGeneration, evaluate("2026-10-16", 195200, listOf(event()), oil.copy(km = 10000)).legacyGeneration)
         assertNull(evaluate("2026-10-16", 195200, rule = oil.copy(scheduleVisibility = "manual")).legacyGeneration)
     }
+    @Test fun largerExactUndatedMileageBecomesDistanceAnchorAndPreservesPreciseCalendarReference() {
+        val dated = event("2026-10-16", 178000).copy(id = "dated")
+        val undated = event(null, 180000, dateExact = false).copy(id = "undated")
+        val rule = oil.copy(km = 10000)
+        val task = evaluate("2026-10-17", 180000, listOf(dated, undated), rule)
+        assertEquals(190000, task.dueKm); assertEquals("2027-10-16", task.dueDate)
+        assertEquals(undated, task.lastEvent); assertNull(task.lastEvent?.date)
+        assertNotEquals(evaluate("2026-10-17", 180000, listOf(dated), rule).generation, task.generation)
+        val projected = Forecast.project(listOf(task), 2)
+        assertEquals(listOf(190000, 200000), projected.map { it.dueKm })
+        assertEquals(listOf("2027-10-16", "2028-10-16"), projected.map { it.dueDate })
+    }
+    @Test fun lowerOrEqualUndatedMileageDoesNotMoveTheDatedCycleOrItsDisplayReference() {
+        val dated = event("2026-10-16", 178000).copy(id = "dated")
+        val rule = oil.copy(km = 10000)
+        val before = evaluate("2026-10-17", 180000, listOf(dated), rule)
+        listOf(177000, 178000).forEach { km ->
+            val undated = event(null, km, dateExact = false).copy(id = "historical")
+            val task = evaluate("2026-10-17", 180000, listOf(dated, undated), rule)
+            assertEquals(before.dueKm, task.dueKm); assertEquals(before.dueDate, task.dueDate)
+            assertEquals(before.generation, task.generation); assertEquals(dated, task.lastEvent)
+        }
+    }
+    @Test fun voidedImpreciseOrPreBaselineUndatedWorkCannotMoveTheCycle() {
+        val dated = event("2026-10-16", 178000).copy(id = "dated")
+        val rule = oil.copy(km = 10000)
+        val before = evaluate("2026-10-17", 180000, listOf(dated), rule)
+        val undated = event(null, 180000, dateExact = false).copy(id = "undated")
+        listOf(undated.copy(active = false), undated.copy(kmExact = false), undated.copy(km = 174999),
+            undated.copy(provenance = "recovered_history")).forEach { excluded ->
+            val task = evaluate("2026-10-17", 180000, listOf(dated, excluded), rule)
+            assertEquals(before.generation, task.generation); assertEquals(188000, task.dueKm)
+            assertEquals("2027-10-16", task.dueDate)
+        }
+    }
+    @Test fun datedMileageStillUsesTheLatestDatedOperationRatherThanAbsoluteMaximum() {
+        val dated = event("2026-10-16", 190000).copy(id = "older")
+        val correctedLater = event("2026-11-01", 180000).copy(id = "latest")
+        val approximateEarlier = event("2026-10-10", 200000, dateExact = false).copy(id = "approximate")
+        val task = evaluate("2026-11-02", 180000, listOf(dated, correctedLater, approximateEarlier), oil.copy(km = 10000))
+        assertEquals(190000, task.dueKm); assertEquals("2027-11-01", task.dueDate); assertEquals(correctedLater, task.lastEvent)
+    }
 }

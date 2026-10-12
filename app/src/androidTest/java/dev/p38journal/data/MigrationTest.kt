@@ -27,7 +27,7 @@ class MigrationTest {
             close()
         }
         helper.runMigrationsAndValidate(name, 3, true, JournalDatabase.MIGRATION_1_2, JournalDatabase.MIGRATION_2_3).close()
-        val db = Room.databaseBuilder(context, JournalDatabase::class.java, name).addMigrations(JournalDatabase.MIGRATION_1_2, JournalDatabase.MIGRATION_2_3).build()
+        val db = Room.databaseBuilder(context, JournalDatabase::class.java, name).addMigrations(JournalDatabase.MIGRATION_1_2, JournalDatabase.MIGRATION_2_3, JournalDatabase.MIGRATION_3_4).build()
         try {
             assertEquals(1250L, db.dao().totalExpenses())
             assertEquals(176000, db.dao().allReadings().single().km)
@@ -61,7 +61,7 @@ class MigrationTest {
             migration.migrate(this)
             close()
         }
-        val db = Room.databaseBuilder(context, JournalDatabase::class.java, name).build()
+        val db = Room.databaseBuilder(context, JournalDatabase::class.java, name).addMigrations(JournalDatabase.MIGRATION_3_4).build()
         try {
             assertEquals(182000, db.dao().allReadings().single().km); assertEquals(1250L, db.dao().totalExpenses())
             assertEquals("Real history", db.dao().allNotes().single().title)
@@ -99,5 +99,36 @@ class MigrationTest {
             val source = android.database.sqlite.SQLiteDatabase.openDatabase(context.getDatabasePath(name).path, null, android.database.sqlite.SQLiteDatabase.OPEN_READONLY)
             try { assertEquals(2, source.version) } finally { source.close() }
         } finally { legacy.close(); folder?.deleteRecursively(); context.deleteDatabase(name) }
+    }
+    @Test fun versionThreeMigrationToFourKeepsHistoricalAmountsAndReferencesWithoutSeedingNewDomains() = runBlocking {
+        val name = "migration-v6-fixture.db"
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        context.deleteDatabase(name)
+        helper.createDatabase(name, 3).apply {
+            execSQL("INSERT INTO visits(id,date,km,kmExact,title,workshop,notes,paidCents,active,dateExact,operationalAnchor) VALUES('visit','2026-10-10',182000,1,'Trabajo anterior','','',30000,1,1,0)")
+            execSQL("INSERT INTO expenses(id,date,cents,concept,category,notes,visitId,active) VALUES('expense','2026-10-10',30000,'Pago anterior','workshop','','visit',1)")
+            execSQL("INSERT INTO readings(id,date,km,recordedAt) VALUES('reading','2026-10-10',182000,'2026-10-10T09:00:00Z')")
+            execSQL("INSERT INTO planning_reference(id,baselineKm,baselineDate,provenance,policyVersion) VALUES('main',175000,'2026-09-15','user_selected_planning_baseline',3)")
+            close()
+        }
+        val backup = PreMigrationBackup.ensure(context, name)
+        assertNotNull(backup)
+        val manifest = com.google.gson.JsonParser.parseString(java.io.File(backup, "manifest.json").readText()).asJsonObject
+        assertEquals(3, manifest.get("sourceSchema").asInt); assertEquals(4, manifest.get("targetSchema").asInt)
+        helper.runMigrationsAndValidate(name, 4, true, JournalDatabase.MIGRATION_3_4).apply {
+            JournalDatabase.MIGRATION_3_4.migrate(this)
+            close()
+        }
+        val db = Room.databaseBuilder(context, JournalDatabase::class.java, name).build()
+        try {
+            val visit = db.dao().allVisits().single()
+            assertEquals("done", visit.status); assertTrue(!visit.manual); assertEquals(30000L, visit.paidCents)
+            assertEquals("visit", db.dao().allExpenses().single().visitId); assertTrue(db.dao().allExpenses().single().fuelId == null)
+            assertEquals(30000L, db.dao().totalExpenses()); assertEquals(182000, db.dao().allReadings().single().km)
+            assertEquals("2026-09-15", db.dao().allPlanningReferences().single().baselineDate)
+            assertTrue(db.dao().allFuelEntries().isEmpty()); assertTrue(db.dao().allDeadlines().isEmpty())
+            assertTrue(db.dao().allDeadlineRenewals().isEmpty()); assertTrue(db.dao().allTyreEvents().isEmpty())
+            assertTrue(db.dao().allEvents().isEmpty())
+        } finally { db.close(); backup?.deleteRecursively(); context.deleteDatabase(name) }
     }
 }

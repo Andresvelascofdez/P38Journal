@@ -20,7 +20,20 @@ internal fun legacyNotificationKind(id: String?, ruleId: String?, generation: St
 
 @Dao
 interface JournalDao {
-    @Query("SELECT * FROM visits WHERE active = 1 ORDER BY date DESC, id") fun observeVisits(): Flow<List<Visit>>
+    @Query("SELECT * FROM visits WHERE active = 1 AND status = 'done' ORDER BY date DESC, id") fun observeVisits(): Flow<List<Visit>>
+    @Query("SELECT * FROM visits WHERE active = 1 ORDER BY date DESC, id") fun observeWorks(): Flow<List<Visit>>
+    @Query("SELECT * FROM fuel_entries WHERE active = 1 ORDER BY date, km, id") fun observeFuelEntries(): Flow<List<FuelEntry>>
+    @Query("SELECT * FROM deadlines WHERE active = 1 ORDER BY dueDate, id") fun observeDeadlines(): Flow<List<Deadline>>
+    @Query("SELECT * FROM deadline_renewals ORDER BY renewedAt DESC, id") fun observeDeadlineRenewals(): Flow<List<DeadlineRenewal>>
+    @Query("SELECT * FROM tyre_events ORDER BY sequence, id") fun observeTyreEvents(): Flow<List<TyreEvent>>
+    @Query("SELECT * FROM fuel_entries") suspend fun allFuelEntries(): List<FuelEntry>
+    @Query("SELECT * FROM deadlines") suspend fun allDeadlines(): List<Deadline>
+    @Query("SELECT * FROM deadline_renewals") suspend fun allDeadlineRenewals(): List<DeadlineRenewal>
+    @Query("SELECT * FROM tyre_events") suspend fun allTyreEvents(): List<TyreEvent>
+    @Upsert suspend fun putFuelEntry(value: FuelEntry)
+    @Upsert suspend fun putDeadline(value: Deadline)
+    @Upsert suspend fun putDeadlineRenewal(value: DeadlineRenewal)
+    @Upsert suspend fun putTyreEvent(value: TyreEvent)
     @Query("SELECT * FROM expenses WHERE active = 1 ORDER BY date DESC, id") fun observeExpenses(): Flow<List<Expense>>
     @Query("SELECT * FROM readings ORDER BY date DESC, recordedAt DESC") fun observeReadings(): Flow<List<Reading>>
     @Query("SELECT * FROM notes ORDER BY date DESC, id") fun observeNotes(): Flow<List<Note>>
@@ -70,7 +83,8 @@ interface JournalDao {
 
 @Database(entities = [Visit::class, WorkLine::class, Expense::class, Reading::class, Note::class,
     Document::class, Inbox::class, RuleRecord::class, RuleRevisionRecord::class, EventRecord::class,
-    Audit::class, Ledger::class, VehicleRecord::class, PlanningRecord::class], version = 3, exportSchema = true)
+    Audit::class, Ledger::class, VehicleRecord::class, PlanningRecord::class, FuelEntry::class,
+    Deadline::class, DeadlineRenewal::class, TyreEvent::class], version = 4, exportSchema = true)
 abstract class JournalDatabase : RoomDatabase() {
     abstract fun dao(): JournalDao
 
@@ -81,6 +95,24 @@ abstract class JournalDatabase : RoomDatabase() {
             }
         }
         val MIGRATION_2_3 = migration2To3()
+        val MIGRATION_3_4 = object : Migration(3, 4) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                addColumn(db, "visits", "status", "TEXT NOT NULL DEFAULT 'done'")
+                addColumn(db, "visits", "manual", "INTEGER NOT NULL DEFAULT 0")
+                addColumn(db, "visits", "targetDate", "TEXT")
+                addColumn(db, "visits", "estimatedCents", "INTEGER")
+                addColumn(db, "expenses", "fuelId", "TEXT")
+                db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS index_expenses_fuelId ON expenses(fuelId)")
+                db.execSQL("CREATE TABLE IF NOT EXISTS fuel_entries (id TEXT NOT NULL PRIMARY KEY,date TEXT NOT NULL,km INTEGER,litresMilli INTEGER,totalCents INTEGER NOT NULL,full INTEGER NOT NULL,expenseId TEXT,active INTEGER NOT NULL)")
+                db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS index_fuel_entries_expenseId ON fuel_entries(expenseId)")
+                db.execSQL("CREATE TABLE IF NOT EXISTS deadlines (id TEXT NOT NULL PRIMARY KEY,name TEXT NOT NULL,dueDate TEXT NOT NULL,notes TEXT NOT NULL,enabled INTEGER NOT NULL,leadDays INTEGER NOT NULL,repeatMonths INTEGER,active INTEGER NOT NULL)")
+                db.execSQL("CREATE TABLE IF NOT EXISTS deadline_renewals (id TEXT NOT NULL PRIMARY KEY,deadlineId TEXT NOT NULL,previousDueDate TEXT NOT NULL,newDueDate TEXT NOT NULL,renewedAt TEXT NOT NULL,FOREIGN KEY(deadlineId) REFERENCES deadlines(id) ON UPDATE NO ACTION ON DELETE RESTRICT)")
+                db.execSQL("CREATE INDEX IF NOT EXISTS index_deadline_renewals_deadlineId ON deadline_renewals(deadlineId)")
+                db.execSQL("CREATE TABLE IF NOT EXISTS tyre_events (id TEXT NOT NULL PRIMARY KEY,axis TEXT NOT NULL,kind TEXT NOT NULL,date TEXT,km INTEGER NOT NULL,intervalKm INTEGER NOT NULL,notes TEXT NOT NULL,visitId TEXT,sequence INTEGER NOT NULL,active INTEGER NOT NULL,tracking INTEGER NOT NULL DEFAULT 1,FOREIGN KEY(visitId) REFERENCES visits(id) ON UPDATE NO ACTION ON DELETE RESTRICT)")
+                db.execSQL("CREATE INDEX IF NOT EXISTS index_tyre_events_visitId ON tyre_events(visitId)")
+                db.execSQL("CREATE INDEX IF NOT EXISTS index_tyre_events_axis ON tyre_events(axis)")
+            }
+        }
         fun migration2To3(clock: Clock = Clock.system(ZoneId.of("Asia/Nicosia"))) = object : Migration(2, 3) {
             override fun migrate(db: SupportSQLiteDatabase) {
                 db.execSQL("CREATE TABLE IF NOT EXISTS planning_reference (id TEXT NOT NULL PRIMARY KEY, baselineKm INTEGER NOT NULL, baselineDate TEXT NOT NULL, provenance TEXT NOT NULL, policyVersion INTEGER NOT NULL)")

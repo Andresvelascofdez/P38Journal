@@ -470,7 +470,7 @@ class JournalUiTest {
         compose.waitUntil(15_000) { runBlocking { repository.currentKm() == reading } }
         waitForSaveFeedback()
         compose.onNodeWithContentDescription("Más opciones").performClick()
-        compose.onNodeWithText("Averías").performClick()
+        compose.onNodeWithText("Averías").performScrollTo().performClick()
         compose.onNodeWithText("Registrar avería").performClick()
         val faultTitle = "FIXTURE avería UI $token"
         compose.onNodeWithTag("note_title").performTextInput(faultTitle)
@@ -507,7 +507,8 @@ class JournalUiTest {
         compose.onNodeWithContentDescription("Volver").performClick()
         compose.onNodeWithTag("Síntomas observados").assertTextContains("FIXTURE: síntoma simulado")
         compose.onNodeWithContentDescription("Más opciones").performClick()
-        compose.onNodeWithText("Piezas").performClick()
+        compose.onNodeWithText("Piezas").performScrollTo().performClick()
+        waitForText("Añadir pieza")
         compose.onNodeWithText("Añadir pieza").performClick()
         val partTitle = "FIXTURE pieza UI $token"
         compose.onNodeWithTag("note_title").performTextInput(partTitle)
